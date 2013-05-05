@@ -19,7 +19,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if ([cell isKindOfClass:NavSetupReturnCell.class]) {
-        NSLog(@"Money shit");
+        [[self.viewDeckController navigationController] popViewControllerAnimated:YES];
     }
 }
 
