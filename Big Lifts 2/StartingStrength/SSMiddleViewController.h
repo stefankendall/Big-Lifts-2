@@ -1,0 +1,2 @@
+@interface SSMiddleViewController : UIViewController
+@end
