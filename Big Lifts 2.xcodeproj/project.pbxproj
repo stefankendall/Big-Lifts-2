@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		024CD5FD1736D68600EDA8AB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */; };
+		545901A747A04C98E1814122 /* Big_Lifts_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54590275EBE03377D340BF57 /* Big_Lifts_2.xcdatamodeld */; };
+		5459034104050CCA10D03CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
+		545903C5C5EF984B0A18E870 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904DCA7D7C51C48A4F3F3 /* main.m */; };
+		545905887766D673CDFB69B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590B18C50119F99FB04420 /* Default@2x.png */; };
+		545905E23A25A8F2505D2029 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
+		54590602539AB52533BBAE57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5459094860FD40BF2AC39701 /* CoreGraphics.framework */; };
+		5459060E3276963CE6701186 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590FF8E43786FDCC2C2CA4 /* Foundation.framework */; };
+		545906D497D17D3A5E089098 /* BLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */; };
+		5459086A9275AD5BBC9B7272 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590FF8E43786FDCC2C2CA4 /* Foundation.framework */; };
+		5459091CB0068729BE25B779 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590D530BEAE717BB80843E /* CoreData.framework */; };
+		54590938523CBE923C9E67D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */; };
+		5459098A223A58603A1EB19C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54590D3019187C6086FE5E36 /* InfoPlist.strings */; };
+		54590A0F663D13F7AF1C3095 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590D530BEAE717BB80843E /* CoreData.framework */; };
+		54590AAB9A4C2C44CEE40F2F /* Big_Lifts_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590405BB329C184A272F51 /* Big_Lifts_2Tests.m */; };
+		54590D8600F8453E0AA237F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54590A51214D862DCADA96E5 /* InfoPlist.strings */; };
+		54590FD468E7E98555D58455 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 545905E01D19C73A62A6586C /* Default.png */; };
+		54590FDA27263749049536B8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590CA332CE6FA216724598 /* SenTestingKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		54590D5B200A1879C8D6DB11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54590B7F5BA3B3A9DF563A19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5459001656E34C211328AFC0;
+			remoteInfo = "Big Lifts 2";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
+		545901288DAAC7C161DA9DC9 /* Big Lifts 2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big Lifts 2Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLAppDelegate.m; sourceTree = "<group>"; };
+		545901ABBD67C8BDEA18C5BD /* Big Lifts 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Big Lifts 2-Prefix.pch"; sourceTree = "<group>"; };
+		54590405BB329C184A272F51 /* Big_Lifts_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Big_Lifts_2Tests.m; sourceTree = "<group>"; };
+		54590412D3B6171940B0E960 /* BLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLAppDelegate.h; sourceTree = "<group>"; };
+		545904DCA7D7C51C48A4F3F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		545905E01D19C73A62A6586C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		545907E7564CB57FA47E3BCA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5459088E695A0D20ECA09464 /* Big Lifts 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Lifts 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		545909344AEA6A82F1DB578A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5459094860FD40BF2AC39701 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5459095897CCE053E4BF9C9A /* Big_Lifts_2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Big_Lifts_2Tests.h; sourceTree = "<group>"; };
+		5459098BC4F05BFBF03EE234 /* Big_Lifts_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Big_Lifts_2.xcdatamodel; sourceTree = "<group>"; };
+		54590A09F835E09940645C2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		54590B18C50119F99FB04420 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		54590CA332CE6FA216724598 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		54590D530BEAE717BB80843E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		54590E814FB62F30159EA4C1 /* Big Lifts 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Big Lifts 2-Info.plist"; sourceTree = "<group>"; };
+		54590EB3D52D5DB0ADC33D74 /* Big Lifts 2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Big Lifts 2Tests-Info.plist"; sourceTree = "<group>"; };
+		54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		54590FF8E43786FDCC2C2CA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5459043150E502390785D704 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545905E23A25A8F2505D2029 /* UIKit.framework in Frameworks */,
+				5459060E3276963CE6701186 /* Foundation.framework in Frameworks */,
+				54590602539AB52533BBAE57 /* CoreGraphics.framework in Frameworks */,
+				54590A0F663D13F7AF1C3095 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		545909D3A478B3BF63F55482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54590FDA27263749049536B8 /* SenTestingKit.framework in Frameworks */,
+				5459091CB0068729BE25B779 /* CoreData.framework in Frameworks */,
+				5459034104050CCA10D03CF4 /* UIKit.framework in Frameworks */,
+				5459086A9275AD5BBC9B7272 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5459003AD89EAE1B4B0B3781 = {
+			isa = PBXGroup;
+			children = (
+				54590B29034969C16A866492 /* Products */,
+				54590BED2B74CA641FF32060 /* Frameworks */,
+				54590EC21714D3433DE0730A /* Big Lifts 2 */,
+				5459053D5D84B997612A2A94 /* Big Lifts 2Tests */,
+			);
+			sourceTree = "<group>";
+		};
+		545901561B2BC81D785CE389 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				54590E814FB62F30159EA4C1 /* Big Lifts 2-Info.plist */,
+				54590D3019187C6086FE5E36 /* InfoPlist.strings */,
+				545904DCA7D7C51C48A4F3F3 /* main.m */,
+				545901ABBD67C8BDEA18C5BD /* Big Lifts 2-Prefix.pch */,
+				545905E01D19C73A62A6586C /* Default.png */,
+				54590B18C50119F99FB04420 /* Default@2x.png */,
+				54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5459053D5D84B997612A2A94 /* Big Lifts 2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				545908821AEE9E0C3230AA8E /* Supporting Files */,
+				5459095897CCE053E4BF9C9A /* Big_Lifts_2Tests.h */,
+				54590405BB329C184A272F51 /* Big_Lifts_2Tests.m */,
+			);
+			path = "Big Lifts 2Tests";
+			sourceTree = "<group>";
+		};
+		545908821AEE9E0C3230AA8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				54590EB3D52D5DB0ADC33D74 /* Big Lifts 2Tests-Info.plist */,
+				54590A51214D862DCADA96E5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54590B29034969C16A866492 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5459088E695A0D20ECA09464 /* Big Lifts 2.app */,
+				545901288DAAC7C161DA9DC9 /* Big Lifts 2Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54590BED2B74CA641FF32060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				545909344AEA6A82F1DB578A /* UIKit.framework */,
+				54590FF8E43786FDCC2C2CA4 /* Foundation.framework */,
+				5459094860FD40BF2AC39701 /* CoreGraphics.framework */,
+				54590D530BEAE717BB80843E /* CoreData.framework */,
+				54590CA332CE6FA216724598 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54590EC21714D3433DE0730A /* Big Lifts 2 */ = {
+			isa = PBXGroup;
+			children = (
+				024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */,
+				545901561B2BC81D785CE389 /* Supporting Files */,
+				54590412D3B6171940B0E960 /* BLAppDelegate.h */,
+				5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */,
+				54590275EBE03377D340BF57 /* Big_Lifts_2.xcdatamodeld */,
+			);
+			path = "Big Lifts 2";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5459001656E34C211328AFC0 /* Big Lifts 2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 545908B55B57ED2DD46DCB92 /* Build configuration list for PBXNativeTarget "Big Lifts 2" */;
+			buildPhases = (
+				54590E6D0E95CA9185ADB2E4 /* Sources */,
+				5459043150E502390785D704 /* Frameworks */,
+				54590F1205CD6696062D4496 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Big Lifts 2";
+			productName = "Big Lifts 2";
+			productReference = 5459088E695A0D20ECA09464 /* Big Lifts 2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		545909D972AAFC48E1E435CB /* Big Lifts 2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54590695693A94235D515706 /* Build configuration list for PBXNativeTarget "Big Lifts 2Tests" */;
+			buildPhases = (
+				545906459B867553E0BD2863 /* Sources */,
+				545909D3A478B3BF63F55482 /* Frameworks */,
+				545902A9BF78B05F704887AD /* Resources */,
+				545902E23E0DC619D028961E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				545906B0F2F938310AD812BF /* PBXTargetDependency */,
+			);
+			name = "Big Lifts 2Tests";
+			productName = "Big Lifts 2Tests";
+			productReference = 545901288DAAC7C161DA9DC9 /* Big Lifts 2Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54590B7F5BA3B3A9DF563A19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+			};
+			buildConfigurationList = 54590C4604EC9A653D91B0B3 /* Build configuration list for PBXProject "Big Lifts 2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5459003AD89EAE1B4B0B3781;
+			productRefGroup = 54590B29034969C16A866492 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5459001656E34C211328AFC0 /* Big Lifts 2 */,
+				545909D972AAFC48E1E435CB /* Big Lifts 2Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		545902A9BF78B05F704887AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54590D8600F8453E0AA237F8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54590F1205CD6696062D4496 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5459098A223A58603A1EB19C /* InfoPlist.strings in Resources */,
+				54590FD468E7E98555D58455 /* Default.png in Resources */,
+				545905887766D673CDFB69B3 /* Default@2x.png in Resources */,
+				54590938523CBE923C9E67D1 /* Default-568h@2x.png in Resources */,
+				024CD5FD1736D68600EDA8AB /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		545902E23E0DC619D028961E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		545906459B867553E0BD2863 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54590AAB9A4C2C44CEE40F2F /* Big_Lifts_2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54590E6D0E95CA9185ADB2E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				545903C5C5EF984B0A18E870 /* main.m in Sources */,
+				545906D497D17D3A5E089098 /* BLAppDelegate.m in Sources */,
+				545901A747A04C98E1814122 /* Big_Lifts_2.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		545906B0F2F938310AD812BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5459001656E34C211328AFC0 /* Big Lifts 2 */;
+			targetProxy = 54590D5B200A1879C8D6DB11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		54590A51214D862DCADA96E5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				545907E7564CB57FA47E3BCA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		54590D3019187C6086FE5E36 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54590A09F835E09940645C2E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		545901FF446E7243C03D841F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
+				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5459049E2C1B472AE83C3644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54590834887E8B536E7C1B95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
+				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		545909AA9E4D56E03926246D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Big Lifts 2.app/Big Lifts 2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
+				INFOPLIST_FILE = "Big Lifts 2Tests/Big Lifts 2Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		54590D4B561E6AD64A352A8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Big Lifts 2.app/Big Lifts 2";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
+				INFOPLIST_FILE = "Big Lifts 2Tests/Big Lifts 2Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		54590FCA4CAD6622B4530064 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54590695693A94235D515706 /* Build configuration list for PBXNativeTarget "Big Lifts 2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				545909AA9E4D56E03926246D /* Release */,
+				54590D4B561E6AD64A352A8C /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		545908B55B57ED2DD46DCB92 /* Build configuration list for PBXNativeTarget "Big Lifts 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				545901FF446E7243C03D841F /* Release */,
+				54590834887E8B536E7C1B95 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54590C4604EC9A653D91B0B3 /* Build configuration list for PBXProject "Big Lifts 2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5459049E2C1B472AE83C3644 /* Release */,
+				54590FCA4CAD6622B4530064 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		54590275EBE03377D340BF57 /* Big_Lifts_2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5459098BC4F05BFBF03EE234 /* Big_Lifts_2.xcdatamodel */,
+			);
+			currentVersion = 5459098BC4F05BFBF03EE234 /* Big_Lifts_2.xcdatamodel */;
+			path = Big_Lifts_2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 54590B7F5BA3B3A9DF563A19 /* Project object */;
+}
