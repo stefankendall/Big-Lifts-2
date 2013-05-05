@@ -1,0 +1,3 @@
+@interface NavTableViewController : UITableViewController
+
+@end

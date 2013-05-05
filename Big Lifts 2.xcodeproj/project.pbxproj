@@ -8,15 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		024CD5FD1736D68600EDA8AB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */; };
+		5459010EE7C81E5B9B8DA6FC /* NavTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B47058B5A7BDD8ADB29 /* NavTableViewCell.m */; };
 		545901A747A04C98E1814122 /* Big_Lifts_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54590275EBE03377D340BF57 /* Big_Lifts_2.xcdatamodeld */; };
 		545901FAC28BAD8D18A50523 /* SSIIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A7CCBB6569D666FD0B5 /* SSIIViewDeckController.m */; };
 		5459022211FD6EA0E5AD6495 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C5452E6F21C50F39FD4 /* IISideController.m */; };
+		545902EFCD9F9F1EBA65EAD0 /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */; };
 		5459034104050CCA10D03CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
 		545903C5C5EF984B0A18E870 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904DCA7D7C51C48A4F3F3 /* main.m */; };
+		5459047028131E72F52A9031 /* NavTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DB2F432AE04D5DAC96D /* NavTableViewController.m */; };
 		545905527F5502367565C568 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */; };
 		545905887766D673CDFB69B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590B18C50119F99FB04420 /* Default@2x.png */; };
 		545905E23A25A8F2505D2029 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
 		54590602539AB52533BBAE57 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5459094860FD40BF2AC39701 /* CoreGraphics.framework */; };
+		54590604C2A4128EBA24051C /* ButtonMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590FE4F6569EEDC636CBAC /* ButtonMenu.png */; };
 		5459060E3276963CE6701186 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590FF8E43786FDCC2C2CA4 /* Foundation.framework */; };
 		545906D497D17D3A5E089098 /* BLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */; };
 		5459086A9275AD5BBC9B7272 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590FF8E43786FDCC2C2CA4 /* Foundation.framework */; };
@@ -29,6 +33,7 @@
 		54590ACBB9FB61F2A09CDD95 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459002D1484D8897F83B0B0 /* IIViewDeckController.m */; };
 		54590C1B1E4C7E337757DFB1 /* SSMiddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906AFCA3F51A2912F8220 /* SSMiddleViewController.m */; };
 		54590D8600F8453E0AA237F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54590A51214D862DCADA96E5 /* InfoPlist.strings */; };
+		54590E3D11AECA53898D7974 /* NavSetupReturnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590129F3CC3C17C3BAD8CD /* NavSetupReturnCell.m */; };
 		54590FD468E7E98555D58455 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 545905E01D19C73A62A6586C /* Default.png */; };
 		54590FDA27263749049536B8 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590CA332CE6FA216724598 /* SenTestingKit.framework */; };
 /* End PBXBuildFile section */
@@ -45,8 +50,11 @@
 
 /* Begin PBXFileReference section */
 		024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
+		545900104C558A31BB68EA53 /* NavSetupReturnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavSetupReturnCell.h; sourceTree = "<group>"; };
 		5459002D1484D8897F83B0B0 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		54590051A887986800D5BF87 /* NavTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavTableViewCell.h; sourceTree = "<group>"; };
 		545901288DAAC7C161DA9DC9 /* Big Lifts 2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big Lifts 2Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54590129F3CC3C17C3BAD8CD /* NavSetupReturnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavSetupReturnCell.m; sourceTree = "<group>"; };
 		54590171A174F8AC533C25E4 /* SSIIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIIViewDeckController.h; sourceTree = "<group>"; };
 		5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLAppDelegate.m; sourceTree = "<group>"; };
 		545901ABBD67C8BDEA18C5BD /* Big Lifts 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Big Lifts 2-Prefix.pch"; sourceTree = "<group>"; };
@@ -68,14 +76,19 @@
 		54590AB3BF06EC1E33E723E2 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
 		54590B18C50119F99FB04420 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		54590B464973992EFED24F78 /* SSMiddleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMiddleViewController.h; sourceTree = "<group>"; };
+		54590B47058B5A7BDD8ADB29 /* NavTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTableViewCell.m; sourceTree = "<group>"; };
 		54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonMenu@2x.png"; sourceTree = "<group>"; };
 		54590C5452E6F21C50F39FD4 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
 		54590CA332CE6FA216724598 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		54590D530BEAE717BB80843E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		54590DB2F432AE04D5DAC96D /* NavTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTableViewController.m; sourceTree = "<group>"; };
 		54590DCB4AA014559BC62A3F /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
 		54590E814FB62F30159EA4C1 /* Big Lifts 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Big Lifts 2-Info.plist"; sourceTree = "<group>"; };
+		54590EAB67FCEF19BF3A895E /* NavTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavTableViewController.h; sourceTree = "<group>"; };
 		54590EB3D52D5DB0ADC33D74 /* Big Lifts 2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Big Lifts 2Tests-Info.plist"; sourceTree = "<group>"; };
 		54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		54590FE4F6569EEDC636CBAC /* ButtonMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonMenu.png; sourceTree = "<group>"; };
 		54590FF8E43786FDCC2C2CA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -138,6 +151,28 @@
 				54590405BB329C184A272F51 /* Big_Lifts_2Tests.m */,
 			);
 			path = "Big Lifts 2Tests";
+			sourceTree = "<group>";
+		};
+		54590598191DE8EC5937C1CD /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				54590051A887986800D5BF87 /* NavTableViewCell.h */,
+				54590B47058B5A7BDD8ADB29 /* NavTableViewCell.m */,
+				54590DB2F432AE04D5DAC96D /* NavTableViewController.m */,
+				54590EAB67FCEF19BF3A895E /* NavTableViewController.h */,
+				545900104C558A31BB68EA53 /* NavSetupReturnCell.h */,
+				54590129F3CC3C17C3BAD8CD /* NavSetupReturnCell.m */,
+			);
+			path = Nav;
+			sourceTree = "<group>";
+		};
+		545905A9B4973066471B2118 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */,
+				54590FE4F6569EEDC636CBAC /* ButtonMenu.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		545907CA76EEAFA3EE3F1C5C /* StartingStrength */ = {
@@ -205,6 +240,8 @@
 				54590275EBE03377D340BF57 /* Big_Lifts_2.xcdatamodeld */,
 				54590AD5043434AD9E3587C2 /* ViewDeck */,
 				545907CA76EEAFA3EE3F1C5C /* StartingStrength */,
+				54590598191DE8EC5937C1CD /* Nav */,
+				545905A9B4973066471B2118 /* Images */,
 			);
 			path = "Big Lifts 2";
 			sourceTree = "<group>";
@@ -292,6 +329,8 @@
 				545905887766D673CDFB69B3 /* Default@2x.png in Resources */,
 				54590938523CBE923C9E67D1 /* Default-568h@2x.png in Resources */,
 				024CD5FD1736D68600EDA8AB /* Storyboard.storyboard in Resources */,
+				545902EFCD9F9F1EBA65EAD0 /* ButtonMenu@2x.png in Resources */,
+				54590604C2A4128EBA24051C /* ButtonMenu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +373,9 @@
 				54590ACBB9FB61F2A09CDD95 /* IIViewDeckController.m in Sources */,
 				545901FAC28BAD8D18A50523 /* SSIIViewDeckController.m in Sources */,
 				54590C1B1E4C7E337757DFB1 /* SSMiddleViewController.m in Sources */,
+				5459010EE7C81E5B9B8DA6FC /* NavTableViewCell.m in Sources */,
+				5459047028131E72F52A9031 /* NavTableViewController.m in Sources */,
+				54590E3D11AECA53898D7974 /* NavSetupReturnCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

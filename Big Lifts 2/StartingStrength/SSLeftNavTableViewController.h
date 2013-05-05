@@ -1,0 +1,2 @@
+@interface SSLeftNavTableViewController : UITableViewController
+@end
