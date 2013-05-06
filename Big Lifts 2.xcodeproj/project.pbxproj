@@ -303,6 +303,8 @@
 			mainGroup = 5459003AD89EAE1B4B0B3781;
 			productRefGroup = 54590B29034969C16A866492 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+			);
 			projectRoot = "";
 			targets = (
 				5459001656E34C211328AFC0 /* Big Lifts 2 */,
@@ -415,6 +417,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -451,6 +465,24 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRANK_LIBRARY_SEARCH_PATHS)",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+					"\"${PROJECT_DIR}/Frank\"/**",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(FRANK_LDFLAGS)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

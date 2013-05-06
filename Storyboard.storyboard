@@ -306,7 +306,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BjB-8T-ukD">
-                        <barButtonItem key="leftBarButtonItem" title="Fly" id="JEX-E8-7ua">
+                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="JEX-E8-7ua">
                             <connections>
                                 <action selector="revealSidebar:" destination="TTg-oq-Ebb" id="qu7-aV-6T3"/>
                             </connections>
@@ -333,6 +333,9 @@
             <point key="canvasLocation" x="1828" y="-1401"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+    </resources>
     <classes>
         <class className="IIViewDeckController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
