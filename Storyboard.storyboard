@@ -151,7 +151,7 @@
         <!--Nav Table View Controller-->
         <scene sceneID="2nB-ek-dvG">
             <objects>
-                <tableViewController storyboardIdentifier="ssLeftViewController" id="t3M-qT-Ane" customClass="NavTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ssNavViewController" id="t3M-qT-Ane" customClass="NavTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="E8U-1U-15y">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="SJF-C5-6gg" imageView="8hi-vI-OxK" style="IBUITableViewCellStyleDefault" id="2GQ-R5-jan" customClass="NavTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="SJF-C5-6gg" imageView="8hi-vI-OxK" style="IBUITableViewCellStyleDefault" id="2GQ-R5-jan" customClass="NavSettingsCell">
                                         <rect key="frame" x="0.0" y="200" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -335,12 +335,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBW-aA-s1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="-1421"/>
+            <point key="canvasLocation" x="1777" y="-1374"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CZe-Rh-odN">
             <objects>
-                <navigationController storyboardIdentifier="ssMiddleViewController" definesPresentationContext="YES" id="Puo-fU-dFg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ssEditViewController" definesPresentationContext="YES" id="Puo-fU-dFg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eg0-6N-8N3">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -350,7 +350,54 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YL-2L-0us" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="-1401"/>
+            <point key="canvasLocation" x="1292" y="-1374"/>
+        </scene>
+        <!--Middle View Controller-->
+        <scene sceneID="jQq-7R-8l9">
+            <objects>
+                <viewController storyboardIdentifier="" id="wDY-Cq-IXA" customClass="SSMiddleViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v4i-fk-s56">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMu-3R-90j">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TMu-3R-90j" firstAttribute="leading" secondItem="v4i-fk-s56" secondAttribute="leading" constant="116" id="lcH-V4-uIE"/>
+                            <constraint firstItem="TMu-3R-90j" firstAttribute="top" secondItem="v4i-fk-s56" secondAttribute="top" constant="213" id="mgw-21-0vF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zAK-PH-ozB">
+                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="HFJ-KZ-43H">
+                            <connections>
+                                <action selector="revealSidebar:" destination="wDY-Cq-IXA" id="pG1-qd-Sxc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rw-6p-QJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2647" y="-1362"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="G6I-DH-cEb">
+            <objects>
+                <navigationController storyboardIdentifier="ssSettingsViewController" definesPresentationContext="YES" id="YMA-7i-DNb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kfe-Ie-kzS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wDY-Cq-IXA" kind="relationship" relationship="rootViewController" id="w0B-ub-YSV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zc2-Ij-9DV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2201" y="-1362"/>
         </scene>
     </scenes>
     <resources>
@@ -375,6 +422,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NavSettingsCell" superclassName="NavTableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavSettingsCell.h"/>
         </class>
         <class className="NavSetupReturnCell" superclassName="NavTableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NavSetupReturnCell.h"/>
