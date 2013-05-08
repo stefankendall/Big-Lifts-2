@@ -1,9 +1,7 @@
 #import "SSMiddleViewController.h"
 #import "IIViewDeckController.h"
 
-@implementation SSMiddleViewController {
-
-}
+@implementation SSMiddleViewController
 
 - (IBAction)revealSidebar:(id)sender {
     [self.viewDeckController toggleLeftViewAnimated:YES];

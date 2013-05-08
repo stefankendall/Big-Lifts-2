@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="aJe-fQ-mM6">
-                            <rect key="frame" x="0.0" y="286" width="320" height="263"/>
+                            <rect key="frame" x="0.0" y="286" width="320" height="83"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="A61-1I-EZ2">
@@ -25,7 +25,7 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="A61-1I-EZ2" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="724-V6-77a"/>
+                                <constraint firstItem="A61-1I-EZ2" firstAttribute="top" secondItem="aJe-fQ-mM6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Pnd-gW-Ibt"/>
                                 <constraint firstItem="A61-1I-EZ2" firstAttribute="leading" secondItem="aJe-fQ-mM6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SfQ-YO-A8I"/>
                                 <constraint firstAttribute="trailing" secondItem="A61-1I-EZ2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="aRc-Xi-vex"/>
                             </constraints>
@@ -131,7 +131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="La5-VI-LRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-246" y="-397"/>
+            <point key="canvasLocation" x="-34" y="-397"/>
         </scene>
         <!--View Deck Controller-->
         <scene sceneID="jGY-mK-Njb">
@@ -319,7 +319,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1la-XO-yNM" firstAttribute="top" secondItem="PKS-FG-wZ2" secondAttribute="top" constant="159" id="GiN-Rc-Ghs"/>
                             <constraint firstItem="1la-XO-yNM" firstAttribute="leading" secondItem="PKS-FG-wZ2" secondAttribute="leading" constant="73" id="Ney-nC-dJG"/>
@@ -352,7 +352,7 @@
             </objects>
             <point key="canvasLocation" x="1292" y="-1374"/>
         </scene>
-        <!--Middle View Controller-->
+        <!--Middle View Controller - Settings-->
         <scene sceneID="jQq-7R-8l9">
             <objects>
                 <viewController storyboardIdentifier="" id="wDY-Cq-IXA" customClass="SSMiddleViewController" sceneMemberID="viewController">
@@ -360,19 +360,21 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMu-3R-90j">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-7F-x8J">
+                                <segments>
+                                    <segment title="lbs"/>
+                                    <segment title="kg"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TMu-3R-90j" firstAttribute="leading" secondItem="v4i-fk-s56" secondAttribute="leading" constant="116" id="lcH-V4-uIE"/>
-                            <constraint firstItem="TMu-3R-90j" firstAttribute="top" secondItem="v4i-fk-s56" secondAttribute="top" constant="213" id="mgw-21-0vF"/>
+                            <constraint firstItem="TNf-7F-x8J" firstAttribute="top" secondItem="v4i-fk-s56" secondAttribute="top" constant="20" symbolic="YES" type="default" id="TGA-Gp-Enn"/>
+                            <constraint firstItem="TNf-7F-x8J" firstAttribute="leading" secondItem="v4i-fk-s56" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sZp-xM-CS6"/>
+                            <constraint firstAttribute="trailing" secondItem="TNf-7F-x8J" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xkA-Au-iz3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zAK-PH-ozB">
+                    <navigationItem key="navigationItem" title="Settings" id="zAK-PH-ozB">
                         <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="HFJ-KZ-43H">
                             <connections>
                                 <action selector="revealSidebar:" destination="wDY-Cq-IXA" id="pG1-qd-Sxc"/>
