@@ -42,7 +42,7 @@
     [request setEntity:e];
 
     NSError *error;
-    NSArray * result = [context executeFetchRequest:request error:&error];
+    NSArray *result = [context executeFetchRequest:request error:&error];
     if (!result) {
         [NSException raise:@"Fetch Failed" format:@"%@", [error localizedDescription]];
     }
@@ -50,8 +50,6 @@
     if ([result count] == 0) {
         Settings *defaultSettings = [NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:context];
         [defaultSettings setUnits:@"lbs"];
-        [self saveChanges];
-
         return defaultSettings;
     }
     else {
@@ -59,14 +57,22 @@
     }
 }
 
-- (BOOL)saveChanges
-{
+- (BOOL)saveChanges {
     NSError *err = nil;
     BOOL successful = [context save:&err];
     if (!successful) {
         NSLog(@"Error saving: %@", [err localizedDescription]);
     }
     return successful;
+}
+
+- (void)empty {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [[model entitiesByName] objectForKey:@"Settings"];
+    [request setEntity:entity];
+    for (NSManagedObject *object in [context executeFetchRequest:request error:nil]) {
+        [context deleteObject:object];
+    }
 }
 
 

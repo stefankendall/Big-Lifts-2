@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Program Selector View Controller-->
         <scene sceneID="9X4-XO-8tg">
             <objects>
-                <tableViewController id="GLA-TU-Nrn" sceneMemberID="viewController">
+                <tableViewController id="GLA-TU-Nrn" customClass="ProgramSelectorViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jek-0n-sgJ">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,6 +21,9 @@
                                         <segment title="lbs"/>
                                         <segment title="kg"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="unitsChanged:" destination="GLA-TU-Nrn" eventType="valueChanged" id="xJg-Rr-15a"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -352,10 +355,10 @@
             </objects>
             <point key="canvasLocation" x="1292" y="-1374"/>
         </scene>
-        <!--Middle View Controller - Settings-->
+        <!--Settings View Controller - Settings-->
         <scene sceneID="jQq-7R-8l9">
             <objects>
-                <viewController storyboardIdentifier="" id="wDY-Cq-IXA" customClass="SSMiddleViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="" id="wDY-Cq-IXA" customClass="SSSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v4i-fk-s56">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -381,6 +384,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="unitsSegmentedControl" destination="TNf-7F-x8J" id="Ti1-xu-7nS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rw-6p-QJK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -437,6 +443,12 @@
         <class className="NavTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTableViewController.h"/>
         </class>
+        <class className="ProgramSelectorViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgramSelectorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unitsChanged:"/>
+            </relationships>
+        </class>
         <class className="SSIIViewDeckController" superclassName="IIViewDeckController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSIIViewDeckController.h"/>
         </class>
@@ -445,6 +457,9 @@
             <relationships>
                 <relationship kind="action" name="revealSidebar:"/>
             </relationships>
+        </class>
+        <class className="SSSettingsViewController" superclassName="SSMiddleViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSSettingsViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

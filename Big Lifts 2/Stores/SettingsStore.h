@@ -7,6 +7,10 @@
 
 - (Settings *)settings;
 
+- (BOOL)saveChanges;
+
+- (void) empty;
+
 + (SettingsStore *)instance;
 @end
 
