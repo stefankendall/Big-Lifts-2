@@ -116,6 +116,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ZP4-Lh-ZwW"/>
+                    <connections>
+                        <outlet property="unitsSegmentedControl" destination="A61-1I-EZ2" id="zol-it-Stc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDs-4y-b7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -368,6 +371,9 @@
                                     <segment title="lbs"/>
                                     <segment title="kg"/>
                                 </segments>
+                                <connections>
+                                    <action selector="unitsChanged:" destination="wDY-Cq-IXA" eventType="valueChanged" id="t1H-XM-gHy"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -447,6 +453,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgramSelectorViewController.h"/>
             <relationships>
                 <relationship kind="action" name="unitsChanged:"/>
+                <relationship kind="outlet" name="unitsSegmentedControl" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
         <class className="SSIIViewDeckController" superclassName="IIViewDeckController">
@@ -460,6 +467,9 @@
         </class>
         <class className="SSSettingsViewController" superclassName="SSMiddleViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unitsChanged:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
