@@ -69,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
+		02852969173D8E8B004A61B3 /* Big Lifts 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Big Lifts 2.entitlements"; sourceTree = "<group>"; };
 		545900095AB2AF5A89E39D44 /* 20-gear-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear-2.png"; sourceTree = "<group>"; };
 		5459002D1484D8897F83B0B0 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
 		54590060552A0C888496833E /* 379-barbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "379-barbell.png"; sourceTree = "<group>"; };
@@ -328,6 +329,7 @@
 		54590EC21714D3433DE0730A /* Big Lifts 2 */ = {
 			isa = PBXGroup;
 			children = (
+				02852969173D8E8B004A61B3 /* Big Lifts 2.entitlements */,
 				024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */,
 				545901561B2BC81D785CE389 /* Supporting Files */,
 				54590412D3B6171940B0E960 /* BLAppDelegate.h */,
@@ -530,6 +532,8 @@
 		545901FF446E7243C03D841F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Big Lifts 2/Big Lifts 2.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stefan Kendall (P8UD8Q34FF)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
@@ -546,6 +550,7 @@
 					"\"${PROJECT_DIR}/Frank\"/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -562,7 +567,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stefan Kendall (P8UD8Q34FF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stefan Kendall (P8UD8Q34FF)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -570,6 +576,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -578,6 +586,8 @@
 		54590834887E8B536E7C1B95 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Big Lifts 2/Big Lifts 2.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stefan Kendall (P8UD8Q34FF)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
@@ -600,6 +610,7 @@
 					"$(FRANK_LDFLAGS)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -650,7 +661,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stefan Kendall (P8UD8Q34FF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stefan Kendall (P8UD8Q34FF)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -665,6 +677,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
