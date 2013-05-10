@@ -2,4 +2,5 @@ language: objective-c
 before_script:
   - brew update
   - brew install xctool
-script: "bundle exec rake test --trace"
+script: 
+  - xctool -project "Big Lifts 2.xcodeproj" test -scheme "Big Lifts 2Tests"
