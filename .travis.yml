@@ -3,4 +3,4 @@ before_script:
   - brew update
   - brew install xctool
 script: 
-  - xctool -project Big\ Lifts\ 2.xcodeproj -scheme Big\ Lifts\ 2Tests test 
+  - bundle exec rake test --trace
