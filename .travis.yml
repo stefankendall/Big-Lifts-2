@@ -3,4 +3,4 @@ before_script:
   - brew update
   - brew install xctool
 script: 
-  - xctool -project "Big Lifts 2.xcodeproj" test -scheme "Big Lifts 2Tests"
+  - xctool -project Big\ Lifts\ 2.xcodeproj -scheme BigLifts2Tests test 
