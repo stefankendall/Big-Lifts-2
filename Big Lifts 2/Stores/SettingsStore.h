@@ -1,15 +1,13 @@
+#import "BLStore.h"
+
 @class Settings;
 
-@interface SettingsStore : NSObject {
-    NSManagedObjectContext *context;
-    NSManagedObjectModel *model;
+@interface SettingsStore : BLStore {
 }
 
+- (NSString *)modelName;
+
 - (Settings *)settings;
-
-- (BOOL)saveChanges;
-
-- (void) empty;
 
 + (SettingsStore *)instance;
 @end
