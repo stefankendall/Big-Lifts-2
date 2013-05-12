@@ -34,9 +34,9 @@
     [NSException raise:NSInternalInconsistencyException format:@"modelName must be set in store"];
 }
 
-- (id) first {
+- (id)first {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [[[ContextManager  model] entitiesByName] objectForKey:[self modelName]];
+    NSEntityDescription *e = [[[ContextManager model] entitiesByName] objectForKey:[self modelName]];
     [request setEntity:e];
 
     NSError *error;
@@ -53,10 +53,13 @@
     }
 }
 
-- (NSArray *) findAll {
+- (NSArray *)findAll {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [[[ContextManager  model] entitiesByName] objectForKey:[self modelName]];
+    NSEntityDescription *e = [[[ContextManager model] entitiesByName] objectForKey:[self modelName]];
     [request setEntity:e];
+
+    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    [request setSortDescriptors:@[sd]];
 
     NSError *error;
     NSArray *result = [[ContextManager context] executeFetchRequest:request error:&error];
@@ -67,7 +70,7 @@
     return result;
 };
 
-- (int) count {
+- (int)count {
     return [[self findAll] count];
 }
 

@@ -6,4 +6,5 @@
 }
 
 @property(nonatomic, strong) NSObject<UITableViewDataSource> *startingWeightTableDataSource;
+@property(nonatomic, strong) NSObject<UITableViewDataSource> *liftsTableDataSource;
 @end

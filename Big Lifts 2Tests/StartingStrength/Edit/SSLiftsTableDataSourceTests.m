@@ -25,7 +25,7 @@
     STAssertEquals(liftCount, [dataSource tableView:nil numberOfRowsInSection:@0], @"");
     NSMutableArray *lifts = [@[] mutableCopy];
     for (int i = 0; i < liftCount; i++) {
-        UITableViewCell *cell = [dataSource tableView:nil cellForRowAtIndexPath:[[NSIndexPath alloc] initWithIndex:(NSUInteger) i]];
+        UITableViewCell *cell = [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         [lifts addObject:cell.textLabel.text];
     }
     return lifts;

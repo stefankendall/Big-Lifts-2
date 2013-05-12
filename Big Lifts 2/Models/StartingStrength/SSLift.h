@@ -1,5 +1,5 @@
 @interface SSLift : NSManagedObject
 @property(nonatomic) NSString *name;
-@property(nonatomic) double weight;
-@property(nonatomic) double order;
+@property(nonatomic) NSNumber * weight;
+@property(nonatomic) NSNumber * order;
 @end

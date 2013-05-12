@@ -3,7 +3,6 @@
 @implementation SSStartingWeightTableDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"Returning rows");
     return 5;
 }
 
@@ -15,5 +14,10 @@
 
     return cell;
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return @"Weight";
+}
+
 
 @end
