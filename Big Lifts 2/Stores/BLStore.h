@@ -5,4 +5,6 @@
 - (void)empty;
 
 - (NSString *) modelName;
+
+- (id) first;
 @end

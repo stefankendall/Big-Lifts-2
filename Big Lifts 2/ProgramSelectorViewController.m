@@ -8,7 +8,7 @@
 - (IBAction)unitsChanged:(id)sender {
     UISegmentedControl *unitsControl = sender;
     NSArray *unitsMapping = @[@"lbs", @"kg"];
-    [[[SettingsStore instance] settings] setUnits:unitsMapping[(NSUInteger) [unitsControl selectedSegmentIndex]]];
+    [[[SettingsStore instance] first] setUnits:unitsMapping[(NSUInteger) [unitsControl selectedSegmentIndex]]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -17,7 +17,7 @@
 }
 
 - (void)reloadData {
-    Settings *settings = [[SettingsStore instance] settings];
+    Settings *settings = [[SettingsStore instance] first];
     NSDictionary *unitsSegments = @{@"lbs" : @0, @"kg" : @1};
     [unitsSegmentedControl setSelectedSegmentIndex:[[unitsSegments objectForKey:settings.units] integerValue]];
 }

@@ -13,15 +13,17 @@
 }
 
 - (void)testSettingsLazyLoadedWithDefaults {
-    Settings *settings = [[SettingsStore instance] settings];
+    Settings *settings = [[SettingsStore instance] first];
     STAssertNotNil(settings, @"");
     STAssertTrue([settings.units isEqualToString:@"lbs"], @"");
 }
 
 - (void)testSettingsCanBeUpdated {
-    Settings *settings = [[SettingsStore instance] settings];
+    Settings *settings = [[SettingsStore instance] first];
     settings.units = @"kg";
-    STAssertEquals([[SettingsStore instance] settings].units, @"kg", @"");
+
+    Settings *nextSettings = [[SettingsStore instance] first];
+    STAssertEquals(nextSettings.units, @"kg", @"");
 }
 
 @end

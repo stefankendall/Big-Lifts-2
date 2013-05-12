@@ -34,4 +34,23 @@
     [NSException raise:NSInternalInconsistencyException format:@"modelName must be set in store"];
 }
 
+- (id) first {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [[[ContextManager  model] entitiesByName] objectForKey:[self modelName]];
+    [request setEntity:e];
+
+    NSError *error;
+    NSArray *result = [[ContextManager context] executeFetchRequest:request error:&error];
+    if (!result) {
+        [NSException raise:@"Fetch Failed" format:@"%@", [error localizedDescription]];
+    }
+
+    if ([result count] == 0) {
+        return nil;
+    }
+    else {
+        return result[0];
+    }
+}
+
 @end

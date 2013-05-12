@@ -7,8 +7,6 @@
 
 - (NSString *)modelName;
 
-- (Settings *)settings;
-
 + (SettingsStore *)instance;
 @end
 

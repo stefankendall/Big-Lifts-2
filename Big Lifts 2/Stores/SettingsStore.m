@@ -16,25 +16,15 @@
     return @"Settings";
 }
 
-- (Settings *)settings {
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [[[ContextManager  model] entitiesByName] objectForKey:@"Settings"];
-    [request setEntity:e];
-
-    NSError *error;
-    NSArray *result = [[ContextManager context] executeFetchRequest:request error:&error];
-    if (!result) {
-        [NSException raise:@"Fetch Failed" format:@"%@", [error localizedDescription]];
-    }
-
-    if ([result count] == 0) {
+- (Settings *)first {
+    Settings *settings = [super first];
+    if (!settings) {
         Settings *defaultSettings = [NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[ContextManager context]];
         [defaultSettings setUnits:@"lbs"];
         return defaultSettings;
     }
-    else {
-        return result[0];
-    }
+
+    return settings;
 }
 
 @end
