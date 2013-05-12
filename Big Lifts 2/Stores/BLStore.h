@@ -7,4 +7,9 @@
 - (NSString *) modelName;
 
 - (id) first;
+
+- (NSArray *) findAll;
+
+- (int) count;
+
 @end

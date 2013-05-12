@@ -53,4 +53,22 @@
     }
 }
 
+- (NSArray *) findAll {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [[[ContextManager  model] entitiesByName] objectForKey:[self modelName]];
+    [request setEntity:e];
+
+    NSError *error;
+    NSArray *result = [[ContextManager context] executeFetchRequest:request error:&error];
+    if (!result) {
+        [NSException raise:@"Fetch Failed" format:@"%@", [error localizedDescription]];
+    }
+
+    return result;
+};
+
+- (int) count {
+    return [[self findAll] count];
+}
+
 @end

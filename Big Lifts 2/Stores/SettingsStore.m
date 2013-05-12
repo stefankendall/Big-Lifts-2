@@ -8,23 +8,21 @@
     static SettingsStore *store = nil;
     if (!store) {
         store = (SettingsStore *) [[super allocWithZone:nil] init];
+        [store setupDefaults];
     }
     return store;
 }
 
-- (NSString *)modelName {
-    return @"Settings";
-}
-
-- (Settings *)first {
-    Settings *settings = [super first];
+- (void)setupDefaults {
+    Settings *settings = [self first];
     if (!settings) {
         Settings *defaultSettings = [NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[ContextManager context]];
         [defaultSettings setUnits:@"lbs"];
-        return defaultSettings;
     }
+}
 
-    return settings;
+- (NSString *)modelName {
+    return @"Settings";
 }
 
 @end

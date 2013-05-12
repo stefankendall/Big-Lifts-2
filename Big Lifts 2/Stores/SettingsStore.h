@@ -8,5 +8,8 @@
 - (NSString *)modelName;
 
 + (SettingsStore *)instance;
+
+- (void) setupDefaults;
+
 @end
 

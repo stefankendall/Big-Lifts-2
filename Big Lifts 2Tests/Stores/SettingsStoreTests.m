@@ -6,6 +6,7 @@
 - (void)setUp {
     [super setUp];
     [[SettingsStore instance] empty];
+    [[SettingsStore instance] setupDefaults];
 }
 
 - (void)tearDown {
@@ -15,7 +16,7 @@
 - (void)testSettingsLazyLoadedWithDefaults {
     Settings *settings = [[SettingsStore instance] first];
     STAssertNotNil(settings, @"");
-    STAssertTrue([settings.units isEqualToString:@"lbs"], @"");
+    STAssertTrue([settings.units isEqualToString:@"lbs"], @"%@");
 }
 
 - (void)testSettingsCanBeUpdated {
