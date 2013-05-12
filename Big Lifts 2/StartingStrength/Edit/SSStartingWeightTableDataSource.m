@@ -1,17 +1,16 @@
 #import "SSStartingWeightTableDataSource.h"
+#import "TextViewCell.h"
+#import "SSLiftStore.h"
 
 @implementation SSStartingWeightTableDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return [[SSLiftStore instance] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SSStartingWeightCell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SSStartingWeightCell"];
-    }
-
+    TextViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TextViewCell"];
+    [cell setBackgroundColor:[UIColor whiteColor]];
     return cell;
 }
 
