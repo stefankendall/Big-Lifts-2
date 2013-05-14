@@ -3,8 +3,8 @@
 extern NSString *kCellTextView_ID;
 
 @interface TextViewCell : UITableViewCell {
-    IBOutlet UITextView *textView;
 }
 
-@property(nonatomic, retain) UITextView *textView;
++ (TextViewCell*) createNewTextCellFromNib;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 @end

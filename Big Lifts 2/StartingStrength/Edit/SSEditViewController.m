@@ -9,11 +9,11 @@
     [super viewDidLoad];
     [self setStartingWeightTableDataSource:[[SSStartingWeightTableDataSource alloc] init]];
     [self setLiftsTableDataSource:[[SSLiftsTableDataSource alloc] init]];
-    [startingWeightTableView setDataSource:startingWeightTableDataSource];
-    [ssLiftsTableView setDataSource:liftsTableDataSource];
 
-    UINib *nib = [UINib nibWithNibName:@"TextViewCell" bundle:nil];
-    [startingWeightTableView registerNib:nib forCellReuseIdentifier:@"TextViewCell"];
+    [startingWeightTableView setDataSource:startingWeightTableDataSource];
+    [startingWeightTableDataSource setTableView:startingWeightTableView];
+
+    [ssLiftsTableView setDataSource:liftsTableDataSource];
 
     UITapGestureRecognizer *singleFingerTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self

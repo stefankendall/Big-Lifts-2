@@ -12,6 +12,7 @@
 		54590066ACA0290973FFC443 /* ContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590336DD8FB6A778EF2698 /* ContextManager.m */; };
 		545900AD52D7540551EE8AED /* SettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590ADCA111CB4F1040C11C /* SettingsStore.m */; };
 		545900D19AB2CAB42AC0BAFD /* 20-gear-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 545900095AB2AF5A89E39D44 /* 20-gear-2.png */; };
+		54590108DA72BF78E2064A98 /* SSStartingWeightTableDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903F95FB526FD91F657D4 /* SSStartingWeightTableDataSourceTests.m */; };
 		545901A747A04C98E1814122 /* Big_Lifts_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54590275EBE03377D340BF57 /* Big_Lifts_2.xcdatamodeld */; };
 		545901F1C211B38F7E4B9BB3 /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545908296D61D41B63A1EFF4 /* TextViewCell.xib */; };
 		545901FAC28BAD8D18A50523 /* SSIIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A7CCBB6569D666FD0B5 /* SSIIViewDeckController.m */; };
@@ -100,6 +101,7 @@
 		5459032753D7A2BDDE78FB1B /* NavTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTableViewCell.m; sourceTree = "<group>"; };
 		54590336DD8FB6A778EF2698 /* ContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextManager.m; sourceTree = "<group>"; };
 		545903E2DD93D263CF67DC7D /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
+		545903F95FB526FD91F657D4 /* SSStartingWeightTableDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStartingWeightTableDataSourceTests.m; sourceTree = "<group>"; };
 		54590412D3B6171940B0E960 /* BLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLAppDelegate.h; sourceTree = "<group>"; };
 		5459044A9A11131A0C5AD182 /* 16-line-chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-line-chart@2x.png"; sourceTree = "<group>"; };
 		545904DC5057EDC75C21A989 /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench.png"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		545907E7564CB57FA47E3BCA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5459081D6A3C5424DED03BF1 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
 		545908296D61D41B63A1EFF4 /* TextViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewCell.xib; sourceTree = "<group>"; };
+		5459085F4A23DE15D32DBBB9 /* SSStartingWeightTableDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStartingWeightTableDataSourceTests.h; sourceTree = "<group>"; };
 		5459086609B635143DD9611F /* ProgramSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramSelectorViewController.h; sourceTree = "<group>"; };
 		5459088E695A0D20ECA09464 /* Big Lifts 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Lifts 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5459090EE999E102A91A8634 /* SSLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLift.h; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 			children = (
 				54590A2090BE2CB988B38C72 /* SSLiftsTableDataSourceTests.m */,
 				54590EA87512AFEF11C6DC12 /* SSLiftsTableDataSourceTests.h */,
+				545903F95FB526FD91F657D4 /* SSStartingWeightTableDataSourceTests.m */,
+				5459085F4A23DE15D32DBBB9 /* SSStartingWeightTableDataSourceTests.h */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -590,6 +595,7 @@
 				02F3F675173FE1BB0047305A /* SSLiftStoreTests.m in Sources */,
 				54590817CDA66B57595D48B4 /* SettingsStoreTests.m in Sources */,
 				54590874722A900F1D5B37E3 /* SSLiftsTableDataSourceTests.m in Sources */,
+				54590108DA72BF78E2064A98 /* SSStartingWeightTableDataSourceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
