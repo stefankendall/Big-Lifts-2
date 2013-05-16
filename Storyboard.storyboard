@@ -375,6 +375,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="144" id="DLj-92-mok"/>
+                                            <constraint firstAttribute="height" constant="276" id="nT4-nz-uuw"/>
                                         </constraints>
                                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -415,7 +416,7 @@
                                                 </view>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FtP-Di-1fw">
-                                                <rect key="frame" x="0.0" y="244" width="144" height="45"/>
+                                                <rect key="frame" x="0.0" y="244" width="144" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="124" height="43"/>
@@ -425,14 +426,29 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyq-Uj-cuc">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Plan Workouts">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="OAS-Xf-qwu" kind="push" id="DaM-fl-JKj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Vyq-Uj-cuc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="1xL-PW-pif"/>
                                     <constraint firstItem="wBN-QU-alh" firstAttribute="leading" secondItem="fLC-PS-S1Y" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="47A-5o-3IJ"/>
                                     <constraint firstItem="fLC-PS-S1Y" firstAttribute="leading" secondItem="PKS-FG-wZ2" secondAttribute="leading" type="default" id="BxT-t8-U7u"/>
-                                    <constraint firstItem="wBN-QU-alh" firstAttribute="bottom" secondItem="PKS-FG-wZ2" secondAttribute="bottom" type="default" id="FjL-da-Eg6"/>
+                                    <constraint firstItem="Vyq-Uj-cuc" firstAttribute="leading" secondItem="PKS-FG-wZ2" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="DS1-Q9-xEn"/>
                                     <constraint firstItem="wBN-QU-alh" firstAttribute="top" secondItem="PKS-FG-wZ2" secondAttribute="top" type="default" id="LfB-Sb-bVp"/>
-                                    <constraint firstItem="fLC-PS-S1Y" firstAttribute="bottom" secondItem="PKS-FG-wZ2" secondAttribute="bottom" type="default" id="iXd-ql-SeY"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vyq-Uj-cuc" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="PZ8-c3-WJB"/>
+                                    <constraint firstItem="wBN-QU-alh" firstAttribute="bottom" secondItem="fLC-PS-S1Y" secondAttribute="bottom" type="default" id="T4M-tE-706"/>
                                     <constraint firstItem="wBN-QU-alh" firstAttribute="trailing" secondItem="PKS-FG-wZ2" secondAttribute="trailing" type="default" id="nqV-Up-qyl"/>
                                     <constraint firstItem="fLC-PS-S1Y" firstAttribute="top" secondItem="PKS-FG-wZ2" secondAttribute="top" type="default" id="v9k-lK-1U5"/>
                                 </constraints>
@@ -440,12 +456,12 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="PKS-FG-wZ2" firstAttribute="centerY" secondItem="2Gg-Bf-2xk" secondAttribute="centerY" type="default" id="AIo-HQ-7jf"/>
                             <constraint firstItem="PKS-FG-wZ2" firstAttribute="leading" secondItem="2Gg-Bf-2xk" secondAttribute="leading" type="default" id="FiR-YU-kXn"/>
-                            <constraint firstAttribute="bottom" secondItem="PKS-FG-wZ2" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="Jg9-Mt-AqL"/>
                             <constraint firstItem="PKS-FG-wZ2" firstAttribute="trailing" secondItem="2Gg-Bf-2xk" secondAttribute="trailing" type="default" id="NCL-YK-rhG"/>
+                            <constraint firstItem="PKS-FG-wZ2" firstAttribute="bottom" secondItem="2Gg-Bf-2xk" secondAttribute="bottom" type="default" id="YnR-WZ-6tm"/>
                             <constraint firstItem="PKS-FG-wZ2" firstAttribute="top" secondItem="2Gg-Bf-2xk" secondAttribute="top" type="default" id="byS-a7-hS0"/>
                             <constraint firstItem="PKS-FG-wZ2" firstAttribute="centerX" secondItem="2Gg-Bf-2xk" secondAttribute="centerX" type="default" id="eh5-mj-iyW"/>
-                            <constraint firstItem="PKS-FG-wZ2" firstAttribute="centerY" secondItem="2Gg-Bf-2xk" secondAttribute="centerY" type="default" id="wxK-ZZ-0lE"/>
                         </constraints>
                     </scrollView>
                     <navigationItem key="navigationItem" title="Edit" id="BjB-8T-ukD">
@@ -464,6 +480,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBW-aA-s1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1689" y="-1374"/>
+        </scene>
+        <!--Plan Workouts View Controller - Plan Workouts-->
+        <scene sceneID="otn-8j-QgC">
+            <objects>
+                <viewController id="OAS-Xf-qwu" customClass="SSPlanWorkoutsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PED-fm-iIB">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="RAC-Pl-TPc">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fAn-8v-dSD">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="MFE-gu-Z0f">
+                                        <rect key="frame" x="0.0" y="91" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qrc-wQ-zY8">
+                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="MLs-sp-X2j">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="Ros-lz-GP1"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4Oh-eE-wJL">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BzE-yf-4E8">
+                                        <rect key="frame" x="0.0" y="91" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AVm-FE-f4K">
+                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MLs-sp-X2j" firstAttribute="trailing" secondItem="PED-fm-iIB" secondAttribute="trailing" type="default" id="35W-hk-waj"/>
+                            <constraint firstItem="MLs-sp-X2j" firstAttribute="top" secondItem="RAC-Pl-TPc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CSG-uT-OVz"/>
+                            <constraint firstItem="MLs-sp-X2j" firstAttribute="top" secondItem="PED-fm-iIB" secondAttribute="top" constant="198" id="Ft6-yC-U5L"/>
+                            <constraint firstItem="RAC-Pl-TPc" firstAttribute="top" secondItem="PED-fm-iIB" secondAttribute="top" type="default" id="KWc-rP-21n"/>
+                            <constraint firstItem="RAC-Pl-TPc" firstAttribute="leading" secondItem="PED-fm-iIB" secondAttribute="leading" type="default" id="XfB-DM-9Ya"/>
+                            <constraint firstItem="MLs-sp-X2j" firstAttribute="leading" secondItem="PED-fm-iIB" secondAttribute="leading" type="default" id="hhW-r5-fVA"/>
+                            <constraint firstItem="RAC-Pl-TPc" firstAttribute="trailing" secondItem="PED-fm-iIB" secondAttribute="trailing" type="default" id="mxd-AV-ZGX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Plan Workouts" id="caT-m5-Vdo"/>
+                    <connections>
+                        <outlet property="workoutATableView" destination="RAC-Pl-TPc" id="mil-h1-3cE"/>
+                        <outlet property="workoutBTableView" destination="MLs-sp-X2j" id="AvV-wI-XHG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cbb-gy-owz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689" y="-2032"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CZe-Rh-odN">
@@ -585,7 +698,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSEditViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="mainView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="ssLiftsTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="startingWeightTableView" candidateClass="UITableView"/>
             </relationships>
@@ -595,6 +707,15 @@
         </class>
         <class className="SSMiddleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSMiddleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:"/>
+            </relationships>
+        </class>
+        <class className="SSPlanWorkoutsViewController" superclassName="SSMiddleViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="workoutATableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="SSSettingsViewController" superclassName="SSMiddleViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSSettingsViewController.h"/>
