@@ -10,6 +10,8 @@
 
 - (NSArray *) findAll;
 
+- (id) atIndex: (int) index;
+
 - (int) count;
 
 @end

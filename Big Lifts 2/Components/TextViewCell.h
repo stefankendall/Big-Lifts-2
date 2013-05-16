@@ -7,4 +7,5 @@ extern NSString *kCellTextView_ID;
 
 + (TextViewCell*) createNewTextCellFromNib;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 @end

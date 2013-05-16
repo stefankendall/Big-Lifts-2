@@ -31,7 +31,4 @@
     return lifts;
 }
 
-- (void)testSettingsCanBeUpdated {
-}
-
 @end

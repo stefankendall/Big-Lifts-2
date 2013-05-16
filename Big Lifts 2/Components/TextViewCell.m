@@ -3,7 +3,7 @@
 NSString *kCellTextView_ID = @"CellTextView_ID";
 
 @implementation TextViewCell
-@synthesize textView;
+@synthesize textView, indexPath;
 
 + (TextViewCell *)createNewTextCellFromNib {
     NSArray *nibContents = [[NSBundle mainBundle] loadNibNamed:@"TextViewCell" owner:self options:nil];

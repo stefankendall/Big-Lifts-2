@@ -3,7 +3,7 @@
 #import "SSLiftsTableDataSource.h"
 
 @implementation SSEditViewController
-@synthesize startingWeightTableDataSource, liftsTableDataSource;
+@synthesize startingWeightTableDataSource, liftsTableDataSource, startingWeightTableDelegate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -11,8 +11,8 @@
     [self setLiftsTableDataSource:[[SSLiftsTableDataSource alloc] init]];
 
     [startingWeightTableView setDataSource:startingWeightTableDataSource];
-    [startingWeightTableDataSource setTableView:startingWeightTableView];
 
+    [startingWeightTableView setDelegate:startingWeightTableDelegate];
     [ssLiftsTableView setDataSource:liftsTableDataSource];
 
     UITapGestureRecognizer *singleFingerTap =

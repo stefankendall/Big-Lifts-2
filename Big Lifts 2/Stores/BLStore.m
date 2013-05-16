@@ -68,6 +68,10 @@
     }
 
     return result;
+}
+
+- (id)atIndex: (int) index {
+    return [self findAll][(NSUInteger) index];
 };
 
 - (int)count {

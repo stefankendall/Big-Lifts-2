@@ -1,4 +1,4 @@
 @interface SSStartingWeightTableDataSource : NSObject <UITableViewDataSource, UITextViewDelegate>
 
-@property(nonatomic, weak) UITableView *tableView;
+@property(nonatomic, strong) NSMutableDictionary *cellMapping;
 @end
