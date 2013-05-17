@@ -30,6 +30,11 @@
     }
 }
 
+- (void)setupDefaults {
+    [NSException raise:NSInternalInconsistencyException format:@"setupDefaults not defined"];
+}
+
+
 - (NSString *)modelName {
     [NSException raise:NSInternalInconsistencyException format:@"modelName must be set in store"];
 }

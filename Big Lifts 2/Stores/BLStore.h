@@ -4,6 +4,8 @@
 
 - (void)empty;
 
+- (void) setupDefaults;
+
 - (NSString *) modelName;
 
 - (id) first;

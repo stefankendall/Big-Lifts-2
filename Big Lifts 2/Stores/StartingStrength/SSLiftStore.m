@@ -9,7 +9,7 @@
     return @"SSLift";
 }
 
-+ (SSLiftStore *)instance {
++ (BLStore *)instance {
     static SSLiftStore *store = nil;
     if (!store) {
         store = (SSLiftStore *) [[super allocWithZone:nil] init];

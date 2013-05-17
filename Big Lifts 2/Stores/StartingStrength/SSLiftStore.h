@@ -2,8 +2,6 @@
 
 @interface SSLiftStore : BLStore
 
-+ (SSLiftStore *) instance;
-
-- (void) setupDefaults;
++ (BLStore *) instance;
 
 @end
