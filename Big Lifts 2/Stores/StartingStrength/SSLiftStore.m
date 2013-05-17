@@ -9,15 +9,6 @@
     return @"SSLift";
 }
 
-+ (BLStore *)instance {
-    static SSLiftStore *store = nil;
-    if (!store) {
-        store = (SSLiftStore *) [[super allocWithZone:nil] init];
-        [store setupDefaults];
-    }
-    return store;
-}
-
 - (void)setupDefaults {
     if ([self count] == 0) {
         [self createLift:@"Bench" withOrder:0];

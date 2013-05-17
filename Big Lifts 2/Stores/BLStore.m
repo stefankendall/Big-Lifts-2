@@ -75,12 +75,26 @@
     return result;
 }
 
-- (id)atIndex: (int) index {
+- (id)atIndex:(int)index {
     return [self findAll][(NSUInteger) index];
 };
 
 - (int)count {
     return [[self findAll] count];
 }
+
++ (instancetype)instance {
+    static NSMutableDictionary *stores = nil;
+    if (!stores) {
+        stores = [@{} mutableCopy];
+    }
+    NSString *key = NSStringFromClass([self class]);
+    if (![stores objectForKey:key]) {
+        [stores setObject:[self new] forKey:key];
+    }
+
+    return [stores objectForKey:key];
+}
+
 
 @end

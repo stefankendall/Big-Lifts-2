@@ -4,15 +4,6 @@
 
 @implementation SettingsStore
 
-+ (SettingsStore *)instance {
-    static SettingsStore *store = nil;
-    if (!store) {
-        store = (SettingsStore *) [[super allocWithZone:nil] init];
-        [store setupDefaults];
-    }
-    return store;
-}
-
 - (void)setupDefaults {
     Settings *settings = [self first];
     if (!settings) {

@@ -16,4 +16,6 @@
 
 - (int) count;
 
++(instancetype) instance;
+
 @end
