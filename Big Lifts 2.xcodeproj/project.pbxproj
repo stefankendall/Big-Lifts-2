@@ -22,6 +22,7 @@
 		545902DB9F74391BE899FB11 /* NavTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459032753D7A2BDDE78FB1B /* NavTableViewCell.m */; };
 		545902DBF4BFDB74EE3B1E44 /* SSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A9BCBEE999725C40F30 /* SSWorkout.m */; };
 		545902EFCD9F9F1EBA65EAD0 /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */; };
+		545902F87F07112151B745AC /* SSWorkoutDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C9BF0AB56C16085532C /* SSWorkoutDataSourceTests.m */; };
 		5459034104050CCA10D03CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
 		545903749182E908E465D4C9 /* 53-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590A61816CFB700F507920 /* 53-house@2x.png */; };
 		545903888DA897CA2B395E59 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459090F9F9DFF74FA014F71 /* Settings.m */; };
@@ -148,6 +149,7 @@
 		54590A2090BE2CB988B38C72 /* SSLiftsTableDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftsTableDataSourceTests.m; sourceTree = "<group>"; };
 		54590A238FB2575C236D3DB6 /* NavEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavEditCell.h; sourceTree = "<group>"; };
 		54590A3F41CA62283F2FC9E1 /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench@2x.png"; sourceTree = "<group>"; };
+		54590A4229060377F027452A /* SSWorkoutDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkoutDataSourceTests.h; sourceTree = "<group>"; };
 		54590A61816CFB700F507920 /* 53-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house@2x.png"; sourceTree = "<group>"; };
 		54590A7CCBB6569D666FD0B5 /* SSIIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSIIViewDeckController.m; sourceTree = "<group>"; };
 		54590A86BB4E1503AD77E031 /* SSWorkoutDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkoutDataSource.m; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		54590C5452E6F21C50F39FD4 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
 		54590C8931AC1426A995BCC7 /* TextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCell.m; sourceTree = "<group>"; };
 		54590C972A28B99BD9BE45E6 /* 89-dumbells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "89-dumbells.png"; sourceTree = "<group>"; };
+		54590C9BF0AB56C16085532C /* SSWorkoutDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkoutDataSourceTests.m; sourceTree = "<group>"; };
 		54590C9F3D711C15FDCC7F82 /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
 		54590CA332CE6FA216724598 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		54590D07EB157A9007B2FEA1 /* ContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextManager.h; sourceTree = "<group>"; };
@@ -275,6 +278,15 @@
 			path = StartingStrength;
 			sourceTree = "<group>";
 		};
+		5459033BAA0F1A552D3195C7 /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				54590C9BF0AB56C16085532C /* SSWorkoutDataSourceTests.m */,
+				54590A4229060377F027452A /* SSWorkoutDataSourceTests.h */,
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
 		545903726874A6F8AD829D7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +379,7 @@
 				54590EA87512AFEF11C6DC12 /* SSLiftsTableDataSourceTests.h */,
 				54590781EBF158EF8106396D /* SSStartingWeightTableDataSourceTests.m */,
 				54590894E606C5A3054ADCB1 /* SSStartingWeightTableDataSourceTests.h */,
+				5459033BAA0F1A552D3195C7 /* Plan */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -630,6 +643,7 @@
 				54590874722A900F1D5B37E3 /* SSLiftsTableDataSourceTests.m in Sources */,
 				54590B8C588FBDDBEF8A316C /* SSStartingWeightTableDataSourceTests.m in Sources */,
 				54590FF128273EE6F174AC06 /* SSWorkoutStoreTests.m in Sources */,
+				545902F87F07112151B745AC /* SSWorkoutDataSourceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
