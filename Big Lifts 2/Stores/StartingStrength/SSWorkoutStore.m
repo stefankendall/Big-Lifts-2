@@ -1,5 +1,7 @@
 #import "BLStore.h"
 #import "SSWorkoutStore.h"
+#import "SSWorkout.h"
+#import "ContextManager.h"
 
 @implementation SSWorkoutStore
 
@@ -9,7 +11,11 @@
 
 - (void)setupDefaults {
     if ([self count] == 0) {
-        NSLog(@"Create a workout brah");
+        SSWorkout *liftA = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[ContextManager context]];
+        [liftA setName:@"A"];
+
+        SSWorkout *liftB = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[ContextManager context]];
+        [liftB setName:@"B"];
     }
 }
 

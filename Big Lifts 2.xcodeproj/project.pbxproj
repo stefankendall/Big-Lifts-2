@@ -20,6 +20,7 @@
 		5459022211FD6EA0E5AD6495 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C5452E6F21C50F39FD4 /* IISideController.m */; };
 		5459024E86DEC10F0B6AE2EB /* 16-line-chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5459044A9A11131A0C5AD182 /* 16-line-chart@2x.png */; };
 		545902DB9F74391BE899FB11 /* NavTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459032753D7A2BDDE78FB1B /* NavTableViewCell.m */; };
+		545902DBF4BFDB74EE3B1E44 /* SSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A9BCBEE999725C40F30 /* SSWorkout.m */; };
 		545902EFCD9F9F1EBA65EAD0 /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */; };
 		5459034104050CCA10D03CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
 		545903749182E908E465D4C9 /* 53-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590A61816CFB700F507920 /* 53-house@2x.png */; };
@@ -91,6 +92,7 @@
 		54590018E207CF445CE30943 /* SSPlanWorkoutsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPlanWorkoutsViewController.m; sourceTree = "<group>"; };
 		5459002D1484D8897F83B0B0 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
 		54590060552A0C888496833E /* 379-barbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "379-barbell.png"; sourceTree = "<group>"; };
+		545900BBA3B4304E1C2E2F20 /* SSWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkout.h; sourceTree = "<group>"; };
 		545901288DAAC7C161DA9DC9 /* Big Lifts 2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big Lifts 2Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5459016FF4A109F056C1B34F /* SSLiftsTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftsTableDataSource.m; sourceTree = "<group>"; };
 		54590171A174F8AC533C25E4 /* SSIIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIIViewDeckController.h; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		54590A7CCBB6569D666FD0B5 /* SSIIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSIIViewDeckController.m; sourceTree = "<group>"; };
 		54590A86BB4E1503AD77E031 /* SSWorkoutDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkoutDataSource.m; sourceTree = "<group>"; };
 		54590A8D1A480E51755AE8D3 /* NavSettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavSettingsCell.m; sourceTree = "<group>"; };
+		54590A9BCBEE999725C40F30 /* SSWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkout.m; sourceTree = "<group>"; };
 		54590AB3BF06EC1E33E723E2 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
 		54590ADCA111CB4F1040C11C /* SettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsStore.m; sourceTree = "<group>"; };
 		54590B18C50119F99FB04420 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 			children = (
 				5459090EE999E102A91A8634 /* SSLift.h */,
 				5459078ECFFA12F224688B56 /* SSLift.m */,
+				545900BBA3B4304E1C2E2F20 /* SSWorkout.h */,
+				54590A9BCBEE999725C40F30 /* SSWorkout.m */,
 			);
 			path = StartingStrength;
 			sourceTree = "<group>";
@@ -660,6 +665,7 @@
 				02DAE24F1744755A001F31C2 /* SSPlanWorkoutsViewController.m in Sources */,
 				54590CA2FCA6F68781EDA49A /* SSWorkoutDataSource.m in Sources */,
 				5459009727E871063CC713D4 /* SSWorkoutStore.m in Sources */,
+				545902DBF4BFDB74EE3B1E44 /* SSWorkout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

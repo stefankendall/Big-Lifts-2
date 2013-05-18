@@ -85,9 +85,12 @@
 
 + (instancetype)instance {
     static NSMutableDictionary *stores = nil;
-    if (!stores) {
+    static dispatch_once_t onceToken = 0;
+
+    dispatch_once(&onceToken, ^{
         stores = [@{} mutableCopy];
-    }
+    });
+
     NSString *key = NSStringFromClass([self class]);
     if (![stores objectForKey:key]) {
         [stores setObject:[self new] forKey:key];
