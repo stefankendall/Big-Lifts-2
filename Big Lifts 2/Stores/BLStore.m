@@ -63,8 +63,10 @@
     NSEntityDescription *e = [[[ContextManager model] entitiesByName] objectForKey:[self modelName]];
     [request setEntity:e];
 
-    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-    [request setSortDescriptors:@[sd]];
+    if ([[e propertiesByName] objectForKey:@"order"]) {
+        NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+        [request setSortDescriptors:@[sd]];
+    }
 
     NSError *error;
     NSArray *result = [[ContextManager context] executeFetchRequest:request error:&error];
@@ -78,7 +80,7 @@
 - (id)findBy:(NSPredicate *)predicate {
     NSArray *all = [self findAll];
     NSArray *results = [all filteredArrayUsingPredicate:predicate];
-    if( results.count != 1 ){
+    if (results.count != 1) {
         [NSException raise:@"Did not find exactly one record" format:@""];
     }
 
@@ -104,7 +106,11 @@
 
     NSString *key = NSStringFromClass([self class]);
     if (![stores objectForKey:key]) {
-        [stores setObject:[self new] forKey:key];
+        BLStore *store = [self new];
+        [stores setObject:store forKey:key];
+        if ([store count] == 0) {
+            [store setupDefaults];
+        }
     }
 
     return [stores objectForKey:key];
