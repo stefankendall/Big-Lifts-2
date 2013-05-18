@@ -25,4 +25,10 @@
     STAssertTrue([[lifts[4] performSelector:@selector(name)] isEqualToString:@"Squat"], @"");
 }
 
+- (void)testLiftsCanBeFoundByName {
+    SSLiftStore *store = [SSLiftStore instance];
+    SSLift *lift = [store findBy:[NSPredicate predicateWithFormat:@"name == \"Bench\""]];
+    STAssertTrue([lift.name isEqualToString:@"Bench"], @"");
+}
+
 @end

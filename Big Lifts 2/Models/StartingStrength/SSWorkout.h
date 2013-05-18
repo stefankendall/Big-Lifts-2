@@ -1,4 +1,5 @@
 @interface SSWorkout : NSManagedObject
 @property(nonatomic) NSString *name;
-@property(nonatomic) NSOrderedSet *lifts;
+@property(nonatomic) NSMutableOrderedSet *lifts;
+@property(nonatomic) NSNumber *order;
 @end

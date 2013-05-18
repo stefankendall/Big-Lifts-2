@@ -75,6 +75,17 @@
     return result;
 }
 
+- (id)findBy:(NSPredicate *)predicate {
+    NSArray *all = [self findAll];
+    NSArray *results = [all filteredArrayUsingPredicate:predicate];
+    if( results.count != 1 ){
+        [NSException raise:@"Did not find exactly one record" format:@""];
+    }
+
+    return results[0];
+}
+
+
 - (id)atIndex:(int)index {
     return [self findAll][(NSUInteger) index];
 };

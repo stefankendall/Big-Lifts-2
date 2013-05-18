@@ -12,6 +12,8 @@
 
 - (NSArray *) findAll;
 
+- (id) findBy: (NSPredicate *) predicate;
+
 - (id) atIndex: (int) index;
 
 - (int) count;
