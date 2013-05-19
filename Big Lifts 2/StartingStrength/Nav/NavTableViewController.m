@@ -4,6 +4,7 @@
 #import "NavSetupReturnCell.h"
 #import "NavSettingsCell.h"
 #import "NavEditCell.h"
+#import "NavLiftCell.h"
 
 @implementation NavTableViewController
 
@@ -28,6 +29,8 @@
         [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssSettingsViewController"]];
     } else if ([cell isKindOfClass:NavEditCell.class]){
         [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssEditViewController"]];
+    } else if ([cell isKindOfClass:NavLiftCell.class]){
+        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssLiftViewController"]];
     }
 }
 
