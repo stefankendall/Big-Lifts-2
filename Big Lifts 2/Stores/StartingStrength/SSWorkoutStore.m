@@ -39,17 +39,17 @@
     [ssWorkout.workouts addObject:[self createWorkout:deadlift withSets:1 withReps:5]];
 }
 
-- (Workout *)createWorkout:(SSLift *)squat withSets:(int)sets withReps:(int)reps {
-    Workout *squatWorkout = [[WorkoutStore instance] create];
+- (Workout *)createWorkout:(SSLift *)lift withSets:(int)sets withReps:(int)reps {
+    Workout *workout = [[WorkoutStore instance] create];
 
     for (int i = 0; i < sets; i++) {
-        Set *squatSet = [[SetStore instance] create];
-        squatSet.lift = squat;
-        squatSet.reps = [NSNumber numberWithInt:reps];
-        [squatWorkout.sets addObject:squatSet];
+        Set *set = [[SetStore instance] create];
+        set.lift = lift;
+        set.reps = [NSNumber numberWithInt:reps];
+        [workout.sets addObject:set];
     }
 
-    return squatWorkout;
+    return workout;
 }
 
 - (void)setupWorkoutB:(SSWorkout *)ssWorkout {
