@@ -1,5 +1,7 @@
 @interface BLStore : NSObject
 
+- (id) create;
+
 - (void)contentChange:(NSNotification *)note;
 
 - (void)empty;

@@ -2,12 +2,14 @@
 #import "SSWorkoutStore.h"
 #import "SSWorkout.h"
 #import "SSLift.h"
+#import "Workout.h"
+#import "Set.h"
 
 @implementation SSWorkoutDataSource
 @synthesize name;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[self getWorkout] lifts] count];
+    return [[[self getWorkout] workouts] count];
 }
 
 - (id)initWithName:(NSString *)name1 {
@@ -27,7 +29,9 @@
     }
 
     SSWorkout *workout = [self getWorkout];
-    SSLift *lift = workout.lifts[(NSUInteger) [indexPath row]];
+    Workout *firstWorkout = workout.workouts[0];
+    Set * firstSet = firstWorkout.sets[0];
+    SSLift *lift = (SSLift *) firstSet.lift;
 
     [[cell textLabel] setText:lift.name];
     [cell setBackgroundColor:[UIColor whiteColor]];
@@ -47,7 +51,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     }
 
     SSWorkout *workout = [self getWorkout];
-    [workout.lifts exchangeObjectAtIndex:(NSUInteger) [sourceIndexPath row] withObjectAtIndex:(NSUInteger) [destinationIndexPath row]];
+    [workout.workouts exchangeObjectAtIndex:(NSUInteger) [sourceIndexPath row] withObjectAtIndex:(NSUInteger) [destinationIndexPath row]];
 }
 
 - (SSWorkout *)getWorkout {

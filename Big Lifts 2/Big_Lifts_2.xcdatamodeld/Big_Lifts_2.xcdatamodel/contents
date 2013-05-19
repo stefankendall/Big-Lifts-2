@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Lift" isAbstract="YES" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Set" syncable="YES">
+        <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="lift" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Lift" syncable="YES"/>
+    </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES">
         <attribute name="units" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="SSLift" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
+    <entity name="SSLift" representedClassName="SSLift" parentEntity="Lift" syncable="YES">
         <attribute name="order" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="SSWorkout" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="lifts" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SSLift" syncable="YES"/>
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Workout" syncable="YES">
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Set" syncable="YES"/>
     </entity>
     <elements>
         <element name="Settings" positionX="160" positionY="192" width="128" height="60"/>
-        <element name="SSLift" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="SSLift" positionX="160" positionY="192" width="128" height="75"/>
         <element name="SSWorkout" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Set" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="Lift" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="Workout" positionX="160" positionY="192" width="128" height="60"/>
     </elements>
 </model>

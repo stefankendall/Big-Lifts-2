@@ -1,5 +1,6 @@
-@interface SSLift : NSManagedObject
-@property(nonatomic) NSString *name;
-@property(nonatomic) NSNumber * weight;
-@property(nonatomic) NSNumber * order;
+#import "Lift.h"
+
+@interface SSLift : Lift
+@property(nonatomic) NSNumber *weight;
+@property(nonatomic) NSNumber *order;
 @end

@@ -5,9 +5,5 @@
 @interface SettingsStore : BLStore {
 }
 
-- (NSString *)modelName;
-
-- (void) setupDefaults;
-
 @end
 

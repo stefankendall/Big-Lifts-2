@@ -4,6 +4,10 @@
 #import "ContextManager.h"
 #import "SSLiftStore.h"
 #import "SSLift.h"
+#import "Set.h"
+#import "Workout.h"
+#import "SetStore.h"
+#import "WorkoutStore.h"
 
 @implementation SSWorkoutStore
 
@@ -25,24 +29,37 @@
     }
 }
 
-- (void)setupWorkoutA:(SSWorkout *)workout {
+- (void)setupWorkoutA:(SSWorkout *)ssWorkout {
     SSLift *squat = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Squat"]];
     SSLift *bench = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Bench"]];
     SSLift *deadlift = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Deadlift"]];
 
-    [workout.lifts addObject:squat];
-    [workout.lifts addObject:bench];
-    [workout.lifts addObject:deadlift];
+    [ssWorkout.workouts addObject:[self createWorkout:squat withSets:3 withReps:5]];
+    [ssWorkout.workouts addObject:[self createWorkout:bench withSets:3 withReps:5]];
+    [ssWorkout.workouts addObject:[self createWorkout:deadlift withSets:1 withReps:5]];
 }
 
-- (void)setupWorkoutB:(SSWorkout *)workout {
+- (Workout *)createWorkout:(SSLift *)squat withSets:(int)sets withReps:(int)reps {
+    Workout *squatWorkout = [[WorkoutStore instance] create];
+
+    for (int i = 0; i < sets; i++) {
+        Set *squatSet = [[SetStore instance] create];
+        squatSet.lift = squat;
+        squatSet.reps = [NSNumber numberWithInt:reps];
+        [squatWorkout.sets addObject:squatSet];
+    }
+
+    return squatWorkout;
+}
+
+- (void)setupWorkoutB:(SSWorkout *)ssWorkout {
     SSLift *squat = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Squat"]];
     SSLift *press = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Press"]];
     SSLift *powerClean = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Power Clean"]];
 
-    [workout.lifts addObject:squat];
-    [workout.lifts addObject:press];
-    [workout.lifts addObject:powerClean];
+    [ssWorkout.workouts addObject:[self createWorkout:squat withSets:3 withReps:5]];
+    [ssWorkout.workouts addObject:[self createWorkout:press withSets:3 withReps:5]];
+    [ssWorkout.workouts addObject:[self createWorkout:powerClean withSets:5 withReps:3]];
 }
 
 

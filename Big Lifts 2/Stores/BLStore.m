@@ -17,6 +17,10 @@
 }
 
 
+- (id)create {
+    return [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[ContextManager context]];
+}
+
 - (void)contentChange:(NSNotification *)note {
     [[ContextManager context] mergeChangesFromContextDidSaveNotification:note];
 }
@@ -36,7 +40,6 @@
 }
 
 - (void)setupDefaults {
-    [NSException raise:NSInternalInconsistencyException format:@"setupDefaults not defined"];
 }
 
 
