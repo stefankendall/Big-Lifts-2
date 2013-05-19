@@ -21,7 +21,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TextViewCell *cell = (TextViewCell *) [tableView dequeueReusableCellWithIdentifier:kCellTextView_ID];
+    TextViewCell *cell = (TextViewCell *) [tableView dequeueReusableCellWithIdentifier:@"TextViewCell"];
 
     if (cell == nil) {
         cell = [TextViewCell createNewTextCellFromNib];

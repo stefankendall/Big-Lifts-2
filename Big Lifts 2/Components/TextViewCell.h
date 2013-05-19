@@ -1,11 +1,9 @@
 #import <UIKit/UIKit.h>
+#import "CustomTableViewCell.h"
 
-extern NSString *kCellTextView_ID;
-
-@interface TextViewCell : UITableViewCell {
+@interface TextViewCell : CustomTableViewCell {
 }
 
-+ (TextViewCell*) createNewTextCellFromNib;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 @end

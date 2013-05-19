@@ -419,7 +419,7 @@
                                                 </view>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FtP-Di-1fw">
-                                                <rect key="frame" x="0.0" y="244" width="160" height="44"/>
+                                                <rect key="frame" x="0.0" y="244" width="160" height="45"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="140" height="43"/>
@@ -612,24 +612,83 @@
             </objects>
             <point key="canvasLocation" x="2281" y="-2092"/>
         </scene>
-        <!--Lift View Controller-->
+        <!--Lift View Controller - Workout-->
         <scene sceneID="s5z-gm-jFf">
             <objects>
                 <viewController id="irZ-Vn-vto" customClass="SSLiftViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TRS-Qo-XwQ">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mq5-5v-638">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="eqU-sQ-cGb"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8Je-qV-Ecz">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="S0J-Dc-Zhx">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="j5i-P6-Unp">
+                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9ox-Cj-BVB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Lz9-ge-3S1"/>
+                                    <constraint firstAttribute="width" constant="118" id="evP-es-SN6"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="A"/>
+                                    <segment title="B"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9ox-Cj-BVB" firstAttribute="centerX" secondItem="mq5-5v-638" secondAttribute="centerX" type="default" id="K8H-wg-MTi"/>
+                            <constraint firstItem="mq5-5v-638" firstAttribute="leading" secondItem="TRS-Qo-XwQ" secondAttribute="leading" type="default" id="Zaj-Bb-YMj"/>
+                            <constraint firstItem="mq5-5v-638" firstAttribute="trailing" secondItem="TRS-Qo-XwQ" secondAttribute="trailing" type="default" id="hzB-Mq-V37"/>
+                            <constraint firstItem="9ox-Cj-BVB" firstAttribute="top" secondItem="TRS-Qo-XwQ" secondAttribute="top" constant="10" id="jM3-8W-Hoa"/>
+                            <constraint firstItem="mq5-5v-638" firstAttribute="top" secondItem="9ox-Cj-BVB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nm8-8K-rO7"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="ZIi-sn-Y2r">
+                    <navigationItem key="navigationItem" title="Workout" id="ZIi-sn-Y2r">
                         <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="wke-5t-H3k">
                             <connections>
                                 <action selector="revealSidebar:" destination="irZ-Vn-vto" id="rAd-eg-5vA"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="Q1G-O3-bPw"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="workoutSelector" destination="9ox-Cj-BVB" id="Doa-RU-0U3"/>
+                        <outlet property="workoutSummaryTable" destination="mq5-5v-638" id="QLg-Rd-Lqu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUC-aw-gdx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -751,12 +810,13 @@
         </class>
         <class className="SSLiftViewController" superclassName="SSMiddleViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSLiftViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="workoutSelector" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="workoutSummaryTable" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="SSMiddleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSMiddleViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="revealSidebar:"/>
-            </relationships>
         </class>
         <class className="SSPlanWorkoutsViewController" superclassName="SSMiddleViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
