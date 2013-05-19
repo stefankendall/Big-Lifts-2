@@ -3,6 +3,8 @@
 #import "SSWorkoutStoreTests.h"
 #import "SSWorkout.h"
 #import "SSLiftStore.h"
+#import "SSLift.h"
+#import "ContextManager.h"
 
 @implementation SSWorkoutStoreTests
 
@@ -25,6 +27,15 @@
 
     STAssertEquals([workoutA.lifts count], (NSUInteger) 3, @"");
     STAssertEquals([workoutB.lifts count], (NSUInteger) 3, @"");
+}
+
+- (void) testLiftsCanBeReordered {
+    SSWorkout * workoutA = [[SSWorkoutStore instance] atIndex:0];
+    [workoutA.lifts exchangeObjectAtIndex:0 withObjectAtIndex:1];
+
+    SSWorkout * savedWorkout = [[SSWorkoutStore instance] atIndex:0];
+    SSLift *lift = savedWorkout.lifts[0];
+    STAssertTrue([lift.name isEqualToString:@"Bench"], @"");
 }
 
 @end

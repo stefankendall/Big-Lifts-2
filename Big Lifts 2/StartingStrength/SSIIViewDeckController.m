@@ -8,6 +8,7 @@
     self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:@"ssEditViewController"]
                             leftViewController:[storyboard instantiateViewControllerWithIdentifier:@"ssNavViewController"]];
     if (self) {
+        self.panningCancelsTouchesInView = NO;
     }
     return self;
 }

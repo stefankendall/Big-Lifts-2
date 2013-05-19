@@ -7,9 +7,7 @@
 @synthesize name;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    SSWorkoutStore *store = [SSWorkoutStore instance];
-    SSWorkout *workout = [store findBy:[NSPredicate predicateWithFormat:@"name == %@", name]];
-    return [[workout lifts] count];
+    return [[[self getWorkout] lifts] count];
 }
 
 - (id)initWithName:(NSString *)name1 {
@@ -28,8 +26,9 @@
         [[cell textLabel] setAdjustsFontSizeToFitWidth:YES];
     }
 
-    SSWorkout *workout = [[SSWorkoutStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", name]];
+    SSWorkout *workout = [self getWorkout];
     SSLift *lift = workout.lifts[(NSUInteger) [indexPath row]];
+
     [[cell textLabel] setText:lift.name];
     [cell setBackgroundColor:[UIColor whiteColor]];
 
@@ -40,5 +39,19 @@
     return [NSString stringWithFormat:@"Workout %@", name];
 }
 
+- (void) tableView:(UITableView *)tableView
+moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+       toIndexPath:(NSIndexPath *)destinationIndexPath {
+    if ([sourceIndexPath row] == [destinationIndexPath row]) {
+        return;
+    }
+
+    SSWorkout *workout = [self getWorkout];
+    [workout.lifts exchangeObjectAtIndex:(NSUInteger) [sourceIndexPath row] withObjectAtIndex:(NSUInteger) [destinationIndexPath row]];
+}
+
+- (SSWorkout *)getWorkout {
+    return [[SSWorkoutStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", name]];
+}
 
 @end

@@ -30,6 +30,11 @@
     }
 }
 
+- (void)reset {
+    [self empty];
+    [self setupDefaults];
+}
+
 - (void)setupDefaults {
     [NSException raise:NSInternalInconsistencyException format:@"setupDefaults not defined"];
 }

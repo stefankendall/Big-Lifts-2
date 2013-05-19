@@ -2,7 +2,7 @@
 
 @class SSWorkoutDataSource;
 
-@interface SSPlanWorkoutsViewController : SSMiddleViewController {
+@interface SSPlanWorkoutsViewController : SSMiddleViewController <UITableViewDelegate> {
     __weak IBOutlet UITableView *workoutATableView;
     __weak IBOutlet UITableView *workoutBTableView;
 }
