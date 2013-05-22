@@ -119,9 +119,13 @@
         if ([store count] == 0) {
             [store setupDefaults];
         }
+        [store onLoad];
     }
 
     return [stores objectForKey:key];
+}
+
+- (void)onLoad {
 }
 
 

@@ -62,5 +62,21 @@
     [ssWorkout.workouts addObject:[self createWorkout:powerClean withSets:5 withReps:3]];
 }
 
+- (void)onLoad {
+    [self syncSetsToLiftWeights];
+}
+
+- (void)syncSetsToLiftWeights {
+    NSArray *ssWorkouts = [[SSWorkoutStore instance] findAll];
+    for (SSWorkout *ssWorkout in ssWorkouts) {
+        for (Workout *workout in ssWorkout.workouts) {
+            for (Set *set in workout.sets) {
+                SSLift *lift = (SSLift *) set.lift;
+                set.weight = lift.weight;
+            }
+        }
+    }
+}
+
 
 @end

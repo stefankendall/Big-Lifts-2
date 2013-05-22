@@ -11,11 +11,8 @@
 
 - (void)setUp {
     [super setUp];
-    [[SSLiftStore instance] empty];
-    [[SSLiftStore instance] setupDefaults];
-
-    [[SSWorkoutStore instance] empty];
-    [[SSWorkoutStore instance] setupDefaults];
+    [[SSLiftStore instance] reset];
+    [[SSWorkoutStore instance] reset];
 }
 
 - (void)testSetsUpDefaultLifts {
@@ -38,6 +35,18 @@
     Workout *workout = savedWorkout.workouts[0];
     SSLift *lift = (SSLift *) ((Set *) workout.sets[0]).lift;
     STAssertTrue([lift.name isEqualToString:@"Bench"], @"");
+}
+
+- (void)testSyncsToSsLiftsWeightsOnStart {
+    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
+    Workout *workout = ssWorkout.workouts[0];
+    Set *set = workout.sets[0];
+    SSLift * lift = (SSLift *) set.lift;
+    lift.weight = [NSNumber numberWithDouble:200.0];
+
+    [[SSWorkoutStore instance] syncSetsToLiftWeights];
+
+    STAssertEquals(set.weight.doubleValue, 200.0, @"");
 }
 
 @end

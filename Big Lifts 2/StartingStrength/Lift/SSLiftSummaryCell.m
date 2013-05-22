@@ -16,4 +16,5 @@
     Settings *settings = [[SettingsStore instance] first];
     [weightLabel setText:[NSString stringWithFormat:@"%.1f%@", [firstSet.weight doubleValue], settings.units]];
 }
+
 @end

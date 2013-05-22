@@ -24,4 +24,6 @@
 
 +(instancetype) instance;
 
+- (void)onLoad;
+
 @end
