@@ -4,6 +4,7 @@
 #import "SSLift.h"
 #import "BLStore.h"
 #import "SSLiftStore.h"
+#import "TextViewWithCell.h"
 
 @implementation SSStartingWeightTableDataSourceTests
 @synthesize dataSource;
@@ -33,6 +34,13 @@
     TextViewCell *cell = (TextViewCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
     NSString *weight = [[cell textView] text];
     STAssertEquals(weight.doubleValue, 200.0, @"");
+}
+
+- (void)testTextViewsCanGetIndexWithCellReference {
+    TextViewCell *cell = (TextViewCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    STAssertNotNil([[cell textView] cell], @"");
+    STAssertEquals([[cell indexPath] row], 1, @"");
+    STAssertEquals([[[[cell textView] cell] indexPath] row], 1, @"");
 }
 
 

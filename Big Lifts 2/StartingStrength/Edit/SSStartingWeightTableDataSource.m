@@ -2,19 +2,9 @@
 #import "TextViewCell.h"
 #import "SSLiftStore.h"
 #import "SSLift.h"
+#import "TextViewWithCell.h"
 
 @implementation SSStartingWeightTableDataSource
-@synthesize cellMapping;
-
-- (id)init {
-    self = [super init];
-    if (self) {
-        cellMapping = [@{} mutableCopy];
-    }
-
-    return self;
-}
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[SSLiftStore instance] count];
@@ -25,14 +15,15 @@
 
     if (cell == nil) {
         cell = [TextViewCell createNewTextCellFromNib];
-        [cellMapping setObject:[NSNumber numberWithInteger:[indexPath row]] forKey:[cell textView]];
     }
+
+    [cell setIndexPath:indexPath];
 
     [[cell textView] setDelegate:self];
 
     [cell setBackgroundColor:[UIColor whiteColor]];
 
-    SSLift * lift = [[SSLiftStore instance] atIndex:[indexPath row]];
+    SSLift *lift = [[SSLiftStore instance] atIndex:[indexPath row]];
     [[cell textView] setText:[lift.weight stringValue]];
 
     return cell;
@@ -44,8 +35,10 @@
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
     NSString *weight = [textView text];
-    NSNumber *index = [cellMapping objectForKey:textView];
-    SSLift *lift = [[SSLiftStore instance] findAll][(NSUInteger) [index intValue]];
+    TextViewWithCell *textViewWithCell = (TextViewWithCell *) textView;
+    NSInteger index = [[[textViewWithCell cell] indexPath] row];
+
+    SSLift *lift = [[SSLiftStore instance] findAll][(NSUInteger) index];
     [lift setWeight:[NSNumber numberWithDouble:[weight doubleValue]]];
 }
 

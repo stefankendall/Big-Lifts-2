@@ -58,6 +58,7 @@
 		545909579A5387638080D385 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590AB3BF06EC1E33E723E2 /* IIWrapController.m */; };
 		5459098A223A58603A1EB19C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54590D3019187C6086FE5E36 /* InfoPlist.strings */; };
 		5459098A61249093BBE3F4A6 /* NavLiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D1497FDCCA274775017 /* NavLiftCell.m */; };
+		5459098C7204E74048845B93 /* TextViewWithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E6DCE56A16DB475F2D5 /* TextViewWithCell.m */; };
 		545909BFD3BAE30B6C902813 /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590C9F3D711C15FDCC7F82 /* 53-house.png */; };
 		54590A0F663D13F7AF1C3095 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590D530BEAE717BB80843E /* CoreData.framework */; };
 		54590A38D21E658927967BF4 /* WorkoutStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590EE3E04BD19EC9438DBD /* WorkoutStore.m */; };
@@ -116,6 +117,7 @@
 		54590171A174F8AC533C25E4 /* SSIIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIIViewDeckController.h; sourceTree = "<group>"; };
 		5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLAppDelegate.m; sourceTree = "<group>"; };
 		545901ABBD67C8BDEA18C5BD /* Big Lifts 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Big Lifts 2-Prefix.pch"; sourceTree = "<group>"; };
+		545901BB416DEF72DC48C4A4 /* TextViewWithCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewWithCell.h; sourceTree = "<group>"; };
 		545901DE79DAB4F1EBBFA44A /* BLStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLStore.m; sourceTree = "<group>"; };
 		5459024F4BF760314E7766CC /* SSLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftStoreTests.m; sourceTree = "<group>"; };
 		5459025477474EE1610E36A0 /* SetStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetStore.h; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		54590DCF825267AD376F916C /* Lift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lift.h; sourceTree = "<group>"; };
 		54590DEB783D258241F10B3A /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		54590E30BC1BE6A586997D27 /* SSLiftsTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftsTableDataSource.h; sourceTree = "<group>"; };
+		54590E6DCE56A16DB475F2D5 /* TextViewWithCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewWithCell.m; sourceTree = "<group>"; };
 		54590E814FB62F30159EA4C1 /* Big Lifts 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Big Lifts 2-Info.plist"; sourceTree = "<group>"; };
 		54590EA1D4C287A1A7ED5118 /* NavEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavEditCell.h; sourceTree = "<group>"; };
 		54590EA87512AFEF11C6DC12 /* SSLiftsTableDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftsTableDataSourceTests.h; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				545908296D61D41B63A1EFF4 /* TextViewCell.xib */,
 				54590CE45766F12890343540 /* CustomTableViewCell.m */,
 				5459085E90497E4E2E58EB11 /* CustomTableViewCell.h */,
+				54590E6DCE56A16DB475F2D5 /* TextViewWithCell.m */,
+				545901BB416DEF72DC48C4A4 /* TextViewWithCell.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -772,6 +777,7 @@
 				54590855382601F3ED51FC03 /* SetStore.m in Sources */,
 				54590A38D21E658927967BF4 /* WorkoutStore.m in Sources */,
 				5459036C481C3D49F6751FF8 /* SSLiftSummaryDataSource.m in Sources */,
+				5459098C7204E74048845B93 /* TextViewWithCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
