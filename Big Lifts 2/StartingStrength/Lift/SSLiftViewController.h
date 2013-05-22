@@ -5,8 +5,10 @@
 @interface SSLiftViewController : SSMiddleViewController {
 }
 @property(weak, nonatomic) IBOutlet UITableView *workoutSummaryTable;
-@property(weak, nonatomic) IBOutlet UISegmentedControl *workoutSelector;
 
 @property(nonatomic, retain) SSLiftSummaryDataSource <UITableViewDataSource> *ssLiftSummaryDataSource;
+
+- (IBAction)workoutValueChanged:(id)sender;
+- (void) switchWorkoutToIndex: (int) index;
 
 @end

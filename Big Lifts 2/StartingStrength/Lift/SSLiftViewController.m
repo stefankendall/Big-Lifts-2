@@ -14,4 +14,14 @@
 }
 
 
+- (IBAction)workoutValueChanged:(id)sender {
+    UISegmentedControl *workoutSelector = sender;
+    [self switchWorkoutToIndex:[workoutSelector selectedSegmentIndex]];
+}
+
+- (void)switchWorkoutToIndex:(int)index {
+    [ssLiftSummaryDataSource setSsWorkout:[[SSWorkoutStore instance] atIndex:index]];
+    [workoutSummaryTable reloadData];
+}
+
 @end

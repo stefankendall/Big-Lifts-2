@@ -22,6 +22,7 @@
 		545901A747A04C98E1814122 /* Big_Lifts_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54590275EBE03377D340BF57 /* Big_Lifts_2.xcdatamodeld */; };
 		545901E1B05CAAD3C490BC1F /* NavSetupReturnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905242EE69B586CE73257 /* NavSetupReturnCell.m */; };
 		545901F1C211B38F7E4B9BB3 /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545908296D61D41B63A1EFF4 /* TextViewCell.xib */; };
+		545901F361F73A7A11A5C720 /* SSLiftViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459040E00ED2F3F235075E7 /* SSLiftViewControllerTests.m */; };
 		545901FAC28BAD8D18A50523 /* SSIIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A7CCBB6569D666FD0B5 /* SSIIViewDeckController.m */; };
 		5459022211FD6EA0E5AD6495 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C5452E6F21C50F39FD4 /* IISideController.m */; };
 		5459024E86DEC10F0B6AE2EB /* 16-line-chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5459044A9A11131A0C5AD182 /* 16-line-chart@2x.png */; };
@@ -132,6 +133,7 @@
 		545903E2DD93D263CF67DC7D /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
 		54590402B1C35FDB0009A032 /* SSStartingWeightTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStartingWeightTableDataSource.m; sourceTree = "<group>"; };
 		54590404B60CF77514E341E5 /* NavTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTableViewController.m; sourceTree = "<group>"; };
+		5459040E00ED2F3F235075E7 /* SSLiftViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftViewControllerTests.m; sourceTree = "<group>"; };
 		54590412D3B6171940B0E960 /* BLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLAppDelegate.h; sourceTree = "<group>"; };
 		5459043E8815E5904B41CE83 /* SSWorkoutDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkoutDataSource.h; sourceTree = "<group>"; };
 		5459044A9A11131A0C5AD182 /* 16-line-chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-line-chart@2x.png"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		54590A09F835E09940645C2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		54590A15F23F534823455B69 /* TextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewCell.h; sourceTree = "<group>"; };
 		54590A2090BE2CB988B38C72 /* SSLiftsTableDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftsTableDataSourceTests.m; sourceTree = "<group>"; };
+		54590A233A2E8BE1DD48E023 /* SSLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftViewControllerTests.h; sourceTree = "<group>"; };
 		54590A3F41CA62283F2FC9E1 /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench@2x.png"; sourceTree = "<group>"; };
 		54590A4229060377F027452A /* SSWorkoutDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkoutDataSourceTests.h; sourceTree = "<group>"; };
 		54590A61816CFB700F507920 /* 53-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house@2x.png"; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 				54590A73E4311CF61F43C9BC /* SSLiftSummaryCellTests.h */,
 				5459031CF175509820B76ACE /* SSLiftSummaryDataSourceTests.m */,
 				545908720D8DE39F69D0CCDC /* SSLiftSummaryDataSourceTests.h */,
+				5459040E00ED2F3F235075E7 /* SSLiftViewControllerTests.m */,
+				54590A233A2E8BE1DD48E023 /* SSLiftViewControllerTests.h */,
 			);
 			path = Lift;
 			sourceTree = "<group>";
@@ -731,6 +736,7 @@
 				545902F87F07112151B745AC /* SSWorkoutDataSourceTests.m in Sources */,
 				545900E4908DA47BE33FE5BC /* SSLiftSummaryCellTests.m in Sources */,
 				54590CE700C879A5E6091573 /* SSLiftSummaryDataSourceTests.m in Sources */,
+				545901F361F73A7A11A5C720 /* SSLiftViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
