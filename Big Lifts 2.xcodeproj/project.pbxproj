@@ -29,6 +29,7 @@
 		545902EFCD9F9F1EBA65EAD0 /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */; };
 		545902F87F07112151B745AC /* SSWorkoutDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C9BF0AB56C16085532C /* SSWorkoutDataSourceTests.m */; };
 		5459034104050CCA10D03CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
+		5459036C481C3D49F6751FF8 /* SSLiftSummaryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F9159E82BC668F2FBC3 /* SSLiftSummaryDataSource.m */; };
 		545903749182E908E465D4C9 /* 53-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590A61816CFB700F507920 /* 53-house@2x.png */; };
 		545903888DA897CA2B395E59 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459090F9F9DFF74FA014F71 /* Settings.m */; };
 		545903B3117C0B807EE61FAD /* SSLiftSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590F79951F97DD25AF5FF0 /* SSLiftSummaryCell.xib */; };
@@ -74,6 +75,7 @@
 		54590C7924DF365121BDDC29 /* SSLiftsTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459016FF4A109F056C1B34F /* SSLiftsTableDataSource.m */; };
 		54590CA2FCA6F68781EDA49A /* SSWorkoutDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A86BB4E1503AD77E031 /* SSWorkoutDataSource.m */; };
 		54590CB219C91DFB9DA263D7 /* 213-reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590EC196BC63BE61A1F180 /* 213-reply.png */; };
+		54590CE700C879A5E6091573 /* SSLiftSummaryDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459031CF175509820B76ACE /* SSLiftSummaryDataSourceTests.m */; };
 		54590D8600F8453E0AA237F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54590A51214D862DCADA96E5 /* InfoPlist.strings */; };
 		54590DAF6F0C74F94258503A /* 379-barbell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545909F0B1B10C70CC08EEB7 /* 379-barbell@2x.png */; };
 		54590E59B8431037FECDD4B6 /* BLStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901DE79DAB4F1EBBFA44A /* BLStore.m */; };
@@ -120,6 +122,7 @@
 		545902C3E4FD30770F04C6DF /* 213-reply@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "213-reply@2x.png"; sourceTree = "<group>"; };
 		545902FBB93C13A9DD79C963 /* SSEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEditViewController.h; sourceTree = "<group>"; };
 		545903123BB624EAB0970EF2 /* SSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSettingsViewController.m; sourceTree = "<group>"; };
+		5459031CF175509820B76ACE /* SSLiftSummaryDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftSummaryDataSourceTests.m; sourceTree = "<group>"; };
 		54590336DD8FB6A778EF2698 /* ContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextManager.m; sourceTree = "<group>"; };
 		5459035B2414D0420A431AAD /* SSLiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftViewController.h; sourceTree = "<group>"; };
 		545903646C232FF946BCAD93 /* WorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutStore.h; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 		5459082ADB17207AD1E8522D /* SSWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkoutStoreTests.m; sourceTree = "<group>"; };
 		5459085E90497E4E2E58EB11 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		5459086609B635143DD9611F /* ProgramSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramSelectorViewController.h; sourceTree = "<group>"; };
+		545908720D8DE39F69D0CCDC /* SSLiftSummaryDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftSummaryDataSourceTests.h; sourceTree = "<group>"; };
 		5459088E695A0D20ECA09464 /* Big Lifts 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Lifts 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54590894E606C5A3054ADCB1 /* SSStartingWeightTableDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSStartingWeightTableDataSourceTests.h; path = WeightTable/SSStartingWeightTableDataSourceTests.h; sourceTree = "<group>"; };
 		5459090824C25E2117395C47 /* SSLiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftViewController.m; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		54590D07EB157A9007B2FEA1 /* ContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextManager.h; sourceTree = "<group>"; };
 		54590D1497FDCCA274775017 /* NavLiftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavLiftCell.m; sourceTree = "<group>"; };
 		54590D18421931A8264469EF /* SSLiftSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftSummaryCell.h; sourceTree = "<group>"; };
+		54590D3D30B6A8DE99AAFF1C /* SSLiftSummaryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftSummaryDataSource.h; sourceTree = "<group>"; };
 		54590D530BEAE717BB80843E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		54590D7F4E431ACB51BAB5B1 /* SSPlanWorkoutsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPlanWorkoutsViewController.h; sourceTree = "<group>"; };
 		54590D9870CBFF526DE3A67A /* 16-line-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-line-chart.png"; sourceTree = "<group>"; };
@@ -219,6 +224,7 @@
 		54590F73295B828A45073CCC /* SSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSettingsViewController.h; sourceTree = "<group>"; };
 		54590F7952D40E528AEAB279 /* SetStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetStore.m; sourceTree = "<group>"; };
 		54590F79951F97DD25AF5FF0 /* SSLiftSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSLiftSummaryCell.xib; sourceTree = "<group>"; };
+		54590F9159E82BC668F2FBC3 /* SSLiftSummaryDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftSummaryDataSource.m; sourceTree = "<group>"; };
 		54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		54590FE4F6569EEDC636CBAC /* ButtonMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonMenu.png; sourceTree = "<group>"; };
 		54590FF8E43786FDCC2C2CA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -266,6 +272,8 @@
 			children = (
 				545900B14950A58F13436174 /* SSLiftSummaryCellTests.m */,
 				54590A73E4311CF61F43C9BC /* SSLiftSummaryCellTests.h */,
+				5459031CF175509820B76ACE /* SSLiftSummaryDataSourceTests.m */,
+				545908720D8DE39F69D0CCDC /* SSLiftSummaryDataSourceTests.h */,
 			);
 			path = Lift;
 			sourceTree = "<group>";
@@ -506,6 +514,8 @@
 				54590F79951F97DD25AF5FF0 /* SSLiftSummaryCell.xib */,
 				5459012DADE179F1BF2867BF /* SSLiftSummaryCell.m */,
 				54590D18421931A8264469EF /* SSLiftSummaryCell.h */,
+				54590F9159E82BC668F2FBC3 /* SSLiftSummaryDataSource.m */,
+				54590D3D30B6A8DE99AAFF1C /* SSLiftSummaryDataSource.h */,
 			);
 			path = Lift;
 			sourceTree = "<group>";
@@ -715,6 +725,7 @@
 				54590FF128273EE6F174AC06 /* SSWorkoutStoreTests.m in Sources */,
 				545902F87F07112151B745AC /* SSWorkoutDataSourceTests.m in Sources */,
 				545900E4908DA47BE33FE5BC /* SSLiftSummaryCellTests.m in Sources */,
+				54590CE700C879A5E6091573 /* SSLiftSummaryDataSourceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +771,7 @@
 				5459004C374702B93A9B6BE2 /* Workout.m in Sources */,
 				54590855382601F3ED51FC03 /* SetStore.m in Sources */,
 				54590A38D21E658927967BF4 /* WorkoutStore.m in Sources */,
+				5459036C481C3D49F6751FF8 /* SSLiftSummaryDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

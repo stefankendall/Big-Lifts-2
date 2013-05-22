@@ -1,6 +1,7 @@
 #import "CustomTableViewCell.h"
 
 @class SSLift;
+@class Workout;
 
 @interface SSLiftSummaryCell : CustomTableViewCell
 {}
@@ -8,5 +9,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *liftLabel;
 @property (weak, nonatomic) IBOutlet UILabel *setsAndRepsLabel;
 
-- (void)setLift:(SSLift *)lift;
+- (void)setWorkout:(Workout *)workout;
 @end
