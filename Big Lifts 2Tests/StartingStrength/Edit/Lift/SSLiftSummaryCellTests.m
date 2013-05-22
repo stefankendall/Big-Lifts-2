@@ -30,10 +30,10 @@
     STAssertTrue([[cell liftLabel].text isEqualToString:set.lift.name], @"");
 
     NSString *weightString = [cell weightLabel].text;
-    STAssertTrue([weightString isEqualToString:@"200.0kg"], weightString);
+    STAssertTrue([weightString isEqualToString:@"200.0 kg"], weightString);
 
     NSString *weightText = [cell weightLabel].text;
-    STAssertTrue([weightText isEqualToString:@"200.0kg"], weightText);
+    STAssertTrue([weightText isEqualToString:@"200.0 kg"], weightText);
 }
 
 @end

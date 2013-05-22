@@ -14,7 +14,7 @@
     [setsAndRepsLabel setText:[NSString stringWithFormat:@"%dx%d", workout.sets.count, [firstSet.reps intValue]]];
 
     Settings *settings = [[SettingsStore instance] first];
-    [weightLabel setText:[NSString stringWithFormat:@"%.1f%@", [firstSet.weight doubleValue], settings.units]];
+    [weightLabel setText:[NSString stringWithFormat:@"%.1f %@", [firstSet.weight doubleValue], settings.units]];
 }
 
 @end
