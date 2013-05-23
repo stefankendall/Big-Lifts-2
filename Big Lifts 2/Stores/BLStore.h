@@ -1,6 +1,6 @@
 @interface BLStore : NSObject
 
-- (id) create;
+- (id)create;
 
 - (void)contentChange:(NSNotification *)note;
 
@@ -8,22 +8,27 @@
 
 - (void)reset;
 
-- (void) setupDefaults;
+- (void)setupDefaults;
 
-- (NSString *) modelName;
+- (NSString *)modelName;
 
-- (id) first;
+- (id)first;
 
-- (NSArray *) findAll;
+- (NSArray *)findAll;
 
-- (id) findBy: (NSPredicate *) predicate;
+- (id)findBy:(NSPredicate *)predicate;
 
-- (id) atIndex: (int) index;
+- (id)atIndex:(int)index;
 
-- (int) count;
+- (int)count;
 
-+(instancetype) instance;
++ (instancetype)instance;
 
 - (void)onLoad;
 
+- (void)fireChanged;
+
+- (void)registerChangeListener:(void (^)(void))callback;
+
+@property(nonatomic, strong) NSMutableSet *changeCallbacks;
 @end

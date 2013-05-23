@@ -2,6 +2,7 @@
 #import "ContextManager.h"
 
 @implementation BLStore
+@synthesize changeCallbacks;
 
 - (id)init {
     self = [super init];
@@ -11,6 +12,8 @@
                    selector:@selector(contentChange:)
                        name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
                      object:nil];
+
+        changeCallbacks = [NSMutableSet new];
     }
 
     return self;
@@ -126,6 +129,18 @@
 }
 
 - (void)onLoad {
+}
+
+- (void)fireChanged {
+    for (
+            void (^callback)()
+            in changeCallbacks) {
+        callback();
+    }
+}
+
+- (void)registerChangeListener:(void (^)())callback {
+    [changeCallbacks addObject:callback];
 }
 
 
