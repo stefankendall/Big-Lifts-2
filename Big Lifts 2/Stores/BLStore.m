@@ -40,6 +40,7 @@
 - (void)reset {
     [self empty];
     [self setupDefaults];
+    changeCallbacks = [NSMutableSet new];
 }
 
 - (void)setupDefaults {

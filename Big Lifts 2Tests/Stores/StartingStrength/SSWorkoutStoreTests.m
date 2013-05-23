@@ -37,15 +37,13 @@
     STAssertTrue([lift.name isEqualToString:@"Bench"], @"");
 }
 
-- (void)testSyncsToSsLiftsWeightsOnStart {
+- (void)testSyncsToSsLiftsWeights {
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = ssWorkout.workouts[0];
     Set *set = workout.sets[0];
     SSLift * lift = (SSLift *) set.lift;
     lift.weight = [NSNumber numberWithDouble:200.0];
-
     [[SSWorkoutStore instance] syncSetsToLiftWeights];
-
     STAssertEquals(set.weight.doubleValue, 200.0, @"");
 }
 

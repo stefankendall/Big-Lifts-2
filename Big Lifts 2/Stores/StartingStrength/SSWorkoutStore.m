@@ -64,6 +64,10 @@
 
 - (void)onLoad {
     [self syncSetsToLiftWeights];
+
+    [[SSLiftStore instance] registerChangeListener:^{
+        [self syncSetsToLiftWeights];
+    }];
 }
 
 - (void)syncSetsToLiftWeights {
