@@ -5,9 +5,11 @@
 @interface SSIndividualWorkoutViewController : UIViewController <UITableViewDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UITableView *workoutTable;
-@property(weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
 
 @property(nonatomic, strong) SSWorkout * ssWorkout;
+@property(nonatomic) int workoutIndex;
 @property(strong, nonatomic) SSIndividualWorkoutDataSource *individualWorkoutDataSource;
+
+- (IBAction)nextButtonTapped:(id)sender;
 
 @end
