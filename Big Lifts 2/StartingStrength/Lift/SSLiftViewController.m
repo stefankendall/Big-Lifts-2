@@ -1,15 +1,17 @@
 #import "SSLiftViewController.h"
 #import "SSLiftSummaryDataSource.h"
 #import "SSWorkoutStore.h"
+#import "SSWorkout.h"
 
 @implementation SSLiftViewController
 
-@synthesize ssLiftSummaryDataSource, workoutSummaryTable;
+@synthesize ssLiftSummaryDataSource, workoutSummaryTable, ssWorkout;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    ssLiftSummaryDataSource = [[SSLiftSummaryDataSource alloc] initWithSsWorkout:[[SSWorkoutStore instance] first]];
+    ssWorkout = [[SSWorkoutStore instance] first];
+    ssLiftSummaryDataSource = [[SSLiftSummaryDataSource alloc] initWithSsWorkout:ssWorkout];
     [workoutSummaryTable setDataSource:ssLiftSummaryDataSource];
 }
 
