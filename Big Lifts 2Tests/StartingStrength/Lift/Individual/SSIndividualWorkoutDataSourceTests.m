@@ -1,8 +1,8 @@
-#import "SSWorkoutLiftDataSourceTests.h"
+#import "SSIndividualWorkoutDataSourceTests.h"
 #import "SSIndividualWorkoutDataSource.h"
 #import "SSWorkoutStore.h"
 
-@implementation SSWorkoutLiftDataSourceTests
+@implementation SSIndividualWorkoutDataSourceTests
 
 - (void)setUp {
     [super setUp];

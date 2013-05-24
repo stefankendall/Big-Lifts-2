@@ -8,6 +8,6 @@
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
 
 @property(nonatomic, strong) SSWorkout * ssWorkout;
-@property(strong, nonatomic) SSIndividualWorkoutDataSource *workoutDataSource;
+@property(strong, nonatomic) SSIndividualWorkoutDataSource *individualWorkoutDataSource;
 
 @end

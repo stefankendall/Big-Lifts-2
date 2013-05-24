@@ -1,6 +1,7 @@
 #import "SSIndividualWorkoutDataSource.h"
 #import "SSWorkout.h"
 #import "Workout.h"
+#import "SetCell.h"
 
 @implementation SSIndividualWorkoutDataSource
 @synthesize ssWorkout, workoutIndex;
@@ -17,16 +18,22 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[[self getCurrentWorkout] sets] count];
+}
+
+- (Workout *)getCurrentWorkout {
     Workout *workout = [[ssWorkout workouts] objectAtIndex:(NSUInteger) workoutIndex];
-    return [[workout sets] count];
+    return workout;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell  *cell = (UITableViewCell*) [tableView dequeueReusableCellWithIdentifier:@"SSIndividualWorkoutCell"];
+    SetCell *cell = (SetCell *) [tableView dequeueReusableCellWithIdentifier:@"SetCell"];
 
     if (cell == nil) {
-        cell = [UITableViewCell new];
+        cell = [SetCell createNewTextCellFromNib];
     }
+
+    [cell setSet:[[[self getCurrentWorkout] sets] objectAtIndex:(NSUInteger) [indexPath row]]];
 
     return cell;
 }

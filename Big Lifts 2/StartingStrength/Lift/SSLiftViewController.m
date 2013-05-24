@@ -2,6 +2,7 @@
 #import "SSLiftSummaryDataSource.h"
 #import "SSWorkoutStore.h"
 #import "SSWorkout.h"
+#import "SSIndividualWorkoutViewController.h"
 
 @implementation SSLiftViewController
 
@@ -25,5 +26,13 @@
     [ssLiftSummaryDataSource setSsWorkout:[[SSWorkoutStore instance] atIndex:index]];
     [workoutSummaryTable reloadData];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"ssSummaryNextSegue"]){
+        SSIndividualWorkoutViewController *controller = (SSIndividualWorkoutViewController *)segue.destinationViewController;
+        controller.ssWorkout = ssWorkout;
+    }
+}
+
 
 @end

@@ -2,16 +2,13 @@
 #import "SSIndividualWorkoutDataSource.h"
 
 @implementation SSIndividualWorkoutViewController
-@synthesize workoutTable, workoutDataSource;
+@synthesize workoutTable, individualWorkoutDataSource, ssWorkout;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    SSIndividualWorkoutViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"ssWorkoutSummaryViewController"];
-
-    workoutDataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:[controller ssWorkout]];
-    [workoutTable setDataSource:workoutDataSource];
+    individualWorkoutDataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:ssWorkout];
+    [workoutTable setDataSource:individualWorkoutDataSource];
 }
 
 
