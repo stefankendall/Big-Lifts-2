@@ -2,7 +2,7 @@
 @class SSIndividualWorkoutDataSource;
 @class SSWorkout;
 
-@interface SSIndividualWorkoutViewController : UIViewController {
+@interface SSIndividualWorkoutViewController : UIViewController <UITableViewDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UITableView *workoutTable;
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
