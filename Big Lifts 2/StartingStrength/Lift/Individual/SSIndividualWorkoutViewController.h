@@ -1,5 +1,5 @@
 @class SSWorkoutDataSource;
-@class SSWorkoutLiftDataSource;
+@class SSIndividualWorkoutDataSource;
 @class SSWorkout;
 
 @interface SSIndividualWorkoutViewController : UIViewController {
@@ -8,6 +8,6 @@
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
 
 @property(nonatomic, strong) SSWorkout * ssWorkout;
-@property(strong, nonatomic) SSWorkoutLiftDataSource *workoutDataSource;
+@property(strong, nonatomic) SSIndividualWorkoutDataSource *workoutDataSource;
 
 @end

@@ -1,6 +1,6 @@
 @class SSWorkout;
 
-@interface SSWorkoutLiftDataSource : NSObject <UITableViewDataSource>
+@interface SSIndividualWorkoutDataSource : NSObject <UITableViewDataSource>
 @property(nonatomic, strong) SSWorkout *ssWorkout;
 @property(nonatomic) int workoutIndex;
 

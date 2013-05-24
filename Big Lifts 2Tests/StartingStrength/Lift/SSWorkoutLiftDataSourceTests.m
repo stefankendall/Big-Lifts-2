@@ -1,5 +1,5 @@
 #import "SSWorkoutLiftDataSourceTests.h"
-#import "SSWorkoutLiftDataSource.h"
+#import "SSIndividualWorkoutDataSource.h"
 #import "SSWorkoutStore.h"
 
 @implementation SSWorkoutLiftDataSourceTests
@@ -11,7 +11,7 @@
 
 - (void)testReturnsCorrectNumberOfRows {
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
-    SSWorkoutLiftDataSource *dataSource = [[SSWorkoutLiftDataSource alloc] initWithSsWorkout:ssWorkout];
+    SSIndividualWorkoutDataSource *dataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:ssWorkout];
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 3, @"");
 }
 

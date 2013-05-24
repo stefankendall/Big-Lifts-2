@@ -1,8 +1,8 @@
-#import "SSWorkoutLiftDataSource.h"
+#import "SSIndividualWorkoutDataSource.h"
 #import "SSWorkout.h"
 #import "Workout.h"
 
-@implementation SSWorkoutLiftDataSource
+@implementation SSIndividualWorkoutDataSource
 @synthesize ssWorkout, workoutIndex;
 
 - (id)initWithSsWorkout:(SSWorkout *)ssWorkout1 {

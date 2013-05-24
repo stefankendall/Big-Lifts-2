@@ -1,5 +1,5 @@
 #import "SSIndividualWorkoutViewController.h"
-#import "SSWorkoutLiftDataSource.h"
+#import "SSIndividualWorkoutDataSource.h"
 
 @implementation SSIndividualWorkoutViewController
 @synthesize workoutTable, workoutDataSource;
@@ -10,7 +10,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     SSIndividualWorkoutViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"ssWorkoutSummaryViewController"];
 
-    workoutDataSource = [[SSWorkoutLiftDataSource alloc] initWithSsWorkout:[controller ssWorkout]];
+    workoutDataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:[controller ssWorkout]];
     [workoutTable setDataSource:workoutDataSource];
 }
 
