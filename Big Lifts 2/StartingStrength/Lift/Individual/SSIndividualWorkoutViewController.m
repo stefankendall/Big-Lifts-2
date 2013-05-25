@@ -28,7 +28,6 @@
     [workoutTable reloadData];
 
     if (workoutIndex == ssWorkout.workouts.count - 1) {
-        NSLog(@"Setting done button");
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonTapped:)];
         [self navigationItem].rightBarButtonItem = doneButton;
     }

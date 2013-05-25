@@ -10,17 +10,19 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    segueToProgramNames = @{
+    [self chooseSavedProgram];
+}
+
+- (NSDictionary *)segueToProgramNames {
+    return @{
             @"selectStartingStrengthProgramSegue" : @"StartingStrength"
     };
-
-    [self chooseSavedProgram];
 }
 
 - (void)chooseSavedProgram {
     CurrentProgram *program = [[CurrentProgramStore instance] first];
     if (program.name) {
-        NSDictionary *namesToSegues = [[NSDictionaryMutator new] invert:segueToProgramNames];
+        NSDictionary *namesToSegues = [[NSDictionaryMutator new] invert:[self segueToProgramNames]];
         NSString *segueName = namesToSegues[program.name];
         [self performSegueWithIdentifier:segueName sender:self];
     }
@@ -54,7 +56,7 @@
         program = [store create];
     }
 
-    program.name = segueToProgramNames[segueName];
+    program.name = [self segueToProgramNames][segueName];
 }
 
 @end
