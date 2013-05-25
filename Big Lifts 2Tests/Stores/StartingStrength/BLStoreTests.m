@@ -16,4 +16,9 @@
     STAssertTrue(run, @"");
 }
 
+- (void)testModelNameDerivedFromStoreName {
+    SetStore *store = [SetStore instance];
+    STAssertTrue([[store modelName] isEqualToString:@"Set"], @"");
+}
+
 @end

@@ -1,13 +1,14 @@
 #import "SSIndividualWorkoutViewControllerTests.h"
 #import "SSIndividualWorkoutViewController.h"
 #import "SSIndividualWorkoutDataSource.h"
+#import "BLStoreManager.h"
 #import "SSWorkoutStore.h"
 
 @implementation SSIndividualWorkoutViewControllerTests
 
 - (void)setUp {
     [super setUp];
-    [[SSWorkoutStore instance] reset];
+    [[BLStoreManager instance] resetAllStores];
 }
 
 - (void)testTappingNextMovesWorkoutForward {
@@ -22,6 +23,7 @@
 - (void)testLastWorkoutPageHasSaveButton {
     SSIndividualWorkoutViewController *controller = [SSIndividualWorkoutViewController new];
     [controller viewDidLoad];
+    controller.ssWorkout = [[SSWorkoutStore instance] first];
 
     [controller nextButtonTapped:nil];
     [controller nextButtonTapped:nil];

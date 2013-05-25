@@ -11,10 +11,6 @@
 
 @implementation SSWorkoutStore
 
-- (NSString *)modelName {
-    return @"SSWorkout";
-}
-
 - (void)setupDefaults {
     if ([self count] == 0) {
         SSWorkout *workoutA = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[ContextManager context]];

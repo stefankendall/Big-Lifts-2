@@ -48,7 +48,8 @@
 
 
 - (NSString *)modelName {
-    [NSException raise:NSInternalInconsistencyException format:@"modelName must be set in store"];
+    NSString *className = NSStringFromClass([self class]);
+    return [className substringToIndex:([className rangeOfString:@"Store"]).location];
 }
 
 - (id)first {

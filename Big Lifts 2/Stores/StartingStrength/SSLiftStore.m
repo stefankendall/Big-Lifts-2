@@ -5,10 +5,6 @@
 @implementation SSLiftStore {
 }
 
-- (NSString *)modelName {
-    return @"SSLift";
-}
-
 - (void)setupDefaults {
     if ([self count] == 0) {
         [self createLift:@"Bench" withOrder:0];

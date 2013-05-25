@@ -12,8 +12,4 @@
     }
 }
 
-- (NSString *)modelName {
-    return @"Settings";
-}
-
 @end

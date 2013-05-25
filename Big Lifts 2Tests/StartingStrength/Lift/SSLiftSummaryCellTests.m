@@ -8,12 +8,13 @@
 #import "Set.h"
 #import "SettingsStore.h"
 #import "Settings.h"
+#import "BLStoreManager.h"
 
 @implementation SSLiftSummaryCellTests
 
 - (void) setUp{
     [super setUp];
-    [[SettingsStore instance] reset];
+    [[BLStoreManager instance] resetAllStores];
 }
 
 - (void)testSetWorkoutSetsValues {

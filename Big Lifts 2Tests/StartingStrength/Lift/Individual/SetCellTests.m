@@ -4,8 +4,15 @@
 #import "SSWorkout.h"
 #import "Workout.h"
 #import "Set.h"
+#import "SetStore.h"
+#import "BLStoreManager.h"
 
 @implementation SetCellTests
+
+- (void) setUp {
+    [super setUp];
+    [[BLStoreManager instance] resetAllStores];
+}
 
 - (void)testSetCellSetsLabels {
     SetCell *cell = [SetCell createNewTextCellFromNib];
@@ -19,7 +26,8 @@
     [cell setSet:set];
 
     STAssertTrue([[[cell repsLabel] text] isEqualToString:@"5x"], @"");
-    STAssertTrue([[[cell weightLabel] text] isEqualToString:@"300.0 lbs"], @"");
+    NSString *weightText = [[cell weightLabel] text];
+    STAssertTrue([weightText isEqualToString:@"300.0 lbs"], weightText);
 }
 
 @end

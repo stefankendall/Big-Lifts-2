@@ -23,6 +23,16 @@
                                                object:[ContextManager context]];
 }
 
+- (void)resetAllStores {
+    for (BLStore *store in allStores) {
+        [store empty];
+    }
+
+    for (BLStore *store in allStores) {
+        [store setupDefaults];
+    }
+}
+
 - (void)handleDataModelChange:(id)note {
     NSSet *updatedObjects = [[note userInfo] objectForKey:NSUpdatedObjectsKey];
     NSSet *deletedObjects = [[note userInfo] objectForKey:NSDeletedObjectsKey];

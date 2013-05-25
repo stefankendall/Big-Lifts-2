@@ -6,6 +6,8 @@
 
 - (void)initializeAllStores;
 
+- (void)resetAllStores;
+
 - (NSMutableSet *)getChangedModelNames:(NSSet *)allObjects;
 
 - (NSSet *)getChangedStoresFromObjects:(NSSet *)allObjects;
