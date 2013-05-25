@@ -217,7 +217,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Z1e-ac-gGd" imageView="I7U-k4-D0m" style="IBUITableViewCellStyleDefault" id="Tfb-ZC-fe3" customClass="NavTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Z1e-ac-gGd" imageView="I7U-k4-D0m" style="IBUITableViewCellStyleDefault" id="Tfb-ZC-fe3" customClass="NavTrackCell">
                                         <rect key="frame" x="0.0" y="112" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -419,7 +419,7 @@
                                                 </view>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FtP-Di-1fw">
-                                                <rect key="frame" x="0.0" y="244" width="160" height="45"/>
+                                                <rect key="frame" x="0.0" y="244" width="160" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="140" height="43"/>
@@ -805,6 +805,55 @@
             <point key="canvasLocation" x="2647" y="-1362"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="229-3m-mRF">
+            <objects>
+                <navigationController storyboardIdentifier="ssTrackViewController" definesPresentationContext="YES" id="Hos-ub-4Ea" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SHt-66-bu7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="U1Q-5V-ddP" kind="relationship" relationship="rootViewController" id="PwH-gt-mga"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VdN-5y-ZMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3082" y="-1374"/>
+        </scene>
+        <!--Track View Controller - Track-->
+        <scene sceneID="86G-VB-OQo">
+            <objects>
+                <viewController storyboardIdentifier="" id="U1Q-5V-ddP" customClass="SSTrackViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b1e-oj-TF6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Track" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roN-f0-JUg">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="roN-f0-JUg" firstAttribute="top" secondItem="b1e-oj-TF6" secondAttribute="top" constant="182" id="QJq-dp-up0"/>
+                            <constraint firstItem="roN-f0-JUg" firstAttribute="leading" secondItem="b1e-oj-TF6" secondAttribute="leading" constant="117" id="nJS-Wt-aAD"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Track" id="Lyb-CB-SL0">
+                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="hgn-LQ-Uju">
+                            <connections>
+                                <action selector="revealSidebar:" destination="U1Q-5V-ddP" id="bpi-f2-7bl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CIz-Hq-EuQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3469" y="-1374"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="G6I-DH-cEb">
             <objects>
                 <navigationController storyboardIdentifier="ssSettingsViewController" definesPresentationContext="YES" id="YMA-7i-DNb" sceneMemberID="viewController">
@@ -861,6 +910,9 @@
         <class className="NavTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTableViewController.h"/>
         </class>
+        <class className="NavTrackCell" superclassName="NavTableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTrackCell.h"/>
+        </class>
         <class className="ProgramSelectorViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgramSelectorViewController.h"/>
             <relationships>
@@ -882,7 +934,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSIndividualWorkoutViewController.h"/>
             <relationships>
                 <relationship kind="action" name="nextButtonTapped:"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="workoutTable" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -911,6 +962,9 @@
             <relationships>
                 <relationship kind="action" name="unitsChanged:"/>
             </relationships>
+        </class>
+        <class className="SSTrackViewController" superclassName="SSMiddleViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTrackViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

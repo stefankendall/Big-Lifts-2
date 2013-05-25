@@ -1,6 +1,8 @@
 #import "SSIndividualWorkoutViewController.h"
 #import "SSIndividualWorkoutDataSource.h"
 #import "SSWorkout.h"
+#import "SSMiddleViewController.h"
+#import "IIViewDeckController.h"
 
 @implementation SSIndividualWorkoutViewController
 @synthesize workoutTable, individualWorkoutDataSource, ssWorkout, workoutIndex;
@@ -26,13 +28,15 @@
     [workoutTable reloadData];
 
     if (workoutIndex == ssWorkout.workouts.count - 1) {
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:nil action:@selector(doneButtonTapped)];
+        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonTapped:)];
         [self navigationItem].rightBarButtonItem = doneButton;
     }
 }
 
-- (void)doneButtonTapped {
-    NSLog(@"Not crashing!");
+- (void)doneButtonTapped:(id)o {
+    SSMiddleViewController *controller = [[self navigationController] viewControllers][0];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    [controller.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssTrackViewController"]];
 }
 
 @end
