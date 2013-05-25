@@ -3,8 +3,27 @@
 #import "Settings.h"
 #import "CurrentProgramStore.h"
 #import "CurrentProgram.h"
+#import "NSDictionaryMutator.h"
 
 @implementation ProgramSelectorViewController {
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    segueToProgramNames = @{
+            @"selectStartingStrengthProgramSegue" : @"StartingStrength"
+    };
+
+    [self chooseSavedProgram];
+}
+
+- (void)chooseSavedProgram {
+    CurrentProgram *program = [[CurrentProgramStore instance] first];
+    if (program.name) {
+        NSDictionary *namesToSegues = [[NSDictionaryMutator new] invert:segueToProgramNames];
+        NSString *segueName = namesToSegues[program.name];
+        [self performSegueWithIdentifier:segueName sender:self];
+    }
 }
 
 - (IBAction)unitsChanged:(id)sender {
@@ -35,12 +54,7 @@
         program = [store create];
     }
 
-    NSDictionary *segueToProgramNames = @{
-            @"selectStartingStrengthProgramSegue" : @"StartingStrength"
-    };
-
     program.name = segueToProgramNames[segueName];
 }
-
 
 @end

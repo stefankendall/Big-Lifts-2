@@ -5,12 +5,14 @@
 #import "SSLiftStore.h"
 #import "SSWorkoutStore.h"
 #import "ContextManager.h"
+#import "CurrentProgramStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
 
 - (void)initializeAllStores {
     allStores = @[
+            [CurrentProgramStore instance],
             [SettingsStore instance],
             [WorkoutStore instance],
             [SetStore instance],
