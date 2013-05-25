@@ -6,11 +6,13 @@ desc 'Run the tests'
 task :test => [:unit, :functional]
 
 task :unit do
-  system('xctool clean -project Big\ Lifts\ 2.xcodeproj -scheme Big\ Lifts\ 2Tests test')
+  passed = system('xctool clean -project Big\ Lifts\ 2.xcodeproj -scheme Big\ Lifts\ 2Tests test')
+  fail 'Unit tests failed' unless passed
 end
 
 task :frank do
-  system('frank build')
+  passed = system('frank build')
+  fail 'Frank failed' unless passed
 end
 
 Cucumber::Rake::Task.new(:features) do |t|
