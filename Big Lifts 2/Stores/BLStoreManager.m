@@ -6,6 +6,7 @@
 #import "SSWorkoutStore.h"
 #import "ContextManager.h"
 #import "CurrentProgramStore.h"
+#import "WorkoutLogStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
@@ -15,6 +16,7 @@
             [CurrentProgramStore instance],
             [SettingsStore instance],
             [WorkoutStore instance],
+            [WorkoutLogStore instance],
             [SetStore instance],
             [SSLiftStore instance],
             [SSWorkoutStore instance]

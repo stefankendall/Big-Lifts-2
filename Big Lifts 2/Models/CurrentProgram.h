@@ -1,4 +1,4 @@
-@interface CurrentProgram : NSObject
+@interface CurrentProgram : NSManagedObject
 
 @property(nonatomic) NSString *name;
 @end

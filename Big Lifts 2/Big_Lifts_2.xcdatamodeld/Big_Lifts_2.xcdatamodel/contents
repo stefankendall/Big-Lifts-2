@@ -26,13 +26,17 @@
     <entity name="Workout" syncable="YES">
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Set" syncable="YES"/>
     </entity>
+    <entity name="WorkoutLog" syncable="YES">
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Set" syncable="YES"/>
+    </entity>
     <elements>
+        <element name="CurrentProgram" positionX="160" positionY="192" width="128" height="60"/>
         <element name="Lift" positionX="160" positionY="192" width="128" height="60"/>
         <element name="Set" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Settings" positionX="160" positionY="192" width="128" height="60"/>
         <element name="SSLift" positionX="160" positionY="192" width="128" height="75"/>
         <element name="SSWorkout" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Workout" positionX="160" positionY="192" width="128" height="60"/>
-        <element name="CurrentProgram" positionX="160" positionY="192" width="128" height="60"/>
+        <element name="WorkoutLog" positionX="160" positionY="192" width="128" height="60"/>
     </elements>
 </model>
