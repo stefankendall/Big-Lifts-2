@@ -3,32 +3,51 @@
 #import "SSIndividualWorkoutDataSource.h"
 #import "BLStoreManager.h"
 #import "SSWorkoutStore.h"
+#import "WorkoutLogStore.h"
+#import "WorkoutLog.h"
+#import "SetLog.h"
 
 @implementation SSIndividualWorkoutViewControllerTests
+@synthesize controller;
 
 - (void)setUp {
     [super setUp];
     [[BLStoreManager instance] resetAllStores];
+
+    controller = [SSIndividualWorkoutViewController new];
+    [controller viewDidLoad];
 }
 
 - (void)testTappingNextMovesWorkoutForward {
-    SSIndividualWorkoutViewController *controller = [SSIndividualWorkoutViewController new];
-    [controller viewDidLoad];
-
     [controller nextButtonTapped:nil];
     STAssertEquals([controller workoutIndex], 1, @"");
     STAssertEquals([[controller individualWorkoutDataSource] workoutIndex], 1, @"");
 }
 
 - (void)testLastWorkoutPageHasSaveButton {
-    SSIndividualWorkoutViewController *controller = [SSIndividualWorkoutViewController new];
-    [controller viewDidLoad];
     controller.ssWorkout = [[SSWorkoutStore instance] first];
 
     [controller nextButtonTapped:nil];
     [controller nextButtonTapped:nil];
     NSString *title = [[[controller navigationItem] rightBarButtonItem] title];
     STAssertTrue([title isEqualToString:@"Done"], title);
+}
+
+- (void)testTappingDoneButtonLogsWorkout {
+    controller.ssWorkout = [[SSWorkoutStore instance] first];
+    [controller doneButtonTapped:nil];
+
+    WorkoutLogStore *logStore = [WorkoutLogStore instance];
+    WorkoutLog *workoutLog = [logStore first];
+    STAssertEquals([logStore count], 1, @"");
+    STAssertEquals([[workoutLog sets] count], (NSUInteger) 7, @"");
+    STAssertTrue([((SetLog *) [workoutLog sets][0]).name isEqualToString:@"Squat"], @"");
+    STAssertTrue([((SetLog *) [workoutLog sets][1]).name isEqualToString:@"Squat"], @"");
+    STAssertTrue([((SetLog *) [workoutLog sets][2]).name isEqualToString:@"Squat"], @"");
+    STAssertTrue([((SetLog *) [workoutLog sets][3]).name isEqualToString:@"Bench"], @"");
+    STAssertTrue([((SetLog *) [workoutLog sets][4]).name isEqualToString:@"Bench"], @"");
+    STAssertTrue([((SetLog *) [workoutLog sets][5]).name isEqualToString:@"Bench"], @"");
+    STAssertTrue([((SetLog *) [workoutLog sets][6]).name isEqualToString:@"Deadlift"], @"");
 }
 
 @end

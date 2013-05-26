@@ -11,5 +11,6 @@
 @property(strong, nonatomic) SSIndividualWorkoutDataSource *individualWorkoutDataSource;
 
 - (IBAction)nextButtonTapped:(id)sender;
+- (void)doneButtonTapped:(id)o;
 
 @end

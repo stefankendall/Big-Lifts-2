@@ -3,6 +3,11 @@
 #import "SSWorkout.h"
 #import "SSMiddleViewController.h"
 #import "IIViewDeckController.h"
+#import "WorkoutLogStore.h"
+#import "WorkoutLog.h"
+#import "Workout.h"
+#import "Set.h"
+#import "SetLogStore.h"
 
 @implementation SSIndividualWorkoutViewController
 @synthesize workoutTable, individualWorkoutDataSource, ssWorkout, workoutIndex;
@@ -34,9 +39,21 @@
 }
 
 - (void)doneButtonTapped:(id)o {
+    [self logWorkout];
     SSMiddleViewController *controller = [[self navigationController] viewControllers][0];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [controller.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssTrackViewController"]];
+}
+
+- (void)logWorkout {
+    WorkoutLogStore *store = [WorkoutLogStore instance];
+    WorkoutLog *log = [store create];
+
+    for (Workout *workout in ssWorkout.workouts) {
+        for (Set *set in workout.sets) {
+            [log.sets addObject:[[SetLogStore instance] createFromSet: set]];
+        }
+    }
 }
 
 @end
