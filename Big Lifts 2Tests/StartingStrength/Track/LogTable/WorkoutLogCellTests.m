@@ -14,7 +14,7 @@
     WorkoutLogCell *cell = [WorkoutLogCell createNewTextCellFromNib];
 
     [cell setWorkoutLog:workoutLog];
-    STAssertNotNil([[cell workoutLogTable] dataSource], @"");
+    STAssertNotNil([[cell setTable] dataSource], @"");
 }
 
 @end

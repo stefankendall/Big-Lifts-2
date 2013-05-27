@@ -8,12 +8,7 @@
 
     ssLogDataSource = [SSLogDataSource new];
     [logTable setDataSource:ssLogDataSource];
-    [logTable setDelegate:self];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *emptyViewToPreventEmptyRows = [UIView new];
-    return emptyViewToPreventEmptyRows;
+    [logTable setDelegate: ssLogDataSource];
 }
 
 @end

@@ -12,8 +12,9 @@
 }
 
 - (void)testReturnsWorkoutLogCell {
-    UITableViewCell *cell = [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertTrue([cell isKindOfClass:WorkoutLogCell.class], @"");
+    [[WorkoutLogStore instance] create];
+    WorkoutLogCell *cell = (WorkoutLogCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertNotNil([cell setTable], @"");
 }
 
 - (void)testReturnsCorrectNumberOfRows {
