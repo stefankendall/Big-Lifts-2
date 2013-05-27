@@ -2,8 +2,7 @@
 
 @class SSLogDataSource;
 
-@interface SSTrackViewController : SSMiddleViewController
-{
+@interface SSTrackViewController : SSMiddleViewController <UITableViewDelegate> {
     __weak IBOutlet UITableView *logTable;
     SSLogDataSource *ssLogDataSource;
 }
