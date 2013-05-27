@@ -24,7 +24,7 @@
 
     if (cell == nil) {
         cell = [SetLogCell createNewTextCellFromNib];
-        [cell setSet:[workoutLog.sets objectAtIndex:(NSUInteger) [indexPath row]]];
+        [cell setSetLog:[workoutLog.sets objectAtIndex:(NSUInteger) [indexPath row]]];
     }
 
     return cell;
