@@ -16,6 +16,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
     return [[workoutLog sets] count];
 }
 
