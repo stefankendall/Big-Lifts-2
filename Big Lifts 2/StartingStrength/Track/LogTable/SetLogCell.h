@@ -2,6 +2,7 @@
 
 @class Set;
 @class SetLog;
+@class SetLogContainer;
 
 extern int const SET_LOG_CELL_HEIGHT;
 
@@ -14,5 +15,5 @@ extern int const SET_LOG_CELL_HEIGHT;
 @property (weak, nonatomic) IBOutlet UILabel *repsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 
-- (void)setSetLog:(SetLog *)setLog;
+- (void)setSetLogContainer:(SetLogContainer *)setLog;
 @end

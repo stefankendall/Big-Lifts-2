@@ -2,8 +2,8 @@
 #import "CustomTableViewCell.h"
 #import "WorkoutLogCell.h"
 #import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
 #import "SetLogCell.h"
+#import "WorkoutLogTableDataSource.h"
 
 @implementation SSLogDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -22,10 +22,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] atIndex:[indexPath row]];
-    int numberOfSets = [[workoutLog sets] count];
-
-    return numberOfSets * SET_LOG_CELL_HEIGHT;
+    WorkoutLogCell *cell = (WorkoutLogCell *) [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    int rowCount = [cell.workoutLogTableDataSource tableView:nil numberOfRowsInSection:0];
+    return rowCount * SET_LOG_CELL_HEIGHT;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

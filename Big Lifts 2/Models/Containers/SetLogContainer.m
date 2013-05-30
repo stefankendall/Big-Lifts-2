@@ -2,7 +2,7 @@
 #import "SetLog.h"
 
 @implementation SetLogContainer
-@synthesize setLog;
+@synthesize setLog, count;
 
 - (id)initWithSetLog:(SetLog *)setLog1 {
     self = [super init];

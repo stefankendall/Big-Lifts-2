@@ -2,6 +2,7 @@
 #import "WorkoutLog.h"
 #import "CustomTableViewCell.h"
 #import "SetLogCell.h"
+#import "SetLogCombiner.h"
 
 @implementation WorkoutLogTableDataSource
 @synthesize workoutLog;
@@ -16,8 +17,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return [[workoutLog sets] count];
+    return [[self getCombinedSets] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -25,15 +25,19 @@
 
     if (cell == nil) {
         cell = [SetLogCell createNewTextCellFromNib];
-        [cell setSetLog:[workoutLog.sets objectAtIndex:(NSUInteger) [indexPath row]]];
+        [cell setSetLogContainer:[[self getCombinedSets] objectAtIndex:(NSUInteger) [indexPath row]]];
     }
 
     return cell;
 }
 
+- (NSArray *)getCombinedSets {
+    SetLogCombiner *combiner = [SetLogCombiner new];
+    return [combiner combineSetLogs:workoutLog.sets];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return SET_LOG_CELL_HEIGHT;
 }
-
 
 @end

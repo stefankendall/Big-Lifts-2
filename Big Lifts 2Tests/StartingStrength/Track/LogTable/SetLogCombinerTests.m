@@ -5,6 +5,7 @@
 #import "WorkoutLog.h"
 #import "BLStoreManager.h"
 #import "SetLogCombiner.h"
+#import "SetLogContainer.h"
 
 @implementation SetLogCombinerTests
 
@@ -24,7 +25,9 @@
 
     NSArray *combined = [[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:@[set1, set2]]];
     STAssertEquals([combined count], (NSUInteger) 1, @"");
-    STAssertTrue([[combined objectAtIndex:0] isKindOfClass:SetLog.class], @"");
+    SetLogContainer *setLogContainer = [combined objectAtIndex:0];
+    STAssertTrue([setLogContainer isKindOfClass:SetLogContainer.class], @"");
+    STAssertEquals([setLogContainer count], 2, @"");
 }
 
 @end

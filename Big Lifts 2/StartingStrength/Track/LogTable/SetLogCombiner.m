@@ -11,18 +11,15 @@
         SetLogContainer *container = [[SetLogContainer alloc] initWithSetLog:setLog];
         if (![combined containsObject:container]) {
             [combined addObject:container];
+            container.count = 1;
+        }
+        else {
+            SetLogContainer *existing = [combined objectAtIndex:[combined indexOfObject:container]];
+            existing.count++;
         }
     }
 
-    return [self unwrapContainer:combined];
-}
-
-- (NSArray *)unwrapContainer:(NSMutableArray *)setLogContainerArray {
-    NSMutableArray *setLogs = [@[] mutableCopy];
-    for (SetLogContainer *container in setLogContainerArray) {
-        [setLogs addObject:container.setLog];
-    }
-    return setLogs;
+    return combined;
 }
 
 @end
