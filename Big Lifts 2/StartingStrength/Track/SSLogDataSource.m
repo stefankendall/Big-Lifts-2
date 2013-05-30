@@ -2,7 +2,6 @@
 #import "CustomTableViewCell.h"
 #import "WorkoutLogCell.h"
 #import "WorkoutLogStore.h"
-#import "SetLogCell.h"
 #import "WorkoutLogTableDataSource.h"
 
 @implementation SSLogDataSource
@@ -24,7 +23,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     WorkoutLogCell *cell = (WorkoutLogCell *) [self tableView:tableView cellForRowAtIndexPath:indexPath];
     int rowCount = [cell.workoutLogTableDataSource tableView:nil numberOfRowsInSection:0];
-    return rowCount * SET_LOG_CELL_HEIGHT;
+    return rowCount * [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:indexPath];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
