@@ -10,7 +10,10 @@
     [controller viewDidLoad];
 
     [controller switchWorkoutToIndex:1];
-    STAssertEquals([[SSWorkoutStore instance] atIndex:1], [controller.ssLiftSummaryDataSource ssWorkout], @"");
+    SSWorkout *workoutB = [[SSWorkoutStore instance] atIndex:1];
+    STAssertEquals(workoutB, [controller.ssLiftSummaryDataSource ssWorkout], @"");
+    STAssertEquals(workoutB, controller.ssWorkout, @"");
+
 }
 
 @end

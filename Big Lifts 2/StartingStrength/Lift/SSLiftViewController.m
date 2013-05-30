@@ -23,7 +23,9 @@
 }
 
 - (void)switchWorkoutToIndex:(int)index {
-    [ssLiftSummaryDataSource setSsWorkout:[[SSWorkoutStore instance] atIndex:index]];
+    SSWorkout *newSsWorkout = [[SSWorkoutStore instance] atIndex:index];
+    ssWorkout = newSsWorkout;
+    [ssLiftSummaryDataSource setSsWorkout:newSsWorkout];
     [workoutSummaryTable reloadData];
 }
 
