@@ -1,5 +1,4 @@
 #import "SSStartingWeightTableDataSourceTests.h"
-#import "SSStartingWeightTableDataSource.h"
 #import "TextViewCell.h"
 #import "SSLift.h"
 #import "BLStore.h"

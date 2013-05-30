@@ -16,7 +16,6 @@
     [workoutSummaryTable setDataSource:ssLiftSummaryDataSource];
 }
 
-
 - (IBAction)workoutValueChanged:(id)sender {
     UISegmentedControl *workoutSelector = sender;
     [self switchWorkoutToIndex:[workoutSelector selectedSegmentIndex]];
@@ -35,6 +34,5 @@
         controller.ssWorkout = ssWorkout;
     }
 }
-
 
 @end
