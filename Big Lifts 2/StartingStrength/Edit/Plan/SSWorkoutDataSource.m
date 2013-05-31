@@ -29,7 +29,7 @@
     }
 
     SSWorkout *workout = [self getWorkout];
-    Workout *firstWorkout = workout.workouts[0];
+    Workout *firstWorkout = workout.workouts[(NSUInteger) [indexPath row]];
     Set * firstSet = firstWorkout.sets[0];
     SSLift *lift = (SSLift *) firstSet.lift;
 

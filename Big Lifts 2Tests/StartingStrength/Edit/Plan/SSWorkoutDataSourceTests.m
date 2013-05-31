@@ -1,18 +1,17 @@
 #import "SSWorkoutDataSourceTests.h"
 #import "SSWorkoutStore.h"
 #import "SSWorkoutDataSource.h"
-#import "SSLiftStore.h"
 #import "SSWorkout.h"
 #import "SSLift.h"
 #import "Workout.h"
 #import "Set.h"
+#import "BLStoreManager.h"
 
 @implementation SSWorkoutDataSourceTests
 
 - (void)setUp {
     [super setUp];
-    [[SSLiftStore instance] reset];
-    [[SSWorkoutStore instance] reset];
+    [[BLStoreManager instance] resetAllStores];
 }
 
 - (void)testNumberOfRowsInSection {
@@ -32,4 +31,16 @@
     NSString *firstSetLiftName2 = ((Set *) workout2.sets[1]).lift.name;
     STAssertTrue([firstSetLiftName2 isEqualToString:@"Squat"], firstSetLiftName2);
 }
+
+- (void)testReturnsIndividualWorkoutNames {
+    SSWorkoutDataSource *source = [[SSWorkoutDataSource alloc] initWithName:@"A"];
+    UITableViewCell *cell1 = [source tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    UITableViewCell *cell2 = [source tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+
+    NSString *cell1Text = [[cell1 textLabel] text];
+    NSString *cell2Text = [[cell2 textLabel] text];
+    STAssertFalse( [cell1Text isEqualToString:cell2Text], @"");
+
+}
+
 @end
