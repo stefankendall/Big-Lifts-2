@@ -6,6 +6,7 @@
 #import "NavEditCell.h"
 #import "NavLiftCell.h"
 #import "NavTrackCell.h"
+#import "NavBarLoadingCell.h"
 
 @implementation NavTableViewController
 
@@ -28,6 +29,7 @@
     NSDictionary *classViewMapping = @{
             NavSettingsCell.class : @"ssSettingsViewController",
             NavEditCell.class : @"ssEditViewController",
+            NavBarLoadingCell.class : @"ssBarLoading",
             NavLiftCell.class : @"ssLiftViewController",
             NavTrackCell.class : @"ssTrackViewController"
     };
