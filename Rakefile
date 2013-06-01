@@ -6,7 +6,7 @@ desc 'Run the tests'
 task :test => [:unit, :functional]
 
 task :unit do
-  passed = system('xctool clean -project Big\ Lifts\ 2.xcodeproj -scheme Big\ Lifts\ 2Tests test')
+  passed = system('xctool clean -workspace Big\ Lifts\ 2.xcworkspace -scheme Big\ Lifts\ 2Tests test')
   fail 'Unit tests failed' unless passed
 end
 
