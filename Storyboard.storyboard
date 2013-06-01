@@ -407,11 +407,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="RAC-Pl-TPc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="RAC-Pl-TPc">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="wn0-hZ-52a"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fAn-8v-dSD">
                                         <rect key="frame" x="0.0" y="46" width="320" height="45"/>
@@ -432,42 +429,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qrc-wQ-zY8">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="MLs-sp-X2j">
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="uEt-ua-9V4"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4Oh-eE-wJL">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BzE-yf-4E8">
-                                        <rect key="frame" x="0.0" y="91" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="AVm-FE-f4K">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="135" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -480,18 +442,15 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MLs-sp-X2j" firstAttribute="trailing" secondItem="PED-fm-iIB" secondAttribute="trailing" type="default" id="EWl-Wl-9o9"/>
-                            <constraint firstItem="MLs-sp-X2j" firstAttribute="top" secondItem="RAC-Pl-TPc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HKm-Os-1jV"/>
+                            <constraint firstItem="RAC-Pl-TPc" firstAttribute="bottom" secondItem="PED-fm-iIB" secondAttribute="bottom" type="default" id="412-7Y-SDk"/>
                             <constraint firstItem="RAC-Pl-TPc" firstAttribute="trailing" secondItem="PED-fm-iIB" secondAttribute="trailing" type="default" id="S4D-xZ-SiI"/>
                             <constraint firstItem="RAC-Pl-TPc" firstAttribute="top" secondItem="PED-fm-iIB" secondAttribute="top" type="default" id="Z4q-1O-gOd"/>
                             <constraint firstItem="RAC-Pl-TPc" firstAttribute="leading" secondItem="PED-fm-iIB" secondAttribute="leading" type="default" id="fv2-WV-a09"/>
-                            <constraint firstItem="MLs-sp-X2j" firstAttribute="leading" secondItem="PED-fm-iIB" secondAttribute="leading" type="default" id="qDw-BK-4aC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Plan Workouts" id="caT-m5-Vdo"/>
                     <connections>
-                        <outlet property="workoutATableView" destination="RAC-Pl-TPc" id="mil-h1-3cE"/>
-                        <outlet property="workoutBTableView" destination="MLs-sp-X2j" id="AvV-wI-XHG"/>
+                        <outlet property="workoutTableView" destination="RAC-Pl-TPc" id="A7G-n0-Cbp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbb-gy-owz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -871,7 +830,6 @@
         <class className="SSEditViewController" superclassName="SSMiddleViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSEditViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="ssLiftsForm" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -901,8 +859,7 @@
         <class className="SSPlanWorkoutsViewController" superclassName="SSMiddleViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="workoutATableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="workoutBTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="workoutTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="SSSettingsViewController" superclassName="SSMiddleViewController">

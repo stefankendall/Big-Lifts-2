@@ -1,5 +1,4 @@
 #import "SSWorkoutDataSourceTests.h"
-#import "SSWorkoutStore.h"
 #import "SSWorkoutDataSource.h"
 #import "SSWorkout.h"
 #import "SSLift.h"
@@ -8,22 +7,22 @@
 #import "BLStoreManager.h"
 
 @implementation SSWorkoutDataSourceTests
+@synthesize dataSource;
 
 - (void)setUp {
     [super setUp];
     [[BLStoreManager instance] resetAllStores];
+    dataSource = [SSWorkoutDataSource new];
 }
 
 - (void)testNumberOfRowsInSection {
-    SSWorkoutDataSource *source = [[SSWorkoutDataSource alloc] initWithName:@"A"];
-    STAssertEquals(3, [source tableView:nil numberOfRowsInSection:0], @"");
+    STAssertEquals(3, [dataSource tableView:nil numberOfRowsInSection:0], @"");
 }
 
 - (void)testMoveRowAtIndexPathSwapsLiftOrder {
-    SSWorkoutDataSource *source = [[SSWorkoutDataSource alloc] initWithName:@"A"];
-    [source tableView:nil moveRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] toIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    Workout *workout1 = [[source getWorkout] workouts][0];
-    Workout *workout2 = [[source getWorkout] workouts][1];
+    [dataSource tableView:nil moveRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] toIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    Workout *workout1 = [[dataSource getWorkoutForSection: 0] workouts][0];
+    Workout *workout2 = [[dataSource getWorkoutForSection: 0] workouts][1];
 
     NSString *firstSetLiftName1 = ((Set *) workout1.sets[0]).lift.name;
     STAssertTrue([firstSetLiftName1 isEqualToString:@"Bench"], @"");
@@ -33,14 +32,37 @@
 }
 
 - (void)testReturnsIndividualWorkoutNames {
-    SSWorkoutDataSource *source = [[SSWorkoutDataSource alloc] initWithName:@"A"];
-    UITableViewCell *cell1 = [source tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    UITableViewCell *cell2 = [source tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    UITableViewCell *cell1 = [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    UITableViewCell *cell2 = [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
 
     NSString *cell1Text = [[cell1 textLabel] text];
     NSString *cell2Text = [[cell2 textLabel] text];
     STAssertFalse( [cell1Text isEqualToString:cell2Text], @"");
+}
 
+- (void)testReturnsDifferentLiftsForDifferentSections {
+    UITableViewCell *section1LastCell = [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    UITableViewCell *section2LastCell = [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]];
+
+    NSString *cell1Text = [[section1LastCell textLabel] text];
+    NSString *cell2Text = [[section2LastCell textLabel] text];
+
+    STAssertTrue( [cell1Text isEqualToString:@"Deadlift"], @"");
+    STAssertTrue( [cell2Text isEqualToString:@"Power Clean"], @"");
+}
+
+- (void) testTargetIndexPathRejectsDifferentSection {
+    NSIndexPath *dest = [NSIndexPath indexPathForRow:0 inSection:1];
+    NSIndexPath *source = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *result = [dataSource tableView:nil targetIndexPathForMoveFromRowAtIndexPath:source toProposedIndexPath:dest];
+    STAssertEquals(result, source, @"");
+}
+
+- (void) testTargetIndexPathAllowsSameSection {
+    NSIndexPath *dest = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *source = [NSIndexPath indexPathForRow:1 inSection:0];
+    NSIndexPath *result = [dataSource tableView:nil targetIndexPathForMoveFromRowAtIndexPath:source toProposedIndexPath:dest];
+    STAssertEquals(result, dest, @"");
 }
 
 @end

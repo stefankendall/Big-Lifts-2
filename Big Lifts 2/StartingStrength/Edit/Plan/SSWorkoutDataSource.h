@@ -1,9 +1,6 @@
 @class SSWorkout;
 
-@interface SSWorkoutDataSource : NSObject <UITableViewDataSource>
-@property(nonatomic, strong) NSString *name;
+@interface SSWorkoutDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
-- (id)initWithName:(NSString *)string;
-
-- (SSWorkout *)getWorkout;
+- (SSWorkout *)getWorkoutForSection:(int)section;
 @end

@@ -3,11 +3,9 @@
 @class SSWorkoutDataSource;
 
 @interface SSPlanWorkoutsViewController : SSMiddleViewController <UITableViewDelegate> {
-    __weak IBOutlet UITableView *workoutATableView;
-    __weak IBOutlet UITableView *workoutBTableView;
+    __weak IBOutlet UITableView *workoutTableView;
 }
 
-@property(nonatomic, strong) SSWorkoutDataSource <UITableViewDataSource> *workoutADataSource;
-@property(nonatomic, strong) SSWorkoutDataSource <UITableViewDataSource> *workoutBDataSource;
+@property(nonatomic, strong) SSWorkoutDataSource <UITableViewDataSource> *workoutDataSource;
 
 @end
