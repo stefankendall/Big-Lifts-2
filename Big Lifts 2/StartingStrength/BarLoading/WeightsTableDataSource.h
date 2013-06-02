@@ -1,2 +1,2 @@
-@interface WeightsTableDataSource : NSObject <UITableViewDataSource>
+@interface WeightsTableDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 @end

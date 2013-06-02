@@ -1,0 +1,2 @@
+@interface Stepper : NSObject
+@end

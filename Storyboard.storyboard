@@ -217,7 +217,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="IPs-KE-xxh" imageView="TQ4-1M-8Gc" style="IBUITableViewCellStyleDefault" id="eB4-cH-4aY" customClass="NavEditCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="IPs-KE-xxh" imageView="TQ4-1M-8Gc" style="IBUITableViewCellStyleDefault" id="eB4-cH-4aY" customClass="NavBarLoadingCell">
                                         <rect key="frame" x="0.0" y="112" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -559,7 +559,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qrc-wQ-zY8">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="135" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -930,6 +930,9 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="NavBarLoadingCell" superclassName="NavTableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavBarLoadingCell.h"/>
+        </class>
         <class className="NavEditCell" superclassName="NavTableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NavEditCell.h"/>
         </class>
@@ -989,6 +992,9 @@
         </class>
         <class className="SSMiddleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSMiddleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:"/>
+            </relationships>
         </class>
         <class className="SSPlanWorkoutsViewController" superclassName="SSMiddleViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
