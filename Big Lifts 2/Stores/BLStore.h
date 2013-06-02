@@ -16,6 +16,8 @@
 
 - (NSArray *)findAll;
 
+- (NSArray *)findAllWithSort:(NSSortDescriptor *)sortDescriptor;
+
 - (id)findBy:(NSPredicate *)predicate;
 
 - (id)atIndex:(int)index;

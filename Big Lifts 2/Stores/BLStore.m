@@ -29,12 +29,17 @@
 }
 
 - (void)empty {
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [[[ContextManager model] entitiesByName] objectForKey:[self modelName]];
-    [request setEntity:entity];
+    NSFetchRequest *request = [self getRequest];
     for (NSManagedObject *object in [[ContextManager context] executeFetchRequest:request error:nil]) {
         [[ContextManager context] deleteObject:object];
     }
+}
+
+- (NSFetchRequest *)getRequest {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [[[ContextManager model] entitiesByName] objectForKey:[self modelName]];
+    [request setEntity:entity];
+    return request;
 }
 
 - (void)reset {
@@ -62,15 +67,21 @@
 }
 
 - (NSArray *)findAll {
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *e = [[[ContextManager model] entitiesByName] objectForKey:[self modelName]];
-    [request setEntity:e];
-
-    if ([[e propertiesByName] objectForKey:@"order"]) {
-        NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-        [request setSortDescriptors:@[sd]];
+    NSFetchRequest *request = [self getRequest];
+    if ([[[request entity] propertiesByName] objectForKey:@"order"]) {
+        [request setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES]]];
     }
 
+    return [self executeRequest:request];
+}
+
+- (NSArray *)findAllWithSort:(NSSortDescriptor *)sortDescriptor {
+    NSFetchRequest *request = [self getRequest];
+    [request setSortDescriptors:@[sortDescriptor]];
+    return [self executeRequest:request];
+}
+
+- (NSArray *)executeRequest:(NSFetchRequest *)request {
     NSError *error;
     NSArray *result = [[ContextManager context] executeFetchRequest:request error:&error];
     if (!result) {
