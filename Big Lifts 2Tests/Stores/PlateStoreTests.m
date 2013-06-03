@@ -2,6 +2,8 @@
 #import "BLStoreManager.h"
 #import "PlateStore.h"
 #import "Plate.h"
+#import "SettingsStore.h"
+#import "Settings.h"
 
 @implementation PlateStoreTests
 
@@ -28,9 +30,13 @@
 }
 
 - (void)testAdjustsWhenUnitsChange {
-    //do shit
+    Settings *settings = [[SettingsStore instance] first];
+    settings.units = @"kg";
+
+    [[PlateStore instance] adjustForKg];
+
     Plate *plate = [[PlateStore instance] first];
-    STAssertEquals([plate.weight doubleValue], 25.0, @"");
+    STAssertEquals([plate.weight doubleValue], 20.0, @"");
 }
 
 @end
