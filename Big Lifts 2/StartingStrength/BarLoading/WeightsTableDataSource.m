@@ -17,7 +17,6 @@
     return 2;
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 1;
@@ -79,6 +78,8 @@
     Bar *bar = [[BarStore instance] first];
     [[cell textField] setText:[NSString stringWithFormat:@"%.1f", [bar.weight doubleValue]]];
 
+    [[cell textField] setDelegate:self];
+
     return cell;
 }
 
@@ -103,6 +104,12 @@
     if (onDataChange) {
         onDataChange();
     }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSString *newWeight = [textField text];
+    Bar *bar = [[BarStore instance] first];
+    bar.weight = [NSNumber numberWithDouble:[newWeight doubleValue]];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
