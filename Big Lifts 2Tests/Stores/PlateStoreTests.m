@@ -27,4 +27,10 @@
     }
 }
 
+- (void)testAdjustsWhenUnitsChange {
+    //do shit
+    Plate *plate = [[PlateStore instance] first];
+    STAssertEquals([plate.weight doubleValue], 25.0, @"");
+}
+
 @end
