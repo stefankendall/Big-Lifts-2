@@ -5,16 +5,47 @@
 #import "SettingsStore.h"
 #import "Settings.h"
 #import "StepperWithCell.h"
+#import "BarWeightCell.h"
 
 @implementation WeightsTableDataSource
 @synthesize onDataChange;
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[PlateStore instance] count];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
+    else {
+        return [[PlateStore instance] count];
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if( section == 0 ){
+        return @"Bar";
+    }
+    else {
+        return @"Plates";
+    }
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WeightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SSLiftsCell"];
+    if ([indexPath section] == 0) {
+        return [self getBarWeightCell:tableView];
+
+    }
+    else {
+        return [self getPlateCell:tableView indexPath:indexPath];
+    }
+}
+
+- (UITableViewCell *)getPlateCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
+    WeightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeightTableCell"];
 
     if (cell == nil) {
         cell = [WeightTableCell createNewTextCellFromNib];
@@ -30,6 +61,16 @@
     [cell.stepper addTarget:self action:@selector(plateCountChanged:) forControlEvents:UIControlEventValueChanged];
     if ([plate.count intValue] == 0) {
         [cell.stepper setMinimumValue:0];
+    }
+
+    return cell;
+}
+
+- (UITableViewCell *)getBarWeightCell:(UITableView *)tableView {
+    BarWeightCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BarWeightCell"];
+
+    if (cell == nil ) {
+        cell = [BarWeightCell createNewTextCellFromNib];
     }
 
     return cell;
@@ -51,6 +92,7 @@
         currentPlateCount += additiveCount;
     }
 
+    [plateStepper setValue:0];
     p.count = [NSNumber numberWithInt:currentPlateCount];
     if (onDataChange) {
         onDataChange();

@@ -7,8 +7,7 @@
     [super viewDidLoad];
 
     UITapGestureRecognizer *singleFingerTap =
-            [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                    action:@selector(handleSingleTap:)];
+            [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [self.view addGestureRecognizer:singleFingerTap];
 
     ssLiftFormDataSource = [SSLiftFormDataSource new];

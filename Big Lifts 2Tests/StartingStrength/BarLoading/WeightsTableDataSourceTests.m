@@ -15,17 +15,17 @@
 }
 
 - (void)testReturnsPlateCount {
-    STAssertFalse([dataSource tableView:nil numberOfRowsInSection:0] == 0, @"");
+    STAssertTrue([dataSource tableView:nil numberOfRowsInSection:1] > 0, @"");
 }
 
 - (void)testWiresCellsWithData {
-    WeightTableCell *cell = (WeightTableCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    WeightTableCell *cell = (WeightTableCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     STAssertTrue([[[cell weightLabel] text] isEqualToString:@"45.0"], @"");
     STAssertTrue([[[cell unitsLabel] text] isEqualToString:@"lbs"], @"");
 }
 
 - (void)testPlateCountChangeAdjustsPlateCount {
-    WeightTableCell *cell = (WeightTableCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    WeightTableCell *cell = (WeightTableCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [cell.stepper setValue:1];
     [dataSource plateCountChanged:cell.stepper];
     Plate *p = [[PlateStore instance] atIndex: 0];
@@ -33,7 +33,7 @@
 }
 
 - (void)testPlateCountDoesNotGoNegative {
-    WeightTableCell *cell = (WeightTableCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    WeightTableCell *cell = (WeightTableCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [cell.stepper setValue:-2];
     Plate *p = [[PlateStore instance] atIndex: 0];
     p.count = [NSNumber numberWithInt:1];
