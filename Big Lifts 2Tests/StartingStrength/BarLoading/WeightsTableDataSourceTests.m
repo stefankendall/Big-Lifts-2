@@ -2,9 +2,11 @@
 #import "BLStoreManager.h"
 #import "WeightsTableDataSource.h"
 #import "WeightTableCell.h"
+#import "BarWeightCell.h"
 #import "StepperWithCell.h"
 #import "PlateStore.h"
 #import "Plate.h"
+#import "TextFieldWithCell.h"
 
 @implementation WeightsTableDataSourceTests
 @synthesize dataSource;
@@ -39,6 +41,13 @@
     p.count = [NSNumber numberWithInt:1];
     [dataSource plateCountChanged:cell.stepper];
     STAssertEquals([p.count intValue], 0, @"");
+}
+
+- (void) testBarWeightCellIsSetOnLoad {
+    BarWeightCell *cell = (BarWeightCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    NSString *barText = [[cell textField] text];
+
+    STAssertFalse([barText isEqualToString:@""], @"");
 }
 
 @end

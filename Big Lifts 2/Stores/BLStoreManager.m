@@ -8,6 +8,7 @@
 #import "CurrentProgramStore.h"
 #import "WorkoutLogStore.h"
 #import "PlateStore.h"
+#import "BarStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
@@ -21,7 +22,8 @@
             [SetStore instance],
             [SSLiftStore instance],
             [SSWorkoutStore instance],
-            [PlateStore instance]
+            [PlateStore instance],
+            [BarStore instance]
     ];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:)

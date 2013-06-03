@@ -6,6 +6,9 @@
 #import "Settings.h"
 #import "StepperWithCell.h"
 #import "BarWeightCell.h"
+#import "TextFieldWithCell.h"
+#import "BarStore.h"
+#import "Bar.h"
 
 @implementation WeightsTableDataSource
 @synthesize onDataChange;
@@ -25,7 +28,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if( section == 0 ){
+    if (section == 0) {
         return @"Bar";
     }
     else {
@@ -72,6 +75,9 @@
     if (cell == nil ) {
         cell = [BarWeightCell createNewTextCellFromNib];
     }
+
+    Bar *bar = [[BarStore instance] first];
+    [[cell textField] setText:[NSString stringWithFormat:@"%.1f", [bar.weight doubleValue]]];
 
     return cell;
 }
