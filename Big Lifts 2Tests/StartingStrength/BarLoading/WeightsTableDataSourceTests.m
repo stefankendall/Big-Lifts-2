@@ -7,8 +7,6 @@
 #import "PlateStore.h"
 #import "Plate.h"
 #import "TextFieldWithCell.h"
-#import "BarStore.h"
-#import "Bar.h"
 
 @implementation WeightsTableDataSourceTests
 @synthesize dataSource;
@@ -20,6 +18,13 @@
 
 - (void)testReturnsPlateCount {
     STAssertTrue([dataSource tableView:nil numberOfRowsInSection:1] > 0, @"");
+}
+
+- (void)testAddsOneRowForAddingPlates {
+    UITableViewCell *addCell = [dataSource tableView:nil cellForRowAtIndexPath:
+            [NSIndexPath indexPathForRow:[[PlateStore instance] count] inSection:1]];
+    NSString *addText = [[addCell textLabel] text];
+    STAssertTrue([addText rangeOfString:@"Add"].location != NSNotFound, @"");
 }
 
 - (void)testWiresCellsWithData {
@@ -50,15 +55,6 @@
     NSString *barText = [[cell textField] text];
 
     STAssertFalse([barText isEqualToString:@""], @"");
-}
-
-- (void)testBarWeightCanBeChanged {
-    UITextField *textField = [UITextField new];
-    [textField setText:@"33"];
-    [dataSource textFieldDidEndEditing:textField];
-
-    Bar *bar = [[BarStore instance] first];
-    STAssertEquals( [bar.weight doubleValue], 33.0, @"");
 }
 
 @end
