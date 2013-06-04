@@ -1,6 +1,14 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## TPKeyboardAvoiding
+
+Free for commercial use and redistribution in any form. Credit is appreciated but not essential. Oh, and there aint no warranty!
+
+Michael Tyson, A Tasty Pixel  
+michael@atastypixel.com
+
+
 ## ViewDeck
 
 Copyright (C) 2011-2013, Tom Adriaenssen

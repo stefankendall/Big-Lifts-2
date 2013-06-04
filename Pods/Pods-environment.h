@@ -6,6 +6,12 @@
 // project.
 
 
+// TPKeyboardAvoiding
+#define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding
+#define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 0
+#define COCOAPODS_VERSION_MINOR_TPKeyboardAvoiding 0
+#define COCOAPODS_VERSION_PATCH_TPKeyboardAvoiding 1
+
 // ViewDeck
 #define COCOAPODS_POD_AVAILABLE_ViewDeck
 #define COCOAPODS_VERSION_MAJOR_ViewDeck 2
