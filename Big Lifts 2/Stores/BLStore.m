@@ -95,7 +95,7 @@
     NSArray *all = [self findAll];
     NSArray *results = [all filteredArrayUsingPredicate:predicate];
     if (results.count != 1) {
-        [NSException raise:@"Did not find exactly one record" format:@""];
+        return nil;
     }
 
     return results[0];
