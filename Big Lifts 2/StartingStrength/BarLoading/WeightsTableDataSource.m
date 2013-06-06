@@ -4,39 +4,18 @@
 #import "Plate.h"
 #import "SettingsStore.h"
 #import "Settings.h"
-#import "AddPlateTextFieldDelegate.h"
 #import "StepperWithCell.h"
 #import "BarWeightCell.h"
 #import "BarWeightTextFieldDelegate.h"
 #import "TextFieldWithCell.h"
 #import "BarStore.h"
 #import "Bar.h"
-#import "AddPlateCell.h"
 
 @implementation WeightsTableDataSource
 @synthesize tableView;
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        addingPlate = NO;
-    }
-
-    return self;
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 1;
-    }
-    else {
-        int ADD_ROW_COUNT = 1;
-        return [[PlateStore instance] count] + ADD_ROW_COUNT;
-    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -48,6 +27,15 @@
     }
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
+    else {
+        int ADD_ROW_COUNT = 1;
+        return [[PlateStore instance] count] + ADD_ROW_COUNT;
+    }
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {
@@ -87,40 +75,17 @@
 }
 
 - (UITableViewCell *)getAddCell:(UITableView *)tableView {
-    if (!addingPlate) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeightTableAddCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeightTableAddCell"];
 
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WeightTableAddCell"];
-        }
-
-        [[cell textLabel] setText:@"Add..."];
-        [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
-        [[cell textLabel] setTextColor:[UIColor darkTextColor]];
-
-        return cell;
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WeightTableAddCell"];
     }
 
-    else {
-        AddPlateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddPlateCell"];
+    [[cell textLabel] setText:@"Add..."];
+    [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
+    [[cell textLabel] setTextColor:[UIColor darkTextColor]];
 
-        if (cell == nil) {
-            cell = [AddPlateCell createNewTextCellFromNib];
-        }
-
-        addPlateTextFieldDelegate = [AddPlateTextFieldDelegate new];
-        [[cell weightField] setDelegate:addPlateTextFieldDelegate];
-        addPlateTextField = [cell weightField];
-
-        return cell;
-    }
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath row] == [[PlateStore instance] count]) {
-        addingPlate = YES;
-        [tableView reloadData];
-    }
+    return cell;
 }
 
 - (UITableViewCell *)getBarWeightCell:(UITableView *)tableView {
@@ -138,6 +103,7 @@
 
     return cell;
 }
+
 
 - (void)plateCountChanged:(UIStepper *)plateStepper {
     StepperWithCell *stepperWithCell = (StepperWithCell *) plateStepper;
@@ -160,13 +126,9 @@
     [tableView reloadData];
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *emptyViewToPreventEmptyRows = [UIView new];
-    return emptyViewToPreventEmptyRows;
-}
 
 - (BOOL)isEditing {
-    return [barWeightTextField isEditing] || [addPlateTextField isEditing];
+    return [barWeightTextField isEditing];
 }
 
 @end

@@ -2,7 +2,7 @@
 
 @class WeightsTableDataSource;
 
-@interface SSBarLoadingViewController : SSMiddleViewController <UIGestureRecognizerDelegate> {
+@interface SSBarLoadingViewController : SSMiddleViewController <UIGestureRecognizerDelegate, UITableViewDelegate> {
     WeightsTableDataSource *weightsTableDataSource;
 }
 @property (weak, nonatomic) IBOutlet UITableView *weightsTable;
