@@ -50,6 +50,20 @@
     STAssertEquals([p.count intValue], 0, @"");
 }
 
+- (void)testPlateStepperMinimumReadjustedWhenPlatesAdded {
+    WeightTableCell *cell = (WeightTableCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    [cell.stepper setValue:-2];
+    Plate *p = [[PlateStore instance] atIndex:0];
+    p.count = [NSNumber numberWithInt:1];
+
+    [dataSource plateCountChanged:cell.stepper];
+    STAssertEquals([cell.stepper minimumValue], 0.0, @"");
+
+    [cell.stepper setValue:1];
+    [dataSource plateCountChanged:cell.stepper];
+    STAssertEquals([cell.stepper minimumValue], -2.0, @"");
+}
+
 - (void)testBarWeightCellIsSetOnLoad {
     BarWeightCell *cell = (BarWeightCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     NSString *barText = [[cell textField] text];

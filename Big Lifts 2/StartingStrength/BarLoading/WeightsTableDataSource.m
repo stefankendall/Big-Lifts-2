@@ -66,9 +66,6 @@
         cell.indexPath = indexPath;
 
         [cell.stepper addTarget:self action:@selector(plateCountChanged:) forControlEvents:UIControlEventValueChanged];
-        if ([plate.count intValue] == 0) {
-            [cell.stepper setMinimumValue:0];
-        }
 
         return cell;
     }
@@ -123,6 +120,14 @@
 
     [plateStepper setValue:0];
     p.count = [NSNumber numberWithInt:currentPlateCount];
+
+    if (currentPlateCount == 0) {
+        [plateStepper setMinimumValue:0];
+    }
+    else {
+        [plateStepper setMinimumValue:-2];
+    }
+
     [tableView reloadData];
 }
 

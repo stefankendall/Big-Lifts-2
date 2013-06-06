@@ -11,6 +11,8 @@
     Plate *p = [[PlateStore instance] create];
     p.weight = [NSNumber numberWithDouble:weight];
     p.count = [NSNumber numberWithInt:count];
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

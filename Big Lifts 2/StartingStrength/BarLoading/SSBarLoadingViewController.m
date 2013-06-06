@@ -18,6 +18,11 @@
     [self.view addGestureRecognizer:singleFingerTap];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [weightsTable reloadData];
+}
+
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     return [weightsTableDataSource isEditing];
 }
