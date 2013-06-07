@@ -3,7 +3,7 @@ require 'cucumber/rake/task'
 
 desc 'Run the tests'
 
-task :test => [:unit]
+task :test => [:unit, :frank]
 
 task :unit do
   passed = system('xctool clean -workspace Big\ Lifts\ 2.xcworkspace -scheme Big\ Lifts\ 2Tests build test')
