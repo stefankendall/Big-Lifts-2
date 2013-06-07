@@ -11,7 +11,7 @@ task :unit do
 end
 
 task :frank do
-  passed = system('frank build --workspace "Big Lifts 2.xcworkspace" --scheme "Big Lifts 2"')
+  passed = system('frank build --workspace "Big Lifts 2.xcworkspace" --scheme "Frank"')
   fail 'Frank failed' unless passed
 end
 
