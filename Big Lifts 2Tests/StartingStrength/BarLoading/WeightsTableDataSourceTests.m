@@ -7,6 +7,7 @@
 #import "PlateStore.h"
 #import "Plate.h"
 #import "TextFieldWithCell.h"
+#import "RowUIButton.h"
 
 @implementation WeightsTableDataSourceTests
 @synthesize dataSource;
@@ -69,6 +70,29 @@
     NSString *barText = [[cell textField] text];
 
     STAssertFalse([barText isEqualToString:@""], @"");
+}
+
+- (void)testModifyCellForPlateCountHandles0 {
+    WeightTableCell *cell = (WeightTableCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    [dataSource modifyCellForPlateCount:cell currentPlateCount:0];
+    STAssertTrue([[cell platesLabel] isHidden], @"");
+    STAssertTrue([[cell countLabel] isHidden], @"");
+    STAssertFalse([[cell deleteButton] isHidden], @"");
+
+    [dataSource modifyCellForPlateCount:cell currentPlateCount:2];
+
+    STAssertFalse([[cell platesLabel] isHidden], @"");
+    STAssertFalse([[cell countLabel] isHidden], @"");
+    STAssertTrue([[cell deleteButton] isHidden], @"");
+}
+
+- (void)testTappingDeleteDeletesPlate {
+    RowUIButton *button = [RowUIButton new];
+    button.indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    int oldCount = [[PlateStore instance] count];
+    [dataSource deleteButtonTapped:button];
+    STAssertEquals( [[PlateStore instance] count], oldCount - 1, @"");
+
 }
 
 @end

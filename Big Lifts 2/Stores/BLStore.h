@@ -22,6 +22,8 @@
 
 - (id)atIndex:(int)index;
 
+- (void)removeAtIndex: (int) index;
+
 - (int)count;
 
 + (instancetype)instance;

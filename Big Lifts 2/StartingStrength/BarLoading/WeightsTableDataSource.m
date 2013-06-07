@@ -10,6 +10,7 @@
 #import "TextFieldWithCell.h"
 #import "BarStore.h"
 #import "Bar.h"
+#import "RowUIButton.h"
 
 @implementation WeightsTableDataSource
 @synthesize tableView;
@@ -66,9 +67,20 @@
         cell.indexPath = indexPath;
 
         [cell.stepper addTarget:self action:@selector(plateCountChanged:) forControlEvents:UIControlEventValueChanged];
+        cell.deleteButton.indexPath = indexPath;
+        [cell.deleteButton addTarget:self action:@selector(deleteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+
+        [self modifyCellForPlateCount:cell currentPlateCount:[plate.count intValue]];
 
         return cell;
     }
+}
+
+- (void)deleteButtonTapped:(id)deleteButton {
+    RowUIButton *button = deleteButton;
+    int row = [[button indexPath] row];
+    [[PlateStore instance] removeAtIndex:row];
+    [tableView reloadData];
 }
 
 - (UITableViewCell *)getAddCell:(UITableView *)tableView {
@@ -118,17 +130,21 @@
         currentPlateCount += additiveCount;
     }
 
-    [plateStepper setValue:0];
     p.count = [NSNumber numberWithInt:currentPlateCount];
 
-    if (currentPlateCount == 0) {
-        [plateStepper setMinimumValue:0];
-    }
-    else {
-        [plateStepper setMinimumValue:-2];
-    }
-
+    [self modifyCellForPlateCount:[stepperWithCell cell] currentPlateCount:currentPlateCount];
     [tableView reloadData];
+}
+
+- (void)modifyCellForPlateCount:(WeightTableCell *)cell currentPlateCount:(int)currentPlateCount {
+    UIStepper *plateStepper = [cell stepper];
+    [plateStepper setValue:0];
+
+    BOOL atMinimum = currentPlateCount == 0;
+    [plateStepper setMinimumValue:(atMinimum ? 0 : -2)];
+    [[cell platesLabel] setHidden:atMinimum];
+    [[cell countLabel] setHidden:atMinimum];
+    [[cell deleteButton] setHidden:!atMinimum];
 }
 
 

@@ -104,6 +104,10 @@
 
 - (id)atIndex:(int)index {
     return [self findAll][(NSUInteger) index];
+}
+
+- (void)removeAtIndex:(int)index {
+    [[ContextManager context] deleteObject:[self atIndex:index]];
 };
 
 - (int)count {
