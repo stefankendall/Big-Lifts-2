@@ -6,6 +6,12 @@
 // project.
 
 
+// EZForm
+#define COCOAPODS_POD_AVAILABLE_EZForm
+#define COCOAPODS_VERSION_MAJOR_EZForm 1
+#define COCOAPODS_VERSION_MINOR_EZForm 1
+#define COCOAPODS_VERSION_PATCH_EZForm 0
+
 // TPKeyboardAvoiding
 #define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding
 #define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 0
