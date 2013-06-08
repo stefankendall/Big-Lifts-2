@@ -24,4 +24,43 @@
     STAssertNotNil(p, @"");
 }
 
+- (void)testViewDidAppearResetsForm {
+    AddPlateViewController *controller = [self getController];
+    [controller viewDidAppear:YES];
+    STAssertFalse([controller.saveButton isEnabled], @"");
+    STAssertTrue([[controller.weightTextField text] isEqualToString:@""], @"");
+    STAssertTrue([[controller.countTextField text] isEqualToString:@""], @"");
+}
+
+- (void)testValidatesWeight {
+    AddPlateViewController *controller = [self getController];
+    EZFormTextField *weightFormField = [controller.form formFieldForKey:@"weight"];
+    [weightFormField setFieldValue:@""];
+    STAssertFalse([weightFormField isValid], @"");
+
+    [weightFormField setFieldValue:@"6"];
+    STAssertTrue([weightFormField isValid], @"");
+}
+
+- (void)testValidatesCount {
+    AddPlateViewController *controller = [self getController];
+    EZFormTextField *countFormField = [controller.form formFieldForKey:@"count"];
+    [countFormField setFieldValue:@""];
+    STAssertFalse([countFormField isValid], @"");
+
+    [countFormField setFieldValue:@"6"];
+    STAssertTrue([countFormField isValid], @"");
+}
+
+- (AddPlateViewController *)getController {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    AddPlateViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"addPlate"];
+    UINavigationController *mainNav = [UINavigationController new];
+    [mainNav setViewControllers:@[controller]];
+
+    [controller viewDidLoad];
+
+    return controller;
+}
+
 @end

@@ -1399,6 +1399,7 @@
 				INFOPLIST_FILE = "Big Lifts 2Tests/Big Lifts 2Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -1416,6 +1417,7 @@
 				INFOPLIST_FILE = "Big Lifts 2Tests/Big Lifts 2Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
