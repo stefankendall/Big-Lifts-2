@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		024CD5FD1736D68600EDA8AB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */; };
-		02B07A311749689A0056EF19 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CE45766F12890343540 /* CustomTableViewCell.m */; };
 		02DAE24F1744755A001F31C2 /* SSPlanWorkoutsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590018E207CF445CE30943 /* SSPlanWorkoutsViewController.m */; };
 		02F3F675173FE1BB0047305A /* SSLiftStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459024F4BF760314E7766CC /* SSLiftStoreTests.m */; };
 		5459003C98A6652A65E569F3 /* CurrentProgramStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FE89FA3B9CACDB47621 /* CurrentProgramStore.m */; };
@@ -291,7 +290,6 @@
 		5459082ADB17207AD1E8522D /* SSWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkoutStoreTests.m; sourceTree = "<group>"; };
 		5459083F9731ADB225DFCB6F /* SSIndividualWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIndividualWorkoutViewController.h; sourceTree = "<group>"; };
 		5459084B5272E0A8A289018A /* SSTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTrackViewController.m; sourceTree = "<group>"; };
-		5459085E90497E4E2E58EB11 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		5459086609B635143DD9611F /* ProgramSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramSelectorViewController.h; sourceTree = "<group>"; };
 		5459088313861DA1F90E0A0D /* PlateStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlateStoreTests.m; sourceTree = "<group>"; };
 		5459088E695A0D20ECA09464 /* Big Lifts 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Lifts 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -357,7 +355,6 @@
 		54590CCF95A3CA9120F4F9BA /* SetLogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLogCell.m; sourceTree = "<group>"; };
 		54590CD975E0619B049A4AA0 /* SSLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftViewControllerTests.h; sourceTree = "<group>"; };
 		54590CDC0CA1FF8574E448C0 /* AddPlateViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlateViewControllerTests.h; sourceTree = "<group>"; };
-		54590CE45766F12890343540 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		54590CE6E1C7F29AF260174C /* SSLogDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLogDataSourceTests.m; sourceTree = "<group>"; };
 		54590D0607AF7D287CF7E021 /* SetLogContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLogContainer.m; sourceTree = "<group>"; };
 		54590D07EB157A9007B2FEA1 /* ContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextManager.h; sourceTree = "<group>"; };
@@ -632,8 +629,6 @@
 		545903DCCE74EDE9EFAABEA2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				54590CE45766F12890343540 /* CustomTableViewCell.m */,
-				5459085E90497E4E2E58EB11 /* CustomTableViewCell.h */,
 				54590D76759E0AF4D84ACB28 /* TextField */,
 				54590EFA6E5CB2E4ACDC9425 /* Stepper.m */,
 				545908AD85544B3D1087B000 /* Stepper.h */,
@@ -1240,7 +1235,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B07A311749689A0056EF19 /* CustomTableViewCell.m in Sources */,
 				545903C5C5EF984B0A18E870 /* main.m in Sources */,
 				545906D497D17D3A5E089098 /* BLAppDelegate.m in Sources */,
 				545901A747A04C98E1814122 /* Big_Lifts_2.xcdatamodeld in Sources */,
