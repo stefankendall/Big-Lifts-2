@@ -1,6 +1,5 @@
 #import "WorkoutLogTableDataSource.h"
 #import "WorkoutLog.h"
-#import "CustomTableViewCell.h"
 #import "SetLogCell.h"
 #import "SetLogCombiner.h"
 
@@ -24,7 +23,7 @@
     SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:@"SetLogCell"];
 
     if (cell == nil) {
-        cell = [SetLogCell createNewTextCellFromNib];
+        cell = [SetLogCell create];
         [cell setSetLogContainer:[[self getCombinedSets] objectAtIndex:(NSUInteger) [indexPath row]]];
     }
 

@@ -14,7 +14,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SSLiftFormCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SSLiftsCell"];
     if (cell == nil) {
-        cell = [SSLiftFormCell createNewTextCellFromNib];
+        cell = [SSLiftFormCell create];
     }
 
     SSLift *lift = ([[SSLiftStore instance] findAll])[(NSUInteger) indexPath.row];

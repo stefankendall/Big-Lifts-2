@@ -1,8 +1,8 @@
-#import "CustomTableViewCell.h"
+#import "CTCustomTableViewCell.h"
 
 @class Set;
 
-@interface SetCell : CustomTableViewCell {
+@interface SetCell : CTCustomTableViewCell {
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;

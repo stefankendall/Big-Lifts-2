@@ -56,7 +56,7 @@
         WeightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeightTableCell"];
 
         if (cell == nil) {
-            cell = [WeightTableCell createNewTextCellFromNib];
+            cell = [WeightTableCell create];
         }
 
         Plate *plate = [[PlateStore instance] atIndex:row];
@@ -101,7 +101,7 @@
     BarWeightCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BarWeightCell"];
 
     if (cell == nil ) {
-        cell = [BarWeightCell createNewTextCellFromNib];
+        cell = [BarWeightCell create];
     }
 
     Bar *bar = [[BarStore instance] first];

@@ -14,7 +14,7 @@
 }
 
 -(void) testSetCellSetsPlates {
-    SetCellWithPlates *cell = [SetCellWithPlates createNewTextCellFromNib];
+    SetCellWithPlates *cell = [SetCellWithPlates create];
 
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];

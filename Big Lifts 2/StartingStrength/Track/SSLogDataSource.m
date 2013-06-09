@@ -1,5 +1,4 @@
 #import "SSLogDataSource.h"
-#import "CustomTableViewCell.h"
 #import "WorkoutLogCell.h"
 #import "WorkoutLogStore.h"
 #import "WorkoutLogTableDataSource.h"
@@ -13,7 +12,7 @@
     WorkoutLogCell *cell = (WorkoutLogCell *) [tableView dequeueReusableCellWithIdentifier:@"WorkoutLogCell"];
 
     if (cell == nil) {
-        cell = [WorkoutLogCell createNewTextCellFromNib];
+        cell = [WorkoutLogCell create];
         [cell setWorkoutLog:[[WorkoutLogStore instance] atIndex:[indexPath row]]];
     }
 

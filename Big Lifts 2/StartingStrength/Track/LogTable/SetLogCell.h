@@ -1,4 +1,4 @@
-#import "CustomTableViewCell.h"
+#import <CTCustomTableViewCell/CTCustomTableViewCell.h>
 
 @class Set;
 @class SetLog;
@@ -6,7 +6,7 @@
 
 extern int const SET_LOG_CELL_HEIGHT;
 
-@interface SetLogCell : CustomTableViewCell
+@interface SetLogCell : CTCustomTableViewCell
 {
 }
 @property(nonatomic, strong) SetLog *setLog;

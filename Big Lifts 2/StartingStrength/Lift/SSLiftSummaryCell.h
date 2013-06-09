@@ -1,9 +1,9 @@
-#import "CustomTableViewCell.h"
+#import "CTCustomTableViewCell.h"
 
 @class SSLift;
 @class Workout;
 
-@interface SSLiftSummaryCell : CustomTableViewCell
+@interface SSLiftSummaryCell : CTCustomTableViewCell
 {}
 @property (weak, nonatomic) IBOutlet UILabel *weightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *liftLabel;

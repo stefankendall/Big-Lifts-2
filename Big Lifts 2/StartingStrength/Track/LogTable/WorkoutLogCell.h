@@ -1,9 +1,9 @@
-#import "CustomTableViewCell.h"
+#import "CTCustomTableViewCell.h"
 
 @class WorkoutLog;
 @class WorkoutLogTableDataSource;
 
-@interface WorkoutLogCell : CustomTableViewCell {
+@interface WorkoutLogCell : CTCustomTableViewCell {
 }
 
 @property(nonatomic) WorkoutLog *workoutLog;

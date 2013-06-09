@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "CustomTableViewCell.h"
+#import "CTCustomTableViewCell.h"
 
 @class TextFieldWithCell;
 
-@interface TextFieldCell : CustomTableViewCell {
+@interface TextFieldCell : CTCustomTableViewCell {
 }
 
 @property(nonatomic, strong) IBOutlet TextFieldWithCell *textField;

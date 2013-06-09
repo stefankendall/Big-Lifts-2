@@ -15,7 +15,7 @@
 }
 
 - (void)testSetCellSetsLabels {
-    SetCell *cell = [SetCell createNewTextCellFromNib];
+    SetCell *cell = [SetCell create];
 
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];

@@ -21,7 +21,7 @@
     SSLiftSummaryCell *cell = (SSLiftSummaryCell *) [tableView dequeueReusableCellWithIdentifier:@"SSLiftSummaryCell"];
 
     if (cell == nil) {
-        cell = [SSLiftSummaryCell createNewTextCellFromNib];
+        cell = [SSLiftSummaryCell create];
     }
 
     [cell setWorkout:ssWorkout.workouts[(NSUInteger) [indexPath row]]];

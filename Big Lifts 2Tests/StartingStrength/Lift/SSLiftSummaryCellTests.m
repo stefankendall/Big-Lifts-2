@@ -18,7 +18,7 @@
 }
 
 - (void)testSetWorkoutSetsValues {
-    SSLiftSummaryCell *cell = [SSLiftSummaryCell createNewTextCellFromNib];
+    SSLiftSummaryCell *cell = [SSLiftSummaryCell create];
     SSWorkout *workoutA = [[SSWorkoutStore instance] first];
 
     Settings * settings = [[SettingsStore instance] first];

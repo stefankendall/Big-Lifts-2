@@ -11,7 +11,7 @@
 
 - (void)testSetWorkoutSetsTableDataSource {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
-    WorkoutLogCell *cell = [WorkoutLogCell createNewTextCellFromNib];
+    WorkoutLogCell *cell = [WorkoutLogCell create];
 
     [cell setWorkoutLog:workoutLog];
     STAssertNotNil([[cell setTable] dataSource], @"");

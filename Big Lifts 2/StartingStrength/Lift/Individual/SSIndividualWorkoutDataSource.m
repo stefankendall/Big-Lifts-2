@@ -29,7 +29,7 @@
     SetCellWithPlates *cell = (SetCellWithPlates *) [tableView dequeueReusableCellWithIdentifier:@"SetCellWithPlates"];
 
     if (cell == nil) {
-        cell = [SetCellWithPlates createNewTextCellFromNib];
+        cell = [SetCellWithPlates create];
     }
 
     [cell setSet:[[[self getCurrentWorkout] sets] objectAtIndex:(NSUInteger) [indexPath row]]];
