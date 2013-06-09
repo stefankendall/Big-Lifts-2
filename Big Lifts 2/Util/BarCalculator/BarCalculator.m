@@ -1,7 +1,7 @@
 #import "BarCalculator.h"
-#import "EnumeratorKit.h"
 #import "Plate.h"
 #import "PlateRemaining.h"
+#import "MRCEnumerable.h"
 
 @interface BarCalculator ()
 @property(nonatomic, strong) NSArray *plates;
@@ -24,10 +24,10 @@
     NSMutableArray *plateWeights = [@[] mutableCopy];
 
     while (targetWeight > 0) {
-        remainingPlates = remainingPlates.filter(^(PlateRemaining *p) {
+        remainingPlates = [remainingPlates select:^(PlateRemaining *p) {
             BOOL countRemaining = p.count > 0;
             return countRemaining;
-        });
+        }];
 
         PlateRemaining *nextPlate = [self findPlateClosestToWeight:targetWeight fromPlates:remainingPlates];
         if (nextPlate == nil ) {
@@ -44,18 +44,15 @@
 }
 
 - (PlateRemaining *)findPlateClosestToWeight:(double)weight fromPlates:(NSArray *)plates {
-    for (PlateRemaining *plate in plates) {
-        if (plate.weight * 2 <= weight) {
-            return plate;
-        }
-    }
-    return nil;
+    return [plates detect:^BOOL(PlateRemaining *plate) {
+        return plate.weight * 2 <= weight;
+    }];
 }
 
 - (NSArray *)copyPlates:(NSArray *)plates {
-    return plates.map(^(Plate *p) {
+    return [plates collect:(^(Plate *p) {
         return [PlateRemaining fromPlate:p];
-    });
+    })];
 }
 
 

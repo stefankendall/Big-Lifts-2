@@ -12,23 +12,11 @@
 #define COCOAPODS_VERSION_MINOR_EZForm 1
 #define COCOAPODS_VERSION_PATCH_EZForm 0
 
-// EnumeratorKit
-#define COCOAPODS_POD_AVAILABLE_EnumeratorKit
-#define COCOAPODS_VERSION_MAJOR_EnumeratorKit 0
-#define COCOAPODS_VERSION_MINOR_EnumeratorKit 1
-#define COCOAPODS_VERSION_PATCH_EnumeratorKit 0
-
-// EnumeratorKit/Core
-#define COCOAPODS_POD_AVAILABLE_EnumeratorKit_Core
-#define COCOAPODS_VERSION_MAJOR_EnumeratorKit_Core 0
-#define COCOAPODS_VERSION_MINOR_EnumeratorKit_Core 1
-#define COCOAPODS_VERSION_PATCH_EnumeratorKit_Core 0
-
-// EnumeratorKit/EKFiber
-#define COCOAPODS_POD_AVAILABLE_EnumeratorKit_EKFiber
-#define COCOAPODS_VERSION_MAJOR_EnumeratorKit_EKFiber 0
-#define COCOAPODS_VERSION_MINOR_EnumeratorKit_EKFiber 1
-#define COCOAPODS_VERSION_PATCH_EnumeratorKit_EKFiber 0
+// MRCEnumerable
+#define COCOAPODS_POD_AVAILABLE_MRCEnumerable
+#define COCOAPODS_VERSION_MAJOR_MRCEnumerable 0
+#define COCOAPODS_VERSION_MINOR_MRCEnumerable 0
+#define COCOAPODS_VERSION_PATCH_MRCEnumerable 1
 
 // TPKeyboardAvoiding
 #define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding
