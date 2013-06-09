@@ -5,14 +5,13 @@
 #import "Lift.h"
 
 @implementation SetCell
-@synthesize liftLabel, repsLabel, weightLabel;
 
 - (void)setSet:(Set *)set {
-    [repsLabel setText:[NSString stringWithFormat:@"%dx", [[set reps] intValue]]];
+    [self.repsLabel setText:[NSString stringWithFormat:@"%dx", [[set reps] intValue]]];
 
     Settings *settings = [[SettingsStore instance] first];
-    [weightLabel setText:[NSString stringWithFormat:@"%0.1f %@", [[set weight] doubleValue], settings.units]];
+    [self.weightLabel setText:[NSString stringWithFormat:@"%0.1f %@", [[set weight] doubleValue], settings.units]];
 
-    [liftLabel setText:[set lift].name];
+    [self.liftLabel setText:[set lift].name];
 }
 @end

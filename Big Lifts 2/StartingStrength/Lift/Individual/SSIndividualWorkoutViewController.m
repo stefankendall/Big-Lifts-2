@@ -1,3 +1,4 @@
+#import <CoreGraphics/CoreGraphics.h>
 #import "SSIndividualWorkoutViewController.h"
 #import "SSIndividualWorkoutDataSource.h"
 #import "SSWorkout.h"
@@ -10,15 +11,14 @@
 #import "SetLogStore.h"
 
 @implementation SSIndividualWorkoutViewController
-@synthesize workoutTable, individualWorkoutDataSource, ssWorkout, workoutIndex;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    workoutIndex = 0;
-    individualWorkoutDataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:ssWorkout];
-    [workoutTable setDataSource:individualWorkoutDataSource];
-    [workoutTable setDelegate:self];
+    self.workoutIndex = 0;
+    self.individualWorkoutDataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:self.ssWorkout];
+    [self.workoutTable setDataSource:self.individualWorkoutDataSource];
+    [self.workoutTable setDelegate:self];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -26,13 +26,19 @@
     return emptyViewToPreventEmptyRows;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self.individualWorkoutDataSource tableView:tableView cellForRowAtIndexPath:indexPath];
+    return [cell bounds].size.height;
+}
+
+
 - (IBAction)nextButtonTapped:(id)sender {
-    workoutIndex++;
+    self.workoutIndex++;
 
-    [individualWorkoutDataSource setWorkoutIndex:workoutIndex];
-    [workoutTable reloadData];
+    [self.individualWorkoutDataSource setWorkoutIndex:self.workoutIndex];
+    [self.workoutTable reloadData];
 
-    if (workoutIndex == ssWorkout.workouts.count - 1) {
+    if (self.workoutIndex == self.ssWorkout.workouts.count - 1) {
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonTapped:)];
         [self navigationItem].rightBarButtonItem = doneButton;
     }
@@ -49,7 +55,7 @@
     WorkoutLogStore *store = [WorkoutLogStore instance];
     WorkoutLog *log = [store create];
 
-    for (Workout *workout in ssWorkout.workouts) {
+    for (Workout *workout in self.ssWorkout.workouts) {
         for (Set *set in workout.sets) {
             [log.sets addObject:[[SetLogStore instance] createFromSet: set]];
         }

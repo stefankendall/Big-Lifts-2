@@ -22,7 +22,9 @@
 
     [cell setIndexPath:indexPath];
     [[cell textField] setDelegate:self];
-    [[cell textField] setText:[lift.weight stringValue]];
+    if([lift.weight doubleValue] > 0 ){
+        [[cell textField] setText:[lift.weight stringValue]];
+    }
 
     return cell;
 }
