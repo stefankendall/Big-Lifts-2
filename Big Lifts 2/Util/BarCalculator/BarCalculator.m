@@ -3,15 +3,15 @@
 #import "Plate.h"
 #import "PlateRemaining.h"
 
-@interface BarCalculator()
-@property(nonatomic, strong) NSArray * plates;
+@interface BarCalculator ()
+@property(nonatomic, strong) NSArray *plates;
 @property(nonatomic) double barWeight;
 @end
 
 @implementation BarCalculator
 
 - (BarCalculator *)initWithPlates:(NSArray *)plates barWeight:(double)barWeight {
-    if(self = [super init]){
+    if (self = [super init]) {
         self.plates = plates;
         self.barWeight = barWeight;
     }
@@ -44,12 +44,12 @@
 }
 
 - (PlateRemaining *)findPlateClosestToWeight:(double)weight fromPlates:(NSArray *)plates {
-    PlateRemaining *firstPlateUnderWeight = plates.find(^(PlateRemaining *p) {
-        BOOL underWeight = p.weight * 2 <= weight;
-        return underWeight;
-    });
-
-    return firstPlateUnderWeight;
+    for (PlateRemaining *plate in plates) {
+        if (plate.weight * 2 <= weight) {
+            return plate;
+        }
+    }
+    return nil;
 }
 
 - (NSArray *)copyPlates:(NSArray *)plates {
