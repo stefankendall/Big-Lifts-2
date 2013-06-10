@@ -1,7 +1,6 @@
 #import "SSLogDataSource.h"
 #import "WorkoutLogCell.h"
 #import "WorkoutLogStore.h"
-#import "WorkoutLogTableDataSource.h"
 
 @implementation SSLogDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -19,15 +18,12 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WorkoutLogCell *cell = (WorkoutLogCell *) [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    int rowCount = [cell.workoutLogTableDataSource tableView:nil numberOfRowsInSection:0];
-    return rowCount * [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:indexPath];
-}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *emptyViewToPreventEmptyRows = [UIView new];
-    return emptyViewToPreventEmptyRows;
+    }
+
 }
 
 

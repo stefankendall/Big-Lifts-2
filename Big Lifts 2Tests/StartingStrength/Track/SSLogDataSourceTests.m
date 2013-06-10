@@ -22,4 +22,11 @@
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 1, @"");
 }
 
+- (void)testDeletesWorkoutLogs {
+    [[WorkoutLogStore instance] create];
+    [[WorkoutLogStore instance] create];
+    [dataSource tableView:nil commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertEquals([[WorkoutLogStore instance] count], 1U, @"");
+}
+
 @end

@@ -1,2 +1,2 @@
-@interface SSLogDataSource : NSObject<UITableViewDataSource, UITableViewDelegate>
+@interface SSLogDataSource : NSObject<UITableViewDataSource>
 @end

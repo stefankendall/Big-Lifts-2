@@ -1,5 +1,7 @@
 #import "SSTrackViewController.h"
 #import "SSLogDataSource.h"
+#import "WorkoutLogCell.h"
+#import "WorkoutLogTableDataSource.h"
 
 @implementation SSTrackViewController
 
@@ -8,7 +10,18 @@
 
     ssLogDataSource = [SSLogDataSource new];
     [logTable setDataSource:ssLogDataSource];
-    [logTable setDelegate:ssLogDataSource];
+    [logTable setDelegate:self];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    WorkoutLogCell *cell = (WorkoutLogCell *) [ssLogDataSource tableView:tableView cellForRowAtIndexPath:indexPath];
+    int rowCount = [cell.workoutLogTableDataSource tableView:nil numberOfRowsInSection:0];
+    return rowCount * [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:indexPath];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *emptyViewToPreventEmptyRows = [UIView new];
+    return emptyViewToPreventEmptyRows;
 }
 
 - (IBAction)editButtonTapped:(id)sender {
