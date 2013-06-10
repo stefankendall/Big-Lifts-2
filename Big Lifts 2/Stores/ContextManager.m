@@ -32,7 +32,7 @@
         NSURL *dbUrl = [NSURL fileURLWithPath:dbPath];
         NSError *error = nil;
 
-//#if (TARGET_IPHONE_SIMULATOR)
+#if (TARGET_IPHONE_SIMULATOR)
         if (![psc addPersistentStoreWithType:NSSQLiteStoreType
                                configuration:nil
                                          URL:dbUrl
@@ -40,7 +40,7 @@
                                        error:&error]) {
             [NSException raise:@"Open failed" format:@"Reason: %@", [error localizedDescription]];
         }
-//#else
+#else
         NSFileManager *fm = [NSFileManager defaultManager];
         NSURL *ubContainer = [fm URLForUbiquityContainerIdentifier:nil];
         NSMutableDictionary *options = [NSMutableDictionary dictionary];
@@ -49,7 +49,7 @@
         if (![psc addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:dbUrl options:options error:&error]) {
             [NSException raise:@"Open failed" format:@"%@", [error localizedDescription]];
         }
-//#endif
+#endif
 
         context = [[NSManagedObjectContext alloc] init];
         [context setPersistentStoreCoordinator:psc];
