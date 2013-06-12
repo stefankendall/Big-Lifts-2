@@ -3,14 +3,18 @@
 #import "WorkoutLogTableDataSource.h"
 
 @implementation WorkoutLogCell
-@synthesize workoutLog, setTable, workoutLogTableDataSource;
+@synthesize workoutLog;
 
 - (void)setWorkoutLog:(WorkoutLog *)workoutLog1 {
     workoutLog = workoutLog1;
 
-    workoutLogTableDataSource = [[WorkoutLogTableDataSource alloc] initWithWorkoutLog: workoutLog];
-    [setTable setDataSource:workoutLogTableDataSource];
-    [setTable setDelegate:workoutLogTableDataSource];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"MM/dd"];
+    [self.dateLabel setText:[dateFormatter stringFromDate:self.workoutLog.date]];
+
+    self.workoutLogTableDataSource = [[WorkoutLogTableDataSource alloc] initWithWorkoutLog:self.workoutLog];
+    [self.setTable setDataSource:self.workoutLogTableDataSource];
+    [self.setTable setDelegate:self.workoutLogTableDataSource];
 }
 
 @end

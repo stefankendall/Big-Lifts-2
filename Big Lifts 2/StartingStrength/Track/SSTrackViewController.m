@@ -2,6 +2,9 @@
 #import "SSLogDataSource.h"
 #import "WorkoutLogCell.h"
 #import "WorkoutLogTableDataSource.h"
+#import "WorkoutLogStore.h"
+#import "WorkoutLog.h"
+#import "SetLogCombiner.h"
 
 @implementation SSTrackViewController
 
@@ -15,8 +18,16 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     WorkoutLogCell *cell = (WorkoutLogCell *) [ssLogDataSource tableView:tableView cellForRowAtIndexPath:indexPath];
-    int rowCount = [cell.workoutLogTableDataSource tableView:nil numberOfRowsInSection:0];
-    return rowCount * [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:indexPath];
+    int rowCount = [self getRowCount:indexPath];
+
+    CGFloat subCellHeight = [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:indexPath];
+    CGFloat height = rowCount * subCellHeight;
+    return height;
+}
+
+- (int)getRowCount:(NSIndexPath *)path {
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] atIndex:[path row]];
+    return [[[SetLogCombiner new] combineSetLogs:workoutLog.sets] count];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

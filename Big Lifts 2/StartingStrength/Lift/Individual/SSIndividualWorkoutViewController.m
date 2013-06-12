@@ -1,4 +1,3 @@
-#import <CoreGraphics/CoreGraphics.h>
 #import "SSIndividualWorkoutViewController.h"
 #import "SSIndividualWorkoutDataSource.h"
 #import "SSWorkout.h"
@@ -54,10 +53,11 @@
 - (void)logWorkout {
     WorkoutLogStore *store = [WorkoutLogStore instance];
     WorkoutLog *log = [store create];
+    log.date = [NSDate date];
 
     for (Workout *workout in self.ssWorkout.workouts) {
         for (Set *set in workout.sets) {
-            [log.sets addObject:[[SetLogStore instance] createFromSet: set]];
+            [log.sets addObject:[[SetLogStore instance] createFromSet:set]];
         }
     }
 }

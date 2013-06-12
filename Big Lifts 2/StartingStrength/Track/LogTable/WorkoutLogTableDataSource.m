@@ -16,7 +16,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self getCombinedSets] count];
+    NSUInteger combinedSetCount = [[self getCombinedSets] count];
+    return combinedSetCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -41,6 +41,8 @@
     WorkoutLog *workoutLog = [logStore first];
     STAssertEquals([logStore count], 1, @"");
     STAssertEquals([[workoutLog sets] count], (NSUInteger) 7, @"");
+    STAssertNotNil(workoutLog.date, @"");
+
     STAssertTrue([((SetLog *) [workoutLog sets][0]).name isEqualToString:@"Squat"], @"");
     STAssertTrue([((SetLog *) [workoutLog sets][1]).name isEqualToString:@"Squat"], @"");
     STAssertTrue([((SetLog *) [workoutLog sets][2]).name isEqualToString:@"Squat"], @"");
