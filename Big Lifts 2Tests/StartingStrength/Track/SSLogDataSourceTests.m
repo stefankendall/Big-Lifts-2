@@ -26,7 +26,7 @@
     [[WorkoutLogStore instance] create];
     [[WorkoutLogStore instance] create];
     [dataSource tableView:nil commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertEquals([[WorkoutLogStore instance] count], 1U, @"");
+    STAssertEquals([[WorkoutLogStore instance] count], 1, @"");
 }
 
 @end

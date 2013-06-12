@@ -8,7 +8,7 @@
 
 // CTCustomTableViewCell
 #define COCOAPODS_POD_AVAILABLE_CTCustomTableViewCell
-#define COCOAPODS_VERSION_MAJOR_CTCustomTableViewCell 1
+#define COCOAPODS_VERSION_MAJOR_CTCustomTableViewCell 2
 #define COCOAPODS_VERSION_MINOR_CTCustomTableViewCell 0
 #define COCOAPODS_VERSION_PATCH_CTCustomTableViewCell 0
 
