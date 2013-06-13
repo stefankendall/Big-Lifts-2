@@ -174,7 +174,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="H2N-3l-q8K" imageView="J9w-98-ong" style="IBUITableViewCellStyleDefault" id="qNa-AC-ZyL" customClass="NavLiftCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="H2N-3l-q8K" imageView="J9w-98-ong" style="IBUITableViewCellStyleDefault" id="qNa-AC-ZyL" customClass="NavTableViewCell">
                                         <rect key="frame" x="0.0" y="24" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -195,7 +195,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ZZ3-SD-93N" imageView="Bjr-bv-s2i" style="IBUITableViewCellStyleDefault" id="u7K-oE-xGe" customClass="NavEditCell">
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ZZ3-SD-93N" imageView="Bjr-bv-s2i" style="IBUITableViewCellStyleDefault" id="u7K-oE-xGe" customClass="NavTableViewCell">
                                         <rect key="frame" x="0.0" y="68" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -217,7 +217,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="IPs-KE-xxh" imageView="TQ4-1M-8Gc" style="IBUITableViewCellStyleDefault" id="eB4-cH-4aY" customClass="NavBarLoadingCell">
+                                    <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="IPs-KE-xxh" imageView="TQ4-1M-8Gc" style="IBUITableViewCellStyleDefault" id="eB4-cH-4aY" customClass="NavTableViewCell">
                                         <rect key="frame" x="0.0" y="112" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -239,7 +239,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Z1e-ac-gGd" imageView="I7U-k4-D0m" style="IBUITableViewCellStyleDefault" id="Tfb-ZC-fe3" customClass="NavTrackCell">
+                                    <tableViewCell tag="3" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Z1e-ac-gGd" imageView="I7U-k4-D0m" style="IBUITableViewCellStyleDefault" id="Tfb-ZC-fe3" customClass="NavTableViewCell">
                                         <rect key="frame" x="0.0" y="156" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -261,7 +261,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="SJF-C5-6gg" imageView="8hi-vI-OxK" style="IBUITableViewCellStyleDefault" id="2GQ-R5-jan" customClass="NavSettingsCell">
+                                    <tableViewCell tag="4" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="SJF-C5-6gg" imageView="8hi-vI-OxK" style="IBUITableViewCellStyleDefault" id="2GQ-R5-jan" customClass="NavTableViewCell">
                                         <rect key="frame" x="0.0" y="200" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -283,8 +283,30 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" textLabel="YsK-Yj-tuM" detailTextLabel="XZk-m9-Tj6" imageView="7S5-c5-ANk" style="IBUITableViewCellStyleValue1" id="8FK-6F-0SI" customClass="NavSetupReturnCell">
+                                    <tableViewCell tag="5" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="2uw-0Q-xXM" imageView="3rv-lU-M2R" style="IBUITableViewCellStyleDefault" id="0Yn-Id-8td" customClass="NavTableViewCell">
                                         <rect key="frame" x="0.0" y="244" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2uw-0Q-xXM">
+                                                    <rect key="frame" x="50" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="172-pricetag.png" id="3rv-lU-M2R">
+                                                    <rect key="frame" x="8" y="8" width="32" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell tag="6" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" textLabel="YsK-Yj-tuM" detailTextLabel="XZk-m9-Tj6" imageView="7S5-c5-ANk" style="IBUITableViewCellStyleValue1" id="8FK-6F-0SI" customClass="NavTableViewCell">
+                                        <rect key="frame" x="0.0" y="288" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -313,7 +335,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="470" id="Hi8-Ak-P7v" customClass="NavTableViewCell">
-                                        <rect key="frame" x="0.0" y="288" width="320" height="470"/>
+                                        <rect key="frame" x="0.0" y="332" width="320" height="470"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="469"/>
@@ -420,6 +442,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBW-aA-s1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1689" y="-1374"/>
+        </scene>
+        <!--Store View Controller - Store-->
+        <scene sceneID="8OL-ap-FZu">
+            <objects>
+                <tableViewController id="pEZ-XO-MIY" customClass="StoreViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Brq-Ht-MoR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="G5T-V4-0X0">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="vsc-9m-Tyl">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="102"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bar Loading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckw-Lu-Njb">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="104" id="FdD-nL-nKS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCg-QQ-fDY">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="Jcb-4j-fLQ"/>
+                                                        <constraint firstAttribute="width" constant="73" id="WAZ-g4-twc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="$1.99">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Adds plate calculation to all lifts in all programs that use a bar." translatesAutoresizingMaskIntoConstraints="NO" id="hIG-G9-cwr">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="280" id="9qV-Cg-g4W"/>
+                                                        <constraint firstAttribute="height" constant="52" id="ZlG-w3-iFx"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="VCg-QQ-fDY" firstAttribute="top" secondItem="vsc-9m-Tyl" secondAttribute="top" constant="6" id="91g-GG-qXF"/>
+                                            <constraint firstItem="ckw-Lu-Njb" firstAttribute="top" secondItem="vsc-9m-Tyl" secondAttribute="top" constant="12" id="FtX-vM-G3A"/>
+                                            <constraint firstAttribute="trailing" secondItem="VCg-QQ-fDY" secondAttribute="trailing" constant="30" id="K1i-AH-Nga"/>
+                                            <constraint firstItem="hIG-G9-cwr" firstAttribute="top" secondItem="ckw-Lu-Njb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Kxk-Xe-Hhy"/>
+                                            <constraint firstItem="hIG-G9-cwr" firstAttribute="leading" secondItem="ckw-Lu-Njb" secondAttribute="leading" type="default" id="Ygb-gg-acd"/>
+                                            <constraint firstItem="VCg-QQ-fDY" firstAttribute="baseline" secondItem="ckw-Lu-Njb" secondAttribute="baseline" type="default" id="wa1-9r-1dK"/>
+                                            <constraint firstItem="ckw-Lu-Njb" firstAttribute="leading" secondItem="vsc-9m-Tyl" secondAttribute="leading" constant="30" id="yRi-Hc-b4U"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Store" id="daq-2i-dkE"/>
+                    <connections>
+                        <outlet property="barLoadingBuyButton" destination="VCg-QQ-fDY" id="uAd-tS-ekC"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PIu-l5-mEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="-580"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LWx-Y8-ZqS">
+            <objects>
+                <navigationController storyboardIdentifier="purchasesController" definesPresentationContext="YES" id="5gK-Yr-G1E" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T3J-Tm-Gvk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pEZ-XO-MIY" kind="relationship" relationship="rootViewController" id="Cgo-6f-vli"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zdw-bZ-8Dg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1686" y="-580"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KXa-7m-TsG">
@@ -666,7 +778,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qrc-wQ-zY8">
-                                        <rect key="frame" x="0.0" y="135" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="135" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -1081,6 +1193,7 @@
     <resources>
         <image name="157-wrench.png" width="32" height="24"/>
         <image name="16-line-chart.png" width="32" height="24"/>
+        <image name="172-pricetag.png" width="32" height="26"/>
         <image name="20-gear-2.png" width="32" height="28"/>
         <image name="213-reply.png" width="32" height="17"/>
         <image name="89-dumbells.png" width="32" height="10"/>
@@ -1113,29 +1226,11 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="NavBarLoadingCell" superclassName="NavTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavBarLoadingCell.h"/>
-        </class>
-        <class className="NavEditCell" superclassName="NavTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavEditCell.h"/>
-        </class>
-        <class className="NavLiftCell" superclassName="NavTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavLiftCell.h"/>
-        </class>
-        <class className="NavSettingsCell" superclassName="NavTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavSettingsCell.h"/>
-        </class>
-        <class className="NavSetupReturnCell" superclassName="NavTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavSetupReturnCell.h"/>
-        </class>
         <class className="NavTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTableViewCell.h"/>
         </class>
         <class className="NavTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTableViewController.h"/>
-        </class>
-        <class className="NavTrackCell" superclassName="NavTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTrackCell.h"/>
         </class>
         <class className="ProgramSelectorViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgramSelectorViewController.h"/>
@@ -1196,6 +1291,9 @@
                 <relationship kind="outlet" name="logTable" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="StoreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreViewController.h"/>
         </class>
         <class className="TPKeyboardAvoidingTableView" superclassName="UITableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingTableView.h"/>

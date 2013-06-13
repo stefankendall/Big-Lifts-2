@@ -1,12 +1,6 @@
 #import "NavTableViewController.h"
 #import "NavTableViewCell.h"
 #import "IIViewDeckController.h"
-#import "NavSetupReturnCell.h"
-#import "NavSettingsCell.h"
-#import "NavEditCell.h"
-#import "NavLiftCell.h"
-#import "NavTrackCell.h"
-#import "NavBarLoadingCell.h"
 
 @implementation NavTableViewController
 
@@ -26,18 +20,19 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [self.viewDeckController closeLeftViewAnimated:YES];
 
-    NSDictionary *classViewMapping = @{
-            NavSettingsCell.class : @"ssSettingsViewController",
-            NavEditCell.class : @"ssEditViewController",
-            NavBarLoadingCell.class : @"ssBarLoading",
-            NavLiftCell.class : @"ssLiftViewController",
-            NavTrackCell.class : @"ssTrackViewController"
+    NSDictionary *tagViewMapping = @{
+            @4 : @"ssSettingsViewController",
+            @1 : @"ssEditViewController",
+            @2 : @"ssBarLoading",
+            @0 : @"ssLiftViewController",
+            @3 : @"ssTrackViewController",
+            @5 : @"purchasesController"
     };
 
-    if ([cell isKindOfClass:NavSetupReturnCell.class]) {
+    if ([cell tag] == 6) {
         [[self.viewDeckController navigationController] popViewControllerAnimated:YES];
     } else {
-        NSString *storyBoardId = [classViewMapping objectForKey:[cell class]];
+        NSString *storyBoardId = [tagViewMapping objectForKey:[NSNumber numberWithInteger:[cell tag]]];
         [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:storyBoardId]];
     }
 }
