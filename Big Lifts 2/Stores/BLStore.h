@@ -14,6 +14,8 @@
 
 - (id)first;
 
+- (id)find:(NSString *)name value:(id)value;
+
 - (NSArray *)findAll;
 
 - (NSArray *)findAllWithSort:(NSSortDescriptor *)sortDescriptor;
@@ -22,7 +24,7 @@
 
 - (id)atIndex:(int)index;
 
-- (void)removeAtIndex: (int) index;
+- (void)removeAtIndex:(int)index;
 
 - (int)count;
 

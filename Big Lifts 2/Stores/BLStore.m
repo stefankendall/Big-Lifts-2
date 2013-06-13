@@ -66,6 +66,10 @@
     }
 }
 
+- (id)find:(NSString *)name value:(id)value {
+    return [self findBy:[NSPredicate predicateWithFormat:@"%K == %@", name, value]];
+}
+
 - (NSArray *)findAll {
     NSFetchRequest *request = [self getRequest];
     if ([[[request entity] propertiesByName] objectForKey:@"order"]) {
@@ -100,7 +104,6 @@
 
     return results[0];
 }
-
 
 - (id)atIndex:(int)index {
     return [self findAll][(NSUInteger) index];
