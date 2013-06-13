@@ -13,9 +13,6 @@
         <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
-    <entity name="Purchase" representedClassName="Purchase" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <entity name="Set" representedClassName="Set" syncable="YES">
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -57,6 +54,5 @@
         <element name="SSWorkout" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Workout" positionX="160" positionY="192" width="128" height="60"/>
         <element name="WorkoutLog" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="Purchase" positionX="160" positionY="192" width="128" height="60"/>
     </elements>
 </model>
