@@ -1,0 +1,2 @@
+@interface UIViewController(ViewDeckAdditions)
+@end

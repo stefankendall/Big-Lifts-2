@@ -446,15 +446,15 @@
         <!--Store View Controller - Store-->
         <scene sceneID="8OL-ap-FZu">
             <objects>
-                <tableViewController id="pEZ-XO-MIY" customClass="StoreViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="storeViewController" id="pEZ-XO-MIY" customClass="StoreViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Brq-Ht-MoR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="G5T-V4-0X0">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="vsc-9m-Tyl">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="vsc-9m-Tyl">
                                         <rect key="frame" x="0.0" y="10" width="320" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -469,10 +469,19 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Adds plate calculation to all lifts in all programs that use a bar." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="aT1-V8-3Xi">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="41" id="t3I-Qa-elJ"/>
+                                                        <constraint firstAttribute="width" constant="260" id="vcP-by-W9q"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCg-QQ-fDY">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="34" id="Jcb-4j-fLQ"/>
-                                                        <constraint firstAttribute="width" constant="73" id="WAZ-g4-twc"/>
+                                                        <constraint firstAttribute="height" constant="34" id="OXw-Va-WKf"/>
+                                                        <constraint firstAttribute="width" constant="73" id="sCo-FJ-TIR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="$1.99">
@@ -483,35 +492,51 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Adds plate calculation to all lifts in all programs that use a bar." translatesAutoresizingMaskIntoConstraints="NO" id="hIG-G9-cwr">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tts-m7-ZLe">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="280" id="9qV-Cg-g4W"/>
-                                                        <constraint firstAttribute="height" constant="52" id="ZlG-w3-iFx"/>
+                                                        <constraint firstAttribute="width" constant="28" id="30X-fb-Y8F"/>
+                                                        <constraint firstAttribute="height" constant="28" id="CP4-1E-6ZY"/>
                                                     </constraints>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Button" backgroundImage="19-circle-check.png">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="VCg-QQ-fDY" firstAttribute="top" secondItem="vsc-9m-Tyl" secondAttribute="top" constant="6" id="91g-GG-qXF"/>
-                                            <constraint firstItem="ckw-Lu-Njb" firstAttribute="top" secondItem="vsc-9m-Tyl" secondAttribute="top" constant="12" id="FtX-vM-G3A"/>
-                                            <constraint firstAttribute="trailing" secondItem="VCg-QQ-fDY" secondAttribute="trailing" constant="30" id="K1i-AH-Nga"/>
-                                            <constraint firstItem="hIG-G9-cwr" firstAttribute="top" secondItem="ckw-Lu-Njb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Kxk-Xe-Hhy"/>
-                                            <constraint firstItem="hIG-G9-cwr" firstAttribute="leading" secondItem="ckw-Lu-Njb" secondAttribute="leading" type="default" id="Ygb-gg-acd"/>
-                                            <constraint firstItem="VCg-QQ-fDY" firstAttribute="baseline" secondItem="ckw-Lu-Njb" secondAttribute="baseline" type="default" id="wa1-9r-1dK"/>
-                                            <constraint firstItem="ckw-Lu-Njb" firstAttribute="leading" secondItem="vsc-9m-Tyl" secondAttribute="leading" constant="30" id="yRi-Hc-b4U"/>
+                                            <constraint firstItem="VCg-QQ-fDY" firstAttribute="top" secondItem="vsc-9m-Tyl" secondAttribute="top" constant="6" id="0oS-bK-ERZ"/>
+                                            <constraint firstItem="ckw-Lu-Njb" firstAttribute="baseline" secondItem="VCg-QQ-fDY" secondAttribute="baseline" type="default" id="7BD-wd-ZOe"/>
+                                            <constraint firstItem="Tts-m7-ZLe" firstAttribute="centerY" secondItem="VCg-QQ-fDY" secondAttribute="centerY" type="default" id="7IB-1B-d5a"/>
+                                            <constraint firstItem="aT1-V8-3Xi" firstAttribute="top" secondItem="VCg-QQ-fDY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Bze-ZZ-5by"/>
+                                            <constraint firstItem="aT1-V8-3Xi" firstAttribute="trailing" secondItem="Tts-m7-ZLe" secondAttribute="trailing" type="default" id="FZf-oz-dIX"/>
+                                            <constraint firstItem="ckw-Lu-Njb" firstAttribute="top" secondItem="vsc-9m-Tyl" secondAttribute="top" constant="12" id="hQO-A7-PAZ"/>
+                                            <constraint firstItem="aT1-V8-3Xi" firstAttribute="leading" secondItem="ckw-Lu-Njb" secondAttribute="leading" type="default" id="tNk-u6-McI"/>
+                                            <constraint firstItem="VCg-QQ-fDY" firstAttribute="trailing" secondItem="Tts-m7-ZLe" secondAttribute="trailing" type="default" id="xi8-tK-F5k"/>
+                                            <constraint firstItem="aT1-V8-3Xi" firstAttribute="centerX" secondItem="vsc-9m-Tyl" secondAttribute="centerX" type="default" id="zSC-dT-DUi"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Store" id="daq-2i-dkE"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Store" id="daq-2i-dkE">
+                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="24F-cg-0Tv">
+                            <connections>
+                                <action selector="revealSidebar:" destination="pEZ-XO-MIY" id="e7i-Du-g1e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="barLoadingBuyButton" destination="VCg-QQ-fDY" id="uAd-tS-ekC"/>
+                        <outlet property="barLoadingBuyButton" destination="VCg-QQ-fDY" id="tuW-5s-UYi"/>
+                        <outlet property="barLoadingPurchasedButton" destination="Tts-m7-ZLe" id="BuN-EW-Z48"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIu-l5-mEp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1194,6 +1219,7 @@
         <image name="157-wrench.png" width="32" height="24"/>
         <image name="16-line-chart.png" width="32" height="24"/>
         <image name="172-pricetag.png" width="32" height="26"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
         <image name="20-gear-2.png" width="32" height="28"/>
         <image name="213-reply.png" width="32" height="17"/>
         <image name="89-dumbells.png" width="32" height="10"/>
@@ -1270,6 +1296,9 @@
         </class>
         <class className="SSMiddleViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSMiddleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:"/>
+            </relationships>
         </class>
         <class className="SSPlanWorkoutsViewController" superclassName="SSMiddleViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
@@ -1294,9 +1323,19 @@
         </class>
         <class className="StoreViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="barLoadingBuyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="barLoadingPurchasedButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="TPKeyboardAvoidingTableView" superclassName="UITableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingTableView.h"/>
+        </class>
+        <class className="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
