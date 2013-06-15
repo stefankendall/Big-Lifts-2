@@ -1,11 +1,3 @@
-//
-//  BLAppDelegate.m
-//  Big Lifts 2
-//
-//  Created by Stefan Kendall on 05/05/13.
-//  Copyright (c) 2013 Stefan Kendall. All rights reserved.
-//
-
 #import "BLAppDelegate.h"
 #import "SettingsStore.h"
 #import "ContextManager.h"
