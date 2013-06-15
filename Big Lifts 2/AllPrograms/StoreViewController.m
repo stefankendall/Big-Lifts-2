@@ -22,6 +22,7 @@
         [thanks performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
         [self hideShowBarLoadingBuyButton];
     }                                     error:^(NSError *err) {
+        NSLog(@"%@", [err localizedDescription]);
         UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Could not purchase..."
                                                         message:@"Something went wrong trying to connect to the store. Please try again later."
                                                        delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
