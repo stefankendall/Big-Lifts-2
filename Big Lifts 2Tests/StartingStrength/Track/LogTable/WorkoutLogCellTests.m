@@ -20,11 +20,15 @@
 
 - (void)testSetWorkoutFormatsDate {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
-    workoutLog.date = [NSDate date];
+    NSDateComponents *comps = [NSDateComponents new];
+    [comps setDay:6];
+    [comps setMonth:5];
+    [comps setYear:2004];
+    workoutLog.date = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] dateFromComponents:comps];
     WorkoutLogCell *cell = [WorkoutLogCell create];
 
     [cell setWorkoutLog:workoutLog];
-    STAssertEqualObjects([[cell dateLabel] text], @"06/11", @"");
+    STAssertEqualObjects([[cell dateLabel] text], @"05/06", @"");
 
 }
 
