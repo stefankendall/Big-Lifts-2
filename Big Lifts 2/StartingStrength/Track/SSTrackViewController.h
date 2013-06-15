@@ -8,7 +8,4 @@
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
-- (IBAction)editButtonTapped:(id)sender;
-
 @end
