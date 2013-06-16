@@ -1,27 +1,46 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "SSBarLoadingViewController.h"
-#import "WeightsTableDataSource.h"
+#import "BarLoadingDataSource.h"
 #import "PlateStore.h"
+#import "PurchaseOverlayView.h"
+#import "IAPAdapter.h"
 
 @implementation SSBarLoadingViewController
 @synthesize weightsTable;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    weightsTableDataSource = [WeightsTableDataSource new];
+    weightsTableDataSource = [BarLoadingDataSource new];
     weightsTableDataSource.tableView = weightsTable;
     [weightsTable setDataSource:weightsTableDataSource];
     [weightsTable setDelegate:self];
 
     UITapGestureRecognizer *singleFingerTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    [singleFingerTap setDelegate:self];
     [self.view addGestureRecognizer:singleFingerTap];
+
+    if (!([[IAPAdapter instance] hasPurchased:@"barLoading"])) {
+        [self addDisabledView];
+    }
+}
+
+- (void)addDisabledView {
+    PurchaseOverlayView *purchaseOverlayView = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlayView" owner:self options:nil][0];
+    [self.view addSubview:purchaseOverlayView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [weightsTable reloadData];
+    if (([[IAPAdapter instance] hasPurchased:@"barLoading"])) {
+        [[self findOverlay] removeFromSuperview];
+    }
 }
 
+- (UIView *)findOverlay {
+    return [[[self view] subviews] detect:^BOOL(UIView *obj) {
+        return [obj isKindOfClass:PurchaseOverlayView.class];
+    }];
+}
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     return [weightsTableDataSource isEditing];

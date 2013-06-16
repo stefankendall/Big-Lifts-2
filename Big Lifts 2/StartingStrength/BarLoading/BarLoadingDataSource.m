@@ -1,4 +1,4 @@
-#import "WeightsTableDataSource.h"
+#import "BarLoadingDataSource.h"
 #import "PlateStore.h"
 #import "WeightTableCell.h"
 #import "Plate.h"
@@ -12,7 +12,7 @@
 #import "Bar.h"
 #import "RowUIButton.h"
 
-@implementation WeightsTableDataSource
+@implementation BarLoadingDataSource
 @synthesize tableView;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

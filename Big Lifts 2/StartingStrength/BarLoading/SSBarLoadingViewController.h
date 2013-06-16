@@ -1,10 +1,12 @@
 #import "SSMiddleViewController.h"
 
-@class WeightsTableDataSource;
+@class BarLoadingDataSource;
 
 @interface SSBarLoadingViewController : SSMiddleViewController <UIGestureRecognizerDelegate, UITableViewDelegate> {
-    WeightsTableDataSource *weightsTableDataSource;
+    BarLoadingDataSource *weightsTableDataSource;
 }
 @property (weak, nonatomic) IBOutlet UITableView *weightsTable;
+
+- (UIView *)findOverlay;
 
 @end

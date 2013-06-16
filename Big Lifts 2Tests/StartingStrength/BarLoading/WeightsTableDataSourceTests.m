@@ -1,6 +1,6 @@
 #import "WeightsTableDataSourceTests.h"
 #import "BLStoreManager.h"
-#import "WeightsTableDataSource.h"
+#import "BarLoadingDataSource.h"
 #import "WeightTableCell.h"
 #import "BarWeightCell.h"
 #import "StepperWithCell.h"
@@ -14,7 +14,7 @@
 
 - (void)setUp {
     [[BLStoreManager instance] resetAllStores];
-    dataSource = [WeightsTableDataSource new];
+    dataSource = [BarLoadingDataSource new];
 }
 
 - (void)testReturnsPlateCount {

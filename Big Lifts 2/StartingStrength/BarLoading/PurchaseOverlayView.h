@@ -1,0 +1,2 @@
+@interface PurchaseOverlayView : UIView
+@end

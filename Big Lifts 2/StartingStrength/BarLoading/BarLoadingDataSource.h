@@ -2,7 +2,7 @@
 @class BarWeightTextFieldDelegate;
 @class WeightTableCell;
 
-@interface WeightsTableDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
+@interface BarLoadingDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     BarWeightTextFieldDelegate *barWeightTextFieldDelegate;
     UITextField *barWeightTextField;
 }

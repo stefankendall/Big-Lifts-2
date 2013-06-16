@@ -1,8 +1,8 @@
 #import <SenTestingKit/SenTestingKit.h>
 
-@class WeightsTableDataSource;
+@class BarLoadingDataSource;
 
 @interface WeightsTableDataSourceTests : SenTestCase
 
-@property(nonatomic, strong) WeightsTableDataSource * dataSource;
+@property(nonatomic, strong) BarLoadingDataSource * dataSource;
 @end
