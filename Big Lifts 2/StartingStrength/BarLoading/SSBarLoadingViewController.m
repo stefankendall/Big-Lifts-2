@@ -1,8 +1,6 @@
-#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "SSBarLoadingViewController.h"
 #import "BarLoadingDataSource.h"
 #import "PlateStore.h"
-#import "PurchaseOverlayView.h"
 #import "IAPAdapter.h"
 
 @implementation SSBarLoadingViewController
@@ -25,29 +23,29 @@
 }
 
 - (void)addDisabledView {
-    PurchaseOverlayView *purchaseOverlayView = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlayView" owner:self options:nil][0];
-    [self.view addSubview:purchaseOverlayView];
+    self.overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlayView" owner:self options:nil][0];
+    [self.view addSubview:self.overlay];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [weightsTable reloadData];
     if (([[IAPAdapter instance] hasPurchased:@"barLoading"])) {
-        [[self findOverlay] removeFromSuperview];
+        [self.overlay removeFromSuperview];
+        self.overlay = nil;
     }
 }
 
-- (UIView *)findOverlay {
-    return [[[self view] subviews] detect:^BOOL(UIView *obj) {
-        return [obj isKindOfClass:PurchaseOverlayView.class];
-    }];
-}
-
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    return [weightsTableDataSource isEditing];
+    return [weightsTableDataSource isEditing] || self.overlay != nil;
 }
 
-- (void)handleSingleTap:(id)handleSingleTap {
-    [self.view endEditing:YES];
+- (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
+    if (self.overlay) {
+        NSLog(@"TO THE STORE!");
+    }
+    else {
+        [self.view endEditing:YES];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

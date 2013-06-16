@@ -5,8 +5,7 @@
 @interface SSBarLoadingViewController : SSMiddleViewController <UIGestureRecognizerDelegate, UITableViewDelegate> {
     BarLoadingDataSource *weightsTableDataSource;
 }
-@property (weak, nonatomic) IBOutlet UITableView *weightsTable;
-
-- (UIView *)findOverlay;
+@property(weak, nonatomic) IBOutlet UITableView *weightsTable;
+@property(weak, nonatomic) UIView *overlay;
 
 @end
