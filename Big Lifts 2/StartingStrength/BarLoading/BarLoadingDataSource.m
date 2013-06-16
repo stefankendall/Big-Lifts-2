@@ -15,11 +15,11 @@
 @implementation BarLoadingDataSource
 @synthesize tableView;
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView1 {
     return 2;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)tableView1 titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         return @"Bar";
     }
@@ -28,7 +28,7 @@
     }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView1 numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return 1;
     }
@@ -38,22 +38,22 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView1 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {
-        return [self getBarWeightCell:tableView];
+        return [self getBarWeightCell:tableView1];
     }
     else {
-        return [self getPlateCell:tableView indexPath:indexPath];
+        return [self getPlateCell:tableView1 indexPath:indexPath];
     }
 }
 
-- (UITableViewCell *)getPlateCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)getPlateCell:(UITableView *)tableView1 indexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
     if (row == [[PlateStore instance] count]) {
-        return [self getAddCell:tableView];
+        return [self getAddCell:tableView1];
     }
     else {
-        WeightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeightTableCell"];
+        WeightTableCell *cell = [tableView1 dequeueReusableCellWithIdentifier:@"WeightTableCell"];
 
         if (cell == nil) {
             cell = [WeightTableCell create];
@@ -83,8 +83,8 @@
     [tableView reloadData];
 }
 
-- (UITableViewCell *)getAddCell:(UITableView *)tableView {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeightTableAddCell"];
+- (UITableViewCell *)getAddCell:(UITableView *)tableView1 {
+    UITableViewCell *cell = [tableView1 dequeueReusableCellWithIdentifier:@"WeightTableAddCell"];
 
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WeightTableAddCell"];
@@ -97,8 +97,8 @@
     return cell;
 }
 
-- (UITableViewCell *)getBarWeightCell:(UITableView *)tableView {
-    BarWeightCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BarWeightCell"];
+- (UITableViewCell *)getBarWeightCell:(UITableView *)tableView1 {
+    BarWeightCell *cell = [tableView1 dequeueReusableCellWithIdentifier:@"BarWeightCell"];
 
     if (cell == nil ) {
         cell = [BarWeightCell create];
@@ -132,7 +132,7 @@
 
     p.count = [NSNumber numberWithInt:currentPlateCount];
 
-    [self modifyCellForPlateCount:[stepperWithCell cell] currentPlateCount:currentPlateCount];
+    [self modifyCellForPlateCount:(WeightTableCell *) [stepperWithCell cell] currentPlateCount:currentPlateCount];
     [tableView reloadData];
 }
 
