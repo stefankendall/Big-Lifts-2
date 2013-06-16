@@ -2,6 +2,7 @@
 #import "SettingsStore.h"
 #import "ContextManager.h"
 #import "BLStoreManager.h"
+#import "SKProductStore.h"
 
 @implementation BLAppDelegate
 
@@ -13,6 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[BLStoreManager instance] initializeAllStores];
+    [[SKProductStore instance] loadProducts];
     return YES;
 }
 

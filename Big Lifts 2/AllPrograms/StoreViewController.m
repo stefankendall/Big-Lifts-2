@@ -1,23 +1,20 @@
 #import "StoreViewController.h"
-#import "IAPAdapter.h"
+#import "SKProductStore.h"
 
 @implementation StoreViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[IAPAdapter instance] getProductsForIds:@[@"barLoading"] completion:^(NSArray *products) {
-        NSLog(@"Setting product prices");
-        [self setProductPrices: products];
-    }];
+    [self setProductPrice:[[SKProductStore instance] productById:@"barLoading"]];
 }
 
-- (void)setProductPrices:(NSArray *)products {
-    SKProduct *onlyProduct = products[0];
-    [self.barLoadingBuyButton setTitle:[self priceOf:onlyProduct] forState:UIControlStateNormal];
+- (void)setProductPrice:(SKProduct *)product {
+    [self.barLoadingBuyButton setTitle:[self priceOf:product] forState:UIControlStateNormal];
 }
 
 - (NSString *)priceOf:(SKProduct *)product {
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];                                                                                                                 [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     [numberFormatter setLocale:product.priceLocale];
     return [numberFormatter stringFromNumber:product.price];
@@ -36,7 +33,7 @@
 }
 
 - (IBAction)buyBarLoadingButtonTapped:(id)sender {
-    [[IAPAdapter instance] purchaseProductForId:@"barLoading" completion:^(NSObject *_){
+    [[IAPAdapter instance] purchaseProductForId:@"barLoading" completion:^(NSObject *_) {
         UIAlertView *thanks = [[UIAlertView alloc] initWithTitle:@"Purchased!"
                                                          message:@"Bar loading is now available throughout the app."
                                                         delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

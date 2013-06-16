@@ -98,6 +98,7 @@
 		54590938523CBE923C9E67D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */; };
 		5459094625A48C01772CFF55 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906D7FAC23FAEFE5CE092 /* StoreViewController.m */; };
 		5459098A223A58603A1EB19C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54590D3019187C6086FE5E36 /* InfoPlist.strings */; };
+		5459099FA669850AB13D07E2 /* SKProductStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459035ACC4AC43DEA0D8BEA /* SKProductStore.m */; };
 		545909C9345E479A1C3DB826 /* PlateRemaining.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FE6E3D1C42971448763 /* PlateRemaining.m */; };
 		545909CF0C6E5C0E3863B0C8 /* Stepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590EFA6E5CB2E4ACDC9425 /* Stepper.m */; };
 		545909FEF75A131123F39402 /* BarStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905D2238765475D2005E8 /* BarStoreTests.m */; };
@@ -218,6 +219,7 @@
 		5459031602F5FA710EE94E25 /* CurrentProgramStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentProgramStore.h; sourceTree = "<group>"; };
 		5459032746F7EBC1E3015A6E /* CurrentProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentProgram.h; sourceTree = "<group>"; };
 		54590336DD8FB6A778EF2698 /* ContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextManager.m; sourceTree = "<group>"; };
+		5459035ACC4AC43DEA0D8BEA /* SKProductStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProductStore.m; sourceTree = "<group>"; };
 		5459035B2414D0420A431AAD /* SSLiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftViewController.h; sourceTree = "<group>"; };
 		545903646C232FF946BCAD93 /* WorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutStore.h; sourceTree = "<group>"; };
 		545903735FE170706FA05B12 /* BarCalculatorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCalculatorTests.h; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 		54590B1C4EA2322364E62C02 /* StoreViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewControllerTests.h; sourceTree = "<group>"; };
 		54590B59D314833BCE63C6C5 /* Plate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plate.h; sourceTree = "<group>"; };
 		54590B667179D94EB3A42AD3 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		54590B76F9823CBA32676BE9 /* SKProductStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductStore.h; sourceTree = "<group>"; };
 		54590B80A96640D6D01D253F /* AddPlateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateViewController.m; sourceTree = "<group>"; };
 		54590B87198D08415E8C1C4D /* PurchaseOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseOverlayView.h; sourceTree = "<group>"; };
 		54590B8A9FE1D5570972037F /* SSLogDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLogDataSource.h; sourceTree = "<group>"; };
@@ -513,15 +516,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		54590172E767B5278C0D25E0 /* Adapters */ = {
+		54590172E767B5278C0D25E0 /* IAP */ = {
 			isa = PBXGroup;
 			children = (
 				545902DBAFF98090455072CB /* IAPAdapter.m */,
 				545905B6F5DF5B2FE0E69E43 /* IAPAdapter.h */,
 				5459062E1FD6E0C38192CC68 /* SKProductFake.m */,
 				54590A3A08FD6676DC5055AD /* SKProductFake.h */,
+				5459035ACC4AC43DEA0D8BEA /* SKProductStore.m */,
+				54590B76F9823CBA32676BE9 /* SKProductStore.h */,
 			);
-			path = Adapters;
+			path = IAP;
 			sourceTree = "<group>";
 		};
 		545901C992EB59EFD221726A /* Util */ = {
@@ -1024,7 +1029,7 @@
 				545903DCCE74EDE9EFAABEA2 /* Components */,
 				545901C992EB59EFD221726A /* Util */,
 				545907B1FF2769685DB09B41 /* AllPrograms */,
-				54590172E767B5278C0D25E0 /* Adapters */,
+				54590172E767B5278C0D25E0 /* IAP */,
 			);
 			path = "Big Lifts 2";
 			sourceTree = "<group>";
@@ -1361,6 +1366,7 @@
 				5459062C5EC1B83AAEB32121 /* IAPAdapter.m in Sources */,
 				545905DE48F617467996BA4C /* PurchaseOverlayView.m in Sources */,
 				54590EE1F76C8A7C048300C5 /* SKProductFake.m in Sources */,
+				5459099FA669850AB13D07E2 /* SKProductStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
