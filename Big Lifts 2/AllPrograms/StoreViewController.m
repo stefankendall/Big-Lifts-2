@@ -20,7 +20,6 @@
     return [numberFormatter stringFromNumber:product.price];
 }
 
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self hideShowBarLoadingBuyButton];

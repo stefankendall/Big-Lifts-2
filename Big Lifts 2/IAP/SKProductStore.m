@@ -14,9 +14,12 @@
     return store;
 }
 
-- (void)loadProducts {
+- (void)loadProducts: (void(^)())callback {
     [[IAPAdapter instance] getProductsForIds:@[@"barLoading"] completion:^(NSArray *products) {
         self.products = products;
+        if( callback ){
+            callback();
+        }
     }];
 }
 

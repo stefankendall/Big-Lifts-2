@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[BLStoreManager instance] initializeAllStores];
-    [[SKProductStore instance] loadProducts];
+    [[SKProductStore instance] loadProducts: ^{}];
     return YES;
 }
 

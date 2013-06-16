@@ -6,7 +6,7 @@
 
 - (SKProduct *)productById:(NSString *)productId;
 
-- (void)loadProducts;
+- (void)loadProducts:(void (^)())callback;
 
 @property(nonatomic, strong) NSArray *products;
 
