@@ -1,3 +1,4 @@
+#import <ViewDeck/IIViewDeckController.h>
 #import "SSBarLoadingViewController.h"
 #import "BarLoadingDataSource.h"
 #import "PlateStore.h"
@@ -41,7 +42,8 @@
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
     if (self.overlay) {
-        NSLog(@"TO THE STORE!");
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"purchasesController"]];
     }
     else {
         [self.view endEditing:YES];
