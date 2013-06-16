@@ -1,9 +1,9 @@
-#import "SSMiddleViewController.h"
+#import "UIViewController+ViewDeckAdditions.h"
 
 @class SSLiftSummaryDataSource;
 @class SSWorkout;
 
-@interface SSLiftViewController : SSMiddleViewController {
+@interface SSLiftViewController : UIViewController {
 }
 @property(weak, nonatomic) IBOutlet UITableView *workoutSummaryTable;
 @property(nonatomic, strong) SSWorkout *ssWorkout;

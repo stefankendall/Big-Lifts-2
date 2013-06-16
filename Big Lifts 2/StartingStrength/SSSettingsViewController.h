@@ -1,6 +1,6 @@
-#import "SSMiddleViewController.h"
+#import "UIViewController+ViewDeckAdditions.h"
 
-@interface SSSettingsViewController : SSMiddleViewController
+@interface SSSettingsViewController : UIViewController
 
 - (IBAction)unitsChanged:(id)sender;
 

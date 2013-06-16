@@ -1,8 +1,8 @@
-#import "SSMiddleViewController.h"
+#import "UIViewController+ViewDeckAdditions.h"
 
 @class SSLogDataSource;
 
-@interface SSTrackViewController : SSMiddleViewController <UITableViewDelegate> {
+@interface SSTrackViewController : UIViewController <UITableViewDelegate> {
     __weak IBOutlet UITableView *logTable;
     SSLogDataSource *ssLogDataSource;
 }

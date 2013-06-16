@@ -1,8 +1,9 @@
-#import "SSMiddleViewController.h"
+
+#import "UIViewController+ViewDeckAdditions.h"
 
 @class SSWorkoutDataSource;
 
-@interface SSPlanWorkoutsViewController : SSMiddleViewController <UITableViewDelegate> {
+@interface SSPlanWorkoutsViewController : UIViewController <UITableViewDelegate> {
     __weak IBOutlet UITableView *workoutTableView;
 }
 

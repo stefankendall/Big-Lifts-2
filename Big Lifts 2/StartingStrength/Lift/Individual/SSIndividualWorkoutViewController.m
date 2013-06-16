@@ -1,7 +1,6 @@
 #import "SSIndividualWorkoutViewController.h"
 #import "SSIndividualWorkoutDataSource.h"
 #import "SSWorkout.h"
-#import "SSMiddleViewController.h"
 #import "IIViewDeckController.h"
 #import "WorkoutLogStore.h"
 #import "WorkoutLog.h"
@@ -45,7 +44,7 @@
 
 - (void)doneButtonTapped:(id)o {
     [self logWorkout];
-    SSMiddleViewController *controller = [[self navigationController] viewControllers][0];
+    UIViewController *controller = [[self navigationController] viewControllers][0];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [controller.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssTrackViewController"]];
 }

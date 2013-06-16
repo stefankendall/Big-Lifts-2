@@ -1,8 +1,8 @@
-#import "SSMiddleViewController.h"
+#import "UIViewController+ViewDeckAdditions.h"
 
 @class BarLoadingDataSource;
 
-@interface SSBarLoadingViewController : SSMiddleViewController <UIGestureRecognizerDelegate, UITableViewDelegate> {
+@interface SSBarLoadingViewController : UIViewController <UIGestureRecognizerDelegate, UITableViewDelegate> {
     BarLoadingDataSource *weightsTableDataSource;
 }
 @property(weak, nonatomic) IBOutlet UITableView *weightsTable;
