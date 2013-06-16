@@ -3,6 +3,27 @@
 
 @implementation StoreViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [[IAPAdapter instance] getProductsForIds:@[@"barLoading"] completion:^(NSArray *products) {
+        NSLog(@"Setting product prices");
+        [self setProductPrices: products];
+    }];
+}
+
+- (void)setProductPrices:(NSArray *)products {
+    SKProduct *onlyProduct = products[0];
+    [self.barLoadingBuyButton setTitle:[self priceOf:onlyProduct] forState:UIControlStateNormal];
+}
+
+- (NSString *)priceOf:(SKProduct *)product {
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];                                                                                                                 [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [numberFormatter setLocale:product.priceLocale];
+    return [numberFormatter stringFromNumber:product.price];
+}
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self hideShowBarLoadingBuyButton];

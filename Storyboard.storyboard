@@ -504,7 +504,7 @@
                                                         <constraint firstAttribute="width" constant="73" id="sCo-FJ-TIR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="$1.99">
+                                                    <state key="normal" title="Loading...">
                                                         <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1271,6 +1271,111 @@
         <image name="95-equalizer.png" width="32" height="24"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
     </resources>
+    <classes>
+        <class className="AddPlateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddPlateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveTapped:"/>
+                <relationship kind="outlet" name="countCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="countTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="weightCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="IIViewDeckController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bottomController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="centerController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="leftController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="panningView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rightController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="topController" candidateClass="UIViewController"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NavTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTableViewCell.h"/>
+        </class>
+        <class className="NavTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTableViewController.h"/>
+        </class>
+        <class className="ProgramSelectorViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgramSelectorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unitsChanged:"/>
+                <relationship kind="outlet" name="unitsSegmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="SSBarLoadingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSBarLoadingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="weightsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSEditViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSEditViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ssLiftsForm" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSIIViewDeckController" superclassName="IIViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSIIViewDeckController.h"/>
+        </class>
+        <class className="SSIndividualWorkoutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSIndividualWorkoutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextButtonTapped:"/>
+                <relationship kind="outlet" name="workoutTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSLiftViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSLiftViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="workoutValueChanged:"/>
+                <relationship kind="outlet" name="workoutSummaryTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSPlanWorkoutsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="workoutTableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unitsChanged:"/>
+            </relationships>
+        </class>
+        <class className="SSTrackViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTrackViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="logTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="StoreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buyBarLoadingButtonTapped:"/>
+                <relationship kind="outlet" name="barLoadingBuyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="barLoadingPurchasedButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="TPKeyboardAvoidingTableView" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingTableView.h"/>
+        </class>
+        <class className="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

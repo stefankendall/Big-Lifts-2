@@ -139,6 +139,7 @@
 		54590E60C30E16BA17C11A35 /* SSLogDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CE6E1C7F29AF260174C /* SSLogDataSourceTests.m */; };
 		54590EAAC7896283D466E0E9 /* SSIndividualWorkoutDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 545902EE869F1DABAE43B19B /* SSIndividualWorkoutDataSource.m */; };
 		54590EC4B3554542CD7D79FC /* SSLogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900927E296AA48D61C7C7 /* SSLogDataSource.m */; };
+		54590EE1F76C8A7C048300C5 /* SKProductFake.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459062E1FD6E0C38192CC68 /* SKProductFake.m */; };
 		54590EF4753AF76F1989A5B7 /* Plate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BD5E6323691396F8BC0 /* Plate.m */; };
 		54590F14B1FA0185535352AB /* WorkoutLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590223F1037883FA2C0F24 /* WorkoutLog.m */; };
 		54590F15D0EBBF3F9FB19E6D /* BarWeightTextFieldDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459039F394559FF38C8B911 /* BarWeightTextFieldDelegateTests.m */; };
@@ -259,6 +260,7 @@
 		5459060AD911EF9BC2296DF1 /* SetLogTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLogTests.h; sourceTree = "<group>"; };
 		5459060D4D99407BD2138CFD /* ProgramSelectorViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramSelectorViewControllerTests.h; sourceTree = "<group>"; };
 		545906145C7FF404C953BDCA /* AddPlateTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateTextFieldDelegate.m; sourceTree = "<group>"; };
+		5459062E1FD6E0C38192CC68 /* SKProductFake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProductFake.m; sourceTree = "<group>"; };
 		54590631753DDF33D785CFEC /* BarWeightTextFieldDelegateTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarWeightTextFieldDelegateTests.h; sourceTree = "<group>"; };
 		545906493F709F3E74D0FB26 /* WeightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightTableCell.m; sourceTree = "<group>"; };
 		5459065D0097A441EF9FB784 /* BarWeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarWeightCell.m; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		54590A09F835E09940645C2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		54590A2090BE2CB988B38C72 /* SSLiftFormDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftFormDataSourceTests.m; sourceTree = "<group>"; };
 		54590A35D1367F68985D66BF /* BarCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCalculator.h; sourceTree = "<group>"; };
+		54590A3A08FD6676DC5055AD /* SKProductFake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductFake.h; sourceTree = "<group>"; };
 		54590A3F41CA62283F2FC9E1 /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench@2x.png"; sourceTree = "<group>"; };
 		54590A4229060377F027452A /* SSWorkoutDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkoutDataSourceTests.h; sourceTree = "<group>"; };
 		54590A4CF82F9A97F124E008 /* PlateStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlateStore.h; sourceTree = "<group>"; };
@@ -515,6 +518,8 @@
 			children = (
 				545902DBAFF98090455072CB /* IAPAdapter.m */,
 				545905B6F5DF5B2FE0E69E43 /* IAPAdapter.h */,
+				5459062E1FD6E0C38192CC68 /* SKProductFake.m */,
+				54590A3A08FD6676DC5055AD /* SKProductFake.h */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -1355,6 +1360,7 @@
 				54590F1F0DB9BCC3B9A49FB4 /* UIViewController+ViewDeckAdditions.m in Sources */,
 				5459062C5EC1B83AAEB32121 /* IAPAdapter.m in Sources */,
 				545905DE48F617467996BA4C /* PurchaseOverlayView.m in Sources */,
+				54590EE1F76C8A7C048300C5 /* SKProductFake.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
