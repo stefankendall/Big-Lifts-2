@@ -3,6 +3,7 @@
 #import "Workout.h"
 #import "SetCell.h"
 #import "SetCellWithPlates.h"
+#import "IAPAdapter.h"
 
 @implementation SSIndividualWorkoutDataSource
 
@@ -21,15 +22,15 @@
 }
 
 - (Workout *)getCurrentWorkout {
-    Workout *workout = [[self.ssWorkout workouts] objectAtIndex:(NSUInteger) self.workoutIndex];
-    return workout;
+    return [[self.ssWorkout workouts] objectAtIndex:(NSUInteger) self.workoutIndex];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SetCellWithPlates *cell = (SetCellWithPlates *) [tableView dequeueReusableCellWithIdentifier:@"SetCellWithPlates"];
+    Class setClass = [[IAPAdapter instance] hasPurchased:@"barLoading"] ? SetCellWithPlates.class : SetCell.class;
+    SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
 
     if (cell == nil) {
-        cell = [SetCellWithPlates create];
+        cell = [setClass create];
     }
 
     [cell setSet:[[[self getCurrentWorkout] sets] objectAtIndex:(NSUInteger) [indexPath row]]];
