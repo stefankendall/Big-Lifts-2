@@ -12,7 +12,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SSLiftFormCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SSLiftsCell"];
+    SSLiftFormCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SSLiftFormCell.class)];
     if (cell == nil) {
         cell = [SSLiftFormCell create];
     }

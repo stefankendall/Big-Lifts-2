@@ -1,11 +1,10 @@
 #import "UIViewController+ViewDeckAdditions.h"
+#import "UITableViewController+NoEmptyRows.h"
 
 @class SSLiftFormDataSource;
 
-@interface SSEditViewController : UIViewController {
-    __weak IBOutlet UITableView *ssLiftsForm;
+@interface SSEditViewController : UITableViewController {
     SSLiftFormDataSource *ssLiftFormDataSource;
 }
-
 
 @end

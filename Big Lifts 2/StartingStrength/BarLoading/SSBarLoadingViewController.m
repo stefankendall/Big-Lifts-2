@@ -57,9 +57,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *emptyViewToPreventEmptyRows = [UIView new];
-    return emptyViewToPreventEmptyRows;
+    return [self emptyView];
 }
-
 
 @end

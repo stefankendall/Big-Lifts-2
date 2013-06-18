@@ -11,11 +11,16 @@
     [self.view addGestureRecognizer:singleFingerTap];
 
     ssLiftFormDataSource = [SSLiftFormDataSource new];
-    [ssLiftsForm setDataSource:ssLiftFormDataSource];
+    [self.tableView setDataSource:ssLiftFormDataSource];
+    [self.tableView setDelegate:self];
 }
 
 - (void)handleSingleTap:(id)handleSingleTap {
     [self.view endEditing:YES];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [self emptyView];
 }
 
 @end

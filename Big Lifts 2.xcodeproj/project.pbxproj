@@ -76,6 +76,7 @@
 		545906A83F608BD0170B560B /* PlateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907F157DFCE4E8F8597F3 /* PlateStore.m */; };
 		545906C2CFEB83657AE870C0 /* SSLiftSummaryCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590160279041FE2B448ACB /* SSLiftSummaryCellTests.m */; };
 		545906D497D17D3A5E089098 /* BLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */; };
+		545906DDB927E241B5F8F0F5 /* UITableViewController+NoEmptyRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459024023A4D2C892087E02 /* UITableViewController+NoEmptyRows.m */; };
 		545907399A24C2822A28E651 /* NavTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590404B60CF77514E341E5 /* NavTableViewController.m */; };
 		5459074E628BFF05398E92B4 /* SSBarLoadingViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459091400F3CD93B3CD3F17 /* SSBarLoadingViewControllerTests.m */; };
 		545907638E55EC01779EA1E0 /* AddPlateViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590927CEE3296B9E67DF45 /* AddPlateViewControllerTests.m */; };
@@ -201,6 +202,7 @@
 		5459020ACBD6F6ABDA18A098 /* WorkoutLogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutLogCell.h; sourceTree = "<group>"; };
 		54590223F1037883FA2C0F24 /* WorkoutLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutLog.m; sourceTree = "<group>"; };
 		54590238E2A042D513E7818C /* NSDictionaryMutatorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionaryMutatorTests.h; sourceTree = "<group>"; };
+		5459024023A4D2C892087E02 /* UITableViewController+NoEmptyRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+NoEmptyRows.m"; sourceTree = "<group>"; };
 		54590241F5D40B3218E04DEA /* PurchaseOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseOverlayView.xib; sourceTree = "<group>"; };
 		5459024F37D8C688295EE4FE /* SSLiftFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftFormCell.m; sourceTree = "<group>"; };
 		5459024F4BF760314E7766CC /* SSLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftStoreTests.m; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 		54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		54590FB49ADA78A483FBFBD3 /* SSIndividualWorkoutDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIndividualWorkoutDataSourceTests.h; sourceTree = "<group>"; };
 		54590FC1E36E2FC55B6FF5D5 /* BLStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLStoreManager.m; sourceTree = "<group>"; };
+		54590FCA85C725757C5716BC /* UITableViewController+NoEmptyRows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+NoEmptyRows.h"; sourceTree = "<group>"; };
 		54590FDD6DF6388082665FCE /* AddPlateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlateViewController.h; sourceTree = "<group>"; };
 		54590FE4F6569EEDC636CBAC /* ButtonMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonMenu.png; sourceTree = "<group>"; };
 		54590FE6E3D1C42971448763 /* PlateRemaining.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlateRemaining.m; sourceTree = "<group>"; };
@@ -543,6 +546,15 @@
 				545905E1361C467A1622D2E2 /* BarCalculator */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		54590228A3BD0257DBA58A9C /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				5459024023A4D2C892087E02 /* UITableViewController+NoEmptyRows.m */,
+				54590FCA85C725757C5716BC /* UITableViewController+NoEmptyRows.h */,
+			);
+			path = Tables;
 			sourceTree = "<group>";
 		};
 		5459026657AF67371826699F /* IAP */ = {
@@ -682,6 +694,7 @@
 				54590FA3AABAFC5B117239B2 /* Stepper */,
 				54590A7477987ACB6EA4DEFD /* RowUIButton.m */,
 				5459040F479643433C2416D9 /* RowUIButton.h */,
+				54590228A3BD0257DBA58A9C /* Tables */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1386,6 +1399,7 @@
 				545905DE48F617467996BA4C /* PurchaseOverlayView.m in Sources */,
 				54590EE1F76C8A7C048300C5 /* SKProductFake.m in Sources */,
 				5459099FA669850AB13D07E2 /* SKProductStore.m in Sources */,
+				545906DDB927E241B5F8F0F5 /* UITableViewController+NoEmptyRows.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
