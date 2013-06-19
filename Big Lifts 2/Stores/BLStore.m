@@ -1,5 +1,5 @@
 #import "BLStore.h"
-#import "ContextManager.h"
+#import "BLStoreManager.h"
 
 @implementation BLStore
 @synthesize changeCallbacks;
@@ -21,23 +21,23 @@
 
 
 - (id)create {
-    return [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[ContextManager context]];
+    return [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[BLStoreManager context]];
 }
 
 - (void)contentChange:(NSNotification *)note {
-    [[ContextManager context] mergeChangesFromContextDidSaveNotification:note];
+    [[BLStoreManager context] mergeChangesFromContextDidSaveNotification:note];
 }
 
 - (void)empty {
     NSFetchRequest *request = [self getRequest];
-    for (NSManagedObject *object in [[ContextManager context] executeFetchRequest:request error:nil]) {
-        [[ContextManager context] deleteObject:object];
+    for (NSManagedObject *object in [[BLStoreManager context] executeFetchRequest:request error:nil]) {
+        [[BLStoreManager context] deleteObject:object];
     }
 }
 
 - (NSFetchRequest *)getRequest {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [[[ContextManager model] entitiesByName] objectForKey:[self modelName]];
+    NSEntityDescription *entity = [[[BLStoreManager model] entitiesByName] objectForKey:[self modelName]];
     [request setEntity:entity];
     return request;
 }
@@ -87,7 +87,7 @@
 
 - (NSArray *)executeRequest:(NSFetchRequest *)request {
     NSError *error;
-    NSArray *result = [[ContextManager context] executeFetchRequest:request error:&error];
+    NSArray *result = [[BLStoreManager context] executeFetchRequest:request error:&error];
     if (!result) {
         [NSException raise:@"Fetch Failed" format:@"%@", [error localizedDescription]];
     }
@@ -110,7 +110,7 @@
 }
 
 - (void)removeAtIndex:(int)index {
-    [[ContextManager context] deleteObject:[self atIndex:index]];
+    [[BLStoreManager context] deleteObject:[self atIndex:index]];
 };
 
 - (int)count {

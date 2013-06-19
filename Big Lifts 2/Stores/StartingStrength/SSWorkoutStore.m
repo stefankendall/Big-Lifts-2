@@ -1,24 +1,24 @@
 #import "BLStore.h"
 #import "SSWorkoutStore.h"
 #import "SSWorkout.h"
-#import "ContextManager.h"
 #import "SSLiftStore.h"
 #import "SSLift.h"
 #import "Set.h"
 #import "Workout.h"
 #import "SetStore.h"
 #import "WorkoutStore.h"
+#import "BLStoreManager.h"
 
 @implementation SSWorkoutStore
 
 - (void)setupDefaults {
     if ([self count] == 0) {
-        SSWorkout *workoutA = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[ContextManager context]];
+        SSWorkout *workoutA = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[BLStoreManager context]];
         [workoutA setName:@"A"];
         [workoutA setOrder:[NSNumber numberWithDouble:0.0]];
         [self setupWorkoutA:workoutA];
 
-        SSWorkout *workoutB = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[ContextManager context]];
+        SSWorkout *workoutB = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[BLStoreManager context]];
         [workoutB setName:@"B"];
         [workoutB setOrder:[NSNumber numberWithDouble:1.0]];
         [self setupWorkoutB:workoutB];

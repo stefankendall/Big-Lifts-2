@@ -1,5 +1,4 @@
 #import "BLAppDelegate.h"
-#import "ContextManager.h"
 #import "SKProductStore.h"
 #import "BLStoreManager.h"
 
@@ -33,7 +32,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    [[ContextManager instance] saveChanges];
+    [[BLStoreManager instance] saveChanges];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -142,16 +141,15 @@
 }
 
 - (void)ubiquityStoreManager:(UbiquityStoreManager *)manager willLoadStoreIsCloud:(BOOL)isCloudStore {
-    [ContextManager instance].context = nil;
 }
 
 - (void)ubiquityStoreManager:(UbiquityStoreManager *)manager didLoadStoreForCoordinator:(NSPersistentStoreCoordinator *)coordinator isCloud:(BOOL)isCloudStore {
-    NSLog(@"%@", [NSNumber numberWithBool:isCloudStore]);
     NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [context setPersistentStoreCoordinator:coordinator];
     [context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
 
-    [[BLStoreManager instance] initializeAllStores];
+    [[BLStoreManager instance] initializeAllStores: context withModel: [coordinator managedObjectModel]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"dataLoaded" object:nil];
 }
 
 @end

@@ -4,7 +4,11 @@
 
 + (BLStoreManager *)instance;
 
-- (void)initializeAllStores;
++ (NSManagedObjectContext *)context;
+
++ (NSManagedObjectModel *)model;
+
+- (void)initializeAllStores:(NSManagedObjectContext *)context withModel:(NSManagedObjectModel *)model;
 
 - (void)resetAllStores;
 
@@ -13,5 +17,11 @@
 - (NSSet *)getChangedStoresFromObjects:(NSSet *)allObjects;
 
 @property(nonatomic, strong) NSArray *allStores;
+
+- (void)saveChanges;
+
+@property(nonatomic, strong) NSManagedObjectContext *context;
+@property(nonatomic, strong) NSManagedObjectModel *model;
+
 
 @end

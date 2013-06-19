@@ -4,7 +4,6 @@
 #import "SetStore.h"
 #import "SSLiftStore.h"
 #import "SSWorkoutStore.h"
-#import "ContextManager.h"
 #import "CurrentProgramStore.h"
 #import "WorkoutLogStore.h"
 #import "PlateStore.h"
@@ -13,7 +12,17 @@
 @implementation BLStoreManager
 @synthesize allStores;
 
-- (void)initializeAllStores {
++ (NSManagedObjectContext *)context {
+    return [[BLStoreManager instance] context];
+}
+
++ (NSManagedObjectModel *)model {
+    return [[BLStoreManager instance] model];
+}
+
+- (void)initializeAllStores:(NSManagedObjectContext *)context withModel:(NSManagedObjectModel *)model {
+    self.context = context;
+    self.model = model;
     allStores = @[
             [CurrentProgramStore instance],
             [SettingsStore instance],
@@ -28,7 +37,7 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:)
                                                  name:NSManagedObjectContextObjectsDidChangeNotification
-                                               object:[ContextManager context]];
+                                               object:context];
 }
 
 - (void)resetAllStores {
@@ -63,7 +72,7 @@
     NSMutableSet *changedStores = [NSMutableSet new];
     for (NSString *modelName in changedModelNames) {
         id store = storeModelMapping[modelName];
-        if( store == nil ){
+        if (store == nil ) {
             [NSException raise:@"Store not defined in store manager" format:@"%@", modelName];
         }
         [changedStores addObject:store];
@@ -88,6 +97,14 @@
     }
 
     return manager;
+}
+
+- (void)saveChanges {
+    NSError *err = nil;
+    BOOL successful = [self.context save:&err];
+    if (!successful) {
+        NSLog(@"Error saving: %@", [err localizedDescription]);
+    }
 }
 
 @end

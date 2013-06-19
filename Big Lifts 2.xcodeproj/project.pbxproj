@@ -15,7 +15,6 @@
 		5459004D8514521DF26434B4 /* SetLogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C981B6E7059CE8DB0C5 /* SetLogTests.m */; };
 		54590058C5DABE4593322576 /* SSLiftSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459012DADE179F1BF2867BF /* SSLiftSummaryCell.m */; };
 		54590064BB1792E33E948058 /* SetLogCombiner.m in Sources */ = {isa = PBXBuildFile; fileRef = 545902946E10BFAD16228488 /* SetLogCombiner.m */; };
-		54590066ACA0290973FFC443 /* ContextManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590336DD8FB6A778EF2698 /* ContextManager.m */; };
 		54590068C6835570BC6E8994 /* WeightsTableDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DF0FCF2558E081973DD /* WeightsTableDataSourceTests.m */; };
 		5459009727E871063CC713D4 /* SSWorkoutStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590EDA077FDB20F3837A8E /* SSWorkoutStore.m */; };
 		545900A28D71BC1E28A1CECA /* BarCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D444F2CDCBF70B25BCD /* BarCalculator.m */; };
@@ -128,6 +127,7 @@
 		54590CA2FCA6F68781EDA49A /* SSWorkoutDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A86BB4E1503AD77E031 /* SSWorkoutDataSource.m */; };
 		54590CB219C91DFB9DA263D7 /* 213-reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590EC196BC63BE61A1F180 /* 213-reply.png */; };
 		54590CDCB7F5BE9F92F0A717 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590185EABBE78D7F766644 /* TextFieldCell.m */; };
+		54590D21D480A4C977A011C8 /* DataLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E797B6AD9965D21989A /* DataLoadingViewController.m */; };
 		54590D448EE92C434D527C77 /* SKProductStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459098421FF9A74A467A55D /* SKProductStoreTests.m */; };
 		54590D54B813F11098EFFA43 /* BarLoadingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A01ECE20D767C3B0F3F /* BarLoadingDataSource.m */; };
 		54590D56912D1BDEB0EA3A7B /* SenTestCase+ControllerTestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C74A8BA79A42D9C5C3B /* SenTestCase+ControllerTestAdditions.m */; };
@@ -200,6 +200,7 @@
 		545901F56B3627441C838476 /* SetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
 		54590204795771CA8E509235 /* SetLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLog.m; sourceTree = "<group>"; };
 		5459020ACBD6F6ABDA18A098 /* WorkoutLogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutLogCell.h; sourceTree = "<group>"; };
+		5459021F92F2D8F12C2CACF7 /* DataLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoadingViewController.h; sourceTree = "<group>"; };
 		54590223F1037883FA2C0F24 /* WorkoutLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutLog.m; sourceTree = "<group>"; };
 		54590238E2A042D513E7818C /* NSDictionaryMutatorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionaryMutatorTests.h; sourceTree = "<group>"; };
 		5459024023A4D2C892087E02 /* UITableViewController+NoEmptyRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+NoEmptyRows.m"; sourceTree = "<group>"; };
@@ -223,7 +224,6 @@
 		545903123BB624EAB0970EF2 /* SSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSettingsViewController.m; sourceTree = "<group>"; };
 		5459031602F5FA710EE94E25 /* CurrentProgramStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentProgramStore.h; sourceTree = "<group>"; };
 		5459032746F7EBC1E3015A6E /* CurrentProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentProgram.h; sourceTree = "<group>"; };
-		54590336DD8FB6A778EF2698 /* ContextManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextManager.m; sourceTree = "<group>"; };
 		5459035ACC4AC43DEA0D8BEA /* SKProductStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProductStore.m; sourceTree = "<group>"; };
 		5459035B2414D0420A431AAD /* SSLiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftViewController.h; sourceTree = "<group>"; };
 		545903646C232FF946BCAD93 /* WorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutStore.h; sourceTree = "<group>"; };
@@ -381,7 +381,6 @@
 		54590CDC0CA1FF8574E448C0 /* AddPlateViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlateViewControllerTests.h; sourceTree = "<group>"; };
 		54590CE6E1C7F29AF260174C /* SSLogDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLogDataSourceTests.m; sourceTree = "<group>"; };
 		54590D0607AF7D287CF7E021 /* SetLogContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLogContainer.m; sourceTree = "<group>"; };
-		54590D07EB157A9007B2FEA1 /* ContextManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextManager.h; sourceTree = "<group>"; };
 		54590D18421931A8264469EF /* SSLiftSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftSummaryCell.h; sourceTree = "<group>"; };
 		54590D3D30B6A8DE99AAFF1C /* SSLiftSummaryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftSummaryDataSource.h; sourceTree = "<group>"; };
 		54590D444F2CDCBF70B25BCD /* BarCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCalculator.m; sourceTree = "<group>"; };
@@ -398,6 +397,7 @@
 		54590E62F108288D8D3EC1C7 /* SetCellWithPlates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCellWithPlates.h; sourceTree = "<group>"; };
 		54590E6A0CAF31EAD2FF1295 /* SSLiftFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftFormCell.h; sourceTree = "<group>"; };
 		54590E722B6DBA6CE8F2F632 /* BLStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLStoreTests.m; sourceTree = "<group>"; };
+		54590E797B6AD9965D21989A /* DataLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoadingViewController.m; sourceTree = "<group>"; };
 		54590E814FB62F30159EA4C1 /* Big Lifts 2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Big Lifts 2-Info.plist"; sourceTree = "<group>"; };
 		54590E8A1AABC89102B1E917 /* UIViewController+ViewDeckAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ViewDeckAdditions.m"; sourceTree = "<group>"; };
 		54590E9C5956AAD9E4AF17C0 /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
@@ -668,8 +668,6 @@
 				54590ADCA111CB4F1040C11C /* SettingsStore.m */,
 				545906D47B153813B64C62D5 /* SettingsStore.h */,
 				54590ECD65D833334928B647 /* StartingStrength */,
-				54590336DD8FB6A778EF2698 /* ContextManager.m */,
-				54590D07EB157A9007B2FEA1 /* ContextManager.h */,
 				545901DE79DAB4F1EBBFA44A /* BLStore.m */,
 				545906050E521704714A25D5 /* BLStore.h */,
 				54590F7952D40E528AEAB279 /* SetStore.m */,
@@ -1069,6 +1067,8 @@
 				545901C992EB59EFD221726A /* Util */,
 				545907B1FF2769685DB09B41 /* AllPrograms */,
 				54590172E767B5278C0D25E0 /* IAP */,
+				54590E797B6AD9965D21989A /* DataLoadingViewController.m */,
+				5459021F92F2D8F12C2CACF7 /* DataLoadingViewController.h */,
 			);
 			path = "Big Lifts 2";
 			sourceTree = "<group>";
@@ -1346,7 +1346,6 @@
 				54590AFAD07D66A3933132F3 /* SSEditViewController.m in Sources */,
 				54590903AA44C3B7F8133855 /* SSLift.m in Sources */,
 				54590542FE71C003FE7C6883 /* SSLiftStore.m in Sources */,
-				54590066ACA0290973FFC443 /* ContextManager.m in Sources */,
 				54590E59B8431037FECDD4B6 /* BLStore.m in Sources */,
 				02DAE24F1744755A001F31C2 /* SSPlanWorkoutsViewController.m in Sources */,
 				54590CA2FCA6F68781EDA49A /* SSWorkoutDataSource.m in Sources */,
@@ -1408,6 +1407,7 @@
 				54590EE1F76C8A7C048300C5 /* SKProductFake.m in Sources */,
 				5459099FA669850AB13D07E2 /* SKProductStore.m in Sources */,
 				545906DDB927E241B5F8F0F5 /* UITableViewController+NoEmptyRows.m in Sources */,
+				54590D21D480A4C977A011C8 /* DataLoadingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

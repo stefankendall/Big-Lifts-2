@@ -1,6 +1,6 @@
 #import "SSLiftStore.h"
-#import "ContextManager.h"
 #import "SSLift.h"
+#import "BLStoreManager.h"
 
 @implementation SSLiftStore {
 }
@@ -16,7 +16,7 @@
 }
 
 - (void)createLift:(NSString *)name withOrder:(double)order {
-    SSLift *lift = [NSEntityDescription insertNewObjectForEntityForName:@"SSLift" inManagedObjectContext:[ContextManager context]];
+    SSLift *lift = [NSEntityDescription insertNewObjectForEntityForName:@"SSLift" inManagedObjectContext:[BLStoreManager context]];
     [lift setName:name];
     [lift setOrder:[NSNumber numberWithDouble:order]];
 }
