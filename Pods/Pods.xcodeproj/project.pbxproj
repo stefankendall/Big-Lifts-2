@@ -7,369 +7,413 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02B0B76EB8F74F17A93406BD /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5FBEC2FE4B495C94866614 /* IIViewDeckController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		0408FA1E23DE4C1685976EB0 /* EZFormField.h in Headers */ = {isa = PBXBuildFile; fileRef = 587E364ACC534F8B94674397 /* EZFormField.h */; settings = {}; };
-		088125B7E56F46A384137BD8 /* NSSet+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BD994A93DA394244850DF842 /* NSSet+Utilities.m */; settings = {}; };
-		0E1516E2501E441C89B15924 /* EZFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C572BF72AD2845D9A4962985 /* EZFormTextField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		0E64BBD24F624CCA8B8BC5D4 /* EZFormDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = 43492E5CAE4249539B9810E8 /* EZFormDateField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		1E72250D4A254BE8B579DCDF /* EZFormRadioField.m in Sources */ = {isa = PBXBuildFile; fileRef = E4696FE2FEA1469583FE08C9 /* EZFormRadioField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		23380F7F98864B2198A01FF0 /* NSDictionary+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = A35387998D9744FF885A1BAF /* NSDictionary+Enumerable.m */; settings = {}; };
-		2442604948814990912727E1 /* EZFormMultiRadioFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = FA432841A9B24CB19520E1AB /* EZFormMultiRadioFormField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		250AB1C436634AAAA428EE4B /* IAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C598DD32A8824FE7BCBFB82D /* IAPManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		2CE32EFE40EC460B9336D9A2 /* NSArray+Enumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 7967EFEF8C554CE3AE0B8CC0 /* NSArray+Enumerable.h */; settings = {}; };
-		2F1719C442164F92A19ACD5E /* IAPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FAC0E74431E54703A179EAB5 /* IAPManager.h */; settings = {}; };
-		322E52A081254761BAC73457 /* MRCEnumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 90B29A779A3F4BBE8C155BB6 /* MRCEnumerable.h */; settings = {}; };
-		374F1E52A0D647149997E33D /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF751121361448AC88F503F7 /* TPKeyboardAvoidingScrollView.m */; settings = {}; };
-		45C2A88210124B82B8ECAF29 /* EZFormStandardInputAccessoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = E12E454867AB496EA28BCD1F /* EZFormStandardInputAccessoryView.h */; settings = {}; };
-		462B33B52B6746418A236F3F /* EZFormStandardInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21383C2EFA7F4C8186B6E474 /* EZFormStandardInputAccessoryView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		4AB8599AF0D74142AEFAE950 /* NSSet+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E5DB9456FA343B592AA1C83 /* NSSet+Utilities.h */; settings = {}; };
-		5546C175512E464CBF122336 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DDBC16149014989A59D7771 /* TPKeyboardAvoidingTableView.m */; settings = {}; };
-		5575B5E9980C4675A5ECBA07 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A37C8426C34B4B80C318DC /* IIWrapController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		5A0EB14502BA40448787E18A /* EZFormGenericField.m in Sources */ = {isa = PBXBuildFile; fileRef = A48C44EE04314FC7A78D0C88 /* EZFormGenericField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		5CA0ED81B15F4442BE3BE5F3 /* EZFormField+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B9F24DFB8184C8EA57D56B5 /* EZFormField+Private.h */; settings = {}; };
-		5F369CFBDD794F87B00B4CFF /* EZFormInputControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2C3544AFB9426D8B327BAC /* EZFormInputControl.h */; settings = {}; };
-		628AAF274DB948D09274F020 /* NSArray+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C68BB9720E46EFAF0CA8E5 /* NSArray+Utilities.h */; settings = {}; };
-		62E0FC8B038542F6958994EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA26C04ACC49D48A27D274 /* Foundation.framework */; settings = {}; };
-		637E44D8424E4775B6701E69 /* CTCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E05ECD14F143476FAA9F196C /* CTCustomTableViewCell.m */; settings = {}; };
-		63A371D893134B0B8438DD71 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E858F5A5EC463C81FBB839 /* IISideController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		64479454AD2644D6B5D3B04B /* EZFormInvalidIndicatorTriangleExclamationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0438856D8B54618AEA1E525 /* EZFormInvalidIndicatorTriangleExclamationView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		6F143795DE094EAD9DF5611C /* EZFormBooleanField.m in Sources */ = {isa = PBXBuildFile; fileRef = 35055F452CFD4BC388830DF8 /* EZFormBooleanField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		701E5C07BE404D99B41A9BDA /* CTCustomTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C3EE065CBB3045D1AF809580 /* CTCustomTableViewCell.h */; settings = {}; };
-		7034EC65B9284B5AAEC2B9F8 /* EZFormFieldConcreteProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = EA0D695667284332A76C94FD /* EZFormFieldConcreteProtocol.h */; settings = {}; };
-		724405AE15844689B64885CC /* IIViewDeckController.h in Headers */ = {isa = PBXBuildFile; fileRef = 26FBCD2F3CAE46ADB071B7E4 /* IIViewDeckController.h */; settings = {}; };
-		746A5F85C7574991B722E2A9 /* EZFormDateField.h in Headers */ = {isa = PBXBuildFile; fileRef = 749B6E4F3C3D4957AC91CADC /* EZFormDateField.h */; settings = {}; };
-		7585F31B42CF4629A9A51877 /* EZForm.h in Headers */ = {isa = PBXBuildFile; fileRef = ACCF639F95D647FDA34ADF63 /* EZForm.h */; settings = {}; };
-		8180DC4AEF80461E917FD13F /* IIWrapController.h in Headers */ = {isa = PBXBuildFile; fileRef = E0E2CCFF548C4FBAAC8CE298 /* IIWrapController.h */; settings = {}; };
-		83BF2E17BBAA46B99C0A88DE /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEF3A0482EC4F4E998DEDC8 /* Pods-dummy.m */; settings = {}; };
-		83C2E5CA855E4352A3A1D20D /* NSSet+Enumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = A216CAB1420D409B90C4186D /* NSSet+Enumerable.h */; settings = {}; };
-		8AD907188ECA4B66B9A8E201 /* EZFormGenericField.h in Headers */ = {isa = PBXBuildFile; fileRef = F99D6AC178994C0D9031CD6F /* EZFormGenericField.h */; settings = {}; };
-		8BF3BC848FA8476199D76A43 /* EZForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CAC9C14EBC4FC294DCC2BF /* EZForm.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		8D2784A39F844E75972278C4 /* NSArray+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EEA5F1E147904F5D83C2CC3B /* NSArray+Utilities.m */; settings = {}; };
-		8E391638B272484FB10FBCEE /* EZFormRadioChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0117C62CC14448E986D667F0 /* EZFormRadioChoiceViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		91DCC4E3EA3E4CF3B5EEDF4C /* EZFormInvalidIndicatorTriangleExclamationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E76F388822A4FA38B8B4091 /* EZFormInvalidIndicatorTriangleExclamationView.h */; settings = {}; };
-		92986839952F4ACAA4436CEA /* TPKeyboardAvoidingTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = B41BF9FD557A4115BA8D6EDE /* TPKeyboardAvoidingTableView.h */; settings = {}; };
-		945A8CFDCF984ABF8107C1D6 /* UIView+EZFormUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = BD2BB9DC0D9A4BA68F205653 /* UIView+EZFormUtility.h */; settings = {}; };
-		962D61A1B84B4BB2AA78AB30 /* IISideController.h in Headers */ = {isa = PBXBuildFile; fileRef = 55FB4C617FD54C9DBF557EBD /* IISideController.h */; settings = {}; };
-		98CD66F574F5477B9DBF3E77 /* EZFormCommonValidators.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3097DAB52C437785AB9B0F /* EZFormCommonValidators.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		A33E94218194450DB2748916 /* EZForm+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 08F818F9820A4F308E82A276 /* EZForm+Private.h */; settings = {}; };
-		AC526381AF464F4E9E6A8E07 /* NSSet+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1EBFB0B0C0416DA4045B29 /* NSSet+Enumerable.m */; settings = {}; };
-		B13BEF2E5CFF4FD88A302BBE /* EZFormInputAccessoryViewProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 2465E177975F43A7A07FEEAC /* EZFormInputAccessoryViewProtocols.h */; settings = {}; };
-		BC59A377B80543A1A7909376 /* EZFormMultiRadioFormField.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FA777D4A45D4F588397F6D6 /* EZFormMultiRadioFormField.h */; settings = {}; };
-		BC917DDAA5CA4E55BDEC6564 /* EZFormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E8B6867BD4542A98060141D /* EZFormTextField.h */; settings = {}; };
-		BDA3F67AB7E24EEB8E6E9041 /* NSDictionary+Enumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 38962C7660134B66BDE4445D /* NSDictionary+Enumerable.h */; settings = {}; };
-		C0B9A190AD464EAF8E20FF0F /* TPKeyboardAvoidingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B676680417214CC9ACE792AE /* TPKeyboardAvoidingScrollView.h */; settings = {}; };
-		C3E6492526154BAAA4DC86CB /* UIView+EZFormUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = D595FE260B854000AC461EC5 /* UIView+EZFormUtility.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		CEA2D40F0D594599BA2481FD /* NSArray+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD1EDB2241D473FA0692E5A /* NSArray+Enumerable.m */; settings = {}; };
-		E1B561B3EFA24E3E9BB996E0 /* EZFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BEBFA4DEB64E14AC99C5A8 /* EZFormField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		E43727F5848C45E1A0B99962 /* EZFormCommonValidators.h in Headers */ = {isa = PBXBuildFile; fileRef = 5108E64B8B21421397F35FBD /* EZFormCommonValidators.h */; settings = {}; };
-		E76EF3D3791E4D1181E646B8 /* EZFormBooleanField.h in Headers */ = {isa = PBXBuildFile; fileRef = EB0835E9A8C941ADAA03C055 /* EZFormBooleanField.h */; settings = {}; };
-		F93B74F09CB54602B0AF8C0E /* EZFormRadioChoiceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 432A8759395341A59616AD2A /* EZFormRadioChoiceViewController.h */; settings = {}; };
-		FC2A4A935FD3441AABCF183D /* EZFormRadioField.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F1D3DDBF554F1A815C844B /* EZFormRadioField.h */; settings = {}; };
-		FEC1B5AF082C40AA88BC514B /* EZFormInputControl.m in Sources */ = {isa = PBXBuildFile; fileRef = AA63414835274289B58AF199 /* EZFormInputControl.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		0001845C6A374B668731D013 /* NSArray+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 216F4812CC244D7F949CE858 /* NSArray+Utilities.h */; settings = {}; };
+		013AECB7D479488F9D4B7C90 /* NSArray+Enumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F47C36C6214B49A13BF291 /* NSArray+Enumerable.h */; settings = {}; };
+		042AA6C5E85E4E8B84445DC5 /* EZFormMultiRadioFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB158DB8B3E43DA9166A17F /* EZFormMultiRadioFormField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		077D255E1BCD48D2BDA7ECA0 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79ACAC7A39094B87ABFB2C27 /* IIWrapController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		08726A80F2864C00ABE3F5E7 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79E315964AE4993BD47D0EB /* TPKeyboardAvoidingTableView.m */; settings = {}; };
+		0DA8112AC8A04159A3AB6761 /* EZFormBooleanField.m in Sources */ = {isa = PBXBuildFile; fileRef = B18DF2C9FF3446088BE9479C /* EZFormBooleanField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		0E4C5D1527644C21B064563E /* EZFormInvalidIndicatorTriangleExclamationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A935533C17B4288B18D7EC8 /* EZFormInvalidIndicatorTriangleExclamationView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		13D3558F78A34064B5EF2365 /* EZFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 150FE4A83B7E4865AFFF11D1 /* EZFormField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		1A0841C9DCE04876ACE6F2E2 /* NSDictionary+Enumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = DBB93B7476D74C368D98889E /* NSDictionary+Enumerable.h */; settings = {}; };
+		1AB9F22838B84BFA8D28DB28 /* NSError+UbiquityStoreManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 228FAEBC0ED74D26B3A685DE /* NSError+UbiquityStoreManager.h */; settings = {}; };
+		20F05D439D9948D6BCD20893 /* EZFormRadioField.h in Headers */ = {isa = PBXBuildFile; fileRef = B61F3CDA09E44F2DA1171D25 /* EZFormRadioField.h */; settings = {}; };
+		2280A6874D39443887F8209E /* UIView+EZFormUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 33C67FB04B4045B1B0C477F3 /* UIView+EZFormUtility.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		27DA7182B4ED48A7984E6C2D /* CTCustomTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A25E62623012407C8643BD2F /* CTCustomTableViewCell.h */; settings = {}; };
+		2A5D1F30ECEA456A88B2FE35 /* UbiquityStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CED0B24BAB494894981E59 /* UbiquityStoreManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		2EC9CBC3441242949BB01E1E /* EZForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D253C47E6504B66A0F90E4D /* EZForm.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		34A3549CDAE14F56A112F7E9 /* NSSet+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 5247492CF4E04ADD953170DF /* NSSet+Utilities.h */; settings = {}; };
+		350C925485E44D3C9608C958 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFFC0FE776B4D0C8EFF6DCA /* TPKeyboardAvoidingScrollView.m */; settings = {}; };
+		35B93E8AE636441C99EAD090 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E231F67022874E3DB1886CDF /* Pods-dummy.m */; settings = {}; };
+		39AFA12451664130B24708E8 /* NSArray+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3294320A1B473EB1411CE7 /* NSArray+Enumerable.m */; settings = {}; };
+		424C60C5AFEF490F9671220A /* EZFormCommonValidators.m in Sources */ = {isa = PBXBuildFile; fileRef = 71AA8278ED914A03AA6A4AAD /* EZFormCommonValidators.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		43B72DA9BC724D2DA3904A57 /* EZFormDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B6EC6EF364068BA5A9BC5 /* EZFormDateField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		43DC085B96C54BCEB84E30B3 /* NSArray+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AC01281A8B4D0ABE09888C /* NSArray+Utilities.m */; settings = {}; };
+		4C30C9C98B0F4E7FB94C65B8 /* NSURL+UbiquityStoreManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A5276435F04A50BB0353F5 /* NSURL+UbiquityStoreManager.h */; settings = {}; };
+		4F2A58E75DB04E9DBB5BFDAF /* EZFormRadioChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C913F99A11A4E0897E0E9E8 /* EZFormRadioChoiceViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		5174D48DA70F48C6AF6896F2 /* EZFormInputAccessoryViewProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = C21C2636640C4F2993AB008E /* EZFormInputAccessoryViewProtocols.h */; settings = {}; };
+		5AFF61C4FA8A4937B010D19D /* EZFormBooleanField.h in Headers */ = {isa = PBXBuildFile; fileRef = 69892954F0EA42EB8DD85830 /* EZFormBooleanField.h */; settings = {}; };
+		5BEE24DCC9874DDC866970BF /* UbiquityStoreManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AD717CCA36946BBB3DF220D /* UbiquityStoreManager.h */; settings = {}; };
+		5E3FFAEC4C904F76A65A8C53 /* TPKeyboardAvoidingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B70B9187E50F4B308400E724 /* TPKeyboardAvoidingScrollView.h */; settings = {}; };
+		60E95069DF9B40AF9F78F12F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 672FAB28F294429CB8FAF7E0 /* Foundation.framework */; settings = {}; };
+		6676337174C6450F8724C0FE /* IAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 455834A97DE6476392002CAD /* IAPManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		6979F3C661DC4A2395F0D468 /* NSDictionary+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4B4B0E44074BED9E45A66E /* NSDictionary+Enumerable.m */; settings = {}; };
+		6A876126324D49728A7F95EC /* IIWrapController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FBDD291595E4BFC94798D7F /* IIWrapController.h */; settings = {}; };
+		8798814F90AF4DBD9F7694BF /* IIViewDeckController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F45E7295E704135B18A779D /* IIViewDeckController.h */; settings = {}; };
+		951E1062DC4E4FFDA1AD91E0 /* EZFormField.h in Headers */ = {isa = PBXBuildFile; fileRef = A9E94937CDDD4C00951BFDA2 /* EZFormField.h */; settings = {}; };
+		9834130BC6BE4F4694BD9403 /* NSSet+Enumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BC51D32B0C64E8A84852AE1 /* NSSet+Enumerable.h */; settings = {}; };
+		98EFD1E03E9E4A8D878E6947 /* CTCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC762327284E8883A5731D /* CTCustomTableViewCell.m */; settings = {}; };
+		9C4F043748A2418D806947D4 /* EZFormRadioChoiceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 66E24A907849451D8DB3EA61 /* EZFormRadioChoiceViewController.h */; settings = {}; };
+		9D913186910A41958A24AB75 /* EZForm+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CB10DFB6BCEF4C2EA5F2CC14 /* EZForm+Private.h */; settings = {}; };
+		9E42B7F6E79B46EDBC11F576 /* IAPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AC5CDAC4A364C60857CC7D5 /* IAPManager.h */; settings = {}; };
+		A047430BE9C04079BB4B5188 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6847BE0F1B0948159A441BF7 /* IISideController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		A68E568E8FAD4E5DA5497D7C /* EZFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E862F0561DB04A3D9884275E /* EZFormTextField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		A9895FE233AF40F0AEDB29E0 /* EZFormStandardInputAccessoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = A8B7EBF90A554A3BA495AAE7 /* EZFormStandardInputAccessoryView.h */; settings = {}; };
+		AFF4B43411EE4097B9932F03 /* NSURL+UbiquityStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7471E77AAC07426D9DAE9E9E /* NSURL+UbiquityStoreManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B01E9D7ACB68420C998BC1A3 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB3A3020A7B4C84AB55B28E /* JRSwizzle.h */; settings = {}; };
+		B13578357BB64E308BB98C27 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 959485A6B80D4B24B516342F /* JRSwizzle.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		B7EB65278DE1436491FF16B7 /* EZFormInputControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 73A4F6221FB6439082FB7A9A /* EZFormInputControl.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		BB58A50D79E74456B8633D13 /* EZFormDateField.h in Headers */ = {isa = PBXBuildFile; fileRef = 3481C23745E74C7CB1C17602 /* EZFormDateField.h */; settings = {}; };
+		C098929ECDEA4DEE9B7DA42E /* EZFormGenericField.h in Headers */ = {isa = PBXBuildFile; fileRef = 46433C8BB0C64919BE25824F /* EZFormGenericField.h */; settings = {}; };
+		CD18C13B0F734598BA6955E2 /* EZFormFieldConcreteProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F0E1D68FF784A24AF0D3068 /* EZFormFieldConcreteProtocol.h */; settings = {}; };
+		D0EE589107E14287A8C4B319 /* EZFormField+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E29A8896D65445AB609CC8F /* EZFormField+Private.h */; settings = {}; };
+		D3DC815753B342FCA7F1C836 /* EZFormInputControl.h in Headers */ = {isa = PBXBuildFile; fileRef = DBBDD9BD84BF4462A2B12F1C /* EZFormInputControl.h */; settings = {}; };
+		D9AB99E4DCED4BD3A0F44142 /* IISideController.h in Headers */ = {isa = PBXBuildFile; fileRef = 49F768F73BF14153ADA11075 /* IISideController.h */; settings = {}; };
+		DA9BF67645AA4417999E6C3E /* UIView+EZFormUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = D4CE401397524535A0606C9B /* UIView+EZFormUtility.h */; settings = {}; };
+		DB9A80D7F101478C8F72665B /* TPKeyboardAvoidingTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CC3AC4CA911401E8ED10526 /* TPKeyboardAvoidingTableView.h */; settings = {}; };
+		DDB9848736F14318A8C16CB0 /* EZFormCommonValidators.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CFBAE94314F4B3382DC6E78 /* EZFormCommonValidators.h */; settings = {}; };
+		DF1FEB1A78F944A09587882A /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EF77FB3D95428DBCD19896 /* IIViewDeckController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		DF9243EF402F4A4B988323BC /* EZFormRadioField.m in Sources */ = {isa = PBXBuildFile; fileRef = 226448B0546A454486F7BC73 /* EZFormRadioField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		EA556E3928AF4CBC9D305912 /* EZFormMultiRadioFormField.h in Headers */ = {isa = PBXBuildFile; fileRef = 5649DBD8C33C475B92C6EA0B /* EZFormMultiRadioFormField.h */; settings = {}; };
+		EBA61EA41DAF4231963D91EC /* NSSet+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = A2532E24D99B446E9DF7E88F /* NSSet+Enumerable.m */; settings = {}; };
+		EF2F82E1837B4FDD8340CE98 /* EZFormGenericField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0665ED7CC76A41D3867D735B /* EZFormGenericField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		F26CB19CA81B48D4B52F5109 /* EZFormInvalidIndicatorTriangleExclamationView.h in Headers */ = {isa = PBXBuildFile; fileRef = EE9365FB43564C1DABBFE30A /* EZFormInvalidIndicatorTriangleExclamationView.h */; settings = {}; };
+		F3051423F159435FAF45AECF /* EZFormStandardInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1CB7E23B6B464581F838E5 /* EZFormStandardInputAccessoryView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		F3D700FBDFC34E5999F36406 /* MRCEnumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CC34A723AC04D118216FC50 /* MRCEnumerable.h */; settings = {}; };
+		F57C55032218407F8B3D4938 /* EZForm.h in Headers */ = {isa = PBXBuildFile; fileRef = E5D15FE62C8F4D3BB3536FEE /* EZForm.h */; settings = {}; };
+		F64276BE444C485D86F8FFEC /* NSSet+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A2657A4DA4934184897F4820 /* NSSet+Utilities.m */; settings = {}; };
+		FC46C6EE092B4609B7AA6BF4 /* EZFormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BFFE036D83A45A188C93A1B /* EZFormTextField.h */; settings = {}; };
+		FE1936D0714A433BABDFF739 /* NSError+UbiquityStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF733743EA4A218ECCDEA1 /* NSError+UbiquityStoreManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0117C62CC14448E986D667F0 /* EZFormRadioChoiceViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormRadioChoiceViewController.m; path = EZForm/EZForm/EZForm/src/EZFormRadioChoiceViewController.m; sourceTree = SOURCE_ROOT; };
-		06FA26C04ACC49D48A27D274 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		07AA80081B0440739B77F1DF /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		08F818F9820A4F308E82A276 /* EZForm+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EZForm+Private.h"; path = "EZForm/EZForm/EZForm/src/EZForm+Private.h"; sourceTree = SOURCE_ROOT; };
-		09E858F5A5EC463C81FBB839 /* IISideController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IISideController.m; path = ViewDeck/ViewDeck/IISideController.m; sourceTree = SOURCE_ROOT; };
-		0A2C3544AFB9426D8B327BAC /* EZFormInputControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormInputControl.h; path = EZForm/EZForm/EZForm/src/EZFormInputControl.h; sourceTree = SOURCE_ROOT; };
-		21383C2EFA7F4C8186B6E474 /* EZFormStandardInputAccessoryView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormStandardInputAccessoryView.m; path = EZForm/EZForm/EZForm/src/EZFormStandardInputAccessoryView.m; sourceTree = SOURCE_ROOT; };
-		2465E177975F43A7A07FEEAC /* EZFormInputAccessoryViewProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormInputAccessoryViewProtocols.h; path = EZForm/EZForm/EZForm/src/EZFormInputAccessoryViewProtocols.h; sourceTree = SOURCE_ROOT; };
-		26FBCD2F3CAE46ADB071B7E4 /* IIViewDeckController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/ViewDeck/IIViewDeckController.h; sourceTree = SOURCE_ROOT; };
-		330EFEF005CB4C2DAD7395FC /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-acknowledgements.markdown"; path = "Pods-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
-		35055F452CFD4BC388830DF8 /* EZFormBooleanField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormBooleanField.m; path = EZForm/EZForm/EZForm/src/EZFormBooleanField.m; sourceTree = SOURCE_ROOT; };
-		38962C7660134B66BDE4445D /* NSDictionary+Enumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Enumerable.h"; path = "MRCEnumerable/NSDictionary+Enumerable.h"; sourceTree = SOURCE_ROOT; };
-		432A8759395341A59616AD2A /* EZFormRadioChoiceViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormRadioChoiceViewController.h; path = EZForm/EZForm/EZForm/src/EZFormRadioChoiceViewController.h; sourceTree = SOURCE_ROOT; };
-		43492E5CAE4249539B9810E8 /* EZFormDateField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormDateField.m; path = EZForm/EZForm/EZForm/src/EZFormDateField.m; sourceTree = SOURCE_ROOT; };
-		44F1D3DDBF554F1A815C844B /* EZFormRadioField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormRadioField.h; path = EZForm/EZForm/EZForm/src/EZFormRadioField.h; sourceTree = SOURCE_ROOT; };
-		48CAC9C14EBC4FC294DCC2BF /* EZForm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZForm.m; path = EZForm/EZForm/EZForm/src/EZForm.m; sourceTree = SOURCE_ROOT; };
-		4D4A7222A25943F38BAABF16 /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		5108E64B8B21421397F35FBD /* EZFormCommonValidators.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormCommonValidators.h; path = EZForm/EZForm/EZForm/src/EZFormCommonValidators.h; sourceTree = SOURCE_ROOT; };
-		55FB4C617FD54C9DBF557EBD /* IISideController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IISideController.h; path = ViewDeck/ViewDeck/IISideController.h; sourceTree = SOURCE_ROOT; };
-		587E364ACC534F8B94674397 /* EZFormField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormField.h; path = EZForm/EZForm/EZForm/src/EZFormField.h; sourceTree = SOURCE_ROOT; };
-		5BD9F78F999E4C51A1305BFA /* StoreKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
-		5E5DB9456FA343B592AA1C83 /* NSSet+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSSet+Utilities.h"; path = "MRCEnumerable/NSSet+Utilities.h"; sourceTree = SOURCE_ROOT; };
-		5E76F388822A4FA38B8B4091 /* EZFormInvalidIndicatorTriangleExclamationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormInvalidIndicatorTriangleExclamationView.h; path = EZForm/EZForm/EZForm/src/EZFormInvalidIndicatorTriangleExclamationView.h; sourceTree = SOURCE_ROOT; };
-		6C87A88054BB4ACBBC8F4AC4 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		70A37C8426C34B4B80C318DC /* IIWrapController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = ViewDeck/ViewDeck/IIWrapController.m; sourceTree = SOURCE_ROOT; };
-		749B6E4F3C3D4957AC91CADC /* EZFormDateField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormDateField.h; path = EZForm/EZForm/EZForm/src/EZFormDateField.h; sourceTree = SOURCE_ROOT; };
-		7967EFEF8C554CE3AE0B8CC0 /* NSArray+Enumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Enumerable.h"; path = "MRCEnumerable/NSArray+Enumerable.h"; sourceTree = SOURCE_ROOT; };
-		7E8B6867BD4542A98060141D /* EZFormTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormTextField.h; path = EZForm/EZForm/EZForm/src/EZFormTextField.h; sourceTree = SOURCE_ROOT; };
-		8A1AEFA98F92402C85ED0362 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		8B9F24DFB8184C8EA57D56B5 /* EZFormField+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EZFormField+Private.h"; path = "EZForm/EZForm/EZForm/src/EZFormField+Private.h"; sourceTree = SOURCE_ROOT; };
-		8F3097DAB52C437785AB9B0F /* EZFormCommonValidators.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormCommonValidators.m; path = EZForm/EZForm/EZForm/src/EZFormCommonValidators.m; sourceTree = SOURCE_ROOT; };
-		8FA8C4A703CD420E88CBF824 /* Pods-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-prefix.pch"; path = "Pods-prefix.pch"; sourceTree = SOURCE_ROOT; };
-		90B29A779A3F4BBE8C155BB6 /* MRCEnumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRCEnumerable.h; path = MRCEnumerable/MRCEnumerable.h; sourceTree = SOURCE_ROOT; };
-		9338F3620C7B460082B31928 /* CoreFoundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		9DDBC16149014989A59D7771 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m; sourceTree = SOURCE_ROOT; };
-		9FA777D4A45D4F588397F6D6 /* EZFormMultiRadioFormField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormMultiRadioFormField.h; path = EZForm/EZForm/EZForm/src/EZFormMultiRadioFormField.h; sourceTree = SOURCE_ROOT; };
-		A216CAB1420D409B90C4186D /* NSSet+Enumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSSet+Enumerable.h"; path = "MRCEnumerable/NSSet+Enumerable.h"; sourceTree = SOURCE_ROOT; };
-		A35387998D9744FF885A1BAF /* NSDictionary+Enumerable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Enumerable.m"; path = "MRCEnumerable/NSDictionary+Enumerable.m"; sourceTree = SOURCE_ROOT; };
-		A48C44EE04314FC7A78D0C88 /* EZFormGenericField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormGenericField.m; path = EZForm/EZForm/EZForm/src/EZFormGenericField.m; sourceTree = SOURCE_ROOT; };
-		A5C68BB9720E46EFAF0CA8E5 /* NSArray+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Utilities.h"; path = "MRCEnumerable/NSArray+Utilities.h"; sourceTree = SOURCE_ROOT; };
-		AA1EBFB0B0C0416DA4045B29 /* NSSet+Enumerable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Enumerable.m"; path = "MRCEnumerable/NSSet+Enumerable.m"; sourceTree = SOURCE_ROOT; };
-		AA63414835274289B58AF199 /* EZFormInputControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormInputControl.m; path = EZForm/EZForm/EZForm/src/EZFormInputControl.m; sourceTree = SOURCE_ROOT; };
-		ACCF639F95D647FDA34ADF63 /* EZForm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZForm.h; path = EZForm/EZForm/EZForm/src/EZForm.h; sourceTree = SOURCE_ROOT; };
-		B41BF9FD557A4115BA8D6EDE /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingTableView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h; sourceTree = SOURCE_ROOT; };
-		B676680417214CC9ACE792AE /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h; sourceTree = SOURCE_ROOT; };
-		BD2BB9DC0D9A4BA68F205653 /* UIView+EZFormUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+EZFormUtility.h"; path = "EZForm/EZForm/EZForm/src/UIView+EZFormUtility.h"; sourceTree = SOURCE_ROOT; };
-		BD994A93DA394244850DF842 /* NSSet+Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Utilities.m"; path = "MRCEnumerable/NSSet+Utilities.m"; sourceTree = SOURCE_ROOT; };
-		C3EE065CBB3045D1AF809580 /* CTCustomTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CTCustomTableViewCell.h; path = CTCustomTableViewCell/CustomTableViewCell/CTCustomTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		C572BF72AD2845D9A4962985 /* EZFormTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormTextField.m; path = EZForm/EZForm/EZForm/src/EZFormTextField.m; sourceTree = SOURCE_ROOT; };
-		C598DD32A8824FE7BCBFB82D /* IAPManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IAPManager.m; path = IAPManager/IAPManager.m; sourceTree = SOURCE_ROOT; };
-		CB5FBEC2FE4B495C94866614 /* IIViewDeckController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = SOURCE_ROOT; };
-		CF751121361448AC88F503F7 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.m; sourceTree = SOURCE_ROOT; };
-		D0438856D8B54618AEA1E525 /* EZFormInvalidIndicatorTriangleExclamationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormInvalidIndicatorTriangleExclamationView.m; path = EZForm/EZForm/EZForm/src/EZFormInvalidIndicatorTriangleExclamationView.m; sourceTree = SOURCE_ROOT; };
-		D22E1B113A2C405ABC06573D /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-resources.sh"; path = "Pods-resources.sh"; sourceTree = SOURCE_ROOT; };
-		D595FE260B854000AC461EC5 /* UIView+EZFormUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+EZFormUtility.m"; path = "EZForm/EZForm/EZForm/src/UIView+EZFormUtility.m"; sourceTree = SOURCE_ROOT; };
-		DAD1EDB2241D473FA0692E5A /* NSArray+Enumerable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Enumerable.m"; path = "MRCEnumerable/NSArray+Enumerable.m"; sourceTree = SOURCE_ROOT; };
-		DBFF3AD4E4E8480BA7000D63 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-environment.h"; path = "Pods-environment.h"; sourceTree = SOURCE_ROOT; };
-		E05ECD14F143476FAA9F196C /* CTCustomTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CTCustomTableViewCell.m; path = CTCustomTableViewCell/CustomTableViewCell/CTCustomTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		E0BEBFA4DEB64E14AC99C5A8 /* EZFormField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormField.m; path = EZForm/EZForm/EZForm/src/EZFormField.m; sourceTree = SOURCE_ROOT; };
-		E0E2CCFF548C4FBAAC8CE298 /* IIWrapController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = ViewDeck/ViewDeck/IIWrapController.h; sourceTree = SOURCE_ROOT; };
-		E12E454867AB496EA28BCD1F /* EZFormStandardInputAccessoryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormStandardInputAccessoryView.h; path = EZForm/EZForm/EZForm/src/EZFormStandardInputAccessoryView.h; sourceTree = SOURCE_ROOT; };
-		E4696FE2FEA1469583FE08C9 /* EZFormRadioField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormRadioField.m; path = EZForm/EZForm/EZForm/src/EZFormRadioField.m; sourceTree = SOURCE_ROOT; };
-		EA0D695667284332A76C94FD /* EZFormFieldConcreteProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormFieldConcreteProtocol.h; path = EZForm/EZForm/EZForm/src/EZFormFieldConcreteProtocol.h; sourceTree = SOURCE_ROOT; };
-		EB0835E9A8C941ADAA03C055 /* EZFormBooleanField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormBooleanField.h; path = EZForm/EZForm/EZForm/src/EZFormBooleanField.h; sourceTree = SOURCE_ROOT; };
-		EBEF3A0482EC4F4E998DEDC8 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-dummy.m"; path = "Pods-dummy.m"; sourceTree = SOURCE_ROOT; };
-		EEA5F1E147904F5D83C2CC3B /* NSArray+Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Utilities.m"; path = "MRCEnumerable/NSArray+Utilities.m"; sourceTree = SOURCE_ROOT; };
-		F1022C6DF6AB41A7AC74585A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPods.a; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F99D6AC178994C0D9031CD6F /* EZFormGenericField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormGenericField.h; path = EZForm/EZForm/EZForm/src/EZFormGenericField.h; sourceTree = SOURCE_ROOT; };
-		FA432841A9B24CB19520E1AB /* EZFormMultiRadioFormField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormMultiRadioFormField.m; path = EZForm/EZForm/EZForm/src/EZFormMultiRadioFormField.m; sourceTree = SOURCE_ROOT; };
-		FAC0E74431E54703A179EAB5 /* IAPManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IAPManager.h; path = IAPManager/IAPManager.h; sourceTree = SOURCE_ROOT; };
-		FC6B72927EA54BE0A84649D2 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-acknowledgements.plist"; path = "Pods-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		00C9093F666847DBBE52D558 /* CoreFoundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		0665ED7CC76A41D3867D735B /* EZFormGenericField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormGenericField.m; path = EZForm/EZForm/EZForm/src/EZFormGenericField.m; sourceTree = SOURCE_ROOT; };
+		0D3294320A1B473EB1411CE7 /* NSArray+Enumerable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Enumerable.m"; path = "MRCEnumerable/NSArray+Enumerable.m"; sourceTree = SOURCE_ROOT; };
+		10D28A9D7B774A25973DD94D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPods.a; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		150FE4A83B7E4865AFFF11D1 /* EZFormField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormField.m; path = EZForm/EZForm/EZForm/src/EZFormField.m; sourceTree = SOURCE_ROOT; };
+		1C913F99A11A4E0897E0E9E8 /* EZFormRadioChoiceViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormRadioChoiceViewController.m; path = EZForm/EZForm/EZForm/src/EZFormRadioChoiceViewController.m; sourceTree = SOURCE_ROOT; };
+		216F4812CC244D7F949CE858 /* NSArray+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Utilities.h"; path = "MRCEnumerable/NSArray+Utilities.h"; sourceTree = SOURCE_ROOT; };
+		226448B0546A454486F7BC73 /* EZFormRadioField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormRadioField.m; path = EZForm/EZForm/EZForm/src/EZFormRadioField.m; sourceTree = SOURCE_ROOT; };
+		228FAEBC0ED74D26B3A685DE /* NSError+UbiquityStoreManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+UbiquityStoreManager.h"; path = "UbiquityStoreManager/UbiquityStoreManager/NSError+UbiquityStoreManager.h"; sourceTree = SOURCE_ROOT; };
+		25F47C36C6214B49A13BF291 /* NSArray+Enumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Enumerable.h"; path = "MRCEnumerable/NSArray+Enumerable.h"; sourceTree = SOURCE_ROOT; };
+		281B6EC6EF364068BA5A9BC5 /* EZFormDateField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormDateField.m; path = EZForm/EZForm/EZForm/src/EZFormDateField.m; sourceTree = SOURCE_ROOT; };
+		2BFFE036D83A45A188C93A1B /* EZFormTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormTextField.h; path = EZForm/EZForm/EZForm/src/EZFormTextField.h; sourceTree = SOURCE_ROOT; };
+		32ED615C46EB41BF8B4221AB /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		33C67FB04B4045B1B0C477F3 /* UIView+EZFormUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+EZFormUtility.m"; path = "EZForm/EZForm/EZForm/src/UIView+EZFormUtility.m"; sourceTree = SOURCE_ROOT; };
+		3481C23745E74C7CB1C17602 /* EZFormDateField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormDateField.h; path = EZForm/EZForm/EZForm/src/EZFormDateField.h; sourceTree = SOURCE_ROOT; };
+		3A8AC90EB18D4D3299CF6901 /* StoreKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		3BCF733743EA4A218ECCDEA1 /* NSError+UbiquityStoreManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+UbiquityStoreManager.m"; path = "UbiquityStoreManager/UbiquityStoreManager/NSError+UbiquityStoreManager.m"; sourceTree = SOURCE_ROOT; };
+		3CC3AC4CA911401E8ED10526 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingTableView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h; sourceTree = SOURCE_ROOT; };
+		3CFBAE94314F4B3382DC6E78 /* EZFormCommonValidators.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormCommonValidators.h; path = EZForm/EZForm/EZForm/src/EZFormCommonValidators.h; sourceTree = SOURCE_ROOT; };
+		3E29A8896D65445AB609CC8F /* EZFormField+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EZFormField+Private.h"; path = "EZForm/EZForm/EZForm/src/EZFormField+Private.h"; sourceTree = SOURCE_ROOT; };
+		3F45E7295E704135B18A779D /* IIViewDeckController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/ViewDeck/IIViewDeckController.h; sourceTree = SOURCE_ROOT; };
+		3FBDD291595E4BFC94798D7F /* IIWrapController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = ViewDeck/ViewDeck/IIWrapController.h; sourceTree = SOURCE_ROOT; };
+		43769825D5754415AB157775 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-resources.sh"; path = "Pods-resources.sh"; sourceTree = SOURCE_ROOT; };
+		44AC01281A8B4D0ABE09888C /* NSArray+Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Utilities.m"; path = "MRCEnumerable/NSArray+Utilities.m"; sourceTree = SOURCE_ROOT; };
+		455834A97DE6476392002CAD /* IAPManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IAPManager.m; path = IAPManager/IAPManager.m; sourceTree = SOURCE_ROOT; };
+		46433C8BB0C64919BE25824F /* EZFormGenericField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormGenericField.h; path = EZForm/EZForm/EZForm/src/EZFormGenericField.h; sourceTree = SOURCE_ROOT; };
+		46A5276435F04A50BB0353F5 /* NSURL+UbiquityStoreManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURL+UbiquityStoreManager.h"; path = "UbiquityStoreManager/UbiquityStoreManager/NSURL+UbiquityStoreManager.h"; sourceTree = SOURCE_ROOT; };
+		49F768F73BF14153ADA11075 /* IISideController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IISideController.h; path = ViewDeck/ViewDeck/IISideController.h; sourceTree = SOURCE_ROOT; };
+		4CC34A723AC04D118216FC50 /* MRCEnumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRCEnumerable.h; path = MRCEnumerable/MRCEnumerable.h; sourceTree = SOURCE_ROOT; };
+		5247492CF4E04ADD953170DF /* NSSet+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSSet+Utilities.h"; path = "MRCEnumerable/NSSet+Utilities.h"; sourceTree = SOURCE_ROOT; };
+		5649DBD8C33C475B92C6EA0B /* EZFormMultiRadioFormField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormMultiRadioFormField.h; path = EZForm/EZForm/EZForm/src/EZFormMultiRadioFormField.h; sourceTree = SOURCE_ROOT; };
+		5A935533C17B4288B18D7EC8 /* EZFormInvalidIndicatorTriangleExclamationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormInvalidIndicatorTriangleExclamationView.m; path = EZForm/EZForm/EZForm/src/EZFormInvalidIndicatorTriangleExclamationView.m; sourceTree = SOURCE_ROOT; };
+		66E24A907849451D8DB3EA61 /* EZFormRadioChoiceViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormRadioChoiceViewController.h; path = EZForm/EZForm/EZForm/src/EZFormRadioChoiceViewController.h; sourceTree = SOURCE_ROOT; };
+		672FAB28F294429CB8FAF7E0 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6847BE0F1B0948159A441BF7 /* IISideController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IISideController.m; path = ViewDeck/ViewDeck/IISideController.m; sourceTree = SOURCE_ROOT; };
+		69892954F0EA42EB8DD85830 /* EZFormBooleanField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormBooleanField.h; path = EZForm/EZForm/EZForm/src/EZFormBooleanField.h; sourceTree = SOURCE_ROOT; };
+		6AC5CDAC4A364C60857CC7D5 /* IAPManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IAPManager.h; path = IAPManager/IAPManager.h; sourceTree = SOURCE_ROOT; };
+		6B8CB2D20B604C3FBC236457 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		71AA8278ED914A03AA6A4AAD /* EZFormCommonValidators.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormCommonValidators.m; path = EZForm/EZForm/EZForm/src/EZFormCommonValidators.m; sourceTree = SOURCE_ROOT; };
+		73A4F6221FB6439082FB7A9A /* EZFormInputControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormInputControl.m; path = EZForm/EZForm/EZForm/src/EZFormInputControl.m; sourceTree = SOURCE_ROOT; };
+		7471E77AAC07426D9DAE9E9E /* NSURL+UbiquityStoreManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURL+UbiquityStoreManager.m"; path = "UbiquityStoreManager/UbiquityStoreManager/NSURL+UbiquityStoreManager.m"; sourceTree = SOURCE_ROOT; };
+		77129A4F00434DC59AACC7EB /* Pods-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-prefix.pch"; path = "Pods-prefix.pch"; sourceTree = SOURCE_ROOT; };
+		79ACAC7A39094B87ABFB2C27 /* IIWrapController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = ViewDeck/ViewDeck/IIWrapController.m; sourceTree = SOURCE_ROOT; };
+		7AD717CCA36946BBB3DF220D /* UbiquityStoreManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UbiquityStoreManager.h; path = UbiquityStoreManager/UbiquityStoreManager/UbiquityStoreManager.h; sourceTree = SOURCE_ROOT; };
+		7BAF0CBE431F4718BABF9FC7 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-acknowledgements.plist"; path = "Pods-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		7BFFC0FE776B4D0C8EFF6DCA /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.m; sourceTree = SOURCE_ROOT; };
+		7ECC762327284E8883A5731D /* CTCustomTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CTCustomTableViewCell.m; path = CTCustomTableViewCell/CustomTableViewCell/CTCustomTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		7F0E1D68FF784A24AF0D3068 /* EZFormFieldConcreteProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormFieldConcreteProtocol.h; path = EZForm/EZForm/EZForm/src/EZFormFieldConcreteProtocol.h; sourceTree = SOURCE_ROOT; };
+		82EF77FB3D95428DBCD19896 /* IIViewDeckController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = SOURCE_ROOT; };
+		85018587053B4AAC91B60330 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		8A4E90A06B6046A39835B98E /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-environment.h"; path = "Pods-environment.h"; sourceTree = SOURCE_ROOT; };
+		8CB3A3020A7B4C84AB55B28E /* JRSwizzle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = JRSwizzle/JRSwizzle.h; sourceTree = SOURCE_ROOT; };
+		8D253C47E6504B66A0F90E4D /* EZForm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZForm.m; path = EZForm/EZForm/EZForm/src/EZForm.m; sourceTree = SOURCE_ROOT; };
+		959485A6B80D4B24B516342F /* JRSwizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = JRSwizzle/JRSwizzle.m; sourceTree = SOURCE_ROOT; };
+		9BC51D32B0C64E8A84852AE1 /* NSSet+Enumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSSet+Enumerable.h"; path = "MRCEnumerable/NSSet+Enumerable.h"; sourceTree = SOURCE_ROOT; };
+		A2532E24D99B446E9DF7E88F /* NSSet+Enumerable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Enumerable.m"; path = "MRCEnumerable/NSSet+Enumerable.m"; sourceTree = SOURCE_ROOT; };
+		A25E62623012407C8643BD2F /* CTCustomTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CTCustomTableViewCell.h; path = CTCustomTableViewCell/CustomTableViewCell/CTCustomTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		A2657A4DA4934184897F4820 /* NSSet+Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Utilities.m"; path = "MRCEnumerable/NSSet+Utilities.m"; sourceTree = SOURCE_ROOT; };
+		A8B7EBF90A554A3BA495AAE7 /* EZFormStandardInputAccessoryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormStandardInputAccessoryView.h; path = EZForm/EZForm/EZForm/src/EZFormStandardInputAccessoryView.h; sourceTree = SOURCE_ROOT; };
+		A9E94937CDDD4C00951BFDA2 /* EZFormField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormField.h; path = EZForm/EZForm/EZForm/src/EZFormField.h; sourceTree = SOURCE_ROOT; };
+		AC1CB7E23B6B464581F838E5 /* EZFormStandardInputAccessoryView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormStandardInputAccessoryView.m; path = EZForm/EZForm/EZForm/src/EZFormStandardInputAccessoryView.m; sourceTree = SOURCE_ROOT; };
+		AC2B23BD6BA2417385C55715 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-acknowledgements.markdown"; path = "Pods-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
+		B18DF2C9FF3446088BE9479C /* EZFormBooleanField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormBooleanField.m; path = EZForm/EZForm/EZForm/src/EZFormBooleanField.m; sourceTree = SOURCE_ROOT; };
+		B61F3CDA09E44F2DA1171D25 /* EZFormRadioField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormRadioField.h; path = EZForm/EZForm/EZForm/src/EZFormRadioField.h; sourceTree = SOURCE_ROOT; };
+		B70B9187E50F4B308400E724 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h; sourceTree = SOURCE_ROOT; };
+		C0CED0B24BAB494894981E59 /* UbiquityStoreManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UbiquityStoreManager.m; path = UbiquityStoreManager/UbiquityStoreManager/UbiquityStoreManager.m; sourceTree = SOURCE_ROOT; };
+		C21C2636640C4F2993AB008E /* EZFormInputAccessoryViewProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormInputAccessoryViewProtocols.h; path = EZForm/EZForm/EZForm/src/EZFormInputAccessoryViewProtocols.h; sourceTree = SOURCE_ROOT; };
+		CB10DFB6BCEF4C2EA5F2CC14 /* EZForm+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EZForm+Private.h"; path = "EZForm/EZForm/EZForm/src/EZForm+Private.h"; sourceTree = SOURCE_ROOT; };
+		D4CE401397524535A0606C9B /* UIView+EZFormUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+EZFormUtility.h"; path = "EZForm/EZForm/EZForm/src/UIView+EZFormUtility.h"; sourceTree = SOURCE_ROOT; };
+		D79E315964AE4993BD47D0EB /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m; sourceTree = SOURCE_ROOT; };
+		DBB93B7476D74C368D98889E /* NSDictionary+Enumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Enumerable.h"; path = "MRCEnumerable/NSDictionary+Enumerable.h"; sourceTree = SOURCE_ROOT; };
+		DBBDD9BD84BF4462A2B12F1C /* EZFormInputControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormInputControl.h; path = EZForm/EZForm/EZForm/src/EZFormInputControl.h; sourceTree = SOURCE_ROOT; };
+		DBD5BD0C70144E48A783C297 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		E231F67022874E3DB1886CDF /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-dummy.m"; path = "Pods-dummy.m"; sourceTree = SOURCE_ROOT; };
+		E5D15FE62C8F4D3BB3536FEE /* EZForm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZForm.h; path = EZForm/EZForm/EZForm/src/EZForm.h; sourceTree = SOURCE_ROOT; };
+		E862F0561DB04A3D9884275E /* EZFormTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormTextField.m; path = EZForm/EZForm/EZForm/src/EZFormTextField.m; sourceTree = SOURCE_ROOT; };
+		EAB158DB8B3E43DA9166A17F /* EZFormMultiRadioFormField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormMultiRadioFormField.m; path = EZForm/EZForm/EZForm/src/EZFormMultiRadioFormField.m; sourceTree = SOURCE_ROOT; };
+		EE9365FB43564C1DABBFE30A /* EZFormInvalidIndicatorTriangleExclamationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormInvalidIndicatorTriangleExclamationView.h; path = EZForm/EZForm/EZForm/src/EZFormInvalidIndicatorTriangleExclamationView.h; sourceTree = SOURCE_ROOT; };
+		FA4B4B0E44074BED9E45A66E /* NSDictionary+Enumerable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Enumerable.m"; path = "MRCEnumerable/NSDictionary+Enumerable.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A8BEEA9181054681AAD77C52 /* Frameworks */ = {
+		B1F78E9246974A179C41B1BF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62E0FC8B038542F6958994EE /* Foundation.framework in Frameworks */,
+				60E95069DF9B40AF9F78F12F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		100485F403A74739B0B729AB = {
+		0129FDA4C6A14593865185DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D79CCA5C481E495D89EB1B91 /* Frameworks */,
-				B650DAF5AB7D423FB3B0EEEA /* Pods */,
-				9D37C9F89503421882C0B2A2 /* Products */,
-				2051A8B9535B46E6968AC0DD /* Targets Support Files */,
-				6C87A88054BB4ACBBC8F4AC4 /* Podfile */,
-			);
-			sourceTree = "<group>";
-		};
-		2051A8B9535B46E6968AC0DD /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				37F7DF06D3AB4D3FAFA9B52C /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		2B5EAE00E04048DDAD310F95 /* CTCustomTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				C3EE065CBB3045D1AF809580 /* CTCustomTableViewCell.h */,
-				E05ECD14F143476FAA9F196C /* CTCustomTableViewCell.m */,
-			);
-			name = CTCustomTableViewCell;
-			sourceTree = "<group>";
-		};
-		37F7DF06D3AB4D3FAFA9B52C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8A1AEFA98F92402C85ED0362 /* Pods.xcconfig */,
-				DBFF3AD4E4E8480BA7000D63 /* Pods-environment.h */,
-				8FA8C4A703CD420E88CBF824 /* Pods-prefix.pch */,
-				D22E1B113A2C405ABC06573D /* Pods-resources.sh */,
-				FC6B72927EA54BE0A84649D2 /* Pods-acknowledgements.plist */,
-				330EFEF005CB4C2DAD7395FC /* Pods-acknowledgements.markdown */,
-				EBEF3A0482EC4F4E998DEDC8 /* Pods-dummy.m */,
+				DBD5BD0C70144E48A783C297 /* Pods.xcconfig */,
+				8A4E90A06B6046A39835B98E /* Pods-environment.h */,
+				77129A4F00434DC59AACC7EB /* Pods-prefix.pch */,
+				43769825D5754415AB157775 /* Pods-resources.sh */,
+				7BAF0CBE431F4718BABF9FC7 /* Pods-acknowledgements.plist */,
+				AC2B23BD6BA2417385C55715 /* Pods-acknowledgements.markdown */,
+				E231F67022874E3DB1886CDF /* Pods-dummy.m */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		3F1D67A133184DF8AE6D3F7E /* TPKeyboardAvoiding */ = {
+		115250B2553349B08C741953 /* IAPManager */ = {
 			isa = PBXGroup;
 			children = (
-				B676680417214CC9ACE792AE /* TPKeyboardAvoidingScrollView.h */,
-				CF751121361448AC88F503F7 /* TPKeyboardAvoidingScrollView.m */,
-				B41BF9FD557A4115BA8D6EDE /* TPKeyboardAvoidingTableView.h */,
-				9DDBC16149014989A59D7771 /* TPKeyboardAvoidingTableView.m */,
-			);
-			name = TPKeyboardAvoiding;
-			sourceTree = "<group>";
-		};
-		59A62EBA766C4483A7067A4A /* ViewDeck */ = {
-			isa = PBXGroup;
-			children = (
-				55FB4C617FD54C9DBF557EBD /* IISideController.h */,
-				09E858F5A5EC463C81FBB839 /* IISideController.m */,
-				26FBCD2F3CAE46ADB071B7E4 /* IIViewDeckController.h */,
-				CB5FBEC2FE4B495C94866614 /* IIViewDeckController.m */,
-				E0E2CCFF548C4FBAAC8CE298 /* IIWrapController.h */,
-				70A37C8426C34B4B80C318DC /* IIWrapController.m */,
-			);
-			name = ViewDeck;
-			sourceTree = "<group>";
-		};
-		759F74EB53B3494A9555004B /* MRCEnumerable */ = {
-			isa = PBXGroup;
-			children = (
-				90B29A779A3F4BBE8C155BB6 /* MRCEnumerable.h */,
-				7967EFEF8C554CE3AE0B8CC0 /* NSArray+Enumerable.h */,
-				DAD1EDB2241D473FA0692E5A /* NSArray+Enumerable.m */,
-				A5C68BB9720E46EFAF0CA8E5 /* NSArray+Utilities.h */,
-				EEA5F1E147904F5D83C2CC3B /* NSArray+Utilities.m */,
-				38962C7660134B66BDE4445D /* NSDictionary+Enumerable.h */,
-				A35387998D9744FF885A1BAF /* NSDictionary+Enumerable.m */,
-				A216CAB1420D409B90C4186D /* NSSet+Enumerable.h */,
-				AA1EBFB0B0C0416DA4045B29 /* NSSet+Enumerable.m */,
-				5E5DB9456FA343B592AA1C83 /* NSSet+Utilities.h */,
-				BD994A93DA394244850DF842 /* NSSet+Utilities.m */,
-			);
-			name = MRCEnumerable;
-			sourceTree = "<group>";
-		};
-		9D37C9F89503421882C0B2A2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F1022C6DF6AB41A7AC74585A /* libPods.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B650DAF5AB7D423FB3B0EEEA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2B5EAE00E04048DDAD310F95 /* CTCustomTableViewCell */,
-				CE55B967AC204F8B94096285 /* EZForm */,
-				CC5FE893FDCF4CC69EA08E25 /* IAPManager */,
-				759F74EB53B3494A9555004B /* MRCEnumerable */,
-				3F1D67A133184DF8AE6D3F7E /* TPKeyboardAvoiding */,
-				59A62EBA766C4483A7067A4A /* ViewDeck */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		CC5FE893FDCF4CC69EA08E25 /* IAPManager */ = {
-			isa = PBXGroup;
-			children = (
-				FAC0E74431E54703A179EAB5 /* IAPManager.h */,
-				C598DD32A8824FE7BCBFB82D /* IAPManager.m */,
+				6AC5CDAC4A364C60857CC7D5 /* IAPManager.h */,
+				455834A97DE6476392002CAD /* IAPManager.m */,
 			);
 			name = IAPManager;
 			sourceTree = "<group>";
 		};
-		CE55B967AC204F8B94096285 /* EZForm */ = {
+		354165F0EA934546B472A61B /* JRSwizzle */ = {
 			isa = PBXGroup;
 			children = (
-				08F818F9820A4F308E82A276 /* EZForm+Private.h */,
-				ACCF639F95D647FDA34ADF63 /* EZForm.h */,
-				48CAC9C14EBC4FC294DCC2BF /* EZForm.m */,
-				EB0835E9A8C941ADAA03C055 /* EZFormBooleanField.h */,
-				35055F452CFD4BC388830DF8 /* EZFormBooleanField.m */,
-				5108E64B8B21421397F35FBD /* EZFormCommonValidators.h */,
-				8F3097DAB52C437785AB9B0F /* EZFormCommonValidators.m */,
-				749B6E4F3C3D4957AC91CADC /* EZFormDateField.h */,
-				43492E5CAE4249539B9810E8 /* EZFormDateField.m */,
-				8B9F24DFB8184C8EA57D56B5 /* EZFormField+Private.h */,
-				587E364ACC534F8B94674397 /* EZFormField.h */,
-				E0BEBFA4DEB64E14AC99C5A8 /* EZFormField.m */,
-				EA0D695667284332A76C94FD /* EZFormFieldConcreteProtocol.h */,
-				F99D6AC178994C0D9031CD6F /* EZFormGenericField.h */,
-				A48C44EE04314FC7A78D0C88 /* EZFormGenericField.m */,
-				2465E177975F43A7A07FEEAC /* EZFormInputAccessoryViewProtocols.h */,
-				0A2C3544AFB9426D8B327BAC /* EZFormInputControl.h */,
-				AA63414835274289B58AF199 /* EZFormInputControl.m */,
-				5E76F388822A4FA38B8B4091 /* EZFormInvalidIndicatorTriangleExclamationView.h */,
-				D0438856D8B54618AEA1E525 /* EZFormInvalidIndicatorTriangleExclamationView.m */,
-				9FA777D4A45D4F588397F6D6 /* EZFormMultiRadioFormField.h */,
-				FA432841A9B24CB19520E1AB /* EZFormMultiRadioFormField.m */,
-				432A8759395341A59616AD2A /* EZFormRadioChoiceViewController.h */,
-				0117C62CC14448E986D667F0 /* EZFormRadioChoiceViewController.m */,
-				44F1D3DDBF554F1A815C844B /* EZFormRadioField.h */,
-				E4696FE2FEA1469583FE08C9 /* EZFormRadioField.m */,
-				E12E454867AB496EA28BCD1F /* EZFormStandardInputAccessoryView.h */,
-				21383C2EFA7F4C8186B6E474 /* EZFormStandardInputAccessoryView.m */,
-				7E8B6867BD4542A98060141D /* EZFormTextField.h */,
-				C572BF72AD2845D9A4962985 /* EZFormTextField.m */,
-				BD2BB9DC0D9A4BA68F205653 /* UIView+EZFormUtility.h */,
-				D595FE260B854000AC461EC5 /* UIView+EZFormUtility.m */,
+				8CB3A3020A7B4C84AB55B28E /* JRSwizzle.h */,
+				959485A6B80D4B24B516342F /* JRSwizzle.m */,
+			);
+			name = JRSwizzle;
+			sourceTree = "<group>";
+		};
+		4E05CCB3B52142069BDA1D3B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0129FDA4C6A14593865185DB /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		53CA0ADEBB154D69A6434D0D /* MRCEnumerable */ = {
+			isa = PBXGroup;
+			children = (
+				4CC34A723AC04D118216FC50 /* MRCEnumerable.h */,
+				25F47C36C6214B49A13BF291 /* NSArray+Enumerable.h */,
+				0D3294320A1B473EB1411CE7 /* NSArray+Enumerable.m */,
+				216F4812CC244D7F949CE858 /* NSArray+Utilities.h */,
+				44AC01281A8B4D0ABE09888C /* NSArray+Utilities.m */,
+				DBB93B7476D74C368D98889E /* NSDictionary+Enumerable.h */,
+				FA4B4B0E44074BED9E45A66E /* NSDictionary+Enumerable.m */,
+				9BC51D32B0C64E8A84852AE1 /* NSSet+Enumerable.h */,
+				A2532E24D99B446E9DF7E88F /* NSSet+Enumerable.m */,
+				5247492CF4E04ADD953170DF /* NSSet+Utilities.h */,
+				A2657A4DA4934184897F4820 /* NSSet+Utilities.m */,
+			);
+			name = MRCEnumerable;
+			sourceTree = "<group>";
+		};
+		6F98C18DD3F94E1D97A8B30C /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				B70B9187E50F4B308400E724 /* TPKeyboardAvoidingScrollView.h */,
+				7BFFC0FE776B4D0C8EFF6DCA /* TPKeyboardAvoidingScrollView.m */,
+				3CC3AC4CA911401E8ED10526 /* TPKeyboardAvoidingTableView.h */,
+				D79E315964AE4993BD47D0EB /* TPKeyboardAvoidingTableView.m */,
+			);
+			name = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		79B1605FE76347F0A60BAC7F /* UbiquityStoreManager */ = {
+			isa = PBXGroup;
+			children = (
+				228FAEBC0ED74D26B3A685DE /* NSError+UbiquityStoreManager.h */,
+				3BCF733743EA4A218ECCDEA1 /* NSError+UbiquityStoreManager.m */,
+				46A5276435F04A50BB0353F5 /* NSURL+UbiquityStoreManager.h */,
+				7471E77AAC07426D9DAE9E9E /* NSURL+UbiquityStoreManager.m */,
+				7AD717CCA36946BBB3DF220D /* UbiquityStoreManager.h */,
+				C0CED0B24BAB494894981E59 /* UbiquityStoreManager.m */,
+			);
+			name = UbiquityStoreManager;
+			sourceTree = "<group>";
+		};
+		7A25E03B61A941E982F1BC06 /* EZForm */ = {
+			isa = PBXGroup;
+			children = (
+				CB10DFB6BCEF4C2EA5F2CC14 /* EZForm+Private.h */,
+				E5D15FE62C8F4D3BB3536FEE /* EZForm.h */,
+				8D253C47E6504B66A0F90E4D /* EZForm.m */,
+				69892954F0EA42EB8DD85830 /* EZFormBooleanField.h */,
+				B18DF2C9FF3446088BE9479C /* EZFormBooleanField.m */,
+				3CFBAE94314F4B3382DC6E78 /* EZFormCommonValidators.h */,
+				71AA8278ED914A03AA6A4AAD /* EZFormCommonValidators.m */,
+				3481C23745E74C7CB1C17602 /* EZFormDateField.h */,
+				281B6EC6EF364068BA5A9BC5 /* EZFormDateField.m */,
+				3E29A8896D65445AB609CC8F /* EZFormField+Private.h */,
+				A9E94937CDDD4C00951BFDA2 /* EZFormField.h */,
+				150FE4A83B7E4865AFFF11D1 /* EZFormField.m */,
+				7F0E1D68FF784A24AF0D3068 /* EZFormFieldConcreteProtocol.h */,
+				46433C8BB0C64919BE25824F /* EZFormGenericField.h */,
+				0665ED7CC76A41D3867D735B /* EZFormGenericField.m */,
+				C21C2636640C4F2993AB008E /* EZFormInputAccessoryViewProtocols.h */,
+				DBBDD9BD84BF4462A2B12F1C /* EZFormInputControl.h */,
+				73A4F6221FB6439082FB7A9A /* EZFormInputControl.m */,
+				EE9365FB43564C1DABBFE30A /* EZFormInvalidIndicatorTriangleExclamationView.h */,
+				5A935533C17B4288B18D7EC8 /* EZFormInvalidIndicatorTriangleExclamationView.m */,
+				5649DBD8C33C475B92C6EA0B /* EZFormMultiRadioFormField.h */,
+				EAB158DB8B3E43DA9166A17F /* EZFormMultiRadioFormField.m */,
+				66E24A907849451D8DB3EA61 /* EZFormRadioChoiceViewController.h */,
+				1C913F99A11A4E0897E0E9E8 /* EZFormRadioChoiceViewController.m */,
+				B61F3CDA09E44F2DA1171D25 /* EZFormRadioField.h */,
+				226448B0546A454486F7BC73 /* EZFormRadioField.m */,
+				A8B7EBF90A554A3BA495AAE7 /* EZFormStandardInputAccessoryView.h */,
+				AC1CB7E23B6B464581F838E5 /* EZFormStandardInputAccessoryView.m */,
+				2BFFE036D83A45A188C93A1B /* EZFormTextField.h */,
+				E862F0561DB04A3D9884275E /* EZFormTextField.m */,
+				D4CE401397524535A0606C9B /* UIView+EZFormUtility.h */,
+				33C67FB04B4045B1B0C477F3 /* UIView+EZFormUtility.m */,
 			);
 			name = EZForm;
 			sourceTree = "<group>";
 		};
-		D79CCA5C481E495D89EB1B91 /* Frameworks */ = {
+		81B7232E501A4794837A075A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9338F3620C7B460082B31928 /* CoreFoundation.framework */,
-				06FA26C04ACC49D48A27D274 /* Foundation.framework */,
-				4D4A7222A25943F38BAABF16 /* QuartzCore.framework */,
-				5BD9F78F999E4C51A1305BFA /* StoreKit.framework */,
-				07AA80081B0440739B77F1DF /* UIKit.framework */,
+				00C9093F666847DBBE52D558 /* CoreFoundation.framework */,
+				672FAB28F294429CB8FAF7E0 /* Foundation.framework */,
+				32ED615C46EB41BF8B4221AB /* QuartzCore.framework */,
+				3A8AC90EB18D4D3299CF6901 /* StoreKit.framework */,
+				85018587053B4AAC91B60330 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93282628B9FE487C86DB3FC1 = {
+			isa = PBXGroup;
+			children = (
+				81B7232E501A4794837A075A /* Frameworks */,
+				CBAFB5629EF84989ADCF6C8B /* Pods */,
+				A30E739B468F4F6B8E275D28 /* Products */,
+				4E05CCB3B52142069BDA1D3B /* Targets Support Files */,
+				6B8CB2D20B604C3FBC236457 /* Podfile */,
+			);
+			sourceTree = "<group>";
+		};
+		97FD4397A21E4B1FB8F1B730 /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				49F768F73BF14153ADA11075 /* IISideController.h */,
+				6847BE0F1B0948159A441BF7 /* IISideController.m */,
+				3F45E7295E704135B18A779D /* IIViewDeckController.h */,
+				82EF77FB3D95428DBCD19896 /* IIViewDeckController.m */,
+				3FBDD291595E4BFC94798D7F /* IIWrapController.h */,
+				79ACAC7A39094B87ABFB2C27 /* IIWrapController.m */,
+			);
+			name = ViewDeck;
+			sourceTree = "<group>";
+		};
+		A30E739B468F4F6B8E275D28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10D28A9D7B774A25973DD94D /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBAFB5629EF84989ADCF6C8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D860BEAEDC8F4A5ABC54084C /* CTCustomTableViewCell */,
+				7A25E03B61A941E982F1BC06 /* EZForm */,
+				115250B2553349B08C741953 /* IAPManager */,
+				354165F0EA934546B472A61B /* JRSwizzle */,
+				53CA0ADEBB154D69A6434D0D /* MRCEnumerable */,
+				6F98C18DD3F94E1D97A8B30C /* TPKeyboardAvoiding */,
+				79B1605FE76347F0A60BAC7F /* UbiquityStoreManager */,
+				97FD4397A21E4B1FB8F1B730 /* ViewDeck */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D860BEAEDC8F4A5ABC54084C /* CTCustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A25E62623012407C8643BD2F /* CTCustomTableViewCell.h */,
+				7ECC762327284E8883A5731D /* CTCustomTableViewCell.m */,
+			);
+			name = CTCustomTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2EFCF03F1BD84EFEBC6C8FF1 /* Headers */ = {
+		F108800905094248B3733B1D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				701E5C07BE404D99B41A9BDA /* CTCustomTableViewCell.h in Headers */,
-				A33E94218194450DB2748916 /* EZForm+Private.h in Headers */,
-				7585F31B42CF4629A9A51877 /* EZForm.h in Headers */,
-				E76EF3D3791E4D1181E646B8 /* EZFormBooleanField.h in Headers */,
-				E43727F5848C45E1A0B99962 /* EZFormCommonValidators.h in Headers */,
-				746A5F85C7574991B722E2A9 /* EZFormDateField.h in Headers */,
-				5CA0ED81B15F4442BE3BE5F3 /* EZFormField+Private.h in Headers */,
-				0408FA1E23DE4C1685976EB0 /* EZFormField.h in Headers */,
-				7034EC65B9284B5AAEC2B9F8 /* EZFormFieldConcreteProtocol.h in Headers */,
-				8AD907188ECA4B66B9A8E201 /* EZFormGenericField.h in Headers */,
-				B13BEF2E5CFF4FD88A302BBE /* EZFormInputAccessoryViewProtocols.h in Headers */,
-				5F369CFBDD794F87B00B4CFF /* EZFormInputControl.h in Headers */,
-				91DCC4E3EA3E4CF3B5EEDF4C /* EZFormInvalidIndicatorTriangleExclamationView.h in Headers */,
-				BC59A377B80543A1A7909376 /* EZFormMultiRadioFormField.h in Headers */,
-				F93B74F09CB54602B0AF8C0E /* EZFormRadioChoiceViewController.h in Headers */,
-				FC2A4A935FD3441AABCF183D /* EZFormRadioField.h in Headers */,
-				45C2A88210124B82B8ECAF29 /* EZFormStandardInputAccessoryView.h in Headers */,
-				BC917DDAA5CA4E55BDEC6564 /* EZFormTextField.h in Headers */,
-				945A8CFDCF984ABF8107C1D6 /* UIView+EZFormUtility.h in Headers */,
-				2F1719C442164F92A19ACD5E /* IAPManager.h in Headers */,
-				322E52A081254761BAC73457 /* MRCEnumerable.h in Headers */,
-				2CE32EFE40EC460B9336D9A2 /* NSArray+Enumerable.h in Headers */,
-				628AAF274DB948D09274F020 /* NSArray+Utilities.h in Headers */,
-				BDA3F67AB7E24EEB8E6E9041 /* NSDictionary+Enumerable.h in Headers */,
-				83C2E5CA855E4352A3A1D20D /* NSSet+Enumerable.h in Headers */,
-				4AB8599AF0D74142AEFAE950 /* NSSet+Utilities.h in Headers */,
-				C0B9A190AD464EAF8E20FF0F /* TPKeyboardAvoidingScrollView.h in Headers */,
-				92986839952F4ACAA4436CEA /* TPKeyboardAvoidingTableView.h in Headers */,
-				962D61A1B84B4BB2AA78AB30 /* IISideController.h in Headers */,
-				724405AE15844689B64885CC /* IIViewDeckController.h in Headers */,
-				8180DC4AEF80461E917FD13F /* IIWrapController.h in Headers */,
+				27DA7182B4ED48A7984E6C2D /* CTCustomTableViewCell.h in Headers */,
+				9D913186910A41958A24AB75 /* EZForm+Private.h in Headers */,
+				F57C55032218407F8B3D4938 /* EZForm.h in Headers */,
+				5AFF61C4FA8A4937B010D19D /* EZFormBooleanField.h in Headers */,
+				DDB9848736F14318A8C16CB0 /* EZFormCommonValidators.h in Headers */,
+				BB58A50D79E74456B8633D13 /* EZFormDateField.h in Headers */,
+				D0EE589107E14287A8C4B319 /* EZFormField+Private.h in Headers */,
+				951E1062DC4E4FFDA1AD91E0 /* EZFormField.h in Headers */,
+				CD18C13B0F734598BA6955E2 /* EZFormFieldConcreteProtocol.h in Headers */,
+				C098929ECDEA4DEE9B7DA42E /* EZFormGenericField.h in Headers */,
+				5174D48DA70F48C6AF6896F2 /* EZFormInputAccessoryViewProtocols.h in Headers */,
+				D3DC815753B342FCA7F1C836 /* EZFormInputControl.h in Headers */,
+				F26CB19CA81B48D4B52F5109 /* EZFormInvalidIndicatorTriangleExclamationView.h in Headers */,
+				EA556E3928AF4CBC9D305912 /* EZFormMultiRadioFormField.h in Headers */,
+				9C4F043748A2418D806947D4 /* EZFormRadioChoiceViewController.h in Headers */,
+				20F05D439D9948D6BCD20893 /* EZFormRadioField.h in Headers */,
+				A9895FE233AF40F0AEDB29E0 /* EZFormStandardInputAccessoryView.h in Headers */,
+				FC46C6EE092B4609B7AA6BF4 /* EZFormTextField.h in Headers */,
+				DA9BF67645AA4417999E6C3E /* UIView+EZFormUtility.h in Headers */,
+				9E42B7F6E79B46EDBC11F576 /* IAPManager.h in Headers */,
+				B01E9D7ACB68420C998BC1A3 /* JRSwizzle.h in Headers */,
+				F3D700FBDFC34E5999F36406 /* MRCEnumerable.h in Headers */,
+				013AECB7D479488F9D4B7C90 /* NSArray+Enumerable.h in Headers */,
+				0001845C6A374B668731D013 /* NSArray+Utilities.h in Headers */,
+				1A0841C9DCE04876ACE6F2E2 /* NSDictionary+Enumerable.h in Headers */,
+				9834130BC6BE4F4694BD9403 /* NSSet+Enumerable.h in Headers */,
+				34A3549CDAE14F56A112F7E9 /* NSSet+Utilities.h in Headers */,
+				5E3FFAEC4C904F76A65A8C53 /* TPKeyboardAvoidingScrollView.h in Headers */,
+				DB9A80D7F101478C8F72665B /* TPKeyboardAvoidingTableView.h in Headers */,
+				1AB9F22838B84BFA8D28DB28 /* NSError+UbiquityStoreManager.h in Headers */,
+				4C30C9C98B0F4E7FB94C65B8 /* NSURL+UbiquityStoreManager.h in Headers */,
+				5BEE24DCC9874DDC866970BF /* UbiquityStoreManager.h in Headers */,
+				D9AB99E4DCED4BD3A0F44142 /* IISideController.h in Headers */,
+				8798814F90AF4DBD9F7694BF /* IIViewDeckController.h in Headers */,
+				6A876126324D49728A7F95EC /* IIWrapController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C485671E7051467D924D688B /* Pods */ = {
+		E4FCD7008035416A9F7AA3D6 /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B5FFCCCED2745D7BFF20609 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = 7F5A2A676DFB448FAF41A9F8 /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				2C7C03DEE1834DC99C0C5AAF /* Sources */,
-				A8BEEA9181054681AAD77C52 /* Frameworks */,
-				2EFCF03F1BD84EFEBC6C8FF1 /* Headers */,
+				CB00119D75394B5CBF97C74B /* Sources */,
+				B1F78E9246974A179C41B1BF /* Frameworks */,
+				F108800905094248B3733B1D /* Headers */,
 			);
 			buildRules = (
 			);
@@ -377,113 +421,79 @@
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = F1022C6DF6AB41A7AC74585A /* libPods.a */;
+			productReference = 10D28A9D7B774A25973DD94D /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		92F7F4FB84C34908876B1491 /* Project object */ = {
+		CB9D48F9AA2944D488B5DE76 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
 			};
-			buildConfigurationList = 27888F3C9A2C47418A52F0D0 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 98F25DC203334E848A7FF94E /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 100485F403A74739B0B729AB;
-			productRefGroup = 9D37C9F89503421882C0B2A2 /* Products */;
+			mainGroup = 93282628B9FE487C86DB3FC1;
+			productRefGroup = A30E739B468F4F6B8E275D28 /* Products */;
 			projectReferences = (
 			);
 			targets = (
-				C485671E7051467D924D688B /* Pods */,
+				E4FCD7008035416A9F7AA3D6 /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2C7C03DEE1834DC99C0C5AAF /* Sources */ = {
+		CB00119D75394B5CBF97C74B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				637E44D8424E4775B6701E69 /* CTCustomTableViewCell.m in Sources */,
-				8BF3BC848FA8476199D76A43 /* EZForm.m in Sources */,
-				6F143795DE094EAD9DF5611C /* EZFormBooleanField.m in Sources */,
-				98CD66F574F5477B9DBF3E77 /* EZFormCommonValidators.m in Sources */,
-				0E64BBD24F624CCA8B8BC5D4 /* EZFormDateField.m in Sources */,
-				E1B561B3EFA24E3E9BB996E0 /* EZFormField.m in Sources */,
-				5A0EB14502BA40448787E18A /* EZFormGenericField.m in Sources */,
-				FEC1B5AF082C40AA88BC514B /* EZFormInputControl.m in Sources */,
-				64479454AD2644D6B5D3B04B /* EZFormInvalidIndicatorTriangleExclamationView.m in Sources */,
-				2442604948814990912727E1 /* EZFormMultiRadioFormField.m in Sources */,
-				8E391638B272484FB10FBCEE /* EZFormRadioChoiceViewController.m in Sources */,
-				1E72250D4A254BE8B579DCDF /* EZFormRadioField.m in Sources */,
-				462B33B52B6746418A236F3F /* EZFormStandardInputAccessoryView.m in Sources */,
-				0E1516E2501E441C89B15924 /* EZFormTextField.m in Sources */,
-				C3E6492526154BAAA4DC86CB /* UIView+EZFormUtility.m in Sources */,
-				250AB1C436634AAAA428EE4B /* IAPManager.m in Sources */,
-				CEA2D40F0D594599BA2481FD /* NSArray+Enumerable.m in Sources */,
-				8D2784A39F844E75972278C4 /* NSArray+Utilities.m in Sources */,
-				23380F7F98864B2198A01FF0 /* NSDictionary+Enumerable.m in Sources */,
-				AC526381AF464F4E9E6A8E07 /* NSSet+Enumerable.m in Sources */,
-				088125B7E56F46A384137BD8 /* NSSet+Utilities.m in Sources */,
-				374F1E52A0D647149997E33D /* TPKeyboardAvoidingScrollView.m in Sources */,
-				5546C175512E464CBF122336 /* TPKeyboardAvoidingTableView.m in Sources */,
-				63A371D893134B0B8438DD71 /* IISideController.m in Sources */,
-				02B0B76EB8F74F17A93406BD /* IIViewDeckController.m in Sources */,
-				5575B5E9980C4675A5ECBA07 /* IIWrapController.m in Sources */,
-				83BF2E17BBAA46B99C0A88DE /* Pods-dummy.m in Sources */,
+				98EFD1E03E9E4A8D878E6947 /* CTCustomTableViewCell.m in Sources */,
+				2EC9CBC3441242949BB01E1E /* EZForm.m in Sources */,
+				0DA8112AC8A04159A3AB6761 /* EZFormBooleanField.m in Sources */,
+				424C60C5AFEF490F9671220A /* EZFormCommonValidators.m in Sources */,
+				43B72DA9BC724D2DA3904A57 /* EZFormDateField.m in Sources */,
+				13D3558F78A34064B5EF2365 /* EZFormField.m in Sources */,
+				EF2F82E1837B4FDD8340CE98 /* EZFormGenericField.m in Sources */,
+				B7EB65278DE1436491FF16B7 /* EZFormInputControl.m in Sources */,
+				0E4C5D1527644C21B064563E /* EZFormInvalidIndicatorTriangleExclamationView.m in Sources */,
+				042AA6C5E85E4E8B84445DC5 /* EZFormMultiRadioFormField.m in Sources */,
+				4F2A58E75DB04E9DBB5BFDAF /* EZFormRadioChoiceViewController.m in Sources */,
+				DF9243EF402F4A4B988323BC /* EZFormRadioField.m in Sources */,
+				F3051423F159435FAF45AECF /* EZFormStandardInputAccessoryView.m in Sources */,
+				A68E568E8FAD4E5DA5497D7C /* EZFormTextField.m in Sources */,
+				2280A6874D39443887F8209E /* UIView+EZFormUtility.m in Sources */,
+				6676337174C6450F8724C0FE /* IAPManager.m in Sources */,
+				B13578357BB64E308BB98C27 /* JRSwizzle.m in Sources */,
+				39AFA12451664130B24708E8 /* NSArray+Enumerable.m in Sources */,
+				43DC085B96C54BCEB84E30B3 /* NSArray+Utilities.m in Sources */,
+				6979F3C661DC4A2395F0D468 /* NSDictionary+Enumerable.m in Sources */,
+				EBA61EA41DAF4231963D91EC /* NSSet+Enumerable.m in Sources */,
+				F64276BE444C485D86F8FFEC /* NSSet+Utilities.m in Sources */,
+				350C925485E44D3C9608C958 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				08726A80F2864C00ABE3F5E7 /* TPKeyboardAvoidingTableView.m in Sources */,
+				FE1936D0714A433BABDFF739 /* NSError+UbiquityStoreManager.m in Sources */,
+				AFF4B43411EE4097B9932F03 /* NSURL+UbiquityStoreManager.m in Sources */,
+				2A5D1F30ECEA456A88B2FE35 /* UbiquityStoreManager.m in Sources */,
+				A047430BE9C04079BB4B5188 /* IISideController.m in Sources */,
+				DF1FEB1A78F944A09587882A /* IIViewDeckController.m in Sources */,
+				077D255E1BCD48D2BDA7ECA0 /* IIWrapController.m in Sources */,
+				35B93E8AE636441C99EAD090 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3EC5A0287AD94472BF31BC42 /* Debug */ = {
+		1FB78E47BD824FC6B30A50BB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A1AEFA98F92402C85ED0362 /* Pods.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pods-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "";
-				PODS_HEADERS_SEARCH_PATHS = "${PODS_BUILD_HEADERS_SEARCH_PATHS}";
-				PODS_ROOT = "${SRCROOT}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9C5F62BFBCD14322ADE833DC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		D14D9C481CD6477886D09C23 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A1AEFA98F92402C85ED0362 /* Pods.xcconfig */;
+			baseConfigurationReference = DBD5BD0C70144E48A783C297 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -514,35 +524,73 @@
 			};
 			name = Release;
 		};
-		D30DD703BE4143FDB778205A /* Release */ = {
+		95D9623EBA044455B95FC4CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
+		C32413FFDD164C8D95D30D11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBD5BD0C70144E48A783C297 /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				PODS_HEADERS_SEARCH_PATHS = "${PODS_BUILD_HEADERS_SEARCH_PATHS}";
+				PODS_ROOT = "${SRCROOT}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F4B396CC48DD4F4DB9570777 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		27888F3C9A2C47418A52F0D0 /* Build configuration list for PBXProject "Pods" */ = {
+		7F5A2A676DFB448FAF41A9F8 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D30DD703BE4143FDB778205A /* Release */,
-				9C5F62BFBCD14322ADE833DC /* Debug */,
+				1FB78E47BD824FC6B30A50BB /* Release */,
+				C32413FFDD164C8D95D30D11 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B5FFCCCED2745D7BFF20609 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		98F25DC203334E848A7FF94E /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D14D9C481CD6477886D09C23 /* Release */,
-				3EC5A0287AD94472BF31BC42 /* Debug */,
+				95D9623EBA044455B95FC4CC /* Release */,
+				F4B396CC48DD4F4DB9570777 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 92F7F4FB84C34908876B1491 /* Project object */;
+	rootObject = CB9D48F9AA2944D488B5DE76 /* Project object */;
 }

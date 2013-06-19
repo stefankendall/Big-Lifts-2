@@ -1,17 +1,24 @@
 #import "BLAppDelegate.h"
 #import "ContextManager.h"
-#import "BLStoreManager.h"
 #import "SKProductStore.h"
+#import "BLStoreManager.h"
 
 @implementation BLAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize manager;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[BLStoreManager instance] initializeAllStores];
+    manager = [[UbiquityStoreManager alloc] initStoreNamed:nil
+                          withManagedObjectModel:[self managedObjectModel]
+                                   localStoreURL:[[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Big_Lifts_2.sqlite"]
+                             containerIdentifier:nil
+                          additionalStoreOptions:nil
+                                        delegate:self];
+    manager.cloudEnabled = YES;
     [[SKProductStore instance] loadProducts:^{
     }];
     return YES;
@@ -132,6 +139,19 @@
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (void)ubiquityStoreManager:(UbiquityStoreManager *)manager willLoadStoreIsCloud:(BOOL)isCloudStore {
+    [ContextManager instance].context = nil;
+}
+
+- (void)ubiquityStoreManager:(UbiquityStoreManager *)manager didLoadStoreForCoordinator:(NSPersistentStoreCoordinator *)coordinator isCloud:(BOOL)isCloudStore {
+    NSLog(@"%@", [NSNumber numberWithBool:isCloudStore]);
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    [context setPersistentStoreCoordinator:coordinator];
+    [context setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+
+    [[BLStoreManager instance] initializeAllStores];
 }
 
 @end
