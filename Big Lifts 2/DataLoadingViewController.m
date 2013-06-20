@@ -1,4 +1,5 @@
 #import "DataLoadingViewController.h"
+#import "BLAppDelegate.h"
 
 @implementation DataLoadingViewController
 
@@ -8,7 +9,8 @@
 
 - (void)dataLoaded {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    [self.navigationController pushViewController:[storyboard instantiateViewControllerWithIdentifier:@"programSelector"] animated:NO];
+    BLAppDelegate *app = (BLAppDelegate *) [[UIApplication sharedApplication] delegate];
+    [app.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"programSelector"]];
 }
 
 @end

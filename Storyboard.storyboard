@@ -5,12 +5,28 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="zQg-aW-P3Z">
+            <objects>
+                <navigationController storyboardIdentifier="programSelector" definesPresentationContext="YES" id="tkx-uE-9cS" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AZh-4R-4VY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GLA-TU-Nrn" kind="relationship" relationship="rootViewController" id="pgh-jE-kdk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kMG-gc-7Qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334" y="-549"/>
+        </scene>
         <!--Program Selector View Controller-->
         <scene sceneID="9X4-XO-8tg">
             <objects>
-                <tableViewController storyboardIdentifier="programSelector" id="GLA-TU-Nrn" customClass="ProgramSelectorViewController" sceneMemberID="viewController">
+                <tableViewController id="GLA-TU-Nrn" customClass="ProgramSelectorViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jek-0n-sgJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -140,7 +156,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="La5-VI-LRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-81" y="-549"/>
+            <point key="canvasLocation" x="-17" y="-1421"/>
         </scene>
         <!--Data Loading View Controller-->
         <scene sceneID="o6B-jD-wVu">
@@ -169,14 +185,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pn7-qW-dRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="-549"/>
+            <point key="canvasLocation" x="394" y="-1421"/>
         </scene>
         <!--View Deck Controller-->
         <scene sceneID="jGY-mK-Njb">
             <objects>
                 <viewController id="I53-MM-pSf" customClass="SSIIViewDeckController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zbB-ef-13l">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
