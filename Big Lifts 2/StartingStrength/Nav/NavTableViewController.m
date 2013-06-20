@@ -26,7 +26,8 @@
             @2 : @"ssBarLoading",
             @0 : @"ssLiftViewController",
             @3 : @"ssTrackViewController",
-            @5 : @"purchasesController"
+            @5 : @"purchasesController",
+            @7 : @"ssPlanWorkouts",
     };
 
     if ([cell tag] == 6) {
