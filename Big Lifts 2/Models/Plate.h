@@ -1,5 +1,5 @@
 @interface Plate : NSManagedObject
 
-@property(nonatomic) NSNumber *count;
-@property(nonatomic) NSNumber *weight;
+@property(nonatomic) NSDecimalNumber *count;
+@property(nonatomic) NSDecimalNumber *weight;
 @end

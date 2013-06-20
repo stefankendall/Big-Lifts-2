@@ -1,4 +1,4 @@
 @interface Bar : NSManagedObject
 
-@property(nonatomic) NSNumber *weight;
+@property(nonatomic) NSDecimalNumber *weight;
 @end

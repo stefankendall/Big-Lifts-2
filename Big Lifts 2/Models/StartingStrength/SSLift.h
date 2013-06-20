@@ -1,7 +1,7 @@
 #import "Lift.h"
 
 @interface SSLift : Lift
-@property(nonatomic) NSNumber *weight;
+@property(nonatomic) NSDecimalNumber *weight;
 @property(nonatomic) NSNumber *order;
-@property(nonatomic) NSNumber *increment;
+@property(nonatomic) NSDecimalNumber *increment;
 @end

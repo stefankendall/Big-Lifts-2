@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3381.3" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Bar" representedClassName="Bar" syncable="YES">
-        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="CurrentProgram" representedClassName="CurrentProgram" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,25 +11,25 @@
     </entity>
     <entity name="Plate" representedClassName="Plate" syncable="YES">
         <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Set" representedClassName="Set" syncable="YES">
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="lift" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Lift" syncable="YES"/>
     </entity>
     <entity name="SetLog" representedClassName="SetLog" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES">
         <attribute name="units" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="SSLift" representedClassName="SSLift" parentEntity="Lift" syncable="YES">
-        <attribute name="increment" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="increment" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="order" attributeType="Double" defaultValueString="0" syncable="YES"/>
-        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="SSWorkout" representedClassName="SSWorkout" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
