@@ -7,6 +7,7 @@
 #import "Workout.h"
 #import "Set.h"
 #import "SetLogStore.h"
+#import "SSWorkoutStore.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -44,6 +45,7 @@
 
 - (void)doneButtonTapped:(id)o {
     [self logWorkout];
+    [[SSWorkoutStore instance] incrementWeights: self.ssWorkout];
     UIViewController *controller = [[self navigationController] viewControllers][0];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [controller.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssTrackViewController"]];

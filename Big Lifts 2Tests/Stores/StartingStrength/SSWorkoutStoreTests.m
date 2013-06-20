@@ -35,10 +35,18 @@
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = ssWorkout.workouts[0];
     Set *set = workout.sets[0];
-    SSLift * lift = (SSLift *) set.lift;
+    SSLift *lift = (SSLift *) set.lift;
     lift.weight = [NSNumber numberWithDouble:200.0];
     [[SSWorkoutStore instance] syncSetsToLiftWeights];
     STAssertEquals(set.weight.doubleValue, 200.0, @"");
+}
+
+- (void)testIncrementsAssociatedLifts {
+    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
+    SSLift *squat = [[SSLiftStore instance] find:@"name" value:@"Squat"];
+    squat.weight = [NSNumber numberWithDouble:200];
+    [[SSWorkoutStore instance] incrementWeights:ssWorkout];
+    STAssertEquals([squat.weight doubleValue], 210.0, @"");
 }
 
 @end

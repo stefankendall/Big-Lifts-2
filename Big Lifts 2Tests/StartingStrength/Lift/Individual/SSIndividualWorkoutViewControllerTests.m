@@ -1,7 +1,6 @@
 #import "SSIndividualWorkoutViewControllerTests.h"
 #import "SSIndividualWorkoutViewController.h"
 #import "SSIndividualWorkoutDataSource.h"
-#import "BLStoreManager.h"
 #import "SSWorkoutStore.h"
 #import "WorkoutLogStore.h"
 #import "WorkoutLog.h"
@@ -55,10 +54,12 @@
 }
 
 - (void)testTappingDoneButtonIncrementsWeights {
+    controller.ssWorkout = [[SSWorkoutStore instance] first];
+
     SSLift *squat = [[SSLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = [NSNumber numberWithFloat:200.0];
     [controller doneButtonTapped:nil];
-    STAssertEquals(squat.weight, 210.0, @"");
+    STAssertEquals([squat.weight doubleValue], 210.0, @"");
 }
 
 @end
