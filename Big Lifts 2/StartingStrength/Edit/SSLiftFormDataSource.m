@@ -5,6 +5,7 @@
 #import "TextFieldWithCell.h"
 #import "TextFieldCell.h"
 #import "SSLiftFormCell.h"
+#import "TextViewInputAccessoryBuilder.h"
 
 @implementation SSLiftFormDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -22,7 +23,7 @@
 
     [cell setIndexPath:indexPath];
     [[cell textField] setDelegate:self];
-    [[cell textField] setInputAccessoryView:[self buildInputAccessoryView:[cell textField]]];
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:[cell textField]];
     if ([lift.weight doubleValue] > 0) {
         [[cell textField] setText:[lift.weight stringValue]];
     }
@@ -31,15 +32,6 @@
     [cell addGestureRecognizer:singleTap];
 
     return cell;
-}
-
-- (UIView *)buildInputAccessoryView:(UITextField *) textField {
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:textField action:@selector(resignFirstResponder)];
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    toolbar.items = @[barButton];
-
-    textField.inputAccessoryView = toolbar;
-    return toolbar;
 }
 
 - (void)cellTapped:(id)sender {
