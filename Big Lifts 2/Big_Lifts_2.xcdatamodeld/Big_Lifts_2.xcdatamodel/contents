@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3381.3" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Bar" representedClassName="Bar" syncable="YES">
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
@@ -27,6 +27,7 @@
         <attribute name="units" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="SSLift" representedClassName="SSLift" parentEntity="Lift" syncable="YES">
+        <attribute name="increment" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="order" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
@@ -43,16 +44,16 @@
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SetLog" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bar" positionX="160" positionY="192" width="128" height="60"/>
-        <element name="CurrentProgram" positionX="160" positionY="192" width="128" height="60"/>
-        <element name="Lift" positionX="160" positionY="192" width="128" height="60"/>
-        <element name="Plate" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="Set" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="SetLog" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Settings" positionX="160" positionY="192" width="128" height="60"/>
-        <element name="SSLift" positionX="160" positionY="192" width="128" height="75"/>
-        <element name="SSWorkout" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="Workout" positionX="160" positionY="192" width="128" height="60"/>
-        <element name="WorkoutLog" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Bar" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CurrentProgram" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Lift" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Plate" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Set" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SetLog" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Settings" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SSLift" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

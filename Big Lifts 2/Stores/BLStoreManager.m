@@ -8,6 +8,7 @@
 #import "WorkoutLogStore.h"
 #import "PlateStore.h"
 #import "BarStore.h"
+#import "SetLogStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
@@ -32,7 +33,9 @@
             [SSLiftStore instance],
             [SSWorkoutStore instance],
             [PlateStore instance],
-            [BarStore instance]
+            [BarStore instance],
+            [SetLogStore instance],
+            [WorkoutLogStore instance]
     ];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:)
@@ -73,9 +76,11 @@
     for (NSString *modelName in changedModelNames) {
         id store = storeModelMapping[modelName];
         if (store == nil ) {
-            [NSException raise:@"Store not defined in store manager" format:@"%@", modelName];
+            NSLog(@"Store not defined: %@", modelName);
         }
-        [changedStores addObject:store];
+        else {
+            [changedStores addObject:store];
+        }
     }
 
     return changedStores;

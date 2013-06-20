@@ -21,8 +21,14 @@
 
 - (void)testLiftsCanBeFoundByName {
     SSLiftStore *store = [SSLiftStore instance];
-    SSLift *lift = [store findBy:[NSPredicate predicateWithFormat:@"name == \"Bench\""]];
-    STAssertTrue([lift.name isEqualToString:@"Bench"], @"");
+    SSLift *lift = [store find:@"name" value:@"Bench"];
+    STAssertNotNil(lift, @"");
+}
+
+- (void)testLiftsGetIncrements {
+    SSLiftStore *store = [SSLiftStore instance];
+    SSLift *lift = [store find:@"name" value:@"Bench"];
+    STAssertEquals([lift.increment doubleValue], 5.0, @"");
 }
 
 @end

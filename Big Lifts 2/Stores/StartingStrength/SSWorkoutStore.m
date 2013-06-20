@@ -82,7 +82,7 @@
     for (Workout *workout in ssWorkout.workouts) {
         Set *firstSet = workout.sets[0];
         SSLift *lift = (SSLift *) firstSet.lift;
-        lift.weight = [NSNumber numberWithDouble:([lift.weight doubleValue] + 10)];
+        lift.weight = [NSNumber numberWithDouble:[lift.weight doubleValue] + [lift.increment doubleValue]];
     }
 }
 
