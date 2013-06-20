@@ -2,6 +2,8 @@
 #import "SSLiftStoreTests.h"
 #import "SSLiftStore.h"
 #import "SSLift.h"
+#import "SettingsStore.h"
+#import "Settings.h"
 
 @implementation SSLiftStoreTests
 
@@ -29,6 +31,15 @@
     SSLiftStore *store = [SSLiftStore instance];
     SSLift *lift = [store find:@"name" value:@"Bench"];
     STAssertEquals([lift.increment doubleValue], 5.0, @"");
+}
+
+- (void) testUnitChangeDropsIncrements {
+    SSLiftStore *store = [SSLiftStore instance];
+    SSLift *lift = [store find:@"name" value:@"Bench"];
+    Settings *settings = [[SettingsStore instance] first];
+    settings.units = @"kg";
+    [[SSLiftStore instance] adjustForKg];
+    STAssertEquals([lift.increment doubleValue], 2.0, @"");
 }
 
 @end
