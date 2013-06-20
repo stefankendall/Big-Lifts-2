@@ -22,11 +22,20 @@
 
     [cell setIndexPath:indexPath];
     [[cell textField] setDelegate:self];
-    if([lift.weight doubleValue] > 0 ){
+    if ([lift.weight doubleValue] > 0) {
         [[cell textField] setText:[lift.weight stringValue]];
     }
 
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)];
+    [cell addGestureRecognizer:singleTap];
+
     return cell;
+}
+
+- (void)cellTapped: (id) sender {
+    UITapGestureRecognizer *recognizer = sender;
+    SSLiftFormCell *cell = (SSLiftFormCell *) recognizer.view;
+    [cell.textField becomeFirstResponder];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
