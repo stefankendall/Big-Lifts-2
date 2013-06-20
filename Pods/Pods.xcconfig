@@ -1,8 +1,13 @@
+#include "Pods-CTCustomTableViewCell"
+#include "Pods-EZForm"
+#include "Pods-IAPManager"
+#include "Pods-JRSwizzle"
+#include "Pods-MRCEnumerable"
+#include "Pods-TPKeyboardAvoiding"
+#include "Pods-UbiquityStoreManager"
+#include "Pods-ViewDeck"
 ALWAYS_SEARCH_USER_PATHS = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = ${PODS_HEADERS_SEARCH_PATHS}
-OTHER_LDFLAGS = -ObjC -framework CoreFoundation -framework Foundation -framework QuartzCore -framework StoreKit -framework UIKit
-PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/CTCustomTableViewCell" "${PODS_ROOT}/BuildHeaders/EZForm" "${PODS_ROOT}/BuildHeaders/IAPManager" "${PODS_ROOT}/BuildHeaders/JRSwizzle" "${PODS_ROOT}/BuildHeaders/MRCEnumerable" "${PODS_ROOT}/BuildHeaders/TPKeyboardAvoiding" "${PODS_ROOT}/BuildHeaders/UbiquityStoreManager" "${PODS_ROOT}/BuildHeaders/ViewDeck"
-PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
-PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/CTCustomTableViewCell" "${PODS_ROOT}/Headers/EZForm" "${PODS_ROOT}/Headers/IAPManager" "${PODS_ROOT}/Headers/JRSwizzle" "${PODS_ROOT}/Headers/MRCEnumerable" "${PODS_ROOT}/Headers/TPKeyboardAvoiding" "${PODS_ROOT}/Headers/UbiquityStoreManager" "${PODS_ROOT}/Headers/ViewDeck"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/CTCustomTableViewCell" "${PODS_ROOT}/Headers/EZForm" "${PODS_ROOT}/Headers/IAPManager" "${PODS_ROOT}/Headers/JRSwizzle" "${PODS_ROOT}/Headers/MRCEnumerable" "${PODS_ROOT}/Headers/TPKeyboardAvoiding" "${PODS_ROOT}/Headers/UbiquityStoreManager" "${PODS_ROOT}/Headers/ViewDeck"
+OTHER_LDFLAGS = -ObjC ${PODS_EZFORM_OTHER_LDFLAGS} ${PODS_IAPMANAGER_OTHER_LDFLAGS} ${PODS_JRSWIZZLE_OTHER_LDFLAGS} ${PODS_VIEWDECK_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}/Pods

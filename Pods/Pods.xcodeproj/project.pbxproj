@@ -1,596 +1,4841 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		02C5B893709843F8A4400D14 /* EZFormBooleanField.h in Headers */ = {isa = PBXBuildFile; fileRef = A85E9909AFF248849A6FB598 /* EZFormBooleanField.h */; settings = {}; };
-		0823A3A1F91C4C2999B6DCAF /* EZFormField.h in Headers */ = {isa = PBXBuildFile; fileRef = 09457DC360E246039810314B /* EZFormField.h */; settings = {}; };
-		0B16FE9FFE8E434FBD26F33F /* EZFormDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = F2E480E6629E42E3BDDDF274 /* EZFormDateField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		158DBE962789493D9D2B8CEF /* EZFormStandardInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C214B5EA29214EECAB6A14B2 /* EZFormStandardInputAccessoryView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		16DBE1C437C447EE94C7FC4B /* NSArray+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = E824E4FF51EE49E7AC03E27C /* NSArray+Enumerable.m */; settings = {}; };
-		199DCC973D0F4F31A188B319 /* UIView+EZFormUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3961E95883D14017A7F3E13A /* UIView+EZFormUtility.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		1A87E6CB71534F5E913C07F1 /* EZFormRadioChoiceViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F184CA1B5896464297140285 /* EZFormRadioChoiceViewController.h */; settings = {}; };
-		1DCE4884269C45DAB98DFEF4 /* IAPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 204EADD771C3465D83351A61 /* IAPManager.h */; settings = {}; };
-		1F4F1B2BDD884A739202BBC1 /* EZFormDateField.h in Headers */ = {isa = PBXBuildFile; fileRef = 4598A3965A04469D9E3232F9 /* EZFormDateField.h */; settings = {}; };
-		1FB2FBB92FD94DEEA71E8D28 /* NSDictionary+Enumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 94C404B3A31042E897D5CDAF /* NSDictionary+Enumerable.h */; settings = {}; };
-		26F8AE0F86C94745A741E7C2 /* IIWrapController.h in Headers */ = {isa = PBXBuildFile; fileRef = 82D82F01FE32476A85A90AAE /* IIWrapController.h */; settings = {}; };
-		28D9E1259A194CA0AD0AB1BD /* UbiquityStoreManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C6F2E2B4BE1E4590A834005E /* UbiquityStoreManager.h */; settings = {}; };
-		2AC8618D20EB46FF9B105279 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A1672F131F4E4B9A149B08 /* JRSwizzle.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		2D04100081BB496EB38F03A0 /* NSURL+UbiquityStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8634F248FCED48C0BEF58D5F /* NSURL+UbiquityStoreManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		2E6C38F5A94F408DB7F55676 /* NSArray+Enumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 16E87BA4D2294347ADD536E0 /* NSArray+Enumerable.h */; settings = {}; };
-		2EC57B7EB703404087D8BCE7 /* EZFormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F7825ADBD7B49A89B06C31E /* EZFormTextField.h */; settings = {}; };
-		34B15C18079B4B528BA7EF8D /* EZFormInvalidIndicatorTriangleExclamationView.h in Headers */ = {isa = PBXBuildFile; fileRef = ECB52FF3E0EF4A2ABCC7CDC2 /* EZFormInvalidIndicatorTriangleExclamationView.h */; settings = {}; };
-		3505EB2BAEFD444FB50E6E5B /* EZForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 2769B0D466E34C35887173F4 /* EZForm.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		393C9DDDB2CD420FB520F609 /* EZForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 76E59C4B2D324E1F9AD3BD45 /* EZForm.h */; settings = {}; };
-		39E891AB61A542FFAA2D928B /* TPKeyboardAvoidingTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8400BDABD0EA410EAE427A43 /* TPKeyboardAvoidingTableView.h */; settings = {}; };
-		3BA48DDA31D04F6BA53383B3 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C944A46E814F3F9CEDFB0C /* Pods-dummy.m */; settings = {}; };
-		40AE6754076242CC9EC51D2A /* EZFormField+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 76D0926440834BFEBB5C78EC /* EZFormField+Private.h */; settings = {}; };
-		476833366C2E4576B526E795 /* NSArray+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = E586D458F89241CF893CD3D7 /* NSArray+Utilities.h */; settings = {}; };
-		481CF0C548654687AF808412 /* EZFormFieldConcreteProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2F9904D40466C9864C628 /* EZFormFieldConcreteProtocol.h */; settings = {}; };
-		49058188D6CE44B795BB3742 /* EZFormCommonValidators.h in Headers */ = {isa = PBXBuildFile; fileRef = FE5DA93C171A44EE9289FE49 /* EZFormCommonValidators.h */; settings = {}; };
-		4AE9FC9B0BCA4C2E86BAEB2A /* EZFormStandardInputAccessoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = E0028C76B6A142EBAC8078CE /* EZFormStandardInputAccessoryView.h */; settings = {}; };
-		4DDE4B88C34644F7858A0DA4 /* NSSet+Enumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0202461B9FD24D10B05BF876 /* NSSet+Enumerable.h */; settings = {}; };
-		527F838FB5394074ACB3F13B /* UIView+EZFormUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = F59E2381277646AB84C1DF60 /* UIView+EZFormUtility.h */; settings = {}; };
-		53902555E5CA4D108AD885A5 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D870B52934945D9A4EECAA0 /* TPKeyboardAvoidingTableView.m */; settings = {}; };
-		5A968772DC6F44DF9310D222 /* TPKeyboardAvoidingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = D6534196D74B4E3EA8A576CE /* TPKeyboardAvoidingScrollView.h */; settings = {}; };
-		5B308D65E65C4682825096F7 /* EZFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 584DA66DCB944995B4D52769 /* EZFormField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		6607C09A1970495EAA41DDD1 /* NSError+UbiquityStoreManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E42230874D474556AF2B93A2 /* NSError+UbiquityStoreManager.h */; settings = {}; };
-		690118BBD25B4B36B61859BE /* EZFormBooleanField.m in Sources */ = {isa = PBXBuildFile; fileRef = 854DECAD649942588B36FEE1 /* EZFormBooleanField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		6BC64606D636479BBF2933A5 /* EZFormCommonValidators.m in Sources */ = {isa = PBXBuildFile; fileRef = AD3BC54DA2D6437780733D34 /* EZFormCommonValidators.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		6D3B221525C5446CB722B4F5 /* EZFormMultiRadioFormField.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A846BD231A547A09B2858EC /* EZFormMultiRadioFormField.h */; settings = {}; };
-		7147979B267949359E0E9AE9 /* MRCEnumerable.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BF995201AD54518A1D9ECF9 /* MRCEnumerable.h */; settings = {}; };
-		71C4D24404F74175BE3CF2DD /* NSError+UbiquityStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50581133935D4B0D94316184 /* NSError+UbiquityStoreManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		751C9446969547CF9A24EDB0 /* EZFormRadioField.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC3CAEAACC84B90B702B1A7 /* EZFormRadioField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		76CF08034B0544B9907E70E4 /* EZFormGenericField.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A177D0F6B984F059AE3111F /* EZFormGenericField.h */; settings = {}; };
-		79CFEEBBAE65423887D948DB /* EZFormInputControl.h in Headers */ = {isa = PBXBuildFile; fileRef = F1998FDACAF148BE9087B731 /* EZFormInputControl.h */; settings = {}; };
-		7F476264DA8B466CB998FD22 /* IAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4757D435FD3846C6BD9E65D2 /* IAPManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		884EB119EA074F83939AF64F /* EZFormInvalidIndicatorTriangleExclamationView.m in Sources */ = {isa = PBXBuildFile; fileRef = F270FC1D052B442396E85F35 /* EZFormInvalidIndicatorTriangleExclamationView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		8A34DA211EB44F44A874CC49 /* CTCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C85E0826F6444AF296708A66 /* CTCustomTableViewCell.m */; settings = {}; };
-		8AEF1E0B19CF40C1B83AC497 /* EZFormMultiRadioFormField.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C276933F2D4CE4BFD9400D /* EZFormMultiRadioFormField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		8D582E90A1694BD2B1D96D7F /* EZFormInputControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1EA2C1AE464D548C35620F /* EZFormInputControl.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		9DA3700404A54194B1FEBF23 /* IISideController.h in Headers */ = {isa = PBXBuildFile; fileRef = C959143EFB304EB2ADA48271 /* IISideController.h */; settings = {}; };
-		9DAF51C8CFC148BD92CF30DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF0DDB626B2B41F1AC545787 /* Foundation.framework */; settings = {}; };
-		B13D1A83606444209622A39D /* EZFormInputAccessoryViewProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C97BABB733B41FC985D98A9 /* EZFormInputAccessoryViewProtocols.h */; settings = {}; };
-		B2D7A12E44AE4F16B257AFF1 /* EZFormTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BFA0BFCCC4D159BABDDE0 /* EZFormTextField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		B3A6C0A30C1A48078162D044 /* EZFormRadioChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F461EBC900F14534ACF3CAA9 /* EZFormRadioChoiceViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		B7D83429072648238E8F61BC /* EZFormGenericField.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2391933194447BBDEF3060 /* EZFormGenericField.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		BAEF8DF0F06D4A42A9BF37E1 /* UbiquityStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C24A9DEA2814FF1B3908E10 /* UbiquityStoreManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		BF781B16F07F46DBAB19A775 /* EZForm+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = FBC6B33AEF0547DE90D9F6F4 /* EZForm+Private.h */; settings = {}; };
-		C7BC1563084B4F048313924F /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADFC5F132214854B63248D5 /* IIViewDeckController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		C7EBC7A251DE4E50B1E0CB23 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C034B742FA4FE99065846F /* IISideController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		C918AD4F671445B4B4845BEB /* EZFormRadioField.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DA43B9AF378405E96BD1127 /* EZFormRadioField.h */; settings = {}; };
-		D5956D21A55F40CEB911ACB9 /* IIViewDeckController.h in Headers */ = {isa = PBXBuildFile; fileRef = EBAE9974AA814E77AA183474 /* IIViewDeckController.h */; settings = {}; };
-		D798733AEE174E218611EF43 /* NSURL+UbiquityStoreManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C54A86B9CB8F4A8D87FB37D4 /* NSURL+UbiquityStoreManager.h */; settings = {}; };
-		DE2D05C4A81C42ACB058714C /* NSSet+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF17BDA3F654D2AAE15BCBE /* NSSet+Enumerable.m */; settings = {}; };
-		ED6D04DA3F8B48168D9510B6 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD4B511494D4A89A2C05C5A /* TPKeyboardAvoidingScrollView.m */; settings = {}; };
-		F1F26A3531D143A6B0146C72 /* NSSet+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F4F3FB1D504BDE865831FD /* NSSet+Utilities.m */; settings = {}; };
-		F3872AF16C2540118315D664 /* NSSet+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 42529CBC43B7429FB4417EBF /* NSSet+Utilities.h */; settings = {}; };
-		F60625CF7462412C99B0A382 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE80BDD485E2454096F1C5C7 /* IIWrapController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		FA36EB7A7CD84E168C223FFC /* CTCustomTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C66D97D8419B4F5EBC2666D6 /* CTCustomTableViewCell.h */; settings = {}; };
-		FCA219F7B251444690043676 /* NSArray+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F749E9D869F94D2FAE51DA40 /* NSArray+Utilities.m */; settings = {}; };
-		FF91C8C1CB0946579123D727 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 8643BF46BD09486E9FFC5875 /* JRSwizzle.h */; settings = {}; };
-		FFC7821F8883402D9A47462E /* NSDictionary+Enumerable.m in Sources */ = {isa = PBXBuildFile; fileRef = A7ED8568762844E58EFC6DF5 /* NSDictionary+Enumerable.m */; settings = {}; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		0202461B9FD24D10B05BF876 /* NSSet+Enumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSSet+Enumerable.h"; path = "MRCEnumerable/NSSet+Enumerable.h"; sourceTree = SOURCE_ROOT; };
-		04F47094081A4D35B9D23CB6 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-resources.sh"; path = "Pods-resources.sh"; sourceTree = SOURCE_ROOT; };
-		05E3D2C52FDA46CF92670BD5 /* CoreFoundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		09457DC360E246039810314B /* EZFormField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormField.h; path = EZForm/EZForm/EZForm/src/EZFormField.h; sourceTree = SOURCE_ROOT; };
-		16E87BA4D2294347ADD536E0 /* NSArray+Enumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Enumerable.h"; path = "MRCEnumerable/NSArray+Enumerable.h"; sourceTree = SOURCE_ROOT; };
-		19F830CB4F2B460493603D86 /* Pods-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-prefix.pch"; path = "Pods-prefix.pch"; sourceTree = SOURCE_ROOT; };
-		1E1EA2C1AE464D548C35620F /* EZFormInputControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormInputControl.m; path = EZForm/EZForm/EZForm/src/EZFormInputControl.m; sourceTree = SOURCE_ROOT; };
-		204EADD771C3465D83351A61 /* IAPManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IAPManager.h; path = IAPManager/IAPManager.h; sourceTree = SOURCE_ROOT; };
-		26587F69D16F4BFFA54E6010 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-environment.h"; path = "Pods-environment.h"; sourceTree = SOURCE_ROOT; };
-		26A1672F131F4E4B9A149B08 /* JRSwizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = JRSwizzle/JRSwizzle.m; sourceTree = SOURCE_ROOT; };
-		2769B0D466E34C35887173F4 /* EZForm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZForm.m; path = EZForm/EZForm/EZForm/src/EZForm.m; sourceTree = SOURCE_ROOT; };
-		3961E95883D14017A7F3E13A /* UIView+EZFormUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+EZFormUtility.m"; path = "EZForm/EZForm/EZForm/src/UIView+EZFormUtility.m"; sourceTree = SOURCE_ROOT; };
-		3C24A9DEA2814FF1B3908E10 /* UbiquityStoreManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UbiquityStoreManager.m; path = UbiquityStoreManager/UbiquityStoreManager/UbiquityStoreManager.m; sourceTree = SOURCE_ROOT; };
-		42529CBC43B7429FB4417EBF /* NSSet+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSSet+Utilities.h"; path = "MRCEnumerable/NSSet+Utilities.h"; sourceTree = SOURCE_ROOT; };
-		4598A3965A04469D9E3232F9 /* EZFormDateField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormDateField.h; path = EZForm/EZForm/EZForm/src/EZFormDateField.h; sourceTree = SOURCE_ROOT; };
-		4757D435FD3846C6BD9E65D2 /* IAPManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IAPManager.m; path = IAPManager/IAPManager.m; sourceTree = SOURCE_ROOT; };
-		4932C7B7F368448CB51D47FC /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-acknowledgements.plist"; path = "Pods-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
-		4A177D0F6B984F059AE3111F /* EZFormGenericField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormGenericField.h; path = EZForm/EZForm/EZForm/src/EZFormGenericField.h; sourceTree = SOURCE_ROOT; };
-		50581133935D4B0D94316184 /* NSError+UbiquityStoreManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+UbiquityStoreManager.m"; path = "UbiquityStoreManager/UbiquityStoreManager/NSError+UbiquityStoreManager.m"; sourceTree = SOURCE_ROOT; };
-		584DA66DCB944995B4D52769 /* EZFormField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormField.m; path = EZForm/EZForm/EZForm/src/EZFormField.m; sourceTree = SOURCE_ROOT; };
-		6ADFC5F132214854B63248D5 /* IIViewDeckController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIViewDeckController.m; path = ViewDeck/ViewDeck/IIViewDeckController.m; sourceTree = SOURCE_ROOT; };
-		6BF995201AD54518A1D9ECF9 /* MRCEnumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRCEnumerable.h; path = MRCEnumerable/MRCEnumerable.h; sourceTree = SOURCE_ROOT; };
-		6D870B52934945D9A4EECAA0 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m; sourceTree = SOURCE_ROOT; };
-		717BFA0BFCCC4D159BABDDE0 /* EZFormTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormTextField.m; path = EZForm/EZForm/EZForm/src/EZFormTextField.m; sourceTree = SOURCE_ROOT; };
-		76D0926440834BFEBB5C78EC /* EZFormField+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EZFormField+Private.h"; path = "EZForm/EZForm/EZForm/src/EZFormField+Private.h"; sourceTree = SOURCE_ROOT; };
-		76E59C4B2D324E1F9AD3BD45 /* EZForm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZForm.h; path = EZForm/EZForm/EZForm/src/EZForm.h; sourceTree = SOURCE_ROOT; };
-		7D1C9D23D56843828761148E /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		82D82F01FE32476A85A90AAE /* IIWrapController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIWrapController.h; path = ViewDeck/ViewDeck/IIWrapController.h; sourceTree = SOURCE_ROOT; };
-		8400BDABD0EA410EAE427A43 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingTableView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h; sourceTree = SOURCE_ROOT; };
-		854DECAD649942588B36FEE1 /* EZFormBooleanField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormBooleanField.m; path = EZForm/EZForm/EZForm/src/EZFormBooleanField.m; sourceTree = SOURCE_ROOT; };
-		8634F248FCED48C0BEF58D5F /* NSURL+UbiquityStoreManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURL+UbiquityStoreManager.m"; path = "UbiquityStoreManager/UbiquityStoreManager/NSURL+UbiquityStoreManager.m"; sourceTree = SOURCE_ROOT; };
-		8643BF46BD09486E9FFC5875 /* JRSwizzle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = JRSwizzle/JRSwizzle.h; sourceTree = SOURCE_ROOT; };
-		8A846BD231A547A09B2858EC /* EZFormMultiRadioFormField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormMultiRadioFormField.h; path = EZForm/EZForm/EZForm/src/EZFormMultiRadioFormField.h; sourceTree = SOURCE_ROOT; };
-		8DA43B9AF378405E96BD1127 /* EZFormRadioField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormRadioField.h; path = EZForm/EZForm/EZForm/src/EZFormRadioField.h; sourceTree = SOURCE_ROOT; };
-		8E21A39704E44D8AB5C6836A /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; name = "Pods-acknowledgements.markdown"; path = "Pods-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
-		8F7825ADBD7B49A89B06C31E /* EZFormTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormTextField.h; path = EZForm/EZForm/EZForm/src/EZFormTextField.h; sourceTree = SOURCE_ROOT; };
-		94C404B3A31042E897D5CDAF /* NSDictionary+Enumerable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Enumerable.h"; path = "MRCEnumerable/NSDictionary+Enumerable.h"; sourceTree = SOURCE_ROOT; };
-		988B74FD5BA944818664EBAD /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9C97BABB733B41FC985D98A9 /* EZFormInputAccessoryViewProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormInputAccessoryViewProtocols.h; path = EZForm/EZForm/EZForm/src/EZFormInputAccessoryViewProtocols.h; sourceTree = SOURCE_ROOT; };
-		A7ED8568762844E58EFC6DF5 /* NSDictionary+Enumerable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Enumerable.m"; path = "MRCEnumerable/NSDictionary+Enumerable.m"; sourceTree = SOURCE_ROOT; };
-		A85E9909AFF248849A6FB598 /* EZFormBooleanField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormBooleanField.h; path = EZForm/EZForm/EZForm/src/EZFormBooleanField.h; sourceTree = SOURCE_ROOT; };
-		AD3BC54DA2D6437780733D34 /* EZFormCommonValidators.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormCommonValidators.m; path = EZForm/EZForm/EZForm/src/EZFormCommonValidators.m; sourceTree = SOURCE_ROOT; };
-		AE80BDD485E2454096F1C5C7 /* IIWrapController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IIWrapController.m; path = ViewDeck/ViewDeck/IIWrapController.m; sourceTree = SOURCE_ROOT; };
-		B4C276933F2D4CE4BFD9400D /* EZFormMultiRadioFormField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormMultiRadioFormField.m; path = EZForm/EZForm/EZForm/src/EZFormMultiRadioFormField.m; sourceTree = SOURCE_ROOT; };
-		BC2391933194447BBDEF3060 /* EZFormGenericField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormGenericField.m; path = EZForm/EZForm/EZForm/src/EZFormGenericField.m; sourceTree = SOURCE_ROOT; };
-		C214B5EA29214EECAB6A14B2 /* EZFormStandardInputAccessoryView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormStandardInputAccessoryView.m; path = EZForm/EZForm/EZForm/src/EZFormStandardInputAccessoryView.m; sourceTree = SOURCE_ROOT; };
-		C21E5F6D2633433B86181C3B /* StoreKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
-		C3F6D6E0412A4C5CB6D91953 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		C4F1C1363A40437D85CE191F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPods.a; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C54A86B9CB8F4A8D87FB37D4 /* NSURL+UbiquityStoreManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURL+UbiquityStoreManager.h"; path = "UbiquityStoreManager/UbiquityStoreManager/NSURL+UbiquityStoreManager.h"; sourceTree = SOURCE_ROOT; };
-		C66D97D8419B4F5EBC2666D6 /* CTCustomTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CTCustomTableViewCell.h; path = CTCustomTableViewCell/CustomTableViewCell/CTCustomTableViewCell.h; sourceTree = SOURCE_ROOT; };
-		C6F2E2B4BE1E4590A834005E /* UbiquityStoreManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UbiquityStoreManager.h; path = UbiquityStoreManager/UbiquityStoreManager/UbiquityStoreManager.h; sourceTree = SOURCE_ROOT; };
-		C85E0826F6444AF296708A66 /* CTCustomTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CTCustomTableViewCell.m; path = CTCustomTableViewCell/CustomTableViewCell/CTCustomTableViewCell.m; sourceTree = SOURCE_ROOT; };
-		C8A2F9904D40466C9864C628 /* EZFormFieldConcreteProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormFieldConcreteProtocol.h; path = EZForm/EZForm/EZForm/src/EZFormFieldConcreteProtocol.h; sourceTree = SOURCE_ROOT; };
-		C959143EFB304EB2ADA48271 /* IISideController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IISideController.h; path = ViewDeck/ViewDeck/IISideController.h; sourceTree = SOURCE_ROOT; };
-		CAD4B511494D4A89A2C05C5A /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.m; sourceTree = SOURCE_ROOT; };
-		D2F4F3FB1D504BDE865831FD /* NSSet+Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Utilities.m"; path = "MRCEnumerable/NSSet+Utilities.m"; sourceTree = SOURCE_ROOT; };
-		D6534196D74B4E3EA8A576CE /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h; sourceTree = SOURCE_ROOT; };
-		DCC3CAEAACC84B90B702B1A7 /* EZFormRadioField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormRadioField.m; path = EZForm/EZForm/EZForm/src/EZFormRadioField.m; sourceTree = SOURCE_ROOT; };
-		E0028C76B6A142EBAC8078CE /* EZFormStandardInputAccessoryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormStandardInputAccessoryView.h; path = EZForm/EZForm/EZForm/src/EZFormStandardInputAccessoryView.h; sourceTree = SOURCE_ROOT; };
-		E1C944A46E814F3F9CEDFB0C /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-dummy.m"; path = "Pods-dummy.m"; sourceTree = SOURCE_ROOT; };
-		E42230874D474556AF2B93A2 /* NSError+UbiquityStoreManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+UbiquityStoreManager.h"; path = "UbiquityStoreManager/UbiquityStoreManager/NSError+UbiquityStoreManager.h"; sourceTree = SOURCE_ROOT; };
-		E586D458F89241CF893CD3D7 /* NSArray+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Utilities.h"; path = "MRCEnumerable/NSArray+Utilities.h"; sourceTree = SOURCE_ROOT; };
-		E824E4FF51EE49E7AC03E27C /* NSArray+Enumerable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Enumerable.m"; path = "MRCEnumerable/NSArray+Enumerable.m"; sourceTree = SOURCE_ROOT; };
-		E8C034B742FA4FE99065846F /* IISideController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IISideController.m; path = ViewDeck/ViewDeck/IISideController.m; sourceTree = SOURCE_ROOT; };
-		EBAE9974AA814E77AA183474 /* IIViewDeckController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IIViewDeckController.h; path = ViewDeck/ViewDeck/IIViewDeckController.h; sourceTree = SOURCE_ROOT; };
-		ECB52FF3E0EF4A2ABCC7CDC2 /* EZFormInvalidIndicatorTriangleExclamationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormInvalidIndicatorTriangleExclamationView.h; path = EZForm/EZForm/EZForm/src/EZFormInvalidIndicatorTriangleExclamationView.h; sourceTree = SOURCE_ROOT; };
-		F184CA1B5896464297140285 /* EZFormRadioChoiceViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormRadioChoiceViewController.h; path = EZForm/EZForm/EZForm/src/EZFormRadioChoiceViewController.h; sourceTree = SOURCE_ROOT; };
-		F1998FDACAF148BE9087B731 /* EZFormInputControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormInputControl.h; path = EZForm/EZForm/EZForm/src/EZFormInputControl.h; sourceTree = SOURCE_ROOT; };
-		F24708CC30654532A9851061 /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		F270FC1D052B442396E85F35 /* EZFormInvalidIndicatorTriangleExclamationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormInvalidIndicatorTriangleExclamationView.m; path = EZForm/EZForm/EZForm/src/EZFormInvalidIndicatorTriangleExclamationView.m; sourceTree = SOURCE_ROOT; };
-		F2E480E6629E42E3BDDDF274 /* EZFormDateField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormDateField.m; path = EZForm/EZForm/EZForm/src/EZFormDateField.m; sourceTree = SOURCE_ROOT; };
-		F461EBC900F14534ACF3CAA9 /* EZFormRadioChoiceViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EZFormRadioChoiceViewController.m; path = EZForm/EZForm/EZForm/src/EZFormRadioChoiceViewController.m; sourceTree = SOURCE_ROOT; };
-		F59E2381277646AB84C1DF60 /* UIView+EZFormUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+EZFormUtility.h"; path = "EZForm/EZForm/EZForm/src/UIView+EZFormUtility.h"; sourceTree = SOURCE_ROOT; };
-		F749E9D869F94D2FAE51DA40 /* NSArray+Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Utilities.m"; path = "MRCEnumerable/NSArray+Utilities.m"; sourceTree = SOURCE_ROOT; };
-		FAF17BDA3F654D2AAE15BCBE /* NSSet+Enumerable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSSet+Enumerable.m"; path = "MRCEnumerable/NSSet+Enumerable.m"; sourceTree = SOURCE_ROOT; };
-		FBC6B33AEF0547DE90D9F6F4 /* EZForm+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EZForm+Private.h"; path = "EZForm/EZForm/EZForm/src/EZForm+Private.h"; sourceTree = SOURCE_ROOT; };
-		FE5DA93C171A44EE9289FE49 /* EZFormCommonValidators.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EZFormCommonValidators.h; path = EZForm/EZForm/EZForm/src/EZFormCommonValidators.h; sourceTree = SOURCE_ROOT; };
-		FF0DDB626B2B41F1AC545787 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		A8332E31720544D5B65ABDEB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9DAF51C8CFC148BD92CF30DD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		184C954B57924D788C93509A /* IAPManager */ = {
-			isa = PBXGroup;
-			children = (
-				204EADD771C3465D83351A61 /* IAPManager.h */,
-				4757D435FD3846C6BD9E65D2 /* IAPManager.m */,
-			);
-			name = IAPManager;
-			sourceTree = "<group>";
-		};
-		1CE6324D04F94641889DD9B8 = {
-			isa = PBXGroup;
-			children = (
-				C4F0868535F74456ACB4F7FF /* Frameworks */,
-				C339FD1DF6094AB1A2E06C8A /* Pods */,
-				DAA15D1132B9422CB0500E09 /* Products */,
-				F91661F829974AD799E6FD3E /* Targets Support Files */,
-				988B74FD5BA944818664EBAD /* Podfile */,
-			);
-			sourceTree = "<group>";
-		};
-		1F0FFFC58F45458F9FBF4116 /* EZForm */ = {
-			isa = PBXGroup;
-			children = (
-				FBC6B33AEF0547DE90D9F6F4 /* EZForm+Private.h */,
-				76E59C4B2D324E1F9AD3BD45 /* EZForm.h */,
-				2769B0D466E34C35887173F4 /* EZForm.m */,
-				A85E9909AFF248849A6FB598 /* EZFormBooleanField.h */,
-				854DECAD649942588B36FEE1 /* EZFormBooleanField.m */,
-				FE5DA93C171A44EE9289FE49 /* EZFormCommonValidators.h */,
-				AD3BC54DA2D6437780733D34 /* EZFormCommonValidators.m */,
-				4598A3965A04469D9E3232F9 /* EZFormDateField.h */,
-				F2E480E6629E42E3BDDDF274 /* EZFormDateField.m */,
-				76D0926440834BFEBB5C78EC /* EZFormField+Private.h */,
-				09457DC360E246039810314B /* EZFormField.h */,
-				584DA66DCB944995B4D52769 /* EZFormField.m */,
-				C8A2F9904D40466C9864C628 /* EZFormFieldConcreteProtocol.h */,
-				4A177D0F6B984F059AE3111F /* EZFormGenericField.h */,
-				BC2391933194447BBDEF3060 /* EZFormGenericField.m */,
-				9C97BABB733B41FC985D98A9 /* EZFormInputAccessoryViewProtocols.h */,
-				F1998FDACAF148BE9087B731 /* EZFormInputControl.h */,
-				1E1EA2C1AE464D548C35620F /* EZFormInputControl.m */,
-				ECB52FF3E0EF4A2ABCC7CDC2 /* EZFormInvalidIndicatorTriangleExclamationView.h */,
-				F270FC1D052B442396E85F35 /* EZFormInvalidIndicatorTriangleExclamationView.m */,
-				8A846BD231A547A09B2858EC /* EZFormMultiRadioFormField.h */,
-				B4C276933F2D4CE4BFD9400D /* EZFormMultiRadioFormField.m */,
-				F184CA1B5896464297140285 /* EZFormRadioChoiceViewController.h */,
-				F461EBC900F14534ACF3CAA9 /* EZFormRadioChoiceViewController.m */,
-				8DA43B9AF378405E96BD1127 /* EZFormRadioField.h */,
-				DCC3CAEAACC84B90B702B1A7 /* EZFormRadioField.m */,
-				E0028C76B6A142EBAC8078CE /* EZFormStandardInputAccessoryView.h */,
-				C214B5EA29214EECAB6A14B2 /* EZFormStandardInputAccessoryView.m */,
-				8F7825ADBD7B49A89B06C31E /* EZFormTextField.h */,
-				717BFA0BFCCC4D159BABDDE0 /* EZFormTextField.m */,
-				F59E2381277646AB84C1DF60 /* UIView+EZFormUtility.h */,
-				3961E95883D14017A7F3E13A /* UIView+EZFormUtility.m */,
-			);
-			name = EZForm;
-			sourceTree = "<group>";
-		};
-		3B2899D45FFB4217A39E7B8E /* MRCEnumerable */ = {
-			isa = PBXGroup;
-			children = (
-				6BF995201AD54518A1D9ECF9 /* MRCEnumerable.h */,
-				16E87BA4D2294347ADD536E0 /* NSArray+Enumerable.h */,
-				E824E4FF51EE49E7AC03E27C /* NSArray+Enumerable.m */,
-				E586D458F89241CF893CD3D7 /* NSArray+Utilities.h */,
-				F749E9D869F94D2FAE51DA40 /* NSArray+Utilities.m */,
-				94C404B3A31042E897D5CDAF /* NSDictionary+Enumerable.h */,
-				A7ED8568762844E58EFC6DF5 /* NSDictionary+Enumerable.m */,
-				0202461B9FD24D10B05BF876 /* NSSet+Enumerable.h */,
-				FAF17BDA3F654D2AAE15BCBE /* NSSet+Enumerable.m */,
-				42529CBC43B7429FB4417EBF /* NSSet+Utilities.h */,
-				D2F4F3FB1D504BDE865831FD /* NSSet+Utilities.m */,
-			);
-			name = MRCEnumerable;
-			sourceTree = "<group>";
-		};
-		3CF2A66C193E482FA2FF9109 /* ViewDeck */ = {
-			isa = PBXGroup;
-			children = (
-				C959143EFB304EB2ADA48271 /* IISideController.h */,
-				E8C034B742FA4FE99065846F /* IISideController.m */,
-				EBAE9974AA814E77AA183474 /* IIViewDeckController.h */,
-				6ADFC5F132214854B63248D5 /* IIViewDeckController.m */,
-				82D82F01FE32476A85A90AAE /* IIWrapController.h */,
-				AE80BDD485E2454096F1C5C7 /* IIWrapController.m */,
-			);
-			name = ViewDeck;
-			sourceTree = "<group>";
-		};
-		4DEF79C566094AF6B3FF7A6E /* JRSwizzle */ = {
-			isa = PBXGroup;
-			children = (
-				8643BF46BD09486E9FFC5875 /* JRSwizzle.h */,
-				26A1672F131F4E4B9A149B08 /* JRSwizzle.m */,
-			);
-			name = JRSwizzle;
-			sourceTree = "<group>";
-		};
-		75B58567430A45B8A0A9A45C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C3F6D6E0412A4C5CB6D91953 /* Pods.xcconfig */,
-				26587F69D16F4BFFA54E6010 /* Pods-environment.h */,
-				19F830CB4F2B460493603D86 /* Pods-prefix.pch */,
-				04F47094081A4D35B9D23CB6 /* Pods-resources.sh */,
-				4932C7B7F368448CB51D47FC /* Pods-acknowledgements.plist */,
-				8E21A39704E44D8AB5C6836A /* Pods-acknowledgements.markdown */,
-				E1C944A46E814F3F9CEDFB0C /* Pods-dummy.m */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C2FA4061E4BB424BADA7DF43 /* CTCustomTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				C66D97D8419B4F5EBC2666D6 /* CTCustomTableViewCell.h */,
-				C85E0826F6444AF296708A66 /* CTCustomTableViewCell.m */,
-			);
-			name = CTCustomTableViewCell;
-			sourceTree = "<group>";
-		};
-		C339FD1DF6094AB1A2E06C8A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C2FA4061E4BB424BADA7DF43 /* CTCustomTableViewCell */,
-				1F0FFFC58F45458F9FBF4116 /* EZForm */,
-				184C954B57924D788C93509A /* IAPManager */,
-				4DEF79C566094AF6B3FF7A6E /* JRSwizzle */,
-				3B2899D45FFB4217A39E7B8E /* MRCEnumerable */,
-				F3175C9A36F649CCADC69459 /* TPKeyboardAvoiding */,
-				C6944C97B8054BA7B02222BD /* UbiquityStoreManager */,
-				3CF2A66C193E482FA2FF9109 /* ViewDeck */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C4F0868535F74456ACB4F7FF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				05E3D2C52FDA46CF92670BD5 /* CoreFoundation.framework */,
-				FF0DDB626B2B41F1AC545787 /* Foundation.framework */,
-				F24708CC30654532A9851061 /* QuartzCore.framework */,
-				C21E5F6D2633433B86181C3B /* StoreKit.framework */,
-				7D1C9D23D56843828761148E /* UIKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C6944C97B8054BA7B02222BD /* UbiquityStoreManager */ = {
-			isa = PBXGroup;
-			children = (
-				E42230874D474556AF2B93A2 /* NSError+UbiquityStoreManager.h */,
-				50581133935D4B0D94316184 /* NSError+UbiquityStoreManager.m */,
-				C54A86B9CB8F4A8D87FB37D4 /* NSURL+UbiquityStoreManager.h */,
-				8634F248FCED48C0BEF58D5F /* NSURL+UbiquityStoreManager.m */,
-				C6F2E2B4BE1E4590A834005E /* UbiquityStoreManager.h */,
-				3C24A9DEA2814FF1B3908E10 /* UbiquityStoreManager.m */,
-			);
-			name = UbiquityStoreManager;
-			sourceTree = "<group>";
-		};
-		DAA15D1132B9422CB0500E09 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C4F1C1363A40437D85CE191F /* libPods.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F3175C9A36F649CCADC69459 /* TPKeyboardAvoiding */ = {
-			isa = PBXGroup;
-			children = (
-				D6534196D74B4E3EA8A576CE /* TPKeyboardAvoidingScrollView.h */,
-				CAD4B511494D4A89A2C05C5A /* TPKeyboardAvoidingScrollView.m */,
-				8400BDABD0EA410EAE427A43 /* TPKeyboardAvoidingTableView.h */,
-				6D870B52934945D9A4EECAA0 /* TPKeyboardAvoidingTableView.m */,
-			);
-			name = TPKeyboardAvoiding;
-			sourceTree = "<group>";
-		};
-		F91661F829974AD799E6FD3E /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				75B58567430A45B8A0A9A45C /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		1899F8B8551341088DF60C6F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FA36EB7A7CD84E168C223FFC /* CTCustomTableViewCell.h in Headers */,
-				BF781B16F07F46DBAB19A775 /* EZForm+Private.h in Headers */,
-				393C9DDDB2CD420FB520F609 /* EZForm.h in Headers */,
-				02C5B893709843F8A4400D14 /* EZFormBooleanField.h in Headers */,
-				49058188D6CE44B795BB3742 /* EZFormCommonValidators.h in Headers */,
-				1F4F1B2BDD884A739202BBC1 /* EZFormDateField.h in Headers */,
-				40AE6754076242CC9EC51D2A /* EZFormField+Private.h in Headers */,
-				0823A3A1F91C4C2999B6DCAF /* EZFormField.h in Headers */,
-				481CF0C548654687AF808412 /* EZFormFieldConcreteProtocol.h in Headers */,
-				76CF08034B0544B9907E70E4 /* EZFormGenericField.h in Headers */,
-				B13D1A83606444209622A39D /* EZFormInputAccessoryViewProtocols.h in Headers */,
-				79CFEEBBAE65423887D948DB /* EZFormInputControl.h in Headers */,
-				34B15C18079B4B528BA7EF8D /* EZFormInvalidIndicatorTriangleExclamationView.h in Headers */,
-				6D3B221525C5446CB722B4F5 /* EZFormMultiRadioFormField.h in Headers */,
-				1A87E6CB71534F5E913C07F1 /* EZFormRadioChoiceViewController.h in Headers */,
-				C918AD4F671445B4B4845BEB /* EZFormRadioField.h in Headers */,
-				4AE9FC9B0BCA4C2E86BAEB2A /* EZFormStandardInputAccessoryView.h in Headers */,
-				2EC57B7EB703404087D8BCE7 /* EZFormTextField.h in Headers */,
-				527F838FB5394074ACB3F13B /* UIView+EZFormUtility.h in Headers */,
-				1DCE4884269C45DAB98DFEF4 /* IAPManager.h in Headers */,
-				FF91C8C1CB0946579123D727 /* JRSwizzle.h in Headers */,
-				7147979B267949359E0E9AE9 /* MRCEnumerable.h in Headers */,
-				2E6C38F5A94F408DB7F55676 /* NSArray+Enumerable.h in Headers */,
-				476833366C2E4576B526E795 /* NSArray+Utilities.h in Headers */,
-				1FB2FBB92FD94DEEA71E8D28 /* NSDictionary+Enumerable.h in Headers */,
-				4DDE4B88C34644F7858A0DA4 /* NSSet+Enumerable.h in Headers */,
-				F3872AF16C2540118315D664 /* NSSet+Utilities.h in Headers */,
-				5A968772DC6F44DF9310D222 /* TPKeyboardAvoidingScrollView.h in Headers */,
-				39E891AB61A542FFAA2D928B /* TPKeyboardAvoidingTableView.h in Headers */,
-				6607C09A1970495EAA41DDD1 /* NSError+UbiquityStoreManager.h in Headers */,
-				D798733AEE174E218611EF43 /* NSURL+UbiquityStoreManager.h in Headers */,
-				28D9E1259A194CA0AD0AB1BD /* UbiquityStoreManager.h in Headers */,
-				9DA3700404A54194B1FEBF23 /* IISideController.h in Headers */,
-				D5956D21A55F40CEB911ACB9 /* IIViewDeckController.h in Headers */,
-				26F8AE0F86C94745A741E7C2 /* IIWrapController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		884AC3170CBC4BA2B02D82C6 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BB0387564A7A44C0B9920069 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				EDC0288A542142AFB057B2E5 /* Sources */,
-				A8332E31720544D5B65ABDEB /* Frameworks */,
-				1899F8B8551341088DF60C6F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = C4F1C1363A40437D85CE191F /* libPods.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D98021B55DAF414D8769E46E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0450;
-			};
-			buildConfigurationList = 1A63091F399E440697625ABC /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 1CE6324D04F94641889DD9B8;
-			productRefGroup = DAA15D1132B9422CB0500E09 /* Products */;
-			projectReferences = (
-			);
-			targets = (
-				884AC3170CBC4BA2B02D82C6 /* Pods */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		EDC0288A542142AFB057B2E5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A34DA211EB44F44A874CC49 /* CTCustomTableViewCell.m in Sources */,
-				3505EB2BAEFD444FB50E6E5B /* EZForm.m in Sources */,
-				690118BBD25B4B36B61859BE /* EZFormBooleanField.m in Sources */,
-				6BC64606D636479BBF2933A5 /* EZFormCommonValidators.m in Sources */,
-				0B16FE9FFE8E434FBD26F33F /* EZFormDateField.m in Sources */,
-				5B308D65E65C4682825096F7 /* EZFormField.m in Sources */,
-				B7D83429072648238E8F61BC /* EZFormGenericField.m in Sources */,
-				8D582E90A1694BD2B1D96D7F /* EZFormInputControl.m in Sources */,
-				884EB119EA074F83939AF64F /* EZFormInvalidIndicatorTriangleExclamationView.m in Sources */,
-				8AEF1E0B19CF40C1B83AC497 /* EZFormMultiRadioFormField.m in Sources */,
-				B3A6C0A30C1A48078162D044 /* EZFormRadioChoiceViewController.m in Sources */,
-				751C9446969547CF9A24EDB0 /* EZFormRadioField.m in Sources */,
-				158DBE962789493D9D2B8CEF /* EZFormStandardInputAccessoryView.m in Sources */,
-				B2D7A12E44AE4F16B257AFF1 /* EZFormTextField.m in Sources */,
-				199DCC973D0F4F31A188B319 /* UIView+EZFormUtility.m in Sources */,
-				7F476264DA8B466CB998FD22 /* IAPManager.m in Sources */,
-				2AC8618D20EB46FF9B105279 /* JRSwizzle.m in Sources */,
-				16DBE1C437C447EE94C7FC4B /* NSArray+Enumerable.m in Sources */,
-				FCA219F7B251444690043676 /* NSArray+Utilities.m in Sources */,
-				FFC7821F8883402D9A47462E /* NSDictionary+Enumerable.m in Sources */,
-				DE2D05C4A81C42ACB058714C /* NSSet+Enumerable.m in Sources */,
-				F1F26A3531D143A6B0146C72 /* NSSet+Utilities.m in Sources */,
-				ED6D04DA3F8B48168D9510B6 /* TPKeyboardAvoidingScrollView.m in Sources */,
-				53902555E5CA4D108AD885A5 /* TPKeyboardAvoidingTableView.m in Sources */,
-				71C4D24404F74175BE3CF2DD /* NSError+UbiquityStoreManager.m in Sources */,
-				2D04100081BB496EB38F03A0 /* NSURL+UbiquityStoreManager.m in Sources */,
-				BAEF8DF0F06D4A42A9BF37E1 /* UbiquityStoreManager.m in Sources */,
-				C7EBC7A251DE4E50B1E0CB23 /* IISideController.m in Sources */,
-				C7BC1563084B4F048313924F /* IIViewDeckController.m in Sources */,
-				F60625CF7462412C99B0A382 /* IIWrapController.m in Sources */,
-				3BA48DDA31D04F6BA53383B3 /* Pods-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin XCBuildConfiguration section */
-		2024E20776E544E6A9A03F68 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3F6D6E0412A4C5CB6D91953 /* Pods.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pods-prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "";
-				PODS_HEADERS_SEARCH_PATHS = "${PODS_BUILD_HEADERS_SEARCH_PATHS}";
-				PODS_ROOT = "${SRCROOT}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		8954152A7D47495397EDF3D7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Release;
-		};
-		9CB5206704364B7EBEDFADBC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		F0C5BE3A783C454B984B63C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3F6D6E0412A4C5CB6D91953 /* Pods.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/xcodeproj.dst;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pods-prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_CFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-DNS_BLOCK_ASSERTIONS=1",
-					"$(inherited)",
-				);
-				OTHER_LDFLAGS = "";
-				PODS_HEADERS_SEARCH_PATHS = "${PODS_BUILD_HEADERS_SEARCH_PATHS}";
-				PODS_ROOT = "${SRCROOT}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		1A63091F399E440697625ABC /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8954152A7D47495397EDF3D7 /* Release */,
-				9CB5206704364B7EBEDFADBC /* Debug */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BB0387564A7A44C0B9920069 /* Build configuration list for PBXNativeTarget "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F0C5BE3A783C454B984B63C9 /* Release */,
-				2024E20776E544E6A9A03F68 /* Debug */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D98021B55DAF414D8769E46E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0058E59CE3774C2AB4A5C4BF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ECD07453E58C455DB951C9C9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>06C43BDDF17E4C96AE73C855</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>IIWrapController.h</string>
+			<key>path</key>
+			<string>ViewDeck/ViewDeck/IIWrapController.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>077F76FCD5BF49238C3E88BF</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-JRSwizzle.a</string>
+			<key>path</key>
+			<string>libPods-JRSwizzle.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>09001F982A3548C4B9229447</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E05AAD4F99646AE975B9A6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>090EBDF21EE74F9C8E26A2B8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSError+UbiquityStoreManager.h</string>
+			<key>path</key>
+			<string>UbiquityStoreManager/UbiquityStoreManager/NSError+UbiquityStoreManager.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>09412DB9C3144A1D82B988FB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9809FE97F6CC46819F8D3C27</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>0967AE7D47084C56B8498446</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormDateField.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormDateField.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>0B06BE6EB7DE4BD0A341C19B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E47A5471BB9349CBAE65ABF4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>0B845893F8664601A4FD070D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-CTCustomTableViewCell-Private.xcconfig</string>
+			<key>path</key>
+			<string>Pods-CTCustomTableViewCell-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>0BD9449E861C449BACD6203D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>IIViewDeckController.h</string>
+			<key>path</key>
+			<string>ViewDeck/ViewDeck/IIViewDeckController.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>0C97D8ADCDE0458F820D454D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>DFDBD48864F749B682B3FE2E</string>
+				<string>EB7A5358F6054F45A9977914</string>
+				<string>6F735C728C14435B851C9FA3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>0CB28B0AFAF74D0F97EF9F99</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>EB902E7BCB8846E5A7BD47D6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>0CFD79847A284301B0BFD65F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormMultiRadioFormField.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormMultiRadioFormField.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>0E8F8F6DEF7C445AA4C5E4D6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormField.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormField.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>0FAFCB0B8926487283D69ACF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>65A65DBCF35E4C0E8509D1C4</string>
+				<string>304DF253A3E24701ACFD8805</string>
+				<string>45106C5CB4A24C3AA3FA828E</string>
+				<string>A37DE10669E1413096D76952</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-IAPManager</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FED9659E1A94133B317A81B</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>F2AEE8F6CBE04911A0E37701</string>
+			<key>buildPhases</key>
+			<array>
+				<string>548C46F2886146A18B05D46C</string>
+				<string>DC841FE91CA847BE881070D9</string>
+				<string>DD427E0772D34A86829B7A26</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-JRSwizzle</string>
+			<key>productName</key>
+			<string>Pods-JRSwizzle</string>
+			<key>productReference</key>
+			<string>077F76FCD5BF49238C3E88BF</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>12300BBDD8CA4551AA906089</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A37DE10669E1413096D76952</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>1351CAB8A2D34018981AAEC0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4EF013A7BFBE48AEB86CCA61</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
+		<key>136195C77BE448B39CBE77A1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F5AC79B4988C447BA45E56AF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>148177E461304347BD91AE00</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-EZForm-dummy.m</string>
+			<key>path</key>
+			<string>Pods-EZForm-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>158415F89D6745D29AB26F57</key>
+		<dict>
+			<key>fileRef</key>
+			<string>077F76FCD5BF49238C3E88BF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>15E6670E2AD244F3A14EDB41</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E8D0720874764C01B6C434C3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>17BAD934312C4AF0AD2735C9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-MRCEnumerable-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-MRCEnumerable-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>18076CF225304D02BD3BABA6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>92C9489D4C604C1DADC7F78A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>1A14885F6DC3420BB915CABF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EB902E7BCB8846E5A7BD47D6</string>
+				<string>48ED8D59DF014EB9A65DA29E</string>
+				<string>6ACF51676E8F4975B1E9C651</string>
+				<string>8646787752274A268CFCF2C7</string>
+				<string>492D2F01958D40E6A93051AC</string>
+				<string>79B8D4245591493086AB7C57</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1B14FD08FC2E44F28031ECAC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>AC2ABBBF2B2E45CCA5391E14</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-MRCEnumerable-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>1C11BFE978C84CA9B1F51FD3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>41B533B388D94A0DA7AF17F5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>1C7F7117E6264DF587D33D46</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormGenericField.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormGenericField.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>1D7D0795770F483A85D85021</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>0B845893F8664601A4FD070D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-CTCustomTableViewCell-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>1DA69B1DDA504FD3BD559A21</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>49F853AFC2BE40D6BC22625E</string>
+				<string>267F2C7A32984225A1C59CA4</string>
+				<string>4461F78165C84E66AD59E51B</string>
+				<string>EDD38F68A1FC438898B1BFEE</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-ViewDeck</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1DFA9C64BE6A4D8288AA0A8F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>55D75A53EF654BD59101302A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>1EFF44AA36804840AD9C6C34</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-JRSwizzle-dummy.m</string>
+			<key>path</key>
+			<string>Pods-JRSwizzle-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>208B380BA46F4C4CB2CD7C4C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>66A8863940BB4E5B86E990D8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>20CFA226846D4E3099C2F115</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9EB600ECD4884986AFCFD63E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>2183D33C13034A4C98F76C8F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormInputControl.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormInputControl.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>218A9F9FB00F4334A1BD2EBB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-MRCEnumerable.xcconfig</string>
+			<key>path</key>
+			<string>Pods-MRCEnumerable.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>234AA81E96B04CBAA468D11D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>913895EED6094456A046C96C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>24BBE4F788774D72A9ED8DB2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>50D4AD6DF2C645D6B8459A45</string>
+				<string>9B2B49061D0F4B08851B5BBA</string>
+				<string>B88106A1464C4871AE565B11</string>
+				<string>EED7D86D4DC741B9A1E3705A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-UbiquityStoreManager</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>252FEBFDCEB8428EAF09ED62</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E449A9EB5E5F49D8B99BCC52</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>26232EBDF0E34DCEA4FCE698</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A7BF7F518AE94D45B5077A8F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>2653A1452E8648D7B380E59D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8A1739E1FDCB46258ABD45B8</string>
+				<string>D5C69A0BDC314875AC39EF74</string>
+				<string>62D942EC3C7A4EEB8655B6E2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>267F2C7A32984225A1C59CA4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-ViewDeck-Private.xcconfig</string>
+			<key>path</key>
+			<string>Pods-ViewDeck-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>26E3869DB454494CAC96A9B4</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-ViewDeck.a</string>
+			<key>path</key>
+			<string>libPods-ViewDeck.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>27176FE9966840538670C09D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormRadioField.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormRadioField.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>287965B06CA74BB1BA2D9719</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3063FC9B1BAA43DBAA1E90B1</string>
+				<string>92C9489D4C604C1DADC7F78A</string>
+				<string>BED058322A8045989C7E63C8</string>
+				<string>E449A9EB5E5F49D8B99BCC52</string>
+				<string>6903B9B8A0844814BFBDD571</string>
+				<string>EE33BD91FA834A18A574A7DA</string>
+				<string>9EB600ECD4884986AFCFD63E</string>
+				<string>0967AE7D47084C56B8498446</string>
+				<string>901206053E254B6AAB1622E1</string>
+				<string>50A0D7EA86A04D9FBDF35B70</string>
+				<string>ACA055BF28E64152B8C36CA0</string>
+				<string>0E8F8F6DEF7C445AA4C5E4D6</string>
+				<string>E47A5471BB9349CBAE65ABF4</string>
+				<string>56F1F99E32164ECB85786A57</string>
+				<string>1C7F7117E6264DF587D33D46</string>
+				<string>D340F6E0CE704FCDBD752BCE</string>
+				<string>2183D33C13034A4C98F76C8F</string>
+				<string>8B8762B8DD1A48CBB9EE36BC</string>
+				<string>63F2207FF38D43DB99D76587</string>
+				<string>FFDBCCFAFF7B4BD59F20D7FF</string>
+				<string>2B6927EB38DB4ABFB4C22B4A</string>
+				<string>0CFD79847A284301B0BFD65F</string>
+				<string>66A8863940BB4E5B86E990D8</string>
+				<string>5B3706EC1D8B426E96087921</string>
+				<string>27176FE9966840538670C09D</string>
+				<string>3EE153FD091E4A3FA110DA62</string>
+				<string>913895EED6094456A046C96C</string>
+				<string>FE219C7326684AFCAF314EB5</string>
+				<string>2C4396917A7949F9B0DDE87A</string>
+				<string>30F301C268314CCB83DF728D</string>
+				<string>9809FE97F6CC46819F8D3C27</string>
+				<string>CA9CB2C28D564FAF99CA2C36</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>EZForm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>289828538C064237B3B2FA1F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>2B137596BB364E0AB9C8DBAB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSArray+Enumerable.h</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSArray+Enumerable.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2B6927EB38DB4ABFB4C22B4A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormMultiRadioFormField.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormMultiRadioFormField.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2B8191568251440B8EE792BF</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-IAPManager.a</string>
+			<key>path</key>
+			<string>libPods-IAPManager.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>2BBE7E194EB44D92802A5DAD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>090EBDF21EE74F9C8E26A2B8</string>
+				<string>820C86589DE44EFCA193A634</string>
+				<string>DD25462D49F94F8DAFCB2BBC</string>
+				<string>95D86DFAF98B4F73B600375B</string>
+				<string>FCA47D5A5DB942988FA0CC97</string>
+				<string>4EF013A7BFBE48AEB86CCA61</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>UbiquityStoreManager</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2BBF10B3EB3D458190AF5732</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSSet+Utilities.h</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSSet+Utilities.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2C4396917A7949F9B0DDE87A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormTextField.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormTextField.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>2E88EEE3A4E9438485A4EFB0</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>5CAD434F9908441B8B595A06</string>
+				<string>12300BBDD8CA4551AA906089</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>301EC24FE0694B5691870A2E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B05B378ED1204F76994CF58F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>304DF253A3E24701ACFD8805</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-IAPManager-Private.xcconfig</string>
+			<key>path</key>
+			<string>Pods-IAPManager-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>3063FC9B1BAA43DBAA1E90B1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZForm+Private.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZForm+Private.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>3085E5E16A504F9FBE679033</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>IAPManager.h</string>
+			<key>path</key>
+			<string>IAPManager/IAPManager.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>30F301C268314CCB83DF728D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormTextField.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormTextField.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>32538D3F045744C782C4DCFC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSArray+Utilities.m</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSArray+Utilities.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>327E15DA76864420876F9A88</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C6711C1865064B9A93C20F86</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>32E211DCF629454F85E8625F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E05AAD4F99646AE975B9A6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>3423572D50384989BE74CEF7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>090EBDF21EE74F9C8E26A2B8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>353A2B906F114A7EBC3949B1</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>51F4CF7DCDF6420BBDBEECDB</string>
+			<key>buildPhases</key>
+			<array>
+				<string>2653A1452E8648D7B380E59D</string>
+				<string>1C11BFE978C84CA9B1F51FD3</string>
+				<string>CF058BE6D1A747E5AC5C6EB3</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-TPKeyboardAvoiding</string>
+			<key>productName</key>
+			<string>Pods-TPKeyboardAvoiding</string>
+			<key>productReference</key>
+			<string>E34D15C5F0954582909554AB</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>380F12FB4F354FF8A2BA0CB8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E9902847E964E109BD3493E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>3825722F77A3493B9792CD00</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D6C980C2AC0A43AD8C5F0BDC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>385845D91A8B45E29D02D7C6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5B3706EC1D8B426E96087921</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>393AC45659224CF4BF444633</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>IISideController.h</string>
+			<key>path</key>
+			<string>ViewDeck/ViewDeck/IISideController.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>399A8FC89EE24599B6465718</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>32E211DCF629454F85E8625F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3A9B92CC98564604AF25EEEB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9DEF9A2DAD764B6E81047DEA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>3AB8C5E546A043E08E3DFDD0</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>0B845893F8664601A4FD070D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-CTCustomTableViewCell-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3AEB14AAFCCB43558B5B54B6</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>1B14FD08FC2E44F28031ECAC</string>
+				<string>EB15C4D2F76F440A9C521491</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>3B03322E85B74C66885D1EC4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>09001F982A3548C4B9229447</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3BAC99BAC8804485BF471D07</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FFDBCCFAFF7B4BD59F20D7FF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>3BC7A47317AE43EC90323EC9</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EA6EB50B415F47248B1B81A2</string>
+				<string>897460C5E01C431EBDB983F3</string>
+				<string>C8B8AAD29CB04A99B484E4C0</string>
+				<string>C2F3C944E07F4DD2AC275791</string>
+				<string>E1DF467C229E4CD7B66ED341</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D861559166E4B4EB63D1FA8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>BFCBEDD2F7D04C3AB0CD6AAE</string>
+				<string>F390B615E6494E4E8F0B2BA6</string>
+				<string>380F12FB4F354FF8A2BA0CB8</string>
+				<string>3825722F77A3493B9792CD00</string>
+				<string>0058E59CE3774C2AB4A5C4BF</string>
+				<string>DFCF8357ECA44FE7B01519E6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3EE153FD091E4A3FA110DA62</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormRadioField.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormRadioField.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>3EEE7F12650D403B984F7B9B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1EFF44AA36804840AD9C6C34</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>40170E85376B47EB9E04C112</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-EZForm-Private.xcconfig</string>
+			<key>path</key>
+			<string>Pods-EZForm-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>41B533B388D94A0DA7AF17F5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E05AAD4F99646AE975B9A6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>4461F78165C84E66AD59E51B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-ViewDeck-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-ViewDeck-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4485EAD15312457F8884CC60</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>BF28DDA033A544D7BB2D2CAB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>44E6427A10C04C3FB8595646</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3423572D50384989BE74CEF7</string>
+				<string>AE59EA9D39C64C52A67404C4</string>
+				<string>ED10C583E15349BDB0E167EA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>45106C5CB4A24C3AA3FA828E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-IAPManager-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-IAPManager-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>454556DD0EF146A68895A10A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BC2DB28FB6AA4EAAB5D58527</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>48ED8D59DF014EB9A65DA29E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>Pods-environment.h</string>
+			<key>path</key>
+			<string>Pods-environment.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>492D2F01958D40E6A93051AC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-acknowledgements.markdown</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>49F853AFC2BE40D6BC22625E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-ViewDeck.xcconfig</string>
+			<key>path</key>
+			<string>Pods-ViewDeck.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4A642D2AEF7646B6B7AA5022</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D8F978282A8C412C8AACF928</string>
+				<string>96296911FFA24CBFA8CCDAD8</string>
+				<string>E8D0720874764C01B6C434C3</string>
+				<string>88446ED794CC46BA93A4A5E7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>TPKeyboardAvoiding</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4B274988E2FE4FB6AA81101F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2B6927EB38DB4ABFB4C22B4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>4BEFD97C6BFC48A5B472596E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>5CDF40A0494046FAA66C1E05</string>
+				<string>18076CF225304D02BD3BABA6</string>
+				<string>252FEBFDCEB8428EAF09ED62</string>
+				<string>50ACD3F4D95C4E0DB1AEC6FC</string>
+				<string>AAA746CA5AFC421CA1CD1CA2</string>
+				<string>BB72D4D77EBE417A989925E5</string>
+				<string>F2F935CA4E7E4BADADFD1ACF</string>
+				<string>0B06BE6EB7DE4BD0A341C19B</string>
+				<string>BF3918377EB146AF9A15F658</string>
+				<string>6F62743DE50244E99B6EC120</string>
+				<string>55774BD3C8014D10BE12EB20</string>
+				<string>82AF012336F1456D867C7EA4</string>
+				<string>4B274988E2FE4FB6AA81101F</string>
+				<string>208B380BA46F4C4CB2CD7C4C</string>
+				<string>6F0636E49C0648CD98E3FBAD</string>
+				<string>234AA81E96B04CBAA468D11D</string>
+				<string>AD87FAFA76714D79AB66896F</string>
+				<string>09412DB9C3144A1D82B988FB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>4E05AAD4F99646AE975B9A6A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>4E9902847E964E109BD3493E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSArray+Utilities.h</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSArray+Utilities.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4EF013A7BFBE48AEB86CCA61</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UbiquityStoreManager.m</string>
+			<key>path</key>
+			<string>UbiquityStoreManager/UbiquityStoreManager/UbiquityStoreManager.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>4F3C0A7181B64B8DB878D963</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>4F971DB084BA456DAC97C6BC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E05AAD4F99646AE975B9A6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>50A0D7EA86A04D9FBDF35B70</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormField+Private.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormField+Private.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>50ACD3F4D95C4E0DB1AEC6FC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EE33BD91FA834A18A574A7DA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>50D4AD6DF2C645D6B8459A45</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-UbiquityStoreManager.xcconfig</string>
+			<key>path</key>
+			<string>Pods-UbiquityStoreManager.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>51F4CF7DCDF6420BBDBEECDB</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>E3D71C56F6744E33B029CFC0</string>
+				<string>6629F31821244DE3A7EC51DD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>548C46F2886146A18B05D46C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>26232EBDF0E34DCEA4FCE698</string>
+				<string>3EEE7F12650D403B984F7B9B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>55774BD3C8014D10BE12EB20</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2183D33C13034A4C98F76C8F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>55D75A53EF654BD59101302A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTCustomTableViewCell.m</string>
+			<key>path</key>
+			<string>CTCustomTableViewCell/CustomTableViewCell/CTCustomTableViewCell.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>56F1F99E32164ECB85786A57</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormGenericField.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormGenericField.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5700148613DC4B98AC6F214A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods.a</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>58068B07A39D4614B03ED8D8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C0262295127B4F4A94A95DC8</string>
+				<string>6CD60FBEAD854CE4ACCA8415</string>
+				<string>91D987C2A7BA45AE964CFCE9</string>
+				<string>AD861A1505D147ACBFF3B828</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-TPKeyboardAvoiding</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5876265974A1413B89D7CF4F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSSet+Enumerable.m</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSSet+Enumerable.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>58A233C493F64E6F81814780</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>4F3C0A7181B64B8DB878D963</string>
+				<string>63AA2AFAC2DA432CA9E44F6B</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>59ECAB5280444C1F9387875A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>BBE29DC581FB4D0381E4A4E9</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-JRSwizzle-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>5A013A8F617B41C292D30290</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>AC652CE366EE41339FF3AC5C</string>
+				<string>136195C77BE448B39CBE77A1</string>
+				<string>D8AABD7978054AB68F832CD0</string>
+				<string>F1AA0054881942E8981712C2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5AA478F18BCC4BD7BDFA2919</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>62DB3ABDBF4F40A684A749BD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5B3706EC1D8B426E96087921</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormRadioChoiceViewController.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormRadioChoiceViewController.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>5CAD434F9908441B8B595A06</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AA6AE6786E5D49E0964C32C3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>5CDF40A0494046FAA66C1E05</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3063FC9B1BAA43DBAA1E90B1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>5DF63C5203274A1B925306A6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F0DE8500E86F49BEAEB71AC6</string>
+				<string>40170E85376B47EB9E04C112</string>
+				<string>6476814A5B17489C99210881</string>
+				<string>148177E461304347BD91AE00</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-EZForm</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5F1616D2AEDB4F4DB74F17A0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EED7D86D4DC741B9A1E3705A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>60854AE555A145278123ECA5</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>682E185D16014934A7874DBC</string>
+				<string>0CB28B0AFAF74D0F97EF9F99</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>6122321A142D4E30856FC8AD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>40170E85376B47EB9E04C112</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-EZForm-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>62C3931FC41647628EC59A35</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-JRSwizzle.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JRSwizzle.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>62D942EC3C7A4EEB8655B6E2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AD861A1505D147ACBFF3B828</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>62DB3ABDBF4F40A684A749BD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3085E5E16A504F9FBE679033</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>63AA2AFAC2DA432CA9E44F6B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>63F2207FF38D43DB99D76587</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormInvalidIndicatorTriangleExclamationView.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormInvalidIndicatorTriangleExclamationView.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6476814A5B17489C99210881</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-EZForm-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-EZForm-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>64FAACF821504BCFBD0A0F00</key>
+		<dict>
+			<key>fileRef</key>
+			<string>79B8D4245591493086AB7C57</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>65A65DBCF35E4C0E8509D1C4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-IAPManager.xcconfig</string>
+			<key>path</key>
+			<string>Pods-IAPManager.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6629F31821244DE3A7EC51DD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>6CD60FBEAD854CE4ACCA8415</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-TPKeyboardAvoiding-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>6637461CB3A44859916D5CD1</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>BBE29DC581FB4D0381E4A4E9</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-JRSwizzle-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>66A8863940BB4E5B86E990D8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormRadioChoiceViewController.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormRadioChoiceViewController.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>67688FB6D0E14F96AB2F4EB9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D8F978282A8C412C8AACF928</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>682E185D16014934A7874DBC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>EB902E7BCB8846E5A7BD47D6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>683B0CE094C44ED8A53E888C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E05AAD4F99646AE975B9A6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>6903B9B8A0844814BFBDD571</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormBooleanField.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormBooleanField.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6994B24525BD4B6BBF26B79F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F2C7F56B9DDD4530B9D5B30B</string>
+				<string>A7BF7F518AE94D45B5077A8F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>JRSwizzle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6ACF51676E8F4975B1E9C651</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-resources.sh</string>
+			<key>path</key>
+			<string>Pods-resources.sh</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6B7AAB1F4CAA4743B3C18AB5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>148177E461304347BD91AE00</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>6CD60FBEAD854CE4ACCA8415</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-TPKeyboardAvoiding-Private.xcconfig</string>
+			<key>path</key>
+			<string>Pods-TPKeyboardAvoiding-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>6E620A3D61F846F78BFC2108</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>1DFA9C64BE6A4D8288AA0A8F</string>
+				<string>3A9B92CC98564604AF25EEEB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6EB5875ACD044803B2211CD4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A6D0C0C968624534AE2826DC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>6F0636E49C0648CD98E3FBAD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>27176FE9966840538670C09D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>6F62743DE50244E99B6EC120</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D340F6E0CE704FCDBD752BCE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>6F735C728C14435B851C9FA3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>06C43BDDF17E4C96AE73C855</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>73215AFD0590439FBFCD1826</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>9B2B49061D0F4B08851B5BBA</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-UbiquityStoreManager-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>763F15632B9248198355DBA4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>QuartzCore.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>79B8D4245591493086AB7C57</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-dummy.m</string>
+			<key>path</key>
+			<string>Pods-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>7B277E70E218457790B4C2E8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8A5EC0C529C44C53B9843E5E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>7B2BA6A36423448DB645691F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2B8191568251440B8EE792BF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>7CDB348FD1EC4B33AE5DEE9E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D30973CFD9F04A10B051A473</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>7E706603069743FDA45735DB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-JRSwizzle-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-JRSwizzle-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>808FBB37D66F4AE1BF42A724</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>6122321A142D4E30856FC8AD</string>
+				<string>F84BD33EF50B4F8E9C3EB137</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>820C86589DE44EFCA193A634</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSError+UbiquityStoreManager.m</string>
+			<key>path</key>
+			<string>UbiquityStoreManager/UbiquityStoreManager/NSError+UbiquityStoreManager.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>82AF012336F1456D867C7EA4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>63F2207FF38D43DB99D76587</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>8470D5927D4942F0A008DB88</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>4F971DB084BA456DAC97C6BC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8646787752274A268CFCF2C7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-acknowledgements.plist</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>86BFEDC6A6A84DD1AFAA0093</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6903B9B8A0844814BFBDD571</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>88446ED794CC46BA93A4A5E7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>TPKeyboardAvoidingTableView.m</string>
+			<key>path</key>
+			<string>TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>897460C5E01C431EBDB983F3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FFB64E2DFDE240879C405505</string>
+				<string>287965B06CA74BB1BA2D9719</string>
+				<string>DF06979BB1E544A09FCD6A07</string>
+				<string>6994B24525BD4B6BBF26B79F</string>
+				<string>FF170BF71D2F49A08C69BD78</string>
+				<string>4A642D2AEF7646B6B7AA5022</string>
+				<string>2BBE7E194EB44D92802A5DAD</string>
+				<string>EF28B617E8E148CEA82A7F91</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>89984597E16345A3BC970EE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>7CDB348FD1EC4B33AE5DEE9E</string>
+				<string>AB5CD43DFCE24A48BBB8CFE1</string>
+				<string>B565C1EF06714D6B8F7D1A9C</string>
+				<string>E2C9EA3DC0F0459C8447B376</string>
+				<string>AA1A823AF26D4795BA5E509C</string>
+				<string>327E15DA76864420876F9A88</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>8A1739E1FDCB46258ABD45B8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>96296911FFA24CBFA8CCDAD8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>8A23A0C49D334045B5BF6901</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CA9CB2C28D564FAF99CA2C36</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>8A5EC0C529C44C53B9843E5E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E05AAD4F99646AE975B9A6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>8AEB17AE469D492FA3B97F57</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>9533865B90BE4157A682A3ED</string>
+			<key>buildPhases</key>
+			<array>
+				<string>6E620A3D61F846F78BFC2108</string>
+				<string>3B03322E85B74C66885D1EC4</string>
+				<string>A6B1E88ED26A4008B7A9B83A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-CTCustomTableViewCell</string>
+			<key>productName</key>
+			<string>Pods-CTCustomTableViewCell</string>
+			<key>productReference</key>
+			<string>BC2DB28FB6AA4EAAB5D58527</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>8B8762B8DD1A48CBB9EE36BC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormInputControl.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormInputControl.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>8D72A1763A2F49D19BBA9A41</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>218A9F9FB00F4334A1BD2EBB</string>
+				<string>AC2ABBBF2B2E45CCA5391E14</string>
+				<string>17BAD934312C4AF0AD2735C9</string>
+				<string>C6711C1865064B9A93C20F86</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-MRCEnumerable</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8ED3B46F239846D5A315566F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>IIWrapController.m</string>
+			<key>path</key>
+			<string>ViewDeck/ViewDeck/IIWrapController.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>901206053E254B6AAB1622E1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormDateField.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormDateField.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>913895EED6094456A046C96C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormStandardInputAccessoryView.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormStandardInputAccessoryView.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9173936C774040BAB9BBEDCB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E05AAD4F99646AE975B9A6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>91D987C2A7BA45AE964CFCE9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-TPKeyboardAvoiding-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-TPKeyboardAvoiding-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>92635B8679F44D99ACFDDA16</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9FB2B192199447D950E9D7A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>92C9489D4C604C1DADC7F78A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZForm.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZForm.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9533865B90BE4157A682A3ED</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3AB8C5E546A043E08E3DFDD0</string>
+				<string>1D7D0795770F483A85D85021</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>95D86DFAF98B4F73B600375B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSURL+UbiquityStoreManager.m</string>
+			<key>path</key>
+			<string>UbiquityStoreManager/UbiquityStoreManager/NSURL+UbiquityStoreManager.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>96296911FFA24CBFA8CCDAD8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>TPKeyboardAvoidingScrollView.m</string>
+			<key>path</key>
+			<string>TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9809FE97F6CC46819F8D3C27</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UIView+EZFormUtility.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/UIView+EZFormUtility.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>994A17B89B9D4D269E33FDF5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>IISideController.m</string>
+			<key>path</key>
+			<string>ViewDeck/ViewDeck/IISideController.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9B2B49061D0F4B08851B5BBA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-UbiquityStoreManager-Private.xcconfig</string>
+			<key>path</key>
+			<string>Pods-UbiquityStoreManager-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9C3B66C8A11E4348BAF8D35E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9173936C774040BAB9BBEDCB</string>
+				<string>454556DD0EF146A68895A10A</string>
+				<string>E1D332D27E574455A317A3D9</string>
+				<string>7B2BA6A36423448DB645691F</string>
+				<string>158415F89D6745D29AB26F57</string>
+				<string>92635B8679F44D99ACFDDA16</string>
+				<string>E3EFA67A831A472A86EFAD00</string>
+				<string>6EB5875ACD044803B2211CD4</string>
+				<string>DB69CF8B84D540469DEFAFDC</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9D5E3733D0AC42EC8D7B12C9</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>808FBB37D66F4AE1BF42A724</string>
+			<key>buildPhases</key>
+			<array>
+				<string>BCA15C5906DB4B5996CE7F1F</string>
+				<string>4485EAD15312457F8884CC60</string>
+				<string>4BEFD97C6BFC48A5B472596E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-EZForm</string>
+			<key>productName</key>
+			<string>Pods-EZForm</string>
+			<key>productReference</key>
+			<string>A6261DD44747401698699C18</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>9DEF9A2DAD764B6E81047DEA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-CTCustomTableViewCell-dummy.m</string>
+			<key>path</key>
+			<string>Pods-CTCustomTableViewCell-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9EB600ECD4884986AFCFD63E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormCommonValidators.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormCommonValidators.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9EDF083E8CF14B80ADA5907A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>9B2B49061D0F4B08851B5BBA</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-UbiquityStoreManager-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>A189B1706839400994DD5CF4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F2C7F56B9DDD4530B9D5B30B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>A19F9803B1704134ADD07410</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>BF184C68CAE242D0B5B6A646</string>
+				<string>F35ACF6E41254FCDB20F190F</string>
+				<string>1351CAB8A2D34018981AAEC0</string>
+				<string>5F1616D2AEDB4F4DB74F17A0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A37DE10669E1413096D76952</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-IAPManager-dummy.m</string>
+			<key>path</key>
+			<string>Pods-IAPManager-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>A6261DD44747401698699C18</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-EZForm.a</string>
+			<key>path</key>
+			<string>libPods-EZForm.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A6B1E88ED26A4008B7A9B83A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C78347E3275642B8B2FE5C98</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A6D0C0C968624534AE2826DC</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-UbiquityStoreManager.a</string>
+			<key>path</key>
+			<string>libPods-UbiquityStoreManager.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A7BF7F518AE94D45B5077A8F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>JRSwizzle.m</string>
+			<key>path</key>
+			<string>JRSwizzle/JRSwizzle.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AA1A823AF26D4795BA5E509C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C5948C37A57542A98A7026D1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>AA6AE6786E5D49E0964C32C3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>IAPManager.m</string>
+			<key>path</key>
+			<string>IAPManager/IAPManager.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AAA746CA5AFC421CA1CD1CA2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0967AE7D47084C56B8498446</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>AB5CD43DFCE24A48BBB8CFE1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>32538D3F045744C782C4DCFC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>AC2ABBBF2B2E45CCA5391E14</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-MRCEnumerable-Private.xcconfig</string>
+			<key>path</key>
+			<string>Pods-MRCEnumerable-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AC652CE366EE41339FF3AC5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>994A17B89B9D4D269E33FDF5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>ACA055BF28E64152B8C36CA0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormField.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormField.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AD861A1505D147ACBFF3B828</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-TPKeyboardAvoiding-dummy.m</string>
+			<key>path</key>
+			<string>Pods-TPKeyboardAvoiding-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>AD87FAFA76714D79AB66896F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C4396917A7949F9B0DDE87A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>ADE6F6B4EA2D493FBB002521</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0E8F8F6DEF7C445AA4C5E4D6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>AE59EA9D39C64C52A67404C4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DD25462D49F94F8DAFCB2BBC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>AFE29E838CC94B10AD4EE4FC</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>CCECFE8E05584087A039BC1B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>5A013A8F617B41C292D30290</string>
+				<string>7B277E70E218457790B4C2E8</string>
+				<string>0C97D8ADCDE0458F820D454D</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-ViewDeck</string>
+			<key>productName</key>
+			<string>Pods-ViewDeck</string>
+			<key>productReference</key>
+			<string>26E3869DB454494CAC96A9B4</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>B05B378ED1204F76994CF58F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E05AAD4F99646AE975B9A6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>B3A39A530EE341D28373EEE7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>901206053E254B6AAB1622E1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>B3BE7E52262C497A8AA20C31</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0450</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>58A233C493F64E6F81814780</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>3BC7A47317AE43EC90323EC9</string>
+			<key>productRefGroup</key>
+			<string>C8B8AAD29CB04A99B484E4C0</string>
+			<key>projectReferences</key>
+			<array/>
+			<key>targets</key>
+			<array>
+				<string>8AEB17AE469D492FA3B97F57</string>
+				<string>9D5E3733D0AC42EC8D7B12C9</string>
+				<string>C70F69BC399C4C1AB6C12F1D</string>
+				<string>0FED9659E1A94133B317A81B</string>
+				<string>E9C5EBBD567A488E8C4E3796</string>
+				<string>353A2B906F114A7EBC3949B1</string>
+				<string>F2349DCA1F1F426FB76E68B1</string>
+				<string>AFE29E838CC94B10AD4EE4FC</string>
+				<string>E6E7D2334875445A92312DE1</string>
+			</array>
+		</dict>
+		<key>B565C1EF06714D6B8F7D1A9C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CC8BCC64173B48BBAEE92DCC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>B683458054184A919B2C394B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MRCEnumerable.h</string>
+			<key>path</key>
+			<string>MRCEnumerable/MRCEnumerable.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>B88106A1464C4871AE565B11</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-UbiquityStoreManager-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-UbiquityStoreManager-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>B9771F1500494CA380913004</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FE219C7326684AFCAF314EB5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>B9A63CD623214C95881C4C4C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>304DF253A3E24701ACFD8805</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-IAPManager-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>B9E95570E2354E7384F45F17</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>304DF253A3E24701ACFD8805</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-IAPManager-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>B9FB2B192199447D950E9D7A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-MRCEnumerable.a</string>
+			<key>path</key>
+			<string>libPods-MRCEnumerable.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>BB392FE98D0147A3B377C8FA</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>B9E95570E2354E7384F45F17</string>
+				<string>B9A63CD623214C95881C4C4C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>BB72D4D77EBE417A989925E5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>50A0D7EA86A04D9FBDF35B70</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>BBE29DC581FB4D0381E4A4E9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-JRSwizzle-Private.xcconfig</string>
+			<key>path</key>
+			<string>Pods-JRSwizzle-Private.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>BC2DB28FB6AA4EAAB5D58527</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-CTCustomTableViewCell.a</string>
+			<key>path</key>
+			<string>libPods-CTCustomTableViewCell.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>BCA15C5906DB4B5996CE7F1F</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>DA88B83FF58B462D99942671</string>
+				<string>86BFEDC6A6A84DD1AFAA0093</string>
+				<string>20CFA226846D4E3099C2F115</string>
+				<string>B3A39A530EE341D28373EEE7</string>
+				<string>ADE6F6B4EA2D493FBB002521</string>
+				<string>E9F9784F85DB4B459C722FEF</string>
+				<string>FED655E66D744079A939602B</string>
+				<string>3BAC99BAC8804485BF471D07</string>
+				<string>EA5ADFFCF0AB46568C12B9F9</string>
+				<string>385845D91A8B45E29D02D7C6</string>
+				<string>DC7E18FB58344F059CADB904</string>
+				<string>B9771F1500494CA380913004</string>
+				<string>CB9511EE84464C689ADE6523</string>
+				<string>8A23A0C49D334045B5BF6901</string>
+				<string>6B7AAB1F4CAA4743B3C18AB5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>BED058322A8045989C7E63C8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZForm.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZForm.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>BF184C68CAE242D0B5B6A646</key>
+		<dict>
+			<key>fileRef</key>
+			<string>820C86589DE44EFCA193A634</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
+		<key>BF28DDA033A544D7BB2D2CAB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4E05AAD4F99646AE975B9A6A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>BF3918377EB146AF9A15F658</key>
+		<dict>
+			<key>fileRef</key>
+			<string>56F1F99E32164ECB85786A57</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>BFCBEDD2F7D04C3AB0CD6AAE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B683458054184A919B2C394B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>C0262295127B4F4A94A95DC8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-TPKeyboardAvoiding.xcconfig</string>
+			<key>path</key>
+			<string>Pods-TPKeyboardAvoiding.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C0E58BA9718142B68D08C71B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>9EDF083E8CF14B80ADA5907A</string>
+				<string>73215AFD0590439FBFCD1826</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C2F3C944E07F4DD2AC275791</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EA518DBBF329406BBAB093D5</string>
+				<string>5DF63C5203274A1B925306A6</string>
+				<string>0FAFCB0B8926487283D69ACF</string>
+				<string>E8C691B44D094BE299666380</string>
+				<string>8D72A1763A2F49D19BBA9A41</string>
+				<string>58068B07A39D4614B03ED8D8</string>
+				<string>24BBE4F788774D72A9ED8DB2</string>
+				<string>1DA69B1DDA504FD3BD559A21</string>
+				<string>1A14885F6DC3420BB915CABF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C3CF5B232BB84E069175A299</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTCustomTableViewCell.h</string>
+			<key>path</key>
+			<string>CTCustomTableViewCell/CustomTableViewCell/CTCustomTableViewCell.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C5948C37A57542A98A7026D1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSSet+Utilities.m</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSSet+Utilities.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C6711C1865064B9A93C20F86</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-MRCEnumerable-dummy.m</string>
+			<key>path</key>
+			<string>Pods-MRCEnumerable-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>C70F69BC399C4C1AB6C12F1D</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>BB392FE98D0147A3B377C8FA</string>
+			<key>buildPhases</key>
+			<array>
+				<string>2E88EEE3A4E9438485A4EFB0</string>
+				<string>301EC24FE0694B5691870A2E</string>
+				<string>5AA478F18BCC4BD7BDFA2919</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-IAPManager</string>
+			<key>productName</key>
+			<string>Pods-IAPManager</string>
+			<key>productReference</key>
+			<string>2B8191568251440B8EE792BF</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>C78347E3275642B8B2FE5C98</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C3CF5B232BB84E069175A299</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>C8B8AAD29CB04A99B484E4C0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BC2DB28FB6AA4EAAB5D58527</string>
+				<string>A6261DD44747401698699C18</string>
+				<string>2B8191568251440B8EE792BF</string>
+				<string>077F76FCD5BF49238C3E88BF</string>
+				<string>B9FB2B192199447D950E9D7A</string>
+				<string>E34D15C5F0954582909554AB</string>
+				<string>A6D0C0C968624534AE2826DC</string>
+				<string>26E3869DB454494CAC96A9B4</string>
+				<string>5700148613DC4B98AC6F214A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CA9CB2C28D564FAF99CA2C36</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>UIView+EZFormUtility.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/UIView+EZFormUtility.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>CB9511EE84464C689ADE6523</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30F301C268314CCB83DF728D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>CC8BCC64173B48BBAEE92DCC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSDictionary+Enumerable.m</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSDictionary+Enumerable.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>CCECFE8E05584087A039BC1B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F0C6BBA46E3F42659CC64694</string>
+				<string>D8F155C5316042FC88C0127C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>CF058BE6D1A747E5AC5C6EB3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>67688FB6D0E14F96AB2F4EB9</string>
+				<string>15E6670E2AD244F3A14EDB41</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D30973CFD9F04A10B051A473</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>NSArray+Enumerable.m</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSArray+Enumerable.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D31003FF19AE4B658CA9CEAE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods-CTCustomTableViewCell-prefix.pch</string>
+			<key>path</key>
+			<string>Pods-CTCustomTableViewCell-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D340F6E0CE704FCDBD752BCE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormInputAccessoryViewProtocols.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormInputAccessoryViewProtocols.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D5C69A0BDC314875AC39EF74</key>
+		<dict>
+			<key>fileRef</key>
+			<string>88446ED794CC46BA93A4A5E7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>D6C980C2AC0A43AD8C5F0BDC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSDictionary+Enumerable.h</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSDictionary+Enumerable.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>D8AABD7978054AB68F832CD0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8ED3B46F239846D5A315566F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>D8F155C5316042FC88C0127C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>267F2C7A32984225A1C59CA4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-ViewDeck-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>D8F978282A8C412C8AACF928</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>TPKeyboardAvoidingScrollView.h</string>
+			<key>path</key>
+			<string>TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>DA88B83FF58B462D99942671</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BED058322A8045989C7E63C8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>DB69CF8B84D540469DEFAFDC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>26E3869DB454494CAC96A9B4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>DC7E18FB58344F059CADB904</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3EE153FD091E4A3FA110DA62</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>DC841FE91CA847BE881070D9</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>683B0CE094C44ED8A53E888C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DD25462D49F94F8DAFCB2BBC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSURL+UbiquityStoreManager.h</string>
+			<key>path</key>
+			<string>UbiquityStoreManager/UbiquityStoreManager/NSURL+UbiquityStoreManager.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>DD427E0772D34A86829B7A26</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>A189B1706839400994DD5CF4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DF06979BB1E544A09FCD6A07</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3085E5E16A504F9FBE679033</string>
+				<string>AA6AE6786E5D49E0964C32C3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>IAPManager</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DFCF8357ECA44FE7B01519E6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2BBF10B3EB3D458190AF5732</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>DFDBD48864F749B682B3FE2E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>393AC45659224CF4BF444633</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>E1D332D27E574455A317A3D9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A6261DD44747401698699C18</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>E1DF467C229E4CD7B66ED341</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>E2C9EA3DC0F0459C8447B376</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5876265974A1413B89D7CF4F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>E34D15C5F0954582909554AB</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods-TPKeyboardAvoiding.a</string>
+			<key>path</key>
+			<string>libPods-TPKeyboardAvoiding.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>E3D71C56F6744E33B029CFC0</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>6CD60FBEAD854CE4ACCA8415</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-TPKeyboardAvoiding-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>E3EFA67A831A472A86EFAD00</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E34D15C5F0954582909554AB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>E449A9EB5E5F49D8B99BCC52</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormBooleanField.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormBooleanField.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E47A5471BB9349CBAE65ABF4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormFieldConcreteProtocol.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormFieldConcreteProtocol.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E6E7D2334875445A92312DE1</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>60854AE555A145278123ECA5</string>
+			<key>buildPhases</key>
+			<array>
+				<string>FDCC955C1C534227B95A524B</string>
+				<string>9C3B66C8A11E4348BAF8D35E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>productName</key>
+			<string>Pods</string>
+			<key>productReference</key>
+			<string>5700148613DC4B98AC6F214A</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>E81282BBC3464231899D3C30</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-CTCustomTableViewCell.xcconfig</string>
+			<key>path</key>
+			<string>Pods-CTCustomTableViewCell.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E8C691B44D094BE299666380</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>62C3931FC41647628EC59A35</string>
+				<string>BBE29DC581FB4D0381E4A4E9</string>
+				<string>7E706603069743FDA45735DB</string>
+				<string>1EFF44AA36804840AD9C6C34</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-JRSwizzle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E8D0720874764C01B6C434C3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>TPKeyboardAvoidingTableView.h</string>
+			<key>path</key>
+			<string>TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>E9C5EBBD567A488E8C4E3796</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>3AEB14AAFCCB43558B5B54B6</string>
+			<key>buildPhases</key>
+			<array>
+				<string>89984597E16345A3BC970EE2</string>
+				<string>399A8FC89EE24599B6465718</string>
+				<string>3D861559166E4B4EB63D1FA8</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-MRCEnumerable</string>
+			<key>productName</key>
+			<string>Pods-MRCEnumerable</string>
+			<key>productReference</key>
+			<string>B9FB2B192199447D950E9D7A</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>E9F9784F85DB4B459C722FEF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1C7F7117E6264DF587D33D46</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>EA518DBBF329406BBAB093D5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E81282BBC3464231899D3C30</string>
+				<string>0B845893F8664601A4FD070D</string>
+				<string>D31003FF19AE4B658CA9CEAE</string>
+				<string>9DEF9A2DAD764B6E81047DEA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-CTCustomTableViewCell</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EA5ADFFCF0AB46568C12B9F9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0CFD79847A284301B0BFD65F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>EA6EB50B415F47248B1B81A2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>EAC8DA5642A4423387951B9C</string>
+				<string>4E05AAD4F99646AE975B9A6A</string>
+				<string>763F15632B9248198355DBA4</string>
+				<string>F5CA4729EF9D4B90A0011542</string>
+				<string>289828538C064237B3B2FA1F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EAC8DA5642A4423387951B9C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreFoundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/CoreFoundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>EB15C4D2F76F440A9C521491</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>AC2ABBBF2B2E45CCA5391E14</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-MRCEnumerable-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>EB7A5358F6054F45A9977914</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0BD9449E861C449BACD6203D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>EB902E7BCB8846E5A7BD47D6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>ECD07453E58C455DB951C9C9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>NSSet+Enumerable.h</string>
+			<key>path</key>
+			<string>MRCEnumerable/NSSet+Enumerable.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>ED10C583E15349BDB0E167EA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FCA47D5A5DB942988FA0CC97</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>EDD38F68A1FC438898B1BFEE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-ViewDeck-dummy.m</string>
+			<key>path</key>
+			<string>Pods-ViewDeck-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EE33BD91FA834A18A574A7DA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>EZFormCommonValidators.h</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormCommonValidators.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EED7D86D4DC741B9A1E3705A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>Pods-UbiquityStoreManager-dummy.m</string>
+			<key>path</key>
+			<string>Pods-UbiquityStoreManager-dummy.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EF28B617E8E148CEA82A7F91</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>393AC45659224CF4BF444633</string>
+				<string>994A17B89B9D4D269E33FDF5</string>
+				<string>0BD9449E861C449BACD6203D</string>
+				<string>F5AC79B4988C447BA45E56AF</string>
+				<string>06C43BDDF17E4C96AE73C855</string>
+				<string>8ED3B46F239846D5A315566F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ViewDeck</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F0C6BBA46E3F42659CC64694</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>267F2C7A32984225A1C59CA4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-ViewDeck-prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_CFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_CPLUSPLUSFLAGS</key>
+				<array>
+					<string>-DNS_BLOCK_ASSERTIONS=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F0DE8500E86F49BEAEB71AC6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-EZForm.xcconfig</string>
+			<key>path</key>
+			<string>Pods-EZForm.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F1AA0054881942E8981712C2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EDD38F68A1FC438898B1BFEE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>F2349DCA1F1F426FB76E68B1</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>C0E58BA9718142B68D08C71B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>A19F9803B1704134ADD07410</string>
+				<string>8470D5927D4942F0A008DB88</string>
+				<string>44E6427A10C04C3FB8595646</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-UbiquityStoreManager</string>
+			<key>productName</key>
+			<string>Pods-UbiquityStoreManager</string>
+			<key>productReference</key>
+			<string>A6D0C0C968624534AE2826DC</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>F2AEE8F6CBE04911A0E37701</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>59ECAB5280444C1F9387875A</string>
+				<string>6637461CB3A44859916D5CD1</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>F2C7F56B9DDD4530B9D5B30B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>JRSwizzle.h</string>
+			<key>path</key>
+			<string>JRSwizzle/JRSwizzle.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F2F935CA4E7E4BADADFD1ACF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ACA055BF28E64152B8C36CA0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>F35ACF6E41254FCDB20F190F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>95D86DFAF98B4F73B600375B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc</string>
+			</dict>
+		</dict>
+		<key>F390B615E6494E4E8F0B2BA6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2B137596BB364E0AB9C8DBAB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict/>
+		</dict>
+		<key>F5AC79B4988C447BA45E56AF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>IIViewDeckController.m</string>
+			<key>path</key>
+			<string>ViewDeck/ViewDeck/IIViewDeckController.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>F5CA4729EF9D4B90A0011542</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>StoreKit.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/StoreKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>F84BD33EF50B4F8E9C3EB137</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>40170E85376B47EB9E04C112</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Pods-EZForm-prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INSTALL_PATH</key>
+				<string>$(BUILT_PRODUCTS_DIR)</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>6.0</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>FCA47D5A5DB942988FA0CC97</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>UbiquityStoreManager.h</string>
+			<key>path</key>
+			<string>UbiquityStoreManager/UbiquityStoreManager/UbiquityStoreManager.h</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>FDCC955C1C534227B95A524B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>64FAACF821504BCFBD0A0F00</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>FE219C7326684AFCAF314EB5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormStandardInputAccessoryView.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormStandardInputAccessoryView.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>FED655E66D744079A939602B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8B8762B8DD1A48CBB9EE36BC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>COMPILER_FLAGS</key>
+				<string>-fobjc-arc -DOS_OBJECT_USE_OBJC=0</string>
+			</dict>
+		</dict>
+		<key>FF170BF71D2F49A08C69BD78</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B683458054184A919B2C394B</string>
+				<string>2B137596BB364E0AB9C8DBAB</string>
+				<string>D30973CFD9F04A10B051A473</string>
+				<string>4E9902847E964E109BD3493E</string>
+				<string>32538D3F045744C782C4DCFC</string>
+				<string>D6C980C2AC0A43AD8C5F0BDC</string>
+				<string>CC8BCC64173B48BBAEE92DCC</string>
+				<string>ECD07453E58C455DB951C9C9</string>
+				<string>5876265974A1413B89D7CF4F</string>
+				<string>2BBF10B3EB3D458190AF5732</string>
+				<string>C5948C37A57542A98A7026D1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>MRCEnumerable</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFB64E2DFDE240879C405505</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C3CF5B232BB84E069175A299</string>
+				<string>55D75A53EF654BD59101302A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>CTCustomTableViewCell</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFDBCCFAFF7B4BD59F20D7FF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>EZFormInvalidIndicatorTriangleExclamationView.m</string>
+			<key>path</key>
+			<string>EZForm/EZForm/EZForm/src/EZFormInvalidIndicatorTriangleExclamationView.m</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>B3BE7E52262C497A8AA20C31</string>
+</dict>
+</plist>
