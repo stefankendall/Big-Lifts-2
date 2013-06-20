@@ -22,6 +22,7 @@
 
     [cell setIndexPath:indexPath];
     [[cell textField] setDelegate:self];
+    [[cell textField] setInputAccessoryView:[self buildInputAccessoryView:[cell textField]]];
     if ([lift.weight doubleValue] > 0) {
         [[cell textField] setText:[lift.weight stringValue]];
     }
@@ -32,7 +33,16 @@
     return cell;
 }
 
-- (void)cellTapped: (id) sender {
+- (UIView *)buildInputAccessoryView:(UITextField *) textField {
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:textField action:@selector(resignFirstResponder)];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    toolbar.items = @[barButton];
+
+    textField.inputAccessoryView = toolbar;
+    return toolbar;
+}
+
+- (void)cellTapped:(id)sender {
     UITapGestureRecognizer *recognizer = sender;
     SSLiftFormCell *cell = (SSLiftFormCell *) recognizer.view;
     [cell.textField becomeFirstResponder];
