@@ -7,10 +7,6 @@
 
 @implementation PlateStoreTests
 
-- (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testHasDefaultPlates {
     STAssertEquals([[PlateStore instance] count], 6, @"" );
     Plate *plate = [[PlateStore instance] first];

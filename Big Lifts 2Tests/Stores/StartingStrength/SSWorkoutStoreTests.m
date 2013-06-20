@@ -9,12 +9,6 @@
 
 @implementation SSWorkoutStoreTests
 
-- (void)setUp {
-    [super setUp];
-    [[SSLiftStore instance] reset];
-    [[SSWorkoutStore instance] reset];
-}
-
 - (void)testSetsUpDefaultLifts {
     STAssertEquals([[SSWorkoutStore instance] count], 2, @"");
     SSWorkout *workoutA = [[SSWorkoutStore instance] atIndex:0];

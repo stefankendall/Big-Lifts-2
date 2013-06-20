@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface SetCellWithPlatesTests : SenTestCase
+@interface SetCellWithPlatesTests : BLTestCase
 @end

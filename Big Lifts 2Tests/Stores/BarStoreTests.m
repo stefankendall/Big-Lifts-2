@@ -7,10 +7,6 @@
 
 @implementation BarStoreTests
 
-- (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testBarWeightHasDefaults {
     Bar *bar = [[BarStore instance] first];
     STAssertEquals( [[bar weight] doubleValue], 45.0, @"");

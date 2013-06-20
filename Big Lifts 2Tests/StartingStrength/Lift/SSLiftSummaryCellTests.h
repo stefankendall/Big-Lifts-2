@@ -1,4 +1,6 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface SSLiftSummaryCellTests : SenTestCase
+@interface SSLiftSummaryCellTests : BLTestCase
+
 @end

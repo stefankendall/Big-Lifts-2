@@ -6,12 +6,6 @@
 
 @implementation SSIndividualWorkoutDataSourceTests
 
-- (void)setUp {
-    [super setUp];
-    [[SSWorkoutStore instance] reset];
-    [[IAPAdapter instance] resetPurchases];
-}
-
 - (void)testReturnsCorrectNumberOfRows {
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     SSIndividualWorkoutDataSource *dataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:ssWorkout];

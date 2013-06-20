@@ -8,7 +8,6 @@
 
 - (void)setUp {
     [super setUp];
-    [[SSWorkoutStore instance] reset];
     dataSource = [[SSLiftSummaryDataSource alloc] initWithSsWorkout:[[SSWorkoutStore instance] first]];
 }
 

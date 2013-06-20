@@ -8,11 +8,6 @@
 
 @implementation SetCellWithPlatesTests
 
-- (void) setUp {
-    [super setUp];
-    [[BLStoreManager instance] resetAllStores];
-}
-
 -(void) testSetCellSetsPlates {
     SetCellWithPlates *cell = [SetCellWithPlates create];
 

@@ -5,10 +5,6 @@
 
 @implementation SSBarLoadingViewControllerTests
 
-- (void)setUp {
-    [[IAPAdapter instance] resetPurchases];
-}
-
 - (void)testAddsDisableViewIfUnpurchased {
     SSBarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
     STAssertNotNil(controller.overlay, @"");

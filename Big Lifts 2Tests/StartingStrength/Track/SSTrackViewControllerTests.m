@@ -8,10 +8,6 @@
 
 @implementation SSTrackViewControllerTests
 
-- (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testHeightForRowAtIndexPathIsNonZeroAfterDelete {
     [self createWorkoutLog];
     [self createWorkoutLog];

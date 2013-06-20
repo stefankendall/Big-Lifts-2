@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface AddPlateViewControllerTests : SenTestCase
+@interface AddPlateViewControllerTests : BLTestCase
 @end

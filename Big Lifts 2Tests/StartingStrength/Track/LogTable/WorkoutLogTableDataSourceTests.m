@@ -8,10 +8,6 @@
 
 @implementation WorkoutLogTableDataSourceTests
 
-- (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testReturnsNumberOfSetsInWorkoutLog {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     SetLog *set1 = [[SetLogStore instance] create];

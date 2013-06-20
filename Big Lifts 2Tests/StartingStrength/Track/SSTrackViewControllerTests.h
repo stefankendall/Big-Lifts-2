@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface SSTrackViewControllerTests : SenTestCase
+@interface SSTrackViewControllerTests : BLTestCase
 @end

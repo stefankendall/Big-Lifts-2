@@ -6,11 +6,6 @@
 
 @implementation ProgramSelectorViewControllerTests
 
-- (void)setUp {
-    [super setUp];
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testRemembersSelectedProgram {
     ProgramSelectorViewController *controller = [ProgramSelectorViewController new];
     [controller rememberSelectedProgram:@"selectStartingStrengthProgramSegue"];

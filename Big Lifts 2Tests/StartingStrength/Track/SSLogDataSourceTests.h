@@ -1,8 +1,9 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
 @class SSLogDataSource;
 
-@interface SSLogDataSourceTests : SenTestCase
+@interface SSLogDataSourceTests : BLTestCase
 {
     SSLogDataSource *dataSource;
 }

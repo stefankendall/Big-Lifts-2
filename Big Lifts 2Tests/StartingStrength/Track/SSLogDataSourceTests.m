@@ -7,7 +7,7 @@
 @implementation SSLogDataSourceTests
 
 - (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
+    [super setUp];
     dataSource = [SSLogDataSource new];
 }
 

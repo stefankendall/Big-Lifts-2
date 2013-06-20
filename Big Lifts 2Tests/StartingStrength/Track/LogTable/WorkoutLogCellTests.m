@@ -6,10 +6,6 @@
 
 @implementation WorkoutLogCellTests
 
-- (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testSetWorkoutSetsTableDataSource {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     WorkoutLogCell *cell = [WorkoutLogCell create];

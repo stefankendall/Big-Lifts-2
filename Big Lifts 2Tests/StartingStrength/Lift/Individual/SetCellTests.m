@@ -9,11 +9,6 @@
 
 @implementation SetCellTests
 
-- (void) setUp {
-    [super setUp];
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testSetCellSetsLabels {
     SetCell *cell = [SetCell create];
 

@@ -3,15 +3,6 @@
 #import "SettingsStore.h"
 
 @implementation SettingsStoreTests
-- (void)setUp {
-    [super setUp];
-    [[SettingsStore instance] empty];
-    [[SettingsStore instance] setupDefaults];
-}
-
-- (void)tearDown {
-    [super tearDown];
-}
 
 - (void)testSettingsLazyLoadedWithDefaults {
     Settings *settings = [[SettingsStore instance] first];

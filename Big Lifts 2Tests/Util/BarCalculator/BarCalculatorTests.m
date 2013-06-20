@@ -11,7 +11,7 @@
 @implementation BarCalculatorTests
 
 - (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
+    [super setUp];
     self.calculator = [[BarCalculator alloc] initWithPlates:[[PlateStore instance] findAll] barWeight:45];
 }
 

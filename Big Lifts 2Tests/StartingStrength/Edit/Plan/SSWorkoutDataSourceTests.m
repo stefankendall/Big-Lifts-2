@@ -11,7 +11,6 @@
 
 - (void)setUp {
     [super setUp];
-    [[BLStoreManager instance] resetAllStores];
     dataSource = [SSWorkoutDataSource new];
 }
 

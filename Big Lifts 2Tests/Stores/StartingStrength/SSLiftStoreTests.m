@@ -5,12 +5,6 @@
 
 @implementation SSLiftStoreTests
 
-- (void)setUp {
-    [super setUp];
-    [[SSLiftStore instance] empty];
-    [[SSLiftStore instance] setupDefaults];
-}
-
 - (void)testSetsUpDefaultLifts {
     STAssertEquals([[SSLiftStore instance] count], 5, @"");
 }

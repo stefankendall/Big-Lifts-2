@@ -5,10 +5,6 @@
 
 @implementation StoreViewControllerTests
 
-- (void)setUp {
-    [[IAPAdapter instance] resetPurchases];
-}
-
 - (void)testBarLoadingIsPurchased {
     [[IAPAdapter instance] addPurchase:@"barLoading"];
     StoreViewController *controller = [self getControllerByStoryboardIdentifier:@"storeViewController"];

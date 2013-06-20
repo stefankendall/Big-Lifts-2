@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface NSDictionaryMutatorTests : SenTestCase
+@interface NSDictionaryMutatorTests : BLTestCase
 @end

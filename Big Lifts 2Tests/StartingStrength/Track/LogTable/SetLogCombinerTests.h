@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface SetLogCombinerTests : SenTestCase
+@interface SetLogCombinerTests : BLTestCase
 @end

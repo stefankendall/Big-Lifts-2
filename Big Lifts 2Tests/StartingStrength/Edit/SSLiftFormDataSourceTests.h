@@ -1,8 +1,9 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
 @class SSLiftFormDataSource;
 
-@interface SSLiftFormDataSourceTests : SenTestCase
+@interface SSLiftFormDataSourceTests : BLTestCase
 
 @property(nonatomic, strong) SSLiftFormDataSource *dataSource;
 @end

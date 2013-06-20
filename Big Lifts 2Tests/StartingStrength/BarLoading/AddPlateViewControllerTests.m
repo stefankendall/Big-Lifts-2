@@ -2,26 +2,23 @@
 #import "AddPlateViewController.h"
 #import "BLStore.h"
 #import "PlateStore.h"
-#import "BLStoreManager.h"
 #import "Plate.h"
+#import "NSArray+Enumerable.h"
+#import "SenTestCase+ControllerTestAdditions.h"
 
 @implementation AddPlateViewControllerTests
 
-- (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testTappingAddPlateSavesPlate {
-    AddPlateViewController *controller = [AddPlateViewController new];
+    AddPlateViewController *controller = [self getControllerByStoryboardIdentifier:@"addPlate"];
     [controller.weightTextField setText:@"100"];
-    [controller.countTextField setText:@"4"];
+    [controller.countTextField setText:@"14"];
 
     int oldCount = [[PlateStore instance] count];
     [controller saveTapped:nil];
 
     STAssertEquals([[PlateStore instance] count], oldCount + 1, @"");
-    Plate *p = [[PlateStore instance] findBy:[NSPredicate predicateWithFormat:@"weight == %f", [NSNumber numberWithDouble:100.0]]];
-    STAssertNotNil(p, @"");
+    Plate *p = [[PlateStore instance] atIndex:0];
+    STAssertEquals([p.count intValue], 14, @"");
 }
 
 - (void)testViewDidAppearResetsForm {

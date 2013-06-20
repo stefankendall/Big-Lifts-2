@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface BarWeightTextFieldDelegateTests : SenTestCase
+@interface BarWeightTextFieldDelegateTests : BLTestCase
 @end

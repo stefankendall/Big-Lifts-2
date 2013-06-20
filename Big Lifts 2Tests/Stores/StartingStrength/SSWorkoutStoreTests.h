@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface SSWorkoutStoreTests : SenTestCase
+@interface SSWorkoutStoreTests : BLTestCase
 @end

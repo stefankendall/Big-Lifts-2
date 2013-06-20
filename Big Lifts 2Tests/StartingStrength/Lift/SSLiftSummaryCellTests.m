@@ -12,11 +12,6 @@
 
 @implementation SSLiftSummaryCellTests
 
-- (void) setUp{
-    [super setUp];
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testSetWorkoutSetsValues {
     SSLiftSummaryCell *cell = [SSLiftSummaryCell create];
     SSWorkout *workoutA = [[SSWorkoutStore instance] first];

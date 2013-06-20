@@ -1,3 +1,4 @@
-#import "SenTestCase+AsyncTest.h"
-@interface SKProductStoreTests : SenTestCase
+#import "BLTestCase.h"
+
+@interface SKProductStoreTests : BLTestCase
 @end

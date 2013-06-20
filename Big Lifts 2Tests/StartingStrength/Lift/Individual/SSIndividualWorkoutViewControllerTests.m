@@ -6,13 +6,15 @@
 #import "WorkoutLogStore.h"
 #import "WorkoutLog.h"
 #import "SetLog.h"
+#import "SSWorkout.h"
+#import "SSLiftStore.h"
+#import "SSLift.h"
 
 @implementation SSIndividualWorkoutViewControllerTests
 @synthesize controller;
 
 - (void)setUp {
     [super setUp];
-    [[BLStoreManager instance] resetAllStores];
 
     controller = [SSIndividualWorkoutViewController new];
     [controller viewDidLoad];
@@ -50,6 +52,13 @@
     STAssertTrue([((SetLog *) [workoutLog sets][4]).name isEqualToString:@"Bench"], @"");
     STAssertTrue([((SetLog *) [workoutLog sets][5]).name isEqualToString:@"Bench"], @"");
     STAssertTrue([((SetLog *) [workoutLog sets][6]).name isEqualToString:@"Deadlift"], @"");
+}
+
+- (void)testTappingDoneButtonIncrementsWeights {
+    SSLift *squat = [[SSLiftStore instance] find:@"name" value:@"Squat"];
+    squat.weight = [NSNumber numberWithFloat:200.0];
+    [controller doneButtonTapped:nil];
+    STAssertEquals(squat.weight, 210.0, @"");
 }
 
 @end

@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface SSLiftStoreTests : SenTestCase
+@interface SSLiftStoreTests : BLTestCase
 @end

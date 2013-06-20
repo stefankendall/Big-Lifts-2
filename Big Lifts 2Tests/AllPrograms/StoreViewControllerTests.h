@@ -1,4 +1,5 @@
 #import <SenTestingKit/SenTestingKit.h>
+#import "BLTestCase.h"
 
-@interface StoreViewControllerTests : SenTestCase
+@interface StoreViewControllerTests : BLTestCase
 @end

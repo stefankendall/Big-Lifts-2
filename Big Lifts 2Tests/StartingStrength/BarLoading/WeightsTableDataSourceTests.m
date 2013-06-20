@@ -13,7 +13,7 @@
 @synthesize dataSource;
 
 - (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
+    [super setUp];
     dataSource = [BarLoadingDataSource new];
 }
 

@@ -2,7 +2,7 @@
 
 @class SSStartingWeightTableDataSource;
 
-@interface SSStartingWeightTableDataSourceTests : SenTestCase
+@interface SSStartingWeightTableDataSourceTests : BLTestCase
 
 @property(nonatomic, strong) SSStartingWeightTableDataSource * dataSource;
 @end

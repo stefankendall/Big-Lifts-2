@@ -9,10 +9,6 @@
 
 @implementation SetLogCombinerTests
 
-- (void)setUp {
-    [[BLStoreManager instance] resetAllStores];
-}
-
 - (void)testCombinesIdenticalSets {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     SetLog *set1 = [[SetLogStore instance] create];
