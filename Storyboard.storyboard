@@ -791,93 +791,82 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="OAS-Xf-qwu" kind="relationship" relationship="rootViewController" id="JNH-fw-adY"/>
+                        <segue destination="cjl-uS-zBN" kind="relationship" relationship="rootViewController" id="DJv-bg-3Uy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hm9-2p-std" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256" y="-2088"/>
+            <point key="canvasLocation" x="937" y="-2032"/>
         </scene>
-        <!--Plan Workouts View Controller - Plan Workouts-->
-        <scene sceneID="otn-8j-QgC">
+        <!--Plan Workouts View Controller - Plan-->
+        <scene sceneID="aGh-v5-Ywf">
             <objects>
-                <viewController storyboardIdentifier="ssPlanWorkouts" id="OAS-Xf-qwu" customClass="SSPlanWorkoutsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PED-fm-iIB">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="RAC-Pl-TPc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fAn-8v-dSD">
-                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="MFE-gu-Z0f">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qrc-wQ-zY8">
-                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="RAC-Pl-TPc" firstAttribute="bottom" secondItem="PED-fm-iIB" secondAttribute="bottom" id="412-7Y-SDk"/>
-                            <constraint firstItem="RAC-Pl-TPc" firstAttribute="trailing" secondItem="PED-fm-iIB" secondAttribute="trailing" id="S4D-xZ-SiI"/>
-                            <constraint firstItem="RAC-Pl-TPc" firstAttribute="top" secondItem="PED-fm-iIB" secondAttribute="top" id="Z4q-1O-gOd"/>
-                            <constraint firstItem="RAC-Pl-TPc" firstAttribute="leading" secondItem="PED-fm-iIB" secondAttribute="leading" id="fv2-WV-a09"/>
-                        </constraints>
-                    </view>
+                <tableViewController storyboardIdentifier="ssPlanWorkouts" id="cjl-uS-zBN" customClass="SSPlanWorkoutsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7iu-eS-pUQ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CH1-c4-nnU">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1V4-3w-CZ3">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Krh-XJ-ZjW">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cjl-uS-zBN" id="rut-vA-kag"/>
+                            <outlet property="delegate" destination="cjl-uS-zBN" id="zNk-xh-gzf"/>
+                        </connections>
+                    </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Plan Workouts" id="caT-m5-Vdo">
-                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="dDj-WS-KVE">
+                    <navigationItem key="navigationItem" title="Plan" id="ru9-9f-niw">
+                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="bWd-og-Qdw">
                             <connections>
-                                <action selector="revealSidebar:" destination="OAS-Xf-qwu" id="rKc-iM-MCk"/>
+                                <action selector="revealSidebar:" destination="cjl-uS-zBN" id="KjL-f5-8JW"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Standard" id="ALi-BS-Nwk">
+                        <barButtonItem key="rightBarButtonItem" title="Standard" id="N2G-LB-QuE">
                             <connections>
-                                <segue destination="EmM-it-Oct" kind="push" id="iUj-BK-rlR"/>
+                                <segue destination="EmM-it-Oct" kind="push" id="hWp-Q9-ZId"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="variantButton" destination="ALi-BS-Nwk" id="hJH-mT-jnl"/>
-                        <outlet property="workoutTableView" destination="RAC-Pl-TPc" id="A7G-n0-Cbp"/>
+                        <outlet property="variantButton" destination="N2G-LB-QuE" id="USX-1J-g9L"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cbb-gy-owz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MuT-zO-rSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643" y="-2088"/>
+            <point key="canvasLocation" x="1316" y="-2032"/>
         </scene>
         <!--Workout Variant Controller - Variant-->
         <scene sceneID="VWi-rH-D5b">
             <objects>
                 <tableViewController storyboardIdentifier="ssPlanWorkoutVariant" id="EmM-it-Oct" customClass="SSWorkoutVariantController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Z0G-BI-ErI">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -984,7 +973,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVv-Rw-tbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008" y="-2088"/>
+            <point key="canvasLocation" x="1689" y="-2032"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CZe-Rh-odN">
@@ -1495,11 +1484,10 @@
                 <relationship kind="outlet" name="workoutSummaryTable" candidateClass="UITableView"/>
             </relationships>
         </class>
-        <class className="SSPlanWorkoutsViewController" superclassName="UIViewController">
+        <class className="SSPlanWorkoutsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="variantButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="workoutTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="SSSettingsViewController" superclassName="UIViewController">

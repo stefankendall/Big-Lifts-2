@@ -1,13 +1,10 @@
-
 #import "UIViewController+ViewDeckAdditions.h"
+#import "UITableViewController+NoEmptyRows.h"
 
-@class SSWorkoutDataSource;
+@class SSWorkout;
 
-@interface SSPlanWorkoutsViewController : UIViewController <UITableViewDelegate> {
-    __weak IBOutlet UITableView *workoutTableView;
-}
+@interface SSPlanWorkoutsViewController : UITableViewController
+@property(weak, nonatomic) IBOutlet UIBarButtonItem *variantButton;
 
-@property(nonatomic, strong) SSWorkoutDataSource <UITableViewDataSource> *workoutDataSource;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *variantButton;
-
+- (SSWorkout *)getWorkoutForSection:(int)section;
 @end
