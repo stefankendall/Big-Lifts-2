@@ -14,6 +14,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
     [[SSWorkoutStore instance] setupVariant:variantName];
+    SSVariant *variant = [[SSVariantStore instance] first];
+    variant.name = variantName;
+
+    [self checkSelectedVariant];
 }
 
 - (void)viewDidLoad {
@@ -24,10 +28,18 @@
 
 - (void)checkSelectedVariant {
     SSVariant *variant = [[SSVariantStore instance] first];
+    [self uncheckAllRows];
+
     int index = [[[NSDictionaryMutator new] invert:self.variantMapping][variant.name] intValue];
     UITableViewCell *cell = [self tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-    UIButton *button = (UIButton *) [cell viewWithTag:1];
-    [button setHidden:NO];
+    [[cell viewWithTag:1] setHidden:NO];
+}
+
+- (void)uncheckAllRows {
+    for (int i = 0; i < [self tableView:nil numberOfRowsInSection:0]; i++) {
+        UITableViewCell *cell = [self tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        [[cell viewWithTag:1] setHidden:YES];
+    }
 }
 
 

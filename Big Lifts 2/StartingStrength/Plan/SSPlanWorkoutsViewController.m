@@ -14,4 +14,9 @@
     [workoutTableView setEditing:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [workoutTableView reloadData];
+}
+
+
 @end
