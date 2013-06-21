@@ -7,32 +7,60 @@
 #import "Workout.h"
 #import "SetStore.h"
 #import "WorkoutStore.h"
-#import "BLStoreManager.h"
 
 @implementation SSWorkoutStore
 
 - (void)setupDefaults {
     if ([self count] == 0) {
-        SSWorkout *workoutA = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[BLStoreManager context]];
-        [workoutA setName:@"A"];
-        [workoutA setOrder:[NSNumber numberWithDouble:0.0]];
-        [self setupWorkoutA:workoutA];
-
-        SSWorkout *workoutB = [NSEntityDescription insertNewObjectForEntityForName:[self modelName] inManagedObjectContext:[BLStoreManager context]];
-        [workoutB setName:@"B"];
-        [workoutB setOrder:[NSNumber numberWithDouble:1.0]];
-        [self setupWorkoutB:workoutB];
+        [self setupVariant:@"Standard"];
     }
 }
 
-- (void)setupWorkoutA:(SSWorkout *)ssWorkout {
-    SSLift *squat = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Squat"]];
-    SSLift *bench = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Bench"]];
-    SSLift *deadlift = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Deadlift"]];
+- (void)setupVariant:(NSString *)variant {
+    [self empty];
 
-    [ssWorkout.workouts addObject:[self createWorkout:squat withSets:3 withReps:5]];
-    [ssWorkout.workouts addObject:[self createWorkout:bench withSets:3 withReps:5]];
-    [ssWorkout.workouts addObject:[self createWorkout:deadlift withSets:1 withReps:5]];
+    SSWorkout *workoutA = [[SSWorkoutStore instance] create];
+    [workoutA setName:@"A"];
+    [workoutA setOrder:[NSNumber numberWithDouble:0.0]];
+    SSWorkout *workoutB = [[SSWorkoutStore instance] create];
+    [workoutB setName:@"B"];
+    [workoutB setOrder:[NSNumber numberWithDouble:1.0]];
+
+    if ([variant isEqualToString:@"Standard"]) {
+        [self setupStandardA:workoutA];
+        [self setupStandardB:workoutB];
+    }
+    else {
+        [self setupStandardA:workoutA];
+        [self setupNoviceB:workoutB];
+    }
+}
+
+- (void)setupNoviceB:(SSWorkout *)w {
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Press"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                                createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Deadlift"] withSets:1 withReps:5]];
+}
+
+- (void)setupStandardA:(SSWorkout *)w {
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Bench"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                                createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Deadlift"] withSets:1 withReps:5]];
+}
+
+- (void)setupStandardB:(SSWorkout *)w {
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Press"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                                   createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Power Clean"] withSets:5 withReps:3]];
 }
 
 - (Workout *)createWorkout:(SSLift *)lift withSets:(int)sets withReps:(int)reps {
@@ -46,16 +74,6 @@
     }
 
     return workout;
-}
-
-- (void)setupWorkoutB:(SSWorkout *)ssWorkout {
-    SSLift *squat = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Squat"]];
-    SSLift *press = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Press"]];
-    SSLift *powerClean = [[SSLiftStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", @"Power Clean"]];
-
-    [ssWorkout.workouts addObject:[self createWorkout:squat withSets:3 withReps:5]];
-    [ssWorkout.workouts addObject:[self createWorkout:press withSets:3 withReps:5]];
-    [ssWorkout.workouts addObject:[self createWorkout:powerClean withSets:5 withReps:3]];
 }
 
 - (void)onLoad {
@@ -82,7 +100,7 @@
     for (Workout *workout in ssWorkout.workouts) {
         Set *firstSet = workout.sets[0];
         SSLift *lift = (SSLift *) firstSet.lift;
-        lift.weight = [NSNumber numberWithDouble:[lift.weight doubleValue] + [lift.increment doubleValue]];
+        lift.weight = [lift.weight decimalNumberByAdding:lift.increment];
     }
 }
 

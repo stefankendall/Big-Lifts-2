@@ -58,12 +58,11 @@
 }
 
 - (id)first {
-    if ([self count] == 0) {
-        return nil;
-    }
-    else {
-        return [self findAll][0];
-    }
+    return [self count] == 0 ? nil : [self findAll][0];
+}
+
+- (id)last {
+    return [self count] == 0 ? nil : [[self findAll] lastObject];
 }
 
 - (id)find:(NSString *)name value:(id)value {

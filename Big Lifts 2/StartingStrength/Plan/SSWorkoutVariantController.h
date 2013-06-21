@@ -1,0 +1,2 @@
+@interface SSWorkoutVariantController : UITableViewController
+@end

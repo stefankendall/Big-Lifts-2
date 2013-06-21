@@ -14,6 +14,8 @@
 
 - (id)first;
 
+- (id)last;
+
 - (id)find:(NSString *)name value:(id)value;
 
 - (NSArray *)findAll;
