@@ -8,5 +8,6 @@
 }
 
 @property(nonatomic, strong) SSWorkoutDataSource <UITableViewDataSource> *workoutDataSource;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *variantButton;
 
 @end

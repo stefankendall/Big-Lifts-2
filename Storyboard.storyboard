@@ -785,7 +785,7 @@
         <!--Navigation Controller-->
         <scene sceneID="KvW-7R-OEc">
             <objects>
-                <navigationController storyboardIdentifier="ssPlanWorkouts" definesPresentationContext="YES" id="qgr-QE-Yfz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ssPlanWorkoutsNav" definesPresentationContext="YES" id="qgr-QE-Yfz" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dpo-1G-cto">
                         <autoresizingMask key="autoresizingMask"/>
@@ -801,7 +801,7 @@
         <!--Plan Workouts View Controller - Plan Workouts-->
         <scene sceneID="otn-8j-QgC">
             <objects>
-                <viewController id="OAS-Xf-qwu" customClass="SSPlanWorkoutsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ssPlanWorkouts" id="OAS-Xf-qwu" customClass="SSPlanWorkoutsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PED-fm-iIB">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -864,6 +864,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="variantButton" destination="ALi-BS-Nwk" id="hJH-mT-jnl"/>
                         <outlet property="workoutTableView" destination="RAC-Pl-TPc" id="A7G-n0-Cbp"/>
                     </connections>
                 </viewController>
@@ -1497,6 +1498,7 @@
         <class className="SSPlanWorkoutsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="variantButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="workoutTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -1526,6 +1528,12 @@
         </class>
         <class className="TPKeyboardAvoidingTableView" superclassName="UITableView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingTableView.h"/>
+        </class>
+        <class className="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
