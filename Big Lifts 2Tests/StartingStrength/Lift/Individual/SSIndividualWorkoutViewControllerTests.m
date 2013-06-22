@@ -8,35 +8,39 @@
 #import "SSWorkout.h"
 #import "SSLiftStore.h"
 #import "SSLift.h"
+#import "SenTestCase+ControllerTestAdditions.h"
+#import "SSStateStore.h"
+#import "SSState.h"
+
+@interface SSIndividualWorkoutViewControllerTests ()
+@property(nonatomic, strong) SSIndividualWorkoutViewController *controller;
+@end
 
 @implementation SSIndividualWorkoutViewControllerTests
-@synthesize controller;
 
 - (void)setUp {
     [super setUp];
-
-    controller = [SSIndividualWorkoutViewController new];
-    [controller viewDidLoad];
+    self.controller = [self getControllerByStoryboardIdentifier:@"ssIndividualWorkout"];
 }
 
 - (void)testTappingNextMovesWorkoutForward {
-    [controller nextButtonTapped:nil];
-    STAssertEquals([controller workoutIndex], 1, @"");
-    STAssertEquals([[controller individualWorkoutDataSource] workoutIndex], 1, @"");
+    [self.controller nextButtonTapped:nil];
+    STAssertEquals([self.controller workoutIndex], 1, @"");
+    STAssertEquals([[self.controller individualWorkoutDataSource] workoutIndex], 1, @"");
 }
 
 - (void)testLastWorkoutPageHasSaveButton {
-    controller.ssWorkout = [[SSWorkoutStore instance] first];
+    self.controller.ssWorkout = [[SSWorkoutStore instance] first];
 
-    [controller nextButtonTapped:nil];
-    [controller nextButtonTapped:nil];
-    NSString *title = [[[controller navigationItem] rightBarButtonItem] title];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
+    NSString *title = [[[self.controller navigationItem] rightBarButtonItem] title];
     STAssertTrue([title isEqualToString:@"Done"], title);
 }
 
 - (void)testTappingDoneButtonLogsWorkout {
-    controller.ssWorkout = [[SSWorkoutStore instance] first];
-    [controller doneButtonTapped:nil];
+    self.controller.ssWorkout = [[SSWorkoutStore instance] first];
+    [self.controller doneButtonTapped:nil];
 
     WorkoutLogStore *logStore = [WorkoutLogStore instance];
     WorkoutLog *workoutLog = [logStore first];
@@ -54,12 +58,19 @@
 }
 
 - (void)testTappingDoneButtonIncrementsWeights {
-    controller.ssWorkout = [[SSWorkoutStore instance] first];
+    self.controller.ssWorkout = [[SSWorkoutStore instance] first];
 
     SSLift *squat = [[SSLiftStore instance] find:@"name" value:@"Squat"];
-    squat.weight = [NSNumber numberWithFloat:200.0];
-    [controller doneButtonTapped:nil];
-    STAssertEquals([squat.weight doubleValue], 210.0, @"");
+    squat.weight = [NSDecimalNumber decimalNumberWithString:@"200"];
+    [self.controller doneButtonTapped:nil];
+    STAssertEquals([squat.weight intValue], 210, @"");
+}
+
+- (void)testTappingDoneButtonSetsState {
+    self.controller.ssWorkout = [[SSWorkoutStore instance] first];
+    [self.controller doneButtonTapped:nil];
+    SSState *state = [[SSStateStore instance] first];
+    STAssertEquals(state.lastWorkout, self.controller.ssWorkout, @"");
 }
 
 @end

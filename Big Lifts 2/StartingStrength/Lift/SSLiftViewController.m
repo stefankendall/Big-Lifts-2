@@ -3,17 +3,29 @@
 #import "SSWorkoutStore.h"
 #import "SSWorkout.h"
 #import "SSIndividualWorkoutViewController.h"
+#import "SSState.h"
+#import "SSStateStore.h"
 
 @implementation SSLiftViewController
-
-@synthesize ssLiftSummaryDataSource, workoutSummaryTable, ssWorkout;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    ssWorkout = [[SSWorkoutStore instance] first];
-    ssLiftSummaryDataSource = [[SSLiftSummaryDataSource alloc] initWithSsWorkout:ssWorkout];
-    [workoutSummaryTable setDataSource:ssLiftSummaryDataSource];
+    self.ssWorkout = [[SSWorkoutStore instance] first];
+    self.ssLiftSummaryDataSource = [[SSLiftSummaryDataSource alloc] initWithSsWorkout:self.ssWorkout];
+    [self.workoutSummaryTable setDataSource:self.ssLiftSummaryDataSource];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self switchToAppropriateWorkout];
+    [self.workoutSummaryTable reloadData];
+}
+
+- (void)switchToAppropriateWorkout {
+    SSState *state = [[SSStateStore instance] first];
+    BOOL aWorkout = [state.lastWorkout.name isEqualToString:@"A"];
+    [self.workoutSelector setSelectedSegmentIndex:aWorkout ? 1 : 0];
+    [self workoutValueChanged:self.workoutSelector];
 }
 
 - (IBAction)workoutValueChanged:(id)sender {
@@ -23,15 +35,15 @@
 
 - (void)switchWorkoutToIndex:(int)index {
     SSWorkout *newSsWorkout = [[SSWorkoutStore instance] atIndex:index];
-    ssWorkout = newSsWorkout;
-    [ssLiftSummaryDataSource setSsWorkout:newSsWorkout];
-    [workoutSummaryTable reloadData];
+    self.ssWorkout = newSsWorkout;
+    [self.ssLiftSummaryDataSource setSsWorkout:newSsWorkout];
+    [self.workoutSummaryTable reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"ssSummaryNextSegue"]){
-        SSIndividualWorkoutViewController *controller = (SSIndividualWorkoutViewController *)segue.destinationViewController;
-        controller.ssWorkout = ssWorkout;
+    if ([segue.identifier isEqualToString:@"ssSummaryNextSegue"]) {
+        SSIndividualWorkoutViewController *controller = (SSIndividualWorkoutViewController *) segue.destinationViewController;
+        controller.ssWorkout = self.ssWorkout;
     }
 }
 

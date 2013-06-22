@@ -8,6 +8,8 @@
 #import "Set.h"
 #import "SetLogStore.h"
 #import "SSWorkoutStore.h"
+#import "SSStateStore.h"
+#import "SSState.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -45,10 +47,19 @@
 
 - (void)doneButtonTapped:(id)o {
     [self logWorkout];
-    [[SSWorkoutStore instance] incrementWeights: self.ssWorkout];
+    [self saveState];
+    [[SSWorkoutStore instance] incrementWeights:self.ssWorkout];
     UIViewController *controller = [[self navigationController] viewControllers][0];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [controller.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssTrackViewController"]];
+}
+
+- (void)saveState {
+    SSState *state = [[SSStateStore instance] first];
+    if (!state) {
+        state = [[SSStateStore instance] create];
+    }
+    state.lastWorkout = self.ssWorkout;
 }
 
 - (void)logWorkout {

@@ -4,6 +4,4 @@
 @class SSIndividualWorkoutViewController;
 
 @interface SSIndividualWorkoutViewControllerTests : BLTestCase
-
-@property(nonatomic, strong) SSIndividualWorkoutViewController *controller;
 @end

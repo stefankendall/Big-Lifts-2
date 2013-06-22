@@ -5,6 +5,7 @@
 
 @interface SSLiftViewController : UIViewController {
 }
+@property (weak, nonatomic) IBOutlet UISegmentedControl *workoutSelector;
 @property(weak, nonatomic) IBOutlet UITableView *workoutSummaryTable;
 @property(nonatomic, strong) SSWorkout *ssWorkout;
 @property(nonatomic, retain) SSLiftSummaryDataSource <UITableViewDataSource> *ssLiftSummaryDataSource;

@@ -31,6 +31,9 @@
         <attribute name="order" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
+    <entity name="SSState" representedClassName="SSState" syncable="YES">
+        <relationship name="lastWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SSWorkout" syncable="YES"/>
+    </entity>
     <entity name="SSVariant" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -55,9 +58,10 @@
         <element name="SetLog" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Settings" positionX="0" positionY="0" width="0" height="0"/>
         <element name="SSLift" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SSState" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SSVariant" positionX="0" positionY="0" width="0" height="0"/>
         <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="SSVariant" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

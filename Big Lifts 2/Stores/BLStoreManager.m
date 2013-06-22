@@ -10,6 +10,7 @@
 #import "BarStore.h"
 #import "SetLogStore.h"
 #import "SSVariantStore.h"
+#import "SSStateStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
@@ -31,6 +32,7 @@
             [WorkoutStore instance],
             [WorkoutLogStore instance],
             [SetStore instance],
+            [SSStateStore instance],
             [SSLiftStore instance],
             [SSVariantStore instance],
             [SSWorkoutStore instance],
