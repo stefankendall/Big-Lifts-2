@@ -1,9 +1,11 @@
+#import <ViewDeck/IIViewDeckController.h>
 #import "ProgramSelectorViewController.h"
 #import "SettingsStore.h"
 #import "Settings.h"
 #import "CurrentProgramStore.h"
 #import "CurrentProgram.h"
 #import "NSDictionaryMutator.h"
+#import "BLViewDeckController.h"
 
 @implementation ProgramSelectorViewController {
 }
@@ -46,6 +48,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    BLViewDeckController *destination = [segue destinationViewController];
+    if ([[CurrentProgramStore instance] first] == nil) {
+        [destination firstTimeInApp];
+    }
+
     [self rememberSelectedProgram:[segue identifier]];
 }
 

@@ -58,6 +58,7 @@
 		545904C942ECD2BAD3E7E74D /* SSLiftFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590424170FDCB8172DD689 /* SSLiftFormCell.xib */; };
 		545904DF83AC797D13FFC879 /* WorkoutLogTableDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590EFAE5F34E16F3DB352A /* WorkoutLogTableDataSourceTests.m */; };
 		545904E49A25EBA6E80991A9 /* BarCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590563108FF29D8B6383A6 /* BarCalculatorTests.m */; };
+		5459051B98394707AC1F89F6 /* BLViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A246ED0F76535710297 /* BLViewDeckController.m */; };
 		54590542FE71C003FE7C6883 /* SSLiftStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459093375C7AA2AC134E9FD /* SSLiftStore.m */; };
 		5459054D344D3E784B584BCF /* 172-pricetag.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590526735E78D9EF6F22F0 /* 172-pricetag.png */; };
 		545905527F5502367565C568 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */; };
@@ -290,6 +291,7 @@
 		5459066B17EC7FBFB209971B /* ProgramSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramSelectorViewController.m; sourceTree = "<group>"; };
 		5459067346E18BC1C12FE7C1 /* SSLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftStore.h; sourceTree = "<group>"; };
 		545906BF135598EDF318FD98 /* SetLogCombinerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLogCombinerTests.m; sourceTree = "<group>"; };
+		545906C0B00B7D1FCC367D93 /* BLViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLViewDeckController.h; sourceTree = "<group>"; };
 		545906D47B153813B64C62D5 /* SettingsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsStore.h; sourceTree = "<group>"; };
 		545906D7FAC23FAEFE5CE092 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		545906DAEDB65800B9C6519B /* SettingsStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsStoreTests.h; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 		54590A01ECE20D767C3B0F3F /* BarLoadingDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarLoadingDataSource.m; sourceTree = "<group>"; };
 		54590A09F835E09940645C2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		54590A2090BE2CB988B38C72 /* SSLiftFormDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftFormDataSourceTests.m; sourceTree = "<group>"; };
+		54590A246ED0F76535710297 /* BLViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLViewDeckController.m; sourceTree = "<group>"; };
 		54590A35D1367F68985D66BF /* BarCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCalculator.h; sourceTree = "<group>"; };
 		54590A3A08FD6676DC5055AD /* SKProductFake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductFake.h; sourceTree = "<group>"; };
 		54590A3F41CA62283F2FC9E1 /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench@2x.png"; sourceTree = "<group>"; };
@@ -842,6 +845,8 @@
 				54590C3A805A05ED40DA7692 /* StoreViewController.h */,
 				54590E8A1AABC89102B1E917 /* UIViewController+ViewDeckAdditions.m */,
 				54590E9DB37DC316C56C6363 /* UIViewController+ViewDeckAdditions.h */,
+				54590A246ED0F76535710297 /* BLViewDeckController.m */,
+				545906C0B00B7D1FCC367D93 /* BLViewDeckController.h */,
 			);
 			path = AllPrograms;
 			sourceTree = "<group>";
@@ -1448,6 +1453,7 @@
 				545901AF99B46C5EA6F6BCBA /* SSWorkoutVariantController.m in Sources */,
 				545907A9D9ADA248775F243C /* SSVariant.m in Sources */,
 				545905FFBBD51D0F05B30384 /* SSVariantStore.m in Sources */,
+				5459051B98394707AC1F89F6 /* BLViewDeckController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

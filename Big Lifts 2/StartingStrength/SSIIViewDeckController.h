@@ -1,4 +1,5 @@
 #import "IIViewDeckController.h"
+#import "BLViewDeckController.h"
 
-@interface SSIIViewDeckController : IIViewDeckController
+@interface SSIIViewDeckController : BLViewDeckController
 @end
