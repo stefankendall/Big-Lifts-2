@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.variantMapping = @{@0 : @"Standard", @1 : @"Novice"};
+    self.variantMapping = @{@0 : @"Standard", @1 : @"Novice", @2 : @"Onus-Wunsler"};
     [self checkSelectedVariant];
 }
 

@@ -49,12 +49,17 @@
     STAssertEquals([squat.weight doubleValue], 210.0, @"");
 }
 
-- (void)testCanSwitchToNovice {
-    [[SSWorkoutStore instance] setupVariant: @"Novice"];
+- (void)testSwitchToNovice {
+    [[SSWorkoutStore instance] setupVariant:@"Novice"];
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] last];
     Workout *workout = ssWorkout.workouts[2];
     Set *firstSet = workout.sets[0];
     STAssertEqualObjects(firstSet.lift.name, @"Deadlift", @"");
+}
+
+- (void)testSwitchToOnusWunsler {
+    [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
+    STAssertEquals([[SSWorkoutStore instance] count], @3, @"");
 }
 
 @end
