@@ -81,8 +81,6 @@
 - (BOOL)sectionShouldBeVisible:(int)section {
     NSDictionary *sectionMapping = @{@"StartingStrength" : @1, @"5/3/1" : @2};
     CurrentProgram *program = [[CurrentProgramStore instance] first];
-    NSLog(@"%@", program);
-    NSLog(@"%@", sectionMapping[program.name]);
     return section == 0 || section == [sectionMapping[program.name] intValue];
 }
 
