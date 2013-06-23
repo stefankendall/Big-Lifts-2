@@ -10,6 +10,8 @@
 #import "SSWorkoutStore.h"
 #import "SSStateStore.h"
 #import "SSState.h"
+#import "SSVariantStore.h"
+#import "SSVariant.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -32,7 +34,6 @@
     return [cell bounds].size.height;
 }
 
-
 - (IBAction)nextButtonTapped:(id)sender {
     self.workoutIndex++;
 
@@ -48,10 +49,19 @@
 - (void)doneButtonTapped:(id)o {
     [self logWorkout];
     [self saveState];
+    [self adjustAlternation];
     [[SSWorkoutStore instance] incrementWeights:self.ssWorkout];
     UIViewController *controller = [[self navigationController] viewControllers][0];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [controller.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssTrackViewController"]];
+}
+
+- (void)adjustAlternation {
+    SSVariant *variant = [[SSVariantStore instance] first];
+    if ([variant.name isEqualToString:@"Onus-Wunsler"] && [self.ssWorkout.name isEqualToString:@"A"]) {
+        SSState *state = [[SSStateStore instance] first];
+        state.workoutAAlternation = [state.workoutAAlternation intValue] == 0 ? @1 : @0;
+    }
 }
 
 - (void)saveState {

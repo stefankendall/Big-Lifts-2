@@ -8,6 +8,8 @@
 #import "Workout.h"
 #import "SetStore.h"
 #import "WorkoutStore.h"
+#import "SSVariantStore.h"
+#import "SSVariant.h"
 
 @implementation SSWorkoutStore
 
@@ -18,6 +20,9 @@
 }
 
 - (void)setupVariant:(NSString *)variant {
+    SSVariant *variantObj = [[SSVariantStore instance] first];
+    variantObj.name = variant;
+
     [self empty];
 
     SSWorkout *workoutA = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0 withAlternation: 0];

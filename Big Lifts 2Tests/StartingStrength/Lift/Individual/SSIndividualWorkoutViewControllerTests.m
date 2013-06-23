@@ -73,4 +73,27 @@
     STAssertEquals(state.lastWorkout, self.controller.ssWorkout, @"");
 }
 
+- (void)testChangesWorkoutAAlternationOnAWeeksForOnus {
+    [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
+    self.controller.ssWorkout = [[SSWorkoutStore instance] first];
+    [self.controller doneButtonTapped:nil];
+    SSState *state = [[SSStateStore instance] first];
+    STAssertEqualObjects(state.workoutAAlternation, @1, @"");
+}
+
+- (void)testDoesNotChangeWorkoutAAlternationOnBWeeksForOnus {
+    [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
+    self.controller.ssWorkout = [[SSWorkoutStore instance] find:@"name" value:@"B"];
+    [self.controller doneButtonTapped:nil];
+    SSState *state = [[SSStateStore instance] first];
+    STAssertEqualObjects(state.workoutAAlternation, @0, @"");
+}
+
+- (void)testDoesNotChangeWorkoutAAlternationForNonOnus {
+    self.controller.ssWorkout = [[SSWorkoutStore instance] first];
+    [self.controller doneButtonTapped:nil];
+    SSState *state = [[SSStateStore instance] first];
+    STAssertEqualObjects([state workoutAAlternation], @0, @"");
+}
+
 @end

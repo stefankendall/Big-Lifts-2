@@ -1,4 +1,3 @@
-@class SSWorkoutDataSource;
 @class SSIndividualWorkoutDataSource;
 @class SSWorkout;
 

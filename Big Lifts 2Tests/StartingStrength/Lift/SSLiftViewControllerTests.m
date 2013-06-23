@@ -22,7 +22,7 @@
 
 - (void)testSetsAppropriateWorkoutBasedOnLastWorkout {
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
-    SSState *state = [[SSStateStore instance] create];
+    SSState *state = [[SSStateStore instance] first];
     state.lastWorkout = [[SSWorkoutStore instance] first];
 
     [controller viewWillAppear:YES];

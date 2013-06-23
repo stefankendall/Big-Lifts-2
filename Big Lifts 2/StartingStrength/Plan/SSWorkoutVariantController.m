@@ -14,8 +14,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
     [[SSWorkoutStore instance] setupVariant:variantName];
-    SSVariant *variant = [[SSVariantStore instance] first];
-    variant.name = variantName;
 
     [self checkSelectedVariant];
 }

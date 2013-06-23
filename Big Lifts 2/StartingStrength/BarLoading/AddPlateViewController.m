@@ -31,12 +31,9 @@
 }
 
 - (IBAction)saveTapped:(id)button {
-    double weight = [[self.weightTextField text] doubleValue];
-    int count = [[self.countTextField text] intValue];
-    NSLog(@"%@", [NSNumber numberWithInt:count]);
     Plate *p = [[PlateStore instance] create];
-    p.weight = [NSNumber numberWithDouble:weight];
-    p.count = [NSNumber numberWithInt:count];
+    p.weight = [NSDecimalNumber decimalNumberWithString:[self.weightTextField text]];
+    p.count = [NSNumber numberWithInt:[[self.countTextField text] intValue]];
 
     [self.navigationController popViewControllerAnimated:YES];
 }
