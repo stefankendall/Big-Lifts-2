@@ -24,7 +24,18 @@
     product.price = [[NSDecimalNumber alloc] initWithString:@"1.99"];
     product.priceLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     STAssertEqualObjects([controller priceOf:product], @"$1.99", @"");
+}
 
+- (void)testPurchaseIdForButtonBarLoading {
+    StoreViewController *controller = [self getControllerByStoryboardIdentifier:@"storeViewController"];
+    NSString *purchaseId = [controller purchaseIdForButton:controller.barLoadingBuyButton];
+    STAssertEqualObjects(purchaseId, @"barLoading", @"");
+}
+
+- (void)testPurchaseIdForButtonOnus {
+    StoreViewController *controller = [self getControllerByStoryboardIdentifier:@"storeViewController"];
+    NSString *purchaseId = [controller purchaseIdForButton:controller.onusWunslerBuyButton];
+    STAssertEqualObjects(purchaseId, @"ssOnusWunsler", @"");
 }
 
 @end

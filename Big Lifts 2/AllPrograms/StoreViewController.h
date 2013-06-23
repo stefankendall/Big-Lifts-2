@@ -6,8 +6,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *barLoadingBuyButton;
 @property (weak, nonatomic) IBOutlet UIButton *barLoadingPurchasedButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *onusWunslerBuyButton;
+@property (weak, nonatomic) IBOutlet UIButton *onusWunslerPurchasedButton;
+
 - (NSString *)priceOf:(SKProduct *)product;
 
-- (IBAction)buyBarLoadingButtonTapped:(id)sender;
+- (IBAction)buyButtonTapped:(id)sender;
 
+- (NSString *)purchaseIdForButton:(id)sender;
 @end
