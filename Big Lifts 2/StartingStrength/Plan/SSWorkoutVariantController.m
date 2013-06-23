@@ -3,19 +3,36 @@
 #import "NSDictionaryMutator.h"
 #import "SSVariantStore.h"
 #import "SSVariant.h"
+#import "IAPAdapter.h"
 
 @interface SSWorkoutVariantController ()
 
+@property(nonatomic, strong) UIView *onusOverlay;
 @property(nonatomic, strong) NSDictionary *variantMapping;
 @end
 
 @implementation SSWorkoutVariantController
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (!([[IAPAdapter instance] hasPurchased:@"ssOnusWunsler"])) {
+        [self disableOnusWunsler];
+    }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
     [[SSWorkoutStore instance] setupVariant:variantName];
 
     [self checkSelectedVariant];
+}
+
+- (void)disableOnusWunsler {
+    if (![self.onusWunslerCell viewWithTag:10]) {
+        self.onusOverlay = [[NSBundle mainBundle] loadNibNamed:@"CellPurchaseOverlay" owner:self options:nil][0];
+        CGRect frame = CGRectMake(0, 0, [self.onusWunslerCell frame].size.width, [self.onusWunslerCell frame].size.height);
+        [self.onusOverlay setFrame:frame];
+        [self.onusWunslerCell addSubview:self.onusOverlay];
+    }
 }
 
 - (void)viewDidLoad {
