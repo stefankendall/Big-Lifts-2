@@ -1,6 +1,8 @@
 #import <MRCEnumerable/NSDictionary+Enumerable.h>
 #import "StoreViewController.h"
 #import "SKProductStore.h"
+#import "CurrentProgramStore.h"
+#import "CurrentProgram.h"
 
 @interface StoreViewController ()
 
@@ -49,6 +51,41 @@
     [self hideShowBuyButtons];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if ([self sectionShouldBeVisible:section]) {
+        return [super tableView:tableView numberOfRowsInSection:section];
+    }
+    else {
+        return 0;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if ([self sectionShouldBeVisible:section]) {
+        return [super tableView:tableView viewForHeaderInSection:section];
+    }
+    else {
+        return [self emptyView];
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([self sectionShouldBeVisible:section]) {
+        return [super tableView:tableView heightForHeaderInSection:section];
+    }
+    else {
+        return 0;
+    }
+}
+
+- (BOOL)sectionShouldBeVisible:(int)section {
+    NSDictionary *sectionMapping = @{@"StartingStrength" : @1, @"5/3/1" : @2};
+    CurrentProgram *program = [[CurrentProgramStore instance] first];
+    NSLog(@"%@", program);
+    NSLog(@"%@", sectionMapping[program.name]);
+    return section == 0 || section == [sectionMapping[program.name] intValue];
+}
+
 - (void)hideShowBuyButtons {
     [self.purchaseIdToStoreInfo each:^(NSString *purchaseId, NSDictionary *purchaseInfo) {
         BOOL barLoadingPurchased = [[IAPAdapter instance] hasPurchased:purchaseId];
@@ -93,4 +130,5 @@
     [thanks performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
     [self hideShowBuyButtons];
 }
+
 @end

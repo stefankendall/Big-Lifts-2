@@ -2,6 +2,8 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "StoreViewController.h"
 #import "SKProductFake.h"
+#import "CurrentProgramStore.h"
+#import "CurrentProgram.h"
 
 @implementation StoreViewControllerTests
 
@@ -36,6 +38,24 @@
     StoreViewController *controller = [self getControllerByStoryboardIdentifier:@"storeViewController"];
     NSString *purchaseId = [controller purchaseIdForButton:controller.onusWunslerBuyButton];
     STAssertEqualObjects(purchaseId, @"ssOnusWunsler", @"");
+}
+
+- (void) testSectionShouldBeVisibleStartingStrength {
+    CurrentProgram *program = [[CurrentProgramStore instance] create];
+    program.name = @"StartingStrength";
+    StoreViewController *controller = [self getControllerByStoryboardIdentifier:@"storeViewController"];
+    STAssertTrue([controller sectionShouldBeVisible: 0], @"");
+    STAssertTrue([controller sectionShouldBeVisible: 1], @"");
+    STAssertFalse([controller sectionShouldBeVisible: 2], @"");
+}
+
+- (void) testSectionShouldBeVisible531 {
+    CurrentProgram *program = [[CurrentProgramStore instance] create];
+    program.name = @"5/3/1";
+    StoreViewController *controller = [self getControllerByStoryboardIdentifier:@"storeViewController"];
+    STAssertTrue([controller sectionShouldBeVisible: 0], @"");
+    STAssertFalse([controller sectionShouldBeVisible: 1], @"");
+    STAssertTrue([controller sectionShouldBeVisible: 2], @"");
 }
 
 @end
