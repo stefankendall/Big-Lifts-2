@@ -82,6 +82,11 @@
     return [self executeRequest:request];
 }
 
+- (NSArray *)findAllWhere:(NSString *)name value:(NSString *)value {
+    NSArray *all = [self findAll];
+    return [all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@", name, value]];
+}
+
 - (NSArray *)findAllWithSort:(NSSortDescriptor *)sortDescriptor {
     NSFetchRequest *request = [self getRequest];
     [request setSortDescriptors:@[sortDescriptor]];

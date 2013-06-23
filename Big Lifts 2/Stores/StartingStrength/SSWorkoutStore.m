@@ -20,8 +20,8 @@
 - (void)setupVariant:(NSString *)variant {
     [self empty];
 
-    SSWorkout *workoutA = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0];
-    SSWorkout *workoutB = [[SSWorkoutStore instance] createWithName:@"B" withOrder:1];
+    SSWorkout *workoutA = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0 withAlternation: 0];
+    SSWorkout *workoutB = [[SSWorkoutStore instance] createWithName:@"B" withOrder:1 withAlternation:0];
 
     if ([variant isEqualToString:@"Standard"]) {
         [self restrictLiftsTo:@[@"Press", @"Bench", @"Power Clean", @"Deadlift", @"Squat"]];
@@ -35,7 +35,7 @@
     } else if ([variant isEqualToString:@"Onus-Wunsler"]) {
         [self restrictLiftsTo:@[@"Press", @"Bench", @"Power Clean", @"Deadlift", @"Squat", @"Back Extension"]];
         [self setupNoviceB:workoutA];
-        SSWorkout *workoutA2 = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.5];
+        SSWorkout *workoutA2 = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.5 withAlternation:1];
         [self setupStandardB:workoutA2];
 
         [self setupOnusWunslerB:workoutB];
@@ -125,10 +125,11 @@
     }
 }
 
-- (SSWorkout *)createWithName:(NSString *)name withOrder:(double)order {
+- (SSWorkout *)createWithName:(NSString *)name withOrder:(double)order withAlternation:(int)alternation {
     SSWorkout *workout = [self create];
     workout.name = name;
     workout.order = [NSNumber numberWithDouble:order];
+    workout.alternation = [NSNumber numberWithInt:alternation];
     return workout;
 }
 

@@ -11,8 +11,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.ssWorkout = [[SSWorkoutStore instance] first];
-    self.ssLiftSummaryDataSource = [[SSLiftSummaryDataSource alloc] initWithSsWorkout:self.ssWorkout];
+    self.ssLiftSummaryDataSource = [[SSLiftSummaryDataSource alloc] initWithSsWorkout:nil];
     [self.workoutSummaryTable setDataSource:self.ssLiftSummaryDataSource];
 }
 
@@ -34,7 +33,15 @@
 }
 
 - (void)switchWorkoutToIndex:(int)index {
-    SSWorkout *newSsWorkout = [[SSWorkoutStore instance] atIndex:index];
+    NSString *name = index == 0 ? @"A" : @"B";
+    NSArray *ssWorkouts = [[SSWorkoutStore instance] findAllWhere:@"name" value:name];
+
+    SSWorkout *newSsWorkout = ssWorkouts[0];
+    if ([name isEqualToString:@"A"]) {
+        SSState *state = [[SSStateStore instance] first];
+        newSsWorkout = ssWorkouts[(NSUInteger) [state.workoutAAlternation intValue]];
+    }
+
     self.ssWorkout = newSsWorkout;
     [self.ssLiftSummaryDataSource setSsWorkout:newSsWorkout];
     [self.workoutSummaryTable reloadData];

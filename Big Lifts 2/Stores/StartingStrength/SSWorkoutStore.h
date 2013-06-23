@@ -10,5 +10,5 @@
 
 - (void)incrementWeights:(SSWorkout *)workout;
 
-- (SSWorkout *)createWithName:(NSString *)string withOrder:(double)order;
+- (SSWorkout *)createWithName:(NSString *)string withOrder:(double)order withAlternation:(int)alternation;
 @end

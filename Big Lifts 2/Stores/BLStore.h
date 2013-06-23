@@ -22,6 +22,8 @@
 
 - (NSArray *)findAll;
 
+- (NSArray *)findAllWhere:(NSString *)name value:(NSString *)value;
+
 - (NSArray *)findAllWithSort:(NSSortDescriptor *)sortDescriptor;
 
 - (id)findBy:(NSPredicate *)predicate;
