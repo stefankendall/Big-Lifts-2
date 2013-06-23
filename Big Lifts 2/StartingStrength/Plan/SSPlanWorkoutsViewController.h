@@ -6,5 +6,4 @@
 @interface SSPlanWorkoutsViewController : UITableViewController
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *variantButton;
 
-- (SSWorkout *)getWorkoutForSection:(int)section;
 @end

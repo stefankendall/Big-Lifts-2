@@ -7,6 +7,7 @@
 #import "SSWorkout.h"
 #import "Set.h"
 #import "Lift.h"
+#import "SSWorkoutStore.h"
 
 @interface SSPlanWorkoutsViewControllerTests ()
 
@@ -33,8 +34,8 @@
 
 - (void)testMoveRowAtIndexPathSwapsLiftOrder {
     [self.controller tableView:nil moveRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] toIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    Workout *workout1 = [[self.controller getWorkoutForSection:0] workouts][0];
-    Workout *workout2 = [[self.controller getWorkoutForSection:0] workouts][1];
+    Workout *workout1 = [[[SSWorkoutStore instance] atIndex:0] workouts][0];
+    Workout *workout2 = [[[SSWorkoutStore instance] atIndex:0] workouts][1];
 
     NSString *firstSetLiftName1 = ((Set *) workout1.sets[0]).lift.name;
     STAssertTrue([firstSetLiftName1 isEqualToString:@"Bench"], @"");

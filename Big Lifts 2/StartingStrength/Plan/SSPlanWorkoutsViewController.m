@@ -21,7 +21,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[self getWorkoutForSection:0] workouts] count];
+    return [[[[SSWorkoutStore instance] atIndex:section] workouts] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -31,7 +31,8 @@
         [[cell textLabel] setAdjustsFontSizeToFitWidth:YES];
     }
 
-    SSWorkout *workout = [self getWorkoutForSection:[indexPath section]];
+    int section = [indexPath section];
+    SSWorkout *workout = [[SSWorkoutStore instance] atIndex:section];
     Workout *firstWorkout = workout.workouts[(NSUInteger) [indexPath row]];
     Set *firstSet = firstWorkout.sets[0];
     SSLift *lift = (SSLift *) firstSet.lift;
@@ -43,11 +44,12 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return [[SSWorkoutStore instance] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"Workout %@", section == 0 ? @"A" : @"B"];
+    SSWorkout *workout = [[SSWorkoutStore instance] atIndex:section];
+    return workout.name;
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
@@ -66,12 +68,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
         return;
     }
 
-    SSWorkout *workout = [self getWorkoutForSection:[sourceIndexPath section]];
+    int section = [sourceIndexPath section];
+    SSWorkout *workout = [[SSWorkoutStore instance] atIndex:section];
     [workout.workouts exchangeObjectAtIndex:(NSUInteger) [sourceIndexPath row] withObjectAtIndex:(NSUInteger) [destinationIndexPath row]];
-}
-
-- (SSWorkout *)getWorkoutForSection:(int)section {
-    return [[SSWorkoutStore instance] findBy:[NSPredicate predicateWithFormat:@"name == %@", section == 0 ? @"A" : @"B"]];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
