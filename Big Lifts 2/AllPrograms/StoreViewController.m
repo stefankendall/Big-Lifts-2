@@ -95,16 +95,11 @@
 
 - (IBAction)buyButtonTapped:(id)sender {
     NSString *purchaseId = [self purchaseIdForButton:sender];
-#if (TARGET_IPHONE_SIMULATOR)
-    [[IAPAdapter instance] addPurchase: purchaseId];
-    [self successfulPurchase: purchaseId];
-    #else
     [[IAPAdapter instance] purchaseProductForId:purchaseId completion:^(NSObject *_) {
         [self successfulPurchase:purchaseId];
     }                                     error:^(NSError *err) {
         [self erroredPurchase:err];
     }];
-#endif
 }
 
 - (NSString *)purchaseIdForButton:(id)sender {
