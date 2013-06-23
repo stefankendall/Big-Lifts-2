@@ -4,4 +4,7 @@
 {}
 @property (weak, nonatomic) IBOutlet UITableViewCell *onusWunslerCell;
 
+- (void)disableOnusWunsler;
+
+- (void)enableOnusWunsler;
 @end

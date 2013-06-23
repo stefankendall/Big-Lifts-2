@@ -36,7 +36,7 @@
 		5459024E86DEC10F0B6AE2EB /* 16-line-chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5459044A9A11131A0C5AD182 /* 16-line-chart@2x.png */; };
 		5459025D57563728BD701459 /* SSState.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909788EB022CE80023758 /* SSState.m */; };
 		54590275F3D94F5D44BF75C5 /* BLStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FC1E36E2FC55B6FF5D5 /* BLStoreManager.m */; };
-		545902805A73FAB9ED001DC6 /* CellPurchaseOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545907A08979AD35C9572060 /* CellPurchaseOverlay.xib */; };
+		545902805A73FAB9ED001DC6 /* PurchaseOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545907A08979AD35C9572060 /* PurchaseOverlay.xib */; };
 		545902D0AC9008D9FC5B5024 /* PlateStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459088313861DA1F90E0A0D /* PlateStoreTests.m */; };
 		545902DBF4BFDB74EE3B1E44 /* SSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A9BCBEE999725C40F30 /* SSWorkout.m */; };
 		545902EFCD9F9F1EBA65EAD0 /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */; };
@@ -66,8 +66,8 @@
 		545905527F5502367565C568 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */; };
 		545905887766D673CDFB69B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590B18C50119F99FB04420 /* Default@2x.png */; };
 		545905C99B472DFB9E2A8B4A /* AddPlateTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906145C7FF404C953BDCA /* AddPlateTextFieldDelegate.m */; };
-		545905DE48F617467996BA4C /* PurchaseOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590EAE038872DBA05AD7FF /* PurchaseOverlayView.m */; };
 		545905E23A25A8F2505D2029 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
+		545905E48ED0286EE8FFD991 /* PurchaseOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459062296CD9B1159B9B120 /* PurchaseOverlay.m */; };
 		545905FDD563A7F5109A9176 /* SSPlanWorkoutsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E4DE4CBF2258D449F1C /* SSPlanWorkoutsViewController.m */; };
 		545905FF806E417DDD42CE0D /* 157-wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590A3F41CA62283F2FC9E1 /* 157-wrench@2x.png */; };
 		545905FFBBD51D0F05B30384 /* SSVariantStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908CBC1A4A93E06AB0617 /* SSVariantStore.m */; };
@@ -96,7 +96,6 @@
 		54590874722A900F1D5B37E3 /* SSLiftFormDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A2090BE2CB988B38C72 /* SSLiftFormDataSourceTests.m */; };
 		5459087AF5995F43049586B5 /* SSIndividualWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FF2DC351876DE99A6C6 /* SSIndividualWorkoutViewController.m */; };
 		54590888C55360DD92DCA99D /* AddPlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B80A96640D6D01D253F /* AddPlateViewController.m */; };
-		545908C210B3C55485933098 /* PurchaseOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590241F5D40B3218E04DEA /* PurchaseOverlayView.xib */; };
 		545908CB337316F3A00C4B6E /* ProgramSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459066B17EC7FBFB209971B /* ProgramSelectorViewController.m */; };
 		545908CB3D8151BBB8AA5E16 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545901F56B3627441C838476 /* SetCell.xib */; };
 		545908F798D1B9044B4A8739 /* StepperWithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C02B3E3C3166683BBCA /* StepperWithCell.m */; };
@@ -218,7 +217,6 @@
 		54590223F1037883FA2C0F24 /* WorkoutLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutLog.m; sourceTree = "<group>"; };
 		54590238E2A042D513E7818C /* NSDictionaryMutatorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionaryMutatorTests.h; sourceTree = "<group>"; };
 		5459024023A4D2C892087E02 /* UITableViewController+NoEmptyRows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+NoEmptyRows.m"; sourceTree = "<group>"; };
-		54590241F5D40B3218E04DEA /* PurchaseOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseOverlayView.xib; sourceTree = "<group>"; };
 		5459024F37D8C688295EE4FE /* SSLiftFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftFormCell.m; sourceTree = "<group>"; };
 		5459024F4BF760314E7766CC /* SSLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftStoreTests.m; sourceTree = "<group>"; };
 		5459025477474EE1610E36A0 /* SetStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetStore.h; sourceTree = "<group>"; };
@@ -245,6 +243,7 @@
 		5459037AC09063CBA74070E2 /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Set.m; sourceTree = "<group>"; };
 		5459038F4A78E505BF4D5C1F /* NSDictionaryMutator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionaryMutator.h; sourceTree = "<group>"; };
 		5459039F394559FF38C8B911 /* BarWeightTextFieldDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarWeightTextFieldDelegateTests.m; sourceTree = "<group>"; };
+		545903AD28036645AD5F8524 /* PurchaseOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseOverlay.h; sourceTree = "<group>"; };
 		545903C79884ABDA44486148 /* BarStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarStoreTests.h; sourceTree = "<group>"; };
 		545903F7B7D405216A2666DF /* SSVariant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSVariant.m; sourceTree = "<group>"; };
 		54590404B60CF77514E341E5 /* NavTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavTableViewController.m; sourceTree = "<group>"; };
@@ -286,6 +285,7 @@
 		5459060D4D99407BD2138CFD /* ProgramSelectorViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramSelectorViewControllerTests.h; sourceTree = "<group>"; };
 		545906145C7FF404C953BDCA /* AddPlateTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateTextFieldDelegate.m; sourceTree = "<group>"; };
 		5459061D50029E17B4D7F178 /* SSPlanWorkoutsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPlanWorkoutsViewControllerTests.m; sourceTree = "<group>"; };
+		5459062296CD9B1159B9B120 /* PurchaseOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseOverlay.m; sourceTree = "<group>"; };
 		5459062E1FD6E0C38192CC68 /* SKProductFake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProductFake.m; sourceTree = "<group>"; };
 		54590631753DDF33D785CFEC /* BarWeightTextFieldDelegateTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarWeightTextFieldDelegateTests.h; sourceTree = "<group>"; };
 		545906493F709F3E74D0FB26 /* WeightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightTableCell.m; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 		54590796DF59FFF43855D491 /* SetCellWithPlates.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetCellWithPlates.xib; sourceTree = "<group>"; };
 		5459079AC014244BF97203F8 /* SSState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSState.h; sourceTree = "<group>"; };
 		5459079C026C3E3D04E0A8DF /* 89-dumbells@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "89-dumbells@2x.png"; sourceTree = "<group>"; };
-		545907A08979AD35C9572060 /* CellPurchaseOverlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellPurchaseOverlay.xib; sourceTree = "<group>"; };
+		545907A08979AD35C9572060 /* PurchaseOverlay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseOverlay.xib; sourceTree = "<group>"; };
 		545907B5B9167633A1252361 /* BarStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarStore.m; sourceTree = "<group>"; };
 		545907BCC2F2400246302060 /* ProgramSelectorViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramSelectorViewControllerTests.m; sourceTree = "<group>"; };
 		545907E41F6E1ABED1F6CEBE /* BLTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLTestCase.h; sourceTree = "<group>"; };
@@ -379,7 +379,6 @@
 		54590B6697BDE751AAC38E93 /* SKProductStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductStoreTests.h; sourceTree = "<group>"; };
 		54590B76F9823CBA32676BE9 /* SKProductStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductStore.h; sourceTree = "<group>"; };
 		54590B80A96640D6D01D253F /* AddPlateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateViewController.m; sourceTree = "<group>"; };
-		54590B87198D08415E8C1C4D /* PurchaseOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseOverlayView.h; sourceTree = "<group>"; };
 		54590B8A9FE1D5570972037F /* SSLogDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLogDataSource.h; sourceTree = "<group>"; };
 		54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonMenu@2x.png"; sourceTree = "<group>"; };
@@ -431,7 +430,6 @@
 		54590E9DB37DC316C56C6363 /* UIViewController+ViewDeckAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ViewDeckAdditions.h"; sourceTree = "<group>"; };
 		54590EA1850C09016389A994 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		54590EA87512AFEF11C6DC12 /* SSLiftFormDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftFormDataSourceTests.h; sourceTree = "<group>"; };
-		54590EAE038872DBA05AD7FF /* PurchaseOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseOverlayView.m; sourceTree = "<group>"; };
 		54590EB3D52D5DB0ADC33D74 /* Big Lifts 2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Big Lifts 2Tests-Info.plist"; sourceTree = "<group>"; };
 		54590EC196BC63BE61A1F180 /* 213-reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "213-reply.png"; sourceTree = "<group>"; };
 		54590EDA077FDB20F3837A8E /* SSWorkoutStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkoutStore.m; sourceTree = "<group>"; };
@@ -962,7 +960,9 @@
 				5459013E396C6C29D5BB0AED /* SSPlanWorkoutsViewController.h */,
 				54590C1CBA4EC0F7CD1C8C14 /* SSWorkoutVariantController.m */,
 				5459013B0F862FEFB73991DD /* SSWorkoutVariantController.h */,
-				545907A08979AD35C9572060 /* CellPurchaseOverlay.xib */,
+				545907A08979AD35C9572060 /* PurchaseOverlay.xib */,
+				5459062296CD9B1159B9B120 /* PurchaseOverlay.m */,
+				545903AD28036645AD5F8524 /* PurchaseOverlay.h */,
 			);
 			path = Plan;
 			sourceTree = "<group>";
@@ -1002,9 +1002,6 @@
 				545900467A5E6A71EF9873B7 /* Delegates */,
 				54590B80A96640D6D01D253F /* AddPlateViewController.m */,
 				54590FDD6DF6388082665FCE /* AddPlateViewController.h */,
-				54590B87198D08415E8C1C4D /* PurchaseOverlayView.h */,
-				54590EAE038872DBA05AD7FF /* PurchaseOverlayView.m */,
-				54590241F5D40B3218E04DEA /* PurchaseOverlayView.xib */,
 			);
 			path = BarLoading;
 			sourceTree = "<group>";
@@ -1291,10 +1288,9 @@
 				5459054D344D3E784B584BCF /* 172-pricetag.png in Resources */,
 				5459024CC3B28C2810299B84 /* 19-circle-check@2x.png in Resources */,
 				545901F98001B87F562C480D /* 19-circle-check.png in Resources */,
-				545908C210B3C55485933098 /* PurchaseOverlayView.xib in Resources */,
 				545906485E9278FDAB2E0C57 /* 101-gameplan.png in Resources */,
 				545904C8AD044BE0AE3BE297 /* 101-gameplan@2x.png in Resources */,
-				545902805A73FAB9ED001DC6 /* CellPurchaseOverlay.xib in Resources */,
+				545902805A73FAB9ED001DC6 /* PurchaseOverlay.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1457,7 +1453,6 @@
 				5459094625A48C01772CFF55 /* StoreViewController.m in Sources */,
 				54590F1F0DB9BCC3B9A49FB4 /* UIViewController+ViewDeckAdditions.m in Sources */,
 				5459062C5EC1B83AAEB32121 /* IAPAdapter.m in Sources */,
-				545905DE48F617467996BA4C /* PurchaseOverlayView.m in Sources */,
 				54590EE1F76C8A7C048300C5 /* SKProductFake.m in Sources */,
 				5459099FA669850AB13D07E2 /* SKProductStore.m in Sources */,
 				545906DDB927E241B5F8F0F5 /* UITableViewController+NoEmptyRows.m in Sources */,
@@ -1470,6 +1465,7 @@
 				5459051B98394707AC1F89F6 /* BLViewDeckController.m in Sources */,
 				5459025D57563728BD701459 /* SSState.m in Sources */,
 				54590A6F6D5BE0051A5F368A /* SSStateStore.m in Sources */,
+				545905E48ED0286EE8FFD991 /* PurchaseOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,9 +1,11 @@
+#import <ViewDeck/IIViewDeckController.h>
 #import "SSWorkoutVariantController.h"
 #import "SSWorkoutStore.h"
 #import "NSDictionaryMutator.h"
 #import "SSVariantStore.h"
 #import "SSVariant.h"
 #import "IAPAdapter.h"
+#import "PurchaseOverlay.h"
 
 @interface SSWorkoutVariantController ()
 
@@ -17,21 +19,39 @@
     if (!([[IAPAdapter instance] hasPurchased:@"ssOnusWunsler"])) {
         [self disableOnusWunsler];
     }
+    else {
+        [self enableOnusWunsler];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
-    [[SSWorkoutStore instance] setupVariant:variantName];
+    if ([tableView cellForRowAtIndexPath:indexPath] == self.onusWunslerCell && self.onusOverlay) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"purchasesController"]];
+    }
+    else {
+        NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
+        [[SSWorkoutStore instance] setupVariant:variantName];
 
-    [self checkSelectedVariant];
+        [self checkSelectedVariant];
+    }
 }
 
 - (void)disableOnusWunsler {
-    if (![self.onusWunslerCell viewWithTag:10]) {
-        self.onusOverlay = [[NSBundle mainBundle] loadNibNamed:@"CellPurchaseOverlay" owner:self options:nil][0];
+    if (![self.onusWunslerCell viewWithTag:kPurchaseOverlayTag]) {
+        self.onusOverlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
         CGRect frame = CGRectMake(0, 0, [self.onusWunslerCell frame].size.width, [self.onusWunslerCell frame].size.height);
         [self.onusOverlay setFrame:frame];
         [self.onusWunslerCell addSubview:self.onusOverlay];
+        [self.onusWunslerCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    }
+}
+
+- (void)enableOnusWunsler {
+    if ([self.onusWunslerCell viewWithTag:kPurchaseOverlayTag]) {
+        [self.onusOverlay removeFromSuperview];
+        self.onusOverlay = nil;
+        [self.onusWunslerCell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }
 }
 

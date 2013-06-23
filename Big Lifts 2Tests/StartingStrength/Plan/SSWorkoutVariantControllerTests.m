@@ -8,6 +8,8 @@
 #import "Lift.h"
 #import "SSVariantStore.h"
 #import "SSVariant.h"
+#import "IAPAdapter.h"
+#import "PurchaseOverlay.h"
 
 @implementation SSWorkoutVariantControllerTests
 
@@ -45,6 +47,24 @@
     UITableViewCell *cell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     UIButton *button = (UIButton *) [cell viewWithTag:1];
     STAssertFalse([button isHidden], @"");
+}
+
+- (void)testDoesNotDuplicateOverlayViews {
+    [[IAPAdapter instance] addPurchase:@"ssOnusWunsler"];
+    SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
+    int count = [[[controller.onusWunslerCell subviews][0] subviews] count];
+    [controller disableOnusWunsler];
+    STAssertEquals([[[controller.onusWunslerCell subviews][0] subviews] count], (NSUInteger) count + 1, @"");
+    [controller disableOnusWunsler];
+    STAssertEquals([[[controller.onusWunslerCell subviews][0] subviews] count], (NSUInteger) count + 1, @"");
+}
+
+- (void)testEnableOnusWunsler {
+    SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
+    [controller disableOnusWunsler];
+    [controller enableOnusWunsler];
+
+    STAssertNil([controller.onusWunslerCell viewWithTag:kPurchaseOverlayTag], @"");
 }
 
 @end

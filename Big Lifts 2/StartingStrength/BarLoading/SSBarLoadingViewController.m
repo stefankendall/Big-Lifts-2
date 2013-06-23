@@ -24,7 +24,9 @@
 }
 
 - (void)addDisabledView {
-    self.overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlayView" owner:self options:nil][0];
+    self.overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
+    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    [self.overlay setFrame:frame];
     [self.view addSubview:self.overlay];
 }
 
