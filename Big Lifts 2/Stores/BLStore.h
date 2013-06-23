@@ -6,6 +6,8 @@
 
 - (void)empty;
 
+- (void)remove:(id)object;
+
 - (void)reset;
 
 - (void)setupDefaults;

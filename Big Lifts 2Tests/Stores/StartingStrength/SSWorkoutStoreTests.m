@@ -59,7 +59,21 @@
 
 - (void)testSwitchToOnusWunsler {
     [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
-    STAssertEquals([[SSWorkoutStore instance] count], @3, @"");
+    STAssertEquals([[SSWorkoutStore instance] count], 3, @"");
+}
+
+- (void)testCreatesBackExtensionForOnusWunsler {
+    [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
+    [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
+    SSLift *lift = [[SSLiftStore instance] find:@"name" value:@"Back Extension"];
+    STAssertNotNil(lift, @"");
+    STAssertEquals([[SSLiftStore instance] count], 6, @"");
+}
+
+- (void) testRemovesBackExtensionWhenNotOnusWunsler {
+    [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
+    [[SSWorkoutStore instance] setupVariant:@"Standard"];
+    STAssertEquals([[SSLiftStore instance] count], 5, @"");
 }
 
 @end

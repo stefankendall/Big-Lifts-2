@@ -35,6 +35,10 @@
     }
 }
 
+- (void)remove:(id)object {
+    [[BLStoreManager context] deleteObject:object];
+}
+
 - (NSFetchRequest *)getRequest {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [[[BLStoreManager model] entitiesByName] objectForKey:[self modelName]];

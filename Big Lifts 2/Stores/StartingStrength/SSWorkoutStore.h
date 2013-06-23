@@ -9,4 +9,6 @@
 - (void)syncSetsToLiftWeights;
 
 - (void)incrementWeights:(SSWorkout *)workout;
+
+- (SSWorkout *)createWithName:(NSString *)string withOrder:(double)order;
 @end

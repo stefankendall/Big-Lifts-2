@@ -1,3 +1,4 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "BLStore.h"
 #import "SSWorkoutStore.h"
 #import "SSWorkout.h"
@@ -19,21 +20,41 @@
 - (void)setupVariant:(NSString *)variant {
     [self empty];
 
-    SSWorkout *workoutA = [[SSWorkoutStore instance] create];
-    [workoutA setName:@"A"];
-    [workoutA setOrder:[NSNumber numberWithDouble:0.0]];
-    SSWorkout *workoutB = [[SSWorkoutStore instance] create];
-    [workoutB setName:@"B"];
-    [workoutB setOrder:[NSNumber numberWithDouble:1.0]];
+    SSWorkout *workoutA = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0];
+    SSWorkout *workoutB = [[SSWorkoutStore instance] createWithName:@"B" withOrder:1];
 
     if ([variant isEqualToString:@"Standard"]) {
+        [self restrictLiftsTo:@[@"Press", @"Bench", @"Power Clean", @"Deadlift", @"Squat"]];
         [self setupStandardA:workoutA];
         [self setupStandardB:workoutB];
     }
-    else {
+    else if ([variant isEqualToString:@"Novice"]) {
+        [self restrictLiftsTo:@[@"Press", @"Bench", @"Deadlift", @"Squat"]];
         [self setupStandardA:workoutA];
         [self setupNoviceB:workoutB];
+    } else if ([variant isEqualToString:@"Onus-Wunsler"]) {
+        [self restrictLiftsTo:@[@"Press", @"Bench", @"Power Clean", @"Deadlift", @"Squat", @"Back Extension"]];
+        [self setupNoviceB:workoutA];
+        SSWorkout *workoutA2 = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.5];
+        [self setupStandardB:workoutA2];
+
+        [self setupOnusWunslerB:workoutB];
     }
+}
+
+- (void)restrictLiftsTo:(NSArray *)liftNames {
+    [[SSLiftStore instance] addMissingLifts:liftNames];
+    [[SSLiftStore instance] removeExtraLifts:liftNames];
+}
+
+- (void)setupOnusWunslerB:(SSWorkout *)w {
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Bench"] withSets:3 withReps:5]];
+
+    [w.workouts addObject:[self createWorkout:[[SSLiftStore instance] find:@"name" value:@"Back Extension"]
+                                     withSets:3 withReps:10]];
 }
 
 - (void)setupNoviceB:(SSWorkout *)w {
@@ -102,6 +123,13 @@
         SSLift *lift = (SSLift *) firstSet.lift;
         lift.weight = [lift.weight decimalNumberByAdding:lift.increment];
     }
+}
+
+- (SSWorkout *)createWithName:(NSString *)name withOrder:(double)order {
+    SSWorkout *workout = [self create];
+    workout.name = name;
+    workout.order = [NSNumber numberWithDouble:order];
+    return workout;
 }
 
 @end

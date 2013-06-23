@@ -42,4 +42,29 @@
     STAssertEquals([lift.increment doubleValue], 2.0, @"");
 }
 
+- (void) testAddMissingLiftsAddsLifts {
+    SSLiftStore *store = [SSLiftStore instance];
+    [store addMissingLifts:@[@"Back Extension"]];
+    STAssertEquals([[SSLiftStore instance] count], 6, @"");
+    SSLift *lift = [[SSLiftStore instance] find:@"name" value:@"Back Extension"];
+    STAssertNotNil(lift, @"");
+}
+
+- (void) testAddMissingLiftsHonorsUnits {
+    Settings *settings = [[SettingsStore instance] first];
+    settings.units = @"kg";
+
+    SSLiftStore *store = [SSLiftStore instance];
+    [store remove:[store find:@"name" value:@"Power Clean"]];
+    [store addMissingLifts:@[@"Power Clean"]];
+    SSLift *lift = [[SSLiftStore instance] find:@"name" value:@"Power Clean"];
+    STAssertEqualObjects(lift.increment, [NSDecimalNumber decimalNumberWithString:@"2"],@"");
+}
+
+- (void) testRemoveExtraLifts {
+    SSLiftStore *store = [SSLiftStore instance];
+    [store removeExtraLifts:@[@"Power Clean"]];
+    STAssertEquals([store count], 1, @"");
+}
+
 @end
