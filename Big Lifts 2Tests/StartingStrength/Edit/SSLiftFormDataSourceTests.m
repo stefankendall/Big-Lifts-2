@@ -15,10 +15,6 @@
     dataSource = [SSLiftFormDataSource new];
 }
 
-- (void)tearDown {
-    [super tearDown];
-}
-
 - (void)testHasAllLifts {
     NSArray *lifts = [self getLiftNamesFromCells:dataSource];
     STAssertTrue([lifts containsObject:@"Squat"], @"");
@@ -30,7 +26,7 @@
 
 - (NSArray *)getLiftNamesFromCells:(SSLiftFormDataSource *)dataSource1 {
     int liftCount = 5;
-    STAssertEquals(liftCount, [dataSource1 tableView:nil numberOfRowsInSection:@0], @"");
+    STAssertEquals(liftCount, [dataSource1 tableView:nil numberOfRowsInSection:0], @"");
     NSMutableArray *lifts = [@[] mutableCopy];
     for (int i = 0; i < liftCount; i++) {
         SSLiftFormCell *cell = (SSLiftFormCell *) [dataSource1 tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
@@ -50,7 +46,7 @@
 
 - (void)testLoadsCellsWithExistingLiftData {
     SSLift *lift = [[SSLiftStore instance] findAll][2];
-    [lift setWeight:[NSNumber numberWithDouble:200]];
+    [lift setWeight:[NSDecimalNumber decimalNumberWithString:@"200"]];
 
     TextFieldCell *cell = (TextFieldCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
     NSString *weight = [[cell textField] text];
@@ -62,6 +58,21 @@
     STAssertNotNil([[cell textField] cell], @"");
     STAssertEquals([[cell indexPath] row], 1, @"");
     STAssertEquals([[[[cell textField] cell] indexPath] row], 1, @"");
+}
+
+- (void)testHasAnIncrementSection {
+    STAssertEquals([dataSource numberOfSectionsInTableView:nil], 2, @"");
+    STAssertEqualObjects([dataSource tableView:nil titleForHeaderInSection:1], @"Increment", @"");
+}
+
+- (void)testCanChangeIncrement {
+    TextFieldCell *cell = (TextFieldCell *) [dataSource tableView:nil cellForRowAtIndexPath:
+            [NSIndexPath indexPathForRow:0 inSection:1]];
+    [[cell textField] setText:@"6"];
+    [dataSource textFieldDidEndEditing:[cell textField]];
+
+    SSLift *lift = [[SSLiftStore instance] first];
+    STAssertEqualObjects(lift.increment, [NSDecimalNumber decimalNumberWithString:@"6"], @"");
 }
 
 

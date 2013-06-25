@@ -24,8 +24,14 @@
     [cell setIndexPath:indexPath];
     [[cell textField] setDelegate:self];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:[cell textField]];
-    if ([lift.weight doubleValue] > 0) {
-        [[cell textField] setText:[lift.weight stringValue]];
+
+    if ([indexPath section] == 0) {
+        if ([lift.weight doubleValue] > 0) {
+            [[cell textField] setText:[lift.weight stringValue]];
+        }
+    }
+    else {
+        [[cell textField] setText:[lift.increment stringValue]];
     }
 
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)];
@@ -41,16 +47,25 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Lifts";
+    return section == 0 ? @"Lifts - current weight" : @"Increment";
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSString *weight = [textField text];
     TextFieldWithCell *textViewWithCell = (TextFieldWithCell *) textField;
-    NSInteger index = [[[textViewWithCell cell] indexPath] row];
+    NSIndexPath *indexPath = [[textViewWithCell cell] indexPath];
 
-    SSLift *lift = [[SSLiftStore instance] findAll][(NSUInteger) index];
-    [lift setWeight:[NSNumber numberWithDouble:[weight doubleValue]]];
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[textField text]];
+    SSLift *lift = [[SSLiftStore instance] findAll][(NSUInteger) [indexPath row]];
+    if ([indexPath section] == 0) {
+        [lift setWeight:weight];
+    }
+    else {
+        [lift setIncrement:weight];
+    }
 }
 
 
