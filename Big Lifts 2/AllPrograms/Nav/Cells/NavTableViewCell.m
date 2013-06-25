@@ -2,10 +2,8 @@
 
 @implementation NavTableViewCell
 
-@synthesize rightMargin;
-
 - (void)setFrame:(CGRect)frame {
-    frame.size.width -= [self rightMargin];
+    frame.size.width -= self.rightMargin;
     [super setFrame:frame];
 }
 

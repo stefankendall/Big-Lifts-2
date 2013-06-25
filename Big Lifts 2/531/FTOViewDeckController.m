@@ -1,6 +1,6 @@
-#import "SSIIViewDeckController.h"
+#import "FTOViewDeckController.h"
 
-@implementation SSIIViewDeckController
+@implementation FTOViewDeckController
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
@@ -14,8 +14,7 @@
 
 - (void)firstTimeInApp {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    [self setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssEditViewController"]];
+//    [self setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssEditViewController"]];
 }
-
 
 @end

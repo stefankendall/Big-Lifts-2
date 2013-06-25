@@ -1,0 +1,2 @@
+@interface BLNavController : UITableViewController
+@end
