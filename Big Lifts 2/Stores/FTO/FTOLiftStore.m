@@ -1,13 +1,22 @@
 #import "FTOLiftStore.h"
 #import "FTOLift.h"
+#import "NSArray+Enumerable.h"
+#import "Settings.h"
+#import "SettingsStore.h"
 
 @implementation FTOLiftStore
 
 - (void)setupDefaults {
-    [self createWithName: @"Press" increment: 0 order: 0];
-    [self createWithName: @"Deadlift" increment: 0 order: 1];
-    [self createWithName: @"Bench" increment: 0 order: 2];
-    [self createWithName: @"Squat" increment: 0 order: 3];
+    [self createWithName:@"Press" increment:5 order:0];
+    [self createWithName:@"Deadlift" increment:10 order:1];
+    [self createWithName:@"Bench" increment:5 order:2];
+    [self createWithName:@"Squat" increment:10 order:3];
+}
+
+- (void)onLoad {
+    [[SettingsStore instance] registerChangeListener:^{
+        [self adjustForKg];
+    }];
 }
 
 - (void)createWithName:(NSString *)name increment:(int)increment order:(int)order {
@@ -17,5 +26,19 @@
     lift.order = [NSNumber numberWithInt:order];
 }
 
+- (void)adjustForKg {
+    SettingsStore *settingsStore = [SettingsStore instance];
+    Settings *settings = [settingsStore first];
+    if ([settings.units isEqualToString:@"kg"]) {
+        NSArray *liftNames = [[self findAll] collect:^id(Lift *lift) {
+            return lift.name;
+        }];
+        [liftNames each:^(NSString *liftName) {
+            FTOLift *lift = [[FTOLiftStore instance] find:@"name" value:liftName];
+            lift.increment = [settingsStore defaultLbsIncrementForLift:lift.name] ?
+                    [settingsStore defaultIncrementForLift:lift.name] : lift.increment;
+        }];
+    }
+}
 
 @end

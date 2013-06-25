@@ -153,6 +153,7 @@
 		54590DAF6F0C74F94258503A /* 379-barbell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545909F0B1B10C70CC08EEB7 /* 379-barbell@2x.png */; };
 		54590DC78EB6C1512B2C09EB /* BLStoreManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459041D615320784E14BE0C /* BLStoreManagerTests.m */; };
 		54590DCE029810F61472079E /* SSLiftViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459046717BB03E9F0393B41 /* SSLiftViewControllerTests.m */; };
+		54590DDF705CB185E04271F9 /* FTOLiftStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B0D44314686DEFFCC8B /* FTOLiftStoreTests.m */; };
 		54590E15A581158A6574E354 /* SetLogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CCF95A3CA9120F4F9BA /* SetLogCell.m */; };
 		54590E27597906458EC7FCA3 /* SSLiftFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459024F37D8C688295EE4FE /* SSLiftFormCell.m */; };
 		54590E59B8431037FECDD4B6 /* BLStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901DE79DAB4F1EBBFA44A /* BLStore.m */; };
@@ -196,6 +197,7 @@
 		5459005C26CEA325E3524092 /* SetCellWithPlatesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCellWithPlatesTests.h; sourceTree = "<group>"; };
 		54590060552A0C888496833E /* 379-barbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "379-barbell.png"; sourceTree = "<group>"; };
 		545900927E296AA48D61C7C7 /* SSLogDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLogDataSource.m; sourceTree = "<group>"; };
+		54590093CE6CFDC422EC5525 /* FTOLiftStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftStoreTests.h; sourceTree = "<group>"; };
 		545900A08C2C00EB4457CF7E /* BLTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLTestCase.m; sourceTree = "<group>"; };
 		545900ACE07DCFE4AFDFB743 /* StepperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepperCell.m; sourceTree = "<group>"; };
 		545900B667D29D5F02A9B75D /* BarWeightTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarWeightTextFieldDelegate.h; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 		54590ADCA111CB4F1040C11C /* SettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsStore.m; sourceTree = "<group>"; };
 		54590AE59441D49A7917F4BF /* SenTestCase+ControllerTestAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SenTestCase+ControllerTestAdditions.h"; sourceTree = "<group>"; };
 		54590AF5E1C747D9D3652293 /* SSLiftSummaryDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftSummaryDataSourceTests.m; sourceTree = "<group>"; };
+		54590B0D44314686DEFFCC8B /* FTOLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftStoreTests.m; sourceTree = "<group>"; };
 		54590B18C50119F99FB04420 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		54590B1C4EA2322364E62C02 /* StoreViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewControllerTests.h; sourceTree = "<group>"; };
 		54590B59D314833BCE63C6C5 /* Plate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Plate.h; sourceTree = "<group>"; };
@@ -554,6 +557,15 @@
 			path = Edit;
 			sourceTree = "<group>";
 		};
+		5459008C2BA736C6C8DD60BF /* FTO */ = {
+			isa = PBXGroup;
+			children = (
+				54590B0D44314686DEFFCC8B /* FTOLiftStoreTests.m */,
+				54590093CE6CFDC422EC5525 /* FTOLiftStoreTests.h */,
+			);
+			path = FTO;
+			sourceTree = "<group>";
+		};
 		545900F201607EDEDE3384F5 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +642,7 @@
 				54590767CB56E665BD65AE69 /* PlateStoreTests.h */,
 				545905D2238765475D2005E8 /* BarStoreTests.m */,
 				545903C79884ABDA44486148 /* BarStoreTests.h */,
+				5459008C2BA736C6C8DD60BF /* FTO */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -1464,6 +1477,7 @@
 				54590C043756606ECADA0385 /* SSWorkoutVariantControllerTests.m in Sources */,
 				54590054FB06C248CF09AEB3 /* SSPlanWorkoutsViewControllerTests.m in Sources */,
 				54590CA1AC165B55DE0B720B /* FTOEditViewControllerTests.m in Sources */,
+				54590DDF705CB185E04271F9 /* FTOLiftStoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
