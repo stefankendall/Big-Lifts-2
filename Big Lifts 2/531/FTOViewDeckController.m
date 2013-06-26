@@ -4,7 +4,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:@"ftoEditNavController"]
+    self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:@"ftoLiftNav"]
                             leftViewController:[storyboard instantiateViewControllerWithIdentifier:@"ftoNavigation"]];
     if (self) {
         self.panningCancelsTouchesInView = NO;

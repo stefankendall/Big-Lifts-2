@@ -9,6 +9,7 @@
     [self.viewDeckController closeLeftViewAnimated:YES];
 
     NSDictionary *tagViewMapping = @{
+            @0 : @"ftoLiftNav",
             @1 : @"ftoEditNavController"
     };
 
