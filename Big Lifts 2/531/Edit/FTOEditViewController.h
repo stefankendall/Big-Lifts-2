@@ -1,5 +1,5 @@
 #import "UIViewController+ViewDeckAdditions.h"
 #import "UITableViewController+NoEmptyRows.h"
 
-@interface FTOEditViewController : UITableViewController
+@interface FTOEditViewController : UITableViewController <UITextFieldDelegate>
 @end

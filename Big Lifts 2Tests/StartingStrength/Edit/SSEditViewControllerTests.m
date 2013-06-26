@@ -4,9 +4,9 @@
 #import "SSLift.h"
 #import "BLStore.h"
 #import "SSLiftStore.h"
-#import "LiftFormCell.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSEditViewController.h"
+#import "LiftFormCellHelper.h"
 
 @interface SSEditViewControllerTests ()
 
@@ -21,23 +21,12 @@
 }
 
 - (void)testHasAllLifts {
-    NSArray *lifts = [self getLiftNamesFromCells];
+    NSArray *lifts = [LiftFormCellHelper getLiftNamesFromCells:self.controller count:[[SSLiftStore instance] count]];
     STAssertTrue([lifts containsObject:@"Squat"], @"");
     STAssertTrue([lifts containsObject:@"Deadlift"], @"");
     STAssertTrue([lifts containsObject:@"Press"], @"");
     STAssertTrue([lifts containsObject:@"Bench"], @"");
     STAssertTrue([lifts containsObject:@"Power Clean"], @"");
-}
-
-- (NSArray *)getLiftNamesFromCells {
-    int liftCount = 5;
-    STAssertEquals(liftCount, [self.controller tableView:nil numberOfRowsInSection:0], @"");
-    NSMutableArray *lifts = [@[] mutableCopy];
-    for (int i = 0; i < liftCount; i++) {
-        LiftFormCell *cell = (LiftFormCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        [lifts addObject:cell.liftLabel.text];
-    }
-    return lifts;
 }
 
 - (void)testDidEndEditingUpdatesLiftRecords {

@@ -33,6 +33,7 @@
 		545901FAC28BAD8D18A50523 /* SSViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A7CCBB6569D666FD0B5 /* SSViewDeckController.m */; };
 		545901FDE917056FA9EC70C7 /* WeightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906493F709F3E74D0FB26 /* WeightTableCell.m */; };
 		5459020E459D35A74FF4225D /* LiftFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DBFD8F2F297F4D3E5FE /* LiftFormCell.m */; };
+		5459023300901D416793FC78 /* LiftFormCellHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A4EF590C71A910F0DF9 /* LiftFormCellHelper.m */; };
 		54590236C25F00331E793632 /* BarWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459065D0097A441EF9FB784 /* BarWeightCell.m */; };
 		545902492A03A2B37420F912 /* SetLogContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D0607AF7D287CF7E021 /* SetLogContainer.m */; };
 		5459024CC3B28C2810299B84 /* 19-circle-check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590426011C12606BE512C4 /* 19-circle-check@2x.png */; };
@@ -192,6 +193,7 @@
 		024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 		02852969173D8E8B004A61B3 /* Big Lifts 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Big Lifts 2.entitlements"; sourceTree = "<group>"; };
 		545900095AB2AF5A89E39D44 /* 20-gear-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear-2.png"; sourceTree = "<group>"; };
+		5459001F4B3273EA7B3EF05E /* LiftFormCellHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiftFormCellHelper.h; sourceTree = "<group>"; };
 		5459003C379CCAE327FC9DBB /* SSStateStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStateStore.m; sourceTree = "<group>"; };
 		5459005C26CEA325E3524092 /* SetCellWithPlatesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCellWithPlatesTests.h; sourceTree = "<group>"; };
 		54590060552A0C888496833E /* 379-barbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "379-barbell.png"; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 		54590A3F41CA62283F2FC9E1 /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench@2x.png"; sourceTree = "<group>"; };
 		54590A41A889B5AB4EDB87D7 /* SSStateStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSStateStore.h; sourceTree = "<group>"; };
 		54590A4CF82F9A97F124E008 /* PlateStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlateStore.h; sourceTree = "<group>"; };
+		54590A4EF590C71A910F0DF9 /* LiftFormCellHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiftFormCellHelper.m; sourceTree = "<group>"; };
 		54590A7477987ACB6EA4DEFD /* RowUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowUIButton.m; sourceTree = "<group>"; };
 		54590A7CCBB6569D666FD0B5 /* SSViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSViewDeckController.m; sourceTree = "<group>"; };
 		54590A9BCBEE999725C40F30 /* SSWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkout.m; sourceTree = "<group>"; };
@@ -866,6 +869,8 @@
 			children = (
 				54590A2090BE2CB988B38C72 /* SSEditViewControllerTests.m */,
 				54590EA87512AFEF11C6DC12 /* SSEditViewControllerTests.h */,
+				54590A4EF590C71A910F0DF9 /* LiftFormCellHelper.m */,
+				5459001F4B3273EA7B3EF05E /* LiftFormCellHelper.h */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -1473,6 +1478,7 @@
 				54590054FB06C248CF09AEB3 /* SSPlanWorkoutsViewControllerTests.m in Sources */,
 				54590CA1AC165B55DE0B720B /* FTOEditViewControllerTests.m in Sources */,
 				54590DDF705CB185E04271F9 /* FTOLiftStoreTests.m in Sources */,
+				5459023300901D416793FC78 /* LiftFormCellHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
