@@ -50,5 +50,27 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return section == 0 ? @"Lifts - Maxes" : @"Increment";
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    TextFieldWithCell *textViewWithCell = (TextFieldWithCell *) textField;
+    NSIndexPath *indexPath = [[textViewWithCell cell] indexPath];
+
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[textField text]];
+    FTOLift *lift = [[FTOLiftStore instance] findAll][(NSUInteger) [indexPath row]];
+    if ([indexPath section] == 0) {
+        [lift setWeight:weight];
+    }
+    else {
+        [lift setIncrement:weight];
+    }
+}
+
 
 @end
