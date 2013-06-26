@@ -48,16 +48,7 @@
         [[cell textField] setText:[lift.increment stringValue]];
     }
 
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)];
-    [cell addGestureRecognizer:singleTap];
-
     return cell;
-}
-
-- (void)cellTapped:(id)sender {
-    UITapGestureRecognizer *recognizer = sender;
-    LiftFormCell *cell = (LiftFormCell *) recognizer.view;
-    [cell.textField becomeFirstResponder];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
