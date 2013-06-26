@@ -4,7 +4,7 @@
 #import "SSLift.h"
 #import "TextFieldWithCell.h"
 #import "TextFieldCell.h"
-#import "SSLiftFormCell.h"
+#import "LiftFormCell.h"
 #import "TextViewInputAccessoryBuilder.h"
 
 @implementation SSLiftFormDataSource
@@ -13,9 +13,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SSLiftFormCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SSLiftFormCell.class)];
+    LiftFormCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(LiftFormCell.class)];
     if (cell == nil) {
-        cell = [SSLiftFormCell create];
+        cell = [LiftFormCell create];
     }
 
     SSLift *lift = ([[SSLiftStore instance] findAll])[(NSUInteger) indexPath.row];
@@ -42,7 +42,7 @@
 
 - (void)cellTapped:(id)sender {
     UITapGestureRecognizer *recognizer = sender;
-    SSLiftFormCell *cell = (SSLiftFormCell *) recognizer.view;
+    LiftFormCell *cell = (LiftFormCell *) recognizer.view;
     [cell.textField becomeFirstResponder];
 }
 

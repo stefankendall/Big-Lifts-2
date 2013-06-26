@@ -1,7 +1,7 @@
-#import "SSLiftFormCell.h"
+#import "LiftFormCell.h"
 #import "TextFieldWithCell.h"
 
-@implementation SSLiftFormCell
+@implementation LiftFormCell
 @synthesize liftLabel;
 
 - (void)awakeFromNib {

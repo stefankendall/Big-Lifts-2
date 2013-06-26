@@ -1,6 +1,6 @@
 #import "TextFieldCell.h"
 
-@interface SSLiftFormCell : TextFieldCell
+@interface LiftFormCell : TextFieldCell
 {}
 @property (weak, nonatomic) IBOutlet UILabel *liftLabel;
 

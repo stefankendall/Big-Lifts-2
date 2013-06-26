@@ -5,7 +5,7 @@
 #import "SSLift.h"
 #import "BLStore.h"
 #import "SSLiftStore.h"
-#import "SSLiftFormCell.h"
+#import "LiftFormCell.h"
 
 @implementation SSLiftFormDataSourceTests
 @synthesize dataSource;
@@ -29,7 +29,7 @@
     STAssertEquals(liftCount, [dataSource1 tableView:nil numberOfRowsInSection:0], @"");
     NSMutableArray *lifts = [@[] mutableCopy];
     for (int i = 0; i < liftCount; i++) {
-        SSLiftFormCell *cell = (SSLiftFormCell *) [dataSource1 tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        LiftFormCell *cell = (LiftFormCell *) [dataSource1 tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         [lifts addObject:cell.liftLabel.text];
     }
     return lifts;
