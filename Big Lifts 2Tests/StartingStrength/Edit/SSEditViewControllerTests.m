@@ -1,22 +1,27 @@
-#import "SSLiftFormDataSourceTests.h"
-#import "SSLiftFormDataSource.h"
+#import "SSEditViewControllerTests.h"
 #import "TextFieldCell.h"
 #import "TextFieldWithCell.h"
 #import "SSLift.h"
 #import "BLStore.h"
 #import "SSLiftStore.h"
 #import "LiftFormCell.h"
+#import "SenTestCase+ControllerTestAdditions.h"
+#import "SSEditViewController.h"
 
-@implementation SSLiftFormDataSourceTests
-@synthesize dataSource;
+@interface SSEditViewControllerTests ()
+
+@property(nonatomic) SSEditViewController *controller;
+@end
+
+@implementation SSEditViewControllerTests
 
 - (void)setUp {
     [super setUp];
-    dataSource = [SSLiftFormDataSource new];
+    self.controller = [self getControllerByStoryboardIdentifier:@"ssEdit"];
 }
 
 - (void)testHasAllLifts {
-    NSArray *lifts = [self getLiftNamesFromCells:dataSource];
+    NSArray *lifts = [self getLiftNamesFromCells];
     STAssertTrue([lifts containsObject:@"Squat"], @"");
     STAssertTrue([lifts containsObject:@"Deadlift"], @"");
     STAssertTrue([lifts containsObject:@"Press"], @"");
@@ -24,21 +29,21 @@
     STAssertTrue([lifts containsObject:@"Power Clean"], @"");
 }
 
-- (NSArray *)getLiftNamesFromCells:(SSLiftFormDataSource *)dataSource1 {
+- (NSArray *)getLiftNamesFromCells {
     int liftCount = 5;
-    STAssertEquals(liftCount, [dataSource1 tableView:nil numberOfRowsInSection:0], @"");
+    STAssertEquals(liftCount, [self.controller tableView:nil numberOfRowsInSection:0], @"");
     NSMutableArray *lifts = [@[] mutableCopy];
     for (int i = 0; i < liftCount; i++) {
-        LiftFormCell *cell = (LiftFormCell *) [dataSource1 tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        LiftFormCell *cell = (LiftFormCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         [lifts addObject:cell.liftLabel.text];
     }
     return lifts;
 }
 
 - (void)testDidEndEditingUpdatesLiftRecords {
-    TextFieldCell *cell = (TextFieldCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    TextFieldCell *cell = (TextFieldCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [[cell textField] setText:@"400.5"];
-    [dataSource textFieldDidEndEditing:[cell textField]];
+    [self.controller textFieldDidEndEditing:[cell textField]];
 
     SSLift *lift = [[SSLiftStore instance] findAll][0];
     STAssertEquals(lift.weight.doubleValue, 400.5, @"");
@@ -48,32 +53,31 @@
     SSLift *lift = [[SSLiftStore instance] findAll][2];
     [lift setWeight:[NSDecimalNumber decimalNumberWithString:@"200"]];
 
-    TextFieldCell *cell = (TextFieldCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    TextFieldCell *cell = (TextFieldCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
     NSString *weight = [[cell textField] text];
     STAssertEquals(weight.doubleValue, 200.0, @"");
 }
 
 - (void)testTextViewsCanGetIndexWithCellReference {
-    TextFieldCell *cell = (TextFieldCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    TextFieldCell *cell = (TextFieldCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     STAssertNotNil([[cell textField] cell], @"");
     STAssertEquals([[cell indexPath] row], 1, @"");
     STAssertEquals([[[[cell textField] cell] indexPath] row], 1, @"");
 }
 
 - (void)testHasAnIncrementSection {
-    STAssertEquals([dataSource numberOfSectionsInTableView:nil], 2, @"");
-    STAssertEqualObjects([dataSource tableView:nil titleForHeaderInSection:1], @"Increment", @"");
+    STAssertEquals([self.controller numberOfSectionsInTableView:nil], 2, @"");
+    STAssertEqualObjects([self.controller tableView:nil titleForHeaderInSection:1], @"Increment", @"");
 }
 
 - (void)testCanChangeIncrement {
-    TextFieldCell *cell = (TextFieldCell *) [dataSource tableView:nil cellForRowAtIndexPath:
+    TextFieldCell *cell = (TextFieldCell *) [self.controller tableView:nil cellForRowAtIndexPath:
             [NSIndexPath indexPathForRow:0 inSection:1]];
     [[cell textField] setText:@"6"];
-    [dataSource textFieldDidEndEditing:[cell textField]];
+    [self.controller textFieldDidEndEditing:[cell textField]];
 
     SSLift *lift = [[SSLiftStore instance] first];
     STAssertEqualObjects(lift.increment, [NSDecimalNumber decimalNumberWithString:@"6"], @"");
 }
-
 
 @end

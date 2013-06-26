@@ -3,7 +3,7 @@
 
 @class SSLiftFormDataSource;
 
-@interface SSEditViewController : UITableViewController {
+@interface SSEditViewController : UITableViewController <UITextFieldDelegate> {
     SSLiftFormDataSource *ssLiftFormDataSource;
 }
 
