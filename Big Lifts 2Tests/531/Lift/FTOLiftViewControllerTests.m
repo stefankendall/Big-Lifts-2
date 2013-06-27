@@ -10,4 +10,10 @@
     STAssertEquals([controller numberOfSectionsInTableView:nil], 4, @"");
 }
 
+- (void) testHasLiftNamesInCells {
+    FTOLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLift"];
+    UITableViewCell *cell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertEqualObjects([[cell textLabel] text], @"Bench", @"");
+}
+
 @end

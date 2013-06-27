@@ -12,6 +12,7 @@
         <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="FTOWorkout" representedClassName="FTOWorkout" syncable="YES">
+        <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="week" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" syncable="YES"/>
     </entity>

@@ -34,6 +34,8 @@
 
 - (int)count;
 
+- (NSSet *)unique:(NSString *)string;
+
 + (instancetype)instance;
 
 - (void)onLoad;

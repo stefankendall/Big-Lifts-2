@@ -11,10 +11,10 @@
 
 - (void)setupDefaults {
     for (int week = 1; week <= 4; week++) {
-        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Bench" week:week] week:week];
-        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Squat" week:week] week:week];
-        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Deadlift" week:week] week:week];
-        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Press" week:week] week:week];
+        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Bench" week:week] week:week order: 0];
+        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Squat" week:week] week:week order:1];
+        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Deadlift" week:week] week:week order:2];
+        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Press" week:week] week:week order:3];
     }
 }
 
@@ -30,10 +30,11 @@
     return workout;
 }
 
-- (void)createWithWorkout:(Workout *)workout week:(int)week {
+- (void)createWithWorkout:(id)workout week:(int)week order:(int)order {
     FTOWorkout *ftoWorkout = [self create];
     ftoWorkout.workout = workout;
     ftoWorkout.week = [NSNumber numberWithInt:week];
+    ftoWorkout.order = [NSNumber numberWithInt: order];
 }
 
 @end

@@ -1,5 +1,6 @@
 #import "BLStore.h"
 #import "BLStoreManager.h"
+#import "NSArray+Enumerable.h"
 
 @implementation BLStore
 @synthesize changeCallbacks;
@@ -124,6 +125,15 @@
 - (int)count {
     return [[self findAll] count];
 }
+
+- (NSSet *)unique:(NSString *)keyName {
+    NSArray *allValues = [[self findAll] collect:^id(id obj) {
+        return [obj valueForKeyPath:keyName];
+    }];
+
+    return [[NSSet alloc] initWithArray:allValues];
+}
+
 
 + (instancetype)instance {
     static NSMutableDictionary *stores = nil;
