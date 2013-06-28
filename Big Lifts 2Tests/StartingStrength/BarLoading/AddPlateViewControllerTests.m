@@ -3,7 +3,6 @@
 #import "BLStore.h"
 #import "PlateStore.h"
 #import "Plate.h"
-#import "NSArray+Enumerable.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 
 @implementation AddPlateViewControllerTests

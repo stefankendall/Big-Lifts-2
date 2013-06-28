@@ -6,6 +6,9 @@
 #import "Set.h"
 #import "SetStore.h"
 #import "WorkoutStore.h"
+#import "FTOWorkoutSetsGenerator.h"
+#import "NSArray+Enumerable.h"
+#import "SetData.h"
 
 @implementation FTOWorkoutStore
 
@@ -26,7 +29,11 @@
     fakeSet.lift = lift;
 
     Workout *workout = [[WorkoutStore instance] create];
-    [workout.sets addObject:fakeSet];
+    NSArray *setData = [[FTOWorkoutSetsGenerator new] setsForWeek:week lift: lift];
+    NSArray *sets = [setData collect:^id(SetData *data) {
+        return [data createSet];
+    }];
+    [workout.sets addObjectsFromArray:sets];
     return workout;
 }
 
