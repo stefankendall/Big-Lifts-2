@@ -9,7 +9,7 @@
     FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSArray *sets = [generator setsForWeek:1 lift:squat];
-    STAssertEquals([sets count], 6, @"");
+    STAssertEquals([sets count], 6U, @"");
     Set *set = sets[0];
     STAssertEqualObjects(set.lift, squat, @"");
 }
