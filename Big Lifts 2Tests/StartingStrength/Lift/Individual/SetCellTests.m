@@ -4,8 +4,6 @@
 #import "SSWorkout.h"
 #import "Workout.h"
 #import "Set.h"
-#import "SetStore.h"
-#import "BLStoreManager.h"
 
 @implementation SetCellTests
 
