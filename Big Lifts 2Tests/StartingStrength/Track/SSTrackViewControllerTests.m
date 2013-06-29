@@ -1,7 +1,6 @@
 #import "SSTrackViewControllerTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSTrackViewController.h"
-#import "BLStoreManager.h"
 #import "WorkoutLogStore.h"
 #import "WorkoutLog.h"
 #import "SetLogStore.h"
@@ -19,6 +18,7 @@
 
 - (void)createWorkoutLog {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    workoutLog.name = @"Starting Strength";
     [workoutLog.sets addObject:[[SetLogStore instance] create]];
     [workoutLog.sets addObject:[[SetLogStore instance] create]];
     [workoutLog.sets addObject:[[SetLogStore instance] create]];

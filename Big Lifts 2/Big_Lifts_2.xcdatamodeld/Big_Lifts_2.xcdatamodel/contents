@@ -55,6 +55,7 @@
     </entity>
     <entity name="WorkoutLog" representedClassName="WorkoutLog" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SetLog" syncable="YES"/>
     </entity>
     <elements>

@@ -75,6 +75,7 @@
 - (void)logWorkout {
     WorkoutLogStore *store = [WorkoutLogStore instance];
     WorkoutLog *log = [store create];
+    log.name = @"Starting Strength";
     log.date = [NSDate date];
 
     for (Workout *workout in self.ssWorkout.workouts) {
