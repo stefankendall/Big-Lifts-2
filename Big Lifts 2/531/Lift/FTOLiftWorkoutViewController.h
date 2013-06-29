@@ -6,4 +6,6 @@
 
 @property(nonatomic, strong) FTOWorkout *ftoWorkout;
 
+- (IBAction)doneButtonTapped:(id)sender;
+
 @end

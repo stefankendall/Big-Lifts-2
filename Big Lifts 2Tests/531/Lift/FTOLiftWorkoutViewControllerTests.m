@@ -14,4 +14,14 @@
     STAssertEquals([controller tableView:nil numberOfRowsInSection:0], (NSInteger) [ftoWorkout.workout.sets count], @"");
 }
 
+- (void)testTappingDoneButtonSavesLog {
+    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] first];
+    FTOLiftWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLiftWorkout"];
+    controller.ftoWorkout = ftoWorkout;
+
+    [controller doneButtonTapped:nil];
+
+
+}
+
 @end
