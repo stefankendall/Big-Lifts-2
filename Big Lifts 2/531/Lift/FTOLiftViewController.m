@@ -1,10 +1,16 @@
 #import "FTOLiftViewController.h"
+#import "FTOLiftWorkoutViewController.h"
 #import "FTOLiftStore.h"
 #import "FTOWorkoutStore.h"
 #import "FTOWorkout.h"
 #import "Workout.h"
 #import "Set.h"
 #import "Lift.h"
+
+@interface FTOLiftViewController ()
+
+@property(nonatomic) FTOWorkout *nextWorkout;
+@end
 
 @implementation FTOLiftViewController
 
@@ -27,10 +33,15 @@
 
     int week = [indexPath section] + 1;
     NSUInteger index = (NSUInteger) [indexPath row];
-    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:(id) [NSNumber numberWithInt:week]][index];
+    FTOWorkout *ftoWorkout = [self getWorkout:week row:index];
     Set *set = ftoWorkout.workout.sets[0];
     [cell.textLabel setText:set.lift.name];
     return cell;
+}
+
+- (FTOWorkout *)getWorkout:(int)week row:(NSUInteger)index {
+    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:(id) [NSNumber numberWithInt:week]][index];
+    return ftoWorkout;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -43,5 +54,14 @@
     return mapping[[NSNumber numberWithInteger:section]];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.nextWorkout = [self getWorkout:([indexPath section] + 1) row:(NSUInteger) [indexPath row]];
+    [self performSegueWithIdentifier:@"ftoViewWorkout" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    FTOLiftWorkoutViewController *controller = [segue destinationViewController];
+    controller.ftoWorkout = self.nextWorkout;
+}
 
 @end
