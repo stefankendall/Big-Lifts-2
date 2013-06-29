@@ -16,8 +16,8 @@
     set.percentage = [NSDecimalNumber decimalNumberWithString:@"60"];
     [cell setSet:set];
     STAssertEqualObjects([[cell.setCell liftLabel] text], set.lift.name, @"");
-//    STAssertEqualObjects([[cell.setCell weightLabel] text], @"120lbs", @"");
-//    STAssertTrue([[[cell.setCell repsLabel] text] rangeOfString:[set.reps stringValue]].location != NSNotFound, @"");
+    STAssertEqualObjects([[cell.setCell weightLabel] text], @"120 lbs", @"");
+    STAssertTrue([[[cell.setCell repsLabel] text] rangeOfString:[set.reps stringValue]].location != NSNotFound, @"");
 }
 
 @end
