@@ -4,6 +4,7 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOLiftWorkoutViewController.h"
 #import "Workout.h"
+#import "WorkoutLogStore.h"
 
 @implementation FTOLiftWorkoutViewControllerTests
 
@@ -21,7 +22,7 @@
 
     [controller doneButtonTapped:nil];
 
-
+    STAssertEquals([[[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] count], 1U, @"");
 }
 
 @end
