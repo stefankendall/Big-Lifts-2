@@ -26,6 +26,7 @@
 
 - (IBAction)doneButtonTapped:(id)sender {
     [self logWorkout];
+    [self.ftoWorkout setDone:YES];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
 }

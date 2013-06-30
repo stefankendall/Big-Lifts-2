@@ -36,6 +36,11 @@
     FTOWorkout *ftoWorkout = [self getWorkout:week row:index];
     Set *set = ftoWorkout.workout.sets[0];
     [cell.textLabel setText:set.lift.name];
+
+    if (ftoWorkout.done) {
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
+
     return cell;
 }
 

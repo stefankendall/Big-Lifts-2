@@ -23,6 +23,7 @@
     [controller doneButtonTapped:nil];
 
     STAssertEquals([[[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] count], 1U, @"");
+    STAssertTrue(ftoWorkout.done, @"");
 }
 
 @end
