@@ -1,11 +1,6 @@
 #import "UIViewController+ViewDeckAdditions.h"
 
-@class SSLogDataSource;
-
-@interface SSTrackViewController : UIViewController <UITableViewDelegate> {
-    __weak IBOutlet UITableView *logTable;
-    SSLogDataSource *ssLogDataSource;
+@interface SSTrackViewController : UITableViewController {
 }
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
