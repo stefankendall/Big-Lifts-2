@@ -16,7 +16,7 @@
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
-    WorkoutLog *workoutLog = [self getSsLog][(NSUInteger) [path row]];
+    WorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
     return [[[SetLogCombiner new] combineSetLogs:workoutLog.sets] count];
 }
 
@@ -26,10 +26,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self getSsLog] count];
+    return [[self getLog] count];
 }
 
-- (NSArray *)getSsLog {
+- (NSArray *)getLog {
     return [[WorkoutLogStore instance] findAllWhere:@"name" value:@"Starting Strength"];
 }
 
@@ -38,7 +38,7 @@
 
     if (cell == nil) {
         cell = [WorkoutLogCell create];
-        [cell setWorkoutLog:[self getSsLog][(NSUInteger) [indexPath row]]];
+        [cell setWorkoutLog:[self getLog][(NSUInteger) [indexPath row]]];
     }
 
     return cell;
@@ -47,7 +47,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        WorkoutLog *log = [self getSsLog][(NSUInteger) [indexPath row]];
+        WorkoutLog *log = [self getLog][(NSUInteger) [indexPath row]];
         [[WorkoutLogStore instance] remove:log];
         [tableView reloadData];
     }
