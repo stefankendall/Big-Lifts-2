@@ -13,7 +13,7 @@
     CurrentProgramStore *store = [CurrentProgramStore instance];
     STAssertEquals([store count], 1, @"");
     CurrentProgram *program = [store first];
-    STAssertTrue([[program name] isEqualToString:@"StartingStrength"], @"");
+    STAssertTrue([[program name] isEqualToString:@"Starting Strength"], @"");
 }
 
 - (void)testRemembersSelectedProgramOverwritesExistingProgram {
@@ -24,7 +24,7 @@
     program.name = @"5/3/1";
 
     [controller rememberSelectedProgram:@"selectStartingStrengthProgramSegue"];
-    STAssertTrue([[program name] isEqualToString:@"StartingStrength"], @"");
+    STAssertTrue([[program name] isEqualToString:@"Starting Strength"], @"");
 }
 
 

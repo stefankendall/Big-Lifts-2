@@ -14,7 +14,7 @@
             @2 : @"ssBarLoading",
             @0 : @"ssLiftViewController",
             @3 : @"ssTrackViewController",
-            @5 : @"purchasesController",
+            @5 : @"storeNav",
             @7 : @"ssPlanWorkoutsNav",
     };
 

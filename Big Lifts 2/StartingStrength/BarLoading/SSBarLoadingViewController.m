@@ -45,7 +45,7 @@
 - (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
     if (self.overlay) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"purchasesController"]];
+        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"storeNav"]];
     }
     else {
         [self.view endEditing:YES];

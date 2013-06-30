@@ -17,7 +17,8 @@
 
 - (NSDictionary *)segueToProgramNames {
     return @{
-            @"selectStartingStrengthProgramSegue" : @"StartingStrength"
+            @"selectStartingStrengthProgramSegue" : @"Starting Strength",
+            @"531segue" : @"5/3/1"
     };
 }
 

@@ -27,7 +27,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([tableView cellForRowAtIndexPath:indexPath] == self.onusWunslerCell && self.onusOverlay) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"purchasesController"]];
+        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"storeNav"]];
     }
     else {
         NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];

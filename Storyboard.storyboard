@@ -85,7 +85,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="zjh-0w-1Ke" kind="push" id="C0N-8M-WCx"/>
+                                            <segue destination="zjh-0w-1Ke" kind="push" identifier="531segue" id="C0N-8M-WCx"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" textLabel="x90-P4-oN4" rowHeight="88" style="IBUITableViewCellStyleDefault" id="QwW-C5-c5Z">
@@ -291,8 +291,31 @@
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell tag="6" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" textLabel="hjX-fG-SSP" detailTextLabel="uc6-sH-LeL" imageView="ufl-Js-YPi" style="IBUITableViewCellStyleValue1" id="XJh-cY-c39" customClass="NavTableViewCell">
+                                    <tableViewCell tag="5" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="I2W-0N-n9J" imageView="j9l-dy-p7q" style="IBUITableViewCellStyleDefault" id="0yh-xx-qNA" customClass="NavTableViewCell">
                                         <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I2W-0N-n9J">
+                                                    <rect key="frame" x="62" y="0.0" width="243" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="172-pricetag.png" id="j9l-dy-p7q">
+                                                    <rect key="frame" x="15" y="8" width="32" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell tag="6" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" textLabel="hjX-fG-SSP" detailTextLabel="uc6-sH-LeL" imageView="ufl-Js-YPi" style="IBUITableViewCellStyleValue1" id="XJh-cY-c39" customClass="NavTableViewCell">
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -624,7 +647,7 @@
         <!--Store View Controller - Store-->
         <scene sceneID="8OL-ap-FZu">
             <objects>
-                <tableViewController storyboardIdentifier="storeViewController" id="pEZ-XO-MIY" customClass="StoreViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="store" id="pEZ-XO-MIY" customClass="StoreViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Brq-Ht-MoR">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1032,7 +1055,7 @@
         <!--Navigation Controller-->
         <scene sceneID="LWx-Y8-ZqS">
             <objects>
-                <navigationController storyboardIdentifier="purchasesController" definesPresentationContext="YES" id="5gK-Yr-G1E" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="storeNav" definesPresentationContext="YES" id="5gK-Yr-G1E" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T3J-Tm-Gvk">
                         <autoresizingMask key="autoresizingMask"/>

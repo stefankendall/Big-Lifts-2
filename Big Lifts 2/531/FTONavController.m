@@ -12,6 +12,7 @@
             @0 : @"ftoLiftNav",
             @1 : @"ftoEditNavController",
             @3 : @"ftoTrackNavController",
+            @5 : @"storeNav",
     };
 
     if ([cell tag] == 6) {
