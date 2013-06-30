@@ -11,6 +11,7 @@
     NSDictionary *tagViewMapping = @{
             @0 : @"ftoLiftNav",
             @1 : @"ftoEditNavController",
+            @2 : @"barLoadingNav",
             @3 : @"ftoTrackNavController",
             @5 : @"storeNav",
     };

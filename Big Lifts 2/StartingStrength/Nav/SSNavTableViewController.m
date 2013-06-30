@@ -11,7 +11,7 @@
     NSDictionary *tagViewMapping = @{
             @4 : @"ssSettingsViewController",
             @1 : @"ssEditViewController",
-            @2 : @"ssBarLoading",
+            @2 : @"barLoadingNav",
             @0 : @"ssLiftViewController",
             @3 : @"ssTrackViewController",
             @5 : @"storeNav",
