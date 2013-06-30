@@ -1,3 +1,4 @@
+#import <ViewDeck/IIViewDeckController.h>
 #import "FTOLiftWorkoutViewController.h"
 #import "FTOWorkout.h"
 #import "Workout.h"
@@ -25,7 +26,8 @@
 
 - (IBAction)doneButtonTapped:(id)sender {
     [self logWorkout];
-
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
 }
 
 - (void)logWorkout {

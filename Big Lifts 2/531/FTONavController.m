@@ -10,7 +10,8 @@
 
     NSDictionary *tagViewMapping = @{
             @0 : @"ftoLiftNav",
-            @1 : @"ftoEditNavController"
+            @1 : @"ftoEditNavController",
+            @3 : @"ftoTrackNavController",
     };
 
     if ([cell tag] == 6) {
