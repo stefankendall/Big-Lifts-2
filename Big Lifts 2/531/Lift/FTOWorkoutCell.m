@@ -18,10 +18,8 @@
 
     Settings *settings = [[SettingsStore instance] first];
 
-
-    NSDecimalNumber *weight = [[set.lift.weight decimalNumberByMultiplyingBy:set.percentage]
-            decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"100"]];
-    [self.setCell.weightLabel setText:[NSString stringWithFormat:@"%0.0f %@", [weight doubleValue], settings.units]];
+    [self.setCell.weightLabel setText:[NSString stringWithFormat:@"%0.0f %@",
+                                                                 [[set effectiveWeight] doubleValue], settings.units]];
 }
 
 @end

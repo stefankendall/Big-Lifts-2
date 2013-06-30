@@ -6,4 +6,5 @@
 @property(nonatomic) NSDecimalNumber *weight;
 @property(nonatomic) Lift *lift;
 
+- (NSDecimalNumber *) effectiveWeight;
 @end
