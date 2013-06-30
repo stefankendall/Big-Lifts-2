@@ -5,6 +5,7 @@
 #import "Workout.h"
 #import "Set.h"
 #import "Lift.h"
+#import "FTOSet.h"
 
 @implementation FTOWorkoutCellTests
 
@@ -18,6 +19,15 @@
     STAssertEqualObjects([[cell.setCell liftLabel] text], set.lift.name, @"");
     STAssertEqualObjects([[cell.setCell weightLabel] text], @"120 lbs", @"");
     STAssertTrue([[[cell.setCell repsLabel] text] rangeOfString:[set.reps stringValue]].location != NSNotFound, @"");
+}
+
+- (void)testAdjustForAmrap {
+    FTOWorkoutCell *cell = [FTOWorkoutCell create];
+    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] first];
+    FTOSet *set = ftoWorkout.workout.sets[0];
+    set.amrap = YES;
+    [cell setSet:set];
+    STAssertEqualObjects([[cell.setCell repsLabel] text], @"5+", @"");
 }
 
 @end

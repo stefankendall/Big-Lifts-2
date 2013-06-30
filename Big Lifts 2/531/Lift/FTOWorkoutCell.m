@@ -3,6 +3,7 @@
 #import "Lift.h"
 #import "SettingsStore.h"
 #import "Settings.h"
+#import "FTOSet.h"
 
 @implementation FTOWorkoutCell
 
@@ -13,8 +14,14 @@
 }
 
 - (void)setSet:(Set *)set {
+    FTOSet *ftoSet = (FTOSet *) set;
     [self.setCell.liftLabel setText:set.lift.name];
-    [self.setCell.repsLabel setText:[NSString stringWithFormat:@"%dx", [set.reps intValue]]];
+
+    [self.setCell.repsLabel setText:[NSString stringWithFormat:@"%d%@", [set.reps intValue],
+                                                               ftoSet.amrap ? @"+" : @"x"]];
+    if (ftoSet.amrap) {
+        [self.setCell.repsLabel setTextColor:[UIColor colorWithRed:0 green:170/255.0 blue:0 alpha:1]];
+    }
 
     Settings *settings = [[SettingsStore instance] first];
 
