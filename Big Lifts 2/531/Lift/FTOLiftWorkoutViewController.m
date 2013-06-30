@@ -7,21 +7,32 @@
 #import "WorkoutLog.h"
 #import "SetLogStore.h"
 #import "Set.h"
+#import "FTOLiftWorkoutToolbar.h"
 
 @implementation FTOLiftWorkoutViewController
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.ftoWorkout.workout.sets count];
+    return [self.ftoWorkout.workout.sets count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SetCell"];
-    if (!cell) {
-        cell = [FTOWorkoutCell create];
-    }
+    int row = [indexPath row];
 
-    [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) [indexPath row]]];
-    return cell;
+    if (row == 0) {
+        FTOLiftWorkoutToolbar *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOLiftWorkoutToolbar"];
+        if (!cell) {
+            cell = [FTOLiftWorkoutToolbar create];
+        }
+        return cell;
+    }
+    else {
+        FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SetCell"];
+        if (!cell) {
+            cell = [FTOWorkoutCell create];
+        }
+        [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) row - 1]];
+        return cell;
+    }
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
