@@ -2,6 +2,8 @@
 #import "Lift.h"
 #import "SetStore.h"
 #import "Set.h"
+#import "FTOSet.h"
+#import "FTOSetStore.h"
 
 @implementation SetData
 
@@ -21,7 +23,7 @@
 }
 
 - (id)createSet {
-    Set *set = [[SetStore instance] create];
+    FTOSet *set = [[FTOSetStore instance] create];
     set.reps = [NSNumber numberWithInt:self.reps];
     set.percentage = [NSDecimalNumber decimalNumberWithString:self.percentage];
     set.lift = self.lift;

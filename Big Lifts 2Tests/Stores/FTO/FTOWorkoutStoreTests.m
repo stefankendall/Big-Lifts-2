@@ -6,6 +6,7 @@
 #import "Workout.h"
 #import "Set.h"
 #import "Lift.h"
+#import "FTOSet.h"
 
 @implementation FTOWorkoutStoreTests
 
@@ -18,10 +19,15 @@
         return firstSet.lift.name;
     }];
 
+    FTOWorkout *ftoWorkout = ftoWorkouts[0];
+
     STAssertTrue([liftNames containsObject:@"Bench"], @"");
     STAssertTrue([liftNames containsObject:@"Press"], @"");
     STAssertTrue([liftNames containsObject:@"Deadlift"], @"");
     STAssertTrue([liftNames containsObject:@"Squat"], @"");
+    STAssertTrue([ftoWorkout.workout.sets[0] isKindOfClass:FTOSet.class], @"");
+    FTOSet *ftoSet = [ftoWorkout.workout.sets lastObject];
+    STAssertTrue(ftoSet.amrap, @"");
 }
 
 @end
