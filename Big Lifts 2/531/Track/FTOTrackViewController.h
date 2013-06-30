@@ -1,4 +1,4 @@
-#import "UIViewController+ViewDeckAdditions.h"
+#import "TrackViewController.h"
 
-@interface FTOTrackViewController : UITableViewController
+@interface FTOTrackViewController : TrackViewController
 @end

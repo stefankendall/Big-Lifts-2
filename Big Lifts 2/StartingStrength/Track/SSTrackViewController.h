@@ -1,6 +1,6 @@
-#import "UIViewController+ViewDeckAdditions.h"
+#import "TrackViewController.h"
 
-@interface SSTrackViewController : UITableViewController {
+@interface SSTrackViewController : TrackViewController {
 }
 
 @end

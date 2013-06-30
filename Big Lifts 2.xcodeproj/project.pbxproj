@@ -150,6 +150,7 @@
 		54590BD4AA44B42AD2260D39 /* ProgramSelectorViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907BCC2F2400246302060 /* ProgramSelectorViewControllerTests.m */; };
 		54590C0435A8AD55D7041884 /* FTOWorkoutStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904B5C1ED5AC943E0F500 /* FTOWorkoutStoreTests.m */; };
 		54590C043756606ECADA0385 /* SSWorkoutVariantControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C46C7D98FAB10F4C933 /* SSWorkoutVariantControllerTests.m */; };
+		54590C2B1D4A795A210A44B4 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590192C4EC8D647914DD49 /* TrackViewController.m */; };
 		54590C3FB63D22E55390C097 /* BarStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907B5B9167633A1252361 /* BarStore.m */; };
 		54590C845093C2061AE3D722 /* FTOWorkoutSetsGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459029C2830012CC87DC5B4 /* FTOWorkoutSetsGeneratorTests.m */; };
 		54590CA1AC165B55DE0B720B /* FTOEditViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903FF9FE198ADA91F749A /* FTOEditViewControllerTests.m */; };
@@ -235,6 +236,7 @@
 		54590171A174F8AC533C25E4 /* SSViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSViewDeckController.h; sourceTree = "<group>"; };
 		5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLAppDelegate.m; sourceTree = "<group>"; };
 		54590185EABBE78D7F766644 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		54590192C4EC8D647914DD49 /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewController.m; sourceTree = "<group>"; };
 		5459019C1D5235CBD7B40207 /* WorkoutLogCellTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutLogCellTests.h; sourceTree = "<group>"; };
 		545901ABBD67C8BDEA18C5BD /* Big Lifts 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Big Lifts 2-Prefix.pch"; sourceTree = "<group>"; };
 		545901B33C05E44060B8F1DC /* SetLogContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLogContainer.h; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		545904BAA291D272E8C6663E /* BarWeightTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarWeightTextFieldDelegate.m; sourceTree = "<group>"; };
 		545904C7123BC998F7282F7A /* SSIndividualWorkoutViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIndividualWorkoutViewControllerTests.h; sourceTree = "<group>"; };
 		545904C8518A7ED564C9404D /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		545904CA458008759C6514EA /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
 		545904D1548DE6664FE453CB /* CurrentProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentProgram.m; sourceTree = "<group>"; };
 		545904DC5057EDC75C21A989 /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench.png"; sourceTree = "<group>"; };
 		545904DCA7D7C51C48A4F3F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -718,6 +721,8 @@
 				5459003E94ED2161C6E26856 /* WorkoutLogCell.m */,
 				545900FF4B63E5E5542E4622 /* SetLogCombiner.h */,
 				54590F2D764E435EA309B3BC /* SetLogCell.h */,
+				54590192C4EC8D647914DD49 /* TrackViewController.m */,
+				545904CA458008759C6514EA /* TrackViewController.h */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -1686,6 +1691,7 @@
 				54590E5335BF7D7B0D1F3DDA /* SetLogCombiner.m in Sources */,
 				545905F13CAA72789982550B /* SetLogCell.m in Sources */,
 				54590E178CA2662A96299659 /* WorkoutLogCell.m in Sources */,
+				54590C2B1D4A795A210A44B4 /* TrackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
