@@ -83,7 +83,7 @@
     return [self executeRequest:request];
 }
 
-- (NSArray *)findAllWhere:(NSString *)name value:(NSString *)value {
+- (NSArray *)findAllWhere:(NSString *)name value:(id)value {
     NSArray *all = [self findAll];
     return [all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@", name, value]];
 }

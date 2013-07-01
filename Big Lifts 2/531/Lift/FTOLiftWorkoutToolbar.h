@@ -1,4 +1,4 @@
-#import <CTCustomTableViewCell/CTCustomTableViewCell.h>
+#import "CTCustomTableViewCell.h"
 
 @interface FTOLiftWorkoutToolbar : CTCustomTableViewCell
 {}

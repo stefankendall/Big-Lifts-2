@@ -22,7 +22,7 @@
 
 - (NSArray *)findAll;
 
-- (NSArray *)findAllWhere:(NSString *)name value:(NSString *)value;
+- (NSArray *)findAllWhere:(NSString *)name value:(id)value;
 
 - (NSArray *)findAllWithSort:(NSSortDescriptor *)sortDescriptor;
 

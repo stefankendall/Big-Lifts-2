@@ -9,6 +9,11 @@
 #import "Set.h"
 #import "FTOLiftWorkoutToolbar.h"
 
+@interface FTOLiftWorkoutViewController ()
+
+@property(nonatomic) int lastReps;
+@end
+
 @implementation FTOLiftWorkoutViewController
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -22,6 +27,10 @@
         FTOLiftWorkoutToolbar *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOLiftWorkoutToolbar"];
         if (!cell) {
             cell = [FTOLiftWorkoutToolbar create];
+            Set *lastSet = [self.ftoWorkout.workout.sets lastObject];
+            self.lastReps = [lastSet.reps intValue];
+            [cell.repsField setPlaceholder:lastSet.reps.stringValue];
+            [cell.repsField setDelegate:self];
         }
         return cell;
     }
@@ -33,6 +42,10 @@
         [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) row - 1]];
         return cell;
     }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    self.lastReps = [[textField text] intValue];
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
@@ -49,6 +62,8 @@
     for (Set *set in self.ftoWorkout.workout.sets) {
         [log.sets addObject:[[SetLogStore instance] createFromSet:set]];
     }
+    Set *lastSet = [log.sets lastObject];
+    lastSet.reps = [NSNumber numberWithInt:self.lastReps];
 }
 
 @end

@@ -1,6 +1,6 @@
 @class FTOWorkout;
 
-@interface FTOLiftWorkoutViewController : UITableViewController {
+@interface FTOLiftWorkoutViewController : UITableViewController <UITextFieldDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
