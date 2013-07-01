@@ -32,6 +32,8 @@
     [self.controller doneButtonTapped:nil];
 
     STAssertEquals([[[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] count], 1U, @"");
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] find:@"name" value:@"5/3/1"];
+    STAssertNotNil(workoutLog.date, @"");
     STAssertTrue(self.ftoWorkout.done, @"");
 }
 
@@ -43,7 +45,6 @@
 - (void)testSavesEnteredReps {
     FTOLiftWorkoutToolbar *toolbar = (FTOLiftWorkoutToolbar *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [toolbar.repsField setText:@"7"];
-    [self.controller textFieldDidEndEditing:toolbar.repsField];
     [self.controller doneButtonTapped:nil];
     WorkoutLog *log = [[WorkoutLogStore instance] find:@"name" value:@"5/3/1"];
     SetLog *set = [log.sets lastObject];

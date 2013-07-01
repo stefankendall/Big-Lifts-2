@@ -11,7 +11,7 @@
 
 @interface FTOLiftWorkoutViewController ()
 
-@property(nonatomic) int lastReps;
+@property(nonatomic) UITextField *repsField;
 @end
 
 @implementation FTOLiftWorkoutViewController
@@ -28,9 +28,8 @@
         if (!cell) {
             cell = [FTOLiftWorkoutToolbar create];
             Set *lastSet = [self.ftoWorkout.workout.sets lastObject];
-            self.lastReps = [lastSet.reps intValue];
             [cell.repsField setPlaceholder:lastSet.reps.stringValue];
-            [cell.repsField setDelegate:self];
+            self.repsField = cell.repsField;
         }
         return cell;
     }
@@ -44,11 +43,8 @@
     }
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.lastReps = [[textField text] intValue];
-}
-
 - (IBAction)doneButtonTapped:(id)sender {
+
     [self logWorkout];
     [self.ftoWorkout setDone:YES];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
@@ -58,12 +54,16 @@
 - (void)logWorkout {
     WorkoutLog *log = [[WorkoutLogStore instance] create];
     log.name = @"5/3/1";
+    log.date = [NSDate new];
 
     for (Set *set in self.ftoWorkout.workout.sets) {
         [log.sets addObject:[[SetLogStore instance] createFromSet:set]];
     }
     Set *lastSet = [log.sets lastObject];
-    lastSet.reps = [NSNumber numberWithInt:self.lastReps];
+    int reps = [[self.repsField text] intValue];
+    if (reps > 0) {
+        lastSet.reps = [NSNumber numberWithInt:reps];
+    }
 }
 
 @end
