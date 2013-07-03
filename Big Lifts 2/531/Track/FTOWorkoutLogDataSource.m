@@ -14,7 +14,9 @@
     if (cell == nil) {
         cell = [SetLogCell create];
         SetLog *setLog = [self.workoutLog.sets lastObject];
-        [cell setSetLogContainer:[[SetLogContainer alloc] initWithSetLog:setLog]];
+        SetLogContainer *container = [[SetLogContainer alloc] initWithSetLog:setLog];
+        container.count = 1;
+        [cell setSetLogContainer:container];
     }
 
     return cell;
