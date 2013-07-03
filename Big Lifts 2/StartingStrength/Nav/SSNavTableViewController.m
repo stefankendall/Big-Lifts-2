@@ -9,7 +9,7 @@
     [self.viewDeckController closeLeftViewAnimated:YES];
 
     NSDictionary *tagViewMapping = @{
-            @4 : @"ssSettingsViewController",
+            @4 : @"settingsViewController",
             @1 : @"ssEditViewController",
             @2 : @"barLoadingNav",
             @0 : @"ssLiftViewController",

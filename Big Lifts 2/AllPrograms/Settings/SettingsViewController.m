@@ -1,8 +1,8 @@
-#import "SSSettingsViewController.h"
+#import "SettingsViewController.h"
 #import "SettingsStore.h"
 #import "Settings.h"
 
-@implementation SSSettingsViewController {
+@implementation SettingsViewController {
     __weak IBOutlet UISegmentedControl *unitsSegmentedControl;
 }
 - (void)viewWillAppear:(BOOL)animated {

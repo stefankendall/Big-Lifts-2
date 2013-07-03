@@ -13,6 +13,7 @@
             @1 : @"ftoEditNavController",
             @2 : @"barLoadingNav",
             @3 : @"ftoTrackNavController",
+            @4 : @"settingsViewController",
             @5 : @"storeNav",
     };
 

@@ -1,6 +1,6 @@
 #import "UIViewController+ViewDeckAdditions.h"
 
-@interface SSSettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController
 
 - (IBAction)unitsChanged:(id)sender;
 
