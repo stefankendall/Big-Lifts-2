@@ -38,6 +38,7 @@
         <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES">
+        <attribute name="roundTo" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="units" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="SSLift" representedClassName="SSLift" parentEntity="Lift" syncable="YES"/>
@@ -66,6 +67,7 @@
         <element name="Bar" positionX="0" positionY="0" width="0" height="0"/>
         <element name="CurrentProgram" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOLift" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOSet" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Lift" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Plate" positionX="0" positionY="0" width="0" height="0"/>
@@ -78,6 +80,5 @@
         <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FTOSet" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
