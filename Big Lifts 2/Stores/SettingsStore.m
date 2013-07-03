@@ -9,6 +9,20 @@
     if (!settings) {
         Settings *defaultSettings = [NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[BLStoreManager context]];
         [defaultSettings setUnits:@"lbs"];
+        [defaultSettings setRoundTo:[NSDecimalNumber decimalNumberWithString:@"5"]];
+    }
+}
+
+- (void)onLoad {
+    [[SettingsStore instance] registerChangeListener:^{
+        [self adjustForKg];
+    }];
+}
+
+- (void)adjustForKg {
+    Settings *settings = [[SettingsStore instance] first];
+    if ([settings.units isEqualToString:@"kg"] && [settings.roundTo isEqualToNumber:@5]) {
+        settings.roundTo = [NSDecimalNumber decimalNumberWithString:@"1"];
     }
 }
 
