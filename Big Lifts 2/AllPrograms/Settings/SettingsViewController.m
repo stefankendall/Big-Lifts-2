@@ -5,6 +5,7 @@
 @implementation SettingsViewController {
     __weak IBOutlet UISegmentedControl *unitsSegmentedControl;
 }
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self reloadData];

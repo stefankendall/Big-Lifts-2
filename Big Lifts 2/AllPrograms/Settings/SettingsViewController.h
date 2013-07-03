@@ -1,6 +1,6 @@
 #import "UIViewController+ViewDeckAdditions.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UITableViewController
 
 - (IBAction)unitsChanged:(id)sender;
 
