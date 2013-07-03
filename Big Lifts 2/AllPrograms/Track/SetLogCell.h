@@ -1,4 +1,4 @@
-#import <CTCustomTableViewCell/CTCustomTableViewCell.h>
+#import "CTCustomTableViewCell/CTCustomTableViewCell.h"
 
 @class Set;
 @class SetLog;

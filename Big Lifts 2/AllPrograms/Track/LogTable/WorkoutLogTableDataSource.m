@@ -4,12 +4,11 @@
 #import "SetLogCombiner.h"
 
 @implementation WorkoutLogTableDataSource
-@synthesize workoutLog;
 
 - (id)initWithWorkoutLog:(WorkoutLog *)workoutLog1 {
     self = [super init];
     if (self) {
-        workoutLog = workoutLog1;
+        self.workoutLog = workoutLog1;
     }
 
     return self;
@@ -33,7 +32,7 @@
 
 - (NSArray *)getCombinedSets {
     SetLogCombiner *combiner = [SetLogCombiner new];
-    return [combiner combineSetLogs:workoutLog.sets];
+    return [combiner combineSetLogs:self.workoutLog.sets];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

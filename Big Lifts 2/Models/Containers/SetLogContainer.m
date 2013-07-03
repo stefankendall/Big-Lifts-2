@@ -2,12 +2,11 @@
 #import "SetLog.h"
 
 @implementation SetLogContainer
-@synthesize setLog, count;
 
 - (id)initWithSetLog:(SetLog *)setLog1 {
     self = [super init];
     if (self) {
-        setLog = setLog1;
+        self.setLog = setLog1;
     }
     return self;
 }
@@ -21,9 +20,9 @@
 
     SetLogContainer *otherContainer = other;
 
-    BOOL namesEqual = [setLog.name isEqualToString:otherContainer.setLog.name];
-    BOOL repsEqual = setLog.reps == otherContainer.setLog.reps;
-    BOOL weightEqual = [setLog.weight doubleValue] == [otherContainer.setLog.weight doubleValue];
+    BOOL namesEqual = [self.setLog.name isEqualToString:otherContainer.setLog.name];
+    BOOL repsEqual = self.setLog.reps == otherContainer.setLog.reps;
+    BOOL weightEqual = [self.setLog.weight doubleValue] == [otherContainer.setLog.weight doubleValue];
 
     return namesEqual && repsEqual && weightEqual;
 }
