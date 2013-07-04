@@ -27,7 +27,7 @@
     Settings *settings = [[SettingsStore instance] first];
 
     NSString *weightText = [NSString stringWithFormat:@"%@ %@",
-                                                      [[WeightRounder new] round:[set effectiveWeight]], settings.units];
+                    [set roundedEffectiveWeight], settings.units];
     [self.setCell.weightLabel setText:weightText];
 }
 
