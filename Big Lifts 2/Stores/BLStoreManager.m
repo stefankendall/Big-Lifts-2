@@ -33,11 +33,11 @@
     allStores = @[
             [CurrentProgramStore instance],
             [SettingsStore instance],
+            [FTOSettingsStore instance],
             [WorkoutStore instance],
             [WorkoutLogStore instance],
             [SetStore instance],
             [FTOSetStore instance],
-            [FTOSettingsStore instance],
             [SSStateStore instance],
             [SSLiftStore instance],
             [SSVariantStore instance],
