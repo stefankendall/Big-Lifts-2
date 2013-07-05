@@ -15,6 +15,7 @@
             @3 : @"ftoTrackNavController",
             @4 : @"settingsViewController",
             @5 : @"storeNav",
+            @7 : @"ftoPlanNav",
     };
 
     if ([cell tag] == 6) {

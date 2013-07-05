@@ -14,6 +14,7 @@
 #import "FTOLiftStore.h"
 #import "FTOWorkoutStore.h"
 #import "FTOSetStore.h"
+#import "FTOSettingsStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
@@ -36,6 +37,7 @@
             [WorkoutLogStore instance],
             [SetStore instance],
             [FTOSetStore instance],
+            [FTOSettingsStore instance],
             [SSStateStore instance],
             [SSLiftStore instance],
             [SSVariantStore instance],
