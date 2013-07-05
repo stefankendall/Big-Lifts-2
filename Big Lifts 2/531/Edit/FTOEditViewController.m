@@ -51,8 +51,21 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return section == 0 ? @"Lifts - Maxes" : @"Increment";
+    return section == 1 ? @"Increment" : @"";
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        UIView *view = [[NSBundle mainBundle] loadNibNamed:@"FTOEditMaxesHeader" owner:self options:nil][0];
+        CGRect bounds = [view bounds];
+        [view setBounds:CGRectMake(bounds.origin.x, bounds.origin.y, bounds.size.width,
+                [self tableView:nil heightForHeaderInSection:section])];
+        return view;
+    }
+
+    return nil;
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
