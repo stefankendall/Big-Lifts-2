@@ -1,7 +1,9 @@
 #import "FTOEditLiftCell.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "FTOLift.h"
 #import "RowTextField.h"
+#import "FTOSettings.h"
+#import "BLStore.h"
+#import "FTOSettingsStore.h"
 
 @implementation FTOEditLiftCell
 
@@ -14,5 +16,13 @@
     if ([lift.weight doubleValue] > 0) {
         [[self max] setText:[lift.weight stringValue]];
     }
+    [self updateTrainingMax:lift.weight];
 }
+
+- (void)updateTrainingMax:(NSDecimalNumber *)weight {
+    FTOSettings *settings = [[FTOSettingsStore instance] first];
+    NSDecimalNumber *trainingWeight = [[weight decimalNumberByMultiplyingBy:settings.trainingMax] decimalNumberByDividingBy:N(100)];
+    [self.trainingWeight setText:[trainingWeight stringValue]];
+}
+
 @end

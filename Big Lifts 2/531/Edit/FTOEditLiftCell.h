@@ -10,4 +10,6 @@
 @property (weak, nonatomic) IBOutlet RowTextField *max;
 
 - (void)setLift:(FTOLift *)lift;
+
+- (void)updateTrainingMax:(NSDecimalNumber *)weight;
 @end

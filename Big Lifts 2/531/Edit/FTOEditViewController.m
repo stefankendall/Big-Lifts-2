@@ -79,6 +79,7 @@
     FTOLift *lift = [[FTOLiftStore instance] findAll][(NSUInteger) [indexPath row]];
     if ([indexPath section] == 0) {
         [lift setWeight:weight];
+        [self.tableView reloadData];
     }
     else {
         [lift setIncrement:weight];
