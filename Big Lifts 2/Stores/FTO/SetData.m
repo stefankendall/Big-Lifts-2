@@ -7,7 +7,7 @@
 
 @implementation SetData
 
-- (id)initWithReps:(int)reps percentage:(NSString *)percentage lift:(Lift *)lift {
+- (id)initWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(Lift *)lift {
     self = [super init];
     if (self) {
         self.reps = reps;
@@ -18,14 +18,14 @@
     return self;
 }
 
-+ (id)dataWithReps:(int)reps percentage:(NSString *)percentage lift:(Lift *)lift {
++ (id)dataWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(Lift *)lift {
     return [[self alloc] initWithReps:reps percentage:percentage lift:lift];
 }
 
 - (id)createSet {
     FTOSet *set = [[FTOSetStore instance] create];
     set.reps = [NSNumber numberWithInt:self.reps];
-    set.percentage = [NSDecimalNumber decimalNumberWithString:self.percentage];
+    set.percentage = self.percentage;
     set.lift = self.lift;
     return set;
 }

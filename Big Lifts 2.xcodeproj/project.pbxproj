@@ -74,6 +74,7 @@
 		5459054D344D3E784B584BCF /* 172-pricetag.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590526735E78D9EF6F22F0 /* 172-pricetag.png */; };
 		545905527F5502367565C568 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */; };
 		545905887766D673CDFB69B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590B18C50119F99FB04420 /* Default@2x.png */; };
+		545905B7E5F9A895E4CFFED3 /* FTOSetStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909B02A75B24019F8875E /* FTOSetStoreTests.m */; };
 		545905DCE1A53561E9136B4F /* SetLogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590B0CA52599058C8E2340 /* SetLogCell.xib */; };
 		545905E23A25A8F2505D2029 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
 		545905E48ED0286EE8FFD991 /* PurchaseOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459062296CD9B1159B9B120 /* PurchaseOverlay.m */; };
@@ -221,6 +222,7 @@
 		02852969173D8E8B004A61B3 /* Big Lifts 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Big Lifts 2.entitlements"; sourceTree = "<group>"; };
 		545900095AB2AF5A89E39D44 /* 20-gear-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear-2.png"; sourceTree = "<group>"; };
 		5459000EBFC073C87ABC1361 /* FTOWorkoutCellTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutCellTests.h; sourceTree = "<group>"; };
+		5459001158CAB4374CA0EE15 /* FTOSetStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSetStoreTests.h; sourceTree = "<group>"; };
 		54590013A92D2E981EB34652 /* WeightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightTableCell.m; sourceTree = "<group>"; };
 		5459001F4B3273EA7B3EF05E /* LiftFormCellHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiftFormCellHelper.h; sourceTree = "<group>"; };
 		5459003C379CCAE327FC9DBB /* SSStateStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStateStore.m; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		5459098F909D7141F6FB5963 /* SetLogStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLogStore.h; sourceTree = "<group>"; };
 		54590999405D6C63974DB91E /* FTOSettingsStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSettingsStoreTests.m; sourceTree = "<group>"; };
 		545909A2F895E4143231BDD0 /* FTOEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOEditViewController.h; sourceTree = "<group>"; };
+		545909B02A75B24019F8875E /* FTOSetStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSetStoreTests.m; sourceTree = "<group>"; };
 		545909B988F88EA9BEDA3246 /* FTOLiftWorkoutToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftWorkoutToolbar.m; sourceTree = "<group>"; };
 		545909C6179736A6EF98AA19 /* FTOEditViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOEditViewControllerTests.h; sourceTree = "<group>"; };
 		545909C8D81B5BFC1DBCF6D4 /* FTOLiftStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftStore.m; sourceTree = "<group>"; };
@@ -648,6 +651,8 @@
 				5459005DD15F8A40445FE67D /* FTOWorkoutSetsGeneratorTests.h */,
 				54590999405D6C63974DB91E /* FTOSettingsStoreTests.m */,
 				5459005CC0C73F6B2FF83B7A /* FTOSettingsStoreTests.h */,
+				545909B02A75B24019F8875E /* FTOSetStoreTests.m */,
+				5459001158CAB4374CA0EE15 /* FTOSetStoreTests.h */,
 			);
 			path = FTO;
 			sourceTree = "<group>";
@@ -1702,6 +1707,7 @@
 				545902FCC55404D23E2371B6 /* WeightRounderTests.m in Sources */,
 				54590181184B42622098E6F3 /* FTOSettingsStoreTests.m in Sources */,
 				54590CCF94F6811AEE82E1B9 /* FTOPlanViewControllerTests.m in Sources */,
+				545905B7E5F9A895E4CFFED3 /* FTOSetStoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

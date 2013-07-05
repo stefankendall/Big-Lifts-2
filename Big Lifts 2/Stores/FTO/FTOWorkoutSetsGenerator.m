@@ -5,39 +5,39 @@
 
 - (NSArray *)setsForWeek:(int)week lift:(FTOLift *)lift {
     NSArray *week1Lifts = @[
-            [SetData dataWithReps:5 percentage:@"40" lift:lift],
-            [SetData dataWithReps:5 percentage:@"50" lift:lift],
-            [SetData dataWithReps:3 percentage:@"60" lift:lift],
-            [SetData dataWithReps:5 percentage:@"65" lift:lift],
-            [SetData dataWithReps:5 percentage:@"75" lift:lift],
-            [SetData dataWithReps:5 percentage:@"85" lift:lift]
+            [SetData dataWithReps:5 percentage:N(40) lift:lift],
+            [SetData dataWithReps:5 percentage:N(50) lift:lift],
+            [SetData dataWithReps:3 percentage:N(60) lift:lift],
+            [SetData dataWithReps:5 percentage:N(65) lift:lift],
+            [SetData dataWithReps:5 percentage:N(75) lift:lift],
+            [SetData dataWithReps:5 percentage:N(85) lift:lift]
     ];
 
     NSArray *week2Lifts = @[
-            [SetData dataWithReps:5 percentage:@"40" lift:lift],
-            [SetData dataWithReps:5 percentage:@"50" lift:lift],
-            [SetData dataWithReps:3 percentage:@"60" lift:lift],
-            [SetData dataWithReps:3 percentage:@"70" lift:lift],
-            [SetData dataWithReps:3 percentage:@"80" lift:lift],
-            [SetData dataWithReps:3 percentage:@"90" lift:lift]
+            [SetData dataWithReps:5 percentage:N(40) lift:lift],
+            [SetData dataWithReps:5 percentage:N(50) lift:lift],
+            [SetData dataWithReps:3 percentage:N(60) lift:lift],
+            [SetData dataWithReps:3 percentage:N(70) lift:lift],
+            [SetData dataWithReps:3 percentage:N(80) lift:lift],
+            [SetData dataWithReps:3 percentage:N(90) lift:lift]
     ];
 
     NSArray *week3Lifts = @[
-            [SetData dataWithReps:5 percentage:@"40" lift:lift],
-            [SetData dataWithReps:5 percentage:@"50" lift:lift],
-            [SetData dataWithReps:3 percentage:@"60" lift:lift],
-            [SetData dataWithReps:5 percentage:@"75" lift:lift],
-            [SetData dataWithReps:3 percentage:@"85" lift:lift],
-            [SetData dataWithReps:1 percentage:@"95" lift:lift]
+            [SetData dataWithReps:5 percentage:N(40) lift:lift],
+            [SetData dataWithReps:5 percentage:N(50) lift:lift],
+            [SetData dataWithReps:3 percentage:N(60) lift:lift],
+            [SetData dataWithReps:5 percentage:N(75) lift:lift],
+            [SetData dataWithReps:3 percentage:N(85) lift:lift],
+            [SetData dataWithReps:1 percentage:N(95) lift:lift]
     ];
 
     NSArray *week4Lifts = @[
-            [SetData dataWithReps:5 percentage:@"40" lift:lift],
-            [SetData dataWithReps:5 percentage:@"50" lift:lift],
-            [SetData dataWithReps:5 percentage:@"60" lift:lift],
-            [SetData dataWithReps:5 percentage:@"60" lift:lift],
-            [SetData dataWithReps:5 percentage:@"60" lift:lift],
-            [SetData dataWithReps:5 percentage:@"60" lift:lift]
+            [SetData dataWithReps:5 percentage:N(40) lift:lift],
+            [SetData dataWithReps:5 percentage:N(50) lift:lift],
+            [SetData dataWithReps:5 percentage:N(60) lift:lift],
+            [SetData dataWithReps:5 percentage:N(60) lift:lift],
+            [SetData dataWithReps:5 percentage:N(60) lift:lift],
+            [SetData dataWithReps:5 percentage:N(60) lift:lift]
     ];
 
     NSDictionary *fresherTemplate = @{
