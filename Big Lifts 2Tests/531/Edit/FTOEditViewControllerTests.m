@@ -1,9 +1,10 @@
 #import "FTOEditViewControllerTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOEditViewController.h"
-#import "LiftFormCellHelper.h"
 #import "NSArray+Enumerable.h"
 #import "FTOLiftStore.h"
+#import "LiftFormCell.h"
+#import "FTOEditLiftCell.h"
 
 @interface FTOEditViewControllerTests ()
 
@@ -22,7 +23,11 @@
 }
 
 - (void)testHasAllLifts {
-    NSArray *lifts = [LiftFormCellHelper getLiftNamesFromCells:self.controller count:[[FTOLiftStore instance] count]];
+    NSMutableArray *lifts = [@[] mutableCopy];
+    for (int i = 0; i < [[FTOLiftStore instance] count]; i++) {
+        FTOEditLiftCell *cell = (FTOEditLiftCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        [lifts addObject:cell.liftName.text];
+    }
     [@[@"Squat", @"Deadlift", @"Press", @"Bench"] each:^(NSString *lift) {
         STAssertTrue([lifts containsObject:lift], @"");
     }];
