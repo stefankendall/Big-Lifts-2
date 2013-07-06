@@ -11,4 +11,10 @@
     return set;
 }
 
+- (Set *)createWarmupWithLift:(Lift *)lift percentage:(NSDecimalNumber *)percentage {
+    Set *set = [[SetStore instance] createWithLift:lift percentage:percentage];
+    set.warmup = YES;
+    return set;
+}
+
 @end

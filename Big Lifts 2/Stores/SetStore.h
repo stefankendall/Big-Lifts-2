@@ -7,4 +7,6 @@
 @interface SetStore : BLStore
 
 - (Set *)createWithLift:(Lift *)lift percentage:(NSDecimalNumber *)percentage;
+
+- (Set *)createWarmupWithLift:(Lift *)lift percentage:(NSDecimalNumber *)percentage;
 @end

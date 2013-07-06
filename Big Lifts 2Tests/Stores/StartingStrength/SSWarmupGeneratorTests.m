@@ -15,6 +15,10 @@
     Workout *squatWorkout = [self findWorkout:workoutA name:@"Squat"];
     [[SSWarmupGenerator new] addWarmup:squatWorkout];
     STAssertEquals([squatWorkout.sets count], 8U, @"");
+    Set *firstSet = [squatWorkout.sets firstObject];
+    Set *lastSet = [squatWorkout.sets lastObject];
+    STAssertTrue(firstSet.warmup, @"");
+    STAssertFalse(lastSet.warmup, @"");
 }
 
 - (Workout *)findWorkout:(SSWorkout *)workoutA name:(NSString *)name {

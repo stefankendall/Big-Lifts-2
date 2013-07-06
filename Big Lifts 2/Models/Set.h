@@ -5,6 +5,7 @@
 @property(nonatomic) NSDecimalNumber *percentage;
 @property(nonatomic) NSDecimalNumber *weight;
 @property(nonatomic) Lift *lift;
+@property(nonatomic) BOOL warmup;
 
 - (NSDecimalNumber *) effectiveWeight;
 
