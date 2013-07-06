@@ -32,6 +32,7 @@
     <entity name="Set" representedClassName="Set" syncable="YES">
         <attribute name="percentage" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="warmup" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="lift" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Lift" syncable="YES"/>
     </entity>
@@ -71,6 +72,7 @@
         <element name="CurrentProgram" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOLift" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOSet" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOSettings" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Lift" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Plate" positionX="0" positionY="0" width="0" height="0"/>
@@ -83,6 +85,5 @@
         <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FTOSettings" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
