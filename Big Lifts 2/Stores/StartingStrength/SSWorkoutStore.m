@@ -1,4 +1,3 @@
-#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "BLStore.h"
 #import "SSWorkoutStore.h"
 #import "SSWorkout.h"
@@ -25,7 +24,7 @@
 
     [self empty];
 
-    SSWorkout *workoutA = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0 withAlternation: 0];
+    SSWorkout *workoutA = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0 withAlternation:0];
     SSWorkout *workoutB = [[SSWorkoutStore instance] createWithName:@"B" withOrder:1 withAlternation:0];
 
     if ([variant isEqualToString:@"Standard"]) {
@@ -45,6 +44,10 @@
 
         [self setupOnusWunslerB:workoutB];
     }
+}
+
+- (void)setupWarmup {
+
 }
 
 - (void)restrictLiftsTo:(NSArray *)liftNames {
@@ -96,30 +99,11 @@
         Set *set = [[SetStore instance] create];
         set.lift = lift;
         set.reps = [NSNumber numberWithInt:reps];
+        set.percentage = N(100);
         [workout.sets addObject:set];
     }
 
     return workout;
-}
-
-- (void)onLoad {
-    [self syncSetsToLiftWeights];
-
-    [[SSLiftStore instance] registerChangeListener:^{
-        [self syncSetsToLiftWeights];
-    }];
-}
-
-- (void)syncSetsToLiftWeights {
-    NSArray *ssWorkouts = [[SSWorkoutStore instance] findAll];
-    for (SSWorkout *ssWorkout in ssWorkouts) {
-        for (Workout *workout in ssWorkout.workouts) {
-            for (Set *set in workout.sets) {
-                SSLift *lift = (SSLift *) set.lift;
-                set.weight = lift.weight;
-            }
-        }
-    }
 }
 
 - (void)incrementWeights:(SSWorkout *)ssWorkout {

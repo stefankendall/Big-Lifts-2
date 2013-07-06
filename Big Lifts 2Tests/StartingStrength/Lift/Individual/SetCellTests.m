@@ -4,6 +4,7 @@
 #import "SSWorkout.h"
 #import "Workout.h"
 #import "Set.h"
+#import "Lift.h"
 
 @implementation SetCellTests
 
@@ -13,7 +14,7 @@
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];
     Set *set = workout.sets[0];
-    [set setWeight:[NSNumber numberWithDouble:300.0]];
+    set.lift.weight = N(300);
     [set setReps:[NSNumber numberWithInt:5]];
 
     [cell setSet:set];

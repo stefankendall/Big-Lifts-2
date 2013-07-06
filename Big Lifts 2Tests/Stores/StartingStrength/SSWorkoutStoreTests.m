@@ -6,6 +6,7 @@
 #import "SSLift.h"
 #import "Workout.h"
 #import "Set.h"
+#import "NSArray+Enumerable.h"
 
 @implementation SSWorkoutStoreTests
 
@@ -29,16 +30,6 @@
     Workout *workout = savedWorkout.workouts[0];
     SSLift *lift = (SSLift *) ((Set *) workout.sets[0]).lift;
     STAssertTrue([lift.name isEqualToString:@"Bench"], @"");
-}
-
-- (void)testSyncsToSsLiftsWeights {
-    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
-    Workout *workout = ssWorkout.workouts[0];
-    Set *set = workout.sets[0];
-    SSLift *lift = (SSLift *) set.lift;
-    lift.weight = [NSDecimalNumber decimalNumberWithString:@"200"];
-    [[SSWorkoutStore instance] syncSetsToLiftWeights];
-    STAssertEquals(set.weight.doubleValue, 200.0, @"");
 }
 
 - (void)testIncrementsAssociatedLifts {
@@ -74,6 +65,18 @@
     [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
     [[SSWorkoutStore instance] setupVariant:@"Standard"];
     STAssertEquals([[SSLiftStore instance] count], 5, @"");
+}
+
+- (void) testSetupSsWarmupStandard {
+    [[SSWorkoutStore instance] setupVariant:@"Standard"];
+    [[SSWorkoutStore instance] setupWarmup];
+    SSWorkout *workoutA = [[SSWorkoutStore instance] find: @"name" value: @"A"];
+    Workout *squatWorkout = [[workoutA.workouts array] detect:^BOOL(Workout *workout) {
+        Set *set = workout.sets[0];
+        return [set.lift.name isEqualToString:@"Squat"];
+    }];
+
+    STAssertEquals([squatWorkout.sets count], 8U, @"");
 }
 
 @end

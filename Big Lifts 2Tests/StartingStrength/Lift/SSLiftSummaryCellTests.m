@@ -20,7 +20,7 @@
     settings.units = @"kg";
 
     Set *set = ((Workout *)workoutA.workouts[0]).sets[0];
-    set.weight = [NSNumber numberWithDouble:200];
+    set.lift.weight = N(200);
     [cell setWorkout:workoutA.workouts[0]];
 
     STAssertTrue([[cell liftLabel].text isEqualToString:set.lift.name], @"");

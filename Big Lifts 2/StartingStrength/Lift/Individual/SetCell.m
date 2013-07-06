@@ -10,8 +10,8 @@
     [self.repsLabel setText:[NSString stringWithFormat:@"%dx", [[set reps] intValue]]];
 
     Settings *settings = [[SettingsStore instance] first];
-    [self.weightLabel setText:[NSString stringWithFormat:@"%0.1f %@", [[set weight] doubleValue], settings.units]];
-
+    [self.weightLabel setText:[NSString stringWithFormat:@"%0.1f %@",
+                                                         [[set effectiveWeight] doubleValue], settings.units]];
     [self.liftLabel setText:[set lift].name];
 }
 @end
