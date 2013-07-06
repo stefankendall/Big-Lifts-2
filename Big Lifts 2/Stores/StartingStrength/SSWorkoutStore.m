@@ -1,3 +1,4 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "BLStore.h"
 #import "SSWorkoutStore.h"
 #import "SSWorkout.h"
@@ -9,6 +10,7 @@
 #import "WorkoutStore.h"
 #import "SSVariantStore.h"
 #import "SSVariant.h"
+#import "SSWarmupGenerator.h"
 
 @implementation SSWorkoutStore
 
@@ -47,7 +49,11 @@
 }
 
 - (void)setupWarmup {
-
+    [[[SSWorkoutStore instance] findAll] each:^(SSWorkout *ssWorkout) {
+        [[ssWorkout.workouts array] each:^(Workout *workout) {
+            [[SSWarmupGenerator new] addWarmup: workout];
+        }];
+    }];
 }
 
 - (void)restrictLiftsTo:(NSArray *)liftNames {
