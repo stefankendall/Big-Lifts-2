@@ -4,6 +4,7 @@
 #import "FTOSettings.h"
 #import "BLStore.h"
 #import "FTOSettingsStore.h"
+#import "WeightRounder.h"
 
 @implementation FTOEditLiftCell
 
@@ -22,7 +23,7 @@
 - (void)updateTrainingMax:(NSDecimalNumber *)weight {
     FTOSettings *settings = [[FTOSettingsStore instance] first];
     NSDecimalNumber *trainingWeight = [[weight decimalNumberByMultiplyingBy:settings.trainingMax] decimalNumberByDividingBy:N(100)];
-    [self.trainingWeight setText:[trainingWeight stringValue]];
+    [self.trainingWeight setText:[[[WeightRounder new] roundTo1:trainingWeight] stringValue]];
 }
 
 @end
