@@ -46,6 +46,8 @@
 
         [self setupOnusWunslerB:workoutB];
     }
+
+    [self setupWarmup];
 }
 
 - (void)setupWarmup {

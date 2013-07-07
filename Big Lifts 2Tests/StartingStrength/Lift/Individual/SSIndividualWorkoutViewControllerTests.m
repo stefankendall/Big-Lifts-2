@@ -11,6 +11,8 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSStateStore.h"
 #import "SSState.h"
+#import "NSArray+Enumerable.h"
+#import "Set.h"
 
 @interface SSIndividualWorkoutViewControllerTests ()
 @property(nonatomic, strong) SSIndividualWorkoutViewController *controller;
@@ -45,16 +47,20 @@
     WorkoutLogStore *logStore = [WorkoutLogStore instance];
     WorkoutLog *workoutLog = [logStore first];
     STAssertEquals([logStore count], 1, @"");
-    STAssertEquals([[workoutLog sets] count], (NSUInteger) 7, @"");
+    NSArray *workSets = [[[workoutLog sets] array] select:^BOOL(Set *set) {
+        return !set.warmup;
+    }];
+
+    STAssertEquals([workSets count], (NSUInteger) 7, @"");
     STAssertNotNil(workoutLog.date, @"");
 
-    STAssertTrue([((SetLog *) [workoutLog sets][0]).name isEqualToString:@"Squat"], @"");
-    STAssertTrue([((SetLog *) [workoutLog sets][1]).name isEqualToString:@"Squat"], @"");
-    STAssertTrue([((SetLog *) [workoutLog sets][2]).name isEqualToString:@"Squat"], @"");
-    STAssertTrue([((SetLog *) [workoutLog sets][3]).name isEqualToString:@"Bench"], @"");
-    STAssertTrue([((SetLog *) [workoutLog sets][4]).name isEqualToString:@"Bench"], @"");
-    STAssertTrue([((SetLog *) [workoutLog sets][5]).name isEqualToString:@"Bench"], @"");
-    STAssertTrue([((SetLog *) [workoutLog sets][6]).name isEqualToString:@"Deadlift"], @"");
+    STAssertTrue([((SetLog *) workSets[0]).name isEqualToString:@"Squat"], @"");
+    STAssertTrue([((SetLog *) workSets[1]).name isEqualToString:@"Squat"], @"");
+    STAssertTrue([((SetLog *) workSets[2]).name isEqualToString:@"Squat"], @"");
+    STAssertTrue([((SetLog *) workSets[3]).name isEqualToString:@"Bench"], @"");
+    STAssertTrue([((SetLog *) workSets[4]).name isEqualToString:@"Bench"], @"");
+    STAssertTrue([((SetLog *) workSets[5]).name isEqualToString:@"Bench"], @"");
+    STAssertTrue([((SetLog *) workSets[6]).name isEqualToString:@"Deadlift"], @"");
 }
 
 - (void)testTappingDoneButtonIncrementsWeights {

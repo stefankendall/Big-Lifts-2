@@ -3,13 +3,16 @@
 #import "SSWorkoutStore.h"
 #import "SetCellWithPlates.h"
 #import "IAPAdapter.h"
+#import "SSWorkout.h"
+#import "Workout.h"
 
 @implementation SSIndividualWorkoutDataSourceTests
 
 - (void)testReturnsCorrectNumberOfRows {
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     SSIndividualWorkoutDataSource *dataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:ssWorkout];
-    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 3, @"");
+    Workout *workout = ssWorkout.workouts[0];
+    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], (int) [workout.sets count], @"");
 }
 
 - (void)testReturnsPlatesWhenBarLoadingPurchased {
