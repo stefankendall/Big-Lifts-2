@@ -5,6 +5,7 @@
 #import "Set.h"
 #import "SettingsStore.h"
 #import "Settings.h"
+#import "WeightRounder.h"
 
 @implementation SSLiftSummaryCell
 
@@ -17,7 +18,8 @@
     [self.setsAndRepsLabel setText:[NSString stringWithFormat:@"%dx%d", worksetCount, [lastSet.reps intValue]]];
 
     Settings *settings = [[SettingsStore instance] first];
-    [self.weightLabel setText:[NSString stringWithFormat:@"%.1f %@", [[lastSet effectiveWeight] doubleValue], settings.units]];
+    [self.weightLabel setText:[NSString stringWithFormat:@"%@ %@",
+                    [[WeightRounder new] roundTo1: [lastSet effectiveWeight]], settings.units]];
 }
 
 @end

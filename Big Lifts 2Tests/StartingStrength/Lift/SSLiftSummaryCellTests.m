@@ -24,7 +24,7 @@
     [cell setWorkout:workoutA.workouts[0]];
 
     STAssertTrue([[cell liftLabel].text isEqualToString:set.lift.name], @"");
-    STAssertTrue([[cell weightLabel].text isEqualToString:@"200.0 kg"], [cell weightLabel].text);
+    STAssertTrue([[cell weightLabel].text isEqualToString:@"200 kg"], [cell weightLabel].text);
     STAssertTrue([[cell setsAndRepsLabel].text isEqualToString:@"3x5"], [cell setsAndRepsLabel].text);
 }
 
