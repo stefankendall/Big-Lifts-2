@@ -12,6 +12,7 @@
 #import "SSState.h"
 #import "SSVariantStore.h"
 #import "SSVariant.h"
+#import "IAPAdapter.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -79,7 +80,15 @@
     log.date = [NSDate date];
 
     for (Workout *workout in self.ssWorkout.workouts) {
-        for (Set *set in workout.sets) {
+        NSArray *sets;
+        if ([[IAPAdapter instance] hasPurchased:@"ssWarmup"]) {
+            sets = [workout.sets array];
+        }
+        else {
+            sets = [workout workSets];
+        }
+
+        for (Set *set in sets) {
             [log.sets addObject:[[SetLogStore instance] createFromSet:set]];
         }
     }

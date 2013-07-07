@@ -18,7 +18,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[self getCurrentWorkout] sets] count];
+    Workout *workout = [self getCurrentWorkout];
+
+    if([[IAPAdapter instance] hasPurchased:@"ssWarmup"]){
+        return [[workout sets] count];
+    }
+    else {
+        return [[workout workSets] count];
+    }
 }
 
 - (Workout *)getCurrentWorkout {

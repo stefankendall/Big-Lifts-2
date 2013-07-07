@@ -13,6 +13,7 @@
 #import "SSState.h"
 #import "NSArray+Enumerable.h"
 #import "Set.h"
+#import "IAPAdapter.h"
 
 @interface SSIndividualWorkoutViewControllerTests ()
 @property(nonatomic, strong) SSIndividualWorkoutViewController *controller;
@@ -41,6 +42,7 @@
 }
 
 - (void)testTappingDoneButtonLogsWorkout {
+    [[IAPAdapter instance] addPurchase:@"ssWarmup"];
     self.controller.ssWorkout = [[SSWorkoutStore instance] first];
     [self.controller doneButtonTapped:nil];
 
@@ -61,6 +63,15 @@
     STAssertTrue([((SetLog *) workSets[4]).name isEqualToString:@"Bench"], @"");
     STAssertTrue([((SetLog *) workSets[5]).name isEqualToString:@"Bench"], @"");
     STAssertTrue([((SetLog *) workSets[6]).name isEqualToString:@"Deadlift"], @"");
+}
+
+- (void)testTappingDoneButtonWithoutWarmup {
+    self.controller.ssWorkout = [[SSWorkoutStore instance] first];
+    [self.controller doneButtonTapped:nil];
+
+    WorkoutLogStore *logStore = [WorkoutLogStore instance];
+    WorkoutLog *workoutLog = [logStore first];
+    STAssertEquals([[workoutLog sets] count], (NSUInteger) 7, @"");
 }
 
 - (void)testTappingDoneButtonIncrementsWeights {
