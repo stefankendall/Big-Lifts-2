@@ -9,12 +9,12 @@
     SetLog *log1 = [[SetLogStore instance] create];
     log1.name = @"Squat";
     log1.reps = @5;
-    log1.weight = @255.5;
+    log1.weight = N(255.5);
 
     SetLog *log2 = [[SetLogStore instance] create];
     log2.name = @"Squat";
     log2.reps = @5;
-    log2.weight = @255.5;
+    log2.weight = N(255.5);
 
     SetLogContainer *container1 = [SetLogContainer new];
     container1.setLog = log1;
@@ -28,12 +28,12 @@
     SetLog *log1 = [[SetLogStore instance] create];
     log1.name = @"Squat";
     log1.reps = @4;
-    log1.weight = @255.5;
+    log1.weight = N(255.5);
 
     SetLog *log2 = [[SetLogStore instance] create];
     log2.name = @"Squat";
     log2.reps = @5;
-    log2.weight = @255.5;
+    log2.weight = N(255.5);
 
     SetLogContainer *container1 = [SetLogContainer new];
     container1.setLog = log1;

@@ -76,7 +76,7 @@
         return [set.lift.name isEqualToString:@"Squat"];
     }];
 
-    STAssertEquals([squatWorkout.sets count], 8U, @"");
+    STAssertEquals([squatWorkout.sets count], 13U, @"");
 }
 
 @end

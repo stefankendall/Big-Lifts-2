@@ -10,6 +10,7 @@
     setLog.reps = set.reps;
     setLog.weight = [set roundedEffectiveWeight];
     setLog.name = set.lift.name;
+    setLog.warmup = set.warmup;
     return setLog;
 }
 

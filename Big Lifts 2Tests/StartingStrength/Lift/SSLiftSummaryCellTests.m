@@ -20,6 +20,7 @@
     settings.units = @"kg";
 
     Set *set = ((Workout *)workoutA.workouts[0]).sets[0];
+    set.percentage = N(100);
     set.lift.weight = N(200);
     [cell setWorkout:workoutA.workouts[0]];
 

@@ -15,6 +15,7 @@
     Workout *workout = [ssWorkout workouts][0];
     Set *set = workout.sets[0];
     set.lift.weight = N(300);
+    set.percentage = N(100);
     [set setReps:[NSNumber numberWithInt:5]];
 
     [cell setSet:set];
