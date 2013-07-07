@@ -8,7 +8,6 @@
 #import "Set.h"
 #import "SettingsStore.h"
 #import "Settings.h"
-#import "BLStoreManager.h"
 
 @implementation SSLiftSummaryCellTests
 
@@ -16,10 +15,10 @@
     SSLiftSummaryCell *cell = [SSLiftSummaryCell create];
     SSWorkout *workoutA = [[SSWorkoutStore instance] first];
 
-    Settings * settings = [[SettingsStore instance] first];
+    Settings *settings = [[SettingsStore instance] first];
     settings.units = @"kg";
 
-    Set *set = ((Workout *)workoutA.workouts[0]).sets[0];
+    Set *set = [((Workout *) workoutA.workouts[0]).sets lastObject];
     set.percentage = N(100);
     set.lift.weight = N(200);
     [cell setWorkout:workoutA.workouts[0]];
