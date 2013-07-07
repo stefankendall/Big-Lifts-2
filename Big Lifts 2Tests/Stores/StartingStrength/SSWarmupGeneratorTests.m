@@ -25,6 +25,7 @@
     Set *lastSet = [squatWorkout.sets lastObject];
     STAssertTrue(firstSet.warmup, @"");
     STAssertTrue([firstSet.reps intValue] > 0, @"");
+    STAssertEqualObjects([firstSet effectiveWeight], @45, @"");
     STAssertFalse(lastSet.warmup, @"");
 }
 
