@@ -25,12 +25,8 @@
     [cell setWorkout:workoutA.workouts[0]];
 
     STAssertTrue([[cell liftLabel].text isEqualToString:set.lift.name], @"");
-
-    NSString *weightString = [cell weightLabel].text;
-    STAssertTrue([weightString isEqualToString:@"200.0 kg"], weightString);
-
-    NSString *weightText = [cell weightLabel].text;
-    STAssertTrue([weightText isEqualToString:@"200.0 kg"], weightText);
+    STAssertTrue([[cell weightLabel].text isEqualToString:@"200.0 kg"], [cell weightLabel].text);
+    STAssertTrue([[cell setsAndRepsLabel].text isEqualToString:@"3x5"], [cell setsAndRepsLabel].text);
 }
 
 @end
