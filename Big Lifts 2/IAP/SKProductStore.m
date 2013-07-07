@@ -9,15 +9,17 @@
 
     dispatch_once(&onceToken, ^{
         store = [SKProductStore new];
+        store.allPurchaseIds = @[@"barLoading", @"ssOnusWunsler", @"ssWarmup"];
     });
 
     return store;
 }
 
-- (void)loadProducts: (void(^)())callback {
-    [[IAPAdapter instance] getProductsForIds:@[@"barLoading"] completion:^(NSArray *products) {
+- (void)loadProducts:(void (^)())callback {
+    [[IAPAdapter instance] getProductsForIds:self.allPurchaseIds completion:^(NSArray *products) {
+        NSLog(@"%@", products);
         self.products = products;
-        if( callback ){
+        if (callback) {
             callback();
         }
     }];

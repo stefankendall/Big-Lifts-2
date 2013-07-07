@@ -9,5 +9,6 @@
 - (void)loadProducts:(void (^)())callback;
 
 @property(nonatomic, strong) NSArray *products;
+@property(nonatomic, strong) NSArray *allPurchaseIds;
 
 @end

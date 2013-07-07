@@ -24,10 +24,16 @@
                     @"buyButton" : self.onusWunslerBuyButton,
                     @"purchasedButton" : self.onusWunslerPurchasedButton,
                     @"buyMessage" : @"Onus Wunsler is now available in Starting Strength."
+            },
+            @"ssWarmup" : @{
+                    @"buyButton" : self.ssWarmupBuyButton,
+                    @"purchasedButton" : self.ssWarmupPurchasedButton,
+                    @"buyMessage" : @"Warm-up sets added to Starting Strength."
             }
     };
     [self setProductPrice:[[SKProductStore instance] productById:@"barLoading"]];
     [self setProductPrice:[[SKProductStore instance] productById:@"ssOnusWunsler"]];
+    [self setProductPrice:[[SKProductStore instance] productById:@"ssWarmup"]];
 }
 
 - (void)setProductPrice:(SKProduct *)product {

@@ -9,6 +9,7 @@
     }];
     [self waitForCompletion:5];
     STAssertNotNil([[SKProductStore instance] productById:@"barLoading"], @"");
+    STAssertNotNil([[SKProductStore instance] productById:@"ssOnusWunsler"], @"");
 }
 
 @end
