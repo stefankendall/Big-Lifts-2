@@ -11,8 +11,6 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSStateStore.h"
 #import "SSState.h"
-#import "NSArray+Enumerable.h"
-#import "Set.h"
 #import "IAPAdapter.h"
 
 @interface SSIndividualWorkoutViewControllerTests ()
@@ -49,9 +47,7 @@
     WorkoutLogStore *logStore = [WorkoutLogStore instance];
     WorkoutLog *workoutLog = [logStore first];
     STAssertEquals([logStore count], 1, @"");
-    NSArray *workSets = [[[workoutLog sets] array] select:^BOOL(Set *set) {
-        return !set.warmup;
-    }];
+    NSOrderedSet *workSets = [workoutLog sets];
 
     STAssertEquals([workSets count], (NSUInteger) 7, @"");
     STAssertNotNil(workoutLog.date, @"");
