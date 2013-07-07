@@ -24,6 +24,7 @@
     Set *firstSet = [squatWorkout.sets firstObject];
     Set *lastSet = [squatWorkout.sets lastObject];
     STAssertTrue(firstSet.warmup, @"");
+    STAssertTrue([firstSet.reps intValue] > 0, @"");
     STAssertFalse(lastSet.warmup, @"");
 }
 

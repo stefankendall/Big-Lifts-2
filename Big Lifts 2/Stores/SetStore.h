@@ -8,5 +8,5 @@
 
 - (Set *)createWithLift:(Lift *)lift percentage:(NSDecimalNumber *)percentage;
 
-- (Set *)createWarmupWithLift:(Lift *)lift percentage:(NSDecimalNumber *)percentage;
+- (Set *)createWarmupWithLift:(Lift *)lift percentage:(NSDecimalNumber *)percentage reps:(int)reps;
 @end
