@@ -7,7 +7,7 @@
 
 - (void)setupDefaults {
     Bar *bar = [[BarStore instance] create];
-    bar.weight = [NSNumber numberWithDouble:45];
+    bar.weight = N(45);
 }
 
 - (void)onLoad {
@@ -20,7 +20,7 @@
     Bar *bar = [[BarStore instance] first];
     Settings *settings = [[SettingsStore instance] first];
     if ([settings.units isEqualToString:@"kg"]) {
-        bar.weight = [NSNumber numberWithDouble:20.4];
+        bar.weight = N(20.4);
     }
 }
 

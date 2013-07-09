@@ -6,6 +6,7 @@
 @implementation WeightRounderTests
 
 - (void)testRoundsTo5ByDefault {
+    STAssertEqualObjects([[WeightRounder new] round:N(165)], @165, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(166)], @165, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(168)], @170, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(167.5)], @170, @"");

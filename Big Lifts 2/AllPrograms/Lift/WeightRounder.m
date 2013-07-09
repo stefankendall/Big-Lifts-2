@@ -22,9 +22,12 @@
 - (NSDecimalNumber *)roundTo5:(NSDecimalNumber *)number {
     int base5Round = [[number decimalNumberByDividingBy:N(5)] intValue] * 5;
     int lastTwoDigits = [[number decimalNumberByMultiplyingBy:N(10)] intValue] % 100;
-    lastTwoDigits = lastTwoDigits > 50 ? lastTwoDigits - 50 : lastTwoDigits;
+    lastTwoDigits = lastTwoDigits >= 50 ? lastTwoDigits - 50 : lastTwoDigits;
 
-    if (lastTwoDigits < 25) {
+    if (lastTwoDigits == 0) {
+        return number;
+    }
+    else if (lastTwoDigits < 25) {
         return [[NSDecimalNumber alloc] initWithInt:base5Round];
     }
     else {
