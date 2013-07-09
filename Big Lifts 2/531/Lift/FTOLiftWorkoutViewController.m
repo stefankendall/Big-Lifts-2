@@ -8,6 +8,7 @@
 #import "SetLogStore.h"
 #import "Set.h"
 #import "FTOLiftWorkoutToolbar.h"
+#import "FTORepsToBeatCalculator.h"
 
 @interface FTOLiftWorkoutViewController ()
 
@@ -29,6 +30,8 @@
             cell = [FTOLiftWorkoutToolbar create];
             Set *lastSet = [self.ftoWorkout.workout.sets lastObject];
             [cell.repsField setPlaceholder:lastSet.reps.stringValue];
+            int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:lastSet.lift atWeight:[lastSet roundedEffectiveWeight]];
+            [cell.repsToBeatField setText:[NSString stringWithFormat:@"%d", repsToBeat]];
             self.repsField = cell.repsField;
         }
         return cell;

@@ -26,11 +26,26 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Beat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2i-Cr-t2X">
+                        <rect key="frame" x="20" y="11" width="56" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7U-33-yvz">
+                        <rect key="frame" x="84" y="11" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <connections>
                 <outlet property="repsField" destination="idI-xR-gkw" id="who-GK-Feb"/>
+                <outlet property="repsToBeatField" destination="R7U-33-yvz" id="igv-lW-Ag8"/>
             </connections>
         </tableViewCell>
     </objects>
@@ -42,6 +57,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOLiftWorkoutToolbar.h"/>
             <relationships>
                 <relationship kind="outlet" name="repsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="repsToBeatField" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
