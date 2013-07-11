@@ -34,6 +34,7 @@
             [CurrentProgramStore instance],
             [SettingsStore instance],
             [FTOSettingsStore instance],
+            [BarStore instance],
             [WorkoutStore instance],
             [WorkoutLogStore instance],
             [SetStore instance],
@@ -45,7 +46,6 @@
             [FTOLiftStore instance],
             [FTOWorkoutStore instance],
             [PlateStore instance],
-            [BarStore instance],
             [SetLogStore instance],
             [WorkoutLogStore instance]
     ];
