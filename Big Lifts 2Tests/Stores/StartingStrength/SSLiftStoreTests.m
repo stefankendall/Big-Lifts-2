@@ -48,6 +48,7 @@
     STAssertEquals([[SSLiftStore instance] count], 6, @"");
     SSLift *lift = [[SSLiftStore instance] find:@"name" value:@"Back Extension"];
     STAssertNotNil(lift, @"");
+    STAssertEqualObjects(lift.order, @6, @"");
 }
 
 - (void) testAddMissingLiftsHonorsUnits {

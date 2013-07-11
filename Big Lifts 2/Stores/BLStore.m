@@ -118,6 +118,22 @@
     return [self findAll][(NSUInteger) index];
 }
 
+- (NSNumber *)max:(NSString *)property {
+    NSArray *allValues = [[self findAll] collect:^id(id obj) {
+        return [obj valueForKeyPath:property];
+    }];
+    NSArray *sorted = [allValues sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [obj1 compare:obj2];
+    }];
+
+    if ([sorted count] > 0) {
+        return [sorted lastObject];
+    }
+    else {
+        return nil;
+    }
+}
+
 - (void)removeAtIndex:(int)index {
     [[BLStoreManager context] deleteObject:[self atIndex:index]];
 };

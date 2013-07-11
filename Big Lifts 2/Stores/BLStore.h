@@ -30,6 +30,8 @@
 
 - (id)atIndex:(int)index;
 
+- (NSNumber *)max:(NSString *)property;
+
 - (void)removeAtIndex:(int)index;
 
 - (int)count;

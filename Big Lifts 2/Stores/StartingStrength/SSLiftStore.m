@@ -10,11 +10,7 @@
 
 - (void)setupDefaults {
     if ([self count] == 0) {
-        [self createLift:@"Bench" withOrder:0 withIncrement:5];
-        [self createLift:@"Deadlift" withOrder:1 withIncrement:10];
-        [self createLift:@"Power Clean" withOrder:2 withIncrement:5];
-        [self createLift:@"Press" withOrder:3 withIncrement:5];
-        [self createLift:@"Squat" withOrder:4 withIncrement:10];
+        [self addMissingLifts:@[@"Bench", @"Deadlift", @"Power Clean", @"Press", @"Squat"]];
     }
 }
 
@@ -53,6 +49,8 @@
             lift = [[SSLiftStore instance] create];
             lift.name = liftName;
             lift.increment = [[SettingsStore instance] defaultIncrementForLift:liftName];
+            NSNumber *maxOrder = [[SSLiftStore instance] max:@"order"];
+            lift.order = maxOrder != nil ? [NSNumber numberWithInt:[maxOrder intValue] + 1] : @0;
         }
     }];
 }
