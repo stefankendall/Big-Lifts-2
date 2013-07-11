@@ -34,16 +34,9 @@
 
 - (void)switchWorkoutToIndex:(int)index {
     NSString *name = index == 0 ? @"A" : @"B";
-    NSArray *ssWorkouts = [[SSWorkoutStore instance] findAllWhere:@"name" value:name];
 
-    SSWorkout *newSsWorkout = ssWorkouts[0];
-    if ([name isEqualToString:@"A"]) {
-        SSState *state = [[SSStateStore instance] first];
-        newSsWorkout = ssWorkouts[(NSUInteger) [state.workoutAAlternation intValue]];
-    }
-
-    self.ssWorkout = newSsWorkout;
-    [self.ssLiftSummaryDataSource setSsWorkout:newSsWorkout];
+    self.ssWorkout = [[SSWorkoutStore instance] activeWorkoutFor: name];
+    [self.ssLiftSummaryDataSource setSsWorkout:self.ssWorkout];
     [self.workoutSummaryTable reloadData];
 }
 

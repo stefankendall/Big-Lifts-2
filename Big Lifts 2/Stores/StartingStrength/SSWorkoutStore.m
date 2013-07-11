@@ -11,6 +11,8 @@
 #import "SSVariantStore.h"
 #import "SSVariant.h"
 #import "SSWarmupGenerator.h"
+#import "SSStateStore.h"
+#import "SSState.h"
 
 @implementation SSWorkoutStore
 
@@ -43,17 +45,45 @@
         [self setupNoviceB:workoutA];
         SSWorkout *workoutA2 = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.5 withAlternation:1];
         [self setupStandardB:workoutA2];
-
         [self setupOnusWunslerB:workoutB];
+    }
+    else if ([variant isEqualToString:@"Practical Programming"]) {
+        [self restrictLiftsTo:@[@"Press", @"Bench", @"Deadlift", @"Press", @"Chin-ups", @"Pull-ups"]];
+        [self setupPracticalAMonday:workoutA];
+        SSWorkout *workoutA2 = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.5 withAlternation:1];
+        [self setupPracticalAFriday:workoutA2];
+        [self setupPracticalBWednesday:workoutB];
     }
 
     [self setupWarmup];
 }
 
+- (void)setupPracticalBWednesday:(SSWorkout *)w {
+    [self setupNoviceB:w];
+}
+
+- (void)setupPracticalAFriday:(SSWorkout *)w {
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Bench"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                               createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Pull-ups"] withSets:3 withReps:-1 amrap:YES]];
+}
+
+- (void)setupPracticalAMonday:(SSWorkout *)w {
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Bench"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                               createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Chin-ups"] withSets:3 withReps:-1 amrap:YES]];
+}
+
 - (void)setupWarmup {
     [[[SSWorkoutStore instance] findAll] each:^(SSWorkout *ssWorkout) {
         [[ssWorkout.workouts array] each:^(Workout *workout) {
-            [[SSWarmupGenerator new] addWarmup: workout];
+            [[SSWarmupGenerator new] addWarmup:workout];
         }];
     }];
 }
@@ -68,7 +98,6 @@
             [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
     [w.workouts addObject:[self                             createWorkout:
             [[SSLiftStore instance] find:@"name" value:@"Bench"] withSets:3 withReps:5]];
-
     [w.workouts addObject:[self createWorkout:[[SSLiftStore instance] find:@"name" value:@"Back Extension"]
                                      withSets:3 withReps:10]];
 }
@@ -114,6 +143,14 @@
     return workout;
 }
 
+- (Workout *)createWorkout:(SSLift *)lift withSets:(int)sets withReps:(int)reps amrap:(BOOL)amrap {
+    Workout *workout = [self createWorkout:lift withSets:sets withReps:reps];
+    [[workout.sets array] each:^(Set *set) {
+        set.amrap = amrap;
+    }];
+    return workout;
+}
+
 - (void)incrementWeights:(SSWorkout *)ssWorkout {
     for (Workout *workout in ssWorkout.workouts) {
         Set *firstSet = workout.sets[0];
@@ -128,6 +165,18 @@
     workout.order = [NSNumber numberWithDouble:order];
     workout.alternation = [NSNumber numberWithInt:alternation];
     return workout;
+}
+
+- (SSWorkout *)activeWorkoutFor:(NSString *)name {
+    NSArray *ssWorkouts = [[SSWorkoutStore instance] findAllWhere:@"name" value:name];
+
+    SSWorkout *newSsWorkout = ssWorkouts[0];
+    if ([name isEqualToString:@"A"] && [ssWorkouts count] > 0) {
+        SSState *state = [[SSStateStore instance] first];
+        newSsWorkout = ssWorkouts[(NSUInteger) [state.workoutAAlternation intValue]];
+    }
+
+    return newSsWorkout;
 }
 
 @end

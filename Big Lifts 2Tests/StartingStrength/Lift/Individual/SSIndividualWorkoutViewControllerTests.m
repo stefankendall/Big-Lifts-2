@@ -102,11 +102,4 @@
     STAssertEqualObjects(state.workoutAAlternation, @0, @"");
 }
 
-- (void)testDoesNotChangeWorkoutAAlternationForNonOnus {
-    self.controller.ssWorkout = [[SSWorkoutStore instance] first];
-    [self.controller doneButtonTapped:nil];
-    SSState *state = [[SSStateStore instance] first];
-    STAssertEqualObjects([state workoutAAlternation], @0, @"");
-}
-
 @end

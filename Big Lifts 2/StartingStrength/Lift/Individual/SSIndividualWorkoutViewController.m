@@ -57,8 +57,7 @@
 }
 
 - (void)adjustAlternation {
-    SSVariant *variant = [[SSVariantStore instance] first];
-    if ([variant.name isEqualToString:@"Onus-Wunsler"] && [self.ssWorkout.name isEqualToString:@"A"]) {
+    if ([self.ssWorkout.name isEqualToString:@"A"]) {
         SSState *state = [[SSStateStore instance] first];
         state.workoutAAlternation = [state.workoutAAlternation intValue] == 0 ? @1 : @0;
     }

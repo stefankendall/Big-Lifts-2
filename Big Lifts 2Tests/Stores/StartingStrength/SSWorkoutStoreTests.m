@@ -7,6 +7,8 @@
 #import "Workout.h"
 #import "Set.h"
 #import "NSArray+Enumerable.h"
+#import "SSStateStore.h"
+#import "SSState.h"
 
 @implementation SSWorkoutStoreTests
 
@@ -61,22 +63,38 @@
     STAssertEquals([[SSLiftStore instance] count], 6, @"");
 }
 
-- (void) testRemovesBackExtensionWhenNotOnusWunsler {
+- (void)testRemovesBackExtensionWhenNotOnusWunsler {
     [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
     [[SSWorkoutStore instance] setupVariant:@"Standard"];
     STAssertEquals([[SSLiftStore instance] count], 5, @"");
 }
 
-- (void) testSetupSsWarmupStandard {
+- (void)testSetupSsWarmupStandard {
     [[SSWorkoutStore instance] setupVariant:@"Standard"];
     [[SSWorkoutStore instance] setupWarmup];
-    SSWorkout *workoutA = [[SSWorkoutStore instance] find: @"name" value: @"A"];
+    SSWorkout *workoutA = [[SSWorkoutStore instance] find:@"name" value:@"A"];
     Workout *squatWorkout = [[workoutA.workouts array] detect:^BOOL(Workout *workout) {
         Set *set = workout.sets[0];
         return [set.lift.name isEqualToString:@"Squat"];
     }];
 
     STAssertEquals([squatWorkout.sets count], 13U, @"");
+}
+
+- (void)testActiveWorkoutForPracticalProgramming {
+    [[SSWorkoutStore instance] setupVariant:@"Practical Programming"];
+    SSWorkout *workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
+    NSLog(@"%@", workout);
+    Set *set = [[[workout.workouts lastObject] sets] firstObject];
+    STAssertEqualObjects(set.lift.name, @"Chin-ups", @"");
+
+    SSState *state = [[SSStateStore instance] first];
+    state.workoutAAlternation = @1;
+
+    workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
+    NSLog(@"%@", workout);
+    set = [[[workout.workouts lastObject] sets] firstObject];
+    STAssertEqualObjects(set.lift.name, @"Pull-ups", @"");
 }
 
 @end
