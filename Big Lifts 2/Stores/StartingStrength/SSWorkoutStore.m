@@ -48,7 +48,7 @@
         [self setupOnusWunslerB:workoutB];
     }
     else if ([variant isEqualToString:@"Practical Programming"]) {
-        [self restrictLiftsTo:@[@"Press", @"Bench", @"Deadlift", @"Press", @"Chin-ups", @"Pull-ups"]];
+        [self restrictLiftsTo:@[@"Squat", @"Press", @"Bench", @"Deadlift", @"Press", @"Chin-ups", @"Pull-ups"]];
         [self setupPracticalAMonday:workoutA];
         SSWorkout *workoutA2 = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.5 withAlternation:1];
         [self setupPracticalAFriday:workoutA2];
