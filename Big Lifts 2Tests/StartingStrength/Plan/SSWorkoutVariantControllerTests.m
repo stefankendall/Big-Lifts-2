@@ -53,16 +53,16 @@
     [[IAPAdapter instance] addPurchase:@"ssOnusWunsler"];
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
     int count = [[[controller.onusWunslerCell subviews][0] subviews] count];
-    [controller disableOnusWunsler];
+    [controller disable:controller.onusWunslerCell];
     STAssertEquals([[[controller.onusWunslerCell subviews][0] subviews] count], (NSUInteger) count + 1, @"");
-    [controller disableOnusWunsler];
+    [controller disable:controller.onusWunslerCell];
     STAssertEquals([[[controller.onusWunslerCell subviews][0] subviews] count], (NSUInteger) count + 1, @"");
 }
 
 - (void)testEnableOnusWunsler {
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
-    [controller disableOnusWunsler];
-    [controller enable: controller.onusWunslerCell withOverlay:controller.onusOverlay];
+    [controller disable:controller.onusWunslerCell];
+    [controller enable:controller.onusWunslerCell];
 
     STAssertNil([controller.onusWunslerCell viewWithTag:kPurchaseOverlayTag], @"");
 }

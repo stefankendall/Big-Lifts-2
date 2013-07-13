@@ -3,9 +3,8 @@
 @interface SSWorkoutVariantController : UITableViewController {
 }
 @property(weak, nonatomic) IBOutlet UITableViewCell *onusWunslerCell;
-@property(nonatomic, strong) UIView *onusOverlay;
+@property (weak, nonatomic) IBOutlet UITableViewCell *practicalProgrammingCell;
 
-- (void)disableOnusWunsler;
-
-- (void)enable:(UITableViewCell *)cell withOverlay:(UIView *)overlay;
+- (void)disable:(UITableViewCell *)cell;
+- (void)enable:(UITableViewCell *)cell;
 @end

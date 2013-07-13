@@ -15,15 +15,22 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     if (!([[IAPAdapter instance] hasPurchased:@"ssOnusWunsler"])) {
-        [self disableOnusWunsler];
+        [self disable:self.onusWunslerCell];
     }
     else {
-        [self enable:self.onusWunslerCell withOverlay:self.onusOverlay];
+        [self enable:self.onusWunslerCell];
+    }
+
+    if (!([[IAPAdapter instance] hasPurchased:@"ssPracticalProgramming"])) {
+        [self disable:self.practicalProgrammingCell];
+    }
+    else {
+        [self enable:self.practicalProgrammingCell];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([tableView cellForRowAtIndexPath:indexPath] == self.onusWunslerCell && self.onusOverlay) {
+    if ([[tableView cellForRowAtIndexPath:indexPath] viewWithTag:kPurchaseOverlayTag]) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
         [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"storeNav"]];
     }
@@ -35,18 +42,19 @@
     }
 }
 
-- (void)disableOnusWunsler {
-    if (![self.onusWunslerCell viewWithTag:kPurchaseOverlayTag]) {
-        self.onusOverlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
-        CGRect frame = CGRectMake(0, 0, [self.onusWunslerCell frame].size.width, [self.onusWunslerCell frame].size.height);
-        [self.onusOverlay setFrame:frame];
-        [self.onusWunslerCell addSubview:self.onusOverlay];
-        [self.onusWunslerCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+- (void)disable:(UITableViewCell *)cell {
+    if (![cell viewWithTag:kPurchaseOverlayTag]) {
+        UIView *overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
+        CGRect frame = CGRectMake(0, 0, [cell frame].size.width, [cell frame].size.height);
+        [overlay setFrame:frame];
+        [cell addSubview:overlay];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
 }
 
-- (void)enable:(UITableViewCell *)cell withOverlay:(UIView *)overlay {
+- (void)enable:(UITableViewCell *)cell {
     if ([cell viewWithTag:kPurchaseOverlayTag]) {
+        UIView *overlay = [cell viewWithTag:kPurchaseOverlayTag];
         [overlay removeFromSuperview];
         [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }

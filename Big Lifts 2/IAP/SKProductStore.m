@@ -9,7 +9,7 @@
 
     dispatch_once(&onceToken, ^{
         store = [SKProductStore new];
-        store.allPurchaseIds = @[@"barLoading", @"ssOnusWunsler", @"ssWarmup"];
+        store.allPurchaseIds = @[@"barLoading", @"ssOnusWunsler", @"ssWarmup", @"ssPracticalProgramming"];
     });
 
     return store;
@@ -17,7 +17,6 @@
 
 - (void)loadProducts:(void (^)())callback {
     [[IAPAdapter instance] getProductsForIds:self.allPurchaseIds completion:^(NSArray *products) {
-        NSLog(@"%@", products);
         self.products = products;
         if (callback) {
             callback();
