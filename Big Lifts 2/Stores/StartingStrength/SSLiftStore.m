@@ -51,6 +51,7 @@
             lift.increment = [[SettingsStore instance] defaultIncrementForLift:liftName];
             NSNumber *maxOrder = [[SSLiftStore instance] max:@"order"];
             lift.order = maxOrder != nil ? [NSNumber numberWithInt:[maxOrder intValue] + 1] : @0;
+            lift.usesBar = YES;
         }
     }];
 }

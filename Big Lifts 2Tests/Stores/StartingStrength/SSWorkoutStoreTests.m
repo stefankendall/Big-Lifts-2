@@ -97,4 +97,18 @@
     STAssertEqualObjects(set.lift.name, @"Pull-ups", @"");
 }
 
+- (void)testSetsUsesBarCorrectlyForLifts {
+    [[SSWorkoutStore instance] setupVariant:@"Practical Programming"];
+    SSLift *chinUps = [[SSLiftStore instance] find:@"name" value:@"Chin-ups"];
+    SSLift *pullUps = [[SSLiftStore instance] find:@"name" value:@"Pull-ups"];
+    SSLift *squat = [[SSLiftStore instance] find:@"name" value:@"Squat"];
+    STAssertTrue(squat.usesBar, @"");
+    STAssertFalse(chinUps.usesBar, @"");
+    STAssertFalse(pullUps.usesBar, @"");
+
+    [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
+    SSLift *backExtensions = [[SSLiftStore instance] find:@"name" value:@"Back Extensions"];
+    STAssertFalse(backExtensions.usesBar, @"");
+}
+
 @end

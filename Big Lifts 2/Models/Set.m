@@ -8,17 +8,14 @@
 
 - (NSDecimalNumber *)effectiveWeight {
     NSDecimalNumber *effectiveWeight;
-    if (!self.percentage) {
-        effectiveWeight = self.weight;
-    }
-    else {
-        effectiveWeight = [[self.lift.weight decimalNumberByMultiplyingBy:self.percentage]
-                decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"100"]];
-    }
+    effectiveWeight = [[self.lift.weight decimalNumberByMultiplyingBy:self.percentage]
+            decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"100"]];
 
-    Bar *bar = [[BarStore instance] first];
-    if ([effectiveWeight compare:bar.weight] == NSOrderedAscending) {
-        return bar.weight;
+    if (self.lift.usesBar) {
+        Bar *bar = [[BarStore instance] first];
+        if ([effectiveWeight compare:bar.weight] == NSOrderedAscending) {
+            return bar.weight;
+        }
     }
 
     return effectiveWeight;

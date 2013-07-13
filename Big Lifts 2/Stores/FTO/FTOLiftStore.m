@@ -24,6 +24,7 @@
     lift.name = name;
     lift.increment = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:increment] decimalValue]];
     lift.order = [NSNumber numberWithInt:order];
+    lift.usesBar = YES;
 }
 
 - (void)adjustForKg {

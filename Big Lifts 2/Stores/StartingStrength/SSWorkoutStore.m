@@ -42,6 +42,7 @@
         [self setupNoviceB:workoutB];
     } else if ([variant isEqualToString:@"Onus-Wunsler"]) {
         [self restrictLiftsTo:@[@"Press", @"Bench", @"Power Clean", @"Deadlift", @"Squat", @"Back Extension"]];
+        [self removeBar:@[@"Back Extension"]];
         [self setupNoviceB:workoutA];
         SSWorkout *workoutA2 = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.5 withAlternation:1];
         [self setupStandardB:workoutA2];
@@ -49,6 +50,7 @@
     }
     else if ([variant isEqualToString:@"Practical Programming"]) {
         [self restrictLiftsTo:@[@"Squat", @"Press", @"Bench", @"Deadlift", @"Press", @"Chin-ups", @"Pull-ups"]];
+        [self removeBar:@[@"Chin-ups", @"Pull-ups"]];
         [self setupPracticalAMonday:workoutA];
         SSWorkout *workoutA2 = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.5 withAlternation:1];
         [self setupPracticalAFriday:workoutA2];
@@ -56,6 +58,13 @@
     }
 
     [self setupWarmup];
+}
+
+- (void)removeBar:(NSArray *)lifts {
+    for (NSString *liftName in lifts) {
+        SSLift *lift = [[SSLiftStore instance] find:@"name" value:liftName];
+        lift.usesBar = NO;
+    }
 }
 
 - (void)setupPracticalBWednesday:(SSWorkout *)w {
@@ -67,7 +76,7 @@
             [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
     [w.workouts addObject:[self                             createWorkout:
             [[SSLiftStore instance] find:@"name" value:@"Bench"] withSets:3 withReps:5]];
-    [w.workouts addObject:[self                               createWorkout:
+    [w.workouts addObject:[self                                createWorkout:
             [[SSLiftStore instance] find:@"name" value:@"Pull-ups"] withSets:3 withReps:-1 amrap:YES]];
 }
 
@@ -76,7 +85,7 @@
             [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
     [w.workouts addObject:[self                             createWorkout:
             [[SSLiftStore instance] find:@"name" value:@"Bench"] withSets:3 withReps:5]];
-    [w.workouts addObject:[self                               createWorkout:
+    [w.workouts addObject:[self                                createWorkout:
             [[SSLiftStore instance] find:@"name" value:@"Chin-ups"] withSets:3 withReps:-1 amrap:YES]];
 }
 

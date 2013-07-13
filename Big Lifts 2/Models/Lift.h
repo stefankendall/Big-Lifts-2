@@ -3,4 +3,5 @@
 @property(nonatomic) NSDecimalNumber *weight;
 @property(nonatomic) NSNumber *order;
 @property(nonatomic) NSDecimalNumber *increment;
+@property(nonatomic) BOOL usesBar;
 @end

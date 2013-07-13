@@ -14,7 +14,7 @@
     BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[PlateStore instance] findAll]
                                                             barWeight:[bar.weight doubleValue]];
 
-    NSArray *plates = [calculator platesToMakeWeight:[set.weight doubleValue]];
+    NSArray *plates = [calculator platesToMakeWeight:[[set roundedEffectiveWeight] doubleValue]];
     NSString *platesText = [NSString stringWithFormat:@"[%@]", [plates componentsJoinedByString:@", "]];
     [self.platesLabel setText:platesText];
 }
