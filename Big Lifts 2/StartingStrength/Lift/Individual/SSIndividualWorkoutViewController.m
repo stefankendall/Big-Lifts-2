@@ -66,10 +66,6 @@
     SSState *state = [[SSStateStore instance] first];
     state.lastWorkout = self.ssWorkout;
     [self adjustAlternation];
-    SSVariant *variant = [[SSVariantStore instance] first];
-    if ([variant.name isEqualToString:@"Practical Programming"]) {
-        state.practicalProgrammingCounter = [NSNumber numberWithInt:[state.practicalProgrammingCounter intValue] + 1];
-    }
 }
 
 - (void)logWorkout {

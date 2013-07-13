@@ -6,6 +6,8 @@
 @interface SSWorkoutStore : BLStore
 - (void)setupVariant:(NSString *)variant;
 
+- (void)replaceBenchWithPress:(SSWorkout *)workout;
+
 - (void)setupWarmup;
 
 - (void)incrementWeights:(SSWorkout *)workout;

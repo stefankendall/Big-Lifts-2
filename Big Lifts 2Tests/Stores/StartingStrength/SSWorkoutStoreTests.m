@@ -117,4 +117,15 @@
     STAssertFalse(backExtensions.usesBar, @"");
 }
 
+- (void)testReplacesBenchWithPress {
+    [[SSWorkoutStore instance] setupVariant:@"Practical Programming"];
+    SSWorkout *workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
+    Set *set = [[workout.workouts[1] sets] firstObject];
+    STAssertEqualObjects(set.lift.name, @"Bench", @"");
+
+    [[SSWorkoutStore instance] replaceBenchWithPress: workout];
+    set = [[workout.workouts[1] sets] firstObject];
+    STAssertEqualObjects(set.lift.name, @"Press", @"");
+}
+
 @end

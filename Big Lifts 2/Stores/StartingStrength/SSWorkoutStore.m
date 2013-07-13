@@ -51,13 +51,30 @@
     else if ([variant isEqualToString:@"Practical Programming"]) {
         [self restrictLiftsTo:@[@"Squat", @"Press", @"Bench", @"Deadlift", @"Press", @"Chin-ups", @"Pull-ups"]];
         [self removeBar:@[@"Chin-ups", @"Pull-ups"]];
+
         [self setupPracticalAMonday:workoutA];
+        SSWorkout *workoutA1Press = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.25 withAlternation:0];
+        [self setupPracticalAMonday:workoutA1Press];
+        [self replaceBenchWithPress:workoutA1Press];
+
         SSWorkout *workoutA2 = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.5 withAlternation:1];
+        SSWorkout *workoutA2Press = [[SSWorkoutStore instance] createWithName:@"A" withOrder:0.7 withAlternation:1];
         [self setupPracticalAFriday:workoutA2];
+        [self setupPracticalAFriday:workoutA2Press];
+        [self replaceBenchWithPress:workoutA2Press];
+
+        SSWorkout *workoutBPress = [[SSWorkoutStore instance] createWithName:@"B" withOrder:1.2 withAlternation:1];
         [self setupPracticalBWednesday:workoutB];
+        [self setupPracticalBWednesday:workoutBPress];
+        [self replaceBenchWithPress:workoutBPress];
     }
 
     [self setupWarmup];
+}
+
+- (void)replaceBenchWithPress:(SSWorkout *)w {
+    [w.workouts replaceObjectAtIndex:1 withObject:[self     createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Press"] withSets:3 withReps:5]];
 }
 
 - (void)removeBar:(NSArray *)lifts {
@@ -68,7 +85,12 @@
 }
 
 - (void)setupPracticalBWednesday:(SSWorkout *)w {
-    [self setupNoviceB:w];
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Squat"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                             createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Bench"] withSets:3 withReps:5]];
+    [w.workouts addObject:[self                                createWorkout:
+            [[SSLiftStore instance] find:@"name" value:@"Deadlift"] withSets:1 withReps:5]];
 }
 
 - (void)setupPracticalAFriday:(SSWorkout *)w {
@@ -184,7 +206,13 @@
     SSWorkout *newSsWorkout = ssWorkouts[0];
     if ([name isEqualToString:@"A"] && [ssWorkouts count] > 0) {
         SSState *state = [[SSStateStore instance] first];
-        newSsWorkout = ssWorkouts[(NSUInteger) [state.workoutAAlternation intValue]];
+        int workoutAAlteration = [state.workoutAAlternation intValue];
+
+        NSArray *alt1Workouts = [ssWorkouts select:^BOOL(SSWorkout *ssWorkout) {
+            return [ssWorkout.alternation intValue] == workoutAAlteration;
+        }];
+
+        newSsWorkout = alt1Workouts[0];
     }
 
     return newSsWorkout;
