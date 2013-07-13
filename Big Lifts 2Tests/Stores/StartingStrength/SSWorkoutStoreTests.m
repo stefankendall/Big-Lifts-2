@@ -95,6 +95,20 @@
     STAssertEqualObjects(set.lift.name, @"Pull-ups", @"");
 }
 
+- (void)testActiveWorkoutPracticalProgrammingBenchRotation {
+    [[SSWorkoutStore instance] setupVariant:@"Practical Programming"];
+    SSWorkout *workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
+    Set *set = [[workout.workouts[1] sets] lastObject];
+    STAssertEqualObjects(set.lift.name, @"Bench", @"");
+
+    SSState *state = [[SSStateStore instance] first];
+    state.lastWorkout = workout;
+
+    workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
+    set = [[workout.workouts[1] sets] lastObject];
+    STAssertEqualObjects(set.lift.name, @"Press", @"");
+}
+
 - (void)testHandlesIncrementForNoIncrementLifts {
     [[SSWorkoutStore instance] setupVariant:@"Practical Programming"];
     SSWorkout *workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
@@ -123,7 +137,7 @@
     Set *set = [[workout.workouts[1] sets] firstObject];
     STAssertEqualObjects(set.lift.name, @"Bench", @"");
 
-    [[SSWorkoutStore instance] replaceBenchWithPress: workout];
+    [[SSWorkoutStore instance] replaceBenchWithPress:workout];
     set = [[workout.workouts[1] sets] firstObject];
     STAssertEqualObjects(set.lift.name, @"Press", @"");
 }

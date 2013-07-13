@@ -202,12 +202,15 @@
 
 - (SSWorkout *)activeWorkoutFor:(NSString *)name {
     NSArray *ssWorkouts = [[SSWorkoutStore instance] findAllWhere:@"name" value:name];
+    SSVariant *variant = [[SSVariantStore instance] first];
+    if ([[variant name] isEqualToString:@"Practical Programming"]) {
+        ssWorkouts = [self filterToAlternateBenchOrPress:ssWorkouts];
+    }
 
+    SSState *state = [[SSStateStore instance] first];
     SSWorkout *newSsWorkout = ssWorkouts[0];
     if ([name isEqualToString:@"A"] && [ssWorkouts count] > 0) {
-        SSState *state = [[SSStateStore instance] first];
         int workoutAAlteration = [state.workoutAAlternation intValue];
-
         NSArray *alt1Workouts = [ssWorkouts select:^BOOL(SSWorkout *ssWorkout) {
             return [ssWorkout.alternation intValue] == workoutAAlteration;
         }];
@@ -216,6 +219,24 @@
     }
 
     return newSsWorkout;
+}
+
+- (NSArray *)filterToAlternateBenchOrPress:(NSArray *)ssWorkouts {
+    SSState *state = [[SSStateStore instance] first];
+    Workout *workout = [[state.lastWorkout.workouts array] detect:^BOOL(Workout *workout1) {
+        Set *lastSet = [workout1.sets lastObject];
+        return [lastSet.lift.name isEqualToString:@"Bench"] ||
+                [lastSet.lift.name isEqualToString:@"Press"];
+    }];
+    Set *set = [workout.sets lastObject];
+    NSString *nextLift = [set.lift.name isEqualToString:@"Bench"] ? @"Press" : @"Bench";
+
+    return [ssWorkouts select:^BOOL(SSWorkout *ssWorkout) {
+        return [[ssWorkout.workouts array] detect:^BOOL(Workout *workout1) {
+            Set *set1 = [workout1.sets lastObject];
+            return [set1.lift.name isEqualToString:nextLift];
+        }] != nil;
+    }];
 }
 
 @end
