@@ -7,7 +7,12 @@
 @implementation SetCell
 
 - (void)setSet:(Set *)set {
-    [self.repsLabel setText:[NSString stringWithFormat:@"%dx", [[set reps] intValue]]];
+    if ([[set reps] intValue] <= 0 && [set amrap]) {
+        [self.repsLabel setText:@"To failure"];
+    }
+    else {
+        [self.repsLabel setText:[NSString stringWithFormat:@"%dx", [[set reps] intValue]]];
+    }
 
     Settings *settings = [[SettingsStore instance] first];
     [self.weightLabel setText:[NSString stringWithFormat:@"%0.1f %@",

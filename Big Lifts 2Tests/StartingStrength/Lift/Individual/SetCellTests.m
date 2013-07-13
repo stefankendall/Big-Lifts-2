@@ -25,4 +25,16 @@
     STAssertTrue([weightText isEqualToString:@"300.0 lbs"], weightText);
 }
 
+- (void)testSetCellHandlesToFailureReps {
+    SetCell *cell = [SetCell create];
+    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
+    Workout *workout = [ssWorkout workouts][0];
+    Set *set = workout.sets[0];
+    set.reps = @-1;
+    set.amrap = YES;
+    [cell setSet:set];
+
+    STAssertEqualObjects([[cell repsLabel] text], @"To failure", @"");
+}
+
 @end
