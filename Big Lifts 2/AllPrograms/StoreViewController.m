@@ -25,6 +25,11 @@
                     @"purchasedButton" : self.onusWunslerPurchasedButton,
                     @"buyMessage" : @"Onus Wunsler is now available in Starting Strength."
             },
+            @"ssPracticalProgramming" : @{
+                    @"buyButton" : self.ssPracticalProgrammingBuyButton,
+                    @"purchasedButton" : self.ssPracticalProgrammingPurchasedButton,
+                    @"buyMessage" : @"Practical Programming is now available in Starting Strength."
+            },
             @"ssWarmup" : @{
                     @"buyButton" : self.ssWarmupBuyButton,
                     @"purchasedButton" : self.ssWarmupPurchasedButton,

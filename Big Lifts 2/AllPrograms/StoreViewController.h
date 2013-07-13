@@ -10,6 +10,9 @@
 @property(weak, nonatomic) IBOutlet UIButton *onusWunslerBuyButton;
 @property(weak, nonatomic) IBOutlet UIButton *onusWunslerPurchasedButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *ssPracticalProgrammingBuyButton;
+@property (weak, nonatomic) IBOutlet UIButton *ssPracticalProgrammingPurchasedButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *ssWarmupBuyButton;
 @property (weak, nonatomic) IBOutlet UIButton *ssWarmupPurchasedButton;
 
