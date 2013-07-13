@@ -8,8 +8,6 @@
 #import "PurchaseOverlay.h"
 
 @interface SSWorkoutVariantController ()
-
-@property(nonatomic, strong) UIView *onusOverlay;
 @property(nonatomic, strong) NSDictionary *variantMapping;
 @end
 
@@ -20,7 +18,7 @@
         [self disableOnusWunsler];
     }
     else {
-        [self enableOnusWunsler];
+        [self enable:self.onusWunslerCell withOverlay:self.onusOverlay];
     }
 }
 
@@ -47,17 +45,16 @@
     }
 }
 
-- (void)enableOnusWunsler {
-    if ([self.onusWunslerCell viewWithTag:kPurchaseOverlayTag]) {
-        [self.onusOverlay removeFromSuperview];
-        self.onusOverlay = nil;
-        [self.onusWunslerCell setSelectionStyle:UITableViewCellSelectionStyleBlue];
+- (void)enable:(UITableViewCell *)cell withOverlay:(UIView *)overlay {
+    if ([cell viewWithTag:kPurchaseOverlayTag]) {
+        [overlay removeFromSuperview];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
     }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.variantMapping = @{@0 : @"Standard", @1 : @"Novice", @2 : @"Onus-Wunsler", @3: @"Practical Programming"};
+    self.variantMapping = @{@0 : @"Standard", @1 : @"Novice", @2 : @"Onus-Wunsler", @3 : @"Practical Programming"};
     [self checkSelectedVariant];
 }
 

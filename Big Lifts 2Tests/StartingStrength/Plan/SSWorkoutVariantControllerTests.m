@@ -62,7 +62,7 @@
 - (void)testEnableOnusWunsler {
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
     [controller disableOnusWunsler];
-    [controller enableOnusWunsler];
+    [controller enable: controller.onusWunslerCell withOverlay:controller.onusOverlay];
 
     STAssertNil([controller.onusWunslerCell viewWithTag:kPurchaseOverlayTag], @"");
 }
