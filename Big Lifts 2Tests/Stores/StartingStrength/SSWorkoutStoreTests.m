@@ -95,6 +95,14 @@
     STAssertEqualObjects(set.lift.name, @"Pull-ups", @"");
 }
 
+- (void)testHandlesIncrementForNoIncrementLifts {
+    [[SSWorkoutStore instance] setupVariant:@"Practical Programming"];
+    SSWorkout *workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
+    Set *chinups = [[[workout.workouts lastObject] sets] firstObject];
+    [[SSWorkoutStore instance] incrementWeights:workout];
+    STAssertEqualObjects([chinups effectiveWeight], N(0), @"");
+}
+
 - (void)testSetsUsesBarCorrectlyForLifts {
     [[SSWorkoutStore instance] setupVariant:@"Practical Programming"];
     SSLift *chinUps = [[SSLiftStore instance] find:@"name" value:@"Chin-ups"];

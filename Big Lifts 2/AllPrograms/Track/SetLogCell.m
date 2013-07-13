@@ -12,7 +12,13 @@ int const SET_LOG_CELL_HEIGHT = 30;
     self.setLog = setLogContainer.setLog;
     [self.liftNameLabel setText:[self.setLog name]];
     [self.setsLabel setText:[NSString stringWithFormat:@"%dx", setLogContainer.count]];
-    [self.repsLabel setText:[NSString stringWithFormat:@"%d", [[self.setLog reps] intValue]]];
+    int reps = [[self.setLog reps] intValue];
+    if (reps > 0) {
+        [self.repsLabel setText:[NSString stringWithFormat:@"%d", reps]];
+    }
+    else {
+        [self.repsLabel setText:@""];
+    }
 
     Settings *settings = [[SettingsStore instance] first];
     NSString *weightText = [NSString stringWithFormat:@"%@ %@", [self.setLog weight], [settings units]];

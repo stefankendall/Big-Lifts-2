@@ -164,7 +164,9 @@
     for (Workout *workout in ssWorkout.workouts) {
         Set *firstSet = workout.sets[0];
         SSLift *lift = (SSLift *) firstSet.lift;
-        lift.weight = [lift.weight decimalNumberByAdding:lift.increment];
+        if (lift.increment) {
+            lift.weight = [lift.weight decimalNumberByAdding:lift.increment];
+        }
     }
 }
 
