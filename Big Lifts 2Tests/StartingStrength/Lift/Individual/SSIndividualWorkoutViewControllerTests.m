@@ -102,4 +102,12 @@
     STAssertEqualObjects(state.workoutAAlternation, @0, @"");
 }
 
+- (void)testIncrementsPracticalProgramming {
+    [[SSWorkoutStore instance] setupVariant:@"Practical Programming"];
+    self.controller.ssWorkout = [[SSWorkoutStore instance] find:@"name" value:@"B"];
+    [self.controller saveState];
+    SSState *state = [[SSStateStore instance] first];
+    STAssertEqualObjects(state.practicalProgrammingCounter, @1, @"");
+}
+
 @end

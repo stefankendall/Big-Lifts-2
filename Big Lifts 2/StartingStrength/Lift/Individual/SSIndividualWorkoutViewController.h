@@ -12,4 +12,5 @@
 - (IBAction)nextButtonTapped:(id)sender;
 - (void)doneButtonTapped:(id)o;
 
+- (void)saveState;
 @end

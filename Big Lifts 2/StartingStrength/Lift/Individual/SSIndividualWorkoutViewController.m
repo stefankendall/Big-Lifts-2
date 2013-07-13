@@ -10,8 +10,8 @@
 #import "SSWorkoutStore.h"
 #import "SSStateStore.h"
 #import "SSState.h"
-#import "SSVariantStore.h"
 #import "SSVariant.h"
+#import "SSVariantStore.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -49,7 +49,6 @@
 - (void)doneButtonTapped:(id)o {
     [self logWorkout];
     [self saveState];
-    [self adjustAlternation];
     [[SSWorkoutStore instance] incrementWeights:self.ssWorkout];
     UIViewController *controller = [[self navigationController] viewControllers][0];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
@@ -65,10 +64,12 @@
 
 - (void)saveState {
     SSState *state = [[SSStateStore instance] first];
-    if (!state) {
-        state = [[SSStateStore instance] create];
-    }
     state.lastWorkout = self.ssWorkout;
+    [self adjustAlternation];
+    SSVariant *variant = [[SSVariantStore instance] first];
+    if ([variant.name isEqualToString:@"Practical Programming"]) {
+        state.practicalProgrammingCounter = [NSNumber numberWithInt:[state.practicalProgrammingCounter intValue] + 1];
+    }
 }
 
 - (void)logWorkout {
