@@ -15,11 +15,17 @@
     int worksetCount = [[[workout.sets array] select:^BOOL(Set *set) {
         return !set.warmup;
     }] count];
-    [self.setsAndRepsLabel setText:[NSString stringWithFormat:@"%dx%d", worksetCount, [lastSet.reps intValue]]];
+
+    if ([[lastSet reps] intValue] > 0) {
+        [self.setsAndRepsLabel setText:[NSString stringWithFormat:@"%dx%d", worksetCount, [lastSet.reps intValue]]];
+    }
+    else {
+        [self.setsAndRepsLabel setText:[NSString stringWithFormat:@"%dx", worksetCount]];
+    }
 
     Settings *settings = [[SettingsStore instance] first];
     [self.weightLabel setText:[NSString stringWithFormat:@"%@ %@",
-                    [[WeightRounder new] roundTo1: [lastSet effectiveWeight]], settings.units]];
+                                                         [[WeightRounder new] roundTo1:[lastSet effectiveWeight]], settings.units]];
 }
 
 @end

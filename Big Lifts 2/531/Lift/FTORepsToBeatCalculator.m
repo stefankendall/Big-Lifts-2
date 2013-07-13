@@ -23,7 +23,6 @@
     int reps;
     for (reps = 1; reps < 30; reps++) {
         NSDecimalNumber *estimateMax = [[OneRepEstimator new] estimate:weight withReps:reps];
-        NSLog(@"%@ %@", estimateMax, targetWeight);
         if ([estimateMax compare:targetWeight] == NSOrderedDescending) {
             break;
         }

@@ -84,7 +84,6 @@
 - (void)testActiveWorkoutForPracticalProgramming {
     [[SSWorkoutStore instance] setupVariant:@"Practical Programming"];
     SSWorkout *workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
-    NSLog(@"%@", workout);
     Set *set = [[[workout.workouts lastObject] sets] firstObject];
     STAssertEqualObjects(set.lift.name, @"Chin-ups", @"");
 
@@ -92,7 +91,6 @@
     state.workoutAAlternation = @1;
 
     workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
-    NSLog(@"%@", workout);
     set = [[[workout.workouts lastObject] sets] firstObject];
     STAssertEqualObjects(set.lift.name, @"Pull-ups", @"");
 }

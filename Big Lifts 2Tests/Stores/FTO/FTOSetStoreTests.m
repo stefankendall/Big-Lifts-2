@@ -13,13 +13,4 @@
     STAssertEqualObjects([set effectiveWeight], N(90), @"");
 }
 
-- (void) testUsesBarWeightIfEffectiveWeightLessThanBar {
-    Set *set = [[SetStore instance] first];
-    set.lift.weight = N(100);
-    set.lift.usesBar = YES;
-    set.percentage = N(0);
-    STAssertEqualObjects([set effectiveWeight], N(45), @"");
-    STAssertEqualObjects([set roundedEffectiveWeight], N(45), @"");
-}
-
 @end

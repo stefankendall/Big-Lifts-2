@@ -28,4 +28,15 @@
     STAssertTrue([[cell setsAndRepsLabel].text isEqualToString:@"3x5"], [cell setsAndRepsLabel].text);
 }
 
+- (void)testNegativeReps {
+    SSLiftSummaryCell *cell = [SSLiftSummaryCell create];
+    SSWorkout *workoutA = [[SSWorkoutStore instance] first];
+    Workout *workout = workoutA.workouts[0];
+    Set *set = [workout.sets lastObject];
+    set.reps = @-1;
+    [cell setWorkout:workout];
+
+    STAssertEqualObjects([cell setsAndRepsLabel].text, @"3x", @"");
+}
+
 @end
