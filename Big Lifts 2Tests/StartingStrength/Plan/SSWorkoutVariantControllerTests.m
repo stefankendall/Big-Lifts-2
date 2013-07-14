@@ -10,6 +10,7 @@
 #import "SSVariant.h"
 #import "IAPAdapter.h"
 #import "PurchaseOverlay.h"
+#import "Purchaser.h"
 
 @implementation SSWorkoutVariantControllerTests
 
@@ -50,19 +51,19 @@
 }
 
 - (void)testDoesNotDuplicateOverlayViews {
-    [[IAPAdapter instance] addPurchase:@"ssOnusWunsler"];
+    [[IAPAdapter instance] addPurchase:IAP_SS_ONUS_WUNSLER];
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
     int count = [[[controller.onusWunslerCell subviews][0] subviews] count];
-    [controller disable:controller.onusWunslerCell];
+    [controller disable:IAP_SS_ONUS_WUNSLER];
     STAssertEquals([[[controller.onusWunslerCell subviews][0] subviews] count], (NSUInteger) count + 1, @"");
-    [controller disable:controller.onusWunslerCell];
+    [controller disable:IAP_SS_ONUS_WUNSLER];
     STAssertEquals([[[controller.onusWunslerCell subviews][0] subviews] count], (NSUInteger) count + 1, @"");
 }
 
 - (void)testEnableOnusWunsler {
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
-    [controller disable:controller.onusWunslerCell];
-    [controller enable:controller.onusWunslerCell];
+    [controller disable:IAP_SS_ONUS_WUNSLER];
+    [controller enable:IAP_SS_ONUS_WUNSLER];
 
     STAssertNil([controller.onusWunslerCell viewWithTag:kPurchaseOverlayTag], @"");
 }

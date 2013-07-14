@@ -1,5 +1,6 @@
 #import "SKProductStore.h"
 #import "NSArray+Enumerable.h"
+#import "Purchaser.h"
 
 @implementation SKProductStore
 
@@ -9,7 +10,7 @@
 
     dispatch_once(&onceToken, ^{
         store = [SKProductStore new];
-        store.allPurchaseIds = @[@"barLoading", @"ssOnusWunsler", @"ssWarmup", @"ssPracticalProgramming"];
+        store.allPurchaseIds = @[IAP_BAR_LOADING, IAP_SS_ONUS_WUNSLER, IAP_SS_WARMUP, IAP_SS_PRACTICAL_PROGRAMMING];
     });
 
     return store;

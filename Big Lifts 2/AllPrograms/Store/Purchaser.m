@@ -4,7 +4,7 @@
 NSString * const IAP_BAR_LOADING = @"barLoading";
 NSString * const IAP_SS_WARMUP = @"ssWarmup";
 NSString * const IAP_SS_ONUS_WUNSLER = @"ssOnusWunsler";
-NSString * const IAP_SS_PRACTICAL_PROGRAMMING = @"ssOnusWunsler";
+NSString * const IAP_SS_PRACTICAL_PROGRAMMING = @"ssPracticalProgramming";
 
 NSString * const IAP_PURCHASED_NOTIFICATION = @"iapPurchased";
 
@@ -39,7 +39,6 @@ NSString * const IAP_PURCHASED_NOTIFICATION = @"iapPurchased";
 }
 
 - (void)erroredPurchase:(NSError *)err {
-    NSLog(@"%@", [err localizedDescription]);
     UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Could not purchase..."
                                                     message:@"Something went wrong trying to connect to the store. Please try again later."
                                                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];

@@ -2504,6 +2504,171 @@
         <image name="95-equalizer.png" width="32" height="24"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
     </resources>
+    <classes>
+        <class className="AddPlateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddPlateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveTapped:"/>
+                <relationship kind="outlet" name="countTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BLNavController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLNavController.h"/>
+        </class>
+        <class className="BLViewDeckController" superclassName="IIViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewDeckController.h"/>
+        </class>
+        <class className="DataLoadingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DataLoadingViewController.h"/>
+        </class>
+        <class className="FTOEditViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOEditViewController.h"/>
+        </class>
+        <class className="FTOLiftViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOLiftViewController.h"/>
+        </class>
+        <class className="FTOLiftWorkoutViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOLiftWorkoutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonTapped:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="FTONavController" superclassName="BLNavController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTONavController.h"/>
+        </class>
+        <class className="FTOPlanViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOPlanViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="trainingMaxField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FTORepsToBeatBreakdown" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTORepsToBeatBreakdown.h"/>
+            <relationships>
+                <relationship kind="outlet" name="enteredOneRepMax" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="estimatedMax" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="maxFromLog" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reps" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weight" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FTOTrackViewController" superclassName="TrackViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOTrackViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="viewButtonTapped:"/>
+                <relationship kind="outlet" name="viewButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="FTOViewDeckController" superclassName="BLViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOViewDeckController.h"/>
+        </class>
+        <class className="IIViewDeckController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bottomController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="centerController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="leftController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="panningView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rightController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="topController" candidateClass="UIViewController"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NavTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTableViewCell.h"/>
+        </class>
+        <class className="ProgramSelectorViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgramSelectorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unitsChanged:"/>
+                <relationship kind="outlet" name="unitsSegmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="SSBarLoadingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSBarLoadingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="weightsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSEditViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSEditViewController.h"/>
+        </class>
+        <class className="SSIndividualWorkoutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSIndividualWorkoutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextButtonTapped:"/>
+                <relationship kind="outlet" name="workoutTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSLiftViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSLiftViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="workoutValueChanged:"/>
+                <relationship kind="outlet" name="workoutSelector" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="workoutSummaryTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSNavTableViewController" superclassName="BLNavController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSNavTableViewController.h"/>
+        </class>
+        <class className="SSPlanWorkoutsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="variantButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="SSTrackViewController" superclassName="TrackViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTrackViewController.h"/>
+        </class>
+        <class className="SSViewDeckController" superclassName="BLViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSViewDeckController.h"/>
+        </class>
+        <class className="SSWorkoutVariantController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSWorkoutVariantController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="onusWunslerCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="practicalProgrammingCell" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unitsChanged:"/>
+                <relationship kind="outlet" name="roundToField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="StoreViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buyButtonTapped:"/>
+                <relationship kind="outlet" name="barLoadingBuyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="barLoadingPurchasedButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="onusWunslerBuyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="onusWunslerPurchasedButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ssPracticalProgrammingBuyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ssPracticalProgrammingPurchasedButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ssWarmupBuyButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="ssWarmupPurchasedButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="TPKeyboardAvoidingTableView" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingTableView.h"/>
+        </class>
+        <class className="TrackViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackViewController.h"/>
+        </class>
+        <class className="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
