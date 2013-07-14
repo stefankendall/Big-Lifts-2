@@ -1,8 +1,10 @@
 #import <MRCEnumerable/NSDictionary+Enumerable.h>
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "StoreViewController.h"
 #import "SKProductStore.h"
 #import "CurrentProgramStore.h"
 #import "CurrentProgram.h"
+#import "Purchaser.h"
 
 @interface StoreViewController ()
 
@@ -17,28 +19,29 @@
     self.purchaseIdToStoreInfo = @{
             @"barLoading" : @{
                     @"buyButton" : self.barLoadingBuyButton,
-                    @"purchasedButton" : self.barLoadingPurchasedButton,
-                    @"buyMessage" : @"Bar loading is now available throughout the app."
+                    @"purchasedButton" : self.barLoadingPurchasedButton
             },
             @"ssOnusWunsler" : @{
                     @"buyButton" : self.onusWunslerBuyButton,
-                    @"purchasedButton" : self.onusWunslerPurchasedButton,
-                    @"buyMessage" : @"Onus Wunsler is now available in Starting Strength."
+                    @"purchasedButton" : self.onusWunslerPurchasedButton
             },
             @"ssPracticalProgramming" : @{
                     @"buyButton" : self.ssPracticalProgrammingBuyButton,
-                    @"purchasedButton" : self.ssPracticalProgrammingPurchasedButton,
-                    @"buyMessage" : @"Practical Programming is now available in Starting Strength."
+                    @"purchasedButton" : self.ssPracticalProgrammingPurchasedButton
             },
             @"ssWarmup" : @{
                     @"buyButton" : self.ssWarmupBuyButton,
-                    @"purchasedButton" : self.ssWarmupPurchasedButton,
-                    @"buyMessage" : @"Warm-up sets added to Starting Strength."
+                    @"purchasedButton" : self.ssWarmupPurchasedButton
             }
     };
-    [self setProductPrice:[[SKProductStore instance] productById:@"barLoading"]];
-    [self setProductPrice:[[SKProductStore instance] productById:@"ssOnusWunsler"]];
-    [self setProductPrice:[[SKProductStore instance] productById:@"ssWarmup"]];
+    [[self.purchaseIdToStoreInfo allKeys] each:^(NSString *purchaseId) {
+        [self setProductPrice:[[SKProductStore instance] productById:purchaseId]];
+    }];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hideShowBuyButtons)
+                                                 name:@"iapPurchased"
+                                               object:nil];
 }
 
 - (void)setProductPrice:(SKProduct *)product {
@@ -106,33 +109,13 @@
 
 - (IBAction)buyButtonTapped:(id)sender {
     NSString *purchaseId = [self purchaseIdForButton:sender];
-    [[IAPAdapter instance] purchaseProductForId:purchaseId completion:^(NSObject *_) {
-        [self successfulPurchase:purchaseId];
-    }                                     error:^(NSError *err) {
-        [self erroredPurchase:err];
-    }];
+    [[Purchaser new] purchase:purchaseId];
 }
 
 - (NSString *)purchaseIdForButton:(id)sender {
     return [self.purchaseIdToStoreInfo detect:^BOOL(id key, NSDictionary *purchaseInfo) {
         return purchaseInfo[@"buyButton"] == sender;
     }];
-}
-
-- (void)erroredPurchase:(NSError *)err {
-    NSLog(@"%@", [err localizedDescription]);
-    UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Could not purchase..."
-                                                    message:@"Something went wrong trying to connect to the store. Please try again later."
-                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [error performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
-}
-
-- (void)successfulPurchase:(NSString *)purchaseId {
-    UIAlertView *thanks = [[UIAlertView alloc] initWithTitle:@"Purchased!"
-                                                     message:self.purchaseIdToStoreInfo[purchaseId][@"buyMessage"]
-                                                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [thanks performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
-    [self hideShowBuyButtons];
 }
 
 @end
