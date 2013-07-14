@@ -4,6 +4,8 @@
 #import "FTORepsToBeatCalculator.h"
 #import "SetLog.h"
 #import "SetLogStore.h"
+#import "WorkoutLog.h"
+#import "WorkoutLogStore.h"
 
 @implementation FTORepsToBeatCalculatorTests
 
@@ -19,10 +21,13 @@
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
 
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    workoutLog.name = @"5/3/1";
     SetLog *setLog = [[SetLogStore instance] create];
-    setLog.name = @"5/3/1";
+    setLog.name = @"Squat";
     setLog.reps = @5;
     setLog.weight = N(190);
+    [[workoutLog sets] addObject:setLog];
 
     int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:squat atWeight:N(180)];
     STAssertEquals(repsToBeat, 7, @"");

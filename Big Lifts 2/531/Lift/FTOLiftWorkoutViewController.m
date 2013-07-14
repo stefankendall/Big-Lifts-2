@@ -9,6 +9,7 @@
 #import "Set.h"
 #import "FTOLiftWorkoutToolbar.h"
 #import "FTORepsToBeatCalculator.h"
+#import "FTORepsToBeatBreakdown.h"
 
 @interface FTOLiftWorkoutViewController ()
 
@@ -31,7 +32,8 @@
             Set *lastSet = [self.ftoWorkout.workout.sets lastObject];
             [cell.repsField setPlaceholder:lastSet.reps.stringValue];
             int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:lastSet.lift atWeight:[lastSet roundedEffectiveWeight]];
-            [cell.repsToBeatField setText:[NSString stringWithFormat:@"%d", repsToBeat]];
+            [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
+            [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
             self.repsField = cell.repsField;
         }
         return cell;
@@ -44,6 +46,16 @@
         [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) row - 1]];
         return cell;
     }
+}
+
+- (void)showRepsToBeatBreakdown:(id)showRepsToBeatBreakdown {
+    [self performSegueWithIdentifier:@"ftoRepsToBeat" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    FTORepsToBeatBreakdown *breakdown = [segue destinationViewController];
+    [breakdown setLastSet: [self.ftoWorkout.workout.sets lastObject]];
+    [super prepareForSegue:segue sender:sender];
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
