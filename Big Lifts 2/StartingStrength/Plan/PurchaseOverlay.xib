@@ -41,6 +41,9 @@
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="price" destination="p6d-g9-fko" id="zvB-LF-tXb"/>
+            </connections>
         </view>
     </objects>
     <resources>
@@ -52,6 +55,9 @@
         </class>
         <class className="PurchaseOverlay" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PurchaseOverlay.h"/>
+            <relationships>
+                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
+            </relationships>
         </class>
     </classes>
 </document>

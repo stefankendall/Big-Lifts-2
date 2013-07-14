@@ -2,6 +2,7 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSBarLoadingViewController.h"
 #import "IAPAdapter.h"
+#import "PurchaseOverlay.h"
 
 @implementation SSBarLoadingViewControllerTests
 

@@ -4,6 +4,7 @@
 #import "SKProductFake.h"
 #import "CurrentProgramStore.h"
 #import "CurrentProgram.h"
+#import "PriceFormatter.h"
 
 @implementation StoreViewControllerTests
 
@@ -18,14 +19,6 @@
     StoreViewController *controller = [self getControllerByStoryboardIdentifier:@"store"];
     STAssertFalse([controller.barLoadingBuyButton isHidden], @"");
     STAssertTrue([controller.barLoadingPurchasedButton isHidden], @"");
-}
-
-- (void)testPriceOfFormatsPrice {
-    StoreViewController *controller = [self getControllerByStoryboardIdentifier:@"store"];
-    SKProductFake *product = [SKProductFake new];
-    product.price = [[NSDecimalNumber alloc] initWithString:@"1.99"];
-    product.priceLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    STAssertEqualObjects([controller priceOf:product], @"$1.99", @"");
 }
 
 - (void)testPurchaseIdForButtonBarLoading {

@@ -5,6 +5,7 @@
 #import "CurrentProgramStore.h"
 #import "CurrentProgram.h"
 #import "Purchaser.h"
+#import "PriceFormatter.h"
 
 @interface StoreViewController ()
 
@@ -40,24 +41,17 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(hideShowBuyButtons)
-                                                 name:@"iapPurchased"
+                                                 name:IAP_PURCHASED_NOTIFICATION
                                                object:nil];
 }
 
 - (void)setProductPrice:(SKProduct *)product {
     if (product) {
+        PriceFormatter *formatter = [PriceFormatter new];
         UIButton *button = self.purchaseIdToStoreInfo[product.productIdentifier][@"buyButton"];
-        [button setTitle:[self priceOf:product] forState:UIControlStateNormal];
+        [button setTitle:[formatter priceOf:product] forState:UIControlStateNormal];
         [button setUserInteractionEnabled:YES];
     }
-}
-
-- (NSString *)priceOf:(SKProduct *)product {
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    [numberFormatter setLocale:product.priceLocale];
-    return [numberFormatter stringFromNumber:product.price];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

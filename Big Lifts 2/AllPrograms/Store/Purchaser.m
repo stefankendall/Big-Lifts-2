@@ -1,6 +1,13 @@
 #import "Purchaser.h"
 #import "IAPAdapter.h"
 
+NSString * const IAP_BAR_LOADING = @"barLoading";
+NSString * const IAP_SS_WARMUP = @"ssWarmup";
+NSString * const IAP_SS_ONUS_WUNSLER = @"ssOnusWunsler";
+NSString * const IAP_SS_PRACTICAL_PROGRAMMING = @"ssOnusWunsler";
+
+NSString * const IAP_PURCHASED_NOTIFICATION = @"iapPurchased";
+
 @interface Purchaser ()
 
 @property(nonatomic, strong) NSDictionary *buyMessages;
@@ -12,10 +19,10 @@
     self = [super init];
     if (self) {
         self.buyMessages = @{
-                @"barLoading" : @"Bar loading is now available throughout the app.",
-                @"ssOnusWunsler" : @"Onus Wunsler is now available in Starting Strength.",
-                @"ssPracticalProgramming" : @"Practical Programming is now available in Starting Strength.",
-                @"ssWarmup" : @"Warm-up sets added to Starting Strength."
+                IAP_BAR_LOADING : @"Bar loading is now available throughout the app.",
+                IAP_SS_ONUS_WUNSLER : @"Onus Wunsler is now available in Starting Strength.",
+                IAP_SS_PRACTICAL_PROGRAMMING : @"Practical Programming is now available in Starting Strength.",
+                IAP_SS_WARMUP : @"Warm-up sets added to Starting Strength."
         };
     }
 
@@ -44,7 +51,7 @@
                                                      message:self.buyMessages[purchaseId]
                                                     delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [thanks performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
-    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"iapPurchased" object:nil]];
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:IAP_PURCHASED_NOTIFICATION  object:nil]];
 }
 
 @end

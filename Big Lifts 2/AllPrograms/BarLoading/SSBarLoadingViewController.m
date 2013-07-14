@@ -1,8 +1,11 @@
-#import <ViewDeck/IIViewDeckController.h>
 #import "SSBarLoadingViewController.h"
 #import "BarLoadingDataSource.h"
 #import "PlateStore.h"
 #import "IAPAdapter.h"
+#import "Purchaser.h"
+#import "PurchaseOverlay.h"
+#import "SKProductStore.h"
+#import "PriceFormatter.h"
 
 @implementation SSBarLoadingViewController
 @synthesize weightsTable;
@@ -18,21 +21,32 @@
             [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [self.view addGestureRecognizer:singleFingerTap];
 
-    if (!([[IAPAdapter instance] hasPurchased:@"barLoading"])) {
+    if (!([[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING])) {
         [self addDisabledView];
     }
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(removeOverlayIfNecessary)
+                                                 name:IAP_PURCHASED_NOTIFICATION
+                                               object:nil];
 }
 
 - (void)addDisabledView {
     self.overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
     CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     [self.overlay setFrame:frame];
+    SKProduct *product = [[SKProductStore instance] productById:IAP_BAR_LOADING];
+    [self.overlay.price setText:[[PriceFormatter new] priceOf:product]];
     [self.view addSubview:self.overlay];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [weightsTable reloadData];
-    if (([[IAPAdapter instance] hasPurchased:@"barLoading"])) {
+    [self removeOverlayIfNecessary];
+}
+
+- (void)removeOverlayIfNecessary {
+    if (([[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING])) {
         [self.overlay removeFromSuperview];
         self.overlay = nil;
     }
@@ -44,8 +58,7 @@
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
     if (self.overlay) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"storeNav"]];
+        [[Purchaser new] purchase:IAP_BAR_LOADING];
     }
     else {
         [self.view endEditing:YES];

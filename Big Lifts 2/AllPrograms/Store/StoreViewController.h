@@ -16,8 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *ssWarmupBuyButton;
 @property (weak, nonatomic) IBOutlet UIButton *ssWarmupPurchasedButton;
 
-- (NSString *)priceOf:(SKProduct *)product;
-
 - (BOOL)sectionShouldBeVisible:(int)section;
 
 - (IBAction)buyButtonTapped:(id)sender;
