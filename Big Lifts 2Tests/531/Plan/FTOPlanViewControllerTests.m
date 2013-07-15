@@ -9,4 +9,9 @@
     STAssertFalse([[controller.trainingMaxField text] isEqualToString:@""], @"");
 }
 
+- (void) testChecksCurrentFtoVariant {
+    FTOPlanViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoPlan"];
+    STAssertEquals([controller.standardVariant accessoryType], UITableViewCellAccessoryCheckmark, @"");
+}
+
 @end
