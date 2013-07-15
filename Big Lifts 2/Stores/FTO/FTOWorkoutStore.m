@@ -30,9 +30,6 @@
         return [data createSet];
     }];
 
-    FTOSet *lastSet = [sets lastObject];
-    lastSet.amrap = YES;
-
     [workout.sets addObjectsFromArray:sets];
     return workout;
 }

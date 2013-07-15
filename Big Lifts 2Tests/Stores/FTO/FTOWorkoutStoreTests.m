@@ -19,15 +19,15 @@
         return firstSet.lift.name;
     }];
 
-    FTOWorkout *ftoWorkout = ftoWorkouts[0];
-
     STAssertTrue([liftNames containsObject:@"Bench"], @"");
     STAssertTrue([liftNames containsObject:@"Press"], @"");
     STAssertTrue([liftNames containsObject:@"Deadlift"], @"");
     STAssertTrue([liftNames containsObject:@"Squat"], @"");
+
+    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertTrue([ftoWorkout.workout.sets[0] isKindOfClass:FTOSet.class], @"");
-    FTOSet *ftoSet = [ftoWorkout.workout.sets lastObject];
-    STAssertTrue(ftoSet.amrap, @"");
+    FTOSet *lastSet = [ftoWorkout.workout.sets lastObject];
+    STAssertTrue(lastSet.amrap, @"");
 }
 
 @end
