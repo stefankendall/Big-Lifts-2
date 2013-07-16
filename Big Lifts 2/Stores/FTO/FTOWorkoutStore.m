@@ -3,16 +3,23 @@
 #import "FTOWorkout.h"
 #import "FTOLift.h"
 #import "FTOLiftStore.h"
-#import "Set.h"
 #import "WorkoutStore.h"
 #import "FTOWorkoutSetsGenerator.h"
 #import "NSArray+Enumerable.h"
 #import "SetData.h"
-#import "FTOSet.h"
 
 @implementation FTOWorkoutStore
 
 - (void)setupDefaults {
+    [self createWorkoutsForEachLift];
+}
+
+- (void)switchTemplate {
+    [self empty];
+    [self createWorkoutsForEachLift];
+}
+
+- (void)createWorkoutsForEachLift {
     for (int week = 1; week <= 4; week++) {
         [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Bench" week:week] week:week order:0];
         [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Squat" week:week] week:week order:1];

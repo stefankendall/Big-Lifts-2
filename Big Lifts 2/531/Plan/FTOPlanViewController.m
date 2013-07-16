@@ -7,6 +7,7 @@
 #import "TextViewInputAccessoryBuilder.h"
 #import "FTOVariant.h"
 #import "FTOVariantStore.h"
+#import "FTOWorkoutStore.h"
 
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;
@@ -55,6 +56,7 @@
         FTOVariant *variant = [[FTOVariantStore instance] first];
         variant.name = newVariantName;
 
+        [[FTOWorkoutStore instance] switchTemplate];
         [self checkCurrentVariant];
     }
 }

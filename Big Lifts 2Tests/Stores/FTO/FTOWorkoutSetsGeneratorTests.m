@@ -2,6 +2,7 @@
 #import "FTOWorkoutSetsGenerator.h"
 #import "FTOLiftStore.h"
 #import "Set.h"
+#import "FTOVariantStore.h"
 
 @implementation FTOWorkoutSetsGeneratorTests
 
@@ -17,6 +18,7 @@
 }
 
 - (void)testGeneratesPyramidSets {
+    [[[FTOVariantStore instance] first] setName: @"Pyramid"];
     FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSArray *sets = [generator setsForWeek:1 lift:squat];
