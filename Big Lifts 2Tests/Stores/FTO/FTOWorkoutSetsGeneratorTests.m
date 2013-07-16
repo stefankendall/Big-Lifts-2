@@ -16,4 +16,13 @@
     STAssertTrue(lastSet.amrap, @"");
 }
 
+- (void)testGeneratesPyramidSets {
+    FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
+    FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    NSArray *sets = [generator setsForWeek:1 lift:squat];
+    STAssertEquals([sets count], 8U, @"");
+    STAssertTrue([[sets lastObject] amrap], @"");
+    STAssertTrue([sets[5] amrap], @"");
+}
+
 @end
