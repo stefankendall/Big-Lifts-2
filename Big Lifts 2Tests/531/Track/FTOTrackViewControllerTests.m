@@ -33,7 +33,7 @@
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     [controller viewButtonTapped:nil];
     [controller viewButtonTapped:nil];
-    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work Sets", @"");
+    STAssertEqualObjects(controller.viewButton.title, @"Work Sets", @"");
 }
 
 - (void)testViewButtonTappedShowsAllRows {
