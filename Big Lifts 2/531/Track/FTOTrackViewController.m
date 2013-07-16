@@ -2,6 +2,7 @@
 #import "WorkoutLogStore.h"
 #import "WorkoutLogCell.h"
 #import "FTOWorkoutLogDataSource.h"
+#import "WorkoutLog.h"
 
 @interface FTOTrackViewController ()
 
@@ -23,8 +24,11 @@
     if (self.showAll) {
         return [super getRowCount: path];
     }
-
-    return 1;
+    else {
+        WorkoutLog *log = [self getLog][(NSUInteger) [path row]];
+        NSLog(@"%@", [NSNumber numberWithBool:[log isKindOfClass:WorkoutLog.class]]);
+        return [[log workSets] count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -48,7 +52,7 @@
 
 - (IBAction)viewButtonTapped:(id)sender {
     self.showAll = !self.showAll;
-    NSString *nextState = self.showAll ? @"All" : @"Last Set";
+    NSString *nextState = self.showAll ? @"All" : @"Work Sets";
     [self.viewButton setTitle:nextState forState:UIControlStateNormal];
     [self.tableView reloadData];
 }
