@@ -37,18 +37,4 @@
     STAssertTrue(self.ftoWorkout.done, @"");
 }
 
-- (void)testRepsPlaceHolderIsWorkoutReps {
-    FTOLiftWorkoutToolbar *toolbar = (FTOLiftWorkoutToolbar *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertEqualObjects([toolbar.repsField placeholder], @"5", @"");
-}
-
-- (void)testSavesEnteredReps {
-    FTOLiftWorkoutToolbar *toolbar = (FTOLiftWorkoutToolbar *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    [toolbar.repsField setText:@"7"];
-    [self.controller doneButtonTapped:nil];
-    WorkoutLog *log = [[WorkoutLogStore instance] find:@"name" value:@"5/3/1"];
-    SetLog *set = [log.sets lastObject];
-    STAssertEqualObjects(set.reps, @7, @"");
-}
-
 @end

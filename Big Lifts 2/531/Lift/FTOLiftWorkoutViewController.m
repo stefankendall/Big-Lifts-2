@@ -30,11 +30,9 @@
         if (!cell) {
             cell = [FTOLiftWorkoutToolbar create];
             Set *lastSet = [self.ftoWorkout.workout.sets lastObject];
-            [cell.repsField setPlaceholder:lastSet.reps.stringValue];
             int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:lastSet.lift atWeight:[lastSet roundedEffectiveWeight]];
             [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
             [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
-            self.repsField = cell.repsField;
         }
         return cell;
     }
