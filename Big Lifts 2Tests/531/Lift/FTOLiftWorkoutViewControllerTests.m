@@ -5,9 +5,7 @@
 #import "FTOLiftWorkoutViewController.h"
 #import "Workout.h"
 #import "WorkoutLogStore.h"
-#import "FTOLiftWorkoutToolbar.h"
 #import "WorkoutLog.h"
-#import "SetLog.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -35,6 +33,20 @@
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] find:@"name" value:@"5/3/1"];
     STAssertNotNil(workoutLog.date, @"");
     STAssertTrue(self.ftoWorkout.done, @"");
+}
+
+- (void)testTappingAmrapCellCausesSegue {
+    UINavigationController *nav = [UINavigationController new];
+    [nav addChildViewController:self.controller];
+    [self.controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0]];
+    STAssertEquals([self.controller.navigationController.viewControllers count], 2U, @"");
+}
+
+- (void)testTappingNonAmrapCellDoesNotCauseSegue {
+    UINavigationController *nav = [UINavigationController new];
+    [nav addChildViewController:self.controller];
+    [self.controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    STAssertEquals([self.controller.navigationController.viewControllers count], 1U, @"");
 }
 
 @end

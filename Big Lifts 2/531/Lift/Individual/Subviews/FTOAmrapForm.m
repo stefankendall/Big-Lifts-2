@@ -2,8 +2,13 @@
 #import "Set.h"
 #import "SettingsStore.h"
 #import "Settings.h"
+#import "TextViewInputAccessoryBuilder.h"
 
 @implementation FTOAmrapForm
+
+- (void)awakeFromNib {
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.repsField];
+}
 
 - (void)setSet:(Set *)set {
     Settings *settings = [[SettingsStore instance] first];

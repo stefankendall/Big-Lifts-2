@@ -10,10 +10,12 @@
 #import "FTOLiftWorkoutToolbar.h"
 #import "FTORepsToBeatCalculator.h"
 #import "FTORepsToBeatBreakdown.h"
+#import "FTOAmrapForm.h"
 
 @interface FTOLiftWorkoutViewController ()
 
 @property(nonatomic) UITextField *repsField;
+@property(nonatomic) Set *tappedSet;
 @end
 
 @implementation FTOLiftWorkoutViewController
@@ -51,10 +53,25 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    FTORepsToBeatBreakdown *breakdown = [segue destinationViewController];
-    [breakdown setLastSet: [self.ftoWorkout.workout.sets lastObject]];
+    if ([[segue identifier] isEqualToString:@"ftoRepsToBeat"]) {
+        FTORepsToBeatBreakdown *breakdown = [segue destinationViewController];
+        [breakdown setLastSet:[self.ftoWorkout.workout.sets lastObject]];
+    }
+    else if ([[segue identifier] isEqualToString:@"ftoAmrapForm"]) {
+        FTOAmrapForm *form = [segue destinationViewController];
+        [form setSet:self.tappedSet];
+    }
+
     [super prepareForSegue:segue sender:sender];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Set *set = self.ftoWorkout.workout.sets[(NSUInteger) [indexPath row] - 1];
+    if ([set amrap]) {
+        [self performSegueWithIdentifier:@"ftoAmrapForm" sender:self];
+    }
+}
+
 
 - (IBAction)doneButtonTapped:(id)sender {
     [self logWorkout];
