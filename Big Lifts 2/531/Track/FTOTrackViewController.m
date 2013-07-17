@@ -26,7 +26,6 @@
     }
     else {
         WorkoutLog *log = [self getLog][(NSUInteger) [path row]];
-        NSLog(@"%@", [NSNumber numberWithBool:[log isKindOfClass:WorkoutLog.class]]);
         return [[log workSets] count];
     }
 }

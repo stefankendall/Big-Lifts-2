@@ -6,6 +6,7 @@
 #import "Workout.h"
 #import "WorkoutLogStore.h"
 #import "WorkoutLog.h"
+#import "SetLog.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -49,6 +50,14 @@
     STAssertEquals([self.controller.navigationController.viewControllers count], 1U, @"");
 }
 
+- (void)testAmrapRepsCanBeChanged {
+    self.controller.tappedSetRow = @6;
+    [self.controller repsChanged:@7];
+    [self.controller doneButtonTapped:nil];
 
+    WorkoutLog *log = [[WorkoutLogStore instance] first];
+    SetLog *lastSet = [[log sets] lastObject];
+    STAssertEqualObjects(lastSet.reps, @7, @"");
+}
 
 @end

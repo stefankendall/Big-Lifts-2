@@ -4,14 +4,12 @@
 #import "Settings.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "AmrapDelegate.h"
+#import "UITableViewController+NoEmptyRows.h"
 
 @implementation FTOAmrapForm
 
-- (void)awakeFromNib {
-    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.repsField];
-}
-
 - (void)viewDidLoad {
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.repsField];
     [self.repsField setDelegate:self];
     [self setupFields];
 }
@@ -26,6 +24,10 @@
     NSString *weightText = [[self.set roundedEffectiveWeight] stringValue];
     [self.weightField setText:[NSString stringWithFormat:@"%@ %@", weightText, settings.units]];
     [self.repsField setPlaceholder:[self.set.reps stringValue]];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [self emptyView];
 }
 
 @end

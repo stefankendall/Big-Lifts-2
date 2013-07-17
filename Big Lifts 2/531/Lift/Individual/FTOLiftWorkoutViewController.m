@@ -11,11 +11,11 @@
 #import "FTORepsToBeatCalculator.h"
 #import "FTORepsToBeatBreakdown.h"
 #import "FTOAmrapForm.h"
+#import "SetLog.h"
 
 @interface FTOLiftWorkoutViewController ()
 
-@property(nonatomic) UITextField *repsField;
-@property(nonatomic) Set *tappedSet;
+@property(nonatomic) NSMutableDictionary *lastSetReps;
 @end
 
 @implementation FTOLiftWorkoutViewController
@@ -59,7 +59,8 @@
     }
     else if ([[segue identifier] isEqualToString:@"ftoAmrapForm"]) {
         FTOAmrapForm *form = [segue destinationViewController];
-        [form setSet:self.tappedSet];
+        Set *tappedSet = self.ftoWorkout.workout.sets[[self.tappedSetRow unsignedIntegerValue] - 1];
+        [form setSet:tappedSet];
         [form setDelegate:self];
     }
 
@@ -69,7 +70,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Set *set = self.ftoWorkout.workout.sets[(NSUInteger) [indexPath row] - 1];
     if ([set amrap]) {
-        self.tappedSet = set;
+        self.tappedSetRow = [NSNumber numberWithInteger:[indexPath row]];
         [self performSegueWithIdentifier:@"ftoAmrapForm" sender:self];
     }
 }
@@ -81,23 +82,30 @@
     [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
 }
 
+- (void)setWorkout:(FTOWorkout *)ftoWorkout1 {
+    self.ftoWorkout = ftoWorkout1;
+    self.lastSetReps = [@{} mutableCopy];
+}
+
 - (void)logWorkout {
     WorkoutLog *log = [[WorkoutLogStore instance] create];
     log.name = @"5/3/1";
     log.date = [NSDate new];
 
-    for (Set *set in self.ftoWorkout.workout.sets) {
-        [log.sets addObject:[[SetLogStore instance] createFromSet:set]];
-    }
-    Set *lastSet = [log.sets lastObject];
-    int reps = [[self.repsField text] intValue];
-    if (reps > 0) {
-        lastSet.reps = [NSNumber numberWithInt:reps];
+    NSMutableOrderedSet *sets = self.ftoWorkout.workout.sets;
+    for (int i = 0; i < [sets count]; i++) {
+        Set *set = sets[(NSUInteger) i];
+        SetLog *setLog = [[SetLogStore instance] createFromSet:set];
+        NSNumber *reps = self.lastSetReps[[NSNumber numberWithInt:(i+1)]];
+        if (reps) {
+            setLog.reps = reps;
+        }
+        [log.sets addObject:setLog];
     }
 }
 
 - (void)repsChanged:(NSNumber *)reps {
-
+    self.lastSetReps[self.tappedSetRow] = reps;
 }
 
 @end

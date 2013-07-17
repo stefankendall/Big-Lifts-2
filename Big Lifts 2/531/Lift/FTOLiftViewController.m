@@ -66,7 +66,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     FTOLiftWorkoutViewController *controller = [segue destinationViewController];
-    controller.ftoWorkout = self.nextWorkout;
+    [controller setWorkout:self.nextWorkout];
 }
 
 @end
