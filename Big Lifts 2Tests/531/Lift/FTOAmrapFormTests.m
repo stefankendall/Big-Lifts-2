@@ -17,6 +17,7 @@
     set.lift.weight = N(200);
     set.reps = @3;
     [controller setSet:set];
+    [controller setupFields];
 
     STAssertEqualObjects([[controller weightField] text], @"180 lbs", @"");
     STAssertEqualObjects([[controller repsField] placeholder], @"3", @"");

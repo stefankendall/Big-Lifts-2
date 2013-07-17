@@ -60,6 +60,7 @@
     else if ([[segue identifier] isEqualToString:@"ftoAmrapForm"]) {
         FTOAmrapForm *form = [segue destinationViewController];
         [form setSet:self.tappedSet];
+        [form setDelegate:self];
     }
 
     [super prepareForSegue:segue sender:sender];
@@ -68,10 +69,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Set *set = self.ftoWorkout.workout.sets[(NSUInteger) [indexPath row] - 1];
     if ([set amrap]) {
+        self.tappedSet = set;
         [self performSegueWithIdentifier:@"ftoAmrapForm" sender:self];
     }
 }
-
 
 - (IBAction)doneButtonTapped:(id)sender {
     [self logWorkout];
@@ -93,6 +94,10 @@
     if (reps > 0) {
         lastSet.reps = [NSNumber numberWithInt:reps];
     }
+}
+
+- (void)repsChanged:(NSNumber *)reps {
+
 }
 
 @end

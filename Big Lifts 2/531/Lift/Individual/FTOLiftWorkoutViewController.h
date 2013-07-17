@@ -1,6 +1,8 @@
+#import "AmrapDelegate.h"
+
 @class FTOWorkout;
 
-@interface FTOLiftWorkoutViewController : UITableViewController <UITextFieldDelegate> {
+@interface FTOLiftWorkoutViewController : UITableViewController <UITextFieldDelegate, AmrapDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
