@@ -3,6 +3,7 @@
 #import "FTOLiftStore.h"
 #import "Set.h"
 #import "FTOVariantStore.h"
+#import "FTOVariant.h"
 
 @implementation FTOWorkoutSetsGeneratorTests
 
@@ -18,7 +19,7 @@
 }
 
 - (void)testGeneratesPyramidSets {
-    [[[FTOVariantStore instance] first] setName: @"Pyramid"];
+    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_PYRAMID];
     FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSArray *sets = [generator setsForWeek:1 lift:squat];
@@ -28,11 +29,18 @@
 }
 
 - (void)testGeneratesJokerSets {
-    [[[FTOVariantStore instance] first] setName: @"Joker"];
+    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_JOKER];
     FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSArray *sets = [generator setsForWeek:1 lift:squat];
     STAssertEquals([sets count], 9U, @"");
+}
+
+- (void)testGeneratesSixWeek {
+    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
+    FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
+    NSDictionary *template = [generator setsFor: [[FTOLiftStore instance] find:@"name" value:@"Squat"]];
+    STAssertEquals([[template allKeys] count], 7U, @"");
 }
 
 @end

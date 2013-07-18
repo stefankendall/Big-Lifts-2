@@ -1228,8 +1228,37 @@
                                             <constraint firstItem="lQ0-xW-ppy" firstAttribute="top" secondItem="M18-H8-E7a" secondAttribute="bottom" constant="-2" id="yCT-jt-Guu"/>
                                         </constraints>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="59" id="ODP-Hh-0SN">
+                                        <rect key="frame" x="0.0" y="147" width="320" height="59"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="5/3/1 6-Week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V03-0R-PS3">
+                                                    <rect key="frame" x="20" y="10" width="106" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="3x5, 3x3, 5/3/1, 3x5, 3x3, 5/3/1, deload" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cbU-b8-MGp">
+                                                    <rect key="frame" x="20" y="29" width="280" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="cbU-b8-MGp" firstAttribute="top" secondItem="V03-0R-PS3" secondAttribute="bottom" constant="-2" id="KhC-DN-v8t"/>
+                                            <constraint firstAttribute="centerY" secondItem="cbU-b8-MGp" secondAttribute="centerY" constant="-9.5" id="ebd-gK-8FJ"/>
+                                        </constraints>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="91" id="hjl-Yw-2jZ">
-                                        <rect key="frame" x="0.0" y="147" width="320" height="91"/>
+                                        <rect key="frame" x="0.0" y="206" width="320" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
@@ -1268,7 +1297,7 @@
                                         </view>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="91" id="fcX-X6-Uj5">
-                                        <rect key="frame" x="0.0" y="238" width="320" height="91"/>
+                                        <rect key="frame" x="0.0" y="297" width="320" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
@@ -1323,6 +1352,7 @@
                     <connections>
                         <outlet property="jokerVariant" destination="fcX-X6-Uj5" id="Hv4-sO-NOo"/>
                         <outlet property="pyramidVariant" destination="hjl-Yw-2jZ" id="Ot3-Vm-plP"/>
+                        <outlet property="sixWeekVariant" destination="ODP-Hh-0SN" id="Dly-j3-8sy"/>
                         <outlet property="standardVariant" destination="l37-zH-RDa" id="TBb-ae-F0j"/>
                         <outlet property="trainingMaxField" destination="ulp-Iu-T3k" id="jLG-G1-2kS"/>
                     </connections>
@@ -2732,6 +2762,7 @@
             <relationships>
                 <relationship kind="outlet" name="jokerVariant" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="pyramidVariant" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="sixWeekVariant" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="standardVariant" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="trainingMaxField" candidateClass="UITextField"/>
             </relationships>

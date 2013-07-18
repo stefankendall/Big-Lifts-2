@@ -7,6 +7,8 @@
 #import "FTOWorkoutSetsGenerator.h"
 #import "NSArray+Enumerable.h"
 #import "SetData.h"
+#import "FTOVariant.h"
+#import "FTOVariantStore.h"
 
 @implementation FTOWorkoutStore
 
@@ -20,7 +22,14 @@
 }
 
 - (void)createWorkoutsForEachLift {
-    for (int week = 1; week <= 4; week++) {
+    int weeks = 4;
+
+    FTOVariant *variant = [[FTOVariantStore instance] first];
+    if([variant.name isEqualToString:FTO_VARIANT_SIX_WEEK]){
+        weeks = 7;
+    }
+
+    for (int week = 1; week <= weeks; week++) {
         [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Bench" week:week] week:week order:0];
         [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Squat" week:week] week:week order:1];
         [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Deadlift" week:week] week:week order:2];

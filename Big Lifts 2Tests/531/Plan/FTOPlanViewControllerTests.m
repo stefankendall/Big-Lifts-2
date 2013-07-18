@@ -18,9 +18,9 @@
 
 - (void)testSelectVariant {
     FTOPlanViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoPlan"];
-    [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
+    [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]];
     FTOVariant *variant = [[FTOVariantStore instance] first];
-    STAssertEqualObjects(variant.name, @"Pyramid", @"");
+    STAssertEqualObjects(variant.name, FTO_VARIANT_PYRAMID, @"");
 }
 
 @end
