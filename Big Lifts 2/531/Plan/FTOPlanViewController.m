@@ -21,7 +21,8 @@
 
     self.variantCells = @{
             @"Standard" : self.standardVariant,
-            @"Pyramid" : self.pyramidVariant
+            @"Pyramid" : self.pyramidVariant,
+            @"Joker" : self.jokerVariant
     };
 
     [self checkCurrentVariant];
@@ -60,7 +61,6 @@
         [self checkCurrentVariant];
     }
 }
-
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return [self emptyView];

@@ -27,4 +27,12 @@
     STAssertTrue([sets[5] amrap], @"");
 }
 
+- (void)testGeneratesJokerSets {
+    [[[FTOVariantStore instance] first] setName: @"Joker"];
+    FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
+    FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    NSArray *sets = [generator setsForWeek:1 lift:squat];
+    STAssertEquals([sets count], 9U, @"");
+}
+
 @end
