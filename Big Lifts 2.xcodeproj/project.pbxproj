@@ -86,6 +86,7 @@
 		5459054D344D3E784B584BCF /* 172-pricetag.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590526735E78D9EF6F22F0 /* 172-pricetag.png */; };
 		545905527F5502367565C568 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */; };
 		545905887766D673CDFB69B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590B18C50119F99FB04420 /* Default@2x.png */; };
+		5459059F71A59524747627C1 /* UITableViewController+PurchaseOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901853F6360FAC8267ECE /* UITableViewController+PurchaseOverlay.m */; };
 		545905B7E5F9A895E4CFFED3 /* FTOSetStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909B02A75B24019F8875E /* FTOSetStoreTests.m */; };
 		545905DCE1A53561E9136B4F /* SetLogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590B0CA52599058C8E2340 /* SetLogCell.xib */; };
 		545905E23A25A8F2505D2029 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
@@ -279,6 +280,7 @@
 		54590171A174F8AC533C25E4 /* SSViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSViewDeckController.h; sourceTree = "<group>"; };
 		5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLAppDelegate.m; sourceTree = "<group>"; };
 		5459018081E20ED46018EA95 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		545901853F6360FAC8267ECE /* UITableViewController+PurchaseOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+PurchaseOverlay.m"; sourceTree = "<group>"; };
 		54590185EABBE78D7F766644 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
 		545901862CDB39FF18F2D4B6 /* BarWeightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarWeightCell.xib; sourceTree = "<group>"; };
 		54590192C4EC8D647914DD49 /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewController.m; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 		5459024F4BF760314E7766CC /* SSLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftStoreTests.m; sourceTree = "<group>"; };
 		5459025477474EE1610E36A0 /* SetStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetStore.h; sourceTree = "<group>"; };
 		5459026E5CA0127A4D7FCE4A /* WorkoutLogTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutLogTests.h; sourceTree = "<group>"; };
+		5459027074A2DDC79BABD98B /* UITableViewController+PurchaseOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+PurchaseOverlay.h"; sourceTree = "<group>"; };
 		5459028C29E02BF52647AFE4 /* FTOSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSet.m; sourceTree = "<group>"; };
 		5459029C2830012CC87DC5B4 /* FTOWorkoutSetsGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutSetsGeneratorTests.m; sourceTree = "<group>"; };
 		545902AD570E2EF6142F5183 /* BarStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarStore.h; sourceTree = "<group>"; };
@@ -1164,6 +1167,7 @@
 				545909A253F644B8B1C950E2 /* Lift */,
 				54590C4CC3F6F9030FDB4755 /* Formulas */,
 				54590445B432C9FFF7371988 /* Store */,
+				54590CFD55A767B6FE17F5F0 /* Plan */,
 			);
 			path = AllPrograms;
 			sourceTree = "<group>";
@@ -1490,6 +1494,15 @@
 				5459089ACD29746328B8E6C3 /* Individual */,
 			);
 			path = Lift;
+			sourceTree = "<group>";
+		};
+		54590CFD55A767B6FE17F5F0 /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				545901853F6360FAC8267ECE /* UITableViewController+PurchaseOverlay.m */,
+				5459027074A2DDC79BABD98B /* UITableViewController+PurchaseOverlay.h */,
+			);
+			path = Plan;
 			sourceTree = "<group>";
 		};
 		54590D10B0ED6A70D1C270C6 /* StartingStrength */ = {
@@ -2001,6 +2014,7 @@
 				54590448532177210DD964BE /* FTORepsToBeatCalculator.m in Sources */,
 				54590E599859CCB43FCAFBCD /* FTORepsToBeatBreakdown.m in Sources */,
 				54590B8E9D174B73CDD4D87D /* FTOAmrapForm.m in Sources */,
+				5459059F71A59524747627C1 /* UITableViewController+PurchaseOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

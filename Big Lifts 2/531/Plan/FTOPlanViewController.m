@@ -8,6 +8,9 @@
 #import "FTOVariant.h"
 #import "FTOVariantStore.h"
 #import "FTOWorkoutStore.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
+#import "PurchaseOverlay.h"
 
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;
@@ -26,6 +29,21 @@
     };
 
     [self checkCurrentVariant];
+    [self enableDisableIapCells];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(enableDisableIapCells)
+                                                 name:IAP_PURCHASED_NOTIFICATION
+                                               object:nil];
+}
+
+- (void)enableDisableIapCells {
+    if ([[IAPAdapter instance] hasPurchased:FTO_JOKER]) {
+        [self enable:self.jokerVariant];
+    }
+    else {
+        [self disable:FTO_JOKER cell:self.jokerVariant];
+    }
 }
 
 - (void)checkCurrentVariant {
@@ -49,8 +67,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 1) {
-        UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
+        [[Purchaser new] purchase:FTO_JOKER];
+    }
+    else if ([indexPath section] == 1) {
         NSString *newVariantName = [self.variantCells detect:^BOOL(id key, UITableViewCell *cell) {
             return cell == selectedCell;
         }];
