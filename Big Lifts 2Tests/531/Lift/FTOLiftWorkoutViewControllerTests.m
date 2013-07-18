@@ -20,7 +20,7 @@
     [super setUp];
     self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     self.controller = [self getControllerByStoryboardIdentifier:@"ftoLiftWorkout"];
-    self.controller.ftoWorkout = self.ftoWorkout;
+    [self.controller setWorkout:self.ftoWorkout];
 }
 
 - (void)testHasWorkoutRows {
