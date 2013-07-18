@@ -36,13 +36,12 @@
 }
 
 - (void)enableOrDisableIapCells {
-    NSLog(@"%@", self.iapCells);
     [[self.iapCells allKeys] each:^(NSString *purchaseId) {
         if (!([[IAPAdapter instance] hasPurchased:purchaseId])) {
-            [self disable:purchaseId];
+            [self disable:purchaseId cell:self.iapCells[purchaseId]];
         }
         else {
-            [self enable:purchaseId];
+            [self enable:self.iapCells[purchaseId]];
         }
     }];
 }
@@ -63,8 +62,7 @@
     }
 }
 
-- (void)disable:(NSString *)purchaseId {
-    UITableViewCell *cell = self.iapCells[purchaseId];
+- (void)disable:(NSString *)purchaseId cell:(id)cell {
     if (![cell viewWithTag:kPurchaseOverlayTag]) {
         PurchaseOverlay *overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
         CGRect frame = CGRectMake(0, 0, [cell frame].size.width, [cell frame].size.height);
@@ -76,8 +74,7 @@
     }
 }
 
-- (void)enable:(NSString *)purchaseId {
-    UITableViewCell *cell = self.iapCells[purchaseId];
+- (void)enable :(UITableViewCell *)cell {
     if ([cell viewWithTag:kPurchaseOverlayTag]) {
         UIView *overlay = [cell viewWithTag:kPurchaseOverlayTag];
         [overlay removeFromSuperview];

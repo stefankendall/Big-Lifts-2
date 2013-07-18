@@ -10,7 +10,13 @@
 
     dispatch_once(&onceToken, ^{
         store = [SKProductStore new];
-        store.allPurchaseIds = @[IAP_BAR_LOADING, IAP_SS_ONUS_WUNSLER, IAP_SS_WARMUP, IAP_SS_PRACTICAL_PROGRAMMING];
+        store.allPurchaseIds = @[
+                IAP_BAR_LOADING,
+                IAP_SS_ONUS_WUNSLER,
+                IAP_SS_WARMUP,
+                IAP_SS_PRACTICAL_PROGRAMMING,
+                FTO_JOKER
+        ];
     });
 
     return store;

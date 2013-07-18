@@ -7,6 +7,7 @@ NSString * const IAP_SS_ONUS_WUNSLER = @"ssOnusWunsler";
 NSString * const IAP_SS_PRACTICAL_PROGRAMMING = @"ssPracticalProgramming";
 
 NSString * const IAP_PURCHASED_NOTIFICATION = @"iapPurchased";
+NSString * const FTO_JOKER = @"ftoJoker";
 
 @interface Purchaser ()
 
@@ -22,7 +23,8 @@ NSString * const IAP_PURCHASED_NOTIFICATION = @"iapPurchased";
                 IAP_BAR_LOADING : @"Bar loading is now available throughout the app.",
                 IAP_SS_ONUS_WUNSLER : @"Onus Wunsler is now available in Starting Strength.",
                 IAP_SS_PRACTICAL_PROGRAMMING : @"Practical Programming is now available in Starting Strength.",
-                IAP_SS_WARMUP : @"Warm-up sets added to Starting Strength."
+                IAP_SS_WARMUP : @"Warm-up sets added to Starting Strength.",
+                FTO_JOKER : @"Joker Sets are now available in 5/3/1."
         };
     }
 
