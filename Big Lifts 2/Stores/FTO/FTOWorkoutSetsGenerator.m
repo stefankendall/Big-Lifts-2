@@ -14,6 +14,8 @@
     }
     else if ([variant.name isEqualToString:@"Pyramid"]) {
         template = [self pyramid:lift];
+    } else if([variant.name isEqualToString:@"Joker"]){
+        template = [self joker: lift];
     }
 
     return template[[NSNumber numberWithInt:week]];
@@ -86,6 +88,34 @@
         NSNumber *week = [NSNumber numberWithInt:i];
         NSArray *sets = setsByWeek[week];
         setsByWeek[week] = [sets arrayByAddingObjectsFromArray:pyramidSets[week]];
+    }
+    return setsByWeek;
+}
+
+- (NSDictionary *)joker:(FTOLift *)lift {
+    NSDictionary *jokerSets = @{
+            @1: @[
+                    [SetData dataWithReps:5 percentage:N(95) lift:lift],
+                    [SetData dataWithReps:5 percentage:N(105) lift:lift],
+                    [SetData dataWithReps:2 percentage:N(110) lift:lift]
+            ],
+            @2: @[
+                    [SetData dataWithReps:3 percentage:N(100) lift:lift],
+                    [SetData dataWithReps:3 percentage:N(105) lift:lift],
+                    [SetData dataWithReps:1 percentage:N(115) lift:lift]
+            ],
+            @3: @[
+                    [SetData dataWithReps:1 percentage:N(105) lift:lift],
+                    [SetData dataWithReps:1 percentage:N(115) lift:lift],
+                    [SetData dataWithReps:1 percentage:N(120) lift:lift]
+            ]
+    };
+
+    NSMutableDictionary *setsByWeek = [[self standard:lift] mutableCopy];
+    for (int i = 1; i <= 3; i++) {
+        NSNumber *week = [NSNumber numberWithInt:i];
+        NSArray *sets = setsByWeek[week];
+        setsByWeek[week] = [sets arrayByAddingObjectsFromArray:jokerSets[week]];
     }
     return setsByWeek;
 }
