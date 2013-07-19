@@ -19,6 +19,12 @@
     }];
 }
 
+- (void)incrementLifts {
+    [[self findAll] each:^(FTOLift *lift) {
+        [lift setWeight:[lift.weight decimalNumberByAdding:lift.increment]];
+    }];
+}
+
 - (void)createWithName:(NSString *)name increment:(int)increment order:(int)order {
     FTOLift *lift = [self create];
     lift.name = name;

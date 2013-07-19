@@ -12,6 +12,7 @@
 #import "FTORepsToBeatBreakdown.h"
 #import "FTOAmrapForm.h"
 #import "SetLog.h"
+#import "FTOCycleAdjustor.h"
 
 @interface FTOLiftWorkoutViewController ()
 
@@ -78,6 +79,7 @@
 - (IBAction)doneButtonTapped:(id)sender {
     [self logWorkout];
     [self.ftoWorkout setDone:YES];
+    [[FTOCycleAdjustor new] checkForCycleChange];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
 }

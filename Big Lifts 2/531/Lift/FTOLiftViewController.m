@@ -42,6 +42,9 @@
     if (ftoWorkout.done) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
+    else {
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+    }
 
     return cell;
 }

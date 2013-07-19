@@ -19,4 +19,11 @@
     STAssertEqualObjects(press.increment, [NSDecimalNumber decimalNumberWithString:@"2"], @"");
 }
 
+- (void) testIncrementLifts {
+    FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    NSDecimalNumber *weight = [squat.weight copy];
+    [[FTOLiftStore instance] incrementLifts];
+    STAssertEqualObjects(squat.weight, [weight decimalNumberByAdding:N(10)], @"");
+}
+
 @end
