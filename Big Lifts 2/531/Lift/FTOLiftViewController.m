@@ -6,6 +6,8 @@
 #import "Workout.h"
 #import "Set.h"
 #import "Lift.h"
+#import "FTOVariant.h"
+#import "FTOVariantStore.h"
 
 @interface FTOLiftViewController ()
 
@@ -50,12 +52,24 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    FTOVariant *variant = [[FTOVariantStore instance] first];
     NSDictionary *mapping = @{
             @0 : @"5/5/5",
             @1 : @"3/3/3",
             @2 : @"5/3/1",
             @3 : @"Deload"
     };
+    if ([variant.name isEqualToString:FTO_VARIANT_SIX_WEEK]) {
+        mapping = @{
+                @0 : @"5/5/5",
+                @1 : @"3/3/3",
+                @2 : @"5/3/1",
+                @3 : @"5/5/5",
+                @4 : @"3/3/3",
+                @5 : @"5/3/1",
+                @6 : @"Deload"
+        };
+    }
     return mapping[[NSNumber numberWithInteger:section]];
 }
 
