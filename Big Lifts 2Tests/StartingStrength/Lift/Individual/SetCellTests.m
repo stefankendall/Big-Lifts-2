@@ -20,7 +20,7 @@
 
     [cell setSet:set];
 
-    STAssertTrue([[[cell repsLabel] text] isEqualToString:@"5x"], @"");
+    STAssertEqualObjects([[cell repsLabel] text], @"5x", @"");
     NSString *weightText = [[cell weightLabel] text];
     STAssertTrue([weightText isEqualToString:@"300 lbs"], weightText);
 }
@@ -35,6 +35,18 @@
     [cell setSet:set];
 
     STAssertEqualObjects([[cell repsLabel] text], @"AMRAP", @"");
+}
+
+- (void)testSetCellHandlesRepRanges {
+    SetCell *cell = [SetCell create];
+    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
+    Workout *workout = [ssWorkout workouts][0];
+    Set *set = workout.sets[0];
+    set.reps = @5;
+    set.maxReps = @8;
+    [cell setSet:set];
+
+    STAssertEqualObjects([[cell repsLabel] text], @"5-8x", @"");
 }
 
 @end
