@@ -43,7 +43,7 @@
         return cell;
     }
     else {
-        Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
+        Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : FTOWorkoutCell.class;
         SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
 
         if (!cell) {

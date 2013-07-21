@@ -11,12 +11,19 @@
         [self.repsLabel setText:@"AMRAP"];
     }
     else {
-        [self.repsLabel setText:[NSString stringWithFormat:@"%dx", [[set reps] intValue]]];
+        [self.repsLabel setText:[NSString stringWithFormat:@"%d%@", [set.reps intValue],
+                                                           set.amrap ? @"+" : @"x"]];
+
+        if ([set amrap]) {
+            [self.repsLabel setTextColor:[UIColor colorWithRed:0 green:170 / 255.0 blue:0 alpha:1]];
+            [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        }
     }
 
     Settings *settings = [[SettingsStore instance] first];
-    [self.weightLabel setText:[NSString stringWithFormat:@"%0.1f %@",
-                                                         [[set roundedEffectiveWeight] doubleValue], settings.units]];
+    NSString *weightText = [NSString stringWithFormat:@"%@ %@",
+                                                      [set roundedEffectiveWeight], settings.units];
+    [self.weightLabel setText:weightText];
     [self.liftLabel setText:[set lift].name];
     [self.optionalLabel setHidden:!set.optional];
 }

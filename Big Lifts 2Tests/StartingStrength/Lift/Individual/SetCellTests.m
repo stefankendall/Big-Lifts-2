@@ -22,7 +22,7 @@
 
     STAssertTrue([[[cell repsLabel] text] isEqualToString:@"5x"], @"");
     NSString *weightText = [[cell weightLabel] text];
-    STAssertTrue([weightText isEqualToString:@"300.0 lbs"], weightText);
+    STAssertTrue([weightText isEqualToString:@"300 lbs"], weightText);
 }
 
 - (void)testSetCellHandlesToFailureReps {
