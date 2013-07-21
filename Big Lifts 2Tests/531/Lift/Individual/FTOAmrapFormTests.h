@@ -1,7 +1,7 @@
 #import "BLTestCase.h"
 
 @class SenTestCase;
-@class FTOAmrapForm;
+@class FTOSetRepsForm;
 
 @interface FTOAmrapFormTests : BLTestCase
 @end

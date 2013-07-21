@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@protocol AmrapDelegate <NSObject>
+@protocol SetRepsDelegate <NSObject>
 
 - (void)repsChanged:(NSNumber *)reps;
 

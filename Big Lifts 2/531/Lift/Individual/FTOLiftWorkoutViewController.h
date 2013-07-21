@@ -1,9 +1,9 @@
-#import "AmrapDelegate.h"
+#import "SetRepsDelegate.h"
 
 @class FTOWorkout;
 @class Set;
 
-@interface FTOLiftWorkoutViewController : UITableViewController <UITextFieldDelegate, AmrapDelegate> {
+@interface FTOLiftWorkoutViewController : UITableViewController <UITextFieldDelegate, SetRepsDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 

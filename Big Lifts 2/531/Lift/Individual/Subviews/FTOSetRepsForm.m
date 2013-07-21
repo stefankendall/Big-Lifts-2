@@ -1,12 +1,12 @@
-#import "FTOAmrapForm.h"
+#import "FTOSetRepsForm.h"
 #import "Set.h"
 #import "SettingsStore.h"
 #import "Settings.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "AmrapDelegate.h"
+#import "SetRepsDelegate.h"
 #import "UITableViewController+NoEmptyRows.h"
 
-@implementation FTOAmrapForm
+@implementation FTOSetRepsForm
 
 - (void)viewDidLoad {
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.repsField];

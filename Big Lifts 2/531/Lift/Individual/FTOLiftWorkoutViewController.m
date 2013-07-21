@@ -10,7 +10,7 @@
 #import "FTOLiftWorkoutToolbar.h"
 #import "FTORepsToBeatCalculator.h"
 #import "FTORepsToBeatBreakdown.h"
-#import "FTOAmrapForm.h"
+#import "FTOSetRepsForm.h"
 #import "SetLog.h"
 #import "FTOCycleAdjustor.h"
 #import "SetCellWithPlates.h"
@@ -65,7 +65,7 @@
         [breakdown setLastSet:[self.ftoWorkout.workout.sets lastObject]];
     }
     else if ([[segue identifier] isEqualToString:@"ftoAmrapForm"]) {
-        FTOAmrapForm *form = [segue destinationViewController];
+        FTOSetRepsForm *form = [segue destinationViewController];
         Set *tappedSet = self.ftoWorkout.workout.sets[[self.tappedSetRow unsignedIntegerValue] - 1];
         [form setSet:tappedSet];
         [form setDelegate:self];
