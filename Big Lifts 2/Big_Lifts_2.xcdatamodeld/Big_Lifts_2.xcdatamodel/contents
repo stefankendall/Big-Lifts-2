@@ -33,6 +33,7 @@
     </entity>
     <entity name="Set" representedClassName="Set" syncable="YES">
         <attribute name="amrap" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="maxReps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="optional" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="percentage" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>

@@ -4,6 +4,7 @@
 #import "Set.h"
 #import "FTOVariantStore.h"
 #import "FTOVariant.h"
+#import "SetData.h"
 
 @implementation FTOWorkoutSetsGeneratorTests
 
@@ -49,6 +50,8 @@
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSArray *sets = [generator setsForWeek:1 lift:squat];
     STAssertEquals([sets count], 11U, @"");
+    SetData *lastSet = [sets lastObject];
+    STAssertEquals([lastSet maxReps], 8, @"");
 }
 
 @end
