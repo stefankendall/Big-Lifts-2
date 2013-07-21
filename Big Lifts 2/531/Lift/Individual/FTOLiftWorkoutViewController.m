@@ -64,7 +64,7 @@
         FTORepsToBeatBreakdown *breakdown = [segue destinationViewController];
         [breakdown setLastSet:[self.ftoWorkout.workout.sets lastObject]];
     }
-    else if ([[segue identifier] isEqualToString:@"ftoAmrapForm"]) {
+    else if ([[segue identifier] isEqualToString:@"ftoSetRepsForm"]) {
         FTOSetRepsForm *form = [segue destinationViewController];
         Set *tappedSet = self.ftoWorkout.workout.sets[[self.tappedSetRow unsignedIntegerValue] - 1];
         [form setSet:tappedSet];
@@ -78,7 +78,7 @@
     Set *set = self.ftoWorkout.workout.sets[(NSUInteger) [indexPath row] - 1];
     if ([set amrap]) {
         self.tappedSetRow = [NSNumber numberWithInteger:[indexPath row]];
-        [self performSegueWithIdentifier:@"ftoAmrapForm" sender:self];
+        [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
     }
 }
 

@@ -10,7 +10,7 @@
 @implementation FTOAmrapFormTests
 
 - (void)testSetSetSetsFormFields {
-    FTOSetRepsForm *controller = [self getControllerByStoryboardIdentifier:@"ftoAmrap"];
+    FTOSetRepsForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     FTOSet *set = [[FTOSetStore instance] create];
     set.percentage = N(100);
     set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
