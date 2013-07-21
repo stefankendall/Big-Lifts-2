@@ -16,7 +16,6 @@
 
         if ([set amrap]) {
             [self.repsLabel setTextColor:[UIColor colorWithRed:0 green:170 / 255.0 blue:0 alpha:1]];
-            [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
         }
     }
 

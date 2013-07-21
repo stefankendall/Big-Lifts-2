@@ -1,9 +1,5 @@
 #import "FTOWorkoutCell.h"
 #import "Set.h"
-#import "Lift.h"
-#import "SettingsStore.h"
-#import "Settings.h"
-#import "FTOSet.h"
 
 @implementation FTOWorkoutCell
 
@@ -24,6 +20,10 @@
 
 - (void)setSet:(Set *)set {
     [self.setCell setSet:set];
+
+    if ([set amrap]) {
+        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
 }
 
 @end
