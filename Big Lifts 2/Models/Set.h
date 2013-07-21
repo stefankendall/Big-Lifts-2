@@ -6,6 +6,7 @@
 @property(nonatomic) Lift *lift;
 @property(nonatomic) BOOL warmup;
 @property(nonatomic) BOOL amrap;
+@property(nonatomic) BOOL optional;
 
 - (NSDecimalNumber *) effectiveWeight;
 

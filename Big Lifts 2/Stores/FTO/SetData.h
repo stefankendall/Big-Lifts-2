@@ -6,12 +6,18 @@
 @property(nonatomic) Lift *lift;
 @property(nonatomic) BOOL amrap;
 @property(nonatomic) BOOL warmup;
+@property(nonatomic) BOOL optional;
 
 - (id)initWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(Lift *)lift;
 
 - (id)initWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(Lift *)lift amrap:(BOOL)amrap;
 
-- (id)initWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(Lift *)lift amrap:(BOOL)amrap warmup:(BOOL)warmup;
+- (id)initWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(Lift *)lift amrap:(BOOL)amrap warmup:(BOOL)warmup optional:(BOOL)optional;
+
+- (id)initWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(Lift *)lift optional:(BOOL)optional;
+
++ (id)dataWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(Lift *)lift optional:(BOOL)optional;
+
 
 + (id)dataWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(Lift *)lift amrap:(BOOL)amrap warmup:(BOOL)warmup;
 
