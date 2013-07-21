@@ -7,19 +7,11 @@
 @implementation SetCell
 
 - (void)setSet:(Set *)set {
-    int reps = [[set reps] intValue];
-    if (reps <= 0 && [set amrap]) {
+    if ([[set reps] intValue] <= 0 && [set amrap]) {
         [self.repsLabel setText:@"AMRAP"];
     }
     else {
-        if ([set amrap]) {
-            [self.repsLabel setText:[NSString stringWithFormat:@"%d+", reps]];
-            [self.repsLabel setTextColor:[UIColor greenColor]];
-            [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-        }
-        else {
-            [self.repsLabel setText:[NSString stringWithFormat:@"%dx", reps]];
-        }
+        [self.repsLabel setText:[NSString stringWithFormat:@"%dx", [[set reps] intValue]]];
     }
 
     Settings *settings = [[SettingsStore instance] first];
