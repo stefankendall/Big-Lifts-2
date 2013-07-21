@@ -7,6 +7,9 @@
 #import "WorkoutLogStore.h"
 #import "WorkoutLog.h"
 #import "SetLog.h"
+#import "SetCellWithPlates.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -58,6 +61,12 @@
     WorkoutLog *log = [[WorkoutLogStore instance] first];
     SetLog *lastSet = [[log sets] lastObject];
     STAssertEqualObjects(lastSet.reps, @7, @"");
+}
+
+- (void)testUsesPlates {
+    [[IAPAdapter instance] addPurchase:IAP_BAR_LOADING];
+    UITableViewCell *cell = [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    STAssertTrue([cell isKindOfClass:SetCellWithPlates.class], @"");
 }
 
 @end

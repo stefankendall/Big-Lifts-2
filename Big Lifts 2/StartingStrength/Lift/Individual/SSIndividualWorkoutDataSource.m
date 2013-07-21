@@ -4,6 +4,7 @@
 #import "SetCell.h"
 #import "SetCellWithPlates.h"
 #import "IAPAdapter.h"
+#import "Purchaser.h"
 
 @implementation SSIndividualWorkoutDataSource
 
@@ -20,7 +21,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     Workout *workout = [self getCurrentWorkout];
 
-    if([[IAPAdapter instance] hasPurchased:@"ssWarmup"]){
+    if([[IAPAdapter instance] hasPurchased:IAP_SS_WARMUP]){
         return [[workout sets] count];
     }
     else {
@@ -33,7 +34,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Class setClass = [[IAPAdapter instance] hasPurchased:@"barLoading"] ? SetCellWithPlates.class : SetCell.class;
+    Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
     SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
 
     if (cell == nil) {

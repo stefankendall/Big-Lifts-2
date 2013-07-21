@@ -6,42 +6,39 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SetCellWithPlates" rowHeight="67" id="2" customClass="SetCellWithPlates">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SetCellWithPlates" rowHeight="54" id="2" customClass="SetCellWithPlates">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lift name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3">
-                        <rect key="frame" x="20" y="11" width="152" height="21"/>
+                        <rect key="frame" x="20" y="5" width="152" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="255 lbs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6">
-                        <rect key="frame" x="228" y="12" width="72" height="21"/>
+                        <rect key="frame" x="228" y="6" width="72" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="72" id="30"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3x" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12">
-                        <rect key="frame" x="180" y="11" width="40" height="21"/>
+                        <rect key="frame" x="180" y="5" width="40" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="19"/>
+                            <constraint firstAttribute="width" constant="40" id="gQZ-0Q-1lt"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[45, 45, 25]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36">
-                        <rect key="frame" x="20" y="33" width="280" height="21"/>
+                        <rect key="frame" x="20" y="27" width="280" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,16 +48,17 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="3" firstAttribute="top" secondItem="2" secondAttribute="top" constant="11" id="4"/>
-                <constraint firstItem="3" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="5"/>
-                <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="20" id="9"/>
-                <constraint firstItem="12" firstAttribute="baseline" secondItem="6" secondAttribute="baseline" id="16"/>
-                <constraint firstItem="12" firstAttribute="baseline" secondItem="3" secondAttribute="baseline" id="18"/>
-                <constraint firstItem="6" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="8" symbolic="YES" id="31"/>
-                <constraint firstItem="12" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="8" symbolic="YES" id="32"/>
-                <constraint firstAttribute="trailing" secondItem="36" secondAttribute="trailing" constant="20" id="37"/>
-                <constraint firstItem="36" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="39"/>
-                <constraint firstItem="36" firstAttribute="top" secondItem="2" secondAttribute="top" constant="33" id="43"/>
+                <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="20" id="CSd-Es-gwJ"/>
+                <constraint firstItem="12" firstAttribute="top" secondItem="2" secondAttribute="top" constant="5" id="E0l-vq-xdK"/>
+                <constraint firstItem="12" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="8" symbolic="YES" id="G71-8H-5Fy"/>
+                <constraint firstItem="3" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="JYX-N5-8SF"/>
+                <constraint firstItem="36" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="KXU-yb-GBe"/>
+                <constraint firstAttribute="bottom" secondItem="36" secondAttribute="bottom" constant="6" id="Lxw-oI-kbU"/>
+                <constraint firstItem="3" firstAttribute="top" secondItem="2" secondAttribute="top" constant="5" id="Rvd-dF-cCr"/>
+                <constraint firstAttribute="trailing" secondItem="12" secondAttribute="trailing" constant="100" id="X4W-dm-oAc"/>
+                <constraint firstItem="36" firstAttribute="trailing" secondItem="6" secondAttribute="trailing" id="eud-rf-SFZ"/>
+                <constraint firstItem="6" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="8" symbolic="YES" id="onp-bs-iYU"/>
+                <constraint firstItem="6" firstAttribute="top" secondItem="2" secondAttribute="top" constant="6" id="z35-Us-e6b"/>
             </constraints>
             <connections>
                 <outlet property="liftLabel" destination="3" id="33"/>

@@ -34,7 +34,7 @@
     set.amrap = YES;
     [cell setSet:set];
 
-    STAssertEqualObjects([[cell repsLabel] text], @"To failure", @"");
+    STAssertEqualObjects([[cell repsLabel] text], @"AMRAP", @"");
 }
 
 @end

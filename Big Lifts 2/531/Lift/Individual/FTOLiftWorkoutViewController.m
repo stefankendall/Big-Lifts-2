@@ -13,6 +13,9 @@
 #import "FTOAmrapForm.h"
 #import "SetLog.h"
 #import "FTOCycleAdjustor.h"
+#import "SetCellWithPlates.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
 
 @interface FTOLiftWorkoutViewController ()
 
@@ -40,10 +43,13 @@
         return cell;
     }
     else {
-        FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SetCell"];
+        Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
+        SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
+
         if (!cell) {
-            cell = [FTOWorkoutCell create];
+            cell = [setClass create];
         }
+
         [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) row - 1]];
         return cell;
     }
@@ -98,7 +104,7 @@
     for (int i = 0; i < [sets count]; i++) {
         Set *set = sets[(NSUInteger) i];
         SetLog *setLog = [[SetLogStore instance] createFromSet:set];
-        NSNumber *reps = self.lastSetReps[[NSNumber numberWithInt:(i+1)]];
+        NSNumber *reps = self.lastSetReps[[NSNumber numberWithInt:(i + 1)]];
         if (reps) {
             setLog.reps = reps;
         }
@@ -108,6 +114,11 @@
 
 - (void)repsChanged:(NSNumber *)reps {
     self.lastSetReps[self.tappedSetRow] = reps;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return [cell bounds].size.height;
 }
 
 @end

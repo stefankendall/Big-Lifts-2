@@ -13,4 +13,12 @@
     STAssertEqualObjects([set effectiveWeight], N(90), @"");
 }
 
+- (void) testDoesNotGoBelowBarWeightWithTrainingMax {
+    FTOSet *set = [[FTOSetStore instance] first];
+    set.lift.weight = N(45);
+    set.percentage = N(50);
+    STAssertEqualObjects([set effectiveWeight], N(45), @"");
+
+}
+
 @end
