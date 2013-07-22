@@ -67,6 +67,10 @@
     else if ([[segue identifier] isEqualToString:@"ftoSetRepsForm"]) {
         FTOSetRepsForm *form = [segue destinationViewController];
         Set *tappedSet = self.ftoWorkout.workout.sets[[self.tappedSetRow unsignedIntegerValue] - 1];
+        NSNumber *previouslyEnteredReps = [self.variableReps objectForKey:self.tappedSetRow];
+        if (previouslyEnteredReps) {
+            [form setPreviouslyEnteredReps:[previouslyEnteredReps intValue]];
+        }
         [form setSet:tappedSet];
         [form setDelegate:self];
     }

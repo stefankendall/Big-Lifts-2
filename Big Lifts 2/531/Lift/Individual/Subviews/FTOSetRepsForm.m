@@ -16,7 +16,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSNumber *reps = [NSNumber numberWithInt:[[textField text] intValue]];
-    [self.delegate repsChanged: reps];
+    [self.delegate repsChanged:reps];
 }
 
 - (void)setupFields {
@@ -24,6 +24,9 @@
     NSString *weightText = [[self.set roundedEffectiveWeight] stringValue];
     [self.weightField setText:[NSString stringWithFormat:@"%@ %@", weightText, settings.units]];
     [self.repsField setPlaceholder:[self.set.reps stringValue]];
+    if (self.previouslyEnteredReps > 0) {
+        [self.repsField setText:[NSString stringWithFormat:@"%d", self.previouslyEnteredReps]];
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

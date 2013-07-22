@@ -8,6 +8,7 @@
 @property(nonatomic, strong) NSObject <SetRepsDelegate> *delegate;
 
 @property(nonatomic, strong) Set *set;
+@property(nonatomic) int previouslyEnteredReps;
 
 - (void)setupFields;
 @end
