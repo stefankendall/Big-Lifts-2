@@ -21,7 +21,7 @@
 - (void)setSet:(Set *)set {
     [self.setCell setSet:set];
 
-    if ([set amrap]) {
+    if ([set hasVariableReps]) {
         [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
 }

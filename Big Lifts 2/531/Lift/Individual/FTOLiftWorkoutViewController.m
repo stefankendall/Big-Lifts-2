@@ -19,7 +19,7 @@
 
 @interface FTOLiftWorkoutViewController ()
 
-@property(nonatomic) NSMutableDictionary *lastSetReps;
+@property(nonatomic) NSMutableDictionary *variableReps;
 @end
 
 @implementation FTOLiftWorkoutViewController
@@ -76,7 +76,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Set *set = self.ftoWorkout.workout.sets[(NSUInteger) [indexPath row] - 1];
-    if ([set amrap]) {
+    if ([set hasVariableReps]) {
         self.tappedSetRow = [NSNumber numberWithInteger:[indexPath row]];
         [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
     }
@@ -92,7 +92,7 @@
 
 - (void)setWorkout:(FTOWorkout *)ftoWorkout1 {
     self.ftoWorkout = ftoWorkout1;
-    self.lastSetReps = [@{} mutableCopy];
+    self.variableReps = [@{} mutableCopy];
 }
 
 - (void)logWorkout {
@@ -104,7 +104,7 @@
     for (int i = 0; i < [sets count]; i++) {
         Set *set = sets[(NSUInteger) i];
         SetLog *setLog = [[SetLogStore instance] createFromSet:set];
-        NSNumber *reps = self.lastSetReps[[NSNumber numberWithInt:(i + 1)]];
+        NSNumber *reps = self.variableReps[[NSNumber numberWithInt:(i + 1)]];
         if (reps) {
             setLog.reps = reps;
         }
@@ -113,7 +113,7 @@
 }
 
 - (void)repsChanged:(NSNumber *)reps {
-    self.lastSetReps[self.tappedSetRow] = reps;
+    self.variableReps[self.tappedSetRow] = reps;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

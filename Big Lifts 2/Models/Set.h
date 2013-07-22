@@ -12,4 +12,6 @@
 - (NSDecimalNumber *) effectiveWeight;
 
 - (NSDecimalNumber *)roundedEffectiveWeight;
+
+- (BOOL)hasVariableReps;
 @end
