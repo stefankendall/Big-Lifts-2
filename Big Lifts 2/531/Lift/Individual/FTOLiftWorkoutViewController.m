@@ -47,11 +47,10 @@
         return cell;
     }
     else {
-        Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : FTOWorkoutCell.class;
-        SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
+        FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOWorkoutCell.class)];
 
         if (!cell) {
-            cell = [setClass create];
+            cell = [FTOWorkoutCell create];
         }
 
         int previousReps = 0;
@@ -131,6 +130,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    if([cell isKindOfClass:FTOWorkoutCell.class]){
+        FTOWorkoutCell *ftoCell = (FTOWorkoutCell *) cell;
+        return [[ftoCell setCell] bounds].size.height;
+    }
     return [cell bounds].size.height;
 }
 
