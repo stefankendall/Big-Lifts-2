@@ -24,6 +24,10 @@
 
 @implementation FTOLiftWorkoutViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.ftoWorkout.workout.sets count] + 1;
 }
@@ -50,7 +54,12 @@
             cell = [setClass create];
         }
 
-        [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) row - 1]];
+        int previousReps = 0;
+        NSNumber *previouslyRepsNumber = [self.variableReps objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
+        if (previouslyRepsNumber) {
+            previousReps = [previouslyRepsNumber intValue];
+        }
+        [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) row - 1] withEnteredReps:previousReps];
         return cell;
     }
 }

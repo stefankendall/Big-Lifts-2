@@ -10,6 +10,7 @@
 #import "SetCellWithPlates.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
+#import "FTOWorkoutCell.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -67,6 +68,18 @@
     [[IAPAdapter instance] addPurchase:IAP_BAR_LOADING];
     UITableViewCell *cell = [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     STAssertTrue([cell isKindOfClass:SetCellWithPlates.class], @"");
+}
+
+- (void)testShowsSetVariableRepsWhenAvailable {
+    self.controller.tappedSetRow = @6;
+    [self.controller repsChanged:@7];
+    [self.controller doneButtonTapped:nil];
+    [self.controller viewWillAppear:YES];
+
+    FTOWorkoutCell *cell = (FTOWorkoutCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:
+            [NSIndexPath indexPathForRow:6 inSection:0]];
+
+    STAssertEqualObjects([[[cell setCell] repsLabel] text], @"7x", @"");
 }
 
 @end

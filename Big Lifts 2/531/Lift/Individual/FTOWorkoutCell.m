@@ -26,4 +26,10 @@
     }
 }
 
+- (void)setSet:(Set *)set withEnteredReps:(int)enteredReps {
+    [self.setCell setEnteredReps:enteredReps];
+    [self.setCell setSet:set];
+}
+
+
 @end

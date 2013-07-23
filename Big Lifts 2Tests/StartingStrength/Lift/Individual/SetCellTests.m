@@ -49,4 +49,15 @@
     STAssertEqualObjects([[cell repsLabel] text], @"5-8x", @"");
 }
 
+- (void)testEnteredReps {
+    SetCell *cell = [SetCell create];
+
+    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
+    Workout *workout = [ssWorkout workouts][0];
+    Set *set = workout.sets[0];
+    [set setReps:[NSNumber numberWithInt:5]];
+    [cell setSet:set withEnteredReps:7];
+    STAssertEqualObjects([[cell repsLabel] text], @"7x", @"");
+}
+
 @end
