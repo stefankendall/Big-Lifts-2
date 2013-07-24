@@ -66,8 +66,8 @@
 
 - (void)testUsesPlates {
     [[IAPAdapter instance] addPurchase:IAP_BAR_LOADING];
-    UITableViewCell *cell = [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    STAssertTrue([cell isKindOfClass:SetCellWithPlates.class], @"");
+    FTOWorkoutCell *cell = (FTOWorkoutCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    STAssertTrue([cell.setCell isKindOfClass:SetCellWithPlates.class], @"");
 }
 
 - (void)testShowsSetVariableRepsWhenAvailable {
