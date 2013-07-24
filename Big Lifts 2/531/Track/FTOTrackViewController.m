@@ -3,6 +3,7 @@
 #import "WorkoutLogCell.h"
 #import "FTOWorkoutLogDataSource.h"
 #import "WorkoutLog.h"
+#import "SetLogCombiner.h"
 
 @interface FTOTrackViewController ()
 
@@ -22,11 +23,11 @@
 
 - (int)getRowCount:(NSIndexPath *)path {
     if (self.showAll) {
-        return [super getRowCount: path];
+        return [super getRowCount:path];
     }
     else {
         WorkoutLog *log = [self getLog][(NSUInteger) [path row]];
-        return [[log workSets] count];
+        return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:[log workSets]]] count];
     }
 }
 
@@ -39,12 +40,13 @@
 
     if (cell == nil) {
         cell = [WorkoutLogCell create];
-        WorkoutLog *workoutLog = [self getLog][(NSUInteger) [indexPath row]];
-        [cell setWorkoutLog:workoutLog];
-        cell.workoutLogTableDataSource = [[FTOWorkoutLogDataSource alloc] initWithWorkoutLog:workoutLog];
-        [cell.setTable setDataSource:cell.workoutLogTableDataSource];
-        [cell.setTable setDelegate:cell.workoutLogTableDataSource];
     }
+
+    WorkoutLog *workoutLog = [self getLog][(NSUInteger) [indexPath row]];
+    [cell setWorkoutLog:workoutLog];
+    cell.workoutLogTableDataSource = [[FTOWorkoutLogDataSource alloc] initWithWorkoutLog:workoutLog];
+    [cell.setTable setDataSource:cell.workoutLogTableDataSource];
+    [cell.setTable setDelegate:cell.workoutLogTableDataSource];
 
     return cell;
 }

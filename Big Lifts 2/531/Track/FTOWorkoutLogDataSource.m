@@ -2,11 +2,15 @@
 #import "SetLogCell.h"
 #import "WorkoutLog.h"
 #import "SetLogContainer.h"
-#import "SetLog.h"
+#import "SetLogCombiner.h"
 
 @implementation FTOWorkoutLogDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.workoutLog workSets] count];
+    return [[self getCombinedSetLogs] count];
+}
+
+- (NSArray *)getCombinedSetLogs {
+    return [[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:[self.workoutLog workSets]]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -14,10 +18,7 @@
 
     if (cell == nil) {
         cell = [SetLogCell create];
-        SetLog *setLog = [self.workoutLog workSets][(NSUInteger) [indexPath row]];
-        SetLogContainer *container = [[SetLogContainer alloc] initWithSetLog:setLog];
-        container.count = 1;
-        [cell setSetLogContainer:container];
+        [cell setSetLogContainer:[self getCombinedSetLogs][(NSUInteger) [indexPath row]]];
     }
 
     return cell;
