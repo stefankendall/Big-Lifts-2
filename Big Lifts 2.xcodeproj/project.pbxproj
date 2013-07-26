@@ -50,6 +50,7 @@
 		54590275F3D94F5D44BF75C5 /* BLStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FC1E36E2FC55B6FF5D5 /* BLStoreManager.m */; };
 		545902805A73FAB9ED001DC6 /* PurchaseOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545907A08979AD35C9572060 /* PurchaseOverlay.xib */; };
 		5459028FCF46CC78FCDDEAFB /* FTOSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459028C29E02BF52647AFE4 /* FTOSet.m */; };
+		545902908DAA096D3EB81701 /* FTOTrackToolbarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5459014893A2978E375E2EEE /* FTOTrackToolbarCell.xib */; };
 		545902D0AC9008D9FC5B5024 /* PlateStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459088313861DA1F90E0A0D /* PlateStoreTests.m */; };
 		545902DBF4BFDB74EE3B1E44 /* SSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A9BCBEE999725C40F30 /* SSWorkout.m */; };
 		545902EFCD9F9F1EBA65EAD0 /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */; };
@@ -162,6 +163,7 @@
 		54590A6F6D5BE0051A5F368A /* SSStateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459003C379CCAE327FC9DBB /* SSStateStore.m */; };
 		54590A717E23FC12468E558C /* 379-barbell.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590060552A0C888496833E /* 379-barbell.png */; };
 		54590A76FBB0E7DBC04ED38A /* WeightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590013A92D2E981EB34652 /* WeightTableCell.m */; };
+		54590A8497D4011E04505354 /* FTOTrackToolbarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900C28C8CF8AE8F409FCA /* FTOTrackToolbarCell.m */; };
 		54590ACE7C29F8D1E457C63F /* SSIndividualWorkoutDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909F6BEE27AF13E9207B3 /* SSIndividualWorkoutDataSourceTests.m */; };
 		54590ADB63782C2D8DB37E41 /* WorkoutLogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590EF45CEBA588CBBB2F25 /* WorkoutLogCell.xib */; };
 		54590ADEE6851B8BC44BDDDF /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459037AC09063CBA74070E2 /* Set.m */; };
@@ -276,6 +278,7 @@
 		545900BBA3B4304E1C2E2F20 /* SSWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkout.h; sourceTree = "<group>"; };
 		545900BC7437BC4F0DF65474 /* 101-gameplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "101-gameplan.png"; sourceTree = "<group>"; };
 		545900BE651363652832CF17 /* FTONavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTONavController.h; sourceTree = "<group>"; };
+		545900C28C8CF8AE8F409FCA /* FTOTrackToolbarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTrackToolbarCell.m; sourceTree = "<group>"; };
 		545900DE1CF67288572E093E /* FTOWorkoutSetsGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutSetsGenerator.h; sourceTree = "<group>"; };
 		545900E1467E76D83942B070 /* FTOLift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLift.m; sourceTree = "<group>"; };
 		545900FE54752F2F2F387961 /* FTOTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTrackViewController.m; sourceTree = "<group>"; };
@@ -288,6 +291,7 @@
 		5459013E396C6C29D5BB0AED /* SSPlanWorkoutsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPlanWorkoutsViewController.h; sourceTree = "<group>"; };
 		54590141AD68FECADA8F7CFA /* SSWarmupGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWarmupGenerator.h; sourceTree = "<group>"; };
 		54590146A452D3D4216C9FB9 /* 95-equalizer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "95-equalizer@2x.png"; sourceTree = "<group>"; };
+		5459014893A2978E375E2EEE /* FTOTrackToolbarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOTrackToolbarCell.xib; sourceTree = "<group>"; };
 		5459014BD58A350501E2C0E0 /* FTOLiftWorkoutToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftWorkoutToolbar.h; sourceTree = "<group>"; };
 		54590155A3CB2CDBFC9FEEAD /* FTOWorkoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutCell.h; sourceTree = "<group>"; };
 		54590160279041FE2B448ACB /* SSLiftSummaryCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftSummaryCellTests.m; sourceTree = "<group>"; };
@@ -541,6 +545,7 @@
 		54590B667179D94EB3A42AD3 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		54590B6697BDE751AAC38E93 /* SKProductStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductStoreTests.h; sourceTree = "<group>"; };
 		54590B76F9823CBA32676BE9 /* SKProductStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductStore.h; sourceTree = "<group>"; };
+		54590B79905ECE26448A9143 /* FTOTrackToolbarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTrackToolbarCell.h; sourceTree = "<group>"; };
 		54590B9B90136DFDCB61B0AA /* FTOCycleAdjustor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCycleAdjustor.m; sourceTree = "<group>"; };
 		54590B9CFAB26502A0DDBA22 /* FTOVariant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOVariant.h; sourceTree = "<group>"; };
 		54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1272,6 +1277,9 @@
 				54590060FDCD41CAE97FC449 /* FTOTrackViewController.h */,
 				54590A4C6834FE196F65AB0D /* FTOWorkoutLogDataSource.m */,
 				54590B5636203A4388688461 /* FTOWorkoutLogDataSource.h */,
+				545900C28C8CF8AE8F409FCA /* FTOTrackToolbarCell.m */,
+				54590B79905ECE26448A9143 /* FTOTrackToolbarCell.h */,
+				5459014893A2978E375E2EEE /* FTOTrackToolbarCell.xib */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -1847,6 +1855,7 @@
 				545903142EB15F8E93236940 /* FTOLiftWorkoutToolbar.xib in Resources */,
 				5459061761C987E09AF13E56 /* 09-chat-2.png in Resources */,
 				5459026D340E1D5726FABACF /* 09-chat-2@2x.png in Resources */,
+				545902908DAA096D3EB81701 /* FTOTrackToolbarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2083,6 +2092,7 @@
 				54590CA8FB58F95DD7AB1EC9 /* FTOSixWeekPlan.m in Sources */,
 				54590E42609CBCA2BF806C06 /* FTOFirstSetLastMultipleSetsPlan.m in Sources */,
 				545906BB3681319B96030E6A /* FTONextCycleViewController.m in Sources */,
+				54590A8497D4011E04505354 /* FTOTrackToolbarCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

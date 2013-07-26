@@ -1,8 +1,7 @@
 #import "TrackViewController.h"
 
 @interface FTOTrackViewController : TrackViewController {}
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *viewButton;
+- (void)viewButtonTapped:(id)sender;
 
-- (IBAction)viewButtonTapped:(id)sender;
-
+@property(strong, nonatomic) UIButton *viewButton;
 @end
