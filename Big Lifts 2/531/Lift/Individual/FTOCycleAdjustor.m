@@ -14,11 +14,15 @@
     }
 
     if ([self cycleNeedsToIncrement]) {
-        [[FTOLiftStore instance] incrementLifts];
-        [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
+        [self nextCycle];
+    }
+}
+
+- (void)nextCycle {
+    [[FTOLiftStore instance] incrementLifts];
+    [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
             ftoWorkout.done = NO;
         }];
-    }
 }
 
 - (BOOL)midPointOfSixWeekCycle {

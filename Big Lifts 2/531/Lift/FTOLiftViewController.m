@@ -16,6 +16,10 @@
 
 @implementation FTOLiftViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int week = section + 1;
     NSArray *liftsPerWeek = [[FTOWorkoutStore instance] findAllWhere:@"week" value:(id) [NSNumber numberWithInt:week]];
@@ -82,8 +86,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    FTOLiftWorkoutViewController *controller = [segue destinationViewController];
-    [controller setWorkout:self.nextWorkout];
+    if ([[segue identifier] isEqualToString:@"ftoViewWorkout"]) {
+        FTOLiftWorkoutViewController *controller = [segue destinationViewController];
+        [controller setWorkout:self.nextWorkout];
+    }
 }
 
 @end
