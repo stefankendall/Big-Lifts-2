@@ -458,12 +458,43 @@
                                 <action selector="revealSidebar:" destination="br1-3i-g21" id="w97-2n-AAk"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Graph" id="Qf6-9s-lth">
+                            <connections>
+                                <segue destination="1oY-Cz-19b" kind="push" id="JRO-MR-Xil"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ps-Us-r1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1632" y="847"/>
+        </scene>
+        <!--Graph View Controller - Graph-->
+        <scene sceneID="JeC-8v-CV1">
+            <objects>
+                <viewController id="1oY-Cz-19b" customClass="FTOGraphViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hpK-Gm-ZBK">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PHX-zL-3oX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Graph" id="7sE-hX-uZY"/>
+                    <connections>
+                        <outlet property="webView" destination="PHX-zL-3oX" id="dSe-VO-gMw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNH-s9-nnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1632" y="1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DCC-d8-Jbb">
