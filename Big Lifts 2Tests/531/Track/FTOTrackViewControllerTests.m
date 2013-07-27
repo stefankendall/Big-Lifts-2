@@ -17,7 +17,7 @@
     log.name = @"5/3/1";
 
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
-    STAssertEquals([controller tableView:nil numberOfRowsInSection:0], 2, @"");
+    STAssertEquals([controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
 
 - (void)testReturnsCorrectRows {
@@ -26,7 +26,7 @@
     log.name = @"5/3/1";
     [log.sets addObject:[[SetLogStore instance] create]];
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
-    STAssertEquals([controller tableView:nil numberOfRowsInSection:0], 2, @"");
+    STAssertEquals([controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
 
 - (void)testViewButtonTappedTogglesText {
@@ -51,7 +51,7 @@
 }
 
 - (int)getCellRowCount:(FTOTrackViewController *)controller {
-    WorkoutLogCell *cell = (WorkoutLogCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    WorkoutLogCell *cell = (WorkoutLogCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     return [cell.workoutLogTableDataSource tableView:nil numberOfRowsInSection:0];
 }
 

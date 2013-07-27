@@ -19,11 +19,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self getLog] count] + 1;
+    if (section == 0) {
+        return 1;
+    }
+    else {
+        return [[self getLog] count];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath row] == 0) {
+    if ([indexPath section] == 0) {
         return 40;
     }
     else {
@@ -31,24 +36,22 @@
     }
 }
 
-
 - (NSArray *)getLog {
     return [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
-    NSUInteger row = (NSUInteger) [path row] - 1;
     if (self.showAll) {
-        return [super getRowCount:[NSIndexPath indexPathForRow:row inSection:[path section]]];
+        return [super getRowCount:[NSIndexPath indexPathForRow:(NSUInteger) [path row] inSection:[path section]]];
     }
     else {
-        WorkoutLog *log = [self getLog][row];
+        WorkoutLog *log = [self getLog][((NSUInteger) [path row])];
         return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:[log workSets]]] count];
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath row] == 0) {
+    if ([indexPath section] == 0) {
         FTOTrackToolbarCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOTrackToolbarCell.class)];
         if (!cell) {
             cell = [FTOTrackToolbarCell create];
@@ -58,9 +61,8 @@
         return cell;
     }
     else {
-        NSUInteger row = (NSUInteger) [indexPath row] - 1;
         if (self.showAll) {
-            return [super tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:[indexPath section]]];
+            return [super tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:(NSUInteger) [indexPath row] inSection:[indexPath section]]];
         }
 
         WorkoutLogCell *cell = (WorkoutLogCell *) [tableView dequeueReusableCellWithIdentifier:@"WorkoutLogCell"];
@@ -69,7 +71,7 @@
             cell = [WorkoutLogCell create];
         }
 
-        WorkoutLog *workoutLog = [self getLog][row];
+        WorkoutLog *workoutLog = [self getLog][((NSUInteger) [indexPath row])];
         [cell setWorkoutLog:workoutLog];
         cell.workoutLogTableDataSource = [[FTOWorkoutLogDataSource alloc] initWithWorkoutLog:workoutLog];
         [cell.setTable setDataSource:cell.workoutLogTableDataSource];
@@ -89,6 +91,10 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
     return [super tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:[NSIndexPath indexPathForRow:[indexPath row] - 1 inSection:[indexPath section]]];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
 @end

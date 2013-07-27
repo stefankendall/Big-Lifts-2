@@ -21,8 +21,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *emptyViewToPreventEmptyRows = [UIView new];
-    return emptyViewToPreventEmptyRows;
+    return [self emptyView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -53,6 +52,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == tableView.numberOfSections - 1) {
+        return 1;
+    }
+    return 0;
 }
 
 @end
