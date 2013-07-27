@@ -7,5 +7,9 @@
             pathForResource:@"graph" ofType:@"html"]                  isDirectory:NO]]];
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+
+}
 
 @end
