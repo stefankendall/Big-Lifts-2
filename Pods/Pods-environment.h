@@ -48,3 +48,9 @@
 #define COCOAPODS_VERSION_MINOR_ViewDeck 2
 #define COCOAPODS_VERSION_PATCH_ViewDeck 11
 
+// WebViewJavascriptBridge
+#define COCOAPODS_POD_AVAILABLE_WebViewJavascriptBridge
+#define COCOAPODS_VERSION_MAJOR_WebViewJavascriptBridge 4
+#define COCOAPODS_VERSION_MINOR_WebViewJavascriptBridge 0
+#define COCOAPODS_VERSION_PATCH_WebViewJavascriptBridge 1
+
