@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		024CD5FD1736D68600EDA8AB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */; };
 		029E3AED17A4454100113103 /* Highcharts-3.0.2 in Resources */ = {isa = PBXBuildFile; fileRef = 029E3AEC17A4454100113103 /* Highcharts-3.0.2 */; };
+		029E3AF017A4934800113103 /* highcharts_transformer.js in Resources */ = {isa = PBXBuildFile; fileRef = 029E3AEE17A4934800113103 /* highcharts_transformer.js */; };
+		029E3AF117A4934800113103 /* underscore-1.5.1.js in Resources */ = {isa = PBXBuildFile; fileRef = 029E3AEF17A4934800113103 /* underscore-1.5.1.js */; };
 		02F3F675173FE1BB0047305A /* SSLiftStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459024F4BF760314E7766CC /* SSLiftStoreTests.m */; };
 		5459003C98A6652A65E569F3 /* CurrentProgramStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FE89FA3B9CACDB47621 /* CurrentProgramStore.m */; };
 		5459004C374702B93A9B6BE2 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DEB783D258241F10B3A /* Workout.m */; };
@@ -261,6 +263,8 @@
 		024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 		02852969173D8E8B004A61B3 /* Big Lifts 2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Big Lifts 2.entitlements"; sourceTree = "<group>"; };
 		029E3AEC17A4454100113103 /* Highcharts-3.0.2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Highcharts-3.0.2"; sourceTree = "<group>"; };
+		029E3AEE17A4934800113103 /* highcharts_transformer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highcharts_transformer.js; sourceTree = "<group>"; };
+		029E3AEF17A4934800113103 /* underscore-1.5.1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "underscore-1.5.1.js"; sourceTree = "<group>"; };
 		545900095AB2AF5A89E39D44 /* 20-gear-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear-2.png"; sourceTree = "<group>"; };
 		5459000AE0A28278176B73AB /* FTOPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOPlan.h; sourceTree = "<group>"; };
 		5459000EBFC073C87ABC1361 /* FTOWorkoutCellTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutCellTests.h; sourceTree = "<group>"; };
@@ -1643,6 +1647,8 @@
 		54590E085C16CBCBDB38729B /* html */ = {
 			isa = PBXGroup;
 			children = (
+				029E3AEE17A4934800113103 /* highcharts_transformer.js */,
+				029E3AEF17A4934800113103 /* underscore-1.5.1.js */,
 				029E3AEC17A4454100113103 /* Highcharts-3.0.2 */,
 				545908E0120D96962DFF2B9A /* graph.html */,
 				54590F61F7BA7240C22A750E /* jquery-2.0.3.min.js */,
@@ -1892,6 +1898,8 @@
 				5459061761C987E09AF13E56 /* 09-chat-2.png in Resources */,
 				5459026D340E1D5726FABACF /* 09-chat-2@2x.png in Resources */,
 				545902908DAA096D3EB81701 /* FTOTrackToolbarCell.xib in Resources */,
+				029E3AF017A4934800113103 /* highcharts_transformer.js in Resources */,
+				029E3AF117A4934800113103 /* underscore-1.5.1.js in Resources */,
 				54590665473EF7456048BBC7 /* testdata.js in Resources */,
 				5459020478E78CABDB1A4AC2 /* setupgraph.js in Resources */,
 				545904EB7B2F80F5784484EC /* graph.html in Resources */,
