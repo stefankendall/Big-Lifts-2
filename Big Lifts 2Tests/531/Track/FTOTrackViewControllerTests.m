@@ -50,6 +50,27 @@
     STAssertEquals([self getCellRowCount:controller], 2, @"");
 }
 
+- (void)testSortsByDate {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd"];
+
+    WorkoutLog *log1 = [[WorkoutLogStore instance] create];
+    log1.name = @"5/3/1";
+    log1.date = [df dateFromString:@"2013-01-12"];
+
+    WorkoutLog *log2 = [[WorkoutLogStore instance] create];
+    log2.name = @"5/3/1";
+    log2.date = [df dateFromString:@"2013-02-01"];
+
+    WorkoutLog *log3 = [[WorkoutLogStore instance] create];
+    log3.name = @"5/3/1";
+    log3.date = [df dateFromString:@"2013-01-17"];
+
+    FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
+    NSArray *expected = @[log2, log3, log1];
+    STAssertEqualObjects([controller getLog], expected, @"");
+}
+
 - (int)getCellRowCount:(FTOTrackViewController *)controller {
     WorkoutLogCell *cell = (WorkoutLogCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     return [cell.workoutLogTableDataSource tableView:nil numberOfRowsInSection:0];

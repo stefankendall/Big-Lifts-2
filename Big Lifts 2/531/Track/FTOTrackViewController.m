@@ -39,7 +39,9 @@
 }
 
 - (NSArray *)getLog {
-    return [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
+    NSArray *log = [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
+    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+    return [log sortedArrayUsingDescriptors:@[sd]];
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
