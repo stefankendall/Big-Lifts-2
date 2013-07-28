@@ -39,9 +39,7 @@
 }
 
 - (NSArray *)getLog {
-    NSArray *log = [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
-    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
-    return [log sortedArrayUsingDescriptors:@[sd]];
+    return [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
@@ -114,8 +112,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    FTOEditLogViewController *controller = [segue destinationViewController];
-    controller.workoutLog = self.tappedLog;
+    if ([[segue identifier] isEqualToString:@"ftoLogEdit"]) {
+        FTOEditLogViewController *controller = [segue destinationViewController];
+        controller.workoutLog = self.tappedLog;
+    }
     [super prepareForSegue:segue sender:sender];
 }
 
