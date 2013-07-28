@@ -12,18 +12,29 @@
 <body>
 <script src="Highcharts-3.0.2/js/highcharts.js"></script>
 <script type="text/javascript">
+    window.setGraphSize = function (size) {
+        var container = $('#container');
+        container.css({'min-width': size.width + 'px', 'height': size.height + 'px'});
+        var chart = container.highcharts();
+        if (chart) {
+            chart.setSize(size.width, size.height);
+        }
+    };
+
     var isChrome = /chrome/.test(navigator.userAgent.toLowerCase());
     document.addEventListener('WebViewJavascriptBridgeReady', function onBridgeReady(event) {
+        event.bridge.registerHandler("setGraphSize", window.setGraphSize);
         event.bridge.init(function (data) {
             window.setupGraph(window.transformToHighChartsSeries(data));
         });
     }, false);
-    if(isChrome){
-        $(function(){
+    if (isChrome) {
+        $(function () {
+            window.setGraphSize({width: 400, height: 400});
             window.setupGraph(window.testData);
         });
     }
 </script>
-<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<div id="container" style="margin: 0 auto"></div>
 </body>
 </html>

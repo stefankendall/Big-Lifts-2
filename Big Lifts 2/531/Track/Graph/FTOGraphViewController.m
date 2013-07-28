@@ -21,7 +21,19 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.bridge callHandler:@"setGraphSize" data:[self getSize]];
     [self.bridge send:[[FTOLogGraphTransformer new] buildDataFromLog]];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [self.bridge callHandler:@"setGraphSize" data:[self getSize]];
+}
+
+- (NSDictionary *)getSize {
+    NSNumber *width = @(CGRectGetWidth(self.webView.frame));
+    NSNumber *height = @(CGRectGetHeight(self.webView.frame));
+    NSDictionary *size = @{@"width" : width, @"height" : height};
+    return size;
 }
 
 @end
