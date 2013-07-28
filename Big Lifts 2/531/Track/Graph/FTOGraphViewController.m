@@ -16,6 +16,10 @@
     }];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.webView reload];
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self.bridge send:[[FTOLogGraphTransformer new] buildDataFromLog]];
 }

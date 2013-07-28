@@ -29,9 +29,6 @@ window.setupGraph = function (data) {
                 }
             ]
         },
-        tooltip: {
-            valueSuffix: 'lbs'
-        },
         legend: {
             layout: 'vertical',
             align: 'right',
