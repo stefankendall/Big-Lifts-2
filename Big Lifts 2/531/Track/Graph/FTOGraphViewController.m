@@ -1,6 +1,8 @@
 #import "FTOGraphViewController.h"
 #import "WebViewJavascriptBridge.h"
 #import "FTOLogGraphTransformer.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
 
 @interface FTOGraphViewController ()
 
@@ -22,7 +24,12 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self.bridge callHandler:@"setGraphSize" data:[self getSize]];
-    [self.bridge send:[[FTOLogGraphTransformer new] buildDataFromLog]];
+    if ([[IAPAdapter instance] hasPurchased:IAP_GRAPHING]) {
+        [self.bridge send:[[FTOLogGraphTransformer new] buildDataFromLog]];
+    }
+    else {
+        [self.bridge callHandler:@"setupTestData" data: @{}];
+    }
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {

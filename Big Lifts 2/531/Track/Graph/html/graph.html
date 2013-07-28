@@ -21,9 +21,14 @@
         }
     };
 
+    window.setupTestData = function(){
+        window.setupGraph(window.testData);
+    };
+
     var isChrome = /chrome/.test(navigator.userAgent.toLowerCase());
     document.addEventListener('WebViewJavascriptBridgeReady', function onBridgeReady(event) {
         event.bridge.registerHandler("setGraphSize", window.setGraphSize);
+        event.bridge.registerHandler("setupTestData", window.setupTestData);
         event.bridge.init(function (data) {
             window.setupGraph(window.transformToHighChartsSeries(data));
         });
@@ -31,7 +36,7 @@
     if (isChrome) {
         $(function () {
             window.setGraphSize({width: 400, height: 400});
-            window.setupGraph(window.testData);
+            window.setupTestData();
         });
     }
 </script>

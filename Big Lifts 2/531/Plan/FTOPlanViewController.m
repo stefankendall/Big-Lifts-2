@@ -40,11 +40,11 @@
 }
 
 - (void)enableDisableIapCells {
-    if ([[IAPAdapter instance] hasPurchased:FTO_JOKER]) {
+    if ([[IAPAdapter instance] hasPurchased:IAP_FTO_JOKER]) {
         [self enable:self.jokerVariant];
     }
     else {
-        [self disable:FTO_JOKER cell:self.jokerVariant];
+        [self disable:IAP_FTO_JOKER cell:self.jokerVariant];
     }
 }
 
@@ -71,7 +71,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
-        [[Purchaser new] purchase:FTO_JOKER];
+        [[Purchaser new] purchase:IAP_FTO_JOKER];
     }
     else if ([indexPath section] == 1) {
         NSString *newVariantName = [self.variantCells detect:^BOOL(id key, UITableViewCell *cell) {

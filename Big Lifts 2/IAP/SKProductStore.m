@@ -12,10 +12,11 @@
         store = [SKProductStore new];
         store.allPurchaseIds = @[
                 IAP_BAR_LOADING,
+                IAP_GRAPHING,
                 IAP_SS_ONUS_WUNSLER,
                 IAP_SS_WARMUP,
                 IAP_SS_PRACTICAL_PROGRAMMING,
-                FTO_JOKER
+                IAP_FTO_JOKER
         ];
     });
 

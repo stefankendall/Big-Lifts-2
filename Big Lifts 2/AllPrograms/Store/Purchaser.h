@@ -1,8 +1,9 @@
 extern NSString * const IAP_BAR_LOADING;
+extern NSString * const IAP_GRAPHING;
 extern NSString * const IAP_SS_WARMUP;
 extern NSString * const IAP_SS_ONUS_WUNSLER;
 extern NSString * const IAP_SS_PRACTICAL_PROGRAMMING;
-extern NSString * const FTO_JOKER;
+extern NSString * const IAP_FTO_JOKER;
 
 extern NSString * const IAP_PURCHASED_NOTIFICATION;
 
