@@ -13,6 +13,7 @@
     [[[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] each:^(WorkoutLog *workoutLog) {
         SetLog *bestSetFromWorkout = [self bestSetFromWorkout:workoutLog];
         NSMutableArray *liftLogEntries = [self logEntriesFromChart:chartData forName:bestSetFromWorkout.name];
+        [liftLogEntries addObject:[self logToChartEntry:workoutLog withSet:bestSetFromWorkout]];
     }];
 
     return chartData;
@@ -41,6 +42,22 @@
         }
     }];
     return bestSet;
+}
+
+- (NSDictionary *)logToChartEntry:(WorkoutLog *)log withSet:(SetLog *)set {
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:log.date];
+    NSNumber *year = [NSNumber numberWithInteger:[components year]];
+    NSNumber *month = [NSNumber numberWithInteger:[components month]];
+    NSNumber *day = [NSNumber numberWithInteger:[components day]];
+
+    return @{
+            @"date" : @{
+                    @"year" : year,
+                    @"month" : month,
+                    @"day" : day
+            },
+            @"weight" : [[OneRepEstimator new] estimate:set.weight withReps:[set.reps intValue]]
+    };
 }
 
 @end

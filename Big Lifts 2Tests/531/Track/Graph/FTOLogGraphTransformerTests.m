@@ -7,6 +7,29 @@
 
 @implementation FTOLogGraphTransformerTests
 
+- (void)testLogToChartEntry {
+    SetLog *set = [[SetLogStore instance] create];
+    set.weight = N(200);
+    set.reps = @3;
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    [workoutLog.sets addObjectsFromArray:@[set]];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd"];
+    NSDate *myDate = [df dateFromString:@"2013-01-12"];
+    workoutLog.date = myDate;
+
+    NSDictionary *chartEntry = [[FTOLogGraphTransformer new] logToChartEntry:workoutLog withSet:set];
+    NSDictionary *expected = @{
+            @"date" : @{
+                    @"year" : @2013,
+                    @"month" : @1,
+                    @"day" : @12
+            },
+            @"weight" : N(219.8)
+    };
+    STAssertEqualObjects(chartEntry, expected, @"");
+}
+
 - (void)testFindsBestSetFromWorkoutLog {
     SetLog *set1 = [[SetLogStore instance] create];
     set1.weight = N(200);
@@ -62,7 +85,7 @@
     NSArray *expected = @[@{
             @"name" : @"Deadlift",
             @"data" : @[
-                    @{@"weight" : N(300), @"date" : @{@"year" : @2013, @"month" : @1, @"day" : @12}}
+                    @{@"weight" : N(223.86), @"date" : @{@"year" : @2013, @"month" : @1, @"day" : @12}}
             ]
     }];
     STAssertEqualObjects(chartData, expected, [NSString stringWithFormat:@"%@", chartData]);
