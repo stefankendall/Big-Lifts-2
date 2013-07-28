@@ -5,6 +5,9 @@ window.setupGraph = function (data) {
             marginRight: 50,
             marginBottom: 25
         },
+        credits: {
+            enabled: false
+        },
         title: {
             text: 'Estimated Maxes',
             x: -20 //center
