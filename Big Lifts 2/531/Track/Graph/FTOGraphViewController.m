@@ -1,5 +1,6 @@
 #import "FTOGraphViewController.h"
 #import "WebViewJavascriptBridge.h"
+#import "FTOLogGraphTransformer.h"
 
 @interface FTOGraphViewController ()
 
@@ -16,8 +17,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [self.bridge send:@{@"Data" : @[@1]}];
+    [self.bridge send:[[FTOLogGraphTransformer new] buildDataFromLog]];
 }
-
 
 @end
