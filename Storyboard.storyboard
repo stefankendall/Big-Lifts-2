@@ -496,8 +496,15 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Graph" id="7sE-hX-uZY"/>
+                    <navigationItem key="navigationItem" title="Graph" id="7sE-hX-uZY">
+                        <barButtonItem key="rightBarButtonItem" title="Export" id="NjN-lf-U8p">
+                            <connections>
+                                <action selector="export:" destination="1oY-Cz-19b" id="Sx2-N1-kVU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="exportButton" destination="NjN-lf-U8p" id="8L1-iR-OXK"/>
                         <outlet property="webView" destination="PHX-zL-3oX" id="dSe-VO-gMw"/>
                     </connections>
                 </viewController>
@@ -2535,6 +2542,12 @@
         <class className="BLViewDeckController" superclassName="IIViewDeckController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewDeckController.h"/>
         </class>
+        <class className="BarLoadingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarLoadingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="weightsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
         <class className="DataLoadingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DataLoadingViewController.h"/>
         </class>
@@ -2550,6 +2563,8 @@
         <class className="FTOGraphViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOGraphViewController.h"/>
             <relationships>
+                <relationship kind="action" name="export:"/>
+                <relationship kind="outlet" name="exportButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -2628,12 +2643,6 @@
             <relationships>
                 <relationship kind="action" name="unitsChanged:"/>
                 <relationship kind="outlet" name="unitsSegmentedControl" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="SSBarLoadingViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSBarLoadingViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="weightsTable" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="SSEditViewController" superclassName="UITableViewController">

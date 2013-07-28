@@ -67,6 +67,7 @@
 		5459034104050CCA10D03CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
 		5459036C481C3D49F6751FF8 /* SSLiftSummaryDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F9159E82BC668F2FBC3 /* SSLiftSummaryDataSource.m */; };
 		5459037DE5824DB15A3135EE /* BarWeightTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901A2CF20014EE03D86D4 /* BarWeightTextFieldDelegate.m */; };
+		545903831C91BD3A2A6B2443 /* FTOLogExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906C4391AB6F268FA79CF /* FTOLogExporter.m */; };
 		545903888DA897CA2B395E59 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459090F9F9DFF74FA014F71 /* Settings.m */; };
 		545903B3117C0B807EE61FAD /* SSLiftSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590F79951F97DD25AF5FF0 /* SSLiftSummaryCell.xib */; };
 		545903C5C5EF984B0A18E870 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904DCA7D7C51C48A4F3F3 /* main.m */; };
@@ -440,6 +441,7 @@
 		545906BF135598EDF318FD98 /* SetLogCombinerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLogCombinerTests.m; sourceTree = "<group>"; };
 		545906C0B00B7D1FCC367D93 /* BLViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLViewDeckController.h; sourceTree = "<group>"; };
 		545906C2B417CD314B59FAA0 /* SSWarmupGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWarmupGeneratorTests.m; sourceTree = "<group>"; };
+		545906C4391AB6F268FA79CF /* FTOLogExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogExporter.m; sourceTree = "<group>"; };
 		545906D178F1F23F7DAC3428 /* FTOWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkout.h; sourceTree = "<group>"; };
 		545906D47B153813B64C62D5 /* SettingsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsStore.h; sourceTree = "<group>"; };
 		545906DAEDB65800B9C6519B /* SettingsStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsStoreTests.h; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 		54590C972A28B99BD9BE45E6 /* 89-dumbells.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "89-dumbells.png"; sourceTree = "<group>"; };
 		54590C9780051778662102C0 /* FTOVariantStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOVariantStore.m; sourceTree = "<group>"; };
 		54590C981B6E7059CE8DB0C5 /* SetLogTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLogTests.m; sourceTree = "<group>"; };
+		54590C98587D38818AC25357 /* FTOLogExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLogExporter.h; sourceTree = "<group>"; };
 		54590CA19668BB712D631143 /* TextFieldWithCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldWithCell.m; sourceTree = "<group>"; };
 		54590CA332CE6FA216724598 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		54590CA5CAE836C71F69E43B /* SetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetData.h; sourceTree = "<group>"; };
@@ -1081,6 +1084,8 @@
 				54590E085C16CBCBDB38729B /* html */,
 				54590357E2A4ED7830E96D04 /* FTOLogGraphTransformer.m */,
 				545906DE5AA181F4CC92FF1A /* FTOLogGraphTransformer.h */,
+				545906C4391AB6F268FA79CF /* FTOLogExporter.m */,
+				54590C98587D38818AC25357 /* FTOLogExporter.h */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -2175,6 +2180,7 @@
 				54590E62315277E368DEA98E /* FTOGraphViewController.m in Sources */,
 				54590B7B26369FC424F18CE7 /* FTOLogGraphTransformer.m in Sources */,
 				54590F14B3F1D6039B3F4999 /* FTOEditLogViewController.m in Sources */,
+				545903831C91BD3A2A6B2443 /* FTOLogExporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
