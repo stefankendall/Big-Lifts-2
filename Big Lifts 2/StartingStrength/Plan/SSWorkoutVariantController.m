@@ -36,7 +36,7 @@
 - (void)enableOrDisableIapCells {
     [[self.iapCells allKeys] each:^(NSString *purchaseId) {
         if (!([[IAPAdapter instance] hasPurchased:purchaseId])) {
-            [self disable:purchaseId cell:self.iapCells[purchaseId]];
+            [self disable:purchaseId view:self.iapCells[purchaseId]];
         }
         else {
             [self enable:self.iapCells[purchaseId]];

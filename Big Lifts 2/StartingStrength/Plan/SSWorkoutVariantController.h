@@ -1,5 +1,5 @@
 #import "UITableViewController+NoEmptyRows.h"
-#import "UITableViewController+PurchaseOverlay.h"
+#import "UIViewController+PurchaseOverlay.h"
 
 @interface SSWorkoutVariantController : UITableViewController {
 }

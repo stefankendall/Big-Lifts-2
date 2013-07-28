@@ -3,6 +3,8 @@
 #import "FTOLogGraphTransformer.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
+#import "UIViewController+PurchaseOverlay.h"
+#import "PurchaseOverlay.h"
 
 @interface FTOGraphViewController ()
 
@@ -16,6 +18,30 @@
             pathForResource:@"graph" ofType:@"html"]                  isDirectory:NO]]];
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView webViewDelegate:self handler:(WVJBHandler) ^{
     }];
+
+    [self enableDisableIap];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(enableDisableIap)
+                                                 name:IAP_PURCHASED_NOTIFICATION
+                                               object:nil];
+}
+
+- (void)enableDisableIap {
+    if (![[IAPAdapter instance] hasPurchased:IAP_GRAPHING]) {
+        [self disable:IAP_GRAPHING view:self.webView];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOverlay:)];
+        [[self.webView viewWithTag:kPurchaseOverlayTag] addGestureRecognizer:tap];
+    }
+    else {
+        if ([self.webView viewWithTag:kPurchaseOverlayTag]) {
+            [self enable:self.webView];
+            [self.webView reload];
+        }
+    }
+}
+
+- (void)tapOverlay:(id)tapOverlay {
+    [[Purchaser new] purchase:IAP_GRAPHING];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -28,7 +54,7 @@
         [self.bridge send:[[FTOLogGraphTransformer new] buildDataFromLog]];
     }
     else {
-        [self.bridge callHandler:@"setupTestData" data: @{}];
+        [self.bridge callHandler:@"setupTestData" data:@{}];
     }
 }
 

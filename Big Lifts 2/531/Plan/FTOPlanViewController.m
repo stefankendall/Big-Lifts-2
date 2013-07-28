@@ -44,7 +44,7 @@
         [self enable:self.jokerVariant];
     }
     else {
-        [self disable:IAP_FTO_JOKER cell:self.jokerVariant];
+        [self disable:IAP_FTO_JOKER view:self.jokerVariant];
     }
 }
 

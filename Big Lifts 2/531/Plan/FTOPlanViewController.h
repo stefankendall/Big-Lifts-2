@@ -1,5 +1,5 @@
 #import "UIViewController+ViewDeckAdditions.h"
-#import "UITableViewController+PurchaseOverlay.h"
+#import "UIViewController+PurchaseOverlay.h"
 
 @interface FTOPlanViewController : UITableViewController <UITextFieldDelegate> {
 }
