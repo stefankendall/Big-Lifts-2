@@ -15,8 +15,7 @@
     var isChrome = /chrome/.test(navigator.userAgent.toLowerCase());
     document.addEventListener('WebViewJavascriptBridgeReady', function onBridgeReady(event) {
         event.bridge.init(function (data) {
-            //TODO: transform test data. Would like tests.
-            window.setupGraph(window.testData);
+            window.setupGraph(window.transformToHighChartsSeries(data));
         });
     }, false);
     if(isChrome){
