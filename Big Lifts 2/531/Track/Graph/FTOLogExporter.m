@@ -2,9 +2,9 @@
 
 @implementation FTOLogExporter
 
-- (NSData *)logData {
+- (NSString *)csv {
     NSString *csv = @"teststring";
-    return [csv dataUsingEncoding:NSUTF8StringEncoding];
+    return csv;
 }
 
 

@@ -1,5 +1,5 @@
 @interface FTOLogExporter : NSObject
 
-- (NSData *)logData;
+- (NSString *)csv;
 
 @end

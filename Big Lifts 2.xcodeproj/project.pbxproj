@@ -232,6 +232,7 @@
 		54590EAAC7896283D466E0E9 /* SSIndividualWorkoutDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 545902EE869F1DABAE43B19B /* SSIndividualWorkoutDataSource.m */; };
 		54590EB5163071B88354668E /* FTOAmrapFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DC468D48E6708C0AF1F /* FTOAmrapFormTests.m */; };
 		54590EE1F76C8A7C048300C5 /* SKProductFake.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459062E1FD6E0C38192CC68 /* SKProductFake.m */; };
+		54590EE5ECAE52AF79DF2A33 /* FTOLogExporterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C4C0CBCA63984D65CA9 /* FTOLogExporterTests.m */; };
 		54590EF4753AF76F1989A5B7 /* Plate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BD5E6323691396F8BC0 /* Plate.m */; };
 		54590F14B3F1D6039B3F4999 /* FTOEditLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903B0CD4DA02F16FEC0B9 /* FTOEditLogViewController.m */; };
 		54590F15D0EBBF3F9FB19E6D /* BarWeightTextFieldDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459039F394559FF38C8B911 /* BarWeightTextFieldDelegateTests.m */; };
@@ -356,6 +357,7 @@
 		5459031F3D5F53AFAFDF03A7 /* WeightTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightTableCell.xib; sourceTree = "<group>"; };
 		5459032746F7EBC1E3015A6E /* CurrentProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentProgram.h; sourceTree = "<group>"; };
 		5459032C615747244DF44033 /* FTOEditMaxesHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOEditMaxesHeader.xib; sourceTree = "<group>"; };
+		5459033182E0AA1797354151 /* FTOLogExporterTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLogExporterTests.h; sourceTree = "<group>"; };
 		5459033D5AF41644A1634A1B /* FTOWorkoutStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutStoreTests.h; sourceTree = "<group>"; };
 		5459034D2F86FDEBD7750E16 /* FTOPlanViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOPlanViewControllerTests.m; sourceTree = "<group>"; };
 		54590357E2A4ED7830E96D04 /* FTOLogGraphTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogGraphTransformer.m; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 		54590C47418D15328A3E25BB /* Purchaser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Purchaser.m; sourceTree = "<group>"; };
 		54590C4A235E12AA3A75B0E4 /* SetLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLog.h; sourceTree = "<group>"; };
 		54590C4A4001DD4DC7B4825D /* FTOCycleAdjustorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCycleAdjustorTests.m; sourceTree = "<group>"; };
+		54590C4C0CBCA63984D65CA9 /* FTOLogExporterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogExporterTests.m; sourceTree = "<group>"; };
 		54590C64320B2FCA3001738B /* BarWeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarWeightCell.m; sourceTree = "<group>"; };
 		54590C74A8BA79A42D9C5C3B /* SenTestCase+ControllerTestAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SenTestCase+ControllerTestAdditions.m"; sourceTree = "<group>"; };
 		54590C7688769A16B1F149ED /* WeightRounder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightRounder.h; sourceTree = "<group>"; };
@@ -1238,6 +1241,8 @@
 			children = (
 				54590F5179F0F172261028FA /* FTOLogGraphTransformerTests.m */,
 				54590645125642900D49667E /* FTOLogGraphTransformerTests.h */,
+				54590C4C0CBCA63984D65CA9 /* FTOLogExporterTests.m */,
+				5459033182E0AA1797354151 /* FTOLogExporterTests.h */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -2050,6 +2055,7 @@
 				54590C8AA3ABC9758005DD6F /* FTOCycleAdjustorTests.m in Sources */,
 				54590CD1785C7FD99EF2706B /* SettingsViewControllerTests.m in Sources */,
 				54590A14B1E765C80158B255 /* FTOLogGraphTransformerTests.m in Sources */,
+				54590EE5ECAE52AF79DF2A33 /* FTOLogExporterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

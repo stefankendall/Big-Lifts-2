@@ -33,7 +33,7 @@
         MFMailComposeViewController *controller = [MFMailComposeViewController new];
         controller.mailComposeDelegate = self;
         [controller setSubject:@"My Log"];
-        [controller addAttachmentData:[[FTOLogExporter new] logData] mimeType:@"text/csv" fileName:@"log.csv"];
+        [controller addAttachmentData:[[[FTOLogExporter new] csv] dataUsingEncoding:NSUTF8StringEncoding] mimeType:@"text/csv" fileName:@"log.csv"];
         [self presentViewController:controller animated:YES completion:nil];
     }
     else {
