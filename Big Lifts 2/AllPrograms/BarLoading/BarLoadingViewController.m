@@ -1,13 +1,12 @@
-#import "SSBarLoadingViewController.h"
+#import "BarLoadingViewController.h"
 #import "BarLoadingDataSource.h"
 #import "PlateStore.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
-#import "SKProductStore.h"
-#import "PriceFormatter.h"
+#import "UIViewController+PurchaseOverlay.h"
 
-@implementation SSBarLoadingViewController
+@implementation BarLoadingViewController
 @synthesize weightsTable;
 
 - (void)viewDidLoad {
@@ -22,22 +21,13 @@
     [self.view addGestureRecognizer:singleFingerTap];
 
     if (!([[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING])) {
-        [self addDisabledView];
+        [self disable:IAP_BAR_LOADING view:self.view];
     }
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(removeOverlayIfNecessary)
                                                  name:IAP_PURCHASED_NOTIFICATION
                                                object:nil];
-}
-
-- (void)addDisabledView {
-    self.overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
-    CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    [self.overlay setFrame:frame];
-    SKProduct *product = [[SKProductStore instance] productById:IAP_BAR_LOADING];
-    [self.overlay.price setText:[[PriceFormatter new] priceOf:product]];
-    [self.view addSubview:self.overlay];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,17 +37,16 @@
 
 - (void)removeOverlayIfNecessary {
     if (([[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING])) {
-        [self.overlay removeFromSuperview];
-        self.overlay = nil;
+        [[self.view viewWithTag:kPurchaseOverlayTag] removeFromSuperview];
     }
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    return [weightsTableDataSource isEditing] || self.overlay != nil;
+    return [weightsTableDataSource isEditing] || [self.view viewWithTag:kPurchaseOverlayTag] != nil;
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
-    if (self.overlay) {
+    if ([self.view viewWithTag:kPurchaseOverlayTag]) {
         [[Purchaser new] purchase:IAP_BAR_LOADING];
     }
     else {

@@ -4,10 +4,9 @@
 @class BarLoadingDataSource;
 @class PurchaseOverlay;
 
-@interface SSBarLoadingViewController : UIViewController <UIGestureRecognizerDelegate, UITableViewDelegate> {
+@interface BarLoadingViewController : UIViewController <UIGestureRecognizerDelegate, UITableViewDelegate> {
     BarLoadingDataSource *weightsTableDataSource;
 }
 @property(weak, nonatomic) IBOutlet UITableView *weightsTable;
-@property(weak, nonatomic) PurchaseOverlay *overlay;
 
 @end
