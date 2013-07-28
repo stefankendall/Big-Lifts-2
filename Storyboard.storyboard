@@ -465,6 +465,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="Dwi-Zs-eSW" kind="push" identifier="ftoLogEdit" id="APF-6w-LL8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ps-Us-r1B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -501,6 +504,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNH-s9-nnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1632" y="1507"/>
+        </scene>
+        <!--Edit Log View Controller - Edit Log-->
+        <scene sceneID="l99-a4-JFd">
+            <objects>
+                <tableViewController storyboardIdentifier="ftoEditLog" id="Dwi-Zs-eSW" customClass="FTOEditLogViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="LAX-vo-Y4G">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="iTj-hJ-BFZ">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ORD-E4-0i0">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXm-8E-lp5">
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jun 00 2013" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jgi-sp-Z83">
+                                                    <rect key="frame" x="70" y="7" width="230" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Dwi-Zs-eSW" id="YVJ-H9-7Bq"/>
+                            <outlet property="delegate" destination="Dwi-Zs-eSW" id="pTg-NA-aYl"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Edit Log" id="6B6-zP-5sw"/>
+                    <connections>
+                        <outlet property="dateField" destination="Jgi-sp-Z83" id="yg4-vu-I7X"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqW-L8-jlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1632" y="2165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DCC-d8-Jbb">
@@ -2463,6 +2519,183 @@
         <image name="95-equalizer.png" width="32" height="24"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
     </resources>
+    <classes>
+        <class className="AddPlateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddPlateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveTapped:"/>
+                <relationship kind="outlet" name="countTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="weightTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BLNavController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLNavController.h"/>
+        </class>
+        <class className="BLViewDeckController" superclassName="IIViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BLViewDeckController.h"/>
+        </class>
+        <class className="DataLoadingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DataLoadingViewController.h"/>
+        </class>
+        <class className="FTOEditLogViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOEditLogViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dateField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FTOEditViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOEditViewController.h"/>
+        </class>
+        <class className="FTOGraphViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOGraphViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="FTOLiftViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOLiftViewController.h"/>
+        </class>
+        <class className="FTOLiftWorkoutViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOLiftWorkoutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonTapped:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="FTONavController" superclassName="BLNavController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTONavController.h"/>
+        </class>
+        <class className="FTONextCycleViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTONextCycleViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonTapped:"/>
+            </relationships>
+        </class>
+        <class className="FTOPlanViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOPlanViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="firstSetLastMultipleSetsVariant" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="jokerVariant" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="pyramidVariant" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="sixWeekVariant" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="standardVariant" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="trainingMaxField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FTORepsToBeatBreakdown" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTORepsToBeatBreakdown.h"/>
+            <relationships>
+                <relationship kind="outlet" name="enteredOneRepMax" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="estimatedMax" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="maxFromLog" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reps" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weight" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FTOSetRepsForm" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOSetRepsForm.h"/>
+            <relationships>
+                <relationship kind="outlet" name="repsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="weightField" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="FTOTrackViewController" superclassName="TrackViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOTrackViewController.h"/>
+        </class>
+        <class className="FTOViewDeckController" superclassName="BLViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FTOViewDeckController.h"/>
+        </class>
+        <class className="IIViewDeckController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bottomController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="centerController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="leftController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="panningView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="rightController" candidateClass="UIViewController"/>
+                <relationship kind="outlet" name="topController" candidateClass="UIViewController"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NavTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavTableViewCell.h"/>
+        </class>
+        <class className="ProgramSelectorViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProgramSelectorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unitsChanged:"/>
+                <relationship kind="outlet" name="unitsSegmentedControl" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="SSBarLoadingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSBarLoadingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="weightsTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSEditViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSEditViewController.h"/>
+        </class>
+        <class className="SSIndividualWorkoutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSIndividualWorkoutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="nextButtonTapped:"/>
+                <relationship kind="outlet" name="workoutTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSLiftViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSLiftViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="workoutValueChanged:"/>
+                <relationship kind="outlet" name="workoutSelector" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="workoutSummaryTable" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SSNavTableViewController" superclassName="BLNavController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSNavTableViewController.h"/>
+        </class>
+        <class className="SSPlanWorkoutsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSPlanWorkoutsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="variantButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="SSTrackViewController" superclassName="TrackViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSTrackViewController.h"/>
+        </class>
+        <class className="SSViewDeckController" superclassName="BLViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSViewDeckController.h"/>
+        </class>
+        <class className="SSWorkoutVariantController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSWorkoutVariantController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="onusWunslerCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="practicalProgrammingCell" candidateClass="UITableViewCell"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unitsChanged:"/>
+                <relationship kind="outlet" name="roundToField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="TPKeyboardAvoidingTableView" superclassName="UITableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TPKeyboardAvoidingTableView.h"/>
+        </class>
+        <class className="TrackViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TrackViewController.h"/>
+        </class>
+        <class className="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="revealSidebar:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

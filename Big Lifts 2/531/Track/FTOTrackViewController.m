@@ -5,10 +5,12 @@
 #import "WorkoutLog.h"
 #import "SetLogCombiner.h"
 #import "FTOTrackToolbarCell.h"
+#import "FTOEditLogViewController.h"
 
 @interface FTOTrackViewController ()
 
 @property(nonatomic) BOOL showAll;
+@property(nonatomic) WorkoutLog *tappedLog;
 @end
 
 @implementation FTOTrackViewController
@@ -95,6 +97,17 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.tappedLog = [self getLog][((NSUInteger) [indexPath row])];
+    [self performSegueWithIdentifier:@"ftoLogEdit" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    FTOEditLogViewController *controller = [segue destinationViewController];
+    controller.workoutLog = self.tappedLog;
+    [super prepareForSegue:segue sender:sender];
 }
 
 @end

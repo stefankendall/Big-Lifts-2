@@ -232,6 +232,7 @@
 		54590EB5163071B88354668E /* FTOAmrapFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DC468D48E6708C0AF1F /* FTOAmrapFormTests.m */; };
 		54590EE1F76C8A7C048300C5 /* SKProductFake.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459062E1FD6E0C38192CC68 /* SKProductFake.m */; };
 		54590EF4753AF76F1989A5B7 /* Plate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BD5E6323691396F8BC0 /* Plate.m */; };
+		54590F14B3F1D6039B3F4999 /* FTOEditLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903B0CD4DA02F16FEC0B9 /* FTOEditLogViewController.m */; };
 		54590F15D0EBBF3F9FB19E6D /* BarWeightTextFieldDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459039F394559FF38C8B911 /* BarWeightTextFieldDelegateTests.m */; };
 		54590F181537C7090A2B6D68 /* FTOWorkoutLogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A4C6834FE196F65AB0D /* FTOWorkoutLogDataSource.m */; };
 		54590F1F0DB9BCC3B9A49FB4 /* UIViewController+ViewDeckAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E8A1AABC89102B1E917 /* UIViewController+ViewDeckAdditions.m */; };
@@ -372,6 +373,7 @@
 		5459039F394559FF38C8B911 /* BarWeightTextFieldDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarWeightTextFieldDelegateTests.m; sourceTree = "<group>"; };
 		545903A0921972B8707E8E7B /* WorkoutLogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutLogCell.h; sourceTree = "<group>"; };
 		545903AD28036645AD5F8524 /* PurchaseOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseOverlay.h; sourceTree = "<group>"; };
+		545903B0CD4DA02F16FEC0B9 /* FTOEditLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOEditLogViewController.m; sourceTree = "<group>"; };
 		545903BCCFEC65974416C0EB /* FTOSettingsStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSettingsStore.h; sourceTree = "<group>"; };
 		545903C79884ABDA44486148 /* BarStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarStoreTests.h; sourceTree = "<group>"; };
 		545903E9BCD1E5E20FBE495F /* FTOSixWeekPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSixWeekPlan.h; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 		54590B6697BDE751AAC38E93 /* SKProductStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductStoreTests.h; sourceTree = "<group>"; };
 		54590B76F9823CBA32676BE9 /* SKProductStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductStore.h; sourceTree = "<group>"; };
 		54590B79905ECE26448A9143 /* FTOTrackToolbarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTrackToolbarCell.h; sourceTree = "<group>"; };
+		54590B7CECE3FA1C412CE7E7 /* FTOEditLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOEditLogViewController.h; sourceTree = "<group>"; };
 		54590B9B90136DFDCB61B0AA /* FTOCycleAdjustor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCycleAdjustor.m; sourceTree = "<group>"; };
 		54590B9CFAB26502A0DDBA22 /* FTOVariant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOVariant.h; sourceTree = "<group>"; };
 		54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -1150,6 +1153,15 @@
 			path = BarLoading;
 			sourceTree = "<group>";
 		};
+		54590643F664ED398646AF4D /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				545903B0CD4DA02F16FEC0B9 /* FTOEditLogViewController.m */,
+				54590B7CECE3FA1C412CE7E7 /* FTOEditLogViewController.h */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
 		5459065264B7CFF79D05AF2F /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1323,6 +1335,7 @@
 				54590B79905ECE26448A9143 /* FTOTrackToolbarCell.h */,
 				5459014893A2978E375E2EEE /* FTOTrackToolbarCell.xib */,
 				5459056B46E877BBA713B865 /* Graph */,
+				54590643F664ED398646AF4D /* Edit */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -2161,6 +2174,7 @@
 				54590A8497D4011E04505354 /* FTOTrackToolbarCell.m in Sources */,
 				54590E62315277E368DEA98E /* FTOGraphViewController.m in Sources */,
 				54590B7B26369FC424F18CE7 /* FTOLogGraphTransformer.m in Sources */,
+				54590F14B3F1D6039B3F4999 /* FTOEditLogViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
