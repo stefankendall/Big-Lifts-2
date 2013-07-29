@@ -20,7 +20,7 @@
 }
 
 - (void)updateDateFieldText {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [self.dateField setText:[dateFormatter stringFromDate:self.workoutLog.date]];
 }
