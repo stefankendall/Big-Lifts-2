@@ -1,3 +1,5 @@
+@class SetLog;
+
 @interface WorkoutLog : NSManagedObject {
 }
 
@@ -6,5 +8,7 @@
 @property(nonatomic) NSDate *date;
 
 - (NSArray *)workSets;
+
+- (SetLog *)bestSet;
 
 @end

@@ -12,7 +12,7 @@
 
     NSEnumerator *log = [[[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] reverseObjectEnumerator];
     for (WorkoutLog *workoutLog in log) {
-        SetLog *bestSetFromWorkout = [self bestSetFromWorkout:workoutLog];
+        SetLog *bestSetFromWorkout = [workoutLog bestSet];
         NSMutableArray *liftLogEntries = [self logEntriesFromChart:chartData forName:bestSetFromWorkout.name];
         [liftLogEntries addObject:[self logToChartEntry:workoutLog withSet:bestSetFromWorkout]];
     }
@@ -30,18 +30,6 @@
     }
 
     return existingLiftData[@"data"];
-}
-
-- (SetLog *)bestSetFromWorkout:(WorkoutLog *)log {
-    __block SetLog *bestSet = [log.sets firstObject];
-    [[log.sets array] each:^(SetLog *set) {
-        NSDecimalNumber *bestMaxEstimate = [[OneRepEstimator new] estimate:bestSet.weight withReps:[bestSet.reps intValue]];
-        NSDecimalNumber *maxEstimateForSet = [[OneRepEstimator new] estimate:set.weight withReps:[set.reps intValue]];
-        if ([maxEstimateForSet compare:bestMaxEstimate] == NSOrderedDescending) {
-            bestSet = set;
-        }
-    }];
-    return bestSet;
 }
 
 - (NSDictionary *)logToChartEntry:(WorkoutLog *)log withSet:(SetLog *)set {

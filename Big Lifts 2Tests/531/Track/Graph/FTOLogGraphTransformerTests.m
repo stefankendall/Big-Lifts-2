@@ -30,26 +30,6 @@
     STAssertEqualObjects(chartEntry, expected, @"");
 }
 
-- (void)testFindsBestSetFromWorkoutLog {
-    SetLog *set1 = [[SetLogStore instance] create];
-    set1.weight = N(200);
-    set1.reps = @3;
-
-    SetLog *set2 = [[SetLogStore instance] create];
-    set2.weight = N(220);
-    set2.reps = @2;
-
-    SetLog *set3 = [[SetLogStore instance] create];
-    set3.weight = N(200);
-    set3.reps = @4;
-
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
-    [workoutLog.sets addObjectsFromArray:@[set1, set2, set3]];
-
-    SetLog *bestSet = [[FTOLogGraphTransformer new] bestSetFromWorkout:workoutLog];
-    STAssertEquals(bestSet, set2, @"");
-}
-
 - (void)testLogEntriesFromChartAddsObjectIfMissing {
     NSMutableArray *chartData = [@[
             @{@"name" : @"Press", @"data" : @[@{}]}
