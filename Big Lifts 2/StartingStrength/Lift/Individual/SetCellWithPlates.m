@@ -15,7 +15,11 @@
                                                             barWeight:[bar.weight doubleValue]];
 
     NSArray *plates = [calculator platesToMakeWeight:[[set roundedEffectiveWeight] doubleValue]];
-    NSString *platesText = [NSString stringWithFormat:@"[%@]", [plates componentsJoinedByString:@", "]];
+    NSString *platesText = @"";
+    if ([plates count] != 0) {
+        platesText = [NSString stringWithFormat:@"[%@]", [plates componentsJoinedByString:@", "]];
+    }
+
     [self.platesLabel setText:platesText];
 }
 

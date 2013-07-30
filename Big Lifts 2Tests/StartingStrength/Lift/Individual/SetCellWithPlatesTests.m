@@ -22,4 +22,17 @@
     STAssertEqualObjects([[cell platesLabel] text], @"[45, 45, 35, 2.5]", @"");
 }
 
+-(void) testSetCellWithoutPlates {
+    SetCellWithPlates *cell = [SetCellWithPlates create];
+
+    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
+    Workout *workout = [ssWorkout workouts][0];
+    Set *set = workout.sets[0];
+    set.percentage = N(100);
+    set.lift.weight = N(45);
+    [cell setSet:set];
+
+    STAssertEqualObjects([[cell platesLabel] text], @"", @"");
+}
+
 @end
