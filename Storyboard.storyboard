@@ -1519,7 +1519,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="barLoading" id="4bM-tT-TiV" customClass="BarLoadingViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lBG-kL-eNy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1538,7 +1538,15 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Bar Loading" id="SxI-oB-MWq"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Bar Loading" id="SxI-oB-MWq">
+                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="IfS-IJ-zDm">
+                            <connections>
+                                <action selector="revealSidebar:" destination="4bM-tT-TiV" id="Gli-XS-Q75"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="v6V-ON-tPp" kind="push" identifier="barLoadingAddPlateSegue" id="A4a-ZO-fgV"/>
                     </connections>
@@ -1568,7 +1576,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="addPlate" id="v6V-ON-tPp" customClass="AddPlateViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="qDr-ly-TYy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
