@@ -1,3 +1,5 @@
+#import "UITableViewController+NoEmptyRows.h"
+
 @interface ProgramSelectorViewController : UITableViewController {
     __weak IBOutlet UISegmentedControl *unitsSegmentedControl;
 }

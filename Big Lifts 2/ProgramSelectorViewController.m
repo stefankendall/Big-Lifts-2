@@ -7,11 +7,9 @@
 #import "NSDictionaryMutator.h"
 #import "BLViewDeckController.h"
 
-@implementation ProgramSelectorViewController {
-}
+@implementation ProgramSelectorViewController
 
 - (void)awakeFromNib {
-    [super awakeFromNib];
     [self chooseSavedProgram];
 }
 
@@ -65,6 +63,10 @@
     }
 
     program.name = [self segueToProgramNames][segueName];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [self emptyView];
 }
 
 @end
