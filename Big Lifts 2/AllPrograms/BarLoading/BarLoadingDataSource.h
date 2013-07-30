@@ -1,4 +1,3 @@
-@class AddPlateTextFieldDelegate;
 @class BarWeightTextFieldDelegate;
 @class WeightTableCell;
 

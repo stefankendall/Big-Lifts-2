@@ -7,14 +7,13 @@
 #import "UIViewController+PurchaseOverlay.h"
 
 @implementation BarLoadingViewController
-@synthesize weightsTable;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     weightsTableDataSource = [BarLoadingDataSource new];
-    weightsTableDataSource.tableView = weightsTable;
-    [weightsTable setDataSource:weightsTableDataSource];
-    [weightsTable setDelegate:self];
+    weightsTableDataSource.tableView = self.tableView;
+    [self.tableView setDataSource:weightsTableDataSource];
+    [self.tableView setDelegate:self];
 
     UITapGestureRecognizer *singleFingerTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
@@ -31,26 +30,26 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [weightsTable reloadData];
+    [self.tableView reloadData];
     [self removeOverlayIfNecessary];
 }
 
 - (void)removeOverlayIfNecessary {
     if (([[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING])) {
-        [[self.view viewWithTag:kPurchaseOverlayTag] removeFromSuperview];
+        [[self.tableView viewWithTag:kPurchaseOverlayTag] removeFromSuperview];
     }
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    return [weightsTableDataSource isEditing] || [self.view viewWithTag:kPurchaseOverlayTag] != nil;
+    return [weightsTableDataSource isEditing] || [self.tableView viewWithTag:kPurchaseOverlayTag] != nil;
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
-    if ([self.view viewWithTag:kPurchaseOverlayTag]) {
+    if ([self.tableView viewWithTag:kPurchaseOverlayTag]) {
         [[Purchaser new] purchase:IAP_BAR_LOADING];
     }
     else {
-        [self.view endEditing:YES];
+        [self.tableView endEditing:YES];
     }
 }
 

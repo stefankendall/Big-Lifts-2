@@ -13,7 +13,6 @@
 #import "RowUIButton.h"
 
 @implementation BarLoadingDataSource
-@synthesize tableView;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
@@ -80,7 +79,7 @@
     RowUIButton *button = deleteButton;
     int row = [[button indexPath] row];
     [[PlateStore instance] removeAtIndex:row];
-    [tableView reloadData];
+    [self.tableView reloadData];
 }
 
 - (UITableViewCell *)getAddCell:(UITableView *)tableView {
@@ -133,7 +132,7 @@
     p.count = [NSNumber numberWithInt:currentPlateCount];
 
     [self modifyCellForPlateCount:[stepperWithCell cell] currentPlateCount:currentPlateCount];
-    [tableView reloadData];
+    [self.tableView reloadData];
 }
 
 - (void)modifyCellForPlateCount:(WeightTableCell *)cell currentPlateCount:(int)currentPlateCount {
