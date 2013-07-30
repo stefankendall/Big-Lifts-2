@@ -36,6 +36,7 @@
 
 - (void)removeOverlayIfNecessary {
     if (([[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING])) {
+        [self.view removeGestureRecognizer:[self.view.gestureRecognizers lastObject]];
         [[self.tableView viewWithTag:kPurchaseOverlayTag] removeFromSuperview];
     }
 }
@@ -47,9 +48,6 @@
 - (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
     if ([self.tableView viewWithTag:kPurchaseOverlayTag]) {
         [[Purchaser new] purchase:IAP_BAR_LOADING];
-    }
-    else {
-        [self.tableView endEditing:YES];
     }
 }
 

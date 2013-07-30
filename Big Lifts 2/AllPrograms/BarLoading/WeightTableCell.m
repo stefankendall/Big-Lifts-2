@@ -1,6 +1,10 @@
 #import "WeightTableCell.h"
-#import "RowUIButton.h"
 
 @implementation WeightTableCell
-@synthesize weightLabel, countLabel, unitsLabel;
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+}
+
 @end
