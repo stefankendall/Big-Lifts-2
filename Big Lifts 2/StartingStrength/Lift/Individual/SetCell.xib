@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4488.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -9,11 +9,11 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SetCell" id="2" customClass="SetCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2" id="Jsy-s8-8yC">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Back Extensions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Back Extensions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                         <rect key="frame" x="20" y="11" width="135" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -24,7 +24,7 @@
                         <rect key="frame" x="228" y="12" width="72" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="72" id="30"/>
+                            <constraint firstAttribute="width" constant="72" id="Tpy-kh-Csd"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -34,7 +34,7 @@
                         <rect key="frame" x="193" y="11" width="27" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="27" id="19"/>
+                            <constraint firstAttribute="width" constant="27" id="Lpw-S6-dJu"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,20 +48,21 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            </view>
-            <constraints>
-                <constraint firstItem="3" firstAttribute="top" secondItem="2" secondAttribute="top" constant="11" id="4"/>
-                <constraint firstItem="3" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="5"/>
-                <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="20" id="9"/>
-                <constraint firstItem="12" firstAttribute="baseline" secondItem="6" secondAttribute="baseline" id="16"/>
-                <constraint firstItem="12" firstAttribute="baseline" secondItem="3" secondAttribute="baseline" id="18"/>
-                <constraint firstItem="6" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="8" symbolic="YES" id="31"/>
-                <constraint firstItem="AC4-lX-c6S" firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="1MF-QG-049"/>
-                <constraint firstItem="AC4-lX-c6S" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="8" id="JmL-nf-PMA"/>
-                <constraint firstItem="12" firstAttribute="leading" secondItem="AC4-lX-c6S" secondAttribute="trailing" constant="8" id="rPp-d4-bkK"/>
-                <constraint firstItem="AC4-lX-c6S" firstAttribute="top" secondItem="6" secondAttribute="top" id="wdT-Xp-TmN"/>
-            </constraints>
+                <constraints>
+                    <constraint firstItem="3" firstAttribute="leading" secondItem="Jsy-s8-8yC" secondAttribute="leading" constant="20" symbolic="YES" id="44w-0Y-qEx"/>
+                    <constraint firstItem="6" firstAttribute="top" secondItem="AC4-lX-c6S" secondAttribute="top" id="HWa-K0-eI6"/>
+                    <constraint firstAttribute="centerY" secondItem="6" secondAttribute="centerY" constant="-1" id="K7b-eD-gfk"/>
+                    <constraint firstAttribute="centerY" secondItem="3" secondAttribute="centerY" id="Qu8-io-x4n"/>
+                    <constraint firstItem="3" firstAttribute="baseline" secondItem="12" secondAttribute="baseline" id="VNg-94-xxC"/>
+                    <constraint firstItem="6" firstAttribute="bottom" secondItem="AC4-lX-c6S" secondAttribute="bottom" id="Y3Q-Zl-mzh"/>
+                    <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="20" symbolic="YES" id="YrT-wC-RiO"/>
+                    <constraint firstItem="6" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="8" symbolic="YES" id="aDf-ps-4xF"/>
+                    <constraint firstItem="12" firstAttribute="leading" secondItem="AC4-lX-c6S" secondAttribute="trailing" constant="8" symbolic="YES" id="bmE-o8-wag"/>
+                    <constraint firstItem="AC4-lX-c6S" firstAttribute="top" secondItem="Jsy-s8-8yC" secondAttribute="top" constant="12" id="fCW-Io-Wyg"/>
+                    <constraint firstItem="AC4-lX-c6S" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="8" symbolic="YES" id="i27-am-WI0"/>
+                    <constraint firstItem="12" firstAttribute="centerY" secondItem="Jsy-s8-8yC" secondAttribute="centerY" id="uad-XB-cmR"/>
+                </constraints>
+            </tableViewCellContentView>
             <connections>
                 <outlet property="liftLabel" destination="3" id="23"/>
                 <outlet property="optionalLabel" destination="AC4-lX-c6S" id="GIX-dA-uOH"/>
@@ -70,21 +71,4 @@
             </connections>
         </tableViewCell>
     </objects>
-    <classes>
-        <class className="CTCustomTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCustomTableViewCell.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SetCell" superclassName="CTCustomTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="liftLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="optionalLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="repsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weightLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
 </document>
