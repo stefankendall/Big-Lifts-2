@@ -3,6 +3,7 @@
 #import "FTOChangeLiftCell.h"
 #import "FTOLift.h"
 #import "RowTextField.h"
+#import "UITableViewController+NoEmptyRows.h"
 
 @implementation FTOChangeLiftsViewController
 
@@ -27,6 +28,10 @@
     RowTextField *rowTextField = (RowTextField *) textField;
     FTOLift *lift = [[FTOLiftStore instance] atIndex:[[rowTextField indexPath] row]];
     [lift setName:[textField text]];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [self emptyView];
 }
 
 @end
