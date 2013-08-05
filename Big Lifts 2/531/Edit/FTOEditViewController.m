@@ -14,6 +14,10 @@
     [self.view addGestureRecognizer:singleFingerTap];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)handleSingleTap:(id)handleSingleTap {
     [self.view endEditing:YES];
 }
