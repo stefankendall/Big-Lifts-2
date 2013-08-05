@@ -7,10 +7,10 @@
 @implementation FTOLiftStore
 
 - (void)setupDefaults {
-    [self createWithName:@"Press" increment:5 order:0];
-    [self createWithName:@"Deadlift" increment:10 order:1];
-    [self createWithName:@"Bench" increment:5 order:2];
-    [self createWithName:@"Squat" increment:10 order:3];
+    [self createWithName:@"Bench" increment:5 order:0];
+    [self createWithName:@"Squat" increment:10 order:1];
+    [self createWithName:@"Deadlift" increment:10 order:2];
+    [self createWithName:@"Press" increment:5 order:3];
 }
 
 - (void)onLoad {

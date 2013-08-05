@@ -30,16 +30,13 @@
     }
 
     for (int week = 1; week <= weeks; week++) {
-        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Bench" week:week] week:week order:0];
-        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Squat" week:week] week:week order:1];
-        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Deadlift" week:week] week:week order:2];
-        [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:@"Press" week:week] week:week order:3];
+        [[[FTOLiftStore instance] findAll] each:^(FTOLift *lift) {
+            [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
+        }];
     }
 }
 
-- (Workout *)createWorkoutForLift:(NSString *)liftName week:(int)week {
-    FTOLift *lift = [[FTOLiftStore instance] find:@"name" value:liftName];
-
+- (Workout *)createWorkoutForLift:(FTOLift *)lift week:(int)week {
     Workout *workout = [[WorkoutStore instance] create];
     NSArray *setData = [[FTOWorkoutSetsGenerator new] setsForWeek:week lift:lift];
     NSArray *sets = [setData collect:^id(SetData *data) {

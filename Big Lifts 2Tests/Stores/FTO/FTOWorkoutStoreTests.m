@@ -7,6 +7,8 @@
 #import "Set.h"
 #import "Lift.h"
 #import "FTOSet.h"
+#import "FTOLift.h"
+#import "FTOLiftStore.h"
 
 @implementation FTOWorkoutStoreTests
 
@@ -28,6 +30,18 @@
     STAssertTrue([ftoWorkout.workout.sets[0] isKindOfClass:FTOSet.class], @"");
     FTOSet *lastSet = [ftoWorkout.workout.sets lastObject];
     STAssertTrue(lastSet.amrap, @"");
+}
+
+- (void)testSetsUpWorkoutsNonDefaultLifts {
+    [[[FTOLiftStore instance] first] setName: @"Power Clean"];
+    [[FTOWorkoutStore instance] switchTemplate];
+    NSArray *ftoWorkouts = [[FTOWorkoutStore instance] findAll];
+    NSArray *liftNames = [ftoWorkouts collect:^NSString *(FTOWorkout *ftoWorkout) {
+        Set *firstSet = ftoWorkout.workout.sets[0];
+        return firstSet.lift.name;
+    }];
+
+    STAssertTrue([liftNames containsObject:@"Power Clean"], @"");
 }
 
 @end
