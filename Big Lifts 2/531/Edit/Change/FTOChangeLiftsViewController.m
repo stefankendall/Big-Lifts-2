@@ -4,6 +4,7 @@
 #import "FTOLift.h"
 #import "RowTextField.h"
 #import "UITableViewController+NoEmptyRows.h"
+#import "FTOWorkoutStore.h"
 
 @implementation FTOChangeLiftsViewController
 
@@ -17,7 +18,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FTOChangeLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOChangeLiftCell.class)];
-    if( !cell ){
+    if (!cell) {
         cell = [FTOChangeLiftCell create];
     }
 
@@ -27,6 +28,15 @@
     [cell.textField setIndexPath:indexPath];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[FTOLiftStore instance] removeAtIndex:[indexPath row]];
+        [[FTOWorkoutStore instance] switchTemplate];
+        [self.tableView reloadData];
+    }
+}
+
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     RowTextField *rowTextField = (RowTextField *) textField;
