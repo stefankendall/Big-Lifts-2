@@ -79,8 +79,15 @@
     RowTextField *rowTextField = (RowTextField *) textField;
     NSIndexPath *indexPath = [rowTextField indexPath];
 
-    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[textField text]];
-    FTOLift *lift = [[FTOLiftStore instance] findAll][(NSUInteger) [indexPath row]];
+    NSString *weightText = [textField text];
+
+    if ([weightText isEqualToString:@""]) {
+        [self.tableView reloadData];
+        return;
+    }
+
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText];
+    FTOLift *lift = [[FTOLiftStore instance] atIndex:[indexPath row]];
     if ([indexPath section] == 0) {
         [lift setWeight:weight];
         [self.tableView reloadData];
