@@ -4,6 +4,7 @@
 #import "PlateStore.h"
 #import "FTOLift.h"
 #import "FTOLiftStore.h"
+#import "FTOWorkoutStore.h"
 
 @implementation FTOAddLiftViewController
 
@@ -45,6 +46,8 @@
     lift.name = [self.nameField text];
     lift.weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text]];
     lift.increment = [NSDecimalNumber decimalNumberWithString:[self.increaseField text]];
+
+    [[FTOWorkoutStore instance] switchTemplate];
 
     [self.navigationController popViewControllerAnimated:YES];
 }

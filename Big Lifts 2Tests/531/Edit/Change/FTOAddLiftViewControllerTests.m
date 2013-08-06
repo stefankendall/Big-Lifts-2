@@ -2,6 +2,7 @@
 #import "FTOAddLiftViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOLiftStore.h"
+#import "FTOWorkoutStore.h"
 
 @implementation FTOAddLiftViewControllerTests
 
@@ -26,6 +27,13 @@
     int oldCount = [[FTOLiftStore instance] count];
     [controller doneButtonTapped:nil];
     STAssertEquals(oldCount + 1, [[FTOLiftStore instance] count], @"");
+}
+
+- (void) testAddsLiftsToWorkouts {
+    FTOAddLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoAddLift"];
+    int oldCount = [[FTOWorkoutStore instance] count];
+    [controller doneButtonTapped:nil];
+    STAssertEquals(oldCount + 4, [[FTOWorkoutStore instance] count], @"");
 }
 
 @end
