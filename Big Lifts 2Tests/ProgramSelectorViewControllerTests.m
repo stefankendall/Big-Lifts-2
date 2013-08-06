@@ -8,7 +8,7 @@
 
 - (void)testRemembersSelectedProgram {
     ProgramSelectorViewController *controller = [ProgramSelectorViewController new];
-    [controller rememberSelectedProgram:@"selectStartingStrengthProgramSegue"];
+    [controller rememberSelectedProgram:@"ssSegue"];
 
     CurrentProgramStore *store = [CurrentProgramStore instance];
     STAssertEquals([store count], 1, @"");
@@ -23,7 +23,7 @@
     CurrentProgram *program = [store create];
     program.name = @"5/3/1";
 
-    [controller rememberSelectedProgram:@"selectStartingStrengthProgramSegue"];
+    [controller rememberSelectedProgram:@"ssSegue"];
     STAssertTrue([[program name] isEqualToString:@"Starting Strength"], @"");
 }
 

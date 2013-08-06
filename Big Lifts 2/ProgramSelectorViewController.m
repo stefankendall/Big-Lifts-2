@@ -7,6 +7,10 @@
 #import "NSDictionaryMutator.h"
 #import "BLViewDeckController.h"
 
+@interface ProgramSelectorViewController ()
+@property(nonatomic) BOOL firstTimeInApp;
+@end
+
 @implementation ProgramSelectorViewController
 
 - (void)awakeFromNib {
@@ -15,7 +19,7 @@
 
 - (NSDictionary *)segueToProgramNames {
     return @{
-            @"selectStartingStrengthProgramSegue" : @"Starting Strength",
+            @"ssSegue" : @"Starting Strength",
             @"531segue" : @"5/3/1"
     };
 }
@@ -48,17 +52,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     BLViewDeckController *destination = [segue destinationViewController];
-    if ([[CurrentProgramStore instance] first] == nil) {
+    if (self.firstTimeInApp) {
         [destination firstTimeInApp];
     }
+}
 
-    [self rememberSelectedProgram:[segue identifier]];
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    [self rememberSelectedProgram:identifier];
+    return YES;
 }
 
 - (void)rememberSelectedProgram:(NSString *)segueName {
     CurrentProgramStore *store = [CurrentProgramStore instance];
     CurrentProgram *program = [store first];
     if (!program) {
+        self.firstTimeInApp = YES;
         program = [store create];
     }
 
