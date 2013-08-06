@@ -7,6 +7,10 @@
 
 @implementation FTOChangeLiftsViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[FTOLiftStore instance] count];
 }
