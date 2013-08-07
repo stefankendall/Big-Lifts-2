@@ -4,10 +4,6 @@
 
 @implementation BLViewDeckController
 
-- (void)setPanning:(BOOL)enabled {
-    self.enabled = enabled;
-}
-
 - (id)initWithCoder:(NSCoder *)aDecoder {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
 
@@ -29,6 +25,7 @@
                                     programControllers[program][@"nav"]]];
     if (self) {
         self.panningCancelsTouchesInView = NO;
+        self.enabled = NO;
     }
     return self;
 }
