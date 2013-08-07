@@ -26,6 +26,7 @@
     if (self) {
         self.panningCancelsTouchesInView = NO;
         self.enabled = NO;
+        self.leftSize = 60;
     }
     return self;
 }

@@ -10,7 +10,7 @@
     for (int i = 0; i < ([[self tableView] numberOfRowsInSection:0]); i++) {
         UITableViewCell *cell = [[self tableView] cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         if ([cell isKindOfClass:NavTableViewCell.class]) {
-            [(NavTableViewCell *) cell setRightMargin:(int) [self.viewDeckController rightLedgeSize]];
+            [(NavTableViewCell *) cell setRightMargin:(int) [self.viewDeckController leftSize]];
         }
     }
 }
