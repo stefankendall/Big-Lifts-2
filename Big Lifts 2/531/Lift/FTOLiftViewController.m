@@ -77,6 +77,14 @@
                 @6 : @"Deload"
         };
     }
+    else if([variant.name isEqualToString:FTO_VARIANT_ADVANCED]){
+        mapping = @{
+                @0 : @"Week 1",
+                @1 : @"Week 2",
+                @2 : @"Week 3",
+                @3 : @"Deload (opt.)",
+        };
+    }
     return mapping[[NSNumber numberWithInteger:section]];
 }
 
