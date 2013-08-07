@@ -160,6 +160,7 @@
 		5459099E6B93CB1D34991897 /* BarLoadingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459092B357D8F10BD9ED89D /* BarLoadingDataSource.m */; };
 		5459099FA669850AB13D07E2 /* SKProductStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459035ACC4AC43DEA0D8BEA /* SKProductStore.m */; };
 		545909B22F0FA42E5943C8FF /* FTOEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DD7BFB0890B209F16EF /* FTOEditViewController.m */; };
+		545909B49037B13B1630916A /* FTOAdvancedPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590526B32BE159D69B0E8B /* FTOAdvancedPlan.m */; };
 		545909BC7AD82FFBBB8C5133 /* FTOSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F7A131F285C54FC7742 /* FTOSettings.m */; };
 		545909BD81962734E8B8DF82 /* FTOWorkoutCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459042D14A403E22A57E787 /* FTOWorkoutCellTests.m */; };
 		545909BF1760218279B40077 /* jquery-2.0.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 54590F61F7BA7240C22A750E /* jquery-2.0.3.min.js */; };
@@ -350,6 +351,7 @@
 		545902AFEEB8D8B8E0A13613 /* SSTrackViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTrackViewControllerTests.m; sourceTree = "<group>"; };
 		545902C2400FE38DCD263113 /* SetRepsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRepsDelegate.h; sourceTree = "<group>"; };
 		545902C3E4FD30770F04C6DF /* 213-reply@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "213-reply@2x.png"; sourceTree = "<group>"; };
+		545902CB4044351B95D1F22D /* FTOAdvancedPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOAdvancedPlan.h; sourceTree = "<group>"; };
 		545902D72145DC67938EA1BA /* PriceFormatterTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceFormatterTests.h; sourceTree = "<group>"; };
 		545902D7321491EEFEDA0A33 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		545902DBAFF98090455072CB /* IAPAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPAdapter.m; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 		54590509DA076CF405056145 /* 101-gameplan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "101-gameplan@2x.png"; sourceTree = "<group>"; };
 		54590510C0C35DA360689371 /* FTOTrackViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTrackViewControllerTests.h; sourceTree = "<group>"; };
 		54590526735E78D9EF6F22F0 /* 172-pricetag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "172-pricetag.png"; sourceTree = "<group>"; };
+		54590526B32BE159D69B0E8B /* FTOAdvancedPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOAdvancedPlan.m; sourceTree = "<group>"; };
 		5459053A09D68CF553084654 /* FTORepsToBeatCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTORepsToBeatCalculator.m; sourceTree = "<group>"; };
 		545905471AF38A1FFEC4D0CA /* FTOWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkout.m; sourceTree = "<group>"; };
 		5459054BF79A83D4D57F9A9E /* FTOLiftWorkoutToolbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOLiftWorkoutToolbar.xib; sourceTree = "<group>"; };
@@ -1633,6 +1636,8 @@
 				545903E9BCD1E5E20FBE495F /* FTOSixWeekPlan.h */,
 				54590A4E1845A80C4AA8D40F /* FTOFirstSetLastMultipleSetsPlan.m */,
 				54590B178E7E1EF6B41D211A /* FTOFirstSetLastMultipleSetsPlan.h */,
+				54590526B32BE159D69B0E8B /* FTOAdvancedPlan.m */,
+				545902CB4044351B95D1F22D /* FTOAdvancedPlan.h */,
 			);
 			path = Plans;
 			sourceTree = "<group>";
@@ -2229,6 +2234,7 @@
 				545906097891E5481703533A /* FTOChangeLiftsViewController.m in Sources */,
 				5459056A76FE25378F528BC4 /* FTOChangeLiftCell.m in Sources */,
 				545907363F1022F8DD3DEBAB /* FTOAddLiftViewController.m in Sources */,
+				545909B49037B13B1630916A /* FTOAdvancedPlan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

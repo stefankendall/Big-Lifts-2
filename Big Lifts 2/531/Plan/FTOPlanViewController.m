@@ -27,7 +27,8 @@
             FTO_VARIANT_PYRAMID : self.pyramidVariant,
             FTO_VARIANT_JOKER : self.jokerVariant,
             FTO_VARIANT_SIX_WEEK : self.sixWeekVariant,
-            FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS : self.firstSetLastMultipleSetsVariant
+            FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS : self.firstSetLastMultipleSetsVariant,
+            FTO_VARIANT_ADVANCED : self.advancedVariant
     };
 
     [self checkCurrentVariant];

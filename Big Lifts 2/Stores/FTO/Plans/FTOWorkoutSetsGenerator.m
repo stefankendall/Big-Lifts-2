@@ -7,6 +7,7 @@
 #import "FTOJokerPlan.h"
 #import "FTOSixWeekPlan.h"
 #import "FTOFirstSetLastMultipleSetsPlan.h"
+#import "FTOAdvancedPlan.h"
 
 @implementation FTOWorkoutSetsGenerator
 
@@ -21,7 +22,8 @@
             FTO_VARIANT_PYRAMID: [FTOPyramidPlan new],
             FTO_VARIANT_JOKER: [FTOJokerPlan new],
             FTO_VARIANT_SIX_WEEK: [FTOSixWeekPlan new],
-            FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS: [FTOFirstSetLastMultipleSetsPlan new]
+            FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS: [FTOFirstSetLastMultipleSetsPlan new],
+            FTO_VARIANT_ADVANCED: [FTOAdvancedPlan new]
     };
     return [templatePlans[variant.name] generate: lift];
 }
