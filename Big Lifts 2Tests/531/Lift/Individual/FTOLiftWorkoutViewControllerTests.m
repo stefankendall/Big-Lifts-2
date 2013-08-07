@@ -28,7 +28,8 @@
 }
 
 - (void)testHasWorkoutRows {
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 1 + (NSInteger) [self.ftoWorkout.workout.sets count], @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], (NSInteger) [self.ftoWorkout.workout.sets count], @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
 
 - (void)testTappingDoneButtonSavesLog {
@@ -43,19 +44,19 @@
 - (void)testTappingAmrapCellCausesSegue {
     UINavigationController *nav = [UINavigationController new];
     [nav addChildViewController:self.controller];
-    [self.controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0]];
+    [self.controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:1]];
     STAssertEquals([self.controller.navigationController.viewControllers count], 2U, @"");
 }
 
 - (void)testTappingNonAmrapCellDoesNotCauseSegue {
     UINavigationController *nav = [UINavigationController new];
     [nav addChildViewController:self.controller];
-    [self.controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    [self.controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     STAssertEquals([self.controller.navigationController.viewControllers count], 1U, @"");
 }
 
 - (void)testAmrapRepsCanBeChanged {
-    self.controller.tappedSetRow = @6;
+    self.controller.tappedSetRow = @5;
     [self.controller repsChanged:@7];
     [self.controller doneButtonTapped:nil];
 
@@ -66,18 +67,18 @@
 
 - (void)testUsesPlates {
     [[IAPAdapter instance] addPurchase:IAP_BAR_LOADING];
-    FTOWorkoutCell *cell = (FTOWorkoutCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    FTOWorkoutCell *cell = (FTOWorkoutCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     STAssertTrue([cell.setCell isKindOfClass:SetCellWithPlates.class], @"");
 }
 
 - (void)testShowsSetVariableRepsWhenAvailable {
-    self.controller.tappedSetRow = @6;
+    self.controller.tappedSetRow = @5;
     [self.controller repsChanged:@7];
     [self.controller doneButtonTapped:nil];
     [self.controller viewWillAppear:YES];
 
     FTOWorkoutCell *cell = (FTOWorkoutCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:
-            [NSIndexPath indexPathForRow:6 inSection:0]];
+            [NSIndexPath indexPathForRow:5 inSection:1]];
 
     STAssertEqualObjects([[[cell setCell] repsLabel] text], @"7x", @"");
 }

@@ -27,25 +27,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSUInteger setCount = [self.ftoWorkout.workout.sets count];
-    if ([self shouldShowRepsToBeat]) {
-        return setCount + 1;
+    if([self shouldShowRepsToBeat] && section == 0){
+        return 1;
     }
-    else {
-        return setCount;
-    }
+
+    return [self.ftoWorkout.workout.sets count];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self shouldShowRepsToBeat] ? 2 : 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    int row = [indexPath row];
-
-    if ([self shouldShowRepsToBeat]) {
-        if (row == 0) {
-            return [self buildWorkoutToolbarCell];
-        }
-        else {
-            row--;
-        }
+    if( ([indexPath section]) == 0 && [self shouldShowRepsToBeat]){
+        return [self buildWorkoutToolbarCell];
     }
 
     FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOWorkoutCell.class)];
@@ -57,7 +52,7 @@
     if (previouslyRepsNumber) {
         previousReps = [previouslyRepsNumber intValue];
     }
-    [cell setSet:self.ftoWorkout.workout.sets[row] withEnteredReps:previousReps];
+    [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) ([indexPath row])] withEnteredReps:previousReps];
     return cell;
 }
 
@@ -84,7 +79,7 @@
     }
     else if ([[segue identifier] isEqualToString:@"ftoSetRepsForm"]) {
         FTOSetRepsForm *form = [segue destinationViewController];
-        Set *tappedSet = self.ftoWorkout.workout.sets[[self.tappedSetRow unsignedIntegerValue] - 1];
+        Set *tappedSet = self.ftoWorkout.workout.sets[[self.tappedSetRow unsignedIntegerValue]];
         NSNumber *previouslyEnteredReps = [self.variableReps objectForKey:self.tappedSetRow];
         if (previouslyEnteredReps) {
             [form setPreviouslyEnteredReps:[previouslyEnteredReps intValue]];
@@ -97,12 +92,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger setIndex = (NSUInteger) [indexPath row];
-    if ([self shouldShowRepsToBeat]) {
-        setIndex--;
-    }
-
-    Set *set = self.ftoWorkout.workout.sets[setIndex];
+    Set *set = self.ftoWorkout.workout.sets[[indexPath row]];
     if ([set hasVariableReps]) {
         self.tappedSetRow = [NSNumber numberWithInteger:[indexPath row]];
         [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
@@ -131,7 +121,7 @@
     for (int i = 0; i < [sets count]; i++) {
         Set *set = sets[(NSUInteger) i];
         SetLog *setLog = [[SetLogStore instance] createFromSet:set];
-        NSNumber *reps = self.variableReps[[NSNumber numberWithInt:(i + 1)]];
+        NSNumber *reps = self.variableReps[[NSNumber numberWithInt:i]];
         if (reps) {
             setLog.reps = reps;
         }
