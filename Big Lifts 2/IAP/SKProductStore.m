@@ -16,7 +16,8 @@
                 IAP_SS_ONUS_WUNSLER,
                 IAP_SS_WARMUP,
                 IAP_SS_PRACTICAL_PROGRAMMING,
-                IAP_FTO_JOKER
+                IAP_FTO_JOKER,
+                IAP_FTO_ADVANCED
         ];
     });
 
