@@ -10,5 +10,6 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *jokerVariant;
 @property (weak, nonatomic) IBOutlet UITableViewCell *sixWeekVariant;
 @property (weak, nonatomic) IBOutlet UITableViewCell *firstSetLastMultipleSetsVariant;
+@property (weak, nonatomic) IBOutlet UITableViewCell *advancedVariant;
 
 @end
