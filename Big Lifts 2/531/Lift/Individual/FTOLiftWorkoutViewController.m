@@ -1,4 +1,5 @@
 #import <ViewDeck/IIViewDeckController.h>
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOLiftWorkoutViewController.h"
 #import "FTOWorkout.h"
 #import "Workout.h"
@@ -13,9 +14,6 @@
 #import "FTOSetRepsForm.h"
 #import "SetLog.h"
 #import "FTOCycleAdjustor.h"
-#import "SetCellWithPlates.h"
-#import "IAPAdapter.h"
-#import "Purchaser.h"
 
 @interface FTOLiftWorkoutViewController ()
 
@@ -29,38 +27,50 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.ftoWorkout.workout.sets count] + 1;
+    NSUInteger setCount = [self.ftoWorkout.workout.sets count];
+    if ([self shouldShowRepsToBeat]) {
+        return setCount + 1;
+    }
+    else {
+        return setCount;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     int row = [indexPath row];
 
-    if (row == 0) {
-        FTOLiftWorkoutToolbar *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOLiftWorkoutToolbar"];
-        if (!cell) {
-            cell = [FTOLiftWorkoutToolbar create];
-            Set *lastSet = [self.ftoWorkout.workout.sets lastObject];
-            int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:lastSet.lift atWeight:[lastSet roundedEffectiveWeight]];
-            [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
-            [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
+    if ([self shouldShowRepsToBeat]) {
+        if (row == 0) {
+            return [self buildWorkoutToolbarCell];
         }
-        return cell;
+        else {
+            row--;
+        }
     }
-    else {
-        FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOWorkoutCell.class)];
 
-        if (!cell) {
-            cell = [FTOWorkoutCell create];
-        }
-
-        int previousReps = 0;
-        NSNumber *previouslyRepsNumber = [self.variableReps objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
-        if (previouslyRepsNumber) {
-            previousReps = [previouslyRepsNumber intValue];
-        }
-        [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) row - 1] withEnteredReps:previousReps];
-        return cell;
+    FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOWorkoutCell.class)];
+    if (!cell) {
+        cell = [FTOWorkoutCell create];
     }
+    int previousReps = 0;
+    NSNumber *previouslyRepsNumber = [self.variableReps objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
+    if (previouslyRepsNumber) {
+        previousReps = [previouslyRepsNumber intValue];
+    }
+    [cell setSet:self.ftoWorkout.workout.sets[row] withEnteredReps:previousReps];
+    return cell;
+}
+
+- (UITableViewCell *)buildWorkoutToolbarCell {
+    FTOLiftWorkoutToolbar *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FTOLiftWorkoutToolbar"];
+    if (!cell) {
+        cell = [FTOLiftWorkoutToolbar create];
+        Set *lastSet = [self.ftoWorkout.workout.sets lastObject];
+        int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:lastSet.lift atWeight:[lastSet roundedEffectiveWeight]];
+        [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
+        [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return cell;
 }
 
 - (void)showRepsToBeatBreakdown:(id)showRepsToBeatBreakdown {
@@ -87,7 +97,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Set *set = self.ftoWorkout.workout.sets[(NSUInteger) [indexPath row] - 1];
+    NSUInteger setIndex = (NSUInteger) [indexPath row];
+    if ([self shouldShowRepsToBeat]) {
+        setIndex--;
+    }
+
+    Set *set = self.ftoWorkout.workout.sets[setIndex];
     if ([set hasVariableReps]) {
         self.tappedSetRow = [NSNumber numberWithInteger:[indexPath row]];
         [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
@@ -124,13 +139,20 @@
     }
 }
 
+- (BOOL)shouldShowRepsToBeat {
+    Set *amrapSet = [[[self.ftoWorkout.workout sets] array] detect:^BOOL(Set *set) {
+        return set.amrap;
+    }];
+    return amrapSet != nil;
+}
+
 - (void)repsChanged:(NSNumber *)reps {
     self.variableReps[self.tappedSetRow] = reps;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    if([cell isKindOfClass:FTOWorkoutCell.class]){
+    if ([cell isKindOfClass:FTOWorkoutCell.class]) {
         FTOWorkoutCell *ftoCell = (FTOWorkoutCell *) cell;
         return [[ftoCell setCell] bounds].size.height;
     }
