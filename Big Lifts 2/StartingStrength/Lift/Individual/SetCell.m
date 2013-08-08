@@ -17,6 +17,13 @@
         }
     }
 
+    if ([[set percentage] compare:N(0)] == NSOrderedDescending) {
+        [self.percentageLabel setText:[NSString stringWithFormat:@"%@%%", [set.percentage stringValue]]];
+    }
+    else {
+        [self.percentageLabel setText:@""];
+    }
+
     Settings *settings = [[SettingsStore instance] first];
     NSString *weightText = [NSString stringWithFormat:@"%@ %@",
                                                       [set roundedEffectiveWeight], settings.units];

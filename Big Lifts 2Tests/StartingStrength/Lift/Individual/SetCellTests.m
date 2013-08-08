@@ -21,8 +21,19 @@
     [cell setSet:set];
 
     STAssertEqualObjects([[cell repsLabel] text], @"5x", @"");
-    NSString *weightText = [[cell weightLabel] text];
-    STAssertTrue([weightText isEqualToString:@"300 lbs"], weightText);
+    STAssertEqualObjects([[cell weightLabel] text], @"300 lbs", @"");
+    STAssertEqualObjects([[cell percentageLabel] text], @"100%", @"");
+}
+
+- (void)testSetCell0Percentage {
+    SetCell *cell = [SetCell create];
+    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
+    Workout *workout = [ssWorkout workouts][0];
+    Set *set = workout.sets[0];
+    set.percentage = N(0);
+    [cell setSet:set];
+
+    STAssertEqualObjects([[cell percentageLabel] text], @"", @"");
 }
 
 - (void)testSetCellHandlesToFailureReps {
