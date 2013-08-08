@@ -14,6 +14,7 @@
 
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;
+@property(nonatomic) NSDictionary *iapCells;
 @end
 
 @implementation FTOPlanViewController
@@ -31,6 +32,11 @@
             FTO_VARIANT_ADVANCED : self.advancedVariant
     };
 
+    self.iapCells = @{
+            IAP_FTO_JOKER : self.jokerVariant,
+            IAP_FTO_ADVANCED : self.advancedVariant
+    };
+
     [self checkCurrentVariant];
     [self enableDisableIapCells];
 
@@ -41,12 +47,14 @@
 }
 
 - (void)enableDisableIapCells {
-    if ([[IAPAdapter instance] hasPurchased:IAP_FTO_JOKER]) {
-        [self enable:self.jokerVariant];
-    }
-    else {
-        [self disable:IAP_FTO_JOKER view:self.jokerVariant];
-    }
+    [[self.iapCells allKeys] each:^(NSString *iapProduct) {
+        if ([[IAPAdapter instance] hasPurchased:iapProduct]) {
+            [self enable:self.iapCells[iapProduct]];
+        }
+        else {
+            [self disable:iapProduct view:self.iapCells[iapProduct]];
+        }
+    }];
 }
 
 - (void)checkCurrentVariant {
@@ -72,7 +80,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
-        [[Purchaser new] purchase:IAP_FTO_JOKER];
+        NSString *purchaseId = [self.iapCells detect:^BOOL(id key, id obj) {
+            return selectedCell == obj;
+        }];
+        [[Purchaser new] purchase:purchaseId];
     }
     else if ([indexPath section] == 1) {
         NSString *newVariantName = [self.variantCells detect:^BOOL(id key, UITableViewCell *cell) {

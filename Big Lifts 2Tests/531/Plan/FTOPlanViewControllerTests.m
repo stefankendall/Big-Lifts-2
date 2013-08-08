@@ -3,6 +3,7 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOVariant.h"
 #import "FTOVariantStore.h"
+#import "PurchaseOverlay.h"
 
 @implementation FTOPlanViewControllerTests
 
@@ -21,6 +22,11 @@
     [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:1]];
     FTOVariant *variant = [[FTOVariantStore instance] first];
     STAssertEqualObjects(variant.name, FTO_VARIANT_PYRAMID, @"");
+}
+
+- (void)testDisablesAdvancedVariant {
+    FTOPlanViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoPlan"];
+    STAssertNotNil([controller.advancedVariant viewWithTag:kPurchaseOverlayTag], @"");
 }
 
 @end
