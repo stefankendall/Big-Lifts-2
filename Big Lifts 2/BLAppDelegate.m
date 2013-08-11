@@ -11,11 +11,14 @@
 @synthesize manager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+            [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
     manager = [[UbiquityStoreManager alloc] initStoreNamed:nil
                                     withManagedObjectModel:nil
                                              localStoreURL:nil
                                        containerIdentifier:nil
-                                    additionalStoreOptions:nil
+                                    additionalStoreOptions:options
                                                   delegate:self];
     manager.cloudEnabled = YES;
     [[SKProductStore instance] loadProducts:^{
