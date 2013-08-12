@@ -16,4 +16,16 @@
     }];
 }
 
+- (void) testAddsBoringButBigSets {
+    [[FTOBoringButBigAssistance new] setup];
+    FTOWorkout *workoutInWeek1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    STAssertEquals([workoutInWeek1.workout.sets count], 11U, @"");
+    Set * boringSet = workoutInWeek1.workout.sets[6];
+    STAssertEqualObjects(boringSet.percentage, N(50), @"");
+    STAssertEqualObjects(boringSet.reps, @10, @"");
+
+    FTOWorkout *workoutInWeek4 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@4][0];
+    STAssertEquals([workoutInWeek4.workout.sets count], 9U, @"");
+}
+
 @end
