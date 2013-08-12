@@ -3,6 +3,7 @@
 #import "FTOAssistanceViewController.h"
 #import "FTOAssistance.h"
 #import "FTOAssistanceStore.h"
+#import "UITableViewController+NoEmptyRows.h"
 
 @interface FTOAssistanceViewController ()
 @property(nonatomic, strong) NSDictionary *cellMapping;
@@ -37,6 +38,10 @@
     FTOAssistance *assistance = [[FTOAssistanceStore instance] first];
     assistance.name = assistanceType;
     [self checkCurrentAssistance];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [self emptyView];
 }
 
 @end
