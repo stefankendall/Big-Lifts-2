@@ -6,5 +6,6 @@
 @property(nonatomic) NSNumber *week;
 @property(nonatomic, strong) NSNumber *order;
 @property(nonatomic) BOOL done;
+@property(nonatomic) BOOL deload;
 
 @end

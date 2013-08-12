@@ -50,4 +50,8 @@
     return fresherTemplate;
 }
 
+- (NSArray *)deloadWeeks {
+    return @[@4];
+}
+
 @end

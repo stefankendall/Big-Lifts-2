@@ -1,6 +1,7 @@
 #import "FTOAdvancedPlan.h"
 #import "Lift.h"
 #import "SetData.h"
+#import "FTOStandardPlan.h"
 
 @implementation FTOAdvancedPlan
 
@@ -33,6 +34,10 @@
                     [SetData dataWithReps:5 percentage:N(65) lift:lift]
             ]
     };
+}
+
+- (NSArray *)deloadWeeks {
+    return [[FTOStandardPlan new] deloadWeeks];
 }
 
 @end

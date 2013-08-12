@@ -14,4 +14,9 @@
 
     return setsByWeek;
 }
+
+- (NSArray *)deloadWeeks {
+    return @[@7];
+}
+
 @end

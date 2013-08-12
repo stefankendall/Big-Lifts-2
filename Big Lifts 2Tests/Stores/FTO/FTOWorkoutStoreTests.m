@@ -44,4 +44,12 @@
     STAssertTrue([liftNames containsObject:@"Power Clean"], @"");
 }
 
+- (void) testMarksDeloadWeeks {
+    FTOWorkout *week1Workout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    STAssertFalse(week1Workout.deload, @"");
+
+    FTOWorkout *week4Workout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@4][0];
+    STAssertTrue(week4Workout.deload, @"");
+}
+
 @end

@@ -37,4 +37,9 @@
     }
     return setsByWeek;
 }
+
+- (NSArray *)deloadWeeks {
+    return [[FTOStandardPlan new] deloadWeeks];
+}
+
 @end

@@ -3,5 +3,7 @@
 @class Lift;
 
 @protocol FTOPlan <NSObject>
--(NSDictionary *) generate: (Lift *) lift;
+- (NSDictionary *)generate:(Lift *)lift;
+
+- (NSArray *)deloadWeeks;
 @end

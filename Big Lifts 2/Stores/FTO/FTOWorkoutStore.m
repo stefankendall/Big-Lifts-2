@@ -13,19 +13,28 @@
 @implementation FTOWorkoutStore
 
 - (void)setupDefaults {
-    [self createWorkoutsForEachLift];
+    [self switchTemplate];
 }
 
 - (void)switchTemplate {
     [self empty];
     [self createWorkoutsForEachLift];
+    [self markDeloadWorkouts];
+}
+
+- (void)markDeloadWorkouts {
+    for (NSNumber *week in [[FTOWorkoutSetsGenerator new] deloadWeeks]) {
+        [[[FTOWorkoutStore instance] findAllWhere:@"week" value:week] each:^(FTOWorkout *deloadWorkout) {
+            deloadWorkout.deload = YES;
+        }];
+    }
 }
 
 - (void)createWorkoutsForEachLift {
     int weeks = 4;
 
     FTOVariant *variant = [[FTOVariantStore instance] first];
-    if([variant.name isEqualToString:FTO_VARIANT_SIX_WEEK]){
+    if ([variant.name isEqualToString:FTO_VARIANT_SIX_WEEK]) {
         weeks = 7;
     }
 

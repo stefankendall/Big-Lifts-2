@@ -16,16 +16,24 @@
 }
 
 - (NSDictionary *)setsFor:(FTOLift *)lift {
+    return [[self planForCurrentVariant] generate:lift];
+}
+
+- (NSArray *)deloadWeeks {
+    return [[self planForCurrentVariant] deloadWeeks];
+}
+
+- (id)planForCurrentVariant {
     FTOVariant *variant = [[FTOVariantStore instance] first];
     NSDictionary *templatePlans = @{
-            FTO_VARIANT_STANDARD: [FTOStandardPlan new],
-            FTO_VARIANT_PYRAMID: [FTOPyramidPlan new],
-            FTO_VARIANT_JOKER: [FTOJokerPlan new],
-            FTO_VARIANT_SIX_WEEK: [FTOSixWeekPlan new],
-            FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS: [FTOFirstSetLastMultipleSetsPlan new],
-            FTO_VARIANT_ADVANCED: [FTOAdvancedPlan new]
+            FTO_VARIANT_STANDARD : [FTOStandardPlan new],
+            FTO_VARIANT_PYRAMID : [FTOPyramidPlan new],
+            FTO_VARIANT_JOKER : [FTOJokerPlan new],
+            FTO_VARIANT_SIX_WEEK : [FTOSixWeekPlan new],
+            FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS : [FTOFirstSetLastMultipleSetsPlan new],
+            FTO_VARIANT_ADVANCED : [FTOAdvancedPlan new]
     };
-    return [templatePlans[variant.name] generate: lift];
+    return templatePlans[variant.name];
 }
 
 @end
