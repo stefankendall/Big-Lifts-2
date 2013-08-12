@@ -35,8 +35,7 @@
     NSString *assistanceType = [self.cellMapping detect:^BOOL(NSString *type, UITableViewCell *cell) {
         return selectedCell == cell;
     }];
-    FTOAssistance *assistance = [[FTOAssistanceStore instance] first];
-    assistance.name = assistanceType;
+    [[FTOAssistanceStore instance] changeTo:assistanceType];
     [self checkCurrentAssistance];
 }
 

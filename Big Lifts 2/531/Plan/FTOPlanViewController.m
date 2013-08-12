@@ -89,10 +89,7 @@
         NSString *newVariantName = [self.variantCells detect:^BOOL(id key, UITableViewCell *cell) {
             return cell == selectedCell;
         }];
-        FTOVariant *variant = [[FTOVariantStore instance] first];
-        variant.name = newVariantName;
-
-        [[FTOWorkoutStore instance] switchTemplate];
+        [[FTOVariantStore instance] changeTo: newVariantName];
         [self checkCurrentVariant];
     }
 }
