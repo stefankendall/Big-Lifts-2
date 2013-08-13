@@ -11,20 +11,51 @@
 @implementation FTOTriumvirateStore
 
 - (void)setupDefaults {
-    FTOTriumvirate *benchLifts = [[FTOTriumvirateStore instance] create];
-    benchLifts.mainLift = [[FTOLiftStore instance] find:@"name" value:@"Bench"];
-    benchLifts.workout = [[WorkoutStore instance] create];
-    [benchLifts.workout.sets addObjectsFromArray: [self benchLifts]];
+    [self setupLiftsFor: @"Bench" withSets:[self benchSets]];
+    [self setupLiftsFor: @"Press" withSets:[self pressSets]];
+    [self setupLiftsFor: @"Deadlift" withSets:[self deadliftSets]];
+    [self setupLiftsFor: @"Squat" withSets: [self squatSets]];
 }
 
-- (NSArray *)benchLifts {
-    FTOTriumvirateLift *dumbbellBench = [[FTOTriumvirateLiftStore instance] create];
-    dumbbellBench.name = @"Dumbbell Bench";
+- (NSArray *)squatSets {
+    return [[self setsForLift:@"Leg Press" withReps:@15]
+            arrayByAddingObjectsFromArray:
+                    [self setsForLift:@"Leg Curl" withReps:@10]];
+}
+
+- (NSArray *)pressSets {
+    return [[self setsForLift:@"Dips" withReps:@15]
+            arrayByAddingObjectsFromArray:
+                    [self setsForLift:@"Chin-ups" withReps:@10]];
+}
+
+- (NSArray *)deadliftSets {
+    return [[self setsForLift:@"Good Morning" withReps:@12]
+            arrayByAddingObjectsFromArray:
+                    [self setsForLift:@"Hanging Leg Raise" withReps:@15]];
+}
+
+- (NSArray *)benchSets {
+    return [[self setsForLift:@"Dumbbell Bench" withReps:@15]
+            arrayByAddingObjectsFromArray:
+                    [self setsForLift:@"Dumbbell Row" withReps:@10]];
+}
+
+- (void)setupLiftsFor:(NSString *)name withSets:(NSArray *)sets {
+    FTOTriumvirate *triumvirateLifts = [[FTOTriumvirateStore instance] create];
+    triumvirateLifts.mainLift = [[FTOLiftStore instance] find:@"name" value:name];
+    triumvirateLifts.workout = [[WorkoutStore instance] create];
+    [triumvirateLifts.workout.sets addObjectsFromArray:sets];
+}
+
+- (NSArray *)setsForLift:(NSString *)liftName withReps:reps {
+    FTOTriumvirateLift *lift = [[FTOTriumvirateLiftStore instance] create];
+    lift.name = liftName;
     NSMutableArray *benchSets = [@[] mutableCopy];
-    for( int set = 0; set < 5; set++ ){
+    for (int set = 0; set < 5; set++) {
         Set *benchSet = [[SetStore instance] create];
-        benchSet.lift = dumbbellBench;
-        benchSet.reps = @15;
+        benchSet.lift = lift;
+        benchSet.reps = reps;
         [benchSets addObject:benchSet];
     }
     return benchSets;
