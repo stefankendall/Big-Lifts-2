@@ -14,7 +14,8 @@
 - (void)viewDidLoad {
     self.cellMapping = @{
             FTO_ASSISTANCE_NONE : self.noneCell,
-            FTO_ASSISTANCE_BORING_BUT_BIG : self.bbbCell
+            FTO_ASSISTANCE_BORING_BUT_BIG : self.bbbCell,
+            FTO_ASSISTANCE_TRIUMVIRATE : self.triumvirateCell
     };
 }
 

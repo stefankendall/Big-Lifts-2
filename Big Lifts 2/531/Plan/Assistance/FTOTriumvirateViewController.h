@@ -1,0 +1,2 @@
+@interface FTOTriumvirateViewController : UITableViewController {}
+@end

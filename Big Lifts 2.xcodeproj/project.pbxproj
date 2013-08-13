@@ -89,6 +89,7 @@
 		545904DB5BE827102C049DA6 /* FTOLiftWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BED16BEBD4B51E52AD7 /* FTOLiftWorkoutViewController.m */; };
 		545904DF83AC797D13FFC879 /* WorkoutLogTableDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590EFAE5F34E16F3DB352A /* WorkoutLogTableDataSourceTests.m */; };
 		545904E49A25EBA6E80991A9 /* BarCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590563108FF29D8B6383A6 /* BarCalculatorTests.m */; };
+		545904E66E75AFA77C577CAA /* FTOTriumvirateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590302F2D93930E0B3377A /* FTOTriumvirateViewController.m */; };
 		545904EB7B2F80F5784484EC /* graph.html in Resources */ = {isa = PBXBuildFile; fileRef = 545908E0120D96962DFF2B9A /* graph.html */; };
 		545904F64E14890A8756E075 /* FTOEditLiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BB96D3D919954CC6C67 /* FTOEditLiftCell.m */; };
 		5459051B98394707AC1F89F6 /* BLViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A246ED0F76535710297 /* BLViewDeckController.m */; };
@@ -369,6 +370,7 @@
 		545902EFD0683E31B4DDDC1F /* SSIndividualWorkoutDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIndividualWorkoutDataSource.h; sourceTree = "<group>"; };
 		545902FB2A4F2BD0C6E47514 /* SSVariant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSVariant.h; sourceTree = "<group>"; };
 		545902FBB93C13A9DD79C963 /* SSEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEditViewController.h; sourceTree = "<group>"; };
+		54590302F2D93930E0B3377A /* FTOTriumvirateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTriumvirateViewController.m; sourceTree = "<group>"; };
 		545903056E0150B544E2EF97 /* WorkoutLogCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutLogCellTests.m; sourceTree = "<group>"; };
 		5459031602F5FA710EE94E25 /* CurrentProgramStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentProgramStore.h; sourceTree = "<group>"; };
 		5459031F3D5F53AFAFDF03A7 /* WeightTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightTableCell.xib; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 		54590812E0B6658ADC81809A /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
 		5459081E3F7BF582E7EF6A34 /* SSVariantStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSVariantStore.h; sourceTree = "<group>"; };
 		5459082ADB17207AD1E8522D /* SSWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkoutStoreTests.m; sourceTree = "<group>"; };
+		54590831C62CAEBFD3A6197F /* FTOTriumvirateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTriumvirateViewController.h; sourceTree = "<group>"; };
 		5459083F9731ADB225DFCB6F /* SSIndividualWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIndividualWorkoutViewController.h; sourceTree = "<group>"; };
 		5459084B5272E0A8A289018A /* SSTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTrackViewController.m; sourceTree = "<group>"; };
 		5459085334607410D0726F08 /* BarLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarLoadingViewController.h; sourceTree = "<group>"; };
@@ -1737,6 +1740,8 @@
 			children = (
 				54590BFD33012D25554C8898 /* FTOAssistanceViewController.m */,
 				5459007ACAB9E9913898ADBC /* FTOAssistanceViewController.h */,
+				54590302F2D93930E0B3377A /* FTOTriumvirateViewController.m */,
+				54590831C62CAEBFD3A6197F /* FTOTriumvirateViewController.h */,
 			);
 			path = Assistance;
 			sourceTree = "<group>";
@@ -2301,6 +2306,7 @@
 				54590C527ED11E785DE60183 /* FTOAssistanceStore.m in Sources */,
 				54590611A3886F260CC49FE0 /* FTONoneAssistance.m in Sources */,
 				54590E3B4F686B68613E95F0 /* FTOBoringButBigAssistance.m in Sources */,
+				545904E66E75AFA77C577CAA /* FTOTriumvirateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
