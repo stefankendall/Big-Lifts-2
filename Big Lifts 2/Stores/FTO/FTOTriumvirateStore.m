@@ -10,11 +10,17 @@
 
 @implementation FTOTriumvirateStore
 
+- (NSArray *)findAll {
+    return [[super findAll] sortedArrayUsingComparator:^NSComparisonResult(FTOTriumvirate *t1, FTOTriumvirate *t2) {
+        return [t1.mainLift.order compare:t2.mainLift.order];
+    }];
+}
+
 - (void)setupDefaults {
-    [self setupLiftsFor: @"Bench" withSets:[self benchSets]];
-    [self setupLiftsFor: @"Press" withSets:[self pressSets]];
-    [self setupLiftsFor: @"Deadlift" withSets:[self deadliftSets]];
-    [self setupLiftsFor: @"Squat" withSets: [self squatSets]];
+    [self setupLiftsFor:@"Bench" withSets:[self benchSets]];
+    [self setupLiftsFor:@"Squat" withSets:[self squatSets]];
+    [self setupLiftsFor:@"Deadlift" withSets:[self deadliftSets]];
+    [self setupLiftsFor:@"Press" withSets:[self pressSets]];
 }
 
 - (NSArray *)squatSets {

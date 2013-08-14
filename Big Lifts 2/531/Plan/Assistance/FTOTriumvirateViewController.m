@@ -6,6 +6,7 @@
 #import "Set.h"
 #import "Set.h"
 #import "FTOTriumvirateCell.h"
+#import "Lift.h"
 
 @implementation FTOTriumvirateViewController
 
@@ -35,6 +36,11 @@
     Set *set = uniqueSets[(NSUInteger) [indexPath row]];
     [cell setSet:set withCount:[self countSetsInWorkout:triumvirate.workout forSet:set]];
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex: section];
+    return triumvirate.mainLift.name;
 }
 
 - (int)countSetsInWorkout:(Workout *)workout forSet:(Set *)set {

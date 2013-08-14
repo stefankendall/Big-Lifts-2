@@ -34,4 +34,10 @@
     STAssertEquals(count, 5, @"");
 }
 
+- (void) testSetsSectionTitles {
+    FTOTriumvirateViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTriumvirate"];
+    STAssertEqualObjects([controller tableView:controller.tableView titleForHeaderInSection:0], @"Bench", @"");
+    STAssertEqualObjects([controller tableView:controller.tableView titleForHeaderInSection:1], @"Squat", @"");
+}
+
 @end
