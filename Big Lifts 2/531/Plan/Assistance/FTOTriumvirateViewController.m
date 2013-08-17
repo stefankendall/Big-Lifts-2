@@ -34,20 +34,13 @@
     FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex:[indexPath section]];
     NSArray *uniqueSets = [self uniqueSetsFor:triumvirate.workout];
     Set *set = uniqueSets[(NSUInteger) [indexPath row]];
-    [cell setSet:set withCount:[self countSetsInWorkout:triumvirate.workout forSet:set]];
+    [cell setSet:set withCount:[triumvirate countMatchingSets:set]];
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex: section];
     return triumvirate.mainLift.name;
-}
-
-- (int)countSetsInWorkout:(Workout *)workout forSet:(Set *)set {
-    return [[[workout.sets array] select:^(Set *testSet) {
-        BOOL matches = set.lift == testSet.lift;
-        return matches;
-    }] count];
 }
 
 - (NSArray *)uniqueSetsFor:(Workout *)workout {

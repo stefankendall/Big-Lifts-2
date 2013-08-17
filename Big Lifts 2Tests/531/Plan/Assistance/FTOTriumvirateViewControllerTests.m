@@ -26,14 +26,6 @@
     STAssertEquals( [sets count], 2U, @"");
 }
 
-- (void) testCountsSetsInWorkout {
-    FTOTriumvirateViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTriumvirate"];
-    FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] first];
-    Set *set = triumvirate.workout.sets[0];
-    int count = [controller countSetsInWorkout:triumvirate.workout forSet:set];
-    STAssertEquals(count, 5, @"");
-}
-
 - (void) testSetsSectionTitles {
     FTOTriumvirateViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTriumvirate"];
     STAssertEqualObjects([controller tableView:controller.tableView titleForHeaderInSection:0], @"Bench", @"");
