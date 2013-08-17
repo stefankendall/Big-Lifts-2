@@ -7,4 +7,6 @@
 @property(nonatomic) Lift *mainLift;
 
 - (int)countMatchingSets:(Set *)set;
+
+- (NSArray *)matchingSets:(Set *)set;
 @end

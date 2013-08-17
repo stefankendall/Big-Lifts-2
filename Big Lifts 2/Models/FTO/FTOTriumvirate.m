@@ -7,11 +7,15 @@
 @implementation FTOTriumvirate
 
 - (int)countMatchingSets:(Set *)set {
+    return [[self matchingSets:set] count];
+}
+
+- (NSArray *)matchingSets:(Set *)set {
     NSArray *matchingSets = [[self.workout.sets array] select:^(Set *testSet) {
         BOOL matches = set.lift == testSet.lift;
         return matches;
     }];
-    return [matchingSets count];
+    return matchingSets;
 }
 
 @end

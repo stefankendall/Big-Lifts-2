@@ -1,7 +1,7 @@
 @class FTOTriumvirate;
 @class Set;
 
-@interface FTOTriumvirateSetupViewController : UITableViewController {
+@interface FTOTriumvirateSetupViewController : UITableViewController <UITextFieldDelegate> {
 }
 
 @property(weak, nonatomic) IBOutlet UITextField *nameField;
@@ -11,4 +11,7 @@
 
 - (void)setupForm:(FTOTriumvirate *)triumvirate forSet:(Set *)set;
 
+- (void)removeSets:(int)count;
+
+- (void)addSets:(int)i;
 @end
