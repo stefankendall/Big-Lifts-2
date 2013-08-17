@@ -14,6 +14,7 @@
     FTOTriumvirateSetupViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTriumvirateSetup"];
 
     [controller setupForm:triumvirate forSet:triumvirate.workout.sets[0]];
+    [controller viewWillAppear:YES];
     STAssertEqualObjects([controller.setsField text], @"5", @"");
     STAssertEqualObjects([controller.repsField text], @"15", @"");
     STAssertEqualObjects([controller.nameField text], @"Dumbbell Bench", @"");
@@ -23,6 +24,7 @@
     FTOTriumvirateSetupViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTriumvirateSetup"];
     FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] first];
     [controller setupForm:triumvirate forSet:triumvirate.workout.sets[0]];
+    [controller viewWillAppear:YES];
     [controller.setsField setText:@"4"];
     [controller.repsField setText:@"6"];
     [controller.nameField setText:@"Incline Press"];
@@ -39,6 +41,7 @@
     FTOTriumvirateSetupViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTriumvirateSetup"];
     FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] first];
     [controller setupForm:triumvirate forSet:triumvirate.workout.sets[0]];
+    [controller viewWillAppear:YES];
     [controller removeSets:1];
     STAssertEquals([triumvirate countMatchingSets:triumvirate.workout.sets[0]], 4, @"");
 }
@@ -47,6 +50,7 @@
     FTOTriumvirateSetupViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTriumvirateSetup"];
     FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] first];
     [controller setupForm:triumvirate forSet:triumvirate.workout.sets[0]];
+    [controller viewWillAppear:YES];
     [controller addSets:1];
     STAssertEquals([triumvirate countMatchingSets:triumvirate.workout.sets[0]], 6, @"");
 }
@@ -55,6 +59,7 @@
     FTOTriumvirateSetupViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTriumvirateSetup"];
     FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] first];
     [controller setupForm:triumvirate forSet:triumvirate.workout.sets[0]];
+    [controller viewWillAppear:YES];
     [controller.setsField setText:@"0"];
     [controller textFieldDidEndEditing:nil];
     STAssertEquals([triumvirate countMatchingSets:triumvirate.workout.sets[0]], 5, @"");

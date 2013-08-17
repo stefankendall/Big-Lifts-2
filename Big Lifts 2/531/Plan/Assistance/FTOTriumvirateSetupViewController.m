@@ -27,10 +27,12 @@
 - (void)setupForm:(FTOTriumvirate *)triumvirate forSet:(Set *)set {
     self.triumvirate = triumvirate;
     self.set = set;
+}
 
-    [self.nameField setText:set.lift.name];
-    [self.repsField setText:[set.reps stringValue]];
-    int sets = [triumvirate countMatchingSets:set];
+- (void)viewWillAppear:(BOOL)animated {
+    [self.nameField setText:self.set.lift.name];
+    [self.repsField setText:[self.set.reps stringValue]];
+    int sets = [self.triumvirate countMatchingSets:self.set];
     [self.setsField setText:[NSString stringWithFormat:@"%d", sets]];
 }
 
