@@ -7,8 +7,18 @@
 #import "Set.h"
 #import "FTOTriumvirateCell.h"
 #import "Lift.h"
+#import "FTOTriumvirateSetupViewController.h"
+
+@interface FTOTriumvirateViewController ()
+@property(nonatomic, strong) FTOTriumvirate *triumvirateToEdit;
+@property(nonatomic, strong) Set *setToEdit;
+@end
 
 @implementation FTOTriumvirateViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [[FTOTriumvirateStore instance] count];
@@ -36,6 +46,19 @@
     Set *set = uniqueSets[(NSUInteger) [indexPath row]];
     [cell setSet:set withCount:[triumvirate countMatchingSets:set]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex:[indexPath section]];
+    Set *set = [self uniqueSetsFor:triumvirate.workout][(NSUInteger) [indexPath row]];
+    self.triumvirateToEdit = triumvirate;
+    self.setToEdit = set;
+    [self performSegueWithIdentifier:@"ftoTriumvirateSetupSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    FTOTriumvirateSetupViewController *controller = [segue destinationViewController];
+    [controller setupForm:self.triumvirateToEdit forSet:self.setToEdit];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
