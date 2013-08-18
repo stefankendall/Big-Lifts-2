@@ -3,4 +3,5 @@
 @property(nonatomic) NSDecimalNumber *weight;
 @property(nonatomic) NSString *name;
 @property(nonatomic) BOOL warmup;
+@property(nonatomic) BOOL assistance;
 @end
