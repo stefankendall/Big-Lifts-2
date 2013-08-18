@@ -21,8 +21,8 @@
     SetLogContainer *otherContainer = other;
 
     BOOL namesEqual = [self.setLog.name isEqualToString:otherContainer.setLog.name];
-    BOOL repsEqual = self.setLog.reps == otherContainer.setLog.reps;
-    BOOL weightEqual = [self.setLog.weight doubleValue] == [otherContainer.setLog.weight doubleValue];
+    BOOL repsEqual = [self.setLog.reps isEqualToNumber:otherContainer.setLog.reps];
+    BOOL weightEqual = [self.setLog.weight isEqual:otherContainer.setLog.weight];
 
     return namesEqual && repsEqual && weightEqual;
 }

@@ -6,6 +6,12 @@
 #import "BLStoreManager.h"
 #import "SetLogCombiner.h"
 #import "SetLogContainer.h"
+#import "FTOTriumvirateStore.h"
+#import "FTOTriumvirateAssistance.h"
+#import "FTOWorkoutStore.h"
+#import "FTOTriumvirate.h"
+#import "Workout.h"
+#import "NSArray+Enumerable.h"
 
 @implementation SetLogCombinerTests
 
@@ -24,6 +30,17 @@
     SetLogContainer *setLogContainer = [combined objectAtIndex:0];
     STAssertTrue([setLogContainer isKindOfClass:SetLogContainer.class], @"");
     STAssertEquals([setLogContainer count], 2, @"");
+}
+
+- (void) testCombinesTriumvirate {
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    [[FTOTriumvirateAssistance new] setup];
+    [[[[[[FTOWorkoutStore instance] first] workout] sets] array] each:^(Set *set) {
+        [workoutLog.sets addObject:[[SetLogStore instance] createFromSet:set]];
+    }];
+
+    NSArray *combined = [[SetLogCombiner new] combineSetLogs:workoutLog.sets];
+    STAssertEquals([combined count], 3U, @"");
 }
 
 @end
