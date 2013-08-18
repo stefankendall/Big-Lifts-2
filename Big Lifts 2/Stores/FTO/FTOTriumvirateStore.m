@@ -62,6 +62,7 @@
         Set *set = [[SetStore instance] create];
         set.lift = lift;
         set.reps = reps;
+        set.assistance = YES;
         [sets addObject:set];
     }
     return sets;

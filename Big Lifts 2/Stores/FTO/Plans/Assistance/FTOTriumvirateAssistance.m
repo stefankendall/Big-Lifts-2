@@ -17,6 +17,7 @@
         FTOTriumvirate *assistance = [[FTOTriumvirateStore instance] find:@"mainLift" value:mainLift];
         if (assistance) {
             [workout.workout.sets addObjectsFromArray:[assistance.workout.sets array]];
+                NSLog(@"%@", assistance.workout.sets);
         }
     }];
 }

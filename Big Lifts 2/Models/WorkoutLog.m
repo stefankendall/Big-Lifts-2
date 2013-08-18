@@ -6,7 +6,7 @@
 @implementation WorkoutLog
 - (NSArray *)workSets {
     return [[self.sets array] select:^BOOL(SetLog *setLog) {
-        return !setLog.warmup;
+        return !setLog.warmup && !setLog.assistance;
     }];
 }
 
