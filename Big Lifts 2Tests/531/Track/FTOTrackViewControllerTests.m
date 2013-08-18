@@ -34,7 +34,7 @@
     [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [controller viewButtonTapped:nil];
     [controller viewButtonTapped:nil];
-    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work Sets", @"");
+    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"All", @"");
 }
 
 - (void)testViewButtonTappedShowsAllRows {

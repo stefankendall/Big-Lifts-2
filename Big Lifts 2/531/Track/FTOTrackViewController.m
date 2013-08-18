@@ -85,7 +85,7 @@
 
 - (void)viewButtonTapped:(id)sender {
     self.showAll = !self.showAll;
-    NSString *nextState = self.showAll ? @"All" : @"Work Sets";
+    NSString *nextState = self.showAll ? @"Work Sets" : @"All";
     [self.viewButton setTitle:nextState forState:UIControlStateNormal];
     [self.tableView reloadData];
 }
