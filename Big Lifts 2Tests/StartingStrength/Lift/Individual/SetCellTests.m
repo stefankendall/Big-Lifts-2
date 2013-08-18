@@ -71,4 +71,16 @@
     STAssertEqualObjects([[cell repsLabel] text], @"7x", @"");
 }
 
+- (void)testShowsNoWeightIfWeight0AndNoBar{
+    SetCell *cell = [SetCell create];
+
+    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
+    Workout *workout = [ssWorkout workouts][0];
+    Set *set = workout.sets[0];
+    set.lift.usesBar = NO;
+    set.percentage = N(0);
+    [cell setSet:set withEnteredReps:7];
+    STAssertEqualObjects([[cell weightLabel] text], @"", @"");
+}
+
 @end

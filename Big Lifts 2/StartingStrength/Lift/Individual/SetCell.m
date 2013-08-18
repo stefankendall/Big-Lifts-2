@@ -24,10 +24,16 @@
         [self.percentageLabel setText:@""];
     }
 
-    Settings *settings = [[SettingsStore instance] first];
-    NSString *weightText = [NSString stringWithFormat:@"%@ %@",
-                                                      [set roundedEffectiveWeight], settings.units];
-    [self.weightLabel setText:weightText];
+    if (!set.lift.usesBar && [[set roundedEffectiveWeight] isEqualToNumber:@0]) {
+        [self.weightLabel setText:@""];
+    }
+    else {
+        Settings *settings = [[SettingsStore instance] first];
+        NSString *weightText = [NSString stringWithFormat:@"%@ %@",
+                                                          [set roundedEffectiveWeight], settings.units];
+        [self.weightLabel setText:weightText];
+    }
+
     [self.liftLabel setText:[set lift].name];
     [self.optionalLabel setHidden:!set.optional];
 }
