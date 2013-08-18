@@ -6,7 +6,7 @@
 
 -(NSArray *) workSets {
     return [[self.sets array] select:^BOOL(Set *set) {
-        return !set.warmup;
+        return !set.warmup && !set.assistance;
     }];
 }
 

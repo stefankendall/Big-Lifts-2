@@ -57,14 +57,14 @@
 - (NSArray *)setsForLift:(NSString *)liftName withReps:reps {
     FTOTriumvirateLift *lift = [[FTOTriumvirateLiftStore instance] create];
     lift.name = liftName;
-    NSMutableArray *benchSets = [@[] mutableCopy];
-    for (int set = 0; set < 5; set++) {
-        Set *benchSet = [[SetStore instance] create];
-        benchSet.lift = lift;
-        benchSet.reps = reps;
-        [benchSets addObject:benchSet];
+    NSMutableArray *sets = [@[] mutableCopy];
+    for (int setCount = 0; setCount < 5; setCount++) {
+        Set *set = [[SetStore instance] create];
+        set.lift = lift;
+        set.reps = reps;
+        [sets addObject:set];
     }
-    return benchSets;
+    return sets;
 }
 
 @end
