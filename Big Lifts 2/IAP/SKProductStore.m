@@ -17,7 +17,8 @@
                 IAP_SS_WARMUP,
                 IAP_SS_PRACTICAL_PROGRAMMING,
                 IAP_FTO_JOKER,
-                IAP_FTO_ADVANCED
+                IAP_FTO_ADVANCED,
+                IAP_FTO_TRIUMVIRATE
         ];
     });
 

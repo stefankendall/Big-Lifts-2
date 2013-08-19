@@ -4,9 +4,11 @@
 #import "FTOAssistance.h"
 #import "FTOAssistanceStore.h"
 #import "UITableViewController+NoEmptyRows.h"
+#import "Purchaser.h"
 
 @interface FTOAssistanceViewController ()
 @property(nonatomic, strong) NSDictionary *cellMapping;
+@property(nonatomic, strong) NSDictionary *iapCells;
 @end
 
 @implementation FTOAssistanceViewController
@@ -17,6 +19,16 @@
             FTO_ASSISTANCE_BORING_BUT_BIG : self.bbbCell,
             FTO_ASSISTANCE_TRIUMVIRATE : self.triumvirateCell
     };
+
+    self.iapCells = @{
+            IAP_FTO_TRIUMVIRATE : self.triumvirateCell
+    };
+
+    [self enableDisableIapCells];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(enableDisableIapCells)
+                                                 name:IAP_PURCHASED_NOTIFICATION
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

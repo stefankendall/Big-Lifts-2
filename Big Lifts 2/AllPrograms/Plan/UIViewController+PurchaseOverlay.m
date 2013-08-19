@@ -1,3 +1,4 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "UIViewController+PurchaseOverlay.h"
 #import "PriceFormatter.h"
 #import "SKProductStore.h"
@@ -29,6 +30,22 @@
             [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
         }
     }
+}
+
+- (void)enableDisableIapCells {
+    [[[self iapCells] allKeys] each:^(NSString *iapProduct) {
+        if ([[IAPAdapter instance] hasPurchased:iapProduct]) {
+            [self enable:[self iapCells][iapProduct]];
+        }
+        else {
+            [self disable:iapProduct view:[self iapCells][iapProduct]];
+        }
+    }];
+}
+
+- (NSDictionary *) iapCells {
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
 }
 
 @end

@@ -7,8 +7,6 @@
 #import "TextViewInputAccessoryBuilder.h"
 #import "FTOVariant.h"
 #import "FTOVariantStore.h"
-#import "FTOWorkoutStore.h"
-#import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
 
@@ -46,17 +44,6 @@
                                                object:nil];
 }
 
-- (void)enableDisableIapCells {
-    [[self.iapCells allKeys] each:^(NSString *iapProduct) {
-        if ([[IAPAdapter instance] hasPurchased:iapProduct]) {
-            [self enable:self.iapCells[iapProduct]];
-        }
-        else {
-            [self disable:iapProduct view:self.iapCells[iapProduct]];
-        }
-    }];
-}
-
 - (void)checkCurrentVariant {
     FTOVariant *variant = [[FTOVariantStore instance] first];
     [[self.variantCells allValues] each:^(UITableViewCell *cell) {
@@ -89,7 +76,7 @@
         NSString *newVariantName = [self.variantCells detect:^BOOL(id key, UITableViewCell *cell) {
             return cell == selectedCell;
         }];
-        [[FTOVariantStore instance] changeTo: newVariantName];
+        [[FTOVariantStore instance] changeTo:newVariantName];
         [self checkCurrentVariant];
     }
 }

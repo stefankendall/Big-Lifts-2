@@ -6,8 +6,6 @@
 @implementation SetLogStore
 
 - (id)createFromSet:(Set *)set {
-    NSLog(@"Creating log from set:");
-    NSLog(@"%@", set);
     SetLog *setLog = [[SetLogStore instance] create];
     setLog.reps = set.reps;
     setLog.weight = [set roundedEffectiveWeight];
