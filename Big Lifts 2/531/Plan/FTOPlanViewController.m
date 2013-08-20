@@ -67,10 +67,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
-        NSString *purchaseId = [self.iapCells detect:^BOOL(id key, id obj) {
-            return selectedCell == obj;
-        }];
-        [[Purchaser new] purchase:purchaseId];
+        [self purchaseFromCell:selectedCell];
     }
     else if ([indexPath section] == 1) {
         NSString *newVariantName = [self.variantCells detect:^BOOL(id key, UITableViewCell *cell) {

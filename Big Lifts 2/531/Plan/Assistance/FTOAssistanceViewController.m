@@ -5,6 +5,8 @@
 #import "FTOAssistanceStore.h"
 #import "UITableViewController+NoEmptyRows.h"
 #import "Purchaser.h"
+#import "PurchaseOverlay.h"
+#import "IAPAdapter.h"
 
 @interface FTOAssistanceViewController ()
 @property(nonatomic, strong) NSDictionary *cellMapping;
@@ -45,11 +47,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    NSString *assistanceType = [self.cellMapping detect:^BOOL(NSString *type, UITableViewCell *cell) {
-        return selectedCell == cell;
-    }];
-    [[FTOAssistanceStore instance] changeTo:assistanceType];
-    [self checkCurrentAssistance];
+    if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
+        [self purchaseFromCell:selectedCell];
+    }
+    else {
+        NSString *assistanceType = [self.cellMapping detect:^BOOL(NSString *type, UITableViewCell *cell) {
+            return selectedCell == cell;
+        }];
+        [[FTOAssistanceStore instance] changeTo:assistanceType];
+        [self checkCurrentAssistance];
+    }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if([identifier isEqualToString:@"ftoTriumvirate"] && ![[IAPAdapter instance] hasPurchased:IAP_FTO_TRIUMVIRATE]){
+        return NO;
+    }
+    return YES;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

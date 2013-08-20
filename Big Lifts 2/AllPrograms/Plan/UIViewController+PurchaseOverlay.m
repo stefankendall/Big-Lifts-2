@@ -1,8 +1,10 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
+#import <MRCEnumerable/NSDictionary+Enumerable.h>
 #import "UIViewController+PurchaseOverlay.h"
 #import "PriceFormatter.h"
 #import "SKProductStore.h"
 #import "PurchaseOverlay.h"
+#import "Purchaser.h"
 
 @implementation UIViewController (PurchaseOverlay)
 
@@ -46,6 +48,13 @@
 - (NSDictionary *) iapCells {
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+}
+
+- (void)purchaseFromCell:(UITableViewCell *)selectedCell {
+    NSString *purchaseId = [[self iapCells] detect:^BOOL(id key, id obj) {
+        return selectedCell == obj;
+    }];
+    [[Purchaser new] purchase:purchaseId];
 }
 
 @end

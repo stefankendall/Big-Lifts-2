@@ -6,4 +6,6 @@
 - (void)enable :(UIView *)view;
 
 - (void)enableDisableIapCells;
+
+- (void)purchaseFromCell:(UITableViewCell *)selectedCell;
 @end
