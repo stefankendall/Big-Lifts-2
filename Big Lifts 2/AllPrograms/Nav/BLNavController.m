@@ -1,6 +1,7 @@
 #import <ViewDeck/IIViewDeckController.h>
 #import "BLNavController.h"
 #import "NavTableViewCell.h"
+#import "Mailer.h"
 
 @implementation BLNavController
 
@@ -16,17 +17,7 @@
 }
 
 - (void)presentFeedbackEmail {
-    if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *emailController = [[MFMailComposeViewController alloc] init];
-        emailController.mailComposeDelegate = self;
-        [emailController setSubject:@"Big Lifts 2 Feedback"];
-        [emailController setToRecipients:@[@"biglifts@stefankendall.com"]];
-        [self presentViewController:emailController animated:YES completion:nil];
-    }
-    else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Can't open email" message:@"No mail account configured" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
-    }
+    [[[Mailer alloc] initWithSender:self] presentFeedback];
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error

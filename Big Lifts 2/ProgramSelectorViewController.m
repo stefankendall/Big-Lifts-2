@@ -51,14 +51,19 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    BLViewDeckController *destination = [segue destinationViewController];
-    if (self.firstTimeInApp) {
-        [destination firstTimeInApp];
+    id destinationController = [segue destinationViewController];
+    if ([destinationController isKindOfClass:BLViewDeckController.class]) {
+        BLViewDeckController *destination = destinationController;
+        if (self.firstTimeInApp) {
+            [destination firstTimeInApp];
+        }
     }
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    [self rememberSelectedProgram:identifier];
+    if ([[self.segueToProgramNames allKeys] containsObject:identifier]) {
+        [self rememberSelectedProgram:identifier];
+    }
     return YES;
 }
 
