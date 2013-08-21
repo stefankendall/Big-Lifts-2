@@ -21,4 +21,7 @@
     }];
 }
 
+- (void)cycleChange {
+}
+
 @end

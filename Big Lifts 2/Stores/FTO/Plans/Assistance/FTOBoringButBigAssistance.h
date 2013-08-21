@@ -1,5 +1,7 @@
-@interface FTOBoringButBigAssistance : NSObject
+#import "FTOAssistanceProtocol.h"
 
--(void) setup;
+@interface FTOBoringButBigAssistance : NSObject <FTOAssistanceProtocol>
+
+- (void)setup;
 
 @end

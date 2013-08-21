@@ -16,6 +16,9 @@
     [self addBoringSets];
 }
 
+- (void)cycleChange {
+}
+
 - (void)removeAmrapFromWorkouts {
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
         [[[ftoWorkout.workout sets] array] each:^(Set *set) {

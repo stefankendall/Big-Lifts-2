@@ -7,4 +7,7 @@
     [[FTOWorkoutStore instance] switchTemplate];
 }
 
+- (void)cycleChange {
+}
+
 @end
