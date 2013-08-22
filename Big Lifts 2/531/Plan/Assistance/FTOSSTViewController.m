@@ -4,9 +4,9 @@
 #import "RowTextField.h"
 #import "LiftFormCell.h"
 #import "FTOEditLiftCell.h"
-#import "TextFieldWithCell.h"
 #import "FTOSSTLiftStore.h"
 #import "FTOSSTLift.h"
+#import "FTOSSTEditLiftCell.h"
 
 @implementation FTOSSTViewController
 
@@ -15,11 +15,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FTOSSTLift *lift = ([[FTOSSTLiftStore instance] findAll])[(NSUInteger) indexPath.row];
+    FTOSSTLift *lift = (FTOSSTLift *) [self liftAtIndex:[indexPath row]];
     if ([indexPath section] == 0) {
-        FTOEditLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOEditLiftCell.class)];
+        FTOSSTEditLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOSSTEditLiftCell.class)];
         if (cell == nil) {
-            cell = [FTOEditLiftCell create];
+            cell = [FTOSSTEditLiftCell create];
         }
 
         [cell setLift:lift];
@@ -28,36 +28,18 @@
         return cell;
     }
     else {
-        LiftFormCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(LiftFormCell.class)];
-        if (cell == nil) {
-            cell = [LiftFormCell create];
-        }
-        [[cell liftLabel] setText:lift.name];
-        [[cell textField] setText:[lift.increment stringValue]];
-        return cell;
+        return [self liftFormCellFor:tableView lift:lift];
     }
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    RowTextField *rowTextField = (RowTextField *) textField;
-    NSIndexPath *indexPath = [rowTextField indexPath];
-
-    NSString *weightText = [textField text];
-
-    if ([weightText isEqualToString:@""]) {
-        [self.tableView reloadData];
-        return;
-    }
-
-    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText];
-    FTOSSTLift *lift = [[FTOSSTLiftStore instance] atIndex:[indexPath row]];
-    if ([indexPath section] == 0) {
-        [lift setWeight:weight];
-        [self.tableView reloadData];
-    }
-    else {
-        [lift setIncrement:weight];
-    }
+- (Lift *)liftAtIndex:(int)index {
+    return [[FTOSSTLiftStore instance] atIndex:index];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.bounds.size.height;
+}
+
 
 @end

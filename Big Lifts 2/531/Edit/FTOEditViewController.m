@@ -44,13 +44,7 @@
         return cell;
     }
     else {
-        LiftFormCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(LiftFormCell.class)];
-        if (cell == nil) {
-            cell = [LiftFormCell create];
-        }
-        [[cell liftLabel] setText:lift.name];
-        [[cell textField] setText:[lift.increment stringValue]];
-        return cell;
+        return [self liftFormCellFor:self.tableView lift:lift];
     }
 }
 
@@ -87,7 +81,7 @@
     }
 
     NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText];
-    FTOLift *lift = [[FTOLiftStore instance] atIndex:[indexPath row]];
+    Lift *lift = [self liftAtIndex:[indexPath row]];
     if ([indexPath section] == 0) {
         [lift setWeight:weight];
         [self.tableView reloadData];
@@ -97,5 +91,18 @@
     }
 }
 
+- (UITableViewCell *)liftFormCellFor:(UITableView *)tableView lift:(Lift *)lift {
+    LiftFormCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(LiftFormCell.class)];
+    if (cell == nil) {
+        cell = [LiftFormCell create];
+    }
+    [[cell liftLabel] setText:lift.name];
+    [[cell textField] setText:[lift.increment stringValue]];
+    return cell;
+}
+
+- (Lift *)liftAtIndex:(int)index {
+    return [[FTOLiftStore instance] atIndex:index];
+}
 
 @end
