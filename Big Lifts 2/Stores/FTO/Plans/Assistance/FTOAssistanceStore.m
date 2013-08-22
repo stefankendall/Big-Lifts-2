@@ -3,6 +3,7 @@
 #import "FTONoneAssistance.h"
 #import "FTOBoringButBigAssistance.h"
 #import "FTOTriumvirateAssistance.h"
+#import "FTOSimplestStrengthTemplateAssistance.h"
 
 @implementation FTOAssistanceStore
 
@@ -21,7 +22,8 @@
     NSDictionary *assistanceGenerators = @{
             FTO_ASSISTANCE_NONE : [FTONoneAssistance new],
             FTO_ASSISTANCE_BORING_BUT_BIG : [FTOBoringButBigAssistance new],
-            FTO_ASSISTANCE_TRIUMVIRATE : [FTOTriumvirateAssistance new]
+            FTO_ASSISTANCE_TRIUMVIRATE : [FTOTriumvirateAssistance new],
+            FTO_ASSISTANCE_SST: [FTOSimplestStrengthTemplateAssistance new]
     };
     [assistanceGenerators[([[self first] name])] setup];
 }

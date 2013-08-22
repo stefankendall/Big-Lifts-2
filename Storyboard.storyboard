@@ -1314,6 +1314,37 @@
                                             <segue destination="7sY-Rd-I8z" kind="push" identifier="ftoTriumvirate" id="oZx-Wb-atg"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell tag="1" contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="WHs-JH-Cj3">
+                                        <rect key="frame" x="0.0" y="238" width="320" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="WHs-JH-Cj3" id="UyV-IZ-dBi">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Simplest Strength Template" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJp-gK-YN8">
+                                                    <rect key="frame" x="20" y="9" width="240" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="One big assistance lift, increasing %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdy-2E-M3s">
+                                                    <rect key="frame" x="20" y="33" width="260" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Mdy-2E-M3s" secondAttribute="bottom" constant="10" id="XGi-xy-L25"/>
+                                                <constraint firstItem="fJp-gK-YN8" firstAttribute="top" secondItem="UyV-IZ-dBi" secondAttribute="top" constant="9" id="Yg3-n0-xEP"/>
+                                                <constraint firstItem="Mdy-2E-M3s" firstAttribute="leading" secondItem="UyV-IZ-dBi" secondAttribute="leading" constant="20" id="bud-Ld-pkb"/>
+                                                <constraint firstItem="fJp-gK-YN8" firstAttribute="leading" secondItem="UyV-IZ-dBi" secondAttribute="leading" constant="20" id="r06-LS-Eea"/>
+                                                <constraint firstItem="Mdy-2E-M3s" firstAttribute="top" secondItem="fJp-gK-YN8" secondAttribute="bottom" constant="3" id="ymc-sc-1vF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1326,6 +1357,7 @@
                     <connections>
                         <outlet property="bbbCell" destination="BMs-Gv-0gY" id="UjU-xw-uxP"/>
                         <outlet property="noneCell" destination="Y2q-WT-KhJ" id="oFd-XR-dma"/>
+                        <outlet property="sstCell" destination="WHs-JH-Cj3" id="NtT-BD-umd"/>
                         <outlet property="triumvirateCell" destination="0vf-Mu-7W6" id="XLO-ni-4px"/>
                     </connections>
                 </tableViewController>
