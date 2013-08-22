@@ -177,6 +177,7 @@
 		5459096DAEF1ED3C018EFAB7 /* FTOTriumvirateAssistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C7F633F12351C88DB0C /* FTOTriumvirateAssistance.m */; };
 		5459097857AFDF9C5428279C /* FTORepsToBeatBreakdownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F8F1C32D48230C5267C /* FTORepsToBeatBreakdownTests.m */; };
 		545909802D11187FEE80E326 /* WeightTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5459031F3D5F53AFAFDF03A7 /* WeightTableCell.xib */; };
+		54590989F0D545B593E66547 /* FTOSSTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908ACD24E3909997E687D /* FTOSSTViewController.m */; };
 		5459098A223A58603A1EB19C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54590D3019187C6086FE5E36 /* InfoPlist.strings */; };
 		5459099E6B93CB1D34991897 /* BarLoadingDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459092B357D8F10BD9ED89D /* BarLoadingDataSource.m */; };
 		5459099FA669850AB13D07E2 /* SKProductStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459035ACC4AC43DEA0D8BEA /* SKProductStore.m */; };
@@ -502,6 +503,7 @@
 		5459062296CD9B1159B9B120 /* PurchaseOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseOverlay.m; sourceTree = "<group>"; };
 		5459062E1FD6E0C38192CC68 /* SKProductFake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProductFake.m; sourceTree = "<group>"; };
 		54590631753DDF33D785CFEC /* BarWeightTextFieldDelegateTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarWeightTextFieldDelegateTests.h; sourceTree = "<group>"; };
+		545906361016A90D5EF7792D /* FTOSSTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSSTViewController.h; sourceTree = "<group>"; };
 		54590645125642900D49667E /* FTOLogGraphTransformerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLogGraphTransformerTests.h; sourceTree = "<group>"; };
 		5459065EA2F2C8B26168E23B /* FTOBoringButBigAssistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOBoringButBigAssistance.h; sourceTree = "<group>"; };
 		545906610651643795AFF698 /* BLStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLStoreManager.h; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 		5459088313861DA1F90E0A0D /* PlateStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlateStoreTests.m; sourceTree = "<group>"; };
 		5459088E695A0D20ECA09464 /* Big Lifts 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Lifts 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5459089A3F0DB4ED4D260342 /* NavTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavTableViewCell.h; sourceTree = "<group>"; };
+		545908ACD24E3909997E687D /* FTOSSTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSSTViewController.m; sourceTree = "<group>"; };
 		545908AD85544B3D1087B000 /* Stepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stepper.h; sourceTree = "<group>"; };
 		545908CBC1A4A93E06AB0617 /* SSVariantStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSVariantStore.m; sourceTree = "<group>"; };
 		545908E0120D96962DFF2B9A /* graph.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = graph.html; sourceTree = "<group>"; };
@@ -1872,6 +1875,8 @@
 				545901C3731DA629CE0E70F0 /* FTOTriumvirateCell.xib */,
 				54590AC169E7396983078676 /* FTOTriumvirateSetupViewController.m */,
 				545902F04A5FDA5ED0595EA6 /* FTOTriumvirateSetupViewController.h */,
+				545908ACD24E3909997E687D /* FTOSSTViewController.m */,
+				545906361016A90D5EF7792D /* FTOSSTViewController.h */,
 			);
 			path = Assistance;
 			sourceTree = "<group>";
@@ -2463,6 +2468,7 @@
 				545902AF3D36D7DB45BA758B /* FTOSimplestStrengthTemplateAssistance.m in Sources */,
 				545902BFD10C752E075CD70B /* FTOSSTLift.m in Sources */,
 				54590287A49A6A110B9CAF27 /* FTOSSTLiftStore.m in Sources */,
+				54590989F0D545B593E66547 /* FTOSSTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

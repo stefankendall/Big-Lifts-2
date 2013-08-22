@@ -9,7 +9,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *trainingWeight;
 @property (weak, nonatomic) IBOutlet RowTextField *max;
 
-- (void)setLift:(FTOLift *)lift;
+- (void)setLift:(Lift *)lift;
 
 - (void)updateTrainingMax:(NSDecimalNumber *)weight;
 @end
