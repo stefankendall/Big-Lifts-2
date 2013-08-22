@@ -1,6 +1,7 @@
 #import "FTOSimplestStrengthTemplateAssistance.h"
 
 @implementation FTOSimplestStrengthTemplateAssistance
+
 - (void)setup {
 
 }
