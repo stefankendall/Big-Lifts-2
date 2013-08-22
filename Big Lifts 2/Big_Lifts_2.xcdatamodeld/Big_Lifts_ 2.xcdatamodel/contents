@@ -14,9 +14,6 @@
     <entity name="FTOSettings" representedClassName="FTOSettings" syncable="YES">
         <attribute name="trainingMax" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="FTOSSTLift" representedClassName="FTOSSTLift" parentEntity="Lift" syncable="YES">
-        <relationship name="associatedLift" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FTOLift" syncable="YES"/>
-    </entity>
     <entity name="FTOTriumvirate" representedClassName="FTOTriumvirate" syncable="YES">
         <relationship name="mainLift" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FTOLift" syncable="YES"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" syncable="YES"/>
@@ -108,6 +105,5 @@
         <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FTOSSTLift" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
