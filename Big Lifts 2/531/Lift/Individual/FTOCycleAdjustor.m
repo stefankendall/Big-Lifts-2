@@ -5,6 +5,7 @@
 #import "FTOLiftStore.h"
 #import "FTOVariantStore.h"
 #import "FTOVariant.h"
+#import "FTOAssistanceStore.h"
 
 @implementation FTOCycleAdjustor
 
@@ -23,6 +24,7 @@
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
             ftoWorkout.done = NO;
         }];
+    [[FTOAssistanceStore instance] cycleChange];
 }
 
 - (BOOL)midPointOfSixWeekCycle {

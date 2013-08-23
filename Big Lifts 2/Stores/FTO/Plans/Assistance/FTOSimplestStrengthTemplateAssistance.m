@@ -60,6 +60,8 @@
 }
 
 - (void)cycleChange {
-
+    [[[FTOSSTLiftStore instance] findAll] each:^(FTOSSTLift *lift) {
+        lift.weight = [lift.weight decimalNumberByAdding:lift.increment];
+    }];
 }
 @end

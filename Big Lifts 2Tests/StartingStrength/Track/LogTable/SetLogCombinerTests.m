@@ -3,10 +3,8 @@
 #import "SetLog.h"
 #import "WorkoutLogStore.h"
 #import "WorkoutLog.h"
-#import "BLStoreManager.h"
 #import "SetLogCombiner.h"
 #import "SetLogContainer.h"
-#import "FTOTriumvirateStore.h"
 #import "FTOTriumvirateAssistance.h"
 #import "FTOWorkoutStore.h"
 #import "FTOTriumvirate.h"
@@ -32,7 +30,7 @@
     STAssertEquals([setLogContainer count], 2, @"");
 }
 
-- (void) testCombinesTriumvirate {
+- (void)testCombinesTriumvirate {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     [[FTOTriumvirateAssistance new] setup];
     [[[[[[FTOWorkoutStore instance] first] workout] sets] array] each:^(Set *set) {

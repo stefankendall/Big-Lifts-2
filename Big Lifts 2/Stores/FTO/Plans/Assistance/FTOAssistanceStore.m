@@ -12,20 +12,29 @@
     assistance.name = FTO_ASSISTANCE_NONE;
 }
 
-- (void)changeTo: (NSString*) assistanceName {
+- (void)changeTo:(NSString *)assistanceName {
     FTOAssistance *assistance = [self first];
     assistance.name = assistanceName;
     [self addAssistance];
 }
 
-- (void) addAssistance {
+- (void)addAssistance {
+    NSObject <FTOAssistanceProtocol> *generator = [self assistanceGeneratorForName:[[self first] name]];
+    [generator setup];
+}
+
+- (void)cycleChange {
+    [[self assistanceGeneratorForName:[[self first] name]] cycleChange];
+}
+
+- (NSObject <FTOAssistanceProtocol> *)assistanceGeneratorForName:(NSString *)name {
     NSDictionary *assistanceGenerators = @{
             FTO_ASSISTANCE_NONE : [FTONoneAssistance new],
             FTO_ASSISTANCE_BORING_BUT_BIG : [FTOBoringButBigAssistance new],
             FTO_ASSISTANCE_TRIUMVIRATE : [FTOTriumvirateAssistance new],
-            FTO_ASSISTANCE_SST: [FTOSimplestStrengthTemplateAssistance new]
+            FTO_ASSISTANCE_SST : [FTOSimplestStrengthTemplateAssistance new]
     };
-    [assistanceGenerators[([[self first] name])] setup];
+    return assistanceGenerators[name];
 }
 
 @end
