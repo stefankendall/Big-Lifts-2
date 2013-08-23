@@ -11,6 +11,7 @@ NSString * const IAP_PURCHASED_NOTIFICATION = @"iapPurchased";
 NSString * const IAP_FTO_JOKER = @"ftoJoker";
 NSString * const IAP_FTO_ADVANCED = @"ftoAdvanced";
 NSString * const IAP_FTO_TRIUMVIRATE = @"ftoTriumvirate";
+NSString * const IAP_FTO_SST = @"ftoSst";
 
 @interface Purchaser ()
 
@@ -29,7 +30,8 @@ NSString * const IAP_FTO_TRIUMVIRATE = @"ftoTriumvirate";
                 IAP_SS_WARMUP : @"Warm-up sets added to Starting Strength.",
                 IAP_FTO_JOKER : @"Joker Sets are now available in 5/3/1.",
                 IAP_FTO_ADVANCED : @"Advanced programming is now available for 5/3/1.",
-                IAP_FTO_TRIUMVIRATE : @"Triumvirate assistance is now available for 5/3/1."
+                IAP_FTO_TRIUMVIRATE : @"Triumvirate assistance is now available for 5/3/1.",
+                IAP_FTO_SST : @"Simplest Strength Template assistance is now available for 5/3/1."
         };
     }
 

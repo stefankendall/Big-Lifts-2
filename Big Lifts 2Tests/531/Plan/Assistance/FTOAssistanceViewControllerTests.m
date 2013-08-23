@@ -3,6 +3,8 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOAssistanceStore.h"
 #import "FTOAssistance.h"
+#import "Purchaser.h"
+#import "IAPAdapter.h"
 
 @implementation FTOAssistanceViewControllerTests
 
@@ -25,6 +27,17 @@
     FTOAssistanceViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoAssistance"];
     [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     STAssertEqualObjects(assistance.name, FTO_ASSISTANCE_NONE, @"");
+}
+
+- (void) testBlocksSegueForSstIfNotPurchased {
+    FTOAssistanceViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoAssistance"];
+    STAssertFalse([controller shouldPerformSegueWithIdentifier:IAP_FTO_SST sender:nil], @"");
+}
+
+- (void) testAllowsSegueIfSstPurchased {
+    [[IAPAdapter instance] addPurchase:IAP_FTO_SST];
+    FTOAssistanceViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoAssistance"];
+    STAssertTrue([controller shouldPerformSegueWithIdentifier:IAP_FTO_SST sender:nil], @"");
 }
 
 @end

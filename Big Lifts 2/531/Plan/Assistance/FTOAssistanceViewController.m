@@ -24,7 +24,8 @@
     };
 
     self.iapCells = @{
-            IAP_FTO_TRIUMVIRATE : self.triumvirateCell
+            IAP_FTO_TRIUMVIRATE : self.triumvirateCell,
+            IAP_FTO_SST : self.sstCell
     };
 
     [self enableDisableIapCells];
@@ -61,7 +62,8 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if([identifier isEqualToString:@"ftoTriumvirate"] && ![[IAPAdapter instance] hasPurchased:IAP_FTO_TRIUMVIRATE]){
+    NSArray *iaps = [self.iapCells allKeys];
+    if ([iaps containsObject:identifier] && ![[IAPAdapter instance] hasPurchased:identifier]) {
         return NO;
     }
     return YES;
