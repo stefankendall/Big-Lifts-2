@@ -5,6 +5,7 @@
 #import "FTOEditLiftCell.h"
 #import "RowTextField.h"
 #import "TextFieldWithCell.h"
+#import "TextViewInputAccessoryBuilder.h"
 
 @implementation FTOEditViewController
 
@@ -98,6 +99,7 @@
     }
     [[cell liftLabel] setText:lift.name];
     [[cell textField] setText:[lift.increment stringValue]];
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:[cell textField]];
     return cell;
 }
 
