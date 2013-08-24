@@ -30,15 +30,4 @@
     STAssertEquals([setLogContainer count], 2, @"");
 }
 
-- (void)testCombinesTriumvirate {
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
-    [[FTOTriumvirateAssistance new] setup];
-    [[[[[[FTOWorkoutStore instance] first] workout] sets] array] each:^(Set *set) {
-        [workoutLog.sets addObject:[[SetLogStore instance] createFromSet:set]];
-    }];
-
-    NSArray *combined = [[SetLogCombiner new] combineSetLogs:workoutLog.sets];
-    STAssertEquals([combined count], 3U, @"");
-}
-
 @end

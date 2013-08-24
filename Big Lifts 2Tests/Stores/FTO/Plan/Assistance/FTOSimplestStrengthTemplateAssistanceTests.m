@@ -9,6 +9,7 @@
 #import "Lift.h"
 #import "FTOSSTLift.h"
 #import "FTOSSTLiftStore.h"
+#import "FTOLiftStore.h"
 
 @implementation FTOSimplestStrengthTemplateAssistanceTests
 
@@ -21,13 +22,23 @@
     STAssertEqualObjects(lastSet.percentage, N(70), @"");
 }
 
-- (void)testIncrementsOnCyceChange {
+- (void)testIncrementsOnCycleChange {
     [[FTOSimplestStrengthTemplateAssistance new] setup];
     FTOSSTLift *lift = [[FTOSSTLiftStore instance] find:@"name" value:@"Front Squat"];
     NSDecimalNumber *weight = [lift.weight copy];
 
     [[FTOSimplestStrengthTemplateAssistance new] cycleChange];
     STAssertEqualObjects([weight decimalNumberByAdding:N(10)], lift.weight, @"");
+}
+
+- (void) testHandlesLiftRenames {
+    FTOLift *squat = [[FTOLiftStore instance] find: @"name" value: @"Squat"];
+    squat.name = @"Front Squat";
+    [[FTOSimplestStrengthTemplateAssistance new] setup];
+
+    FTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Front Squat"];
+    STAssertEquals([[week1Workout.workout sets] count], 9U, @"");
+    STAssertEquals([[FTOSSTLiftStore instance] count], 4, @"");
 }
 
 - (FTOWorkout *)findWorkout:(int)week withLift:(NSString *)liftName {
