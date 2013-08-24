@@ -22,8 +22,8 @@
         cell = [FTOChangeLiftCell create];
     }
 
-    FTOLift *ftoLift = [[FTOLiftStore instance] atIndex:[indexPath row]];
-    [cell.textField setText:ftoLift.name];
+    Lift *lift = [self liftAtIndex:[indexPath row]];
+    [cell.textField setText:lift.name];
     [cell.textField setDelegate:self];
     [cell.textField setIndexPath:indexPath];
     return cell;
@@ -37,11 +37,14 @@
     }
 }
 
-
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     RowTextField *rowTextField = (RowTextField *) textField;
-    FTOLift *lift = [[FTOLiftStore instance] atIndex:[[rowTextField indexPath] row]];
+    Lift *lift = [self liftAtIndex:[rowTextField.indexPath row]];
     [lift setName:[textField text]];
+}
+
+- (Lift *) liftAtIndex: (int) index {
+    return [[FTOLiftStore instance] atIndex:index];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
