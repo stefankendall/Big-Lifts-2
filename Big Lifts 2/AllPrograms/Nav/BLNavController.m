@@ -25,4 +25,28 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    [self.viewDeckController closeLeftViewAnimated:YES];
+
+    NSMutableDictionary *tagViewMapping = [[self specificTagMapping] mutableCopy];
+    tagViewMapping[@2] = @"barLoadingNav";
+    tagViewMapping[@4] =  @"settingsViewController";
+
+    if ([cell tag] == 6) {
+        [[self.viewDeckController navigationController] popViewControllerAnimated:YES];
+    } else if([cell tag] == 8){
+        [self presentFeedbackEmail];
+    } else {
+        NSString *storyBoardId = [tagViewMapping objectForKey:[NSNumber numberWithInteger:[cell tag]]];
+        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:storyBoardId]];
+    }
+}
+
+- (NSDictionary *)specificTagMapping {
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
+}
+
 @end
