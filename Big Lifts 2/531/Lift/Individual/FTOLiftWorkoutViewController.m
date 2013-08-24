@@ -27,7 +27,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if([self shouldShowRepsToBeat] && section == 0){
+    if ([self shouldShowRepsToBeat] && section == 0) {
         return 1;
     }
 
@@ -39,7 +39,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if( ([indexPath section]) == 0 && [self shouldShowRepsToBeat]){
+    if (([indexPath section]) == 0 && [self shouldShowRepsToBeat]) {
         return [self buildWorkoutToolbarCell];
     }
 
@@ -60,12 +60,28 @@
     FTOLiftWorkoutToolbar *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FTOLiftWorkoutToolbar"];
     if (!cell) {
         cell = [FTOLiftWorkoutToolbar create];
-        Set *lastSet = [self.ftoWorkout.workout.sets lastObject];
-        int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:lastSet.lift atWeight:[lastSet roundedEffectiveWeight]];
+        Set *heaviestAmrap = [self heaviestAmrapSet:self.ftoWorkout.workout.sets];
+        int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
         [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
         [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
     }
     return cell;
+}
+
+- (Set *)heaviestAmrapSet:(NSMutableOrderedSet *)sets {
+    __block Set *heaviestAmrap = nil;
+    [[sets array] each:^(Set *testSet) {
+        if ([testSet amrap]) {
+            if (!heaviestAmrap) {
+                heaviestAmrap = testSet;
+            }
+            else if ([testSet.roundedEffectiveWeight
+                    compare:heaviestAmrap.roundedEffectiveWeight] == NSOrderedDescending) {
+                heaviestAmrap = testSet;
+            }
+        }
+    }];
+    return heaviestAmrap;
 }
 
 - (void)showRepsToBeatBreakdown:(id)showRepsToBeatBreakdown {

@@ -11,6 +11,9 @@
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "FTOWorkoutCell.h"
+#import "NSArray+Utilities.h"
+#import "FTOVariantStore.h"
+#import "FTOVariant.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -81,6 +84,13 @@
             [NSIndexPath indexPathForRow:5 inSection:1]];
 
     STAssertEqualObjects([[[cell setCell] repsLabel] text], @"7x", @"");
+}
+
+- (void)testChoosesHeaviestAmrapSetForRepsToBeat {
+    [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
+    self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    Set *heaviestAmrapSet = [self.controller heaviestAmrapSet: self.ftoWorkout.workout.sets];
+    STAssertEquals([self.ftoWorkout.workout.sets indexOfObject:heaviestAmrapSet], 5U, @"");
 }
 
 @end
