@@ -1,6 +1,6 @@
 #import "UIViewController+ViewDeckAdditions.h"
 
-@interface SettingsViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface SettingsViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
 
 - (IBAction)unitsChanged:(id)sender;
 

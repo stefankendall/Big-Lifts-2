@@ -2,8 +2,9 @@
 #import "SettingsStore.h"
 #import "Settings.h"
 #import "TextViewInputAccessoryBuilder.h"
+#import "BLStoreManager.h"
 
-@interface SettingsViewController()
+@interface SettingsViewController ()
 @property(nonatomic, strong) NSArray *roundingOptions;
 @end
 
@@ -42,7 +43,7 @@
 }
 
 - (void)setupRoundTo {
-    self.roundingOptions = @[@"1",@"5"];
+    self.roundingOptions = @[@"1", @"5"];
     self.roundToPicker = [UIPickerView new];
     [self.roundToPicker setDataSource:self];
     [self.roundToPicker setDelegate:self];
@@ -56,8 +57,33 @@
     return label;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"Cell selected");
+    NSLog(@"%@", cell);
+    if ([cell viewWithTag:1]) {
+        [self resetAllData];
+    }
+}
+
+
+- (void)resetAllData {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                         destructiveButtonTitle:@"Reset All"
+                                              otherButtonTitles:nil];
+    [sheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == actionSheet.destructiveButtonIndex) {
+        [[BLStoreManager instance] resetAllStores];
+    }
+}
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSString * newRoundingOption = self.roundingOptions[(NSUInteger) row];
+    NSString *newRoundingOption = self.roundingOptions[(NSUInteger) row];
     Settings *settings = [[SettingsStore instance] first];
     settings.roundTo = [NSDecimalNumber decimalNumberWithString:newRoundingOption];
     [self reloadData];
