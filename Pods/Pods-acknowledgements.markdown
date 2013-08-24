@@ -41,6 +41,14 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
+## TPKeyboardAvoiding
+
+ Free for commercial use and redistribution in any form. Credit is appreciated but not essential. Oh, and there aint no warranty!
+
+Michael Tyson, A Tasty Pixel  
+michael@atastypixel.com
+
+
 ## UbiquityStoreManager
 
                    GNU LESSER-APPSTORE GENERAL PUBLIC LICENSE

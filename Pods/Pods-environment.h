@@ -30,6 +30,12 @@
 #define COCOAPODS_VERSION_MINOR_MRCEnumerable 0
 #define COCOAPODS_VERSION_PATCH_MRCEnumerable 1
 
+// TPKeyboardAvoiding
+#define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding
+#define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 1
+#define COCOAPODS_VERSION_MINOR_TPKeyboardAvoiding 1
+#define COCOAPODS_VERSION_PATCH_TPKeyboardAvoiding 0
+
 // UbiquityStoreManager
 #define COCOAPODS_POD_AVAILABLE_UbiquityStoreManager
 #define COCOAPODS_VERSION_MAJOR_UbiquityStoreManager 0

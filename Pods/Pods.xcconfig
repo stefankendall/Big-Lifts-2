@@ -2,11 +2,12 @@
 #include "Pods-IAPManager.xcconfig"
 #include "Pods-JRSwizzle.xcconfig"
 #include "Pods-MRCEnumerable.xcconfig"
+#include "Pods-TPKeyboardAvoiding.xcconfig"
 #include "Pods-UbiquityStoreManager.xcconfig"
 #include "Pods-ViewDeck.xcconfig"
 #include "Pods-WebViewJavascriptBridge.xcconfig"
 ALWAYS_SEARCH_USER_PATHS = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/CTCustomTableViewCell" "${PODS_ROOT}/Headers/IAPManager" "${PODS_ROOT}/Headers/JRSwizzle" "${PODS_ROOT}/Headers/MRCEnumerable" "${PODS_ROOT}/Headers/UbiquityStoreManager" "${PODS_ROOT}/Headers/ViewDeck" "${PODS_ROOT}/Headers/WebViewJavascriptBridge"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/CTCustomTableViewCell" "${PODS_ROOT}/Headers/IAPManager" "${PODS_ROOT}/Headers/JRSwizzle" "${PODS_ROOT}/Headers/MRCEnumerable" "${PODS_ROOT}/Headers/TPKeyboardAvoiding" "${PODS_ROOT}/Headers/UbiquityStoreManager" "${PODS_ROOT}/Headers/ViewDeck" "${PODS_ROOT}/Headers/WebViewJavascriptBridge"
 OTHER_LDFLAGS = -ObjC ${PODS_IAPMANAGER_OTHER_LDFLAGS} ${PODS_JRSWIZZLE_OTHER_LDFLAGS} ${PODS_VIEWDECK_OTHER_LDFLAGS} ${PODS_WEBVIEWJAVASCRIPTBRIDGE_OTHER_LDFLAGS}
 PODS_ROOT = ${SRCROOT}/Pods
