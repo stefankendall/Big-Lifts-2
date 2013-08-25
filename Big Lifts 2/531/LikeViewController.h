@@ -1,0 +1,2 @@
+@interface LikeViewController : UITableViewController
+@end
