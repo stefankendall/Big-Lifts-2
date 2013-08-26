@@ -5,6 +5,7 @@
 #import "FTOWorkout.h"
 #import "Workout.h"
 #import "Set.h"
+#import "FTOBBBPercentageStore.h"
 
 @implementation FTOBoringButBigAssistanceTests
 
@@ -26,6 +27,13 @@
 
     FTOWorkout *workoutInWeek4 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@4][0];
     STAssertEquals([workoutInWeek4.workout.sets count], 9U, @"");
+}
+
+- (void) testUsesBbbPercentage {
+    [[[FTOBBBPercentageStore instance] first] setPercentage: N(60)];
+    [[FTOBoringButBigAssistance new] setup];
+    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] first];
+    STAssertEqualObjects([[ftoWorkout.workout.sets lastObject] percentage], N(60), @"");
 }
 
 @end

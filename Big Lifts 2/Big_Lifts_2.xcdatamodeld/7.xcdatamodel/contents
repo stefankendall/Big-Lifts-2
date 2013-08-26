@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3394" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3389" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Bar" representedClassName="Bar" syncable="YES">
         <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
@@ -8,9 +8,6 @@
     </entity>
     <entity name="FTOAssistance" representedClassName="FTOAssistance" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
-    <entity name="FTOBBBPercentage" syncable="YES">
-        <attribute name="percentage" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="FTOLift" representedClassName="FTOLift" parentEntity="Lift" syncable="YES"/>
     <entity name="FTOSet" representedClassName="FTOSet" parentEntity="Set" syncable="YES"/>
@@ -96,7 +93,6 @@
         <element name="FTOLift" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOSet" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOSettings" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FTOSSTLift" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOTriumvirate" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOTriumvirateLift" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOVariant" positionX="0" positionY="0" width="0" height="0"/>
@@ -112,6 +108,6 @@
         <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FTOBBBPercentage" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOSSTLift" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
