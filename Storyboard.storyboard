@@ -3040,7 +3040,15 @@
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Like!" id="ze4-j3-DB9"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Like!" id="ze4-j3-DB9">
+                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="I4c-44-cAB">
+                            <connections>
+                                <action selector="revealSidebar:" destination="fr5-FB-UBY" id="yIr-3s-1dW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KT9-Vl-iP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
