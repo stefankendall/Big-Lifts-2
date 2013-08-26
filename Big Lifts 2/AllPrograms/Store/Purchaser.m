@@ -13,6 +13,8 @@ NSString * const IAP_FTO_ADVANCED = @"ftoAdvanced";
 NSString * const IAP_FTO_TRIUMVIRATE = @"ftoTriumvirate";
 NSString * const IAP_FTO_SST = @"ftoSst";
 
+NSString * const IAP_SPONSORSHIP = @"sponsorship";
+
 @interface Purchaser ()
 
 @property(nonatomic, strong) NSDictionary *buyMessages;

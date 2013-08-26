@@ -1,6 +1,7 @@
 #import "LikeViewController.h"
 #import "FBAppCall.h"
 #import "FBDialogs.h"
+#import "Purchaser.h"
 
 @implementation LikeViewController
 
@@ -23,5 +24,8 @@
                                   }];
 }
 
+- (IBAction)buySponsorship:(id)sender {
+    [[Purchaser new] purchase:IAP_SPONSORSHIP];
+}
 
 @end
