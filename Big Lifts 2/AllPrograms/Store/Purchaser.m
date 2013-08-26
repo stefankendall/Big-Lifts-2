@@ -33,7 +33,8 @@ NSString * const IAP_SPONSORSHIP = @"sponsorship";
                 IAP_FTO_JOKER : @"Joker Sets are now available in 5/3/1.",
                 IAP_FTO_ADVANCED : @"Advanced programming is now available for 5/3/1.",
                 IAP_FTO_TRIUMVIRATE : @"Triumvirate assistance is now available for 5/3/1.",
-                IAP_FTO_SST : @"Simplest Strength Template assistance is now available for 5/3/1."
+                IAP_FTO_SST : @"Simplest Strength Template assistance is now available for 5/3/1.",
+                IAP_SPONSORSHIP: @"Thanks so much! Your support keeps this app alive and growing."
         };
     }
 
