@@ -12,4 +12,8 @@
     [[FTOBoringButBigAssistance new] setup];
 }
 
+- (IBAction)toggleThreeMonthChallenge:(id)sender {
+    UISwitch *toggle = sender;
+}
+
 @end

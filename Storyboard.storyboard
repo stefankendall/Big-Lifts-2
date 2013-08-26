@@ -1519,12 +1519,34 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="biQ-4J-1yR">
-                                        <rect key="frame" x="0.0" y="108" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="99" id="biQ-4J-1yR">
+                                        <rect key="frame" x="0.0" y="108" width="320" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="biQ-4J-1yR" id="rhA-kD-2Qr">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bID-8M-0m0">
+                                                    <rect key="frame" x="251" y="6" width="51" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="toggleThreeMonthChallenge:" destination="HmK-PX-N45" eventType="valueChanged" id="7Oe-PK-KVJ"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3-month challenge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lP-aA-Qsi">
+                                                    <rect key="frame" x="20" y="11" width="144" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The lift percentage will go up each cycle: 50%, 60%, 70%" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="282" translatesAutoresizingMaskIntoConstraints="NO" id="qyQ-Wo-9Zj">
+                                                    <rect key="frame" x="18" y="34" width="282" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -3311,15 +3333,37 @@
     </scenes>
     <resources>
         <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="101-gameplan.png" width="32" height="32"/>
         <image name="101-gameplan.png" width="32" height="32"/>
         <image name="157-wrench.png" width="32" height="24"/>
+        <image name="157-wrench.png" width="32" height="24"/>
+        <image name="16-line-chart.png" width="32" height="24"/>
         <image name="16-line-chart.png" width="32" height="24"/>
         <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="20-gear-2.png" width="32" height="28"/>
         <image name="20-gear-2.png" width="32" height="28"/>
         <image name="213-reply.png" width="32" height="17"/>
+        <image name="213-reply.png" width="32" height="17"/>
+        <image name="29-heart.png" width="32" height="21"/>
         <image name="29-heart.png" width="32" height="21"/>
         <image name="89-dumbells.png" width="32" height="10"/>
+        <image name="89-dumbells.png" width="32" height="10"/>
         <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="facebook.png" width="32" height="32"/>
     </resources>
