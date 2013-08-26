@@ -31,6 +31,7 @@
 		545900BD8EDB9F0011D938D7 /* 95-equalizer.png in Resources */ = {isa = PBXBuildFile; fileRef = 545906E6B8E782E67F624D1F /* 95-equalizer.png */; };
 		545900D19AB2CAB42AC0BAFD /* 20-gear-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 545900095AB2AF5A89E39D44 /* 20-gear-2.png */; };
 		545900E76DDC5EEE323D7A0D /* Bar.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A9CE43FE88A968AC9C7 /* Bar.m */; };
+		545900EBD2321F5EE930205C /* SJNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FFEF3553772FB79A3BB /* SJNavController.m */; };
 		5459010865A93F9D8845E9D5 /* FTOWorkoutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590F244D270A202FEEA6FF /* FTOWorkoutCell.xib */; };
 		54590141BE0189B11261FAD0 /* 95-equalizer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590146A452D3D4216C9FB9 /* 95-equalizer@2x.png */; };
 		54590144C1B5837A710E1719 /* Lift.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459047A3433031C755FA6F0 /* Lift.m */; };
@@ -96,6 +97,7 @@
 		5459045603F5EA7AB6C93BD6 /* NSDictionaryMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590494F141B78460DB4086 /* NSDictionaryMutator.m */; };
 		5459045E748A54D8B551EBB7 /* LiftFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545906F530DF8514F5885C60 /* LiftFormCell.xib */; };
 		5459047B0169D8F78DD7E870 /* CurrentProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904D1548DE6664FE453CB /* CurrentProgram.m */; };
+		545904AEBC86620123598C9D /* SJEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CD1DDDD16B9FFD8BBD9 /* SJEditViewController.m */; };
 		545904B8129B4463475997FC /* BLStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E722B6DBA6CE8F2F632 /* BLStoreTests.m */; };
 		545904C8AD044BE0AE3BE297 /* 101-gameplan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590509DA076CF405056145 /* 101-gameplan@2x.png */; };
 		545904DB5BE827102C049DA6 /* FTOLiftWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BED16BEBD4B51E52AD7 /* FTOLiftWorkoutViewController.m */; };
@@ -370,6 +372,7 @@
 		54590146A452D3D4216C9FB9 /* 95-equalizer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "95-equalizer@2x.png"; sourceTree = "<group>"; };
 		5459014893A2978E375E2EEE /* FTOTrackToolbarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOTrackToolbarCell.xib; sourceTree = "<group>"; };
 		5459014BD58A350501E2C0E0 /* FTOLiftWorkoutToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftWorkoutToolbar.h; sourceTree = "<group>"; };
+		5459014D9CF377B87E618515 /* SJNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNavController.h; sourceTree = "<group>"; };
 		54590155A3CB2CDBFC9FEEAD /* FTOWorkoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutCell.h; sourceTree = "<group>"; };
 		54590160279041FE2B448ACB /* SSLiftSummaryCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftSummaryCellTests.m; sourceTree = "<group>"; };
 		5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLAppDelegate.m; sourceTree = "<group>"; };
@@ -469,6 +472,7 @@
 		5459040F479643433C2416D9 /* RowUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowUIButton.h; sourceTree = "<group>"; };
 		54590412D3B6171940B0E960 /* BLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLAppDelegate.h; sourceTree = "<group>"; };
 		5459041D615320784E14BE0C /* BLStoreManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLStoreManagerTests.m; sourceTree = "<group>"; };
+		5459042041044B48CF57AD62 /* SJEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJEditViewController.h; sourceTree = "<group>"; };
 		54590426011C12606BE512C4 /* 19-circle-check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-circle-check@2x.png"; sourceTree = "<group>"; };
 		5459042D14A403E22A57E787 /* FTOWorkoutCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutCellTests.m; sourceTree = "<group>"; };
 		54590439B6DBCDFB82F1DADC /* TextViewInputAccessoryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewInputAccessoryBuilder.m; sourceTree = "<group>"; };
@@ -728,6 +732,7 @@
 		54590CA332CE6FA216724598 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		54590CA5CAE836C71F69E43B /* SetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetData.h; sourceTree = "<group>"; };
 		54590CC3FE703B3884C52DD6 /* FTOCycleAdjustorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCycleAdjustorTests.h; sourceTree = "<group>"; };
+		54590CD1DDDD16B9FFD8BBD9 /* SJEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJEditViewController.m; sourceTree = "<group>"; };
 		54590CD8B751652B856B078F /* FTOStandardPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOStandardPlan.m; sourceTree = "<group>"; };
 		54590CD975E0619B049A4AA0 /* SSLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftViewControllerTests.h; sourceTree = "<group>"; };
 		54590CDC0CA1FF8574E448C0 /* AddPlateViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlateViewControllerTests.h; sourceTree = "<group>"; };
@@ -834,6 +839,7 @@
 		54590FF2DC351876DE99A6C6 /* SSIndividualWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSIndividualWorkoutViewController.m; sourceTree = "<group>"; };
 		54590FF64452BD750B5D0A87 /* FTOPyramidPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOPyramidPlan.m; sourceTree = "<group>"; };
 		54590FF8E43786FDCC2C2CA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		54590FFEF3553772FB79A3BB /* SJNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNavController.m; sourceTree = "<group>"; };
 		B188DC3574B54B28BFA105B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94407F2C5DB44E5BC25736E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -1252,6 +1258,15 @@
 			path = FTO;
 			sourceTree = "<group>";
 		};
+		5459049041925052BA223873 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				54590CD1DDDD16B9FFD8BBD9 /* SJEditViewController.m */,
+				5459042041044B48CF57AD62 /* SJEditViewController.h */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
 		5459053D5D84B997612A2A94 /* Big Lifts 2Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1356,6 +1371,16 @@
 				545908E0F8BEE3D4C1842F1B /* Plan */,
 			);
 			path = StartingStrength;
+			sourceTree = "<group>";
+		};
+		5459061EA1CB19C30F96C924 /* SmolovJr */ = {
+			isa = PBXGroup;
+			children = (
+				54590FFEF3553772FB79A3BB /* SJNavController.m */,
+				5459014D9CF377B87E618515 /* SJNavController.h */,
+				5459049041925052BA223873 /* Edit */,
+			);
+			path = SmolovJr;
 			sourceTree = "<group>";
 		};
 		5459062DD1BC0963682DEEDD /* BarLoading */ = {
@@ -2081,6 +2106,7 @@
 				5459021F92F2D8F12C2CACF7 /* DataLoadingViewController.h */,
 				54590A2FC1016FB709AA5DFC /* 531 */,
 				02069B9717A9E89100E19211 /* Images.xcassets */,
+				5459061EA1CB19C30F96C924 /* SmolovJr */,
 			);
 			path = "Big Lifts 2";
 			sourceTree = "<group>";
@@ -2563,6 +2589,8 @@
 				54590C37B1137766B05BE830 /* FTOBoringButBigViewController.m in Sources */,
 				545901AD8AE5581B9DA157F0 /* FTOBoringButBig.m in Sources */,
 				54590847D2066351EBCFE95A /* FTOBoringButBigStore.m in Sources */,
+				545900EBD2321F5EE930205C /* SJNavController.m in Sources */,
+				545904AEBC86620123598C9D /* SJEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

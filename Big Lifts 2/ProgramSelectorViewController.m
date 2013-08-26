@@ -20,7 +20,8 @@
 - (NSDictionary *)segueToProgramNames {
     return @{
             @"ssSegue" : @"Starting Strength",
-            @"531segue" : @"5/3/1"
+            @"531segue" : @"5/3/1",
+            @"smolovJrSegue" : @"Smolov Jr"
     };
 }
 

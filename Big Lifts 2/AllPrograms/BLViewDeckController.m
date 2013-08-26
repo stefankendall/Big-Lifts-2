@@ -15,6 +15,10 @@
             @"Starting Strength" : @{
                     @"nav" : @"ssNavViewController",
                     @"main" : @"ssLiftViewController"
+            },
+            @"Smolov Jr" : @{
+                    @"nav" : @"sjNavViewController",
+                    @"main": @"sjLiftNav"
             }
     };
 
@@ -35,7 +39,8 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     NSDictionary *firstTimeControllers = @{
             @"5/3/1" : @"ftoEditNavController",
-            @"Starting Strength" : @"ssEditViewController"
+            @"Starting Strength" : @"ssEditViewController",
+            @"Smolov Jr" : @"sjEditNav"
     };
 
     NSString *program = [[[CurrentProgramStore instance] first] name];
