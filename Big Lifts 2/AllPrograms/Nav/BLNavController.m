@@ -33,6 +33,7 @@
     NSMutableDictionary *tagViewMapping = [[self specificTagMapping] mutableCopy];
     tagViewMapping[@2] = @"barLoadingNav";
     tagViewMapping[@4] =  @"settingsViewController";
+    tagViewMapping[@9] =  @"likeNav";
 
     if ([cell tag] == 6) {
         [[self.viewDeckController navigationController] popViewControllerAnimated:YES];
