@@ -20,6 +20,16 @@
 }
 
 - (void)cycleChange {
+    FTOBoringButBig *bbb = [[FTOBoringButBigStore instance] first];
+    if ([bbb threeMonthChallenge]) {
+        NSArray *percentages = @[N(50), N(60), N(70)];
+        int index = [percentages indexOfObject:bbb.percentage];
+        if (index != NSNotFound) {
+            [bbb setPercentage:percentages[(NSUInteger) ((index + 1) % percentages.count)]];
+        }
+    }
+
+    [self setup];
 }
 
 - (void)removeAmrapFromWorkouts {

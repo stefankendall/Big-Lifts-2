@@ -2,8 +2,15 @@
 #import "FTOBoringButBigStore.h"
 #import "SetData.h"
 #import "FTOBoringButBigAssistance.h"
+#import "FTOBoringButBig.h"
 
 @implementation FTOBoringButBigViewController
+
+- (void)viewDidLoad {
+    FTOBoringButBig *bbb = [[FTOBoringButBigStore instance] first];
+    [self.percentageField setText:[bbb.percentage stringValue]];
+    [self.threeMonthToggle setOn:bbb.threeMonthChallenge];
+}
 
 - (IBAction)percentageChanged:(id)sender {
     UITextField *percentageField = sender;
@@ -14,6 +21,7 @@
 
 - (IBAction)toggleThreeMonthChallenge:(id)sender {
     UISwitch *toggle = sender;
+    [[[FTOBoringButBigStore instance] first] setThreeMonthChallenge:[toggle isOn]];
 }
 
 @end
