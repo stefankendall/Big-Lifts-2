@@ -1298,14 +1298,11 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boring But Big" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xG-lx-aEd">
                                                     <rect key="frame" x="20" y="9" width="200" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="KMg-mV-md8"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="5 sets 10 reps @50% of main lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gd-Gg-HS7">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="5 sets 10 reps @50% of main lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gd-Gg-HS7">
                                                     <rect key="frame" x="20" y="33" width="260" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1314,12 +1311,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0xG-lx-aEd" firstAttribute="leading" secondItem="HxD-ko-8Tb" secondAttribute="leading" constant="20" symbolic="YES" id="AoH-Rw-dUs"/>
-                                                <constraint firstItem="0xG-lx-aEd" firstAttribute="top" secondItem="HxD-ko-8Tb" secondAttribute="top" constant="9" id="EKf-Jo-7Vb"/>
-                                                <constraint firstAttribute="bottom" secondItem="9Gd-Gg-HS7" secondAttribute="bottom" constant="10" id="JRa-Xa-3oV"/>
-                                                <constraint firstItem="9Gd-Gg-HS7" firstAttribute="top" secondItem="0xG-lx-aEd" secondAttribute="bottom" constant="3" id="PC1-Md-Rbw"/>
-                                                <constraint firstAttribute="trailing" secondItem="9Gd-Gg-HS7" secondAttribute="trailing" constant="40" id="aKF-dG-gy4"/>
-                                                <constraint firstItem="9Gd-Gg-HS7" firstAttribute="leading" secondItem="0xG-lx-aEd" secondAttribute="leading" id="lpU-hc-vZf"/>
+                                                <constraint firstAttribute="bottom" secondItem="9Gd-Gg-HS7" secondAttribute="bottom" constant="10" id="91c-f1-o0s"/>
+                                                <constraint firstItem="0xG-lx-aEd" firstAttribute="leading" secondItem="9Gd-Gg-HS7" secondAttribute="leading" id="INU-eA-ix3"/>
+                                                <constraint firstItem="0xG-lx-aEd" firstAttribute="leading" secondItem="HxD-ko-8Tb" secondAttribute="leading" constant="20" symbolic="YES" id="SPy-n4-HyR"/>
+                                                <constraint firstItem="0xG-lx-aEd" firstAttribute="top" secondItem="HxD-ko-8Tb" secondAttribute="top" constant="9" id="Ut2-cB-P75"/>
+                                                <constraint firstAttribute="trailing" secondItem="0xG-lx-aEd" secondAttribute="trailing" constant="67" id="rhg-hm-yqT"/>
+                                                <constraint firstItem="9Gd-Gg-HS7" firstAttribute="top" secondItem="0xG-lx-aEd" secondAttribute="bottom" constant="3" id="sLh-Xe-gvE"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Gd-Gg-HS7" secondAttribute="trailing" constant="7" id="sTU-yL-JaN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -2144,11 +2142,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Reps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFm-kF-Sdr">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFm-kF-Sdr">
                                                     <rect key="frame" x="20" y="11" width="75" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="7WG-59-d23"/>
+                                                        <constraint firstAttribute="width" constant="75" id="slu-Q1-pvq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2161,16 +2159,15 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fJ8-Zc-qbV" firstAttribute="leading" secondItem="gFm-kF-Sdr" secondAttribute="trailing" constant="29" id="1fa-RG-GkX"/>
+                                                <constraint firstAttribute="bottom" secondItem="fJ8-Zc-qbV" secondAttribute="bottom" constant="6" id="ItR-zP-FNL"/>
+                                                <constraint firstItem="fJ8-Zc-qbV" firstAttribute="top" secondItem="yha-OK-wiD" secondAttribute="top" constant="7" id="Omq-Lh-qFP"/>
+                                                <constraint firstItem="gFm-kF-Sdr" firstAttribute="leading" secondItem="yha-OK-wiD" secondAttribute="leading" constant="20" symbolic="YES" id="RoD-eX-vx8"/>
+                                                <constraint firstItem="gFm-kF-Sdr" firstAttribute="centerY" secondItem="yha-OK-wiD" secondAttribute="centerY" id="jiz-lE-bfn"/>
+                                                <constraint firstAttribute="trailing" secondItem="fJ8-Zc-qbV" secondAttribute="trailing" constant="20" symbolic="YES" id="pa8-bG-Fwo"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="gFm-kF-Sdr" firstAttribute="top" secondItem="zfW-wD-sqV" secondAttribute="top" constant="11" id="3hM-PJ-Hhe"/>
-                                            <constraint firstAttribute="trailing" secondItem="fJ8-Zc-qbV" secondAttribute="trailing" constant="20" id="5e8-W0-Cm6"/>
-                                            <constraint firstItem="fJ8-Zc-qbV" firstAttribute="baseline" secondItem="gFm-kF-Sdr" secondAttribute="baseline" id="Crw-HS-Jv7"/>
-                                            <constraint firstItem="gFm-kF-Sdr" firstAttribute="leading" secondItem="zfW-wD-sqV" secondAttribute="leading" constant="20" id="GEn-Z3-s8l"/>
-                                            <constraint firstItem="fJ8-Zc-qbV" firstAttribute="leading" secondItem="gFm-kF-Sdr" secondAttribute="trailing" constant="29" id="GtD-Ah-QZs"/>
-                                            <constraint firstItem="fJ8-Zc-qbV" firstAttribute="centerY" secondItem="zfW-wD-sqV" secondAttribute="centerY" id="ckq-iC-uSm"/>
-                                            <constraint firstItem="fJ8-Zc-qbV" firstAttribute="top" secondItem="zfW-wD-sqV" secondAttribute="top" constant="7" id="cuJ-Cv-TLG"/>
-                                        </constraints>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -3337,15 +3334,37 @@
     </scenes>
     <resources>
         <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="101-gameplan.png" width="32" height="32"/>
         <image name="101-gameplan.png" width="32" height="32"/>
         <image name="157-wrench.png" width="32" height="24"/>
+        <image name="157-wrench.png" width="32" height="24"/>
+        <image name="16-line-chart.png" width="32" height="24"/>
         <image name="16-line-chart.png" width="32" height="24"/>
         <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="20-gear-2.png" width="32" height="28"/>
         <image name="20-gear-2.png" width="32" height="28"/>
         <image name="213-reply.png" width="32" height="17"/>
+        <image name="213-reply.png" width="32" height="17"/>
+        <image name="29-heart.png" width="32" height="21"/>
         <image name="29-heart.png" width="32" height="21"/>
         <image name="89-dumbells.png" width="32" height="10"/>
+        <image name="89-dumbells.png" width="32" height="10"/>
         <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="facebook.png" width="32" height="32"/>
     </resources>
