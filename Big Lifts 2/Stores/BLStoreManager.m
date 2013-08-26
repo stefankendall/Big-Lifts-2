@@ -20,7 +20,7 @@
 #import "FTOTriumvirateLiftStore.h"
 #import "FTOTriumvirateStore.h"
 #import "FTOSSTLiftStore.h"
-#import "FTOBBBPercentageStore.h"
+#import "FTOBoringButBigStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
@@ -50,7 +50,7 @@
             [SSVariantStore instance],
             [SSWorkoutStore instance],
             [FTOVariantStore instance],
-            [FTOBBBPercentageStore instance],
+            [FTOBoringButBigStore instance],
             [FTOAssistanceStore instance],
             [FTOLiftStore instance],
             [FTOSSTLiftStore instance],

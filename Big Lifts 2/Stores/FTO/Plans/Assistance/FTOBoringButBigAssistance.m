@@ -7,8 +7,8 @@
 #import "Lift.h"
 #import "FTOSetStore.h"
 #import "FTOSet.h"
-#import "FTOBBBPercentage.h"
-#import "FTOBBBPercentageStore.h"
+#import "FTOBoringButBig.h"
+#import "FTOBoringButBigStore.h"
 #import "SetData.h"
 
 @implementation FTOBoringButBigAssistance
@@ -40,7 +40,7 @@
 
 - (NSArray *)createBoringSets:(int)numberOfSets forLift:(Lift *)lift {
     NSMutableArray *sets = [@[] mutableCopy];
-    NSDecimalNumber *percentage = [[[FTOBBBPercentageStore instance] first] percentage];
+    NSDecimalNumber *percentage = [[[FTOBoringButBigStore instance] first] percentage];
     for (int set = 0; set < numberOfSets; set++) {
         FTOSet *ftoSet = [[FTOSetStore instance] create];
         ftoSet.lift = lift;

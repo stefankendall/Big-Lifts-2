@@ -9,9 +9,8 @@
     <entity name="FTOAssistance" representedClassName="FTOAssistance" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="FTOBoringButBig" representedClassName="FTOBoringButBig" syncable="YES">
+    <entity name="FTOBBBPercentage" syncable="YES">
         <attribute name="percentage" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="threeMonthChallenge" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="FTOLift" representedClassName="FTOLift" parentEntity="Lift" syncable="YES"/>
     <entity name="FTOSet" representedClassName="FTOSet" parentEntity="Set" syncable="YES"/>
@@ -113,6 +112,6 @@
         <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FTOBoringButBig" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOBBBPercentage" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

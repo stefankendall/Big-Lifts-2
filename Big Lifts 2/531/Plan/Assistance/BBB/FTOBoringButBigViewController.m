@@ -1,5 +1,5 @@
 #import "FTOBoringButBigViewController.h"
-#import "FTOBBBPercentageStore.h"
+#import "FTOBoringButBigStore.h"
 #import "SetData.h"
 #import "FTOBoringButBigAssistance.h"
 
@@ -8,7 +8,7 @@
 - (IBAction)percentageChanged:(id)sender {
     UITextField *percentageField = sender;
     NSDecimalNumber *percentage = [NSDecimalNumber decimalNumberWithString:[percentageField text]];
-    [[[FTOBBBPercentageStore instance] first] setPercentage:percentage];
+    [[[FTOBoringButBigStore instance] first] setPercentage:percentage];
     [[FTOBoringButBigAssistance new] setup];
 }
 
