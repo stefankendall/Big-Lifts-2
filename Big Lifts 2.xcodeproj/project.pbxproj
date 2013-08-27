@@ -155,6 +155,7 @@
 		54590701C87D93D53E563613 /* WorkoutLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905EFF41CE437107EF576 /* WorkoutLog.m */; };
 		545907363F1022F8DD3DEBAB /* FTOAddLiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909DC3F80282A04B44F91 /* FTOAddLiftViewController.m */; };
 		545907399A24C2822A28E651 /* SSNavTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590404B60CF77514E341E5 /* SSNavTableViewController.m */; };
+		545907447A5975A58B00A56F /* SJWorkoutSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590AD308D74EB22A0FBDD6 /* SJWorkoutSummaryCell.xib */; };
 		5459074E628BFF05398E92B4 /* BarLoadingViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459091400F3CD93B3CD3F17 /* BarLoadingViewControllerTests.m */; };
 		54590753A3795C34431C83BD /* FTOWorkoutLogDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459037621A797BB0DB88F4A /* FTOWorkoutLogDataSourceTests.m */; };
 		545907638E55EC01779EA1E0 /* AddPlateViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590927CEE3296B9E67DF45 /* AddPlateViewControllerTests.m */; };
@@ -172,6 +173,7 @@
 		54590855382601F3ED51FC03 /* SetStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F7952D40E528AEAB279 /* SetStore.m */; };
 		5459086A9275AD5BBC9B7272 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590FF8E43786FDCC2C2CA4 /* Foundation.framework */; };
 		54590874722A900F1D5B37E3 /* SSEditViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A2090BE2CB988B38C72 /* SSEditViewControllerTests.m */; };
+		54590876666CDE1AECAD7E33 /* SJWorkoutSummaryCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459093636BBE4ADD4B20D5C /* SJWorkoutSummaryCellTests.m */; };
 		54590878844DE656B05DA715 /* FTOBoringButBigViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590301036FEFA85A948D09 /* FTOBoringButBigViewControllerTests.m */; };
 		5459087AF5995F43049586B5 /* SSIndividualWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FF2DC351876DE99A6C6 /* SSIndividualWorkoutViewController.m */; };
 		5459087C38536ADBD64D7F0A /* LikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459019F24717020993A988D /* LikeViewController.m */; };
@@ -248,6 +250,7 @@
 		54590C845093C2061AE3D722 /* FTOWorkoutSetsGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459029C2830012CC87DC5B4 /* FTOWorkoutSetsGeneratorTests.m */; };
 		54590C8AA3ABC9758005DD6F /* FTOCycleAdjustorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C4A4001DD4DC7B4825D /* FTOCycleAdjustorTests.m */; };
 		54590CA1AC165B55DE0B720B /* FTOEditViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903FF9FE198ADA91F749A /* FTOEditViewControllerTests.m */; };
+		54590CA5E2371AC0EED83A5D /* SJWorkoutSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FB0B5C5B94AC5A3309F /* SJWorkoutSummaryCell.m */; };
 		54590CA8FB58F95DD7AB1EC9 /* FTOSixWeekPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FCD71A12200DF4C5D37 /* FTOSixWeekPlan.m */; };
 		54590CB219C91DFB9DA263D7 /* 213-reply.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590EC196BC63BE61A1F180 /* 213-reply.png */; };
 		54590CC0EF9D5EBA27305790 /* FTOSettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A41675402375C795F3C /* FTOSettingsStore.m */; };
@@ -633,6 +636,7 @@
 		5459092FFE2633540A1AF2AC /* OneRepEstimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneRepEstimator.m; sourceTree = "<group>"; };
 		5459093375C7AA2AC134E9FD /* SSLiftStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftStore.m; sourceTree = "<group>"; };
 		545909344AEA6A82F1DB578A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5459093636BBE4ADD4B20D5C /* SJWorkoutSummaryCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJWorkoutSummaryCellTests.m; sourceTree = "<group>"; };
 		54590940EF6C60A87272084B /* Bar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bar.h; sourceTree = "<group>"; };
 		54590946B5EBF08CC35CB9DE /* FTORepsToBeatBreakdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTORepsToBeatBreakdown.h; sourceTree = "<group>"; };
 		5459094860FD40BF2AC39701 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -677,6 +681,7 @@
 		54590A246ED0F76535710297 /* BLViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLViewDeckController.m; sourceTree = "<group>"; };
 		54590A2AACEF19DC8B1C6BE4 /* AddPlateTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlateTextFieldDelegate.h; sourceTree = "<group>"; };
 		54590A35D1367F68985D66BF /* BarCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCalculator.h; sourceTree = "<group>"; };
+		54590A3959ACCA2F786432C0 /* SJWorkoutSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJWorkoutSummaryCell.h; sourceTree = "<group>"; };
 		54590A3A08FD6676DC5055AD /* SKProductFake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductFake.h; sourceTree = "<group>"; };
 		54590A3F41CA62283F2FC9E1 /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench@2x.png"; sourceTree = "<group>"; };
 		54590A41675402375C795F3C /* FTOSettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSettingsStore.m; sourceTree = "<group>"; };
@@ -691,9 +696,11 @@
 		54590A97034B9487111C3D57 /* FTOSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSettings.h; sourceTree = "<group>"; };
 		54590A9BCBEE999725C40F30 /* SSWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkout.m; sourceTree = "<group>"; };
 		54590A9CE43FE88A968AC9C7 /* Bar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bar.m; sourceTree = "<group>"; };
+		54590AD308D74EB22A0FBDD6 /* SJWorkoutSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SJWorkoutSummaryCell.xib; sourceTree = "<group>"; };
 		54590ADCA111CB4F1040C11C /* SettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsStore.m; sourceTree = "<group>"; };
 		54590AE59441D49A7917F4BF /* SenTestCase+ControllerTestAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SenTestCase+ControllerTestAdditions.h"; sourceTree = "<group>"; };
 		54590AEAFEE35F872904FDA4 /* SJLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLiftStore.h; sourceTree = "<group>"; };
+		54590AEF08B05903494AC10B /* SJWorkoutSummaryCellTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJWorkoutSummaryCellTests.h; sourceTree = "<group>"; };
 		54590AF5E1C747D9D3652293 /* SSLiftSummaryDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftSummaryDataSourceTests.m; sourceTree = "<group>"; };
 		54590B0AA85778382700C526 /* SJWorkoutStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJWorkoutStore.m; sourceTree = "<group>"; };
 		54590B0CA52599058C8E2340 /* SetLogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetLogCell.xib; sourceTree = "<group>"; };
@@ -842,6 +849,7 @@
 		54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		54590F9EB5B3526720E60922 /* 09-chat-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-chat-2@2x.png"; sourceTree = "<group>"; };
 		54590FA06F0B0073AB524C55 /* FTOTriumvirateLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTriumvirateLift.h; sourceTree = "<group>"; };
+		54590FB0B5C5B94AC5A3309F /* SJWorkoutSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJWorkoutSummaryCell.m; sourceTree = "<group>"; };
 		54590FB2EEB9AA83D84FAA17 /* FTOEditLiftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOEditLiftCell.h; sourceTree = "<group>"; };
 		54590FB49ADA78A483FBFBD3 /* SSIndividualWorkoutDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIndividualWorkoutDataSourceTests.h; sourceTree = "<group>"; };
 		54590FB7664105B2ECDCBC48 /* RowTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowTextField.m; sourceTree = "<group>"; };
@@ -1141,6 +1149,15 @@
 			path = StartingStrength;
 			sourceTree = "<group>";
 		};
+		5459034D85E8313729477147 /* Lift */ = {
+			isa = PBXGroup;
+			children = (
+				5459093636BBE4ADD4B20D5C /* SJWorkoutSummaryCellTests.m */,
+				54590AEF08B05903494AC10B /* SJWorkoutSummaryCellTests.h */,
+			);
+			path = Lift;
+			sourceTree = "<group>";
+		};
 		5459036D4DAF3BD6EE1C20C3 /* Containers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1307,6 +1324,7 @@
 				545900A08C2C00EB4457CF7E /* BLTestCase.m */,
 				545907E41F6E1ABED1F6CEBE /* BLTestCase.h */,
 				5459093B0993D69D24458732 /* 531 */,
+				54590F51B8AAF637925E8A1D /* SmolovJr */,
 			);
 			path = "Big Lifts 2Tests";
 			sourceTree = "<group>";
@@ -1756,6 +1774,9 @@
 			children = (
 				5459038B3A5563D5185EFBD2 /* SJLiftViewController.m */,
 				54590EE56FEC1518C5206A86 /* SJLiftViewController.h */,
+				54590FB0B5C5B94AC5A3309F /* SJWorkoutSummaryCell.m */,
+				54590A3959ACCA2F786432C0 /* SJWorkoutSummaryCell.h */,
+				54590AD308D74EB22A0FBDD6 /* SJWorkoutSummaryCell.xib */,
 			);
 			path = Lift;
 			sourceTree = "<group>";
@@ -2202,6 +2223,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		54590F51B8AAF637925E8A1D /* SmolovJr */ = {
+			isa = PBXGroup;
+			children = (
+				5459034D85E8313729477147 /* Lift */,
+			);
+			path = SmolovJr;
+			sourceTree = "<group>";
+		};
 		54590F7AA5CC1C2AFE24D99B /* BBB */ = {
 			isa = PBXGroup;
 			children = (
@@ -2370,6 +2399,7 @@
 				545904EB7B2F80F5784484EC /* graph.html in Resources */,
 				545903C0EE4A153724CFF5AA /* FTOSSTEditLiftCell.xib in Resources */,
 				54590572302B63950FE889C5 /* FTOTriumvirateCell.xib in Resources */,
+				545907447A5975A58B00A56F /* SJWorkoutSummaryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2496,6 +2526,7 @@
 				5459025A1629EEE289A7EE25 /* FTOBoringButBigAssistanceTests.m in Sources */,
 				54590878844DE656B05DA715 /* FTOBoringButBigViewControllerTests.m in Sources */,
 				545904FC33D2E7DFFA42DA0C /* SJWorkoutStoreTests.m in Sources */,
+				54590876666CDE1AECAD7E33 /* SJWorkoutSummaryCellTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2661,6 +2692,7 @@
 				54590FC7C341ACDE25F89F8A /* SJLiftViewController.m in Sources */,
 				545902ACFE28335F24DAEDC4 /* SJWorkout.m in Sources */,
 				545906ABF0C34C164E0F7035 /* SJWorkoutStore.m in Sources */,
+				54590CA5E2371AC0EED83A5D /* SJWorkoutSummaryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
