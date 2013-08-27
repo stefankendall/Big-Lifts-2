@@ -189,6 +189,7 @@
 		54590903AA44C3B7F8133855 /* SSLift.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459078ECFFA12F224688B56 /* SSLift.m */; };
 		5459091CB0068729BE25B779 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590D530BEAE717BB80843E /* CoreData.framework */; };
 		54590929E753F460537668EA /* WeightRounder.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903FE6588DF2DDD91B832 /* WeightRounder.m */; };
+		5459092B5D68C6020453A0A6 /* SJLiftViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459002515A242B6C9771BF8 /* SJLiftViewControllerTests.m */; };
 		5459093250EBC222EAB89203 /* TextFieldWithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CA19668BB712D631143 /* TextFieldWithCell.m */; };
 		54590938523CBE923C9E67D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */; };
 		5459096DAEF1ED3C018EFAB7 /* FTOTriumvirateAssistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C7F633F12351C88DB0C /* FTOTriumvirateAssistance.m */; };
@@ -345,6 +346,7 @@
 		5459001158CAB4374CA0EE15 /* FTOSetStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSetStoreTests.h; sourceTree = "<group>"; };
 		54590013A92D2E981EB34652 /* WeightTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightTableCell.m; sourceTree = "<group>"; };
 		5459001F4B3273EA7B3EF05E /* LiftFormCellHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiftFormCellHelper.h; sourceTree = "<group>"; };
+		5459002515A242B6C9771BF8 /* SJLiftViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLiftViewControllerTests.m; sourceTree = "<group>"; };
 		5459003C379CCAE327FC9DBB /* SSStateStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSStateStore.m; sourceTree = "<group>"; };
 		5459003E94ED2161C6E26856 /* WorkoutLogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutLogCell.m; sourceTree = "<group>"; };
 		54590041423DDAB30222FB3F /* FTONextCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTONextCycleViewController.m; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		5459027074A2DDC79BABD98B /* UIViewController+PurchaseOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+PurchaseOverlay.h"; sourceTree = "<group>"; };
 		5459027F9D3D82B2D4F9A852 /* FTOJokerPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOJokerPlan.h; sourceTree = "<group>"; };
 		5459028C29E02BF52647AFE4 /* FTOSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSet.m; sourceTree = "<group>"; };
+		54590298338549E7EBA3D922 /* SJLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLiftViewControllerTests.h; sourceTree = "<group>"; };
 		5459029C2830012CC87DC5B4 /* FTOWorkoutSetsGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutSetsGeneratorTests.m; sourceTree = "<group>"; };
 		5459029E6253CF82B110C733 /* testdata.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = testdata.js; sourceTree = "<group>"; };
 		545902AD570E2EF6142F5183 /* BarStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarStore.h; sourceTree = "<group>"; };
@@ -1154,6 +1157,8 @@
 			children = (
 				5459093636BBE4ADD4B20D5C /* SJWorkoutSummaryCellTests.m */,
 				54590AEF08B05903494AC10B /* SJWorkoutSummaryCellTests.h */,
+				5459002515A242B6C9771BF8 /* SJLiftViewControllerTests.m */,
+				54590298338549E7EBA3D922 /* SJLiftViewControllerTests.h */,
 			);
 			path = Lift;
 			sourceTree = "<group>";
@@ -2527,6 +2532,7 @@
 				54590878844DE656B05DA715 /* FTOBoringButBigViewControllerTests.m in Sources */,
 				545904FC33D2E7DFFA42DA0C /* SJWorkoutStoreTests.m in Sources */,
 				54590876666CDE1AECAD7E33 /* SJWorkoutSummaryCellTests.m in Sources */,
+				5459092B5D68C6020453A0A6 /* SJLiftViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
