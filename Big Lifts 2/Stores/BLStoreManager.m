@@ -22,6 +22,7 @@
 #import "FTOSSTLiftStore.h"
 #import "FTOBoringButBigStore.h"
 #import "SJLiftStore.h"
+#import "SJWorkoutStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
@@ -61,7 +62,8 @@
             [PlateStore instance],
             [SetLogStore instance],
             [WorkoutLogStore instance],
-            [SJLiftStore instance]
+            [SJLiftStore instance],
+            [SJWorkoutStore instance]
     ];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:)
