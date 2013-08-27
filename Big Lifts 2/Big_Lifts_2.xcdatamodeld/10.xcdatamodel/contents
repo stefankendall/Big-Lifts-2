@@ -69,14 +69,6 @@
         <attribute name="units" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="SJLift" representedClassName="SJLift" parentEntity="Lift" syncable="YES"/>
-    <entity name="SJWorkout" representedClassName="SJWorkout" syncable="YES">
-        <attribute name="done" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="maxWeightAdd" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="minWeightAdd" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="week" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" syncable="YES"/>
-    </entity>
     <entity name="SSLift" representedClassName="SSLift" parentEntity="Lift" syncable="YES"/>
     <entity name="SSState" representedClassName="SSState" syncable="YES">
         <attribute name="workoutAAlternation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -124,6 +116,5 @@
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
         <element name="SJLift" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="SJWorkout" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

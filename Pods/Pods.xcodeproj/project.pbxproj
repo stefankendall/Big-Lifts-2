@@ -311,6 +311,7 @@
 /* Begin PBXFileReference section */
 		00131B21B43046F483068F79 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		029A66E8491D481D9C5F0EB0 /* FBSystemAccountStoreAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSystemAccountStoreAdapter.h; path = "Facebook-iOS-SDK/src/FBSystemAccountStoreAdapter.h"; sourceTree = SOURCE_ROOT; };
+		02A2B68F17CCF19A003C2298 /* 10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 10.xcdatamodel; path = "../Big Lifts 2/Big_Lifts_2.xcdatamodeld/10.xcdatamodel"; sourceTree = "<group>"; };
 		037DDF43494D4624B119CA7B /* FBURLConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBURLConnection.m; path = "Facebook-iOS-SDK/src/FBURLConnection.m"; sourceTree = SOURCE_ROOT; };
 		0489D3222F44416C82BE468D /* FBLoginViewButtonPressedPNG.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBLoginViewButtonPressedPNG.m; path = "Facebook-iOS-SDK/src/FBLoginViewButtonPressedPNG.m"; sourceTree = SOURCE_ROOT; };
 		04CB9E3256FE45028AA27538 /* Facebook.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Facebook.m; path = "Facebook-iOS-SDK/src/Facebook.m"; sourceTree = SOURCE_ROOT; };
@@ -561,7 +562,7 @@
 		F6098CE8655F439CB7F2B5E3 /* FBGraphLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBGraphLocation.h; path = "Facebook-iOS-SDK/src/FBGraphLocation.h"; sourceTree = SOURCE_ROOT; };
 		F83F2B4ADBDE40A79945F3E9 /* Pods-CTCustomTableViewCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CTCustomTableViewCell.xcconfig"; sourceTree = SOURCE_ROOT; };
 		F8A31D05034147968763B752 /* FBRequestConnectionRetryManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBRequestConnectionRetryManager.h; path = "Facebook-iOS-SDK/src/FBRequestConnectionRetryManager.h"; sourceTree = SOURCE_ROOT; };
-		F9EA6AF5462D43BAA4D5CE05 /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; includeInIndex = 1; name = WebViewJavascriptBridge.js.txt; path = WebViewJavascriptBridge/WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt; sourceTree = SOURCE_ROOT; };
+		F9EA6AF5462D43BAA4D5CE05 /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WebViewJavascriptBridge.js.txt; path = WebViewJavascriptBridge/WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt; sourceTree = SOURCE_ROOT; };
 		FA570006274740E4973150AD /* FBBase64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBBase64.h; path = "Facebook-iOS-SDK/src/Base64/FBBase64.h"; sourceTree = SOURCE_ROOT; };
 		FB460D5E73294BC5982E10D8 /* Pods-MRCEnumerable-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRCEnumerable-prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FD016447A2E9491AA0FAEB64 /* NSArray+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Utilities.h"; path = "MRCEnumerable/NSArray+Utilities.h"; sourceTree = SOURCE_ROOT; };
@@ -1124,6 +1125,7 @@
 		DE69BB5B4D92454CA6D9C2B5 = {
 			isa = PBXGroup;
 			children = (
+				02A2B68F17CCF19A003C2298 /* 10.xcdatamodel */,
 				54BAC0ED9C6948728524975F /* Frameworks */,
 				B469CD7CC548428BB2BD95B6 /* Pods */,
 				9BD5AB210C224A33A1CF7BE3 /* Products */,
@@ -1576,8 +1578,6 @@
 			mainGroup = DE69BB5B4D92454CA6D9C2B5;
 			productRefGroup = 9BD5AB210C224A33A1CF7BE3 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				A7C448E8DDD841D9A04550F7 /* Pods-CTCustomTableViewCell */,
