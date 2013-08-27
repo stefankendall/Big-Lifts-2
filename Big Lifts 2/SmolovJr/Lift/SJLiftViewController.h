@@ -1,0 +1,2 @@
+@interface SJLiftViewController : UITableViewController
+@end

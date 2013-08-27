@@ -68,7 +68,6 @@
         <attribute name="roundTo" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="units" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="SJLift" representedClassName="SJLift" parentEntity="Lift" syncable="YES"/>
     <entity name="SSLift" representedClassName="SSLift" parentEntity="Lift" syncable="YES"/>
     <entity name="SSState" representedClassName="SSState" syncable="YES">
         <attribute name="workoutAAlternation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -95,7 +94,6 @@
         <element name="Bar" positionX="0" positionY="0" width="0" height="0"/>
         <element name="CurrentProgram" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOAssistance" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FTOBoringButBig" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOLift" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOSet" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOSettings" positionX="0" positionY="0" width="0" height="0"/>
@@ -115,6 +113,6 @@
         <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="SJLift" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOBoringButBig" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
