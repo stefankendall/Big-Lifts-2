@@ -1,0 +1,2 @@
+@interface SJIndividualLiftViewController : UITableViewController
+@end

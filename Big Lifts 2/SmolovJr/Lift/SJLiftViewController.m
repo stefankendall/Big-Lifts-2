@@ -29,5 +29,8 @@
     return [NSString stringWithFormat:@"Week %d", section + 1];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"sjLiftSegue" sender:self];
+}
 
 @end

@@ -3921,13 +3921,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xK8-UE-OVZ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xK8-UE-OVZ">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xK8-UE-OVZ" id="MeP-p0-iCd">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="19b-uw-LYj" kind="push" identifier="sjLiftSegue" id="lpd-e8-1QZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -3944,6 +3947,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYP-dk-tms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3196" y="2983"/>
+        </scene>
+        <!--Table View Controller - Workout-->
+        <scene sceneID="P4z-EN-E4R">
+            <objects>
+                <tableViewController id="19b-uw-LYj" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5dP-m6-C2W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zzB-eT-RC7">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zzB-eT-RC7" id="gAW-dc-MW1">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="19b-uw-LYj" id="IZv-dR-AR0"/>
+                            <outlet property="delegate" destination="19b-uw-LYj" id="1O2-Fd-yuj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Workout" id="SDl-rS-FuC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQ5-3c-kDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3592" y="2983"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aie-NF-dGf">
@@ -3978,56 +4010,15 @@
     </scenes>
     <resources>
         <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="101-gameplan.png" width="32" height="32"/>
-        <image name="101-gameplan.png" width="32" height="32"/>
         <image name="101-gameplan.png" width="32" height="32"/>
         <image name="157-wrench.png" width="32" height="24"/>
-        <image name="157-wrench.png" width="32" height="24"/>
-        <image name="157-wrench.png" width="32" height="24"/>
-        <image name="157-wrench.png" width="32" height="24"/>
-        <image name="16-line-chart.png" width="32" height="24"/>
-        <image name="16-line-chart.png" width="32" height="24"/>
-        <image name="16-line-chart.png" width="32" height="24"/>
         <image name="16-line-chart.png" width="32" height="24"/>
         <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="20-gear-2.png" width="32" height="28"/>
-        <image name="20-gear-2.png" width="32" height="28"/>
-        <image name="20-gear-2.png" width="32" height="28"/>
         <image name="20-gear-2.png" width="32" height="28"/>
         <image name="213-reply.png" width="32" height="17"/>
-        <image name="213-reply.png" width="32" height="17"/>
-        <image name="213-reply.png" width="32" height="17"/>
-        <image name="213-reply.png" width="32" height="17"/>
-        <image name="29-heart.png" width="32" height="21"/>
-        <image name="29-heart.png" width="32" height="21"/>
-        <image name="29-heart.png" width="32" height="21"/>
         <image name="29-heart.png" width="32" height="21"/>
         <image name="89-dumbells.png" width="32" height="10"/>
-        <image name="89-dumbells.png" width="32" height="10"/>
-        <image name="89-dumbells.png" width="32" height="10"/>
-        <image name="89-dumbells.png" width="32" height="10"/>
         <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="facebook.png" width="32" height="32"/>
     </resources>

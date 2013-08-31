@@ -5,6 +5,10 @@
 
 @implementation SJWorkoutSummaryCell
 
+- (void)awakeFromNib {
+    [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+}
+
 - (void)setWorkout:(SJWorkout *)sjWorkout {
     [self.setsLabel setText:[NSString stringWithFormat:@"%d sets", [sjWorkout.workout.sets count]]];
     Set *set = [sjWorkout.workout.sets firstObject];
