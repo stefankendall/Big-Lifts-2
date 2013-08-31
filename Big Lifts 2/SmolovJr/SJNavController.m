@@ -6,8 +6,7 @@
     return @{
             @0 : @"sjLiftNav",
             @1 : @"sjEditNav",
-            @3 : @"ftoTrackNavController",
-            @7 : @"ftoPlanNav"
+            @3 : @"sjTrackNav"
     };
 }
 

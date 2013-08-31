@@ -3872,6 +3872,46 @@
             </objects>
             <point key="canvasLocation" x="2417" y="2983"/>
         </scene>
+        <!--Track View Controller - Root View Controller-->
+        <scene sceneID="A8e-eN-fKC">
+            <objects>
+                <tableViewController storyboardIdentifier="sjTrack" id="fKc-NP-ewc" customClass="SJTrackViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="N3r-Gv-hj9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TsB-sU-Ep8">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TsB-sU-Ep8" id="gGF-Om-TMR">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="LJ5-Ql-tiA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cp-Gq-IqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2434" y="3665"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n6l-Z7-Bz1">
+            <objects>
+                <navigationController storyboardIdentifier="sjTrackNav" definesPresentationContext="YES" id="Ku5-W0-Ljw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cd7-OO-gU0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fKc-NP-ewc" kind="relationship" relationship="rootViewController" id="6oi-CL-ugZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKg-Wd-NdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2054" y="3665"/>
+        </scene>
         <!--Lift View Controller - Lift-->
         <scene sceneID="fyT-Qc-FoP">
             <objects>
