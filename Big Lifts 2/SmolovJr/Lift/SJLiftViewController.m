@@ -1,6 +1,12 @@
 #import "SJLiftViewController.h"
 #import "SJWorkoutStore.h"
 #import "SJWorkoutSummaryCell.h"
+#import "SJIndividualLiftViewController.h"
+
+@interface SJLiftViewController()
+
+@property(nonatomic, strong) SJWorkout *tappedWorkout;
+@end
 
 @implementation SJLiftViewController
 
@@ -20,7 +26,8 @@
     }
 
     NSArray *workoutsInWeek = [[SJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
-    [cell setWorkout:workoutsInWeek[(NSUInteger) [indexPath row]]];
+    SJWorkout *tappedWorkout = workoutsInWeek[(NSUInteger) [indexPath row]];
+    [cell setWorkout:tappedWorkout];
 
     return cell;
 }
@@ -31,6 +38,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"sjLiftSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SJIndividualLiftViewController *controller = [segue destinationViewController];
+    controller.sjWorkout = self.tappedWorkout;
+    [super prepareForSegue:segue sender:sender];
 }
 
 @end
