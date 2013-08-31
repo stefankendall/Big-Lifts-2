@@ -15,6 +15,7 @@
         cell = [SJSetCell create];
     }
 
+    [cell setSjWorkout:self.sjWorkout withSet:self.sjWorkout.workout.sets[(NSUInteger) [indexPath row]]];
     return cell;
 }
 

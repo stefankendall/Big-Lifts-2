@@ -26,8 +26,8 @@
     }
 
     NSArray *workoutsInWeek = [[SJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
-    SJWorkout *tappedWorkout = workoutsInWeek[(NSUInteger) [indexPath row]];
-    [cell setWorkout:tappedWorkout];
+    self.tappedWorkout = workoutsInWeek[(NSUInteger) [indexPath row]];
+    [cell setWorkout:self.tappedWorkout];
 
     return cell;
 }
