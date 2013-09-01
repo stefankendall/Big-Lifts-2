@@ -26,9 +26,7 @@
     }
 
     NSArray *workoutsInWeek = [[SJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
-    self.tappedWorkout = workoutsInWeek[(NSUInteger) [indexPath row]];
-    [cell setWorkout:self.tappedWorkout];
-
+    [cell setWorkout:workoutsInWeek[(NSUInteger) [indexPath row]]];
     return cell;
 }
 
@@ -37,6 +35,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *workoutsInWeek = [[SJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
+    self.tappedWorkout = workoutsInWeek[(NSUInteger) [indexPath row]];
     [self performSegueWithIdentifier:@"sjLiftSegue" sender:self];
 }
 

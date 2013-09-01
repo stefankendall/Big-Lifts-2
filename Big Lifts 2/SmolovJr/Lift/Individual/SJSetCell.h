@@ -9,5 +9,5 @@
 @property(weak, nonatomic) IBOutlet UILabel *weightRangeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *repsLabel;
 
-- (void)setSjWorkout:(SJWorkout *)sjWorkout withSet:(Set *)set;
+- (void)setSjWorkout:(SJWorkout *)sjWorkout withSet:(Set *)set withEnteredWeight:(NSDecimalNumber *)weight;
 @end

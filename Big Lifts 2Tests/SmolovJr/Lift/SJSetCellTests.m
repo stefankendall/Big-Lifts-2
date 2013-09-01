@@ -16,12 +16,20 @@
     SJSetCell *cell = [SJSetCell create];
     SJWorkout *sjWorkout = [[SJWorkoutStore instance] findAllWhere:@"week" value:@2][0];
     Set *set = [sjWorkout.workout sets][0];
-    [cell setSjWorkout:sjWorkout withSet:set];
+    [cell setSjWorkout:sjWorkout withSet:set withEnteredWeight:nil];
 
     STAssertEqualObjects([cell.liftLabel text], @"Power Clean", @"");
     STAssertEqualObjects([cell.repsLabel text], @"6x", @"");
     STAssertEqualObjects([cell.percentageLabel text], @"70%", @"");
     STAssertEqualObjects([cell.weightRangeLabel text], @"150-160 lbs", @"");
+}
+
+- (void) testSetsEnteredWeightIfAvailable {
+    SJSetCell *cell = [SJSetCell create];
+    SJWorkout *sjWorkout = [[SJWorkoutStore instance] findAllWhere:@"week" value:@2][0];
+    Set *set = [sjWorkout.workout sets][0];
+    [cell setSjWorkout:sjWorkout withSet:set withEnteredWeight: N(150)];
+    STAssertEqualObjects([cell.weightRangeLabel text], @"150 lbs", @"");
 }
 
 @end
