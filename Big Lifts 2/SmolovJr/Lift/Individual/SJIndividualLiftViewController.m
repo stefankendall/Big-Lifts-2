@@ -10,6 +10,7 @@
 #import "SetLogStore.h"
 #import "SetLog.h"
 #import "WeightRounder.h"
+#import "IIViewDeckController.h"
 
 @interface SJIndividualLiftViewController ()
 @property(nonatomic, strong) NSDecimalNumber *liftedWeight;
@@ -19,6 +20,8 @@
 
 - (IBAction)doneButtonTapped:(id)sender {
     [self logWorkout];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"sjTrackNav"]];
 }
 
 - (void)logWorkout {

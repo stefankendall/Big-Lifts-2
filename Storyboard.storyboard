@@ -3872,7 +3872,7 @@
             </objects>
             <point key="canvasLocation" x="2417" y="2983"/>
         </scene>
-        <!--Track View Controller - Root View Controller-->
+        <!--Track View Controller - Track-->
         <scene sceneID="A8e-eN-fKC">
             <objects>
                 <tableViewController storyboardIdentifier="sjTrack" id="fKc-NP-ewc" customClass="SJTrackViewController" sceneMemberID="viewController">
@@ -3891,7 +3891,15 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="LJ5-Ql-tiA"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Track" id="LJ5-Ql-tiA">
+                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="gYa-T0-dmf">
+                            <connections>
+                                <action selector="revealSidebar:" destination="fKc-NP-ewc" id="av1-aF-aqU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cp-Gq-IqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4070,56 +4078,15 @@
     </scenes>
     <resources>
         <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="101-gameplan.png" width="32" height="32"/>
-        <image name="101-gameplan.png" width="32" height="32"/>
         <image name="101-gameplan.png" width="32" height="32"/>
         <image name="157-wrench.png" width="32" height="24"/>
-        <image name="157-wrench.png" width="32" height="24"/>
-        <image name="157-wrench.png" width="32" height="24"/>
-        <image name="157-wrench.png" width="32" height="24"/>
-        <image name="16-line-chart.png" width="32" height="24"/>
-        <image name="16-line-chart.png" width="32" height="24"/>
-        <image name="16-line-chart.png" width="32" height="24"/>
         <image name="16-line-chart.png" width="32" height="24"/>
         <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="20-gear-2.png" width="32" height="28"/>
-        <image name="20-gear-2.png" width="32" height="28"/>
-        <image name="20-gear-2.png" width="32" height="28"/>
         <image name="20-gear-2.png" width="32" height="28"/>
         <image name="213-reply.png" width="32" height="17"/>
-        <image name="213-reply.png" width="32" height="17"/>
-        <image name="213-reply.png" width="32" height="17"/>
-        <image name="213-reply.png" width="32" height="17"/>
-        <image name="29-heart.png" width="32" height="21"/>
-        <image name="29-heart.png" width="32" height="21"/>
-        <image name="29-heart.png" width="32" height="21"/>
         <image name="29-heart.png" width="32" height="21"/>
         <image name="89-dumbells.png" width="32" height="10"/>
-        <image name="89-dumbells.png" width="32" height="10"/>
-        <image name="89-dumbells.png" width="32" height="10"/>
-        <image name="89-dumbells.png" width="32" height="10"/>
         <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="facebook.png" width="32" height="32"/>
     </resources>
