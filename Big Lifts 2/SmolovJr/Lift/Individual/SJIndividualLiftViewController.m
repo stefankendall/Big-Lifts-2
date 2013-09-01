@@ -1,15 +1,35 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "SJIndividualLiftViewController.h"
 #import "SJWorkout.h"
 #import "Workout.h"
 #import "SJSetCell.h"
 #import "SJSetWeightViewController.h"
 #import "Set.h"
+#import "WorkoutLog.h"
+#import "WorkoutLogStore.h"
+#import "SetLogStore.h"
+#import "SetLog.h"
+#import "WeightRounder.h"
 
 @interface SJIndividualLiftViewController ()
 @property(nonatomic, strong) NSDecimalNumber *liftedWeight;
 @end
 
 @implementation SJIndividualLiftViewController
+
+- (IBAction)doneButtonTapped:(id)sender {
+    [self logWorkout];
+}
+
+- (void)logWorkout {
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    workoutLog.name = @"Smolov Jr";
+    [[self.sjWorkout.workout.sets array] each:^(Set *set) {
+        SetLog *setLog = [[SetLogStore instance] createFromSet:set];
+        setLog.weight = [self minimumOrLiftedWeight];
+        [workoutLog.sets addObject:setLog];
+    }];
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
@@ -36,15 +56,19 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SJSetWeightViewController *controller = [segue destinationViewController];
     controller.delegate = self;
-    if (!self.liftedWeight) {
-        NSDecimalNumber *effectiveWeight = [self.sjWorkout.workout.sets[0] effectiveWeight];
-        controller.weight = [effectiveWeight decimalNumberByAdding:self.sjWorkout.minWeightAdd];
-    }
-    else {
-        controller.weight = self.liftedWeight;
-    }
+    controller.weight = [self minimumOrLiftedWeight];
 
     [super prepareForSegue:segue sender:sender];
+}
+
+- (NSDecimalNumber *)minimumOrLiftedWeight {
+    if (!self.liftedWeight) {
+        NSDecimalNumber *effectiveWeight = [self.sjWorkout.workout.sets[0] effectiveWeight];
+        return [[WeightRounder new] round:[effectiveWeight decimalNumberByAdding:self.sjWorkout.minWeightAdd]];
+    }
+    else {
+        return self.liftedWeight;
+    }
 }
 
 - (void)weightChanged:(NSDecimalNumber *)weight {
