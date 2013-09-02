@@ -21,6 +21,13 @@
     else {
         [self.addWeightRangeLabel setText:@""];
     }
+
+    if (sjWorkout.done) {
+        [self setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
+    else {
+        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    }
 }
 
 @end

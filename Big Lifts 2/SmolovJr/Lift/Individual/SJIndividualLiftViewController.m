@@ -11,6 +11,7 @@
 #import "SetLog.h"
 #import "WeightRounder.h"
 #import "IIViewDeckController.h"
+#import "SJWorkoutStore.h"
 
 @interface SJIndividualLiftViewController ()
 @property(nonatomic, strong) NSDecimalNumber *liftedWeight;
@@ -20,13 +21,27 @@
 
 - (IBAction)doneButtonTapped:(id)sender {
     [self logWorkout];
+    self.sjWorkout.done = YES;
+    [self checkForCompletion];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"sjTrackNav"]];
+}
+
+- (void)checkForCompletion {
+    BOOL workoutsRemaining = [[[SJWorkoutStore instance] findAll] detect:^BOOL(SJWorkout *sjWorkout) {
+        return !sjWorkout.done;
+    }] != nil;
+    if (!workoutsRemaining) {
+        [[[SJWorkoutStore instance] findAll] each:^(SJWorkout *sjWorkout) {
+            sjWorkout.done = NO;
+        }];
+    }
 }
 
 - (void)logWorkout {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     workoutLog.name = @"Smolov Jr";
+    workoutLog.date = [NSDate new];
     [[self.sjWorkout.workout.sets array] each:^(Set *set) {
         SetLog *setLog = [[SetLogStore instance] createFromSet:set];
         setLog.weight = [self minimumOrLiftedWeight];
