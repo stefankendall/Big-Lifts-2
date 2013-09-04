@@ -11,7 +11,6 @@
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "FTOWorkoutCell.h"
-#import "NSArray+Utilities.h"
 #import "FTOVariantStore.h"
 #import "FTOVariant.h"
 
@@ -89,8 +88,22 @@
 - (void)testChoosesHeaviestAmrapSetForRepsToBeat {
     [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    Set *heaviestAmrapSet = [self.controller heaviestAmrapSet: self.ftoWorkout.workout.sets];
+    Set *heaviestAmrapSet = [self.controller heaviestAmrapSet:self.ftoWorkout.workout.sets];
     STAssertEquals([self.ftoWorkout.workout.sets indexOfObject:heaviestAmrapSet], 5U, @"");
+}
+
+- (void)testDeterminesIfMissedReps {
+    self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    [self.controller setWorkout:self.ftoWorkout];
+    [self.controller setVariableReps:[@{@5: @4} mutableCopy]];
+    STAssertTrue([self.controller missedAmrapReps], @"");
+}
+
+- (void)testDeterminesIfMissedRepsNoFailure {
+    self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    [self.controller setWorkout:self.ftoWorkout];
+    [self.controller setVariableReps:[@{@5: @5} mutableCopy]];
+    STAssertFalse([self.controller missedAmrapReps], @"");
 }
 
 @end

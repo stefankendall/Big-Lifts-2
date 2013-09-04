@@ -11,10 +11,14 @@
 
 @property(nonatomic) NSNumber * tappedSetRow;
 
+@property(nonatomic) NSMutableDictionary *variableReps;
+
 - (Set *)heaviestAmrapSet:(NSMutableOrderedSet *)sets;
 
 - (IBAction)doneButtonTapped:(id)sender;
 
 - (void) setWorkout: (FTOWorkout *) ftoWorkout1;
+
+- (BOOL) missedAmrapReps;
 
 @end

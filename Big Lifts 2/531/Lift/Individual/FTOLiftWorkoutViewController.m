@@ -15,11 +15,6 @@
 #import "SetLog.h"
 #import "FTOCycleAdjustor.h"
 
-@interface FTOLiftWorkoutViewController ()
-
-@property(nonatomic) NSMutableDictionary *variableReps;
-@end
-
 @implementation FTOLiftWorkoutViewController
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -118,6 +113,13 @@
 - (IBAction)doneButtonTapped:(id)sender {
     [self logWorkout];
     [self.ftoWorkout setDone:YES];
+    if ([self missedAmrapReps]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missed Reps"
+                                                            message:@"It looks like you missed a set! Maybe drop your training max for next cycle?"
+                                                           delegate:nil cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
     [[FTOCycleAdjustor new] checkForCycleChange];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
@@ -126,6 +128,18 @@
 - (void)setWorkout:(FTOWorkout *)ftoWorkout1 {
     self.ftoWorkout = ftoWorkout1;
     self.variableReps = [@{} mutableCopy];
+}
+
+- (BOOL)missedAmrapReps {
+    NSMutableOrderedSet *sets = self.ftoWorkout.workout.sets;
+    for (int i = 0; i < [sets count]; i++) {
+        Set *set = sets[(NSUInteger) i];
+        NSNumber *loggedReps = self.variableReps[[NSNumber numberWithInt:i]];
+        if (loggedReps && [loggedReps compare:set.reps] == NSOrderedAscending) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)logWorkout {
