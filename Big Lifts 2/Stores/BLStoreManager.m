@@ -132,12 +132,4 @@
     return manager;
 }
 
-- (void)saveChanges {
-    NSError *err = nil;
-    BOOL successful = [self.context save:&err];
-    if (!successful) {
-        NSLog(@"Error saving: %@", [err localizedDescription]);
-    }
-}
-
 @end
