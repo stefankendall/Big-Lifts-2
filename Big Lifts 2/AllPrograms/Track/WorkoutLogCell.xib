@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -9,16 +9,16 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="WorkoutLogCell" id="2" customClass="WorkoutLogCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2" id="sih-Fj-ce8">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3">
-                        <rect key="frame" x="0.0" y="0.0" width="260" height="43"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tableView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                         <rect key="frame" x="263" y="11" width="48" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
@@ -30,15 +30,16 @@
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            </view>
+                <constraints>
+                    <constraint firstItem="3" firstAttribute="leading" secondItem="sih-Fj-ce8" secondAttribute="leading" id="Smk-ue-F2g"/>
+                    <constraint firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="XXW-fr-xpP"/>
+                    <constraint firstItem="19" firstAttribute="leading" secondItem="3" secondAttribute="trailing" id="lER-Zc-MeY"/>
+                    <constraint firstItem="3" firstAttribute="top" secondItem="sih-Fj-ce8" secondAttribute="top" id="mgg-Ed-fea"/>
+                    <constraint firstItem="3" firstAttribute="centerY" secondItem="19" secondAttribute="centerY" id="pwM-72-cE1"/>
+                </constraints>
+            </tableViewCellContentView>
             <constraints>
-                <constraint firstItem="3" firstAttribute="top" secondItem="2" secondAttribute="top" id="6Np-To-PlD"/>
-                <constraint firstAttribute="bottom" secondItem="3" secondAttribute="bottom" constant="1" id="K2z-nH-Ikf"/>
-                <constraint firstItem="3" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="hOT-B7-gZa"/>
-                <constraint firstItem="3" firstAttribute="centerY" secondItem="19" secondAttribute="centerY" id="o2U-ye-YdN"/>
-                <constraint firstItem="19" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="3" id="pAJ-GD-8RR"/>
-                <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="9" id="s0U-Eg-uKP"/>
+                <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="9" id="6br-FA-iRq"/>
             </constraints>
             <connections>
                 <outlet property="dateLabel" destination="19" id="24"/>
@@ -46,19 +47,4 @@
             </connections>
         </tableViewCell>
     </objects>
-    <classes>
-        <class className="CTCustomTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCustomTableViewCell.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WorkoutLogCell" superclassName="CTCustomTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkoutLogCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="setTable" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
 </document>
