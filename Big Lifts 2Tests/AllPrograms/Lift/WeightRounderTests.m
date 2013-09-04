@@ -11,6 +11,7 @@
     STAssertEqualObjects([[WeightRounder new] round:N(168)], @170, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(167.5)], @170, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(167.3)], @165, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(85.4)], @85, @"");
 }
 
 - (void)testRoundsTo1 {
