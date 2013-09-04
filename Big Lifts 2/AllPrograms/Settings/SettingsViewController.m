@@ -3,6 +3,7 @@
 #import "Settings.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "BLStoreManager.h"
+#import "IAPAdapter.h"
 
 @interface SettingsViewController ()
 @property(nonatomic, strong) NSArray *roundingOptions;
@@ -59,13 +60,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    NSLog(@"Cell selected");
-    NSLog(@"%@", cell);
     if ([cell viewWithTag:1]) {
         [self resetAllData];
+    } else if ([cell viewWithTag:2]) {
+        [self restorePurchases];
     }
 }
 
+- (void)restorePurchases {
+    [[IAPAdapter instance] restorePurchasesWithCompletion:^{
+        UIAlertView *alertView = [[UIAlertView alloc]
+                initWithTitle:@""
+                      message:@"Purchases Restored!"
+                     delegate:nil
+            cancelButtonTitle:@"OK"
+            otherButtonTitles:nil];
+    }];
+}
 
 - (void)resetAllData {
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
