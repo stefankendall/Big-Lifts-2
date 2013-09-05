@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4457.6" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -9,16 +9,13 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SSLiftSummaryCell" id="2" customClass="SSLiftSummaryCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2" id="lyC-m5-DhU">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lift Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6">
                         <rect key="frame" x="20" y="11" width="135" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="117" id="30"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,6 +23,9 @@
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5x13" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13">
                         <rect key="frame" x="163" y="11" width="38" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="38" id="Kgx-uT-MHv"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,23 +34,23 @@
                         <rect key="frame" x="221" y="12" width="79" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="79" id="51"/>
+                            <constraint firstAttribute="width" constant="79" id="yg2-iw-JvF"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            </view>
-            <constraints>
-                <constraint firstItem="6" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" id="7"/>
-                <constraint firstItem="6" firstAttribute="top" secondItem="2" secondAttribute="top" constant="11" id="8"/>
-                <constraint firstItem="13" firstAttribute="baseline" secondItem="6" secondAttribute="baseline" id="17"/>
-                <constraint firstItem="21" firstAttribute="baseline" secondItem="13" secondAttribute="baseline" id="26"/>
-                <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" id="37"/>
-                <constraint firstAttribute="trailing" secondItem="13" secondAttribute="trailing" constant="119" id="54"/>
-            </constraints>
+                <constraints>
+                    <constraint firstItem="6" firstAttribute="baseline" secondItem="13" secondAttribute="baseline" id="98y-Um-J2w"/>
+                    <constraint firstItem="13" firstAttribute="centerY" secondItem="lyC-m5-DhU" secondAttribute="centerY" id="ZwD-5t-b0B"/>
+                    <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" id="hOd-8z-D9J"/>
+                    <constraint firstItem="21" firstAttribute="leading" secondItem="13" secondAttribute="trailing" constant="20" id="qXc-tY-GbU"/>
+                    <constraint firstItem="13" firstAttribute="leading" secondItem="6" secondAttribute="trailing" constant="8" symbolic="YES" id="v4Y-Ju-4Af"/>
+                    <constraint firstItem="6" firstAttribute="leading" secondItem="lyC-m5-DhU" secondAttribute="leading" constant="20" symbolic="YES" id="vjt-v6-9uS"/>
+                    <constraint firstItem="21" firstAttribute="top" secondItem="lyC-m5-DhU" secondAttribute="top" constant="12" id="vyS-an-Zbq"/>
+                </constraints>
+            </tableViewCellContentView>
             <connections>
                 <outlet property="liftLabel" destination="6" id="48"/>
                 <outlet property="setsAndRepsLabel" destination="13" id="46"/>
@@ -58,20 +58,4 @@
             </connections>
         </tableViewCell>
     </objects>
-    <classes>
-        <class className="CTCustomTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCustomTableViewCell.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SSLiftSummaryCell" superclassName="CTCustomTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSLiftSummaryCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="liftLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="setsAndRepsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weightLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
 </document>
