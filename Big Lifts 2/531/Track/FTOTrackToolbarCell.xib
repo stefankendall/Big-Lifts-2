@@ -24,14 +24,29 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="756-xb-kGg">
+                        <rect key="frame" x="20" y="0.0" width="111" height="44"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="111" id="IeT-v7-1Rf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <state key="normal" title="Delete">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="756-xb-kGg" firstAttribute="leading" secondItem="rlk-qU-jif" secondAttribute="leading" constant="20" symbolic="YES" id="Ugb-YM-wB5"/>
+                    <constraint firstAttribute="bottom" secondItem="756-xb-kGg" secondAttribute="bottom" constant="-1" id="Vl9-3i-ILa"/>
+                    <constraint firstItem="756-xb-kGg" firstAttribute="top" secondItem="rlk-qU-jif" secondAttribute="top" id="YF0-Mc-pod"/>
                     <constraint firstItem="8kf-W2-Dzj" firstAttribute="centerY" secondItem="rlk-qU-jif" secondAttribute="centerY" id="lur-I1-OHd"/>
                     <constraint firstAttribute="trailing" secondItem="8kf-W2-Dzj" secondAttribute="trailing" constant="20" symbolic="YES" id="wAA-8U-ydg"/>
                     <constraint firstAttribute="bottom" secondItem="8kf-W2-Dzj" secondAttribute="bottom" id="xVH-cT-7WV"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="deleteButton" destination="756-xb-kGg" id="3QX-iX-9iX"/>
                 <outlet property="viewButton" destination="8kf-W2-Dzj" id="E4V-Dn-vyJ"/>
             </connections>
         </tableViewCell>

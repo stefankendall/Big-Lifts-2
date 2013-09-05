@@ -3,5 +3,6 @@
 @interface FTOTrackToolbarCell : CTCustomTableViewCell
 {}
 @property (weak, nonatomic) IBOutlet UIButton *viewButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end

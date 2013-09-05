@@ -59,6 +59,13 @@
             cell = [FTOTrackToolbarCell create];
         }
         [cell.viewButton addTarget:self action:@selector(viewButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.deleteButton addTarget:self action:@selector(deleteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        if([self.tableView isEditing] ){
+            [cell.deleteButton setTitle:@"Done" forState:UIControlStateNormal];
+        }
+        else {
+            [cell.deleteButton setTitle:@"Delete" forState:UIControlStateNormal];
+        }
         self.viewButton = cell.viewButton;
         return cell;
     }
@@ -81,6 +88,24 @@
 
         return cell;
     }
+}
+
+- (void)deleteButtonTapped:(id)deleteButtonTapped {
+    FTOTrackToolbarCell *cell = (FTOTrackToolbarCell *) [self tableView:self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    if ([self.tableView isEditing]) {
+        [self.tableView setEditing:NO];
+    }
+    else {
+        [self.tableView setEditing:YES];
+    }
+    [self.tableView reloadData];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if([indexPath section] == 0){
+        return NO;
+    }
+    return YES;
 }
 
 - (void)viewButtonTapped:(id)sender {
