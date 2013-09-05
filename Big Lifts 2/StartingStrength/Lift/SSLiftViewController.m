@@ -1,43 +1,29 @@
 #import "SSLiftViewController.h"
-#import "SSLiftSummaryDataSource.h"
 #import "SSWorkoutStore.h"
 #import "SSWorkout.h"
 #import "SSIndividualWorkoutViewController.h"
 #import "SSState.h"
 #import "SSStateStore.h"
+#import "SSLiftSummaryCell.h"
+#import "SSLiftToolbarCell.h"
 
 @implementation SSLiftViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    self.ssLiftSummaryDataSource = [[SSLiftSummaryDataSource alloc] initWithSsWorkout:nil];
-    [self.workoutSummaryTable setDataSource:self.ssLiftSummaryDataSource];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
-    [self switchToAppropriateWorkout];
-    [self.workoutSummaryTable reloadData];
-}
-
-- (void)switchToAppropriateWorkout {
     SSState *state = [[SSStateStore instance] first];
-    BOOL aWorkout = [state.lastWorkout.name isEqualToString:@"A"];
-    [self.workoutSelector setSelectedSegmentIndex:aWorkout ? 1 : 0];
-    [self workoutValueChanged:self.workoutSelector];
+    if( state.lastWorkout ){
+        self.aWorkout = [state.lastWorkout.name isEqualToString:@"B"];
+    }
+    else {
+        self.aWorkout = YES;
+    }
+
+    [self switchWorkout];
 }
 
-- (IBAction)workoutValueChanged:(id)sender {
-    UISegmentedControl *workoutSelector = sender;
-    [self switchWorkoutToIndex:[workoutSelector selectedSegmentIndex]];
-}
-
-- (void)switchWorkoutToIndex:(int)index {
-    NSString *name = index == 0 ? @"A" : @"B";
-
-    self.ssWorkout = [[SSWorkoutStore instance] activeWorkoutFor: name];
-    [self.ssLiftSummaryDataSource setSsWorkout:self.ssWorkout];
-    [self.workoutSummaryTable reloadData];
+- (void)switchWorkout {
+    self.ssWorkout = [[SSWorkoutStore instance] activeWorkoutFor:self.aWorkout ? @"A" : @"B"];
+    [self.tableView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -46,5 +32,51 @@
         controller.ssWorkout = self.ssWorkout;
     }
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
+    else {
+        return [self.ssWorkout.workouts count];
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath section] == 0) {
+        SSLiftToolbarCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SSLiftToolbarCell.class)];
+        if (!cell) {
+            cell = [SSLiftToolbarCell create];
+        }
+        [cell.workoutSelector setSelectedSegmentIndex:self.aWorkout ? 0 : 1];
+        [cell.workoutSelector addTarget:self
+                             action:@selector(workoutChanged:)
+                   forControlEvents:UIControlEventValueChanged];
+        return cell;
+    }
+    else {
+        SSLiftSummaryCell *cell = (SSLiftSummaryCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SSLiftSummaryCell.class)];
+        if (!cell) {
+            cell = [SSLiftSummaryCell create];
+        }
+        [cell setWorkout:self.ssWorkout.workouts[(NSUInteger) [indexPath row]]];
+        return cell;
+    }
+}
+
+- (void)workoutChanged:(id)workoutControl {
+    UISegmentedControl *workoutSegment = workoutControl;
+    self.aWorkout = workoutSegment.selectedSegmentIndex == 0;
+    [self switchWorkout];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [self emptyView];
+}
+
 
 @end
