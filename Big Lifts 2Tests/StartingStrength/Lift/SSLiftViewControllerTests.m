@@ -1,6 +1,5 @@
 #import "SSLiftViewControllerTests.h"
 #import "SSLiftViewController.h"
-#import "SSLiftSummaryDataSource.h"
 #import "SSWorkoutStore.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSStateStore.h"
@@ -9,14 +8,28 @@
 #import "Workout.h"
 #import "Set.h"
 #import "Lift.h"
+#import "SSLiftSummaryCell.h"
 
 @implementation SSLiftViewControllerTests
 
+- (void)testReturnsCorrectNumberOfRows {
+    SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
+    STAssertEquals(3, [controller tableView:nil numberOfRowsInSection:0], @"");
+}
+
+- (void)testReturnsLiftSummaryCells {
+    SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
+    UITableViewCell *cell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertTrue([cell isKindOfClass:SSLiftSummaryCell.class], @"");
+}
+
+
 - (void)testSelectingANewWorkoutChangesDataSourceWorkout {
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
-    [controller switchWorkoutToIndex:1];
+    SSState *state = [[SSStateStore instance] first];
+    [state.lastWorkout setName:@"B"];
+    [controller switchWorkout];
     SSWorkout *workoutB = [[SSWorkoutStore instance] atIndex:1];
-    STAssertEquals(workoutB, [controller.ssLiftSummaryDataSource ssWorkout], @"");
     STAssertEquals(workoutB, controller.ssWorkout, @"");
 }
 
