@@ -7,10 +7,6 @@
 #import "SSLiftSummaryCell.h"
 #import "SSLiftToolbarCell.h"
 
-@interface SSLiftViewController ()
-@property(nonatomic) BOOL aWorkout;
-@end
-
 @implementation SSLiftViewController
 
 - (void)viewWillAppear:(BOOL)animated {

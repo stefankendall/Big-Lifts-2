@@ -14,23 +14,14 @@
 
 - (void)testReturnsCorrectNumberOfRows {
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
-    STAssertEquals(3, [controller tableView:nil numberOfRowsInSection:0], @"");
+    STAssertEquals(1, [controller tableView:nil numberOfRowsInSection:0], @"");
+    STAssertEquals(3, [controller tableView:nil numberOfRowsInSection:1], @"");
 }
 
 - (void)testReturnsLiftSummaryCells {
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
-    UITableViewCell *cell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    UITableViewCell *cell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     STAssertTrue([cell isKindOfClass:SSLiftSummaryCell.class], @"");
-}
-
-
-- (void)testSelectingANewWorkoutChangesDataSourceWorkout {
-    SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
-    SSState *state = [[SSStateStore instance] first];
-    [state.lastWorkout setName:@"B"];
-    [controller switchWorkout];
-    SSWorkout *workoutB = [[SSWorkoutStore instance] atIndex:1];
-    STAssertEquals(workoutB, controller.ssWorkout, @"");
 }
 
 - (void)testSetsAppropriateWorkoutBasedOnLastWorkout {
@@ -46,7 +37,8 @@
 - (void)testSwitchToWorkoutIndexHonorsAlternation {
     [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
-    [controller switchWorkoutToIndex:1];
+    controller.aWorkout = NO;
+    [controller switchWorkout];
     STAssertEqualObjects(controller.ssWorkout.name, @"B", @"");
 }
 
@@ -55,7 +47,8 @@
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
     SSState *state = [[SSStateStore instance] first];
     state.workoutAAlternation = @1;
-    [controller switchWorkoutToIndex:0];
+    controller.aWorkout = YES;
+    [controller switchWorkout];
     STAssertEqualObjects(controller.ssWorkout.name, @"A", @"");
     Workout *lastWorkout = controller.ssWorkout.workouts[2];
     Set *set = lastWorkout.sets[0];
