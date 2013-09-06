@@ -14,6 +14,8 @@
 @property(strong, nonatomic) UIWindow *window;
 @property(readonly, strong, nonatomic) UbiquityStoreManager *manager;
 
+@property(nonatomic) UIBackgroundTaskIdentifier backgroundUpdateTask;
+
 - (void)saveContext;
 
 @end
