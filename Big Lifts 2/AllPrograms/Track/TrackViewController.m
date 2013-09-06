@@ -4,6 +4,7 @@
 #import "SetLogCombiner.h"
 #import "WorkoutLogTableDataSource.h"
 #import "WorkoutLog.h"
+#import "TrackToolbarCell.h"
 
 @implementation TrackViewController
 
@@ -12,11 +13,17 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WorkoutLogCell *cell = (WorkoutLogCell *) [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    int rowCount = [self getRowCount:indexPath];
+    if ([indexPath section] == 0) {
+        UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+        return cell.bounds.size.height;
+    }
+    else {
+        WorkoutLogCell *cell = (WorkoutLogCell *) [self tableView:tableView cellForRowAtIndexPath:indexPath];
+        int rowCount = [self getRowCount:indexPath];
 
-    CGFloat subCellHeight = [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:indexPath];
-    return rowCount * subCellHeight;
+        CGFloat subCellHeight = [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:indexPath];
+        return rowCount * subCellHeight;
+    }
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
@@ -29,18 +36,31 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self getLog] count];
+    if (section == 0) {
+        return 1;
+    }
+    else {
+        return [[self getLog] count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WorkoutLogCell *cell = (WorkoutLogCell *) [tableView dequeueReusableCellWithIdentifier:@"WorkoutLogCell"];
-
-    if (cell == nil) {
-        cell = [WorkoutLogCell create];
-        [cell setWorkoutLog:[self getLog][(NSUInteger) [indexPath row]]];
+    if ([indexPath section] == 0) {
+        TrackToolbarCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(TrackToolbarCell.class)];
+        if (!cell) {
+            cell = [TrackToolbarCell create];
+        }
+        [self setupDeleteButton:cell.deleteButton];
+        return cell;
     }
-
-    return cell;
+    else {
+        WorkoutLogCell *cell = (WorkoutLogCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(WorkoutLogCell.class)];
+        if (!cell) {
+            cell = [WorkoutLogCell create];
+            [cell setWorkoutLog:[self getLog][(NSUInteger) [indexPath row]]];
+        }
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
@@ -73,6 +93,27 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     else {
         [deleteButton setTitle:@"Delete" forState:UIControlStateNormal];
     }
+}
+
+- (void)deleteButtonTapped:(id)deleteButtonTapped {
+    if ([self.tableView isEditing]) {
+        [self.tableView setEditing:NO];
+    }
+    else {
+        [self.tableView setEditing:YES];
+    }
+    [self.tableView reloadData];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath section] == 0) {
+        return NO;
+    }
+    return YES;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
 @end

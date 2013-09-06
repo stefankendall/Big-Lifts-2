@@ -20,25 +20,6 @@
     self.showAll = NO;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 1;
-    }
-    else {
-        return [[self getLog] count];
-    }
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
-        UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:indexPath];
-        return cell.bounds.size.height;
-    }
-    else {
-        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
-    }
-}
-
 - (NSArray *)getLog {
     return [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
 }
@@ -85,24 +66,6 @@
     }
 }
 
-- (void)deleteButtonTapped:(id)deleteButtonTapped {
-    FTOTrackToolbarCell *cell = (FTOTrackToolbarCell *) [self tableView:self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    if ([self.tableView isEditing]) {
-        [self.tableView setEditing:NO];
-    }
-    else {
-        [self.tableView setEditing:YES];
-    }
-    [self.tableView reloadData];
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
-        return NO;
-    }
-    return YES;
-}
-
 - (void)viewButtonTapped:(id)sender {
     self.showAll = !self.showAll;
     NSString *nextState = self.showAll ? @"Work Sets" : @"All";
@@ -120,10 +83,6 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
     return [super tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:[NSIndexPath indexPathForRow:[indexPath row] inSection:[indexPath section]]];
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
