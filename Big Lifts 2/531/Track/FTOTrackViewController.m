@@ -31,7 +31,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {
-        return 40;
+        UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+        return cell.bounds.size.height;
     }
     else {
         return [super tableView:tableView heightForRowAtIndexPath:indexPath];
@@ -59,13 +60,7 @@
             cell = [FTOTrackToolbarCell create];
         }
         [cell.viewButton addTarget:self action:@selector(viewButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.deleteButton addTarget:self action:@selector(deleteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-        if([self.tableView isEditing] ){
-            [cell.deleteButton setTitle:@"Done" forState:UIControlStateNormal];
-        }
-        else {
-            [cell.deleteButton setTitle:@"Delete" forState:UIControlStateNormal];
-        }
+        [self setupDeleteButton:cell.deleteButton];
         self.viewButton = cell.viewButton;
         return cell;
     }
@@ -102,7 +97,7 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if([indexPath section] == 0){
+    if ([indexPath section] == 0) {
         return NO;
     }
     return YES;

@@ -65,4 +65,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     return 0;
 }
 
+- (void)setupDeleteButton:(UIButton *)deleteButton {
+    [deleteButton addTarget:self action:@selector(deleteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    if ([self.tableView isEditing]) {
+        [deleteButton setTitle:@"Done" forState:UIControlStateNormal];
+    }
+    else {
+        [deleteButton setTitle:@"Delete" forState:UIControlStateNormal];
+    }
+}
+
 @end
