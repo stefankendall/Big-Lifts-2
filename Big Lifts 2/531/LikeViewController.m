@@ -29,7 +29,7 @@
 }
 
 - (void)shareOnFacebook {
-    NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/us/app/big-lifts-pro/id534996988?mt=8"];
+    NSURL *url = [NSURL URLWithString:@"https://itunes.apple.com/us/app/big-lifts-2/id661503150?mt=8"];
     [FBDialogs presentShareDialogWithLink:url
                                   handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
                                       if (error) {
