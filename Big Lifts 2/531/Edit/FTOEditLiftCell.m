@@ -11,6 +11,7 @@
 
 - (void)awakeFromNib {
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.max];
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.trainingMax];
 }
 
 - (void)setLift:(Lift *)lift {

@@ -7,6 +7,8 @@
 #import "TextFieldWithCell.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "TrainingMaxRowTextField.h"
+#import "FTOSettings.h"
+#import "FTOSettingsStore.h"
 
 @implementation FTOEditViewController
 
@@ -74,27 +76,32 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if([textField isKindOfClass:TrainingMaxRowTextField.class]){
+    RowTextField *rowTextField = (RowTextField *) textField;
+    NSIndexPath *indexPath = [rowTextField indexPath];
+    NSString *weightText = [textField text];
+    Lift *lift = [self liftAtIndex:[indexPath row]];
+    if ([weightText isEqualToString:@""]) {
+        weightText = @"0";
+    }
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText];
 
+    if ([indexPath section] == 1) {
+        [lift setIncrement:weight];
     }
     else {
-        RowTextField *rowTextField = (RowTextField *) textField;
-        NSIndexPath *indexPath = [rowTextField indexPath];
-
-        NSString *weightText = [textField text];
-        if ([weightText isEqualToString:@""]) {
-            weightText = @"0";
-        }
-
-        NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText];
-        Lift *lift = [self liftAtIndex:[indexPath row]];
-        if ([indexPath section] == 0) {
-            [lift setWeight:weight];
-            [self.tableView reloadData];
+        if ([textField isKindOfClass:TrainingMaxRowTextField.class]) {
+            NSDecimalNumber *trainingMax = [[[FTOSettingsStore instance] first] trainingMax];
+            NSDecimalNumber *max =
+                    [[N(100) decimalNumberByDividingBy:trainingMax] decimalNumberByMultiplyingBy:weight];
+            NSNumberFormatter *nf = [NSNumberFormatter new];
+            [nf setMaximumFractionDigits:1];
+            NSString *oneDecimalMax = [nf stringFromNumber:max];
+            [lift setWeight:[NSDecimalNumber decimalNumberWithString:oneDecimalMax]];
         }
         else {
-            [lift setIncrement:weight];
+            [lift setWeight:weight];
         }
+        [self.tableView reloadData];
     }
 }
 

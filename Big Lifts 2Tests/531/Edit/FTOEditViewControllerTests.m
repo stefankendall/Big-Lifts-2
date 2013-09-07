@@ -29,9 +29,20 @@
             (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [cell.max setText:@"200"];
     [self.controller textFieldDidEndEditing:cell.max];
-    FTOEditLiftCell *updatedCell =
+    FTOEditLiftCell *newCell =
             (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertEqualObjects([updatedCell.trainingMax text], @"180", @"");
+    STAssertEqualObjects([newCell.trainingMax text], @"180", @"");
+}
+
+- (void)testEditTrainingMaxUpdatesMax {
+    FTOEditLiftCell *cell =
+            (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [cell.trainingMax setText:@"105"];
+    [self.controller textFieldDidEndEditing:cell.trainingMax];
+    FTOEditLiftCell *newCell =
+            (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertEqualObjects([newCell.max text], @"116.7", @"");
+    STAssertEqualObjects([newCell.trainingMax text], @"105", @"");
 }
 
 - (void)testHasAllLifts {
