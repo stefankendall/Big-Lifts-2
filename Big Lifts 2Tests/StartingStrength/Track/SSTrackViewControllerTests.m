@@ -35,19 +35,19 @@
 
 - (void)testReturnsWorkoutLogCell {
     [self createWorkoutLog];
-    WorkoutLogCell *cell = (WorkoutLogCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    WorkoutLogCell *cell = (WorkoutLogCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     STAssertNotNil([cell setTable], @"");
 }
 
 - (void)testReturnsCorrectNumberOfRows {
     [self createWorkoutLog];
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], 1, @"");
 }
 
 - (void)testFiltersByLogName {
     WorkoutLog *log = [[WorkoutLogStore instance] create];
     log.name = @"5/3/1";
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 0, @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
 
 - (void)testDeletesWorkoutLogs {

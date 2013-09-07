@@ -6,6 +6,7 @@
 #import "LiftFormCell.h"
 #import "FTOEditLiftCell.h"
 #import "RowTextField.h"
+#import "TrainingMaxRowTextField.h"
 
 @interface FTOEditViewControllerTests ()
 
@@ -30,7 +31,7 @@
     [self.controller textFieldDidEndEditing:cell.max];
     FTOEditLiftCell *updatedCell =
             (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertEqualObjects([updatedCell.trainingWeight text], @"180", @"");
+    STAssertEqualObjects([updatedCell.trainingMax text], @"180", @"");
 }
 
 - (void)testHasAllLifts {

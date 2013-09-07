@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4471.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3697.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,34 +10,51 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3C2-7P-adM" id="GAr-jH-0xT">
-                <rect key="frame" x="0.0" y="0.0" width="322" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Power Clean" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XlF-br-zRn">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Power Clean" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XlF-br-zRn">
                         <rect key="frame" x="20" y="11" width="111" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="130" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5d-V8-LvN">
-                        <rect key="frame" x="264" y="11" width="36" height="21"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qS2-zX-TuI" customClass="RowTextField">
+                        <rect key="frame" x="139" y="7" width="74" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qS2-zX-TuI" customClass="RowTextField">
-                        <rect key="frame" x="139" y="7" width="117" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="74" id="WIZ-gb-qvf"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                     </textField>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lvA-1Y-Ihh" customClass="TrainingMaxRowTextField">
+                        <rect key="frame" x="221" y="8" width="79" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="79" id="QfO-IP-GRx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="lvA-1Y-Ihh" secondAttribute="trailing" constant="20" symbolic="YES" id="7U6-mn-aKT"/>
+                    <constraint firstItem="qS2-zX-TuI" firstAttribute="leading" secondItem="XlF-br-zRn" secondAttribute="trailing" constant="8" symbolic="YES" id="Dzb-02-nF5"/>
+                    <constraint firstItem="XlF-br-zRn" firstAttribute="centerY" secondItem="GAr-jH-0xT" secondAttribute="centerY" id="E1T-yc-st0"/>
+                    <constraint firstAttribute="bottom" secondItem="lvA-1Y-Ihh" secondAttribute="bottom" constant="5" id="Gwd-iM-ubr"/>
+                    <constraint firstAttribute="bottom" secondItem="qS2-zX-TuI" secondAttribute="bottom" constant="6" id="Is4-h9-blT"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="baseline" secondItem="XlF-br-zRn" secondAttribute="baseline" id="JhW-Bv-4E0"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="leading" secondItem="qS2-zX-TuI" secondAttribute="trailing" constant="8" symbolic="YES" id="OPJ-5T-9Vx"/>
+                    <constraint firstItem="XlF-br-zRn" firstAttribute="leading" secondItem="GAr-jH-0xT" secondAttribute="leading" constant="20" symbolic="YES" id="eUb-JO-L5V"/>
+                    <constraint firstItem="qS2-zX-TuI" firstAttribute="top" secondItem="GAr-jH-0xT" secondAttribute="top" constant="7" id="pnt-9z-w7c"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="liftName" destination="XlF-br-zRn" id="4pz-ub-6ce"/>
                 <outlet property="max" destination="qS2-zX-TuI" id="2RM-SS-2oE"/>
-                <outlet property="trainingWeight" destination="V5d-V8-LvN" id="nu6-bc-M3i"/>
+                <outlet property="trainingMax" destination="lvA-1Y-Ihh" id="MLy-IP-uln"/>
             </connections>
         </tableViewCell>
     </objects>

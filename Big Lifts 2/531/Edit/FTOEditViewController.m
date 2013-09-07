@@ -6,6 +6,7 @@
 #import "RowTextField.h"
 #import "TextFieldWithCell.h"
 #import "TextViewInputAccessoryBuilder.h"
+#import "TrainingMaxRowTextField.h"
 
 @implementation FTOEditViewController
 
@@ -41,7 +42,9 @@
 
         [cell setLift:lift];
         [[cell max] setIndexPath:indexPath];
+        [[cell trainingMax] setIndexPath:indexPath];
         [[cell max] setDelegate:self];
+        [[cell trainingMax] setDelegate:self];
         return cell;
     }
     else {
@@ -71,24 +74,27 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    RowTextField *rowTextField = (RowTextField *) textField;
-    NSIndexPath *indexPath = [rowTextField indexPath];
+    if([textField isKindOfClass:TrainingMaxRowTextField.class]){
 
-    NSString *weightText = [textField text];
-
-    if ([weightText isEqualToString:@""]) {
-        [self.tableView reloadData];
-        return;
-    }
-
-    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText];
-    Lift *lift = [self liftAtIndex:[indexPath row]];
-    if ([indexPath section] == 0) {
-        [lift setWeight:weight];
-        [self.tableView reloadData];
     }
     else {
-        [lift setIncrement:weight];
+        RowTextField *rowTextField = (RowTextField *) textField;
+        NSIndexPath *indexPath = [rowTextField indexPath];
+
+        NSString *weightText = [textField text];
+        if ([weightText isEqualToString:@""]) {
+            weightText = @"0";
+        }
+
+        NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText];
+        Lift *lift = [self liftAtIndex:[indexPath row]];
+        if ([indexPath section] == 0) {
+            [lift setWeight:weight];
+            [self.tableView reloadData];
+        }
+        else {
+            [lift setIncrement:weight];
+        }
     }
 }
 

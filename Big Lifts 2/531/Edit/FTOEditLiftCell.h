@@ -2,12 +2,14 @@
 #import "FTOLift.h"
 
 @class RowTextField;
+@class TrainingMaxRowTextField;
 
-@interface FTOEditLiftCell : CTCustomTableViewCell
-{}
-@property (weak, nonatomic) IBOutlet UILabel *liftName;
-@property (weak, nonatomic) IBOutlet UILabel *trainingWeight;
-@property (weak, nonatomic) IBOutlet RowTextField *max;
+@interface FTOEditLiftCell : CTCustomTableViewCell {
+}
+@property(weak, nonatomic) IBOutlet UILabel *liftName;
+
+@property(weak, nonatomic) IBOutlet RowTextField *max;
+@property(weak, nonatomic) IBOutlet TrainingMaxRowTextField *trainingMax;
 
 - (void)setLift:(Lift *)lift;
 
