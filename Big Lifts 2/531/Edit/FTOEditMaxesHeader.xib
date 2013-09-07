@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4457.9" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,31 +10,34 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Maxes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYt-Zv-Nmt">
-                    <rect key="frame" x="20" y="6" width="109" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYt-Zv-Nmt">
+                    <rect key="frame" x="20" y="6" width="96" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Training" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPD-3j-Fg8">
-                    <rect key="frame" x="224" y="6" width="77" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Max" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPD-3j-Fg8">
+                    <rect key="frame" x="211" y="6" width="90" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="lJS-9f-I32"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="QYt-Zv-Nmt" secondAttribute="centerY" id="A4B-gG-MS7"/>
-                <constraint firstAttribute="centerY" secondItem="TPD-3j-Fg8" secondAttribute="centerY" constant="0.5" id="N57-gK-hHi"/>
+                <constraint firstItem="TPD-3j-Fg8" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="Bbh-ig-6Sr"/>
+                <constraint firstItem="QYt-Zv-Nmt" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="GaB-0x-TEN"/>
+                <constraint firstItem="TPD-3j-Fg8" firstAttribute="leading" secondItem="QYt-Zv-Nmt" secondAttribute="trailing" constant="95" id="Gk3-dA-Y6Q"/>
+                <constraint firstItem="QYt-Zv-Nmt" firstAttribute="top" secondItem="TPD-3j-Fg8" secondAttribute="top" id="JrB-49-qqw"/>
+                <constraint firstItem="QYt-Zv-Nmt" firstAttribute="top" secondItem="1" secondAttribute="top" constant="6" id="UKy-7K-5kk"/>
+                <constraint firstAttribute="trailing" secondItem="TPD-3j-Fg8" secondAttribute="trailing" constant="19" id="fty-sg-brY"/>
+                <constraint firstItem="QYt-Zv-Nmt" firstAttribute="bottom" secondItem="TPD-3j-Fg8" secondAttribute="bottom" id="jgx-pz-YfT"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
 </document>
