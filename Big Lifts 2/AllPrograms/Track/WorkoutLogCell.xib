@@ -22,8 +22,7 @@
                         <rect key="frame" x="263" y="11" width="48" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="23"/>
-                            <constraint firstAttribute="width" constant="48" id="53"/>
+                            <constraint firstAttribute="width" constant="48" id="ycd-b6-Ov7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -31,16 +30,15 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3" firstAttribute="leading" secondItem="sih-Fj-ce8" secondAttribute="leading" id="Smk-ue-F2g"/>
-                    <constraint firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="XXW-fr-xpP"/>
-                    <constraint firstItem="19" firstAttribute="leading" secondItem="3" secondAttribute="trailing" id="lER-Zc-MeY"/>
-                    <constraint firstItem="3" firstAttribute="top" secondItem="sih-Fj-ce8" secondAttribute="top" id="mgg-Ed-fea"/>
-                    <constraint firstItem="3" firstAttribute="centerY" secondItem="19" secondAttribute="centerY" id="pwM-72-cE1"/>
+                    <constraint firstItem="19" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" id="12G-Bc-y7n"/>
+                    <constraint firstAttribute="trailing" secondItem="3" secondAttribute="trailing" constant="-55" id="AEv-Lt-hhi"/>
+                    <constraint firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="CLw-dE-XxH"/>
+                    <constraint firstItem="3" firstAttribute="leading" secondItem="sih-Fj-ce8" secondAttribute="leading" id="XCW-5Z-BPi"/>
+                    <constraint firstItem="19" firstAttribute="top" secondItem="sih-Fj-ce8" secondAttribute="top" constant="11" id="b4E-iS-rie"/>
+                    <constraint firstItem="3" firstAttribute="top" secondItem="sih-Fj-ce8" secondAttribute="top" id="mwh-7X-N6y"/>
+                    <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="9" id="xZU-5Q-cSK"/>
                 </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="9" id="6br-FA-iRq"/>
-            </constraints>
             <connections>
                 <outlet property="dateLabel" destination="19" id="24"/>
                 <outlet property="setTable" destination="3" id="14"/>
