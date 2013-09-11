@@ -86,7 +86,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ftoRepsToBeat"]) {
         FTORepsToBeatBreakdown *breakdown = [segue destinationViewController];
-        [breakdown setLastSet:[self.ftoWorkout.workout.sets lastObject]];
+        [breakdown setLastSet:[self heaviestAmrapSet:self.ftoWorkout.workout.sets]];
     }
     else if ([[segue identifier] isEqualToString:@"ftoSetRepsForm"]) {
         FTOSetRepsForm *form = [segue destinationViewController];
