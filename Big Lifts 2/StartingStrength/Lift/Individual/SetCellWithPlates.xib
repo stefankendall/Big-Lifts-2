@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Power Clean" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.70000000000000018" preferredMaxLayoutWidth="110" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Power Clean" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.70000000000000018" preferredMaxLayoutWidth="110" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                         <rect key="frame" x="20" y="6" width="110" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -24,13 +24,13 @@
                         <rect key="frame" x="238" y="6" width="62" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="62" id="VOj-oH-QHI"/>
+                            <constraint firstAttribute="width" constant="62" id="35W-hX-1ge"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="10x" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10x" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12">
                         <rect key="frame" x="190" y="6" width="40" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -44,42 +44,45 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="opt." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mdd-9c-aOP">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="opt." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mdd-9c-aOP">
                         <rect key="frame" x="133" y="6" width="25" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="25" id="bZc-C0-kwB"/>
+                            <constraint firstAttribute="width" constant="25" id="8sM-fq-P70"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="75%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wgd-Yl-ekN">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wgd-Yl-ekN">
                         <rect key="frame" x="166" y="6" width="26" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="26" id="Gyc-d0-9xP"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="6" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="8" symbolic="YES" id="15H-LO-aw7"/>
-                    <constraint firstItem="3" firstAttribute="leading" secondItem="d9A-CM-163" secondAttribute="leading" constant="20" symbolic="YES" id="BtX-K0-4YM"/>
-                    <constraint firstItem="36" firstAttribute="trailing" secondItem="6" secondAttribute="trailing" id="Chx-6T-fDC"/>
-                    <constraint firstItem="3" firstAttribute="leading" secondItem="36" secondAttribute="leading" id="HPF-cx-8ET"/>
-                    <constraint firstItem="36" firstAttribute="top" secondItem="3" secondAttribute="bottom" id="INq-4B-l0r"/>
-                    <constraint firstItem="3" firstAttribute="top" secondItem="d9A-CM-163" secondAttribute="top" constant="6" id="Irj-8o-KPK"/>
-                    <constraint firstItem="12" firstAttribute="baseline" secondItem="6" secondAttribute="baseline" id="SPr-bL-kXs"/>
-                    <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="20" symbolic="YES" id="VeN-7E-2gz"/>
-                    <constraint firstItem="12" firstAttribute="top" secondItem="wgd-Yl-ekN" secondAttribute="top" id="WEg-an-IIF"/>
-                    <constraint firstItem="12" firstAttribute="leading" secondItem="mdd-9c-aOP" secondAttribute="trailing" constant="32" id="XcH-ru-lR0"/>
-                    <constraint firstItem="wgd-Yl-ekN" firstAttribute="leading" secondItem="mdd-9c-aOP" secondAttribute="trailing" constant="8" symbolic="YES" id="ccP-3m-jqt"/>
-                    <constraint firstItem="mdd-9c-aOP" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="3" id="f55-b8-8sk"/>
-                    <constraint firstItem="wgd-Yl-ekN" firstAttribute="top" secondItem="mdd-9c-aOP" secondAttribute="top" id="hlT-e0-xKe"/>
-                    <constraint firstItem="mdd-9c-aOP" firstAttribute="baseline" secondItem="wgd-Yl-ekN" secondAttribute="baseline" id="mlM-OO-CCg"/>
-                    <constraint firstItem="3" firstAttribute="baseline" secondItem="12" secondAttribute="baseline" id="rI5-ql-946"/>
-                    <constraint firstItem="6" firstAttribute="leading" secondItem="wgd-Yl-ekN" secondAttribute="trailing" constant="46" id="uDV-Xq-qLW"/>
-                    <constraint firstItem="wgd-Yl-ekN" firstAttribute="bottom" secondItem="12" secondAttribute="bottom" id="uS3-Z9-y89"/>
+                    <constraint firstItem="6" firstAttribute="leading" secondItem="wgd-Yl-ekN" secondAttribute="trailing" constant="46" id="3VS-RA-8yQ"/>
+                    <constraint firstItem="36" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="3yq-pn-J7j"/>
+                    <constraint firstItem="wgd-Yl-ekN" firstAttribute="leading" secondItem="mdd-9c-aOP" secondAttribute="trailing" constant="8" symbolic="YES" id="HOy-K7-Ue2"/>
+                    <constraint firstItem="3" firstAttribute="baseline" secondItem="12" secondAttribute="baseline" id="JuM-fz-ccb"/>
+                    <constraint firstItem="wgd-Yl-ekN" firstAttribute="top" secondItem="mdd-9c-aOP" secondAttribute="top" id="NQd-PN-Jhy"/>
+                    <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="20" symbolic="YES" id="UYd-O1-gvl"/>
+                    <constraint firstItem="12" firstAttribute="baseline" secondItem="6" secondAttribute="baseline" id="Wxv-OA-xVo"/>
+                    <constraint firstItem="mdd-9c-aOP" firstAttribute="baseline" secondItem="wgd-Yl-ekN" secondAttribute="baseline" id="ZSy-pF-hNZ"/>
+                    <constraint firstItem="mdd-9c-aOP" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="3" id="ap4-ag-mm8"/>
+                    <constraint firstItem="wgd-Yl-ekN" firstAttribute="top" secondItem="12" secondAttribute="top" id="bTb-id-LdQ"/>
+                    <constraint firstItem="6" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="8" symbolic="YES" id="ehT-eD-Pkx"/>
+                    <constraint firstItem="12" firstAttribute="leading" secondItem="mdd-9c-aOP" secondAttribute="trailing" constant="32" id="foO-ng-iy4"/>
+                    <constraint firstItem="3" firstAttribute="top" secondItem="d9A-CM-163" secondAttribute="top" constant="6" id="n4Z-6Y-bYV"/>
+                    <constraint firstItem="3" firstAttribute="leading" secondItem="d9A-CM-163" secondAttribute="leading" constant="20" symbolic="YES" id="pcs-PY-Lci"/>
+                    <constraint firstItem="36" firstAttribute="top" secondItem="12" secondAttribute="bottom" id="phj-YX-ZlZ"/>
+                    <constraint firstItem="6" firstAttribute="trailing" secondItem="36" secondAttribute="trailing" id="ujM-vu-Hw0"/>
+                    <constraint firstItem="12" firstAttribute="bottom" secondItem="wgd-Yl-ekN" secondAttribute="bottom" id="vcP-ag-Efu"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
