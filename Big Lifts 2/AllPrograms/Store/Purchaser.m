@@ -12,6 +12,7 @@ NSString * const IAP_FTO_JOKER = @"ftoJoker";
 NSString * const IAP_FTO_ADVANCED = @"ftoAdvanced";
 NSString * const IAP_FTO_TRIUMVIRATE = @"ftoTriumvirate";
 NSString * const IAP_FTO_SST = @"ftoSst";
+NSString * const IAP_FTO_FIVES_PROGRESSION = @"ftoFivesProgression";
 
 NSString * const IAP_SPONSORSHIP = @"sponsorship";
 
@@ -27,6 +28,7 @@ NSString * const IAP_SPONSORSHIP = @"sponsorship";
     if (self) {
         self.buyMessages = @{
                 IAP_BAR_LOADING : @"Bar loading is now available throughout the app.",
+                IAP_GRAPHING: @"Graphing is now available.",
                 IAP_SS_ONUS_WUNSLER : @"Onus Wunsler is now available in Starting Strength.",
                 IAP_SS_PRACTICAL_PROGRAMMING : @"Practical Programming is now available in Starting Strength.",
                 IAP_SS_WARMUP : @"Warm-up sets added to Starting Strength.",
@@ -34,6 +36,7 @@ NSString * const IAP_SPONSORSHIP = @"sponsorship";
                 IAP_FTO_ADVANCED : @"Advanced programming is now available for 5/3/1.",
                 IAP_FTO_TRIUMVIRATE : @"Triumvirate assistance is now available for 5/3/1.",
                 IAP_FTO_SST : @"Simplest Strength Template assistance is now available for 5/3/1.",
+                IAP_FTO_FIVES_PROGRESSION : @"Five's Progression is now available in 5/3/1.",
                 IAP_SPONSORSHIP: @"Thanks so much! Your support keeps this app alive and growing."
         };
     }

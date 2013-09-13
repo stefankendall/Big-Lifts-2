@@ -33,7 +33,8 @@
 
     self.iapCells = @{
             IAP_FTO_JOKER : self.jokerVariant,
-            IAP_FTO_ADVANCED : self.advancedVariant
+            IAP_FTO_ADVANCED : self.advancedVariant,
+            IAP_FTO_FIVES_PROGRESSION : self.fivesProgressionVariant
     };
 
     [self checkCurrentVariant];
