@@ -20,7 +20,6 @@
 - (void)testReturnsCorrectNumberOfRowsWithoutWarmup {
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     SSIndividualWorkoutDataSource *dataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:ssWorkout];
-    Workout *workout = ssWorkout.workouts[0];
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 3, @"");
 }
 

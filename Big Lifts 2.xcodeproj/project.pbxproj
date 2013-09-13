@@ -285,6 +285,7 @@
 		54590E178CA2662A96299659 /* WorkoutLogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459003E94ED2161C6E26856 /* WorkoutLogCell.m */; };
 		54590E3B4F686B68613E95F0 /* FTOBoringButBigAssistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906628BE01C1FCECD16A6 /* FTOBoringButBigAssistance.m */; };
 		54590E42609CBCA2BF806C06 /* FTOFirstSetLastMultipleSetsPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A4E1845A80C4AA8D40F /* FTOFirstSetLastMultipleSetsPlan.m */; };
+		54590E486A255D80E2636C61 /* FTOFivesProgression.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590673FA33B2DFD5CE1493 /* FTOFivesProgression.m */; };
 		54590E4B2284DBA20507D466 /* OneRepEstimatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900798502B2E9597392CD /* OneRepEstimatorTests.m */; };
 		54590E4C541558DBBC300B05 /* FTOSSTEditLiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459066D6076801C8C5C4DB1 /* FTOSSTEditLiftCell.m */; };
 		54590E5335BF7D7B0D1F3DDA /* SetLogCombiner.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590798FA8B084A2A8A2DCF /* SetLogCombiner.m */; };
@@ -578,6 +579,7 @@
 		5459066CCE8B77DB1839F29A /* BLNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLNavController.m; sourceTree = "<group>"; };
 		5459066D6076801C8C5C4DB1 /* FTOSSTEditLiftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSSTEditLiftCell.m; sourceTree = "<group>"; };
 		5459067346E18BC1C12FE7C1 /* SSLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftStore.h; sourceTree = "<group>"; };
+		54590673FA33B2DFD5CE1493 /* FTOFivesProgression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOFivesProgression.m; sourceTree = "<group>"; };
 		54590677417C090939FDAC0A /* FTOTriumvirateViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTriumvirateViewControllerTests.m; sourceTree = "<group>"; };
 		5459067C7C724C53C67E62F1 /* SJIndividualLiftViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJIndividualLiftViewControllerTests.m; sourceTree = "<group>"; };
 		5459069DC08F5B3D6F305F87 /* 09-chat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-chat-2.png"; sourceTree = "<group>"; };
@@ -601,6 +603,7 @@
 		54590723ACC9BA56F2399C47 /* SJIndividualLiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJIndividualLiftViewController.h; sourceTree = "<group>"; };
 		5459072EDA3F0050528C43CB /* WorkoutLogTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutLogTableDataSource.h; sourceTree = "<group>"; };
 		5459072F4052B97BCB6E1D5A /* SSTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTrackViewController.h; sourceTree = "<group>"; };
+		5459073557E0B5CB7B0BE9D5 /* FTOFivesProgression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOFivesProgression.h; sourceTree = "<group>"; };
 		54590737732D0F9B2BF7019B /* OneRepEstimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneRepEstimator.h; sourceTree = "<group>"; };
 		54590738BE586EE96E0724F6 /* SetCellTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCellTests.h; sourceTree = "<group>"; };
 		545907580FE81D4530CD48F3 /* 20-gear-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear-2@2x.png"; sourceTree = "<group>"; };
@@ -2056,6 +2059,8 @@
 				54590526B32BE159D69B0E8B /* FTOAdvancedPlan.m */,
 				545902CB4044351B95D1F22D /* FTOAdvancedPlan.h */,
 				54590DAEFCA5DD4286BB5307 /* Assistance */,
+				54590673FA33B2DFD5CE1493 /* FTOFivesProgression.m */,
+				5459073557E0B5CB7B0BE9D5 /* FTOFivesProgression.h */,
 			);
 			path = Plans;
 			sourceTree = "<group>";
@@ -2777,6 +2782,7 @@
 				54590024193238FC9F6A95C3 /* SSLiftToolbarCell.m in Sources */,
 				545908C1060C68AC36528D6D /* TrackToolbarCell.m in Sources */,
 				545904975C5FB8CB4BCAF5FE /* TrainingMaxRowTextField.m in Sources */,
+				54590E486A255D80E2636C61 /* FTOFivesProgression.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

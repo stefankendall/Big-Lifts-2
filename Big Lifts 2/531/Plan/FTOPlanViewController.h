@@ -11,5 +11,6 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *sixWeekVariant;
 @property (weak, nonatomic) IBOutlet UITableViewCell *firstSetLastMultipleSetsVariant;
 @property (weak, nonatomic) IBOutlet UITableViewCell *advancedVariant;
+@property (weak, nonatomic) IBOutlet UITableViewCell *fivesProgressionVariant;
 
 @end
