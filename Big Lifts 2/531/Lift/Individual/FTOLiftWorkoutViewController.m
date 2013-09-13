@@ -19,6 +19,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
+    if( self.ftoWorkout.done ){
+        [self.doneButton setTitle: @"Not Done"];
+    }
+    else {
+        [self.doneButton setTitle: @"Done"];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -111,15 +117,29 @@
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
+    if( self.ftoWorkout.done ){
+        [self unmarkWorkout];
+    }
+    else {
+        [self logAndMoveOn];
+    }
+}
+
+- (void)unmarkWorkout {
+    self.ftoWorkout.done = NO;
+    [self viewWillAppear:NO];
+}
+
+- (void)logAndMoveOn {
     [self logWorkout];
     [self.ftoWorkout setDone:YES];
     if ([self missedAmrapReps]) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missed Reps"
-                                                            message:@"It looks like you missed a set! Maybe drop your training max for next cycle?"
-                                                           delegate:nil cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missed Reps"
+                                                                message:@"It looks like you missed a set! Maybe drop your training max for next cycle?"
+                                                               delegate:nil cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        }
     [[FTOCycleAdjustor new] checkForCycleChange];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];

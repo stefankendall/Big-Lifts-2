@@ -95,15 +95,24 @@
 - (void)testDeterminesIfMissedReps {
     self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     [self.controller setWorkout:self.ftoWorkout];
-    [self.controller setVariableReps:[@{@5: @4} mutableCopy]];
+    [self.controller setVariableReps:[@{@5 : @4} mutableCopy]];
     STAssertTrue([self.controller missedAmrapReps], @"");
 }
 
 - (void)testDeterminesIfMissedRepsNoFailure {
     self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     [self.controller setWorkout:self.ftoWorkout];
-    [self.controller setVariableReps:[@{@5: @5} mutableCopy]];
+    [self.controller setVariableReps:[@{@5 : @5} mutableCopy]];
     STAssertFalse([self.controller missedAmrapReps], @"");
+}
+
+- (void)testAllowsReadyToBeUnchecked {
+    [self.ftoWorkout setDone:YES];
+    [self.controller viewWillAppear:YES];
+
+    STAssertEqualObjects([self.controller.doneButton title], @"Not Done", @"");
+    [self.controller doneButtonTapped:self.controller.doneButton];
+    STAssertFalse(self.ftoWorkout.done, @"");
 }
 
 @end
