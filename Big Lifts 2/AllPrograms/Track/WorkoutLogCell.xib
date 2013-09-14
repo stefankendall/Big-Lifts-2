@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                        <rect key="frame" x="0.0" y="0.0" width="255" height="43"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tableView>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="263" y="0.0" width="48" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="48" id="SHS-iC-IGJ"/>
+                            <constraint firstAttribute="width" constant="48" id="hdd-6Z-3Cu"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -30,13 +30,13 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="9" id="8OL-f5-673"/>
-                    <constraint firstItem="3" firstAttribute="leading" secondItem="sih-Fj-ce8" secondAttribute="leading" id="JfC-78-Aom"/>
-                    <constraint firstAttribute="trailing" secondItem="3" secondAttribute="trailing" constant="-55" id="SzR-Vl-IiG"/>
-                    <constraint firstItem="19" firstAttribute="top" secondItem="3" secondAttribute="top" id="hD6-Uz-o0t"/>
-                    <constraint firstItem="3" firstAttribute="bottom" secondItem="19" secondAttribute="bottom" id="x0M-BM-Pdh"/>
-                    <constraint firstItem="19" firstAttribute="top" secondItem="sih-Fj-ce8" secondAttribute="top" id="y8h-GB-5ve"/>
-                    <constraint firstAttribute="bottom" secondItem="19" secondAttribute="bottom" id="zPV-SZ-9z4"/>
+                    <constraint firstItem="3" firstAttribute="top" secondItem="19" secondAttribute="top" id="3MN-ep-cBt"/>
+                    <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="9" id="7SS-u7-k5g"/>
+                    <constraint firstItem="19" firstAttribute="leading" secondItem="3" secondAttribute="trailing" constant="8" symbolic="YES" id="BoN-Ix-vyo"/>
+                    <constraint firstItem="3" firstAttribute="top" secondItem="sih-Fj-ce8" secondAttribute="top" id="Hgu-P6-9vt"/>
+                    <constraint firstItem="3" firstAttribute="bottom" secondItem="19" secondAttribute="bottom" id="OAW-Qm-U87"/>
+                    <constraint firstAttribute="bottom" secondItem="19" secondAttribute="bottom" id="cOq-po-Fbs"/>
+                    <constraint firstItem="3" firstAttribute="leading" secondItem="sih-Fj-ce8" secondAttribute="leading" id="d73-nZ-12j"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
