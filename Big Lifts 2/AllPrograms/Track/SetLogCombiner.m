@@ -7,15 +7,24 @@
 - (NSArray *)combineSetLogs:(NSOrderedSet *)setLogs {
     NSMutableArray *combined = [@[] mutableCopy];
 
-    for (SetLog *setLog in setLogs) {
+    for (int i = 0; i < [setLogs count]; i++) {
+        SetLog *setLog = setLogs[(NSUInteger) i];
         SetLogContainer *container = [[SetLogContainer alloc] initWithSetLog:setLog];
         if (![combined containsObject:container]) {
             [combined addObject:container];
             container.count = 1;
         }
-        else {
-            SetLogContainer *existing = [combined objectAtIndex:[combined indexOfObject:container]];
-            existing.count++;
+        else if (i > 0) {
+            SetLog *lastSetLog = setLogs[(NSUInteger) (i - 1)];
+            SetLogContainer *lastContainer = [[SetLogContainer alloc] initWithSetLog:lastSetLog];
+            if ([container isEqual:lastContainer]) {
+                SetLogContainer *existing = [combined objectAtIndex:[combined indexOfObject:container]];
+                existing.count++;
+            }
+            else {
+                [combined addObject:container];
+                container.count = 1;
+            }
         }
     }
 

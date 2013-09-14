@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -19,10 +19,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tableView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="19">
-                        <rect key="frame" x="263" y="11" width="48" height="21"/>
+                        <rect key="frame" x="263" y="0.0" width="48" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="48" id="ycd-b6-Ov7"/>
+                            <constraint firstAttribute="width" constant="48" id="SHS-iC-IGJ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -30,13 +30,13 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="19" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" id="12G-Bc-y7n"/>
-                    <constraint firstAttribute="trailing" secondItem="3" secondAttribute="trailing" constant="-55" id="AEv-Lt-hhi"/>
-                    <constraint firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="CLw-dE-XxH"/>
-                    <constraint firstItem="3" firstAttribute="leading" secondItem="sih-Fj-ce8" secondAttribute="leading" id="XCW-5Z-BPi"/>
-                    <constraint firstItem="19" firstAttribute="top" secondItem="sih-Fj-ce8" secondAttribute="top" constant="11" id="b4E-iS-rie"/>
-                    <constraint firstItem="3" firstAttribute="top" secondItem="sih-Fj-ce8" secondAttribute="top" id="mwh-7X-N6y"/>
-                    <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="9" id="xZU-5Q-cSK"/>
+                    <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="9" id="8OL-f5-673"/>
+                    <constraint firstItem="3" firstAttribute="leading" secondItem="sih-Fj-ce8" secondAttribute="leading" id="JfC-78-Aom"/>
+                    <constraint firstAttribute="trailing" secondItem="3" secondAttribute="trailing" constant="-55" id="SzR-Vl-IiG"/>
+                    <constraint firstItem="19" firstAttribute="top" secondItem="3" secondAttribute="top" id="hD6-Uz-o0t"/>
+                    <constraint firstItem="3" firstAttribute="bottom" secondItem="19" secondAttribute="bottom" id="x0M-BM-Pdh"/>
+                    <constraint firstItem="19" firstAttribute="top" secondItem="sih-Fj-ce8" secondAttribute="top" id="y8h-GB-5ve"/>
+                    <constraint firstAttribute="bottom" secondItem="19" secondAttribute="bottom" id="zPV-SZ-9z4"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
