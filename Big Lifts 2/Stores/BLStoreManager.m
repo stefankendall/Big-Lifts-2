@@ -23,6 +23,7 @@
 #import "FTOBoringButBigStore.h"
 #import "SJLiftStore.h"
 #import "SJWorkoutStore.h"
+#import "FTOCustomWorkoutStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
@@ -56,6 +57,7 @@
             [FTOAssistanceStore instance],
             [FTOLiftStore instance],
             [FTOSSTLiftStore instance],
+            [FTOCustomWorkoutStore instance],
             [FTOWorkoutStore instance],
             [FTOTriumvirateLiftStore instance],
             [FTOTriumvirateStore instance],
