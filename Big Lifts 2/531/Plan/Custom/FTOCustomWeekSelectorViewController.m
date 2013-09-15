@@ -19,8 +19,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOCustomWeekCell"];
     }
 
-    NSLog(@"%@", [self getWeeks]);
-
     int week = [[self getWeeks][(NSUInteger) [indexPath row]] intValue];
     NSString *weekText = [NSString stringWithFormat:@"Week %d", week];
     [[cell textLabel] setText:weekText];

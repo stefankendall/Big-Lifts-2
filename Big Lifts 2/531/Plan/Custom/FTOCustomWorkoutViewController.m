@@ -1,6 +1,8 @@
 #import "FTOCustomWorkoutViewController.h"
 #import "FTOCustomWorkout.h"
 #import "Workout.h"
+#import "FTOCustomSetCell.h"
+#import "Set.h"
 
 @implementation FTOCustomWorkoutViewController
 
@@ -13,7 +15,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    FTOCustomSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomSetCell.class)];
+    if (!cell) {
+        cell = [FTOCustomSetCell create];
+    }
+
+    Set *set = [self.customWorkout.workout sets][(NSUInteger) [indexPath row]];
+    [cell setSet: set];
+
+    return cell;
 }
 
 @end
