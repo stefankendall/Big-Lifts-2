@@ -40,7 +40,7 @@
 
     for (int week = 1; week <= weeks; week++) {
         [[[FTOLiftStore instance] findAll] each:^(FTOLift *lift) {
-            [[FTOWorkoutStore instance] createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
+            [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
         }];
     }
 }
