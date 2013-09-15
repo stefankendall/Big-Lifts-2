@@ -36,7 +36,7 @@
 
 - (int)count;
 
-- (NSSet *)unique:(NSString *)string;
+- (NSOrderedSet *)unique:(NSString *)string;
 
 + (instancetype)instance;
 

@@ -142,12 +142,12 @@
     return [[self findAll] count];
 }
 
-- (NSSet *)unique:(NSString *)keyName {
+- (NSOrderedSet *)unique:(NSString *)keyName {
     NSArray *allValues = [[self findAll] collect:^id(id obj) {
         return [obj valueForKeyPath:keyName];
     }];
 
-    return [[NSSet alloc] initWithArray:allValues];
+    return [[NSOrderedSet alloc] initWithArray:allValues];
 }
 
 

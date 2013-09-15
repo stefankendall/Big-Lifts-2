@@ -1,0 +1,2 @@
+@interface FTOCustomWeekSelectorViewController : UITableViewController
+@end

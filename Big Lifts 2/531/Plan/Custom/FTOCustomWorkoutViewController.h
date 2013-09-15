@@ -1,0 +1,2 @@
+@interface FTOCustomWorkoutViewController : UITableViewController
+@end
