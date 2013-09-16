@@ -1,5 +1,12 @@
 #import "FTOCustomWeekSelectorViewController.h"
 #import "FTOCustomWorkoutStore.h"
+#import "FTOCustomWorkoutViewController.h"
+#import "FTOCustomWorkout.h"
+
+
+@interface FTOCustomWeekSelectorViewController ()
+@property(nonatomic, strong) FTOCustomWorkout *tappedWorkout;
+@end
 
 @implementation FTOCustomWeekSelectorViewController
 
@@ -15,7 +22,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOCustomWeekCell"];
-    if( !cell ){
+    if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOCustomWeekCell"];
     }
 
@@ -25,5 +32,19 @@
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSNumber *week = [NSNumber numberWithInteger:[indexPath row] + 1];
+    self.tappedWorkout = [[FTOCustomWorkoutStore instance] find:@"week" value:week];
+    [self performSegueWithIdentifier:@"ftoCustomWeekSelectedSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    FTOCustomWorkoutViewController *controller = [segue destinationViewController];
+    controller.customWorkout = self.tappedWorkout;
+
+    [super prepareForSegue:segue sender:sender];
+}
+
 
 @end

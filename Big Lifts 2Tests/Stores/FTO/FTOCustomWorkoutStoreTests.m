@@ -7,7 +7,7 @@
 
 -(void) testSetsUpDefaultData {
     NSArray *customWorkouts = [[FTOCustomWorkoutStore instance] findAll];
-    STAssertEquals([customWorkouts count], 16U, @"");
+    STAssertEquals([customWorkouts count], 4U, @"");
 
     FTOCustomWorkout *customWorkout = customWorkouts[0];
     STAssertEquals([[customWorkout.workout sets] count], 6U, @"");

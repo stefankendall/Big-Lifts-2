@@ -1,5 +1,4 @@
 #import "FTOCustomWorkoutStore.h"
-#import "FTOLiftStore.h"
 #import "FTOLift.h"
 #import "FTOWorkout.h"
 #import "Workout.h"
@@ -18,15 +17,13 @@
 
 - (void)createWorkoutsForEachLift {
     for (int week = 1; week <= 4; week++) {
-        [[[FTOLiftStore instance] findAll] each:^(FTOLift *lift) {
-            [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
-        }];
+        [self createWithWorkout:[self createWorkoutForWeek:week] week:week order:week];
     }
 }
 
-- (Workout *)createWorkoutForLift:(FTOLift *)lift week:(int)week {
+- (Workout *)createWorkoutForWeek: (int)week {
     Workout *workout = [[WorkoutStore instance] create];
-    NSDictionary *workoutPlan = [[FTOWorkoutSetsGenerator new] setsFor:lift withTemplate:FTO_VARIANT_STANDARD];
+    NSDictionary *workoutPlan = [[FTOWorkoutSetsGenerator new] setsFor:nil withTemplate:FTO_VARIANT_STANDARD];
     NSArray *setData = workoutPlan[[NSNumber numberWithInt:week]];
     NSArray *sets = [setData collect:^id(SetData *data) {
         return [data createSet];
