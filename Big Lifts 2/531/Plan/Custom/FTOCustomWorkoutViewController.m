@@ -3,11 +3,18 @@
 #import "Workout.h"
 #import "FTOCustomSetCell.h"
 #import "Set.h"
+#import "FTOCustomSetViewController.h"
+
+@interface FTOCustomWorkoutViewController()
+
+@property(nonatomic, strong) Set *tappedSet;
+@end
 
 @implementation FTOCustomWorkoutViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationItem setTitle:[NSString stringWithFormat:@"Week %@", self.customWorkout.week]];
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -24,6 +31,16 @@
     [cell setSet: set];
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.tappedSet = self.customWorkout.workout.sets[(NSUInteger) [indexPath row]];
+    [self performSegueWithIdentifier:@"ftoCustomSetSelectedSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    FTOCustomSetViewController *controller = [segue destinationViewController];
+    [controller setSet:self.tappedSet];
 }
 
 @end
