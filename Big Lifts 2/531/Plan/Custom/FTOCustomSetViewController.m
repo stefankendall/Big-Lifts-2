@@ -25,8 +25,17 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.repsLabel setText:[NSString stringWithFormat:@"%@", self.set.reps]];
-    [self.percentageLabel setText:[NSString stringWithFormat:@"%@", self.set.percentage]];
+    NSString *repsText = [NSString stringWithFormat:@"%@", self.set.reps];
+    if([self.set.reps intValue] == 0){
+        repsText = @"";
+    }
+    [self.repsLabel setText:repsText];
+
+    NSString *percentageText = [NSString stringWithFormat:@"%@", self.set.percentage];
+    if([self.set.percentage intValue] == 0){
+        percentageText = @"";
+    }
+    [self.percentageLabel setText:percentageText];
     [self.amrapSwitch setOn:self.set.amrap];
 }
 

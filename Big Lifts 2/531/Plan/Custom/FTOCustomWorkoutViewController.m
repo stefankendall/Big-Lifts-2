@@ -4,6 +4,7 @@
 #import "FTOCustomSetCell.h"
 #import "Set.h"
 #import "FTOCustomSetViewController.h"
+#import "SetStore.h"
 
 @interface FTOCustomWorkoutViewController()
 
@@ -41,6 +42,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     FTOCustomSetViewController *controller = [segue destinationViewController];
     [controller setSet:self.tappedSet];
+}
+
+- (IBAction)addSet:(id)sender {
+    Set *set = [[SetStore instance] create];
+    [self.customWorkout.workout.sets addObject:set];
+    [self.tableView reloadData];
 }
 
 @end

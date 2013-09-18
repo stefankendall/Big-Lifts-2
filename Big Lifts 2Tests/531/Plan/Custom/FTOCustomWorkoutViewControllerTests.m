@@ -3,6 +3,7 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOCustomWorkout.h"
 #import "FTOCustomWorkoutStore.h"
+#import "Workout.h"
 
 @implementation FTOCustomWorkoutViewControllerTests
 
@@ -17,6 +18,13 @@
     controller.customWorkout = [[FTOCustomWorkoutStore instance] findAllWhere:@"week" value:@2][0];
     [controller viewWillAppear:YES];
     STAssertEqualObjects(controller.navigationItem.title, @"Week 2", @"");
+}
+
+- (void) testAddsSets {
+    FTOCustomWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomWorkoutViewController"];
+    controller.customWorkout = [[FTOCustomWorkoutStore instance] findAllWhere:@"week" value:@2][0];
+    [controller addSet: nil];
+    STAssertEquals([controller.customWorkout.workout.sets count], 7U, @"");
 }
 
 @end
