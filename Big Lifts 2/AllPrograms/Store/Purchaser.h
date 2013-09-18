@@ -9,8 +9,6 @@ extern NSString * const IAP_FTO_TRIUMVIRATE;
 extern NSString * const IAP_FTO_SST;
 extern NSString * const IAP_FTO_FIVES_PROGRESSION;
 
-extern NSString * const IAP_SPONSORSHIP;
-
 extern NSString * const IAP_PURCHASED_NOTIFICATION;
 
 @interface Purchaser : NSObject
