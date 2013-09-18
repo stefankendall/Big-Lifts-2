@@ -4,7 +4,17 @@
 @implementation FTOCustomSetCell
 
 - (void)setSet:(Set *)set {
-    [self.repsLabel setText:[set.reps stringValue]];
+    NSString *reps = [set.reps stringValue];
+
+    if( set.amrap ){
+        reps = [reps stringByAppendingString:@"+"];
+        [self.repsLabel setTextColor:[UIColor greenColor]];
+    }
+    else {
+        [self.repsLabel setTextColor:[UIColor blackColor]];
+    }
+
+    [self.repsLabel setText:reps];
     [self.percentageLabel setText:[NSString stringWithFormat:@"%@%%", set.percentage]];
 }
 
