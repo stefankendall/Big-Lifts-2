@@ -3,6 +3,7 @@
 @interface FTOCustomWorkoutViewController : UITableViewController
 
 @property(nonatomic, strong) FTOCustomWorkout *customWorkout;
+@property(weak, nonatomic) IBOutlet UIBarButtonItem *deleteSetsButton;
 
-- (IBAction)addSet:(id)sender;
+- (void)addSet;
 @end

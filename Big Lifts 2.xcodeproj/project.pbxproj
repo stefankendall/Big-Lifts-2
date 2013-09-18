@@ -195,7 +195,6 @@
 		545908CB3D8151BBB8AA5E16 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545901F56B3627441C838476 /* SetCell.xib */; };
 		545908D0E4EDD41E615E1F19 /* FTOSSTChangeLiftsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590879F12D9A9FF3B919AB /* FTOSSTChangeLiftsViewController.m */; };
 		545908D2A402B600EF8BDFCA /* FTOVariant.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D9CAAC844530A076DB2 /* FTOVariant.m */; };
-		545908D73D2C06F78E3426FF /* AddPlateTextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590EC16A3EA1A5049434A4 /* AddPlateTextFieldDelegate.m */; };
 		545908E850533D993D0C50AA /* FTOTriumvirateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F02F7A29BFAA8D57175 /* FTOTriumvirateViewController.m */; };
 		545908E862A6C2E2BE01ECDD /* FTOTriumvirateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459078F24450A7E8E65348F /* FTOTriumvirateCell.m */; };
 		545908F798D1B9044B4A8739 /* StepperWithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C02B3E3C3166683BBCA /* StepperWithCell.m */; };
@@ -740,7 +739,6 @@
 		54590A1A296486D52B84D1F2 /* AddPlateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlateViewController.h; sourceTree = "<group>"; };
 		54590A2090BE2CB988B38C72 /* SSEditViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSEditViewControllerTests.m; sourceTree = "<group>"; };
 		54590A246ED0F76535710297 /* BLViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLViewDeckController.m; sourceTree = "<group>"; };
-		54590A2AACEF19DC8B1C6BE4 /* AddPlateTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlateTextFieldDelegate.h; sourceTree = "<group>"; };
 		54590A35D1367F68985D66BF /* BarCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCalculator.h; sourceTree = "<group>"; };
 		54590A3959ACCA2F786432C0 /* SJWorkoutSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJWorkoutSummaryCell.h; sourceTree = "<group>"; };
 		54590A3A08FD6676DC5055AD /* SKProductFake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKProductFake.h; sourceTree = "<group>"; };
@@ -880,7 +878,6 @@
 		54590EA712CA9B50B4F492DC /* RowTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowTextField.h; sourceTree = "<group>"; };
 		54590EA87512AFEF11C6DC12 /* SSEditViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEditViewControllerTests.h; sourceTree = "<group>"; };
 		54590EB3D52D5DB0ADC33D74 /* Big Lifts 2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Big Lifts 2Tests-Info.plist"; sourceTree = "<group>"; };
-		54590EC16A3EA1A5049434A4 /* AddPlateTextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateTextFieldDelegate.m; sourceTree = "<group>"; };
 		54590EC196BC63BE61A1F180 /* 213-reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "213-reply.png"; sourceTree = "<group>"; };
 		54590EC4AC8D219C8FCB86FF /* FTOPlanViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOPlanViewControllerTests.h; sourceTree = "<group>"; };
 		54590EC9AC2AE02E44A52903 /* FTOAssistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOAssistance.h; sourceTree = "<group>"; };
@@ -1188,8 +1185,6 @@
 		545902E98787AE702BEF40AC /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				54590A2AACEF19DC8B1C6BE4 /* AddPlateTextFieldDelegate.h */,
-				54590EC16A3EA1A5049434A4 /* AddPlateTextFieldDelegate.m */,
 				545901A2CF20014EE03D86D4 /* BarWeightTextFieldDelegate.m */,
 				54590D17E245A43C6D730DCE /* BarWeightTextFieldDelegate.h */,
 			);
@@ -2773,7 +2768,6 @@
 				5459099E6B93CB1D34991897 /* BarLoadingDataSource.m in Sources */,
 				54590A76FBB0E7DBC04ED38A /* WeightTableCell.m in Sources */,
 				545901CE12C9F9C3C09BFEAE /* BarWeightCell.m in Sources */,
-				545908D73D2C06F78E3426FF /* AddPlateTextFieldDelegate.m in Sources */,
 				5459037DE5824DB15A3135EE /* BarWeightTextFieldDelegate.m in Sources */,
 				545906947379404BFFC0AD1E /* AddPlateViewController.m in Sources */,
 				5459028FCF46CC78FCDDEAFB /* FTOSet.m in Sources */,

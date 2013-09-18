@@ -1608,13 +1608,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Week 9" id="gNO-YY-DsX">
-                        <barButtonItem key="rightBarButtonItem" title="Add Set" id="d79-U4-qqL">
+                        <barButtonItem key="rightBarButtonItem" title="Delete Sets" id="d79-U4-qqL">
                             <connections>
-                                <action selector="addSet:" destination="vxS-uW-Rn5" id="ErR-sc-AS6"/>
+                                <action selector="deleteSets:" destination="vxS-uW-Rn5" id="VX8-p4-jjg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteSetsButton" destination="d79-U4-qqL" id="dJu-t7-IwV"/>
                         <segue destination="7Fb-w8-qQh" kind="push" identifier="ftoCustomSetSelectedSegue" id="dcj-F4-HSb"/>
                     </connections>
                 </tableViewController>
