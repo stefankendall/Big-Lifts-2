@@ -20,8 +20,7 @@
                 IAP_FTO_ADVANCED,
                 IAP_FTO_TRIUMVIRATE,
                 IAP_FTO_SST,
-                IAP_FTO_FIVES_PROGRESSION,
-                IAP_SPONSORSHIP
+                IAP_FTO_FIVES_PROGRESSION
         ];
     });
 

@@ -14,8 +14,6 @@ NSString * const IAP_FTO_TRIUMVIRATE = @"ftoTriumvirate";
 NSString * const IAP_FTO_SST = @"ftoSst";
 NSString * const IAP_FTO_FIVES_PROGRESSION = @"ftoFivesProgression";
 
-NSString * const IAP_SPONSORSHIP = @"sponsorship";
-
 @interface Purchaser ()
 
 @property(nonatomic, strong) NSDictionary *buyMessages;
@@ -36,8 +34,7 @@ NSString * const IAP_SPONSORSHIP = @"sponsorship";
                 IAP_FTO_ADVANCED : @"Advanced programming is now available for 5/3/1.",
                 IAP_FTO_TRIUMVIRATE : @"Triumvirate assistance is now available for 5/3/1.",
                 IAP_FTO_SST : @"Simplest Strength Template assistance is now available for 5/3/1.",
-                IAP_FTO_FIVES_PROGRESSION : @"Five's Progression is now available in 5/3/1.",
-                IAP_SPONSORSHIP: @"Thanks so much! Your support keeps this app alive and growing."
+                IAP_FTO_FIVES_PROGRESSION : @"Five's Progression is now available in 5/3/1."
         };
     }
 

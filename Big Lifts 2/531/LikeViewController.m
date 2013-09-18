@@ -40,8 +40,4 @@
                                   }];
 }
 
-- (IBAction)buySponsorship:(id)sender {
-    [[Purchaser new] purchase:IAP_SPONSORSHIP];
-}
-
 @end
