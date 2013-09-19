@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *firstSetLastMultipleSetsVariant;
 @property (weak, nonatomic) IBOutlet UITableViewCell *advancedVariant;
 @property (weak, nonatomic) IBOutlet UITableViewCell *fivesProgressionVariant;
+@property (weak, nonatomic) IBOutlet UITableViewCell *customVariant;
 
 @end

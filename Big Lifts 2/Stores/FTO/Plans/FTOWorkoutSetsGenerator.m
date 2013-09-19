@@ -9,6 +9,7 @@
 #import "FTOFirstSetLastMultipleSetsPlan.h"
 #import "FTOAdvancedPlan.h"
 #import "FTOFivesProgression.h"
+#import "FTOCustomPlan.h"
 
 @implementation FTOWorkoutSetsGenerator
 
@@ -41,7 +42,8 @@
             FTO_VARIANT_SIX_WEEK : [FTOSixWeekPlan new],
             FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS : [FTOFirstSetLastMultipleSetsPlan new],
             FTO_VARIANT_ADVANCED : [FTOAdvancedPlan new],
-            FTO_VARIANT_FIVES_PROGRESSION : [FTOFivesProgression new]
+            FTO_VARIANT_FIVES_PROGRESSION : [FTOFivesProgression new],
+            FTO_VARIANT_CUSTOM : [FTOCustomPlan new]
     };
     return templatePlans[variant];
 }

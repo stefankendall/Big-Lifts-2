@@ -324,6 +324,7 @@
 		54590F84DE455E652727E21D /* FTOCustomWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900B7BC22B78ED5B7189E /* FTOCustomWorkoutViewController.m */; };
 		54590F8645C5779DAD073E4D /* 20-gear-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545907580FE81D4530CD48F3 /* 20-gear-2@2x.png */; };
 		54590FA2B538915F35C25C48 /* SSLiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459090824C25E2117395C47 /* SSLiftViewController.m */; };
+		54590FB322AC5B8EBCC23909 /* FTOCustomPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459045C83291B4C1273738F /* FTOCustomPlan.m */; };
 		54590FC065732E921B010F8A /* 172-pricetag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590F9C468FB92E382B0383 /* 172-pricetag@2x.png */; };
 		54590FC1EAF3576C39CF0921 /* SetCellWithPlates.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590563759BB77F8C1A750A /* SetCellWithPlates.m */; };
 		54590FC500839C1C958E21F4 /* WorkoutLogStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C3167FE558175904B59 /* WorkoutLogStore.m */; };
@@ -468,6 +469,7 @@
 		545902C2400FE38DCD263113 /* SetRepsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetRepsDelegate.h; sourceTree = "<group>"; };
 		545902C3E4FD30770F04C6DF /* 213-reply@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "213-reply@2x.png"; sourceTree = "<group>"; };
 		545902CB4044351B95D1F22D /* FTOAdvancedPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOAdvancedPlan.h; sourceTree = "<group>"; };
+		545902D0EA6032C0E880AD9C /* FTOCustomPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomPlan.h; sourceTree = "<group>"; };
 		545902D72145DC67938EA1BA /* PriceFormatterTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceFormatterTests.h; sourceTree = "<group>"; };
 		545902D7321491EEFEDA0A33 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		545902DBAFF98090455072CB /* IAPAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPAdapter.m; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 		54590439B6DBCDFB82F1DADC /* TextViewInputAccessoryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewInputAccessoryBuilder.m; sourceTree = "<group>"; };
 		5459043CF7DA7048605868E1 /* TrackToolbarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackToolbarCell.m; sourceTree = "<group>"; };
 		5459044A9A11131A0C5AD182 /* 16-line-chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-line-chart@2x.png"; sourceTree = "<group>"; };
+		5459045C83291B4C1273738F /* FTOCustomPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomPlan.m; sourceTree = "<group>"; };
 		54590462258BAF43404F95C1 /* FTOBoringButBig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOBoringButBig.h; sourceTree = "<group>"; };
 		5459046243304D95CDA51B4E /* SJTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTrackViewController.m; sourceTree = "<group>"; };
 		5459046717BB03E9F0393B41 /* SSLiftViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftViewControllerTests.m; sourceTree = "<group>"; };
@@ -2130,6 +2133,8 @@
 				54590DAEFCA5DD4286BB5307 /* Assistance */,
 				54590673FA33B2DFD5CE1493 /* FTOFivesProgression.m */,
 				5459073557E0B5CB7B0BE9D5 /* FTOFivesProgression.h */,
+				5459045C83291B4C1273738F /* FTOCustomPlan.m */,
+				545902D0EA6032C0E880AD9C /* FTOCustomPlan.h */,
 			);
 			path = Plans;
 			sourceTree = "<group>";
@@ -2877,6 +2882,7 @@
 				54590443B54127B3FFEF32FD /* FTOCustomSetCell.m in Sources */,
 				545909AED63CA01FAA9B6008 /* FTOCustomSetViewController.m in Sources */,
 				54590D53101E6005B3246B7B /* FTOCustomWeekEditCell.m in Sources */,
+				54590FB322AC5B8EBCC23909 /* FTOCustomPlan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

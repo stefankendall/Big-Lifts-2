@@ -6,6 +6,7 @@ NSString * const FTO_VARIANT_JOKER = @"Joker";
 NSString * const FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS = @"First Set Last Multiple Sets";
 NSString * const FTO_VARIANT_ADVANCED = @"Advanced";
 NSString * const FTO_VARIANT_FIVES_PROGRESSION = @"Fives Progression";
+NSString * const FTO_VARIANT_CUSTOM = @"Custom";
 
 @implementation FTOVariant
 

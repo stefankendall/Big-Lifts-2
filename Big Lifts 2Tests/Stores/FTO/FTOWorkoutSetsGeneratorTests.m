@@ -54,4 +54,12 @@
     STAssertEquals([lastSet maxReps], 8, @"");
 }
 
+- (void)testCustom {
+    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS];
+    FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
+    FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    NSArray *sets = [generator setsForWeek:1 lift:squat];
+    STAssertEquals([sets count], 6U, @"");
+}
+
 @end
