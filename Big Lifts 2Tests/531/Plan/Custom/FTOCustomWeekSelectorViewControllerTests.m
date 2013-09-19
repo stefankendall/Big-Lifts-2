@@ -2,6 +2,9 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOCustomWeekSelectorViewController.h"
 #import "FTOCustomWorkoutStore.h"
+#import "FTOCustomWeekEditCell.h"
+#import "RowTextField.h"
+#import "FTOCustomWorkout.h"
 
 @implementation FTOCustomWeekSelectorViewControllerTests
 
@@ -20,6 +23,18 @@
             [NSIndexPath indexPathForRow:0 inSection:0]];
 
     STAssertEquals([[FTOCustomWorkoutStore instance] count], 3, @"");
+}
+
+- (void)testCanEditWeekNames {
+    FTOCustomWeekSelectorViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomWeekSelector"];
+    [controller editWeekTapped:nil];
+    FTOCustomWeekEditCell *cell = (FTOCustomWeekEditCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:
+            [NSIndexPath indexPathForRow:0 inSection:0]];
+    [cell.nameField setText:@"Starter week"];
+    [controller textFieldDidEndEditing:cell.nameField];
+
+    FTOCustomWorkout *firstWorkout = [[FTOCustomWorkoutStore instance] first];
+    STAssertEqualObjects(firstWorkout.name, @"Starter week", @"");
 }
 
 @end

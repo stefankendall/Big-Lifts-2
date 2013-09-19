@@ -2,6 +2,8 @@
 #import "FTOCustomWorkoutStore.h"
 #import "FTOCustomWorkoutViewController.h"
 #import "FTOCustomWorkout.h"
+#import "FTOCustomWeekEditCell.h"
+#import "RowTextField.h"
 
 
 @interface FTOCustomWeekSelectorViewController ()
@@ -15,19 +17,30 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOCustomWeekCell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOCustomWeekCell"];
-    }
-
     FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] atIndex:[indexPath row]];
-    [[cell textLabel] setText:customWorkout.name];
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-    return cell;
+    if ([tableView isEditing]) {
+        FTOCustomWeekEditCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomWeekEditCell.class)];
+        if (!cell) {
+            cell = [FTOCustomWeekEditCell create];
+        }
+        cell.nameField.indexPath = indexPath;
+        [cell.nameField setDelegate:self];
+        [cell.nameField setText:customWorkout.name];
+        return cell;
+    }
+    else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOCustomWeekCell"];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOCustomWeekCell"];
+        }
+        [[cell textLabel] setText:customWorkout.name];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.tappedWorkout = [[FTOCustomWorkoutStore instance] atIndex: [indexPath row]];
+    self.tappedWorkout = [[FTOCustomWorkoutStore instance] atIndex:[indexPath row]];
     [self performSegueWithIdentifier:@"ftoCustomWeekSelectedSegue" sender:self];
 }
 
@@ -54,6 +67,15 @@
         [self.tableView setEditing:YES];
         [self.editWeekButton setTitle:@"Done"];
     }
+
+    [self.tableView reloadData];
 }
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    RowTextField *rowTextField = (RowTextField *) textField;
+    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] atIndex:[rowTextField.indexPath row]];
+    customWorkout.name = [rowTextField text];
+}
+
 
 @end
