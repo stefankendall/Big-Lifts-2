@@ -21,7 +21,7 @@
     }
 }
 
-- (Workout *)createWorkoutForWeek: (int)week {
+- (Workout *)createWorkoutForWeek:(int)week {
     Workout *workout = [[WorkoutStore instance] create];
     NSDictionary *workoutPlan = [[FTOWorkoutSetsGenerator new] setsFor:nil withTemplate:FTO_VARIANT_STANDARD];
     NSArray *setData = workoutPlan[[NSNumber numberWithInt:week]];
@@ -38,6 +38,7 @@
     customWorkout.workout = workout;
     customWorkout.week = [NSNumber numberWithInt:week];
     customWorkout.order = [NSNumber numberWithInt:order];
+    customWorkout.name = @{@1 : @"5/5/5", @2 : @"3/3/3", @3 : @"5/3/1", @4 : @"Deload"}[[NSNumber numberWithInt:week]];
 }
 
 @end

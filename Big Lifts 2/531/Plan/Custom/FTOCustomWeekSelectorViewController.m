@@ -11,13 +11,7 @@
 @implementation FTOCustomWeekSelectorViewController
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self getWeeks] count];
-}
-
-- (NSArray *)getWeeks {
-    return [[[FTOCustomWorkoutStore instance] unique:@"week"] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        return [obj1 compare:obj2];
-    }];
+    return [[FTOCustomWorkoutStore instance] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -26,16 +20,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOCustomWeekCell"];
     }
 
-    int week = [[self getWeeks][(NSUInteger) [indexPath row]] intValue];
-    NSString *weekText = [NSString stringWithFormat:@"Week %d", week];
-    [[cell textLabel] setText:weekText];
+    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] atIndex:[indexPath row]];
+    [[cell textLabel] setText:customWorkout.name];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSNumber *week = [NSNumber numberWithInteger:[indexPath row] + 1];
-    self.tappedWorkout = [[FTOCustomWorkoutStore instance] find:@"week" value:week];
+    self.tappedWorkout = [[FTOCustomWorkoutStore instance] atIndex: [indexPath row]];
     [self performSegueWithIdentifier:@"ftoCustomWeekSelectedSegue" sender:self];
 }
 
@@ -53,7 +45,6 @@
     }
 }
 
-
 - (IBAction)editWeekTapped:(id)sender {
     if ([self.tableView isEditing]) {
         [self.tableView setEditing:NO];
@@ -64,6 +55,5 @@
         [self.editWeekButton setTitle:@"Done"];
     }
 }
-
 
 @end

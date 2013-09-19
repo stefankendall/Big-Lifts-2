@@ -15,7 +15,6 @@
     </entity>
     <entity name="FTOCustomWorkout" representedClassName="FTOCustomWorkout" syncable="YES">
         <attribute name="deload" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="week" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" syncable="YES"/>
@@ -111,7 +110,6 @@
         <element name="CurrentProgram" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOAssistance" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOBoringButBig" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FTOCustomWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOLift" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOSet" positionX="0" positionY="0" width="0" height="0"/>
         <element name="FTOSettings" positionX="0" positionY="0" width="0" height="0"/>
@@ -133,5 +131,6 @@
         <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
         <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOCustomWorkout" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

@@ -11,7 +11,7 @@
 
     UITableViewCell *cell = [controller tableView:controller.tableView cellForRowAtIndexPath:
             [NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertEqualObjects([[cell textLabel] text], @"Week 1", @"");
+    STAssertEqualObjects([[cell textLabel] text], @"5/5/5", @"");
 }
 
 - (void)testCanDeleteWeeks {
