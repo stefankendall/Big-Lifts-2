@@ -1575,8 +1575,15 @@
                             <outlet property="delegate" destination="cMd-SG-ObX" id="ciQ-8v-H3J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Custom" id="4fG-Fn-1QM"/>
+                    <navigationItem key="navigationItem" title="Custom" id="4fG-Fn-1QM">
+                        <barButtonItem key="rightBarButtonItem" title="Edit Weeks" id="CcN-Gj-DSq">
+                            <connections>
+                                <action selector="editWeekTapped:" destination="cMd-SG-ObX" id="mk1-TG-xk0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="editWeekButton" destination="CcN-Gj-DSq" id="8d4-Ar-ao3"/>
                         <segue destination="vxS-uW-Rn5" kind="push" identifier="ftoCustomWeekSelectedSegue" id="vGm-5d-skw"/>
                     </connections>
                 </tableViewController>

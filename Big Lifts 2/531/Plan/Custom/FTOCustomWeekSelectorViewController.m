@@ -46,5 +46,24 @@
     [super prepareForSegue:segue sender:sender];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[FTOCustomWorkoutStore instance] removeAtIndex:[indexPath row]];
+        [self.tableView reloadData];
+    }
+}
+
+
+- (IBAction)editWeekTapped:(id)sender {
+    if ([self.tableView isEditing]) {
+        [self.tableView setEditing:NO];
+        [self.editWeekButton setTitle:@"Edit Weeks"];
+    }
+    else {
+        [self.tableView setEditing:YES];
+        [self.editWeekButton setTitle:@"Done"];
+    }
+}
+
 
 @end

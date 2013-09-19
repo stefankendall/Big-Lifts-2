@@ -1,2 +1,4 @@
-@interface FTOCustomWeekSelectorViewController : UITableViewController
+@interface FTOCustomWeekSelectorViewController : UITableViewController {}
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editWeekButton;
+
 @end

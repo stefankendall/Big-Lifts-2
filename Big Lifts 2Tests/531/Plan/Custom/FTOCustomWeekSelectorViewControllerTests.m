@@ -1,6 +1,7 @@
 #import "FTOCustomWeekSelectorViewControllerTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOCustomWeekSelectorViewController.h"
+#import "FTOCustomWorkoutStore.h"
 
 @implementation FTOCustomWeekSelectorViewControllerTests
 
@@ -11,6 +12,14 @@
     UITableViewCell *cell = [controller tableView:controller.tableView cellForRowAtIndexPath:
             [NSIndexPath indexPathForRow:0 inSection:0]];
     STAssertEqualObjects([[cell textLabel] text], @"Week 1", @"");
+}
+
+- (void)testCanDeleteWeeks {
+    FTOCustomWeekSelectorViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomWeekSelector"];
+    [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:
+            [NSIndexPath indexPathForRow:0 inSection:0]];
+
+    STAssertEquals([[FTOCustomWorkoutStore instance] count], 3, @"");
 }
 
 @end
