@@ -9,6 +9,7 @@
 #import "SetData.h"
 #import "FTOVariant.h"
 #import "FTOVariantStore.h"
+#import "FTOCustomWorkoutStore.h"
 
 @implementation FTOWorkoutStore
 
@@ -36,6 +37,9 @@
     FTOVariant *variant = [[FTOVariantStore instance] first];
     if ([variant.name isEqualToString:FTO_VARIANT_SIX_WEEK]) {
         weeks = 7;
+    }
+    else if ([variant.name isEqualToString:FTO_VARIANT_CUSTOM]) {
+        weeks = [[FTOCustomWorkoutStore instance] count];
     }
 
     for (int week = 1; week <= weeks; week++) {

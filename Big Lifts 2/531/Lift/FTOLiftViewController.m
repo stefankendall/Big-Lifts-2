@@ -8,6 +8,7 @@
 #import "Lift.h"
 #import "FTOVariant.h"
 #import "FTOVariantStore.h"
+#import "FTOCustomWorkoutStore.h"
 
 @interface FTOLiftViewController ()
 
@@ -40,8 +41,15 @@
     int week = [indexPath section] + 1;
     NSUInteger index = (NSUInteger) [indexPath row];
     FTOWorkout *ftoWorkout = [self getWorkout:week row:index];
-    Set *set = ftoWorkout.workout.sets[0];
-    [cell.textLabel setText:set.lift.name];
+
+    if([ftoWorkout.workout.sets count] > 0){
+        Set *set = ftoWorkout.workout.sets[0];
+        [cell.textLabel setText:set.lift.name];
+    }
+    else {
+        [cell.textLabel setText:@"Empty workout"];
+    }
+
 
     if (ftoWorkout.done) {
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
@@ -85,6 +93,10 @@
                 @3 : @"Deload (opt.)",
         };
     }
+    else if ([variant.name isEqualToString:FTO_VARIANT_CUSTOM]){
+        return [[[FTOCustomWorkoutStore instance] find: @"week" value: [NSNumber numberWithInteger:section+1]] name];
+    }
+
     return mapping[[NSNumber numberWithInteger:section]];
 }
 
