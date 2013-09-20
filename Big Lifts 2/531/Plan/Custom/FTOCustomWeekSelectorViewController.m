@@ -96,8 +96,17 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [[FTOCustomWorkoutStore instance] removeAtIndex:[indexPath row]];
+        [self recreateWeeks];
         [self.tableView reloadData];
     }
+}
+
+- (void)recreateWeeks {
+    for (int week = 1; week < [[FTOCustomWorkoutStore instance] count]; week++) {
+            FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] atIndex:week];
+            customWorkout.week = [NSNumber numberWithInt:week];
+            customWorkout.order = [NSNumber numberWithInt:week];
+        }
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {

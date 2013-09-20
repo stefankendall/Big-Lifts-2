@@ -23,6 +23,8 @@
             [NSIndexPath indexPathForRow:0 inSection:0]];
 
     STAssertEquals([[FTOCustomWorkoutStore instance] count], 3, @"");
+    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] first];
+    STAssertEquals(customWorkout.week, @1, @"");
 }
 
 - (void)testCanEditWeekNames {
