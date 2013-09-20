@@ -37,4 +37,12 @@
     STAssertEqualObjects(firstWorkout.name, @"Starter week", @"");
 }
 
+- (void) testCanAddWeeks {
+    FTOCustomWeekSelectorViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomWeekSelector"];
+    [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+
+    STAssertEquals([[FTOCustomWorkoutStore instance] count], 5, @"");
+    STAssertTrue([[[FTOCustomWorkoutStore instance] unique:@"week"] containsObject:@5], @"");
+}
+
 @end
