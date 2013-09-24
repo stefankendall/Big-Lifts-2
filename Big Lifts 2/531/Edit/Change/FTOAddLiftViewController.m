@@ -46,6 +46,7 @@
     lift.name = [self.nameField text];
     lift.weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text]];
     lift.increment = [NSDecimalNumber decimalNumberWithString:[self.increaseField text]];
+    lift.usesBar = YES;
 
     [[FTOWorkoutStore instance] switchTemplate];
 
