@@ -19,11 +19,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
-    if( self.ftoWorkout.done ){
-        [self.doneButton setTitle: @"Not Done"];
+    if (self.ftoWorkout.done) {
+        [self.doneButton setTitle:@"Not Done"];
     }
     else {
-        [self.doneButton setTitle: @"Done"];
+        [self.doneButton setTitle:@"Done"];
     }
 }
 
@@ -109,15 +109,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Set *set = self.ftoWorkout.workout.sets[[indexPath row]];
-    if ([set hasVariableReps]) {
-        self.tappedSetRow = [NSNumber numberWithInteger:[indexPath row]];
-        [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
-    }
+    self.tappedSetRow = [NSNumber numberWithInteger:[indexPath row]];
+    [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
-    if( self.ftoWorkout.done ){
+    if (self.ftoWorkout.done) {
         [self unmarkWorkout];
     }
     else {
@@ -134,12 +131,12 @@
     [self logWorkout];
     [self.ftoWorkout setDone:YES];
     if ([self missedAmrapReps]) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missed Reps"
-                                                                message:@"It looks like you missed a set! Maybe drop your training max for next cycle?"
-                                                               delegate:nil cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-            [alertView show];
-        }
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Missed Reps"
+                                                            message:@"It looks like you missed a set! Maybe drop your training max for next cycle?"
+                                                           delegate:nil cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
     [[FTOCycleAdjustor new] checkForCycleChange];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
@@ -152,10 +149,11 @@
 
 - (BOOL)missedAmrapReps {
     NSMutableOrderedSet *sets = self.ftoWorkout.workout.sets;
+    Set *heaviestAmrapSet = [self heaviestAmrapSet:sets];
     for (int i = 0; i < [sets count]; i++) {
         Set *set = sets[(NSUInteger) i];
         NSNumber *loggedReps = self.variableReps[[NSNumber numberWithInt:i]];
-        if (loggedReps && [loggedReps compare:set.reps] == NSOrderedAscending) {
+        if (set == heaviestAmrapSet && loggedReps && [loggedReps compare:set.reps] == NSOrderedAscending) {
             return YES;
         }
     }

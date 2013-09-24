@@ -50,13 +50,6 @@
     STAssertEquals([self.controller.navigationController.viewControllers count], 2U, @"");
 }
 
-- (void)testTappingNonAmrapCellDoesNotCauseSegue {
-    UINavigationController *nav = [UINavigationController new];
-    [nav addChildViewController:self.controller];
-    [self.controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertEquals([self.controller.navigationController.viewControllers count], 1U, @"");
-}
-
 - (void)testAmrapRepsCanBeChanged {
     self.controller.tappedSetRow = @5;
     [self.controller repsChanged:@7];
