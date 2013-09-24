@@ -5,6 +5,6 @@
 @property(nonatomic, strong) SetCell *setCell;
 
 - (void)setSet:(Set *)set;
-- (void)setSet:(Set *)set withEnteredReps:(int)enteredReps;
+- (void)setSet:(Set *)set withEnteredReps:(NSNumber *)enteredReps;
 
 @end

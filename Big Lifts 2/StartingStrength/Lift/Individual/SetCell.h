@@ -10,10 +10,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *liftLabel;
 @property (weak, nonatomic) IBOutlet UILabel *optionalLabel;
 @property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
-@property (nonatomic) int enteredReps;
+@property (nonatomic) NSNumber *enteredReps;
 
 
 - (void)setSet:(Set *) set;
-- (void)setSet:(Set *)set withEnteredReps: (int) enteredReps;
+- (void)setSet:(Set *)set withEnteredReps: (NSNumber *) enteredReps;
 
 @end

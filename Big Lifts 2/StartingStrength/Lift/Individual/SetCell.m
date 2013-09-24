@@ -38,14 +38,14 @@
     [self.optionalLabel setHidden:!set.optional];
 }
 
-- (void)setSet:(Set *)set withEnteredReps:(int)enteredReps {
+- (void)setSet:(Set *)set withEnteredReps:(NSNumber *)enteredReps {
     self.enteredReps = enteredReps;
     [self setSet:set];
 }
 
 - (NSString *)getRepsString:(Set *)set {
-    if (self.enteredReps > 0) {
-        return [NSString stringWithFormat:@"%dx", self.enteredReps];
+    if (self.enteredReps != nil) {
+        return [NSString stringWithFormat:@"%@x", self.enteredReps];
     }
 
     int maxReps = [set.maxReps intValue];

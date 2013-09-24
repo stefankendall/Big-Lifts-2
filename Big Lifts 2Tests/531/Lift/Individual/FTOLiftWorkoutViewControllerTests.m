@@ -43,6 +43,14 @@
     STAssertTrue(self.ftoWorkout.done, @"");
 }
 
+- (void)testDoesNotSave0RepsInLog {
+    self.controller.tappedSetRow = @0;
+    [self.controller repsChanged:@0];
+    [self.controller doneButtonTapped:nil];
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] find:@"name" value:@"5/3/1"];
+    STAssertEquals([workoutLog.sets count], 5U, @"");
+}
+
 - (void)testTappingAmrapCellCausesSegue {
     UINavigationController *nav = [UINavigationController new];
     [nav addChildViewController:self.controller];

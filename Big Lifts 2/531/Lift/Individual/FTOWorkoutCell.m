@@ -39,10 +39,8 @@
     }
 }
 
-- (void)setSet:(Set *)set withEnteredReps:(int)enteredReps {
-    [self.setCell setEnteredReps:enteredReps];
-    [self.setCell setSet:set];
+- (void)setSet:(Set *)set withEnteredReps:(NSNumber *)enteredReps {
+    [self.setCell setSet:set withEnteredReps:enteredReps];
 }
-
 
 @end

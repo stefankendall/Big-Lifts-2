@@ -33,4 +33,9 @@
     return [self emptyView];
 }
 
+- (IBAction)liftIncomplete:(id)sender {
+    [self.delegate repsChanged:@0];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

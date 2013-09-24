@@ -48,11 +48,7 @@
     if (!cell) {
         cell = [FTOWorkoutCell create];
     }
-    int previousReps = 0;
-    NSNumber *previouslyRepsNumber = [self.variableReps objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
-    if (previouslyRepsNumber) {
-        previousReps = [previouslyRepsNumber intValue];
-    }
+    NSNumber *previousReps = [self.variableReps objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
     [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) ([indexPath row])] withEnteredReps:previousReps];
     return cell;
 }
@@ -168,9 +164,13 @@
     NSMutableOrderedSet *sets = self.ftoWorkout.workout.sets;
     for (int i = 0; i < [sets count]; i++) {
         Set *set = sets[(NSUInteger) i];
-        SetLog *setLog = [[SetLogStore instance] createFromSet:set];
         NSNumber *reps = self.variableReps[[NSNumber numberWithInt:i]];
-        if (reps) {
+        if (reps != nil && [reps intValue] == 0) {
+            continue;
+        }
+
+        SetLog *setLog = [[SetLogStore instance] createFromSet:set];
+        if (reps != nil) {
             setLog.reps = reps;
         }
         [log.sets addObject:setLog];

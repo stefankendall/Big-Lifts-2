@@ -67,7 +67,7 @@
     Workout *workout = [ssWorkout workouts][0];
     Set *set = workout.sets[0];
     [set setReps:[NSNumber numberWithInt:5]];
-    [cell setSet:set withEnteredReps:7];
+    [cell setSet:set withEnteredReps:@7];
     STAssertEqualObjects([[cell repsLabel] text], @"7x", @"");
 }
 
@@ -79,7 +79,7 @@
     Set *set = workout.sets[0];
     set.lift.usesBar = NO;
     set.percentage = N(0);
-    [cell setSet:set withEnteredReps:7];
+    [cell setSet:set withEnteredReps:@7];
     STAssertEqualObjects([[cell weightLabel] text], @"", @"");
 }
 
