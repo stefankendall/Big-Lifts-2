@@ -160,6 +160,7 @@
 		545906C3BA216AD797214072 /* SJIndividualLiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909C26186F39432A8F03E /* SJIndividualLiftViewController.m */; };
 		545906D497D17D3A5E089098 /* BLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459017FBEDDF8FC52EC31A7 /* BLAppDelegate.m */; };
 		545906DDB927E241B5F8F0F5 /* UITableViewController+NoEmptyRows.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459024023A4D2C892087E02 /* UITableViewController+NoEmptyRows.m */; };
+		545906E11AC99D5D146A0A8B /* UIViewController+HandleReturn.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906518F77CC8A6E793E81 /* UIViewController+HandleReturn.m */; };
 		545906E359AA552213286E56 /* FTOTriumvirateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459077E30AF1E47D3D8FAB0 /* FTOTriumvirateTests.m */; };
 		545906F4F9B312506EF04216 /* FTOVariantStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C9780051778662102C0 /* FTOVariantStore.m */; };
 		54590701C87D93D53E563613 /* WorkoutLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905EFF41CE437107EF576 /* WorkoutLog.m */; };
@@ -597,6 +598,7 @@
 		5459062E1FD6E0C38192CC68 /* SKProductFake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProductFake.m; sourceTree = "<group>"; };
 		54590631753DDF33D785CFEC /* BarWeightTextFieldDelegateTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarWeightTextFieldDelegateTests.h; sourceTree = "<group>"; };
 		54590645125642900D49667E /* FTOLogGraphTransformerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLogGraphTransformerTests.h; sourceTree = "<group>"; };
+		545906518F77CC8A6E793E81 /* UIViewController+HandleReturn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HandleReturn.m"; sourceTree = "<group>"; };
 		54590659C88134015D9ADD06 /* SJSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SJSetCell.xib; sourceTree = "<group>"; };
 		5459065EA2F2C8B26168E23B /* FTOBoringButBigAssistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOBoringButBigAssistance.h; sourceTree = "<group>"; };
 		545906610651643795AFF698 /* BLStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLStoreManager.h; sourceTree = "<group>"; };
@@ -884,6 +886,7 @@
 		54590EA1850C09016389A994 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		54590EA712CA9B50B4F492DC /* RowTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowTextField.h; sourceTree = "<group>"; };
 		54590EA87512AFEF11C6DC12 /* SSEditViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEditViewControllerTests.h; sourceTree = "<group>"; };
+		54590EAFCDCD273B0E87AFEC /* UIViewController+HandleReturn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HandleReturn.h"; sourceTree = "<group>"; };
 		54590EB3D52D5DB0ADC33D74 /* Big Lifts 2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "Big Lifts 2Tests-Info.plist"; sourceTree = "<group>"; };
 		54590EC196BC63BE61A1F180 /* 213-reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "213-reply.png"; sourceTree = "<group>"; };
 		54590EC4AC8D219C8FCB86FF /* FTOPlanViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOPlanViewControllerTests.h; sourceTree = "<group>"; };
@@ -1131,6 +1134,8 @@
 			children = (
 				5459024023A4D2C892087E02 /* UITableViewController+NoEmptyRows.m */,
 				54590FCA85C725757C5716BC /* UITableViewController+NoEmptyRows.h */,
+				545906518F77CC8A6E793E81 /* UIViewController+HandleReturn.m */,
+				54590EAFCDCD273B0E87AFEC /* UIViewController+HandleReturn.h */,
 			);
 			path = Tables;
 			sourceTree = "<group>";
@@ -2883,6 +2888,7 @@
 				545909AED63CA01FAA9B6008 /* FTOCustomSetViewController.m in Sources */,
 				54590D53101E6005B3246B7B /* FTOCustomWeekEditCell.m in Sources */,
 				54590FB322AC5B8EBCC23909 /* FTOCustomPlan.m in Sources */,
+				545906E11AC99D5D146A0A8B /* UIViewController+HandleReturn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

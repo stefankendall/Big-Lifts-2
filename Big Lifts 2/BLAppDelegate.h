@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <UbiquityStoreManager/UbiquityStoreManager.h>
 
+#import "UIViewController+HandleReturn.h"
+
 @interface BLAppDelegate : UIResponder <UIApplicationDelegate, UbiquityStoreManagerDelegate>
 
 @property(strong, nonatomic) UIWindow *window;
