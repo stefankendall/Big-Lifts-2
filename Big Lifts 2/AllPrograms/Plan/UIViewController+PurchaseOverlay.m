@@ -14,7 +14,13 @@
         CGRect frame = CGRectMake(0, 0, [view frame].size.width, [view frame].size.height);
         [overlay setFrame:frame];
         SKProduct *product = [[SKProductStore instance] productById:purchaseId];
-        [overlay.price setText:[[PriceFormatter new] priceOf:product]];
+        if( product ){
+            [overlay.price setText:[[PriceFormatter new] priceOf:product]];
+        }
+        else {
+            [overlay.price setText:@"Can't connect to app store"];
+        }
+
         [view addSubview:overlay];
         if ([view respondsToSelector:@selector(setSelectionStyle:)]) {
             UITableViewCell *cell = (UITableViewCell *) view;
