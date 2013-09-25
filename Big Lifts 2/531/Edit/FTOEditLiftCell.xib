@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,34 +21,34 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qS2-zX-TuI" customClass="RowTextField">
-                        <rect key="frame" x="139" y="7" width="74" height="30"/>
+                        <rect key="frame" x="139" y="0.0" width="74" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="74" id="WIZ-gb-qvf"/>
+                            <constraint firstAttribute="width" constant="74" id="WJo-rb-yOB"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                     </textField>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lvA-1Y-Ihh" customClass="TrainingMaxRowTextField">
-                        <rect key="frame" x="221" y="8" width="79" height="30"/>
+                        <rect key="frame" x="221" y="0.0" width="79" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="79" id="QfO-IP-GRx"/>
+                            <constraint firstAttribute="width" constant="79" id="AAf-LZ-9bb"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="lvA-1Y-Ihh" secondAttribute="trailing" constant="20" symbolic="YES" id="7U6-mn-aKT"/>
-                    <constraint firstItem="qS2-zX-TuI" firstAttribute="leading" secondItem="XlF-br-zRn" secondAttribute="trailing" constant="8" symbolic="YES" id="Dzb-02-nF5"/>
-                    <constraint firstItem="XlF-br-zRn" firstAttribute="centerY" secondItem="GAr-jH-0xT" secondAttribute="centerY" id="E1T-yc-st0"/>
-                    <constraint firstAttribute="bottom" secondItem="lvA-1Y-Ihh" secondAttribute="bottom" constant="5" id="Gwd-iM-ubr"/>
-                    <constraint firstAttribute="bottom" secondItem="qS2-zX-TuI" secondAttribute="bottom" constant="6" id="Is4-h9-blT"/>
-                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="baseline" secondItem="XlF-br-zRn" secondAttribute="baseline" id="JhW-Bv-4E0"/>
-                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="leading" secondItem="qS2-zX-TuI" secondAttribute="trailing" constant="8" symbolic="YES" id="OPJ-5T-9Vx"/>
-                    <constraint firstItem="XlF-br-zRn" firstAttribute="leading" secondItem="GAr-jH-0xT" secondAttribute="leading" constant="20" symbolic="YES" id="eUb-JO-L5V"/>
-                    <constraint firstItem="qS2-zX-TuI" firstAttribute="top" secondItem="GAr-jH-0xT" secondAttribute="top" constant="7" id="pnt-9z-w7c"/>
+                    <constraint firstItem="XlF-br-zRn" firstAttribute="leading" secondItem="GAr-jH-0xT" secondAttribute="leading" constant="20" symbolic="YES" id="2vc-36-lcr"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="baseline" secondItem="qS2-zX-TuI" secondAttribute="baseline" id="AVc-1i-ULg"/>
+                    <constraint firstItem="qS2-zX-TuI" firstAttribute="leading" secondItem="XlF-br-zRn" secondAttribute="trailing" constant="8" symbolic="YES" id="Bzs-Hn-djz"/>
+                    <constraint firstItem="qS2-zX-TuI" firstAttribute="centerY" secondItem="XlF-br-zRn" secondAttribute="centerY" id="Rj7-1x-rpj"/>
+                    <constraint firstAttribute="bottom" secondItem="lvA-1Y-Ihh" secondAttribute="bottom" id="cxV-1Q-ag9"/>
+                    <constraint firstAttribute="trailing" secondItem="lvA-1Y-Ihh" secondAttribute="trailing" constant="20" symbolic="YES" id="f5o-Bo-nTB"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="leading" secondItem="qS2-zX-TuI" secondAttribute="trailing" constant="8" symbolic="YES" id="fS8-2y-WnN"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="bottom" secondItem="qS2-zX-TuI" secondAttribute="bottom" id="yJM-hF-4B8"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="top" secondItem="GAr-jH-0xT" secondAttribute="top" id="ymA-VX-thA"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

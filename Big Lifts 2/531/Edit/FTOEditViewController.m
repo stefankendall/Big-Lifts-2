@@ -12,18 +12,8 @@
 
 @implementation FTOEditViewController
 
-- (void)viewDidLoad {
-    UITapGestureRecognizer *singleFingerTap =
-            [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    [self.view addGestureRecognizer:singleFingerTap];
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
-}
-
-- (void)handleSingleTap:(id)handleSingleTap {
-    [self.view endEditing:YES];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
