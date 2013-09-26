@@ -14,6 +14,7 @@
 		029E3AF117A4934800113103 /* underscore-1.5.1.js in Resources */ = {isa = PBXBuildFile; fileRef = 029E3AEF17A4934800113103 /* underscore-1.5.1.js */; };
 		02B5CC6017AFD5530050131C /* FTOChangeLiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B5CC5F17AFD5530050131C /* FTOChangeLiftCell.xib */; };
 		02B5E51817F3AE060018A856 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B5E51717F3AE060018A856 /* StoreKit.framework */; };
+		02B5E51A17F3BAEC0018A856 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B5E51917F3BAEC0018A856 /* Security.framework */; };
 		02DC342517C9592800312731 /* 29-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 02DC342317C9592800312731 /* 29-heart.png */; };
 		02DC342617C9592800312731 /* 29-heart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02DC342417C9592800312731 /* 29-heart@2x.png */; };
 		02DC342817C9820900312731 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 02DC342717C9820900312731 /* facebook.png */; };
@@ -362,6 +363,7 @@
 		02AE564317B9C357008A9CE0 /* 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 3.xcdatamodel; path = "Big Lifts 2/Big_Lifts_2.xcdatamodeld/3.xcdatamodel"; sourceTree = "<group>"; };
 		02B5CC5F17AFD5530050131C /* FTOChangeLiftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FTOChangeLiftCell.xib; sourceTree = "<group>"; };
 		02B5E51717F3AE060018A856 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		02B5E51917F3BAEC0018A856 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		02BD9EC817CB998C004B0084 /* 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 7.xcdatamodel; path = "Big Lifts 2/Big_Lifts_2.xcdatamodeld/7.xcdatamodel"; sourceTree = "<group>"; };
 		02BD9EC917CBBAE2004B0084 /* 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 8.xcdatamodel; path = "Big Lifts 2/Big_Lifts_2.xcdatamodeld/8.xcdatamodel"; sourceTree = "<group>"; };
 		02DC342317C9592800312731 /* 29-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart.png"; sourceTree = "<group>"; };
@@ -956,6 +958,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B5E51A17F3BAEC0018A856 /* Security.framework in Frameworks */,
 				545905E23A25A8F2505D2029 /* UIKit.framework in Frameworks */,
 				5459060E3276963CE6701186 /* Foundation.framework in Frameworks */,
 				54590602539AB52533BBAE57 /* CoreGraphics.framework in Frameworks */,
@@ -2031,6 +2034,7 @@
 		54590BED2B74CA641FF32060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02B5E51917F3BAEC0018A856 /* Security.framework */,
 				02B5E51717F3AE060018A856 /* StoreKit.framework */,
 				545909344AEA6A82F1DB578A /* UIKit.framework */,
 				54590FF8E43786FDCC2C2CA4 /* Foundation.framework */,
@@ -2943,14 +2947,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Big Lifts 2/Big Lifts 2.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Usable Design LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Usable Design LLC";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A205417-5A8E-4EAE-A025-24C20A721858";
+				PROVISIONING_PROFILE = "E8AD2CC1-41DC-4DAC-AE98-F4BA9F5A9214";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
@@ -2993,15 +2997,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Big Lifts 2/Big Lifts 2.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Usable Design LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Usable Design LLC";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A205417-5A8E-4EAE-A025-24C20A721858";
+				PROVISIONING_PROFILE = "E8AD2CC1-41DC-4DAC-AE98-F4BA9F5A9214";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = app;
