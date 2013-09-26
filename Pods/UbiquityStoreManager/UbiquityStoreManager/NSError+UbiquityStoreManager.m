@@ -8,9 +8,11 @@
  */
 
 
+#import <CoreData/CoreData.h>
 #import "NSError+UbiquityStoreManager.h"
 
 NSString *const UbiquityManagedStoreDidDetectCorruptionNotification = @"UbiquityManagedStoreDidDetectCorruptionNotification";
+NSString *const USMStoreURLsErrorKey = @"USMStoreURLsErrorKey";
 
 @implementation NSError(UbiquityStoreManager)
 
@@ -41,12 +43,19 @@ NSString *const UbiquityManagedStoreDidDetectCorruptionNotification = @"Ubiquity
     if (!error)
         return NO;
     
-    if ([error.domain isEqualToString:NSCocoaErrorDomain] && error.code == 1570) {
+    if ([error.domain isEqualToString:NSCocoaErrorDomain] && error.code == NSValidationMissingMandatoryPropertyError) {
         // Severity: Critical To Cloud Content
-        // Cause: Validation Error -- The object being imported does not pass model validation: It is corrupt.
-        // (it passed model validation on the other device just fine since it got saved!).
+        // Cause: Validation Error -- non-optional property with a nil value.  The other end of a required relationship is missing from the store.
         // Action: Mark corrupt, request rebuild.
-        [[NSNotificationCenter defaultCenter] postNotificationName:UbiquityManagedStoreDidDetectCorruptionNotification object:self];
+        NSManagedObject *object = [[error userInfo] objectForKey:NSValidationObjectErrorKey];
+        NSPersistentStoreCoordinator *psc = object.managedObjectContext.persistentStoreCoordinator;
+        NSMutableArray *storeURLs = [NSMutableArray arrayWithCapacity:[psc.persistentStores count]];
+        for (NSPersistentStore *store in psc.persistentStores)
+            [storeURLs addObject:[psc URLForPersistentStore:store]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:UbiquityManagedStoreDidDetectCorruptionNotification object:@{
+                NSUnderlyingErrorKey : self,
+                USMStoreURLsErrorKey : storeURLs,
+        }];
         return YES;
     }
     if ([(NSString *)[error.userInfo objectForKey:@"reason"] hasPrefix:@"Error reading the log file at location: (null)"]) {

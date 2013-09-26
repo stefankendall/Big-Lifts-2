@@ -80,6 +80,11 @@
     self.moc = nil;
 }
 
+- (BOOL)ubiquityStoreManager:(UbiquityStoreManager *)manager
+        handleCloudContentCorruptionWithHealthyStore:(BOOL)storeHealthy {
+    return NO;
+}
+
 - (void)ubiquityStoreManager:(UbiquityStoreManager *)manager didLoadStoreForCoordinator:(NSPersistentStoreCoordinator *)coordinator isCloud:(BOOL)isCloudStore {
     self.moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [self.moc setPersistentStoreCoordinator:coordinator];

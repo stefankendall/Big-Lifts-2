@@ -18,6 +18,10 @@
 
 @interface NSURL(UbiquityStoreManager)
 
+/** Starts downloading of the ubiquitous content for this URL if it isn't locally available yet, and blocks until it is.
+*
+ *  @return YES when the URL's contents is available locally.  NO when there is no resource for the URL.
+ */
 - (BOOL)downloadUbiquitousContent;
 
 @end
