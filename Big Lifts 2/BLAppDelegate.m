@@ -1,6 +1,7 @@
 #import "BLAppDelegate.h"
 #import "SKProductStore.h"
 #import "BLStoreManager.h"
+#import "Flurry.h"
 
 @interface BLAppDelegate ()
 @property(nonatomic, strong) NSManagedObjectContext *moc;
@@ -20,6 +21,8 @@
     manager.cloudEnabled = YES;
     [[SKProductStore instance] loadProducts:^{
     }];
+    [Flurry setCrashReportingEnabled:YES];
+    [Flurry startSession:@"FW43KTWNCSNYJRDR39WY"];
     return YES;
 }
 
