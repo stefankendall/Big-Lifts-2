@@ -5,26 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="zQg-aW-P3Z">
-            <objects>
-                <navigationController storyboardIdentifier="programSelector" definesPresentationContext="YES" navigationBarHidden="YES" id="tkx-uE-9cS" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AZh-4R-4VY">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="GLA-TU-Nrn" kind="relationship" relationship="rootViewController" id="pgh-jE-kdk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kMG-gc-7Qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="334" y="-549"/>
-        </scene>
         <!--Program Selector View Controller-->
         <scene sceneID="9X4-XO-8tg">
             <objects>
-                <tableViewController id="GLA-TU-Nrn" customClass="ProgramSelectorViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="programSelector" id="GLA-TU-Nrn" customClass="ProgramSelectorViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jek-0n-sgJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,13 +220,13 @@
         <!--Navigation Controller-->
         <scene sceneID="X0f-ch-x46">
             <objects>
-                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="ckh-VZ-HqJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="dataLoadingNav" definesPresentationContext="YES" navigationBarHidden="YES" id="ckh-VZ-HqJ" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YW9-dm-DcF">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="yuh-6g-6Fk" kind="relationship" relationship="rootViewController" id="Kad-LF-ncp"/>
+                        <segue destination="yuh-6g-6Fk" kind="relationship" relationship="rootViewController" id="tG6-7I-Afp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="La5-VI-LRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -252,7 +236,7 @@
         <!--Data Loading View Controller-->
         <scene sceneID="o6B-jD-wVu">
             <objects>
-                <viewController id="yuh-6g-6Fk" customClass="DataLoadingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dataLoading" id="yuh-6g-6Fk" customClass="DataLoadingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YA7-Nv-fCA"/>
                         <viewControllerLayoutGuide type="bottom" id="AWn-2f-7Mx"/>
@@ -284,6 +268,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="XeA-cy-szI"/>
+                    <connections>
+                        <segue destination="GLA-TU-Nrn" kind="push" identifier="dataLoadedSegue" id="Uvo-6n-j3I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pn7-qW-dRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4225,57 +4212,15 @@
     </scenes>
     <resources>
         <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="09-chat-2.png" width="32" height="22"/>
-        <image name="101-gameplan.png" width="32" height="32"/>
-        <image name="101-gameplan.png" width="32" height="32"/>
         <image name="101-gameplan.png" width="32" height="32"/>
         <image name="157-wrench.png" width="32" height="24"/>
-        <image name="157-wrench.png" width="32" height="24"/>
-        <image name="157-wrench.png" width="32" height="24"/>
-        <image name="157-wrench.png" width="32" height="24"/>
-        <image name="16-line-chart.png" width="32" height="24"/>
-        <image name="16-line-chart.png" width="32" height="24"/>
-        <image name="16-line-chart.png" width="32" height="24"/>
         <image name="16-line-chart.png" width="32" height="24"/>
         <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="19-circle-check.png" width="28" height="28"/>
-        <image name="20-gear-2.png" width="32" height="28"/>
-        <image name="20-gear-2.png" width="32" height="28"/>
-        <image name="20-gear-2.png" width="32" height="28"/>
         <image name="20-gear-2.png" width="32" height="28"/>
         <image name="213-reply.png" width="32" height="17"/>
-        <image name="213-reply.png" width="32" height="17"/>
-        <image name="213-reply.png" width="32" height="17"/>
-        <image name="213-reply.png" width="32" height="17"/>
-        <image name="29-heart.png" width="32" height="21"/>
-        <image name="29-heart.png" width="32" height="21"/>
-        <image name="29-heart.png" width="32" height="21"/>
         <image name="29-heart.png" width="32" height="21"/>
         <image name="89-dumbells.png" width="32" height="10"/>
-        <image name="89-dumbells.png" width="32" height="10"/>
-        <image name="89-dumbells.png" width="32" height="10"/>
-        <image name="89-dumbells.png" width="32" height="10"/>
         <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="95-equalizer.png" width="32" height="24"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
-        <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="facebook.png" width="32" height="32"/>
     </resources>

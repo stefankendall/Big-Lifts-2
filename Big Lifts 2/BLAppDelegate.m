@@ -2,6 +2,7 @@
 #import "SKProductStore.h"
 #import "BLStoreManager.h"
 #import "Flurry.h"
+#import "DataLoadingViewController.h"
 
 @interface BLAppDelegate ()
 @property(nonatomic, strong) NSManagedObjectContext *moc;
@@ -80,8 +81,8 @@
     self.moc = nil;
 }
 
-- (BOOL)ubiquityStoreManager:(UbiquityStoreManager *)manager
-        handleCloudContentCorruptionWithHealthyStore:(BOOL)storeHealthy {
+- (BOOL)                ubiquityStoreManager:(UbiquityStoreManager *)manager
+handleCloudContentCorruptionWithHealthyStore:(BOOL)storeHealthy {
     return NO;
 }
 
@@ -95,8 +96,9 @@
 }
 
 - (void)dataLoaded {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"programSelector"]];
+    UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
+    DataLoadingViewController *controller = (DataLoadingViewController *) navController.viewControllers[0];
+    controller.dataLoaded = YES;
 }
 
 - (NSManagedObjectContext *)managedObjectContextForUbiquityChangesInManager:(UbiquityStoreManager *)manager1 {
