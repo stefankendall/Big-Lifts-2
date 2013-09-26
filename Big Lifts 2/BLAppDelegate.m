@@ -91,7 +91,12 @@
     [self.moc setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
 
     [[BLStoreManager instance] initializeAllStores:self.moc withModel:[coordinator managedObjectModel]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"dataLoaded" object:nil];
+    [self dataLoaded];
+}
+
+- (void)dataLoaded {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    [self.window setRootViewController:[storyboard instantiateViewControllerWithIdentifier:@"programSelector"]];
 }
 
 - (NSManagedObjectContext *)managedObjectContextForUbiquityChangesInManager:(UbiquityStoreManager *)manager1 {

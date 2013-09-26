@@ -13,7 +13,7 @@
 
 @implementation ProgramSelectorViewController
 
-- (void)awakeFromNib {
+- (void)viewDidLoad {
     [self chooseSavedProgram];
 }
 
