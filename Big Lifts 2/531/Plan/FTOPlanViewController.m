@@ -8,6 +8,7 @@
 #import "FTOVariantStore.h"
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
+#import "IAPAdapter.h"
 
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;
@@ -45,6 +46,13 @@
                                              selector:@selector(enableDisableIapCells)
                                                  name:IAP_PURCHASED_NOTIFICATION
                                                object:nil];
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if([identifier isEqualToString:@"ftoCustomSegue"]){
+        return [[IAPAdapter instance] hasPurchased:IAP_FTO_CUSTOM];
+    }
+    return YES;
 }
 
 - (void)checkCurrentVariant {
