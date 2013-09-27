@@ -7,6 +7,4 @@
 
 - (void)rememberSelectedProgram:(NSString *)segueName;
 
-- (void)chooseSavedProgram;
-
 @end

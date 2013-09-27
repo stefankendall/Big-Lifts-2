@@ -4,7 +4,6 @@
 #import "Settings.h"
 #import "CurrentProgramStore.h"
 #import "CurrentProgram.h"
-#import "NSDictionaryMutator.h"
 #import "BLViewDeckController.h"
 
 @interface ProgramSelectorViewController ()
@@ -12,10 +11,6 @@
 @end
 
 @implementation ProgramSelectorViewController
-
-- (void)viewDidLoad {
-    [self chooseSavedProgram];
-}
 
 - (NSDictionary *)segueToProgramNames {
     return @{
@@ -25,15 +20,6 @@
     };
 }
 
-- (void)chooseSavedProgram {
-    CurrentProgram *program = [[CurrentProgramStore instance] first];
-    if (program.name) {
-        NSDictionary *namesToSegues = [[NSDictionaryMutator new] invert:[self segueToProgramNames]];
-        NSString *segueName = namesToSegues[program.name];
-        [self performSegueWithIdentifier:segueName sender:self];
-    }
-}
-
 - (IBAction)unitsChanged:(id)sender {
     UISegmentedControl *unitsControl = sender;
     NSArray *unitsMapping = @[@"lbs", @"kg"];
@@ -41,7 +27,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     [self reloadData];
 }
 
@@ -55,9 +40,7 @@
     id destinationController = [segue destinationViewController];
     if ([destinationController isKindOfClass:BLViewDeckController.class]) {
         BLViewDeckController *destination = destinationController;
-        if (self.firstTimeInApp) {
-            [destination firstTimeInApp];
-        }
+        [destination firstTimeInApp];
     }
 }
 
@@ -77,10 +60,6 @@
     }
 
     program.name = [self segueToProgramNames][segueName];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self emptyView];
 }
 
 @end
