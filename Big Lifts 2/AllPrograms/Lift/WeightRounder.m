@@ -9,7 +9,9 @@
     if ([settings.roundTo isEqualToNumber:@5]) {
         return [self roundTo5:number];
     }
-    else {
+    else if ([settings.roundTo isEqualToNumber:@2.5]) {
+        return [self roundTo2p5:number];
+    } else {
         return [self roundTo1:number];
     }
 }
@@ -17,6 +19,10 @@
 - (NSDecimalNumber *)roundTo1:(NSDecimalNumber *)number {
     return [number decimalNumberByRoundingAccordingToBehavior:
             [[NSDecimalNumberHandler alloc] initWithRoundingMode:NSRoundPlain scale:0 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO]];
+}
+
+- (NSDecimalNumber *)roundTo2p5:(NSDecimalNumber *)number {
+    return nil;
 }
 
 - (NSDecimalNumber *)roundTo5:(NSDecimalNumber *)number {

@@ -14,9 +14,16 @@
     STAssertEqualObjects([[WeightRounder new] round:N(85.4)], @85, @"");
 }
 
+- (void) testRoundsTo2p5 {
+    [[[SettingsStore instance] first] setRoundTo: N(2.5)];
+    STAssertEqualObjects([[WeightRounder new] round:N(85.4)], @85, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(86.25)], @87.5, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(87.5)], @87.5, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(88.75)], @90, @"");
+}
+
 - (void)testRoundsTo1 {
-    Settings *settings = [[SettingsStore instance] first];
-    settings.roundTo = N(1);
+    [[[SettingsStore instance] first] setRoundTo: N(1)];
     STAssertEqualObjects([[WeightRounder new] round:N(166)], @166, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(166.3)], @166, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(166.5)], @167, @"");

@@ -44,7 +44,7 @@
 }
 
 - (void)setupRoundTo {
-    self.roundingOptions = @[@"1", @"5"];
+    self.roundingOptions = @[@"1", @"2.5", @"5"];
     self.roundToPicker = [UIPickerView new];
     [self.roundToPicker setDataSource:self];
     [self.roundToPicker setDelegate:self];
