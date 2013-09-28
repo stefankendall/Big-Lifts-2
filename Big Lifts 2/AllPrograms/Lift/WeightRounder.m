@@ -22,7 +22,33 @@
 }
 
 - (NSDecimalNumber *)roundTo2p5:(NSDecimalNumber *)number {
-    return nil;
+    NSDecimalNumber *lastDigitAndDecimals = [self getLastPartsOf:number];
+    NSDecimalNumber *numberWithoutLastDigits = [number decimalNumberBySubtracting:lastDigitAndDecimals];
+
+    if ([lastDigitAndDecimals compare:N(1.25)] == NSOrderedAscending) {
+        return numberWithoutLastDigits;
+    }
+    else if ([lastDigitAndDecimals compare:N(3.75)] == NSOrderedAscending) {
+        return [numberWithoutLastDigits decimalNumberByAdding:N(2.5)];
+    }
+    else if ([lastDigitAndDecimals compare:N(6.25)] == NSOrderedAscending) {
+        return [numberWithoutLastDigits decimalNumberByAdding:N(5)];
+    }
+    else if ([lastDigitAndDecimals compare:N(8.75)] == NSOrderedAscending) {
+        return [numberWithoutLastDigits decimalNumberByAdding:N(7.5)];
+    }
+    else {
+        return [numberWithoutLastDigits decimalNumberByAdding:N(10)];
+    }
+}
+
+- (NSDecimalNumber *)getLastPartsOf:(NSDecimalNumber *)number {
+    NSDecimalNumberHandler *behavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:0 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    NSDecimalNumber *wholeNumbers = [number decimalNumberByRoundingAccordingToBehavior:behavior];
+    NSDecimalNumber *decimals = [number decimalNumberBySubtracting:wholeNumbers];
+    int lastDigit = [wholeNumbers intValue] % 10;
+    NSDecimalNumber *lastDigitDecimal = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInteger:lastDigit] decimalValue]];
+    return [lastDigitDecimal decimalNumberByAdding:decimals];
 }
 
 - (NSDecimalNumber *)roundTo5:(NSDecimalNumber *)number {
