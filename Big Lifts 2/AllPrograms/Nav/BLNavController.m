@@ -2,6 +2,8 @@
 #import "BLNavController.h"
 #import "NavTableViewCell.h"
 #import "Mailer.h"
+#import "CurrentProgramStore.h"
+#import "CurrentProgram.h"
 
 @implementation BLNavController
 
@@ -20,8 +22,7 @@
     [[[Mailer alloc] initWithSender:self] presentFeedback];
 }
 
-- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -32,12 +33,13 @@
 
     NSMutableDictionary *tagViewMapping = [[self specificTagMapping] mutableCopy];
     tagViewMapping[@2] = @"barLoadingNav";
-    tagViewMapping[@4] =  @"settingsViewController";
-    tagViewMapping[@9] =  @"likeNav";
+    tagViewMapping[@4] = @"settingsViewController";
+    tagViewMapping[@9] = @"likeNav";
 
     if ([cell tag] == 6) {
+        [[[CurrentProgramStore instance] first] setName: nil];
         [[self.viewDeckController navigationController] popViewControllerAnimated:YES];
-    } else if([cell tag] == 8){
+    } else if ([cell tag] == 8) {
         [self presentFeedbackEmail];
     } else {
         NSString *storyBoardId = [tagViewMapping objectForKey:[NSNumber numberWithInteger:[cell tag]]];

@@ -9,6 +9,12 @@
     [self performSelector:@selector(pollForReady) withObject:nil afterDelay:0.5];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    if (self.dataLoaded) {
+        [self segueToApp];
+    }
+}
+
 - (void)pollForReady {
     if (self.dataLoaded) {
         [self performSelector:@selector(segueToApp) withObject:nil afterDelay:1];
