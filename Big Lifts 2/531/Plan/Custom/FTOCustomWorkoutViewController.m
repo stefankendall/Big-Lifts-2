@@ -5,6 +5,7 @@
 #import "Set.h"
 #import "FTOCustomSetViewController.h"
 #import "SetStore.h"
+#import "FTOSetStore.h"
 
 @interface FTOCustomWorkoutViewController ()
 
@@ -78,8 +79,7 @@
 }
 
 - (void)addSet {
-    Set *set = [[SetStore instance] create];
-    [self.customWorkout.workout.sets addObject:set];
+    [self.customWorkout.workout.sets addObject:[[FTOSetStore instance] create]];
     [self.tableView reloadData];
 }
 

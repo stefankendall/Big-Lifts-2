@@ -42,10 +42,12 @@
         weeks = [[FTOCustomWorkoutStore instance] count];
     }
 
+    NSArray *lifts = [[FTOLiftStore instance] findAll];
     for (int week = 1; week <= weeks; week++) {
-        [[[FTOLiftStore instance] findAll] each:^(FTOLift *lift) {
+        for( int i = 0; i < [lifts count]; i++){
+            FTOLift *lift = lifts[(NSUInteger) i];
             [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
-        }];
+        }
     }
 }
 
