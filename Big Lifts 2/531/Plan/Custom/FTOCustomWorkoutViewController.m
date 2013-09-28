@@ -79,7 +79,7 @@
 }
 
 - (void)addSet {
-    [self.customWorkout.workout.sets addObject:[[FTOSetStore instance] create]];
+    [self.customWorkout.workout addSet:[[FTOSetStore instance] create]];
     [self.tableView reloadData];
 }
 
