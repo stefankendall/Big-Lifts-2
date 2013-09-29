@@ -5,7 +5,10 @@ extern int const SS_WORKOUT_VARIANT_SECTION;
 
 @interface SSWorkoutVariantController : UITableViewController {
 }
+@property (weak, nonatomic) IBOutlet UISwitch *warmupToggle;
 @property (weak, nonatomic) IBOutlet UITableViewCell *warmupCell;
 @property(weak, nonatomic) IBOutlet UITableViewCell *onusWunslerCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *practicalProgrammingCell;
+
+- (IBAction)toggleWarmup:(id)sender;
 @end

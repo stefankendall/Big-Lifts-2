@@ -89,9 +89,8 @@
         <attribute name="workoutAAlternation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="lastWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SSWorkout" syncable="YES"/>
     </entity>
-    <entity name="SSVariant" representedClassName="SSVariant" syncable="YES">
+    <entity name="SSVariant" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="warmupEnabled" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="SSWorkout" representedClassName="SSWorkout" syncable="YES">
         <attribute name="alternation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>

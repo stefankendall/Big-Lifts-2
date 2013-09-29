@@ -67,4 +67,18 @@
     STAssertNil([controller.onusWunslerCell viewWithTag:kPurchaseOverlayTag], @"");
 }
 
+- (void)testWarmupEnabledSetsToggle {
+    [[[SSVariantStore instance] first] setWarmupEnabled: YES];
+    SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
+    [controller viewWillAppear:YES];
+    STAssertTrue([controller.warmupToggle isOn], @"");
+}
+
+- (void)testToggleChangesWarmupEnabled {
+    SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
+    [controller.warmupToggle setOn:YES];
+    [controller toggleWarmup: controller.warmupToggle];
+    STAssertTrue([[[SSVariantStore instance] first] warmupEnabled], @"");
+}
+
 @end

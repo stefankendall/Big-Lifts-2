@@ -6,6 +6,7 @@
 - (void)setupDefaults {
     SSVariant *variant = [self create];
     variant.name = @"Standard";
+    variant.warmupEnabled = NO;
 }
 
 @end

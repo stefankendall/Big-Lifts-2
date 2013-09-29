@@ -33,6 +33,7 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
 
 - (void)viewWillAppear:(BOOL)animated {
     [self enableOrDisableIapCells];
+    [self.warmupToggle setOn:[[[SSVariantStore instance] first] warmupEnabled]];
 }
 
 - (void)enableOrDisableIapCells {
@@ -77,6 +78,10 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
         UITableViewCell *cell = [self tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:SS_WORKOUT_VARIANT_SECTION]];
         [cell setAccessoryType:UITableViewCellAccessoryNone];
     }
+}
+
+- (IBAction)toggleWarmup:(id)sender {
+    [[[SSVariantStore instance] first] setWarmupEnabled: [self.warmupToggle isOn]];
 }
 
 @end
