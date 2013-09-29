@@ -9,6 +9,8 @@
 #import "PurchaseOverlay.h"
 #import "Purchaser.h"
 
+int const SS_WORKOUT_VARIANT_SECTION = 1;
+
 @interface SSWorkoutVariantController ()
 @property(nonatomic, strong) NSDictionary *variantMapping;
 @property(nonatomic, strong) NSDictionary *iapCells;
@@ -53,10 +55,11 @@
         [[Purchaser new] purchase:purchaseId];
     }
     else {
-        NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
-        [[SSWorkoutStore instance] setupVariant:variantName];
-
-        [self checkSelectedVariant];
+        if ([indexPath section] == 1) {
+            NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
+            [[SSWorkoutStore instance] setupVariant:variantName];
+            [self checkSelectedVariant];
+        }
     }
 }
 
@@ -65,19 +68,15 @@
     [self uncheckAllRows];
 
     int index = [[[NSDictionaryMutator new] invert:self.variantMapping][variant.name] intValue];
-    UITableViewCell *cell = [self tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-    [[cell viewWithTag:1] setHidden:NO];
+    UITableViewCell *cell = [self tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:SS_WORKOUT_VARIANT_SECTION]];
+    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 }
 
 - (void)uncheckAllRows {
-    for (int i = 0; i < [self tableView:nil numberOfRowsInSection:0]; i++) {
-        UITableViewCell *cell = [self tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        [[cell viewWithTag:1] setHidden:YES];
+    for (int i = 0; i < [self tableView:nil numberOfRowsInSection:SS_WORKOUT_VARIANT_SECTION]; i++) {
+        UITableViewCell *cell = [self tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:SS_WORKOUT_VARIANT_SECTION]];
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
     }
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self emptyView];
 }
 
 @end

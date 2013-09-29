@@ -16,7 +16,7 @@
 
 - (void)testSelectNoviceWorkoutChangesWorkout {
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
-    [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:SS_WORKOUT_VARIANT_SECTION]];
 
     SSWorkout *workoutB = [[SSWorkoutStore instance] last];
     Workout *lastWorkout = workoutB.workouts[2];
@@ -27,17 +27,17 @@
 - (void)testSelectionChangesVariant {
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
 
-    UITableViewCell *standardCell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    UITableViewCell *noviceCell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    STAssertFalse([[standardCell viewWithTag:1] isHidden], @"");
-    STAssertTrue([[noviceCell viewWithTag:1] isHidden], @"");
+    UITableViewCell *standardCell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:SS_WORKOUT_VARIANT_SECTION]];
+    UITableViewCell *noviceCell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:SS_WORKOUT_VARIANT_SECTION]];
+    STAssertEquals([standardCell accessoryType], UITableViewCellAccessoryCheckmark, @"");
+    STAssertEquals([noviceCell accessoryType], UITableViewCellAccessoryNone, @"");
 
-    [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:SS_WORKOUT_VARIANT_SECTION]];
     SSVariant *variant = [[SSVariantStore instance] first];
     STAssertEqualObjects(variant.name, @"Novice", @"");
 
-    STAssertTrue([[standardCell viewWithTag:1] isHidden], @"");
-    STAssertFalse([[noviceCell viewWithTag:1] isHidden], @"");
+    STAssertEquals([standardCell accessoryType], UITableViewCellAccessoryNone, @"");
+    STAssertEquals([noviceCell accessoryType], UITableViewCellAccessoryCheckmark, @"");
 }
 
 - (void)testShowsSelectedButtonForCurrentVariant {
@@ -45,9 +45,8 @@
     variant.name = @"Novice";
 
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
-    UITableViewCell *cell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    UIButton *button = (UIButton *) [cell viewWithTag:1];
-    STAssertFalse([button isHidden], @"");
+    UITableViewCell *cell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:SS_WORKOUT_VARIANT_SECTION]];
+    STAssertEquals([cell accessoryType], UITableViewCellAccessoryCheckmark, @"");
 }
 
 - (void)testDoesNotDuplicateOverlayViews {
