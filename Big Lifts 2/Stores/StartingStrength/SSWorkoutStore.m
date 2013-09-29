@@ -13,6 +13,7 @@
 #import "SSWarmupGenerator.h"
 #import "SSStateStore.h"
 #import "SSState.h"
+#import "SSWarmup.h"
 
 @implementation SSWorkoutStore
 
@@ -20,6 +21,10 @@
     if ([self count] == 0) {
         [self setupVariant:@"Standard"];
     }
+}
+
+- (void) addWarmup {
+    [[SSWarmup new] addWarmup];
 }
 
 - (void)setupVariant:(NSString *)variant {
