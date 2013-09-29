@@ -19,14 +19,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    Workout *workout = [self getCurrentWorkout];
-
-    if([[IAPAdapter instance] hasPurchased:IAP_SS_WARMUP]){
-        return [[workout sets] count];
-    }
-    else {
-        return [[workout workSets] count];
-    }
+    return [[[self getCurrentWorkout] sets] count];
 }
 
 - (Workout *)getCurrentWorkout {
@@ -41,7 +34,8 @@
         cell = [setClass create];
     }
 
-    [cell setSet:[[[self getCurrentWorkout] sets] objectAtIndex:(NSUInteger) [indexPath row]]];
+    Workout *workout = [self getCurrentWorkout];
+    [cell setSet:[[workout sets] objectAtIndex:(NSUInteger) [indexPath row]]];
     return cell;
 }
 

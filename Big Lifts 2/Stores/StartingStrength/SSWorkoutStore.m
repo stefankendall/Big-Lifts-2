@@ -13,7 +13,6 @@
 #import "SSWarmupGenerator.h"
 #import "SSStateStore.h"
 #import "SSState.h"
-#import "SSWarmup.h"
 
 @implementation SSWorkoutStore
 
@@ -21,10 +20,6 @@
     if ([self count] == 0) {
         [self setupVariant:@"Standard"];
     }
-}
-
-- (void) addWarmup {
-    [[SSWarmup new] addWarmup];
 }
 
 - (void)setupVariant:(NSString *)variant {
@@ -73,8 +68,6 @@
         [self setupPracticalBWednesday:workoutBPress];
         [self replaceBenchWithPress:workoutBPress];
     }
-
-    [self setupWarmup];
 }
 
 - (void)replaceBenchWithPress:(SSWorkout *)w {
@@ -120,6 +113,14 @@
     [[[SSWorkoutStore instance] findAll] each:^(SSWorkout *ssWorkout) {
         [[ssWorkout.workouts array] each:^(Workout *workout) {
             [[SSWarmupGenerator new] addWarmup:workout];
+        }];
+    }];
+}
+
+- (void) removeWarmup {
+    [[[SSWorkoutStore instance] findAll] each:^(SSWorkout *ssWorkout) {
+        [[ssWorkout.workouts array] each:^(Workout *workout) {
+            [[SSWarmupGenerator new] removeWarmup:workout];
         }];
     }];
 }

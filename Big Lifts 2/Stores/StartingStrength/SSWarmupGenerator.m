@@ -1,3 +1,4 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "SSWarmupGenerator.h"
 #import "Set.h"
 #import "Lift.h"
@@ -49,6 +50,12 @@
         NSMutableIndexSet *indexes = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [warmup count])];
         [workout.sets insertObjects:warmup atIndexes:indexes];
     }
+}
+
+- (void)removeWarmup:(Workout *)workout {
+    [workout.sets removeObjectsInArray:[[workout.sets array] select:(BOOL (^)(id)) ^(Set *set) {
+        return set.warmup;
+    }]];
 }
 
 @end

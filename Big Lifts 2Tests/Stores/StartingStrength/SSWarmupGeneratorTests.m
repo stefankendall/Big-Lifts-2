@@ -29,6 +29,15 @@
     STAssertFalse(lastSet.warmup, @"");
 }
 
+- (void)testCanRemoveWarmups {
+    SSWorkout *workoutA = [[SSWorkoutStore instance] find:@"name" value:@"A"];
+    Workout *squatWorkout = [self findWorkout:workoutA name:@"Squat"];
+    [[SSWarmupGenerator new] addWarmup:squatWorkout];
+    STAssertEquals([squatWorkout.sets count], 8U, @"");
+    [[SSWarmupGenerator new] removeWarmup:squatWorkout];
+    STAssertEquals([squatWorkout.sets count], 3U, @"");
+}
+
 - (Workout *)findWorkout:(SSWorkout *)workoutA name:(NSString *)name {
     return [[workoutA.workouts array] detect:^BOOL(Workout *workout) {
         Set *set = workout.sets[0];
