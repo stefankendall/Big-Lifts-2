@@ -71,7 +71,7 @@
 
 - (void)testSetupSsWarmupStandard {
     [[SSWorkoutStore instance] setupVariant:@"Standard"];
-    [[SSWorkoutStore instance] setupWarmup];
+    [[SSWorkoutStore instance] addWarmup];
     SSWorkout *workoutA = [[SSWorkoutStore instance] find:@"name" value:@"A"];
     Workout *squatWorkout = [[workoutA.workouts array] detect:^BOOL(Workout *workout) {
         Set *set = workout.sets[0];

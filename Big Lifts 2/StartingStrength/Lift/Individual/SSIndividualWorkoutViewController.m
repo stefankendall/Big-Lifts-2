@@ -10,8 +10,6 @@
 #import "SSWorkoutStore.h"
 #import "SSStateStore.h"
 #import "SSState.h"
-#import "SSVariant.h"
-#import "SSVariantStore.h"
 
 @implementation SSIndividualWorkoutViewController
 

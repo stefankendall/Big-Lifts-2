@@ -109,7 +109,7 @@
             [[SSLiftStore instance] find:@"name" value:@"Chin-ups"] withSets:3 withReps:-1 amrap:YES]];
 }
 
-- (void)setupWarmup {
+- (void)addWarmup {
     [[[SSWorkoutStore instance] findAll] each:^(SSWorkout *ssWorkout) {
         [[ssWorkout.workouts array] each:^(Workout *workout) {
             [[SSWarmupGenerator new] addWarmup:workout];
@@ -117,7 +117,7 @@
     }];
 }
 
-- (void) removeWarmup {
+- (void)removeWarmup {
     [[[SSWorkoutStore instance] findAll] each:^(SSWorkout *ssWorkout) {
         [[ssWorkout.workouts array] each:^(Workout *workout) {
             [[SSWarmupGenerator new] removeWarmup:workout];

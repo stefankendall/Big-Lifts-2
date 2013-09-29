@@ -8,7 +8,9 @@
 
 - (void)replaceBenchWithPress:(SSWorkout *)workout;
 
-- (void)setupWarmup;
+- (void)addWarmup;
+
+- (void)removeWarmup;
 
 - (void)incrementWeights:(SSWorkout *)workout;
 

@@ -81,8 +81,4 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     return NO;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self emptyView];
-}
-
 @end

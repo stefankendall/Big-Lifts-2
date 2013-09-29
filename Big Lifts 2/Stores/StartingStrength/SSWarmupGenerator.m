@@ -53,9 +53,10 @@
 }
 
 - (void)removeWarmup:(Workout *)workout {
-    [workout.sets removeObjectsInArray:[[workout.sets array] select:(BOOL (^)(id)) ^(Set *set) {
+    NSArray *warmupSets = [[workout.sets array] select:(BOOL (^)(id)) ^(Set *set) {
         return set.warmup;
-    }]];
+    }];
+    [workout.sets removeObjectsInArray:warmupSets];
 }
 
 @end
