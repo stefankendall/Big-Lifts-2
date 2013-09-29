@@ -14,6 +14,7 @@
 #import "FTOSetRepsForm.h"
 #import "SetLog.h"
 #import "FTOCycleAdjustor.h"
+#import "UITableViewController+NoEmptyRows.h"
 
 @implementation FTOLiftWorkoutViewController
 
@@ -32,25 +33,49 @@
         return 1;
     }
 
-    return [self.ftoWorkout.workout.sets count];
+    if ([self shouldShowRepsToBeat]) {
+        section -= 1;
+    }
+
+    if (section == 0) {
+        return [[self.ftoWorkout.workout warmupSets] count];
+    }
+    else {
+        return [[self.ftoWorkout.workout workSets] count];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self shouldShowRepsToBeat] ? 2 : 1;
+    return [self shouldShowRepsToBeat] ? 3 : 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (([indexPath section]) == 0 && [self shouldShowRepsToBeat]) {
+    NSInteger section = [indexPath section];
+    if (section == 0 && [self shouldShowRepsToBeat]) {
         return [self buildWorkoutToolbarCell];
     }
 
+    int effectiveRow = [self effectiveRowFor:indexPath];
     FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOWorkoutCell.class)];
     if (!cell) {
         cell = [FTOWorkoutCell create];
     }
-    NSNumber *previousReps = [self.variableReps objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
-    [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) ([indexPath row])] withEnteredReps:previousReps];
+    NSNumber *previousReps = [self.variableReps objectForKey:[NSNumber numberWithInteger:effectiveRow]];
+    [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) effectiveRow] withEnteredReps:previousReps];
     return cell;
+}
+
+- (int)effectiveRowFor:(NSIndexPath *)path {
+    int section = [path section];
+    if ([self shouldShowRepsToBeat]) {
+        section -= 1;
+    }
+    if (section == 0) {
+        return [path row];
+    }
+    else {
+        return [[self.ftoWorkout.workout warmupSets] count] + [path row];
+    }
 }
 
 - (UITableViewCell *)buildWorkoutToolbarCell {
@@ -105,7 +130,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.tappedSetRow = [NSNumber numberWithInteger:[indexPath row]];
+    self.tappedSetRow = [NSNumber numberWithInteger:[self effectiveRowFor:indexPath]];
     [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
 }
 
@@ -196,5 +221,33 @@
     }
     return [cell bounds].size.height;
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if ([self shouldShowRepsToBeat]) {
+        section -= 1;
+    }
+
+    if (section == 0) {
+        return @"Warm-up";
+    }
+    else {
+        return @"Workout";
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if( [self shouldShowRepsToBeat] && section == 0){
+        return [self emptyView];
+    }
+    return [super tableView:tableView viewForFooterInSection:section];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if( [self shouldShowRepsToBeat] && section == 0){
+        return 0;
+    }
+    return 20;
+}
+
 
 @end

@@ -30,8 +30,14 @@
 }
 
 - (void)testHasWorkoutRows {
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], (NSInteger) [self.ftoWorkout.workout.sets count], @"");
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], 3, @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:2], 3, @"");
+}
+
+- (void)testHasSectionTitles {
+    STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:1], @"Warm-up", @"");
+    STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:2], @"Workout", @"");
 }
 
 - (void)testTappingDoneButtonSavesLog {
