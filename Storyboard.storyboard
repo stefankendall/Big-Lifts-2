@@ -2569,25 +2569,25 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Weight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1H-0P-7Zw">
                                                     <rect key="frame" x="30" y="10" width="64" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="64" id="Jj8-Ie-hQ0"/>
+                                                        <constraint firstAttribute="width" constant="64" id="OvF-Eh-JLT"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zl9-SJ-TDk">
-                                                    <rect key="frame" x="102" y="6" width="188" height="30"/>
+                                                    <rect key="frame" x="102" y="0.0" width="188" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Zl9-SJ-TDk" firstAttribute="leading" secondItem="g1H-0P-7Zw" secondAttribute="trailing" constant="8" symbolic="YES" id="Bvk-5h-Qmi"/>
-                                                <constraint firstAttribute="trailing" secondItem="Zl9-SJ-TDk" secondAttribute="trailing" constant="30" id="LjS-dE-WJ5"/>
-                                                <constraint firstItem="g1H-0P-7Zw" firstAttribute="top" secondItem="Nq4-Dc-CHC" secondAttribute="top" constant="10" id="RgK-V3-XDI"/>
-                                                <constraint firstItem="Zl9-SJ-TDk" firstAttribute="centerY" secondItem="Nq4-Dc-CHC" secondAttribute="centerY" id="hnc-cG-uxV"/>
-                                                <constraint firstItem="g1H-0P-7Zw" firstAttribute="leading" secondItem="Nq4-Dc-CHC" secondAttribute="leading" constant="30" id="yaY-6d-A7a"/>
-                                                <constraint firstItem="Zl9-SJ-TDk" firstAttribute="top" secondItem="Nq4-Dc-CHC" secondAttribute="top" constant="6" id="ynE-Xw-MUh"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zl9-SJ-TDk" secondAttribute="trailing" constant="30" id="I52-e8-tIv"/>
+                                                <constraint firstItem="g1H-0P-7Zw" firstAttribute="leading" secondItem="Nq4-Dc-CHC" secondAttribute="leading" constant="30" id="Kty-ap-fpU"/>
+                                                <constraint firstItem="Zl9-SJ-TDk" firstAttribute="baseline" secondItem="g1H-0P-7Zw" secondAttribute="baseline" id="YvN-xf-8ai"/>
+                                                <constraint firstItem="Zl9-SJ-TDk" firstAttribute="leading" secondItem="g1H-0P-7Zw" secondAttribute="trailing" constant="8" symbolic="YES" id="daM-Rt-Npx"/>
+                                                <constraint firstItem="Zl9-SJ-TDk" firstAttribute="top" secondItem="Nq4-Dc-CHC" secondAttribute="top" id="fgK-CR-qvw"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zl9-SJ-TDk" secondAttribute="bottom" id="lTg-m9-nIT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2601,25 +2601,25 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZ0-3V-I5L">
                                                     <rect key="frame" x="30" y="10" width="64" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="64" id="FvW-6b-6tZ"/>
+                                                        <constraint firstAttribute="width" constant="64" id="XIj-SE-XP6"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FwQ-zr-WYd">
-                                                    <rect key="frame" x="102" y="6" width="188" height="30"/>
+                                                    <rect key="frame" x="102" y="0.0" width="188" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="FwQ-zr-WYd" secondAttribute="trailing" constant="30" id="RyE-iA-GKo"/>
-                                                <constraint firstItem="QZ0-3V-I5L" firstAttribute="leading" secondItem="MDt-2I-d0w" secondAttribute="leading" constant="30" id="cbI-4R-XF1"/>
-                                                <constraint firstItem="FwQ-zr-WYd" firstAttribute="top" secondItem="MDt-2I-d0w" secondAttribute="top" constant="6" id="g6H-2O-MiV"/>
-                                                <constraint firstItem="QZ0-3V-I5L" firstAttribute="top" secondItem="MDt-2I-d0w" secondAttribute="top" constant="10" id="gjd-D7-uMW"/>
-                                                <constraint firstItem="FwQ-zr-WYd" firstAttribute="centerY" secondItem="MDt-2I-d0w" secondAttribute="centerY" id="lT9-Cc-NfD"/>
-                                                <constraint firstItem="FwQ-zr-WYd" firstAttribute="leading" secondItem="QZ0-3V-I5L" secondAttribute="trailing" constant="8" symbolic="YES" id="s43-3C-lLx"/>
+                                                <constraint firstItem="FwQ-zr-WYd" firstAttribute="leading" secondItem="QZ0-3V-I5L" secondAttribute="trailing" constant="8" symbolic="YES" id="5Bn-Lf-lXj"/>
+                                                <constraint firstItem="FwQ-zr-WYd" firstAttribute="baseline" secondItem="QZ0-3V-I5L" secondAttribute="baseline" id="ATg-C8-WTH"/>
+                                                <constraint firstAttribute="trailing" secondItem="FwQ-zr-WYd" secondAttribute="trailing" constant="30" id="NhA-Hp-dIz"/>
+                                                <constraint firstAttribute="bottom" secondItem="FwQ-zr-WYd" secondAttribute="bottom" id="Wfs-Q7-gTj"/>
+                                                <constraint firstItem="QZ0-3V-I5L" firstAttribute="leading" secondItem="MDt-2I-d0w" secondAttribute="leading" constant="30" id="jIp-FI-MZt"/>
+                                                <constraint firstItem="FwQ-zr-WYd" firstAttribute="top" secondItem="MDt-2I-d0w" secondAttribute="top" id="uKi-R6-pYh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -4213,15 +4213,57 @@
     </scenes>
     <resources>
         <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="101-gameplan.png" width="32" height="32"/>
+        <image name="101-gameplan.png" width="32" height="32"/>
         <image name="101-gameplan.png" width="32" height="32"/>
         <image name="157-wrench.png" width="32" height="24"/>
+        <image name="157-wrench.png" width="32" height="24"/>
+        <image name="157-wrench.png" width="32" height="24"/>
+        <image name="157-wrench.png" width="32" height="24"/>
+        <image name="16-line-chart.png" width="32" height="24"/>
+        <image name="16-line-chart.png" width="32" height="24"/>
+        <image name="16-line-chart.png" width="32" height="24"/>
         <image name="16-line-chart.png" width="32" height="24"/>
         <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="19-circle-check.png" width="28" height="28"/>
+        <image name="20-gear-2.png" width="32" height="28"/>
+        <image name="20-gear-2.png" width="32" height="28"/>
+        <image name="20-gear-2.png" width="32" height="28"/>
         <image name="20-gear-2.png" width="32" height="28"/>
         <image name="213-reply.png" width="32" height="17"/>
+        <image name="213-reply.png" width="32" height="17"/>
+        <image name="213-reply.png" width="32" height="17"/>
+        <image name="213-reply.png" width="32" height="17"/>
+        <image name="29-heart.png" width="32" height="21"/>
+        <image name="29-heart.png" width="32" height="21"/>
+        <image name="29-heart.png" width="32" height="21"/>
         <image name="29-heart.png" width="32" height="21"/>
         <image name="89-dumbells.png" width="32" height="10"/>
+        <image name="89-dumbells.png" width="32" height="10"/>
+        <image name="89-dumbells.png" width="32" height="10"/>
+        <image name="89-dumbells.png" width="32" height="10"/>
         <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="facebook.png" width="32" height="32"/>
     </resources>

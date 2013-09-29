@@ -1,10 +1,14 @@
 #import "UIViewController+ViewDeckAdditions.h"
 #import "UITableViewController+NoEmptyRows.h"
 
-@class BarLoadingDataSource;
 @class PurchaseOverlay;
+@class WeightTableCell;
 
-@interface BarLoadingViewController : UITableViewController <UIGestureRecognizerDelegate, UITableViewDelegate> {
-    BarLoadingDataSource *weightsTableDataSource;
+@interface BarLoadingViewController : UITableViewController <UIGestureRecognizerDelegate, UITableViewDelegate, UITextFieldDelegate> {
 }
+- (void)deleteButtonTapped:(id)deleteButton;
+
+- (void)plateCountChanged:(UIStepper *)plateStepper;
+
+- (void)modifyCellForPlateCount:(WeightTableCell *)cell currentPlateCount:(int)currentPlateCount;
 @end
