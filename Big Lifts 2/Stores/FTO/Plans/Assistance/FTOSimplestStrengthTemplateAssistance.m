@@ -55,7 +55,7 @@
         set.reps = data[@"reps"];
         set.percentage = data[@"percentage"];
         set.lift = sstLift;
-        [ftoWorkout.workout.sets addObject:set];
+        [ftoWorkout.workout addSet:set];
     }];
 }
 

@@ -62,7 +62,7 @@
         Set *newSet = [[SetStore instance] create];
         newSet.lift = self.set.lift;
         newSet.reps = self.set.reps;
-        [self.triumvirate.workout.sets addObject:newSet];
+        [self.triumvirate.workout addSet:newSet];
     }
 }
 @end
