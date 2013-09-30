@@ -71,6 +71,16 @@
     STAssertEqualObjects([controller getLog], expected, @"");
 }
 
+- (void)testDoesNotSegueWhenToolbarTapped {
+    WorkoutLog *log1 = [[WorkoutLogStore instance] create];
+    log1.name = @"5/3/1";
+    UINavigationController *nav = [self getControllerByStoryboardIdentifier:@"ftoTrackNavController"];
+    FTOTrackViewController *controller = [nav viewControllers][0];
+    int oldCount = [controller.navigationController.viewControllers count];
+    [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertEquals([controller.navigationController.viewControllers count], (NSUInteger) oldCount, @"");
+}
+
 - (int)getCellRowCount:(FTOTrackViewController *)controller {
     WorkoutLogCell *cell = (WorkoutLogCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     return [cell.workoutLogTableDataSource tableView:nil numberOfRowsInSection:0];

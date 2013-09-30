@@ -43,6 +43,12 @@
         [cell.viewButton addTarget:self action:@selector(viewButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self setupDeleteButton:cell.deleteButton];
         self.viewButton = cell.viewButton;
+        if (self.showAll) {
+            [self.viewButton setTitle:@"Work Sets" forState:UIControlStateNormal];
+        }
+        else {
+            [self.viewButton setTitle:@"All" forState:UIControlStateNormal];
+        }
         return cell;
     }
     else {
@@ -68,8 +74,6 @@
 
 - (void)viewButtonTapped:(id)sender {
     self.showAll = !self.showAll;
-    NSString *nextState = self.showAll ? @"Work Sets" : @"All";
-    [self.viewButton setTitle:nextState forState:UIControlStateNormal];
     [self.tableView reloadData];
 }
 
@@ -86,8 +90,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.tappedLog = [self getLog][((NSUInteger) [indexPath row])];
-    [self performSegueWithIdentifier:@"ftoLogEdit" sender:self];
+    if ([indexPath section] > 0) {
+        self.tappedLog = [self getLog][((NSUInteger) [indexPath row])];
+        [self performSegueWithIdentifier:@"ftoLogEdit" sender:self];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
