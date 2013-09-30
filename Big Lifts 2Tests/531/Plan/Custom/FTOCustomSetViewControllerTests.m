@@ -15,12 +15,14 @@
     set.amrap = YES;
     set.reps = @7;
     set.percentage = N(45);
+    set.warmup = YES;
     [controller setSet:set];
     [controller viewWillAppear:YES];
 
     STAssertEqualObjects(@"7", [controller.repsLabel text], @"");
     STAssertEqualObjects(@"45", [controller.percentageLabel text], @"");
     STAssertTrue([controller.amrapSwitch isOn], @"");
+    STAssertTrue([controller.warmupSwitch isOn], @"");
 }
 
 - (void)testSetsReps {

@@ -7,14 +7,17 @@
 - (void)viewDidLoad {
     [self.repsLabel setDelegate:self];
     [self.percentageLabel setDelegate:self];
-    [self.amrapSwitch addTarget:self action:@selector(amrapSwitchChange:) forControlEvents:UIControlEventValueChanged];
 
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.repsLabel];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.percentageLabel];
 }
 
-- (void)amrapSwitchChange:(id)amrapSwitchChange {
+- (IBAction)amrapSwitchChange:(id)amrapSwitchChange {
     [self.set setAmrap:[self.amrapSwitch isOn]];
+}
+
+- (IBAction)warmupSwitchChange:(id)sender {
+    [self.set setWarmup:[self.warmupSwitch isOn]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -37,6 +40,7 @@
     }
     [self.percentageLabel setText:percentageText];
     [self.amrapSwitch setOn:self.set.amrap];
+    [self.warmupSwitch setOn:self.set.warmup];
 }
 
 @end
