@@ -1,3 +1,4 @@
+#import <MRCEnumerable/NSDictionary+Enumerable.h>
 #import "FTOWorkoutStore.h"
 #import "Workout.h"
 #import "FTOWorkout.h"
@@ -18,9 +19,39 @@
 }
 
 - (void)switchTemplate {
+    NSDictionary *doneLiftsByWeek = [self getDoneLiftsByWeek];
     [self empty];
     [self createWorkoutsForEachLift];
     [self markDeloadWorkouts];
+    [self remarkDoneLifts:doneLiftsByWeek];
+}
+
+- (void)remarkDoneLifts:(NSDictionary *)doneLiftsByWeek {
+    [doneLiftsByWeek each:^(NSNumber *week, NSArray *lifts) {
+        NSArray *weekWorkouts = [self findAllWhere:@"week" value:week];
+        [lifts each:^(Lift *lift) {
+            FTOWorkout *matchingWorkout = [weekWorkouts detect:^BOOL(FTOWorkout *ftoWorkout) {
+                return [[ftoWorkout.workout.sets firstObject] lift] == lift;
+            }];
+            if (matchingWorkout) {
+                matchingWorkout.done = YES;
+            }
+        }];
+    }];
+}
+
+- (NSDictionary *)getDoneLiftsByWeek {
+    NSMutableDictionary *doneLiftsByWeek = [@{} mutableCopy];
+    [[self findAll] each:^(FTOWorkout *ftoWorkout) {
+        if (ftoWorkout.done) {
+            if (!doneLiftsByWeek[ftoWorkout.week]) {
+                doneLiftsByWeek[ftoWorkout.week] = [@[] mutableCopy];
+            }
+            Lift *lift = [[ftoWorkout.workout.sets firstObject] lift];
+            [doneLiftsByWeek[ftoWorkout.week] addObject:lift];
+        }
+    }];
+    return doneLiftsByWeek;
 }
 
 - (void)markDeloadWorkouts {
@@ -44,7 +75,7 @@
 
     NSArray *lifts = [[FTOLiftStore instance] findAll];
     for (int week = 1; week <= weeks; week++) {
-        for( int i = 0; i < [lifts count]; i++){
+        for (int i = 0; i < [lifts count]; i++) {
             FTOLift *lift = lifts[(NSUInteger) i];
             [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
         }

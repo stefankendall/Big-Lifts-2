@@ -9,6 +9,8 @@
 #import "FTOSet.h"
 #import "FTOLift.h"
 #import "FTOLiftStore.h"
+#import "FTOVariantStore.h"
+#import "FTOVariant.h"
 
 @implementation FTOWorkoutStoreTests
 
@@ -50,6 +52,26 @@
 
     FTOWorkout *week4Workout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@4][0];
     STAssertTrue(week4Workout.deload, @"");
+}
+
+- (void) testFindsDoneLiftsByWeek {
+    FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    Lift *firstLift = [[week1Workout1.workout.sets firstObject] lift];
+    week1Workout1.done = YES;
+
+    STAssertEqualObjects([[FTOWorkoutStore instance] getDoneLiftsByWeek], @{@1: @[firstLift]}, @"");
+}
+
+- (void) testTransfersDoneStatusWhenSwitchingTemplates {
+    FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    week1Workout1.done = YES;
+
+    [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
+
+    week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    STAssertTrue(week1Workout1.done, @"");
+    FTOWorkout *week1Workout2 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][1];
+    STAssertFalse(week1Workout2.done, @"");
 }
 
 @end
