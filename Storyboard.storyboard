@@ -2982,71 +2982,39 @@
             <point key="canvasLocation" x="2141" y="-2038"/>
         </scene>
         <!--Individual Workout View Controller-->
-        <scene sceneID="FWn-XG-HnB">
+        <scene sceneID="3fa-UI-kO0">
             <objects>
-                <viewController storyboardIdentifier="ssIndividualWorkout" id="0ax-dK-QJN" customClass="SSIndividualWorkoutViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hXI-N8-b4v"/>
-                        <viewControllerLayoutGuide type="bottom" id="nng-0x-OD4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Rq-kR-ZPJ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="30l-Hr-dPp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VV6-Ej-DoN">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VV6-Ej-DoN" id="7oF-Jb-KAG">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iIp-fX-mhz">
-                                        <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iIp-fX-mhz" id="nem-QS-v05">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ffR-qq-DXs">
-                                        <rect key="frame" x="0.0" y="110" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffR-qq-DXs" id="2hC-aB-lUs">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="30l-Hr-dPp" firstAttribute="top" secondItem="1Rq-kR-ZPJ" secondAttribute="top" id="Ajb-gr-aAW"/>
-                            <constraint firstItem="30l-Hr-dPp" firstAttribute="trailing" secondItem="1Rq-kR-ZPJ" secondAttribute="trailing" id="E0c-zx-6ic"/>
-                            <constraint firstItem="30l-Hr-dPp" firstAttribute="bottom" secondItem="1Rq-kR-ZPJ" secondAttribute="bottom" id="I0r-fv-uxE"/>
-                            <constraint firstItem="30l-Hr-dPp" firstAttribute="leading" secondItem="1Rq-kR-ZPJ" secondAttribute="leading" id="evr-N2-wR1"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="04Z-fv-Ocr">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="vid-Qy-mp4">
+                <tableViewController storyboardIdentifier="ssIndividualWorkout" id="Z64-of-ER9" customClass="SSIndividualWorkoutViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ROg-vM-GJ3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="e3x-1m-zeI">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e3x-1m-zeI" id="NtB-O4-Wzj">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Z64-of-ER9" id="RXI-kS-sOf"/>
+                            <outlet property="delegate" destination="Z64-of-ER9" id="P4s-dQ-8yb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="rlV-Wd-Xb2">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="938-qG-gHD">
                             <connections>
-                                <action selector="nextButtonTapped:" destination="0ax-dK-QJN" id="sD5-gV-Uxe"/>
+                                <action selector="nextButtonTapped:" destination="Z64-of-ER9" id="aBM-ge-dMD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="workoutTable" destination="30l-Hr-dPp" id="OB2-OL-bFZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H9Y-FW-FP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zRa-cT-eJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2942" y="-2044"/>
+            <point key="canvasLocation" x="2907" y="-2044"/>
         </scene>
         <!--Lift View Controller - Workout-->
         <scene sceneID="azZ-4Y-PnR">
@@ -3080,7 +3048,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Start" id="yEf-1b-9lL">
                             <connections>
-                                <segue destination="0ax-dK-QJN" kind="push" identifier="ssSummaryNextSegue" id="Rfx-CR-7Ak"/>
+                                <segue destination="Z64-of-ER9" kind="push" identifier="ssSummaryNextSegue" id="DIx-Wy-ZoZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -4189,14 +4157,53 @@
     </scenes>
     <resources>
         <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="09-chat-2.png" width="32" height="22"/>
+        <image name="101-gameplan.png" width="32" height="32"/>
+        <image name="101-gameplan.png" width="32" height="32"/>
         <image name="101-gameplan.png" width="32" height="32"/>
         <image name="157-wrench.png" width="32" height="24"/>
+        <image name="157-wrench.png" width="32" height="24"/>
+        <image name="157-wrench.png" width="32" height="24"/>
+        <image name="157-wrench.png" width="32" height="24"/>
+        <image name="16-line-chart.png" width="32" height="24"/>
+        <image name="16-line-chart.png" width="32" height="24"/>
+        <image name="16-line-chart.png" width="32" height="24"/>
         <image name="16-line-chart.png" width="32" height="24"/>
         <image name="20-gear-2.png" width="32" height="28"/>
+        <image name="20-gear-2.png" width="32" height="28"/>
+        <image name="20-gear-2.png" width="32" height="28"/>
+        <image name="20-gear-2.png" width="32" height="28"/>
+        <image name="213-reply.png" width="32" height="17"/>
+        <image name="213-reply.png" width="32" height="17"/>
+        <image name="213-reply.png" width="32" height="17"/>
         <image name="213-reply.png" width="32" height="17"/>
         <image name="29-heart.png" width="32" height="21"/>
+        <image name="29-heart.png" width="32" height="21"/>
+        <image name="29-heart.png" width="32" height="21"/>
+        <image name="29-heart.png" width="32" height="21"/>
+        <image name="89-dumbells.png" width="32" height="10"/>
+        <image name="89-dumbells.png" width="32" height="10"/>
+        <image name="89-dumbells.png" width="32" height="10"/>
         <image name="89-dumbells.png" width="32" height="10"/>
         <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="95-equalizer.png" width="32" height="24"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
+        <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="ButtonMenu.png" width="22" height="17"/>
         <image name="facebook.png" width="32" height="32"/>
     </resources>

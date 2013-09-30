@@ -1,5 +1,5 @@
+#import <IAPManager/IAPManager.h>
 #import "SSIndividualWorkoutViewController.h"
-#import "SSIndividualWorkoutDataSource.h"
 #import "SSWorkout.h"
 #import "IIViewDeckController.h"
 #import "WorkoutLogStore.h"
@@ -10,33 +10,25 @@
 #import "SSWorkoutStore.h"
 #import "SSStateStore.h"
 #import "SSState.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
+#import "SetCellWithPlates.h"
 
 @implementation SSIndividualWorkoutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.workoutIndex = 0;
-    self.individualWorkoutDataSource = [[SSIndividualWorkoutDataSource alloc] initWithSsWorkout:self.ssWorkout];
-    [self.workoutTable setDataSource:self.individualWorkoutDataSource];
-    [self.workoutTable setDelegate:self];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView *emptyViewToPreventEmptyRows = [UIView new];
-    return emptyViewToPreventEmptyRows;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.individualWorkoutDataSource tableView:tableView cellForRowAtIndexPath:indexPath];
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     return [cell bounds].size.height;
 }
 
 - (IBAction)nextButtonTapped:(id)sender {
     self.workoutIndex++;
-
-    [self.individualWorkoutDataSource setWorkoutIndex:self.workoutIndex];
-    [self.workoutTable reloadData];
+    [self.tableView reloadData];
 
     if (self.workoutIndex == self.ssWorkout.workouts.count - 1) {
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonTapped:)];
@@ -77,6 +69,33 @@
             [log.sets addObject:[[SetLogStore instance] createFromSet:set]];
         }
     }
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[[self getCurrentWorkout] sets] count];
+}
+
+- (Workout *)getCurrentWorkout {
+    return [[self.ssWorkout workouts] objectAtIndex:(NSUInteger) self.workoutIndex];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
+    SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
+
+    if (cell == nil) {
+        cell = [setClass create];
+    }
+    Workout *workout = [self getCurrentWorkout];
+    Set *set = [[workout sets] objectAtIndex:(NSUInteger) [indexPath row]];
+    [cell setSet:set];
+    if ([set.percentage isEqual:N(100)]) {
+        [cell.percentageLabel setHidden:YES];
+    }
+    else {
+        [cell.percentageLabel setHidden:NO];
+    }
+    return cell;
 }
 
 @end
