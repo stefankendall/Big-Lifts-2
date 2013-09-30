@@ -221,7 +221,9 @@
             return [ssWorkout.alternation intValue] == workoutAAlteration;
         }];
 
-        newSsWorkout = alt1Workouts[0];
+        if ([alt1Workouts count] > 0) {
+            newSsWorkout = alt1Workouts[0];
+        }
     }
 
     return newSsWorkout;

@@ -142,4 +142,10 @@
     STAssertEqualObjects(set.lift.name, @"Press", @"");
 }
 
+- (void)testHandlesStandardPlanWithAlternation {
+    [[[SSStateStore instance] first] setWorkoutAAlternation:@1];
+    SSWorkout *workout = [[SSWorkoutStore instance] activeWorkoutFor:@"A"];
+    STAssertNotNil(workout, @"");
+}
+
 @end
