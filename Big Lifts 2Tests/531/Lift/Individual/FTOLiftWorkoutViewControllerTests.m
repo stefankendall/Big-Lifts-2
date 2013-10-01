@@ -13,6 +13,8 @@
 #import "FTOWorkoutCell.h"
 #import "FTOVariantStore.h"
 #import "FTOVariant.h"
+#import "NSArray+Enumerable.h"
+#import "Set.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -120,6 +122,19 @@
     STAssertEqualObjects([self.controller.doneButton title], @"Not Done", @"");
     [self.controller doneButtonTapped:self.controller.doneButton];
     STAssertFalse(self.ftoWorkout.done, @"");
+}
+
+-(void)testHidesWarmupSectionIfNoWarmup {
+    NSArray *warmupSets = [[[self.ftoWorkout.workout sets] array] select:^BOOL(Set *set) {
+        return set.warmup;
+    }];
+    [self.ftoWorkout.workout.sets removeObjectsInArray:warmupSets];
+    int sections = [self.controller numberOfSectionsInTableView:self.controller.tableView];
+    STAssertEquals([self.controller tableView:self.controller.tableView numberOfRowsInSection:0], 1, @"");
+    STAssertEquals([self.controller tableView:self.controller.tableView numberOfRowsInSection:1], 3, @"");
+    STAssertEquals(sections, 2, @"");
+    STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:0], @"", @"");
+    STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:1], @"Workout", @"");
 }
 
 @end

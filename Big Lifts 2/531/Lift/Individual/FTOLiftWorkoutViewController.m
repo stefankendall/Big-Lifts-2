@@ -29,15 +29,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([self shouldShowRepsToBeat] && section == 0) {
+    if (section == [self toolbarSection]) {
         return 1;
     }
-
-    if ([self shouldShowRepsToBeat]) {
-        section -= 1;
-    }
-
-    if (section == 0) {
+    else if (section == [self warmupSection]) {
         return [[self.ftoWorkout.workout warmupSets] count];
     }
     else {
@@ -45,13 +40,31 @@
     }
 }
 
+- (BOOL)hasWarmup {
+    return [[self.ftoWorkout.workout.sets array] detect:^BOOL(Set *set) {
+        return set.warmup;
+    }] != nil;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self shouldShowRepsToBeat] ? 3 : 2;
+    int toolbar = 1;
+    int warmup = 1;
+    int workout = 1;
+
+    if (![self shouldShowRepsToBeat]) {
+        toolbar = 0;
+    }
+
+    if (![self hasWarmup]) {
+        warmup = 0;
+    }
+
+    return toolbar + warmup + workout;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = [indexPath section];
-    if (section == 0 && [self shouldShowRepsToBeat]) {
+    if (section == [self toolbarSection]) {
         return [self buildWorkoutToolbarCell];
     }
 
@@ -66,11 +79,7 @@
 }
 
 - (int)effectiveRowFor:(NSIndexPath *)path {
-    int section = [path section];
-    if ([self shouldShowRepsToBeat]) {
-        section -= 1;
-    }
-    if (section == 0) {
+    if ([path section] == [self warmupSection]) {
         return [path row];
     }
     else {
@@ -223,31 +232,57 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if ([self shouldShowRepsToBeat]) {
-        section -= 1;
-    }
-
-    if (section == 0) {
+    if (section == [self warmupSection]) {
         return @"Warm-up";
     }
-    else {
+    else if (section == [self workoutSection]) {
         return @"Workout";
     }
+    return @"";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if( [self shouldShowRepsToBeat] && section == 0){
+    if (section == [self toolbarSection]) {
         return [self emptyView];
     }
     return [super tableView:tableView viewForFooterInSection:section];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if( [self shouldShowRepsToBeat] && section == 0){
+    if (section == [self toolbarSection]) {
         return 0;
     }
     return 20;
 }
 
+- (int)toolbarSection {
+    int toolbarSection = 0;
+    if (![self shouldShowRepsToBeat]) {
+        toolbarSection = -1;
+    }
+    return toolbarSection;
+}
+
+- (int)warmupSection {
+    int warmupSection = 1;
+    if (![self shouldShowRepsToBeat]) {
+        warmupSection--;
+    }
+    if (![self hasWarmup]) {
+        warmupSection = -1;
+    }
+    return warmupSection;
+}
+
+- (int)workoutSection {
+    int workoutSection = 2;
+    if (![self shouldShowRepsToBeat]) {
+        workoutSection--;
+    }
+    if (![self hasWarmup]) {
+        workoutSection--;
+    }
+    return workoutSection;
+}
 
 @end
