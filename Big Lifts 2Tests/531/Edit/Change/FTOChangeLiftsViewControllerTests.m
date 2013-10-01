@@ -29,4 +29,12 @@
     STAssertEquals([controller.navigationController.viewControllers count], (NSUInteger) viewCount + 1, @"");
 }
 
+- (void)testArrangeHidesAddButton {
+    FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
+    [controller arrangeButtonTapped: controller.arrangeButton];
+
+    int sections = [controller numberOfSectionsInTableView:controller.tableView];
+    STAssertEquals(sections, 1, @"");
+}
+
 @end

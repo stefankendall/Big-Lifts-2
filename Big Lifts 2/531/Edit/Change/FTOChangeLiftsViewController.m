@@ -14,6 +14,9 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if ([tableView isEditing]) {
+        return 1;
+    }
     return 2;
 }
 
@@ -92,7 +95,7 @@
 }
 
 - (IBAction)arrangeButtonTapped:(id)sender {
-    if([self.tableView isEditing]){
+    if ([self.tableView isEditing]) {
         [self.tableView setEditing:NO];
         [self.arrangeButton setTitle:@"Arrange"];
     }
