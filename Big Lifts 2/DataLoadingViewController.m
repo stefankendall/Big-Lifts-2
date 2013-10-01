@@ -17,10 +17,10 @@
 
 - (void)pollForReady {
     if (self.dataLoaded) {
-        [self performSelector:@selector(segueToApp) withObject:nil afterDelay:1];
+        [self segueToApp];
     }
     else {
-        [self performSelector:@selector(pollForReady) withObject:nil afterDelay:1];
+        [self performSelector:@selector(pollForReady) withObject:nil afterDelay:0.5];
     }
 }
 
