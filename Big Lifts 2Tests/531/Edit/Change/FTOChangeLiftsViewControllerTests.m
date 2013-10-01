@@ -44,13 +44,14 @@
     FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
     FTOLift *firstLift = [[FTOLiftStore instance] first];
     FTOLift *secondLift = [[FTOLiftStore instance] atIndex:1];
-    FTOWorkout *firstWorkout = [[FTOWorkoutStore instance] first];
-    FTOWorkout *secondWorkout = [[FTOWorkoutStore instance] atIndex:1];
+    FTOWorkout *firstWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    FTOWorkout *secondWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][1];
     [controller tableView:controller.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] toIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     STAssertEquals([[FTOLiftStore instance] first], secondLift, @"");
     STAssertEquals([[FTOLiftStore instance] atIndex:1], firstLift, @"");
-    STAssertEquals([[FTOWorkoutStore instance] first], secondWorkout, @"");
-    STAssertEquals([[FTOWorkoutStore instance] atIndex:1], firstWorkout, @"");
+    STAssertEqualObjects([[[FTOWorkoutStore instance] first] order], @0, @"");
+    STAssertEquals([[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0], secondWorkout, @"");
+    STAssertEquals([[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][1], firstWorkout, @"");
 }
 
 @end

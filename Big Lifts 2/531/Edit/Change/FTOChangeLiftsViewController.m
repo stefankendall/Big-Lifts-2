@@ -127,6 +127,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     for(int i = 0; i < [lifts count]; i++){
         [lifts[(NSUInteger) i] setOrder:[NSNumber numberWithInt:i]];
     }
+    [[FTOWorkoutStore instance] reorderWorkoutsToLifts];
 }
 
 @end

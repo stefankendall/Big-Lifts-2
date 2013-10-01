@@ -6,4 +6,6 @@
 - (NSDictionary *)getDoneLiftsByWeek;
 
 - (void)createWithWorkout:(id)week week:(int)week1 order:(int)order;
+
+- (void)reorderWorkoutsToLifts;
 @end

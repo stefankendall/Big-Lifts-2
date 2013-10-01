@@ -100,4 +100,13 @@
     ftoWorkout.order = [NSNumber numberWithInt:order];
 }
 
+- (void)reorderWorkoutsToLifts {
+    NSArray *workouts = [self findAll];
+    for (FTOWorkout *workout in workouts) {
+        if([workout.workout.sets count] > 0){
+            Lift *lift = [workout.workout.sets[0] lift];
+            workout.order = lift.order;
+        }
+    }
+}
 @end
