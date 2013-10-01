@@ -4,6 +4,9 @@
 #import "FTOChangeLiftCell.h"
 #import "RowTextField.h"
 #import "FTOLiftStore.h"
+#import "FTOLift.h"
+#import "FTOWorkout.h"
+#import "FTOWorkoutStore.h"
 
 @implementation FTOChangeLiftsViewControllerTests
 
@@ -31,10 +34,23 @@
 
 - (void)testArrangeHidesAddButton {
     FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
-    [controller arrangeButtonTapped: controller.arrangeButton];
+    [controller arrangeButtonTapped:controller.arrangeButton];
 
     int sections = [controller numberOfSectionsInTableView:controller.tableView];
     STAssertEquals(sections, 1, @"");
+}
+
+- (void)testCanArrangeLifts {
+    FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
+    FTOLift *firstLift = [[FTOLiftStore instance] first];
+    FTOLift *secondLift = [[FTOLiftStore instance] atIndex:1];
+    FTOWorkout *firstWorkout = [[FTOWorkoutStore instance] first];
+    FTOWorkout *secondWorkout = [[FTOWorkoutStore instance] atIndex:1];
+    [controller tableView:controller.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] toIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    STAssertEquals([[FTOLiftStore instance] first], secondLift, @"");
+    STAssertEquals([[FTOLiftStore instance] atIndex:1], firstLift, @"");
+    STAssertEquals([[FTOWorkoutStore instance] first], secondWorkout, @"");
+    STAssertEquals([[FTOWorkoutStore instance] atIndex:1], firstWorkout, @"");
 }
 
 @end
