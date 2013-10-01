@@ -14,6 +14,7 @@
 #import "TextFieldWithCell.h"
 #import "RowUIButton.h"
 #import "StepperWithCell.h"
+#import "AddCell.h"
 
 @interface BarLoadingViewController()
 
@@ -100,7 +101,11 @@
 - (UITableViewCell *)getPlateCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
     if (row == [[PlateStore instance] count]) {
-        return [self getAddCell:tableView];
+        AddCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
+        if (cell == nil) {
+            cell = [AddCell create];
+        }
+        return cell;
     }
     else {
         WeightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeightTableCell"];
@@ -131,20 +136,6 @@
     int row = [[button indexPath] row];
     [[PlateStore instance] removeAtIndex:row];
     [self.tableView reloadData];
-}
-
-- (UITableViewCell *)getAddCell:(UITableView *)tableView {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeightTableAddCell"];
-
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"WeightTableAddCell"];
-    }
-
-    [[cell textLabel] setText:@"Add..."];
-    [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
-    [[cell textLabel] setTextColor:[UIColor darkTextColor]];
-
-    return cell;
 }
 
 - (UITableViewCell *)getBarWeightCell:(UITableView *)tableView {

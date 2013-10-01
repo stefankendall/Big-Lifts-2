@@ -6,6 +6,7 @@
 #import "RowTextField.h"
 #import "WorkoutStore.h"
 #import "FTOWorkoutStore.h"
+#import "AddCell.h"
 
 
 @interface FTOCustomWeekSelectorViewController ()
@@ -138,16 +139,10 @@
 }
 
 - (UITableViewCell *)addCell:(UITableView *)tableView {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOWeekAddCell"];
-
+    AddCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOWeekAddCell"];
+        cell = [AddCell create];
     }
-
-    [[cell textLabel] setText:@"Add..."];
-    [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
-    [[cell textLabel] setTextColor:[UIColor darkTextColor]];
-
     return cell;
 }
 

@@ -6,6 +6,7 @@
 #import "FTOCustomSetViewController.h"
 #import "SetStore.h"
 #import "FTOSetStore.h"
+#import "AddCell.h"
 
 @interface FTOCustomWorkoutViewController ()
 
@@ -45,22 +46,12 @@
         return cell;
     }
     else {
-        return [self getAddCell:tableView];
+        AddCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
+        if (cell == nil) {
+            cell = [AddCell create];
+        }
+        return cell;
     }
-}
-
-- (UITableViewCell *)getAddCell:(UITableView *)tableView {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOCustomWorkoutAddSetCell"];
-
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOCustomWorkoutAddSetCell"];
-    }
-
-    [[cell textLabel] setText:@"Add..."];
-    [[cell textLabel] setTextAlignment:NSTextAlignmentCenter];
-    [[cell textLabel] setTextColor:[UIColor darkTextColor]];
-
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
