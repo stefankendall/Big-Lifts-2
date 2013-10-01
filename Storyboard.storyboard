@@ -962,13 +962,10 @@
                             <outlet property="delegate" destination="HeN-kA-QNm" id="zJL-f1-Urc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Change" id="lgx-bA-ZJd">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="Yoq-Jh-noI">
-                            <connections>
-                                <segue destination="L5o-rB-NPX" kind="push" id="vND-s2-cvh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Change" id="lgx-bA-ZJd"/>
+                    <connections>
+                        <segue destination="L5o-rB-NPX" kind="push" identifier="ftoAddLiftSegue" id="Wb5-jB-G6g"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXZ-ZS-ZVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
