@@ -91,4 +91,17 @@
     return 0;
 }
 
+- (IBAction)arrangeButtonTapped:(id)sender {
+    if([self.tableView isEditing]){
+        [self.tableView setEditing:NO];
+        [self.arrangeButton setTitle:@"Arrange"];
+    }
+    else {
+        [self.tableView setEditing:YES];
+        [self.arrangeButton setTitle:@"Done"];
+    }
+
+    [self.tableView reloadData];
+}
+
 @end
