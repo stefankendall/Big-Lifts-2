@@ -56,6 +56,7 @@
         ftoSet.lift = lift;
         ftoSet.percentage = percentage;
         ftoSet.reps = @10;
+        ftoSet.assistance = YES;
         [sets addObject:ftoSet];
     }
     return sets;

@@ -15,6 +15,8 @@
 #import "FTOVariant.h"
 #import "NSArray+Enumerable.h"
 #import "Set.h"
+#import "FTOAssistanceStore.h"
+#import "FTOAssistance.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -35,11 +37,19 @@
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], 3, @"");
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:2], 3, @"");
+
+    [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
+    self.controller.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:2], 5, @"");
 }
 
 - (void)testHasSectionTitles {
+    STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:0], @"", @"");
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:1], @"Warm-up", @"");
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:2], @"Workout", @"");
+    [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
+    self.controller.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:2], @"Assistance", @"");
 }
 
 - (void)testTappingDoneButtonSavesLog {
@@ -124,7 +134,7 @@
     STAssertFalse(self.ftoWorkout.done, @"");
 }
 
--(void)testHidesWarmupSectionIfNoWarmup {
+- (void)testHidesWarmupSectionIfNoWarmup {
     NSArray *warmupSets = [[[self.ftoWorkout.workout sets] array] select:^BOOL(Set *set) {
         return set.warmup;
     }];

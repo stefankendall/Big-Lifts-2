@@ -35,8 +35,11 @@
     else if (section == [self warmupSection]) {
         return [[self.ftoWorkout.workout warmupSets] count];
     }
-    else {
+    else if (section == [self workoutSection]) {
         return [[self.ftoWorkout.workout workSets] count];
+    }
+    else {
+        return [[self.ftoWorkout.workout assistanceSets] count];
     }
 }
 
@@ -46,20 +49,31 @@
     }] != nil;
 }
 
+- (BOOL)hasAssistance {
+    return [[self.ftoWorkout.workout.sets array] detect:^BOOL(Set *set) {
+        return set.assistance;
+    }] != nil;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     int toolbar = 1;
     int warmup = 1;
     int workout = 1;
+    int assistance = 1;
 
-    if (![self shouldShowRepsToBeat]) {
+    if ([self toolbarSection] == -1) {
         toolbar = 0;
     }
 
-    if (![self hasWarmup]) {
+    if ([self warmupSection] == -1) {
         warmup = 0;
     }
 
-    return toolbar + warmup + workout;
+    if ([self assistanceSection] == -1) {
+        assistance = 0;
+    }
+
+    return toolbar + warmup + workout + assistance;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -82,9 +96,14 @@
     if ([path section] == [self warmupSection]) {
         return [path row];
     }
-    else {
+    else if ([path section] == [self workoutSection]) {
         return [[self.ftoWorkout.workout warmupSets] count] + [path row];
     }
+    else if ([path section] == [self assistanceSection]) {
+        return [[self.ftoWorkout.workout warmupSets] count] + [[self.ftoWorkout.workout workSets] count] + [path row];
+    }
+
+    return -1;
 }
 
 - (UITableViewCell *)buildWorkoutToolbarCell {
@@ -238,6 +257,9 @@
     else if (section == [self workoutSection]) {
         return @"Workout";
     }
+    else if (section == [self assistanceSection]) {
+        return @"Assistance";
+    }
     return @"";
 }
 
@@ -283,6 +305,20 @@
         workoutSection--;
     }
     return workoutSection;
+}
+
+- (int)assistanceSection {
+    int assistanceSection = 3;
+    if (![self shouldShowRepsToBeat]) {
+        assistanceSection--;
+    }
+    if (![self hasWarmup]) {
+        assistanceSection--;
+    }
+    if (![self hasAssistance]) {
+        assistanceSection = -1;
+    }
+    return assistanceSection;
 }
 
 @end

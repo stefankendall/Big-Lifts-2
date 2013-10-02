@@ -7,6 +7,8 @@
 
 - (NSArray *)warmupSets;
 
+- (NSArray *)assistanceSets;
+
 - (void)addSet:(Set *)set;
 
 @end
