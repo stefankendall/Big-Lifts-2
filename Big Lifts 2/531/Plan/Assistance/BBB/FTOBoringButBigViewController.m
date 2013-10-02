@@ -1,7 +1,6 @@
 #import "FTOBoringButBigViewController.h"
 #import "FTOBoringButBigStore.h"
 #import "SetData.h"
-#import "FTOBoringButBigAssistance.h"
 #import "FTOBoringButBig.h"
 #import "FTOAssistanceStore.h"
 
