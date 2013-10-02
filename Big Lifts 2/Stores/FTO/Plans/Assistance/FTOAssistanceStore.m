@@ -1,9 +1,14 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOAssistanceStore.h"
 #import "FTOAssistance.h"
 #import "FTONoneAssistance.h"
 #import "FTOBoringButBigAssistance.h"
 #import "FTOTriumvirateAssistance.h"
 #import "FTOSimplestStrengthTemplateAssistance.h"
+#import "FTOWorkoutStore.h"
+#import "FTOWorkout.h"
+#import "Workout.h"
+#import "Set.h"
 
 @implementation FTOAssistanceStore
 
@@ -13,9 +18,23 @@
 }
 
 - (void)changeTo:(NSString *)assistanceName {
-    FTOAssistance *assistance = [self first];
-    assistance.name = assistanceName;
+    [[self first] setName:assistanceName];
+    [self removeAssistance];
+    [[FTOWorkoutStore instance] restoreTemplate];
     [self addAssistance];
+}
+
+- (void)restore {
+    [self changeTo:[[[FTOAssistanceStore instance] first] name]];
+}
+
+- (void)removeAssistance {
+    [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
+        NSArray *assistanceSets = [[ftoWorkout.workout.sets array] select:^BOOL(Set *set) {
+            return set.assistance;
+        }];
+        [ftoWorkout.workout.sets removeObjectsInArray:assistanceSets];
+    }];
 }
 
 - (void)addAssistance {

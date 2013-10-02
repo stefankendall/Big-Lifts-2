@@ -11,6 +11,7 @@
 #import "FTOVariant.h"
 #import "FTOVariantStore.h"
 #import "FTOCustomWorkoutStore.h"
+#import "FTOAssistanceStore.h"
 
 @implementation FTOWorkoutStore
 
@@ -19,6 +20,11 @@
 }
 
 - (void)switchTemplate {
+    [self restoreTemplate];
+    [[FTOAssistanceStore instance] addAssistance];
+}
+
+- (void)restoreTemplate {
     NSDictionary *doneLiftsByWeek = [self getDoneLiftsByWeek];
     [self empty];
     [self createWorkoutsForEachLift];
@@ -103,7 +109,7 @@
 - (void)reorderWorkoutsToLifts {
     NSArray *workouts = [self findAll];
     for (FTOWorkout *workout in workouts) {
-        if([workout.workout.sets count] > 0){
+        if ([workout.workout.sets count] > 0) {
             Lift *lift = [workout.workout.sets[0] lift];
             workout.order = lift.order;
         }

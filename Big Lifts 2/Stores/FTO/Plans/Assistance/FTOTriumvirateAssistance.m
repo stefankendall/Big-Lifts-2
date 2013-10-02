@@ -11,7 +11,6 @@
 @implementation FTOTriumvirateAssistance
 
 - (void)setup {
-    [[FTOWorkoutStore instance] switchTemplate];
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *workout) {
         FTOLift *mainLift = (FTOLift *) [workout.workout.sets[0] lift];
         FTOTriumvirate *assistance = [[FTOTriumvirateStore instance] find:@"mainLift" value:mainLift];

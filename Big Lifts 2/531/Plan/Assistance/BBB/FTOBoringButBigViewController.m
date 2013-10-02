@@ -3,6 +3,7 @@
 #import "SetData.h"
 #import "FTOBoringButBigAssistance.h"
 #import "FTOBoringButBig.h"
+#import "FTOAssistanceStore.h"
 
 @implementation FTOBoringButBigViewController
 
@@ -16,7 +17,7 @@
     UITextField *percentageField = sender;
     NSDecimalNumber *percentage = [NSDecimalNumber decimalNumberWithString:[percentageField text]];
     [[[FTOBoringButBigStore instance] first] setPercentage:percentage];
-    [[FTOBoringButBigAssistance new] setup];
+    [[FTOAssistanceStore instance] restore];
 }
 
 - (IBAction)toggleThreeMonthChallenge:(id)sender {

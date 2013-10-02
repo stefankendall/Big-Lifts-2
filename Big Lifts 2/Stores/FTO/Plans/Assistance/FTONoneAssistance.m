@@ -4,7 +4,6 @@
 @implementation FTONoneAssistance
 
 - (void)setup {
-    [[FTOWorkoutStore instance] switchTemplate];
 }
 
 - (void)cycleChange {

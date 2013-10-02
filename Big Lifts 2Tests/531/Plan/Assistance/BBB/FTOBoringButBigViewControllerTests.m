@@ -8,23 +8,22 @@
 #import "FTOWorkoutStore.h"
 #import "SetData.h"
 #import "FTOCycleAdjustor.h"
-#import "NSArray+Utilities.h"
 
 @implementation FTOBoringButBigViewControllerTests
 
--(void) testChangingPercentageUpdatesBbbLifts {
+- (void)testChangingPercentageUpdatesBbbLifts {
     [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     FTOBoringButBigViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoBoring"];
     UITextField *field = [UITextField new];
     field.text = @"60";
     [controller percentageChanged:field];
 
-    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere: @"week" value: @1][0];
+    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertEquals([ftoWorkout.workout.sets count], 11U, @"");
     STAssertEqualObjects([[ftoWorkout.workout.sets lastObject] percentage], N(60), @"");
 }
 
-- (void) testThreeMonthChallengeUntoggled {
+- (void)testThreeMonthChallengeUntoggled {
     [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     [[FTOCycleAdjustor new] nextCycle];
 
@@ -32,7 +31,7 @@
     STAssertEqualObjects([ftoWorkout.workout.sets.lastObject percentage], N(50), @"");
 }
 
-- (void) testThreeMonthChallengeToggled {
+- (void)testThreeMonthChallengeToggled {
     [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     FTOBoringButBigViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoBoring"];
     UISwitch *toggle = [UISwitch new];

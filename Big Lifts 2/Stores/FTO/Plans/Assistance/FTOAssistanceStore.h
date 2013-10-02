@@ -4,5 +4,9 @@
 
 - (void)changeTo: (NSString*) assistanceName;
 
+- (void)restore;
+
+- (void)addAssistance;
+
 - (void)cycleChange;
 @end

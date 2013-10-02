@@ -14,7 +14,6 @@
 @implementation FTOBoringButBigAssistance
 
 - (void)setup {
-    [[FTOWorkoutStore instance] switchTemplate];
     [self removeAmrapFromWorkouts];
     [self addBoringSets];
 }

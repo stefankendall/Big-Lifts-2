@@ -11,6 +11,8 @@
 #import "FTOLiftStore.h"
 #import "FTOVariantStore.h"
 #import "FTOVariant.h"
+#import "FTOAssistanceStore.h"
+#import "FTOAssistance.h"
 
 @implementation FTOWorkoutStoreTests
 
@@ -72,6 +74,15 @@
     STAssertTrue(week1Workout1.done, @"");
     FTOWorkout *week1Workout2 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][1];
     STAssertFalse(week1Workout2.done, @"");
+}
+
+- (void) testReappliesAssistanceWhenSwitchingTemplates {
+    [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
+    [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
+    [[FTOVariantStore instance] changeTo:FTO_VARIANT_STANDARD];
+    FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    STAssertEquals([week1Workout1.workout.sets count], 11U, @"");
+
 }
 
 @end
