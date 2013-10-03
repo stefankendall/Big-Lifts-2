@@ -24,7 +24,6 @@
     <entity name="FTOSet" representedClassName="FTOSet" parentEntity="Set" syncable="YES"/>
     <entity name="FTOSettings" representedClassName="FTOSettings" syncable="YES">
         <attribute name="trainingMax" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
-        <attribute name="warmupEnabled" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
     </entity>
     <entity name="FTOSSTLift" representedClassName="FTOSSTLift" parentEntity="Lift" syncable="YES">
         <relationship name="associatedLift" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FTOLift" syncable="YES"/>

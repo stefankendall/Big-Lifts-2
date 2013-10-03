@@ -9,6 +9,7 @@
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
 #import "IAPAdapter.h"
+#import "FTOWorkoutStore.h"
 
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;
@@ -49,7 +50,7 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if([identifier isEqualToString:@"ftoCustomSegue"]){
+    if ([identifier isEqualToString:@"ftoCustomSegue"]) {
         return [[IAPAdapter instance] hasPurchased:IAP_FTO_CUSTOM];
     }
     return YES;
@@ -66,6 +67,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     FTOSettings *settings = [[FTOSettingsStore instance] first];
     [self.trainingMaxField setText:[settings.trainingMax stringValue]];
+    [self.warmupToggle setOn:settings.warmupEnabled];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -87,6 +89,12 @@
         [[FTOVariantStore instance] changeTo:newVariantName];
         [self checkCurrentVariant];
     }
+}
+
+- (IBAction)toggleWarmup:(id)sender {
+    UISwitch *toggle = sender;
+    [[[FTOSettingsStore instance] first] setWarmupEnabled:toggle.isOn];
+    [[FTOWorkoutStore instance] switchTemplate];
 }
 
 @end

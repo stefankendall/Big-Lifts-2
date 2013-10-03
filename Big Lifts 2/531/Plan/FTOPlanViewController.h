@@ -4,6 +4,7 @@
 @interface FTOPlanViewController : UITableViewController <UITextFieldDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UITextField *trainingMaxField;
+@property (weak, nonatomic) IBOutlet UISwitch *warmupToggle;
 
 @property(weak, nonatomic) IBOutlet UITableViewCell *standardVariant;
 @property(weak, nonatomic) IBOutlet UITableViewCell *pyramidVariant;
@@ -14,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *fivesProgressionVariant;
 @property (weak, nonatomic) IBOutlet UITableViewCell *customVariant;
 
+- (IBAction)toggleWarmup:(id)sender;
 @end

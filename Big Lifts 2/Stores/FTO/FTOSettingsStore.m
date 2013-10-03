@@ -6,6 +6,7 @@
 - (void)setupDefaults {
     FTOSettings *settings = [self create];
     settings.trainingMax = N(90);
+    settings.warmupEnabled = YES;
 }
 
 @end

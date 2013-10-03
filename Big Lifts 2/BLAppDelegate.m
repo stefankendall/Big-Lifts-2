@@ -100,6 +100,7 @@ handleCloudContentCorruptionWithHealthyStore:(BOOL)storeHealthy {
     UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
     DataLoadingViewController *controller = (DataLoadingViewController *) navController.viewControllers[0];
     controller.dataLoaded = YES;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"dataLoaded" object:nil];
 }
 
 - (NSManagedObjectContext *)managedObjectContextForUbiquityChangesInManager:(UbiquityStoreManager *)manager1 {

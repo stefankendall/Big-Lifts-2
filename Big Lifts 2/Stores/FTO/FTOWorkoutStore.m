@@ -12,6 +12,9 @@
 #import "FTOVariantStore.h"
 #import "FTOCustomWorkoutStore.h"
 #import "FTOAssistanceStore.h"
+#import "FTOSettingsStore.h"
+#import "FTOSettings.h"
+#import "Set.h"
 
 @implementation FTOWorkoutStore
 
@@ -30,6 +33,18 @@
     [self createWorkoutsForEachLift];
     [self markDeloadWorkouts];
     [self remarkDoneLifts:doneLiftsByWeek];
+    if(![[[FTOSettingsStore instance] first] warmupEnabled]){
+        [self removeWarmup];
+    }
+}
+
+- (void)removeWarmup {
+    [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
+        NSArray *warmups = [[ftoWorkout.workout.sets array] select:^BOOL(Set *set) {
+            return set.warmup;
+        }];
+        [ftoWorkout.workout.sets removeObjectsInArray:warmups];
+    }];
 }
 
 - (void)remarkDoneLifts:(NSDictionary *)doneLiftsByWeek {

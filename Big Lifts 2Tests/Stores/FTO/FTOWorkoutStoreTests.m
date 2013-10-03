@@ -7,12 +7,13 @@
 #import "Set.h"
 #import "Lift.h"
 #import "FTOSet.h"
-#import "FTOLift.h"
 #import "FTOLiftStore.h"
 #import "FTOVariantStore.h"
 #import "FTOVariant.h"
 #import "FTOAssistanceStore.h"
 #import "FTOAssistance.h"
+#import "FTOSettingsStore.h"
+#import "FTOSettings.h"
 
 @implementation FTOWorkoutStoreTests
 
@@ -37,7 +38,7 @@
 }
 
 - (void)testSetsUpWorkoutsNonDefaultLifts {
-    [[[FTOLiftStore instance] first] setName: @"Power Clean"];
+    [[[FTOLiftStore instance] first] setName:@"Power Clean"];
     [[FTOWorkoutStore instance] switchTemplate];
     NSArray *ftoWorkouts = [[FTOWorkoutStore instance] findAll];
     NSArray *liftNames = [ftoWorkouts collect:^NSString *(FTOWorkout *ftoWorkout) {
@@ -48,7 +49,7 @@
     STAssertTrue([liftNames containsObject:@"Power Clean"], @"");
 }
 
-- (void) testMarksDeloadWeeks {
+- (void)testMarksDeloadWeeks {
     FTOWorkout *week1Workout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertFalse(week1Workout.deload, @"");
 
@@ -56,15 +57,15 @@
     STAssertTrue(week4Workout.deload, @"");
 }
 
-- (void) testFindsDoneLiftsByWeek {
+- (void)testFindsDoneLiftsByWeek {
     FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     Lift *firstLift = [[week1Workout1.workout.sets firstObject] lift];
     week1Workout1.done = YES;
 
-    STAssertEqualObjects([[FTOWorkoutStore instance] getDoneLiftsByWeek], @{@1: @[firstLift]}, @"");
+    STAssertEqualObjects([[FTOWorkoutStore instance] getDoneLiftsByWeek], @{@1 : @[firstLift]}, @"");
 }
 
-- (void) testTransfersDoneStatusWhenSwitchingTemplates {
+- (void)testTransfersDoneStatusWhenSwitchingTemplates {
     FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     week1Workout1.done = YES;
 
@@ -76,13 +77,19 @@
     STAssertFalse(week1Workout2.done, @"");
 }
 
-- (void) testReappliesAssistanceWhenSwitchingTemplates {
+- (void)testReappliesAssistanceWhenSwitchingTemplates {
     [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     [[FTOVariantStore instance] changeTo:FTO_VARIANT_STANDARD];
     FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertEquals([week1Workout1.workout.sets count], 11U, @"");
+}
 
+- (void)testDoesNotAddWarmupWhenSwitchingTemplateIfItsOff {
+    [[[FTOSettingsStore instance] first] setWarmupEnabled:NO];
+    [[FTOWorkoutStore instance] switchTemplate];
+    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] first];
+    STAssertEquals([ftoWorkout.workout.sets count], 3U, @"");
 }
 
 @end
