@@ -1,10 +1,10 @@
-#import "FTOWorkoutLogDataSource.h"
+#import "FTOWorkoutLogWorkSetsDataSource.h"
 #import "SetLogCell.h"
 #import "WorkoutLog.h"
 #import "SetLogContainer.h"
 #import "SetLogCombiner.h"
 
-@implementation FTOWorkoutLogDataSource
+@implementation FTOWorkoutLogWorkSetsDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[self getCombinedSetLogs] count];
 }

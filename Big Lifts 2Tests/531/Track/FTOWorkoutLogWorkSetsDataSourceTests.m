@@ -1,11 +1,11 @@
-#import "FTOWorkoutLogDataSourceTests.h"
-#import "FTOWorkoutLogDataSource.h"
+#import "FTOWorkoutLogWorkSetsDataSourceTests.h"
+#import "FTOWorkoutLogWorkSetsDataSource.h"
 #import "WorkoutLogStore.h"
 #import "SetLog.h"
 #import "SetLogStore.h"
 #import "WorkoutLog.h"
 
-@implementation FTOWorkoutLogDataSourceTests
+@implementation FTOWorkoutLogWorkSetsDataSourceTests
 
 -(void) testReturnsWorkSets {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
@@ -24,7 +24,7 @@
     work2.weight = N(200);
     [workoutLog.sets addObjectsFromArray:@[warmup, work1, work2]];
 
-    FTOWorkoutLogDataSource *dataSource = [[FTOWorkoutLogDataSource alloc] initWithWorkoutLog:workoutLog];
+    FTOWorkoutLogWorkSetsDataSource *dataSource = [[FTOWorkoutLogWorkSetsDataSource alloc] initWithWorkoutLog:workoutLog];
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
 }
 
@@ -44,7 +44,7 @@
 
     [workoutLog.sets addObjectsFromArray:@[work1, work2, work3]];
 
-    FTOWorkoutLogDataSource *dataSource = [[FTOWorkoutLogDataSource alloc] initWithWorkoutLog:workoutLog];
+    FTOWorkoutLogWorkSetsDataSource *dataSource = [[FTOWorkoutLogWorkSetsDataSource alloc] initWithWorkoutLog:workoutLog];
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
 }
 

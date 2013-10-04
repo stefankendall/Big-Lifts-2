@@ -32,22 +32,32 @@
 - (void)testViewButtonTappedTogglesText {
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work Sets", @"");
     [controller viewButtonTapped:nil];
+    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Last Set", @"");
     [controller viewButtonTapped:nil];
     STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"All", @"");
+    [controller viewButtonTapped:nil];
+    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work Sets", @"");
 }
 
-- (void)testViewButtonTappedShowsAllRows {
+- (void)testViewButtonTappedChangesView {
     WorkoutLog *log = [[WorkoutLogStore instance] create];
     log.name = @"5/3/1";
     SetLog *setLog = [[SetLogStore instance] create];
     setLog.warmup = YES;
     [log.sets addObject:setLog];
     [log.sets addObject:[[SetLogStore instance] create]];
+    [log.sets addObject:[[SetLogStore instance] create]];
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
-    STAssertEquals([self getCellRowCount:controller], 1, @"");
+    int TWO_WORK_SETS = 2;
+    STAssertEquals([self getCellRowCount:controller], TWO_WORK_SETS, @"");
     [controller viewButtonTapped:nil];
-    STAssertEquals([self getCellRowCount:controller], 2, @"");
+    int ONE_FINAL_SET = 1;
+    STAssertEquals([self getCellRowCount:controller], ONE_FINAL_SET, @"");
+    [controller viewButtonTapped:nil];
+    int ALL_SETS = 3;
+    STAssertEquals([self getCellRowCount:controller], ALL_SETS, @"");
 }
 
 - (void)testSortsByDate {

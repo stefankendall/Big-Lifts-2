@@ -1,15 +1,21 @@
 #import "FTOTrackViewController.h"
 #import "WorkoutLogStore.h"
 #import "WorkoutLogCell.h"
-#import "FTOWorkoutLogDataSource.h"
+#import "FTOWorkoutLogWorkSetsDataSource.h"
 #import "WorkoutLog.h"
 #import "SetLogCombiner.h"
 #import "FTOTrackToolbarCell.h"
 #import "FTOEditLogViewController.h"
 
+typedef enum {
+    kShowAll = 2,
+    kShowWorkSets = 0,
+    kShowAmrap = 1
+} ShowState;
+
 @interface FTOTrackViewController ()
 
-@property(nonatomic) BOOL showAll;
+@property(nonatomic) ShowState showState;
 @property(nonatomic) WorkoutLog *tappedLog;
 @end
 
@@ -17,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.showAll = NO;
+    self.showState = kShowWorkSets;
 }
 
 - (NSArray *)getLog {
@@ -25,12 +31,14 @@
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
-    if (self.showAll) {
+    if (self.showState == kShowAll) {
         return [super getRowCount:[NSIndexPath indexPathForRow:(NSUInteger) [path row] inSection:[path section]]];
     }
-    else {
+    else if (self.showState == kShowWorkSets) {
         WorkoutLog *log = [self getLog][((NSUInteger) [path row])];
         return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:[log workSets]]] count];
+    } else {
+        return 0;
     }
 }
 
@@ -43,16 +51,19 @@
         [cell.viewButton addTarget:self action:@selector(viewButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self setupDeleteButton:cell.deleteButton];
         self.viewButton = cell.viewButton;
-        if (self.showAll) {
+        if (self.showState == kShowAll) {
+            [self.viewButton setTitle:@"All" forState:UIControlStateNormal];
+        }
+        else if (self.showState == kShowWorkSets) {
             [self.viewButton setTitle:@"Work Sets" forState:UIControlStateNormal];
         }
         else {
-            [self.viewButton setTitle:@"All" forState:UIControlStateNormal];
+            [self.viewButton setTitle:@"Last Set" forState:UIControlStateNormal];
         }
         return cell;
     }
     else {
-        if (self.showAll) {
+        if (self.showState == kShowAll) {
             return [super tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:(NSUInteger) [indexPath row] inSection:[indexPath section]]];
         }
 
@@ -64,16 +75,21 @@
 
         WorkoutLog *workoutLog = [self getLog][((NSUInteger) [indexPath row])];
         [cell setWorkoutLog:workoutLog];
-        cell.workoutLogTableDataSource = [[FTOWorkoutLogDataSource alloc] initWithWorkoutLog:workoutLog];
-        [cell.setTable setDataSource:cell.workoutLogTableDataSource];
-        [cell.setTable setDelegate:cell.workoutLogTableDataSource];
+        if (self.showState == kShowWorkSets) {
+            cell.workoutLogTableDataSource = [[FTOWorkoutLogWorkSetsDataSource alloc] initWithWorkoutLog:workoutLog];
+            [cell.setTable setDataSource:cell.workoutLogTableDataSource];
+            [cell.setTable setDelegate:cell.workoutLogTableDataSource];
+        }
+        else if (self.showState == kShowAmrap) {
+
+        }
 
         return cell;
     }
 }
 
 - (void)viewButtonTapped:(id)sender {
-    self.showAll = !self.showAll;
+    self.showState = (self.showState + 1) % 3;
     [self.tableView reloadData];
 }
 
@@ -82,11 +98,6 @@
         return UITableViewCellEditingStyleNone;
     }
     return UITableViewCellEditingStyleDelete;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [super tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:[NSIndexPath indexPathForRow:[indexPath row] inSection:[indexPath section]]];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
