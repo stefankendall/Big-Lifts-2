@@ -7,16 +7,10 @@
 #import "FTOTrackToolbarCell.h"
 #import "FTOEditLogViewController.h"
 #import "FTOWorkoutLogAmrapDataSource.h"
-
-typedef enum {
-    kShowAll = 2,
-    kShowWorkSets = 0,
-    kShowAmrap = 1
-} ShowState;
+#import "FTOSettings.h"
+#import "FTOSettingsStore.h"
 
 @interface FTOTrackViewController ()
-
-@property(nonatomic) ShowState showState;
 @property(nonatomic) WorkoutLog *tappedLog;
 @end
 
@@ -24,7 +18,7 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.showState = kShowWorkSets;
+    self.showState = (ShowState) [[[[FTOSettingsStore instance] first] logState] intValue];
 }
 
 - (NSArray *)getLog {
@@ -90,6 +84,7 @@ typedef enum {
 
 - (void)viewButtonTapped:(id)sender {
     self.showState = (self.showState + 1) % 3;
+    [[[FTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt: self.showState]];
     [self.tableView reloadData];
 }
 

@@ -8,6 +8,7 @@
 #import "WorkoutLogTableDataSource.h"
 #import "SetLogStore.h"
 #import "SetLog.h"
+#import "FTOSettingsStore.h"
 
 @implementation FTOTrackViewControllerTests
 
@@ -89,6 +90,12 @@
     int oldCount = [controller.navigationController.viewControllers count];
     [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     STAssertEquals([controller.navigationController.viewControllers count], (NSUInteger) oldCount, @"");
+}
+
+- (void)testStartsLogStateInSavedState {
+    [[[FTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt:kShowAmrap]];
+    FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
+    STAssertEquals(controller.showState, kShowAmrap, @"");
 }
 
 - (int)getCellRowCount:(FTOTrackViewController *)controller {
