@@ -245,25 +245,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9We-Oi-tbw">
-                                <rect key="frame" x="142" y="227" width="37" height="37"/>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9We-Oi-tbw">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading data..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOi-bw-r05">
-                                <rect key="frame" x="20" y="198" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yOi-bw-r05" firstAttribute="centerX" secondItem="9We-Oi-tbw" secondAttribute="centerX" id="Yyq-Uy-vnj"/>
-                            <constraint firstItem="yOi-bw-r05" firstAttribute="top" secondItem="AiJ-ie-68e" secondAttribute="top" constant="198" id="cUK-Pz-hMO"/>
-                            <constraint firstItem="9We-Oi-tbw" firstAttribute="top" secondItem="yOi-bw-r05" secondAttribute="bottom" constant="8" symbolic="YES" id="cWc-nC-qfM"/>
-                            <constraint firstAttribute="centerX" secondItem="yOi-bw-r05" secondAttribute="centerX" id="gRy-eL-a3i"/>
-                            <constraint firstItem="yOi-bw-r05" firstAttribute="leading" secondItem="AiJ-ie-68e" secondAttribute="leading" constant="20" symbolic="YES" id="qfN-sq-But"/>
+                            <constraint firstAttribute="centerX" secondItem="9We-Oi-tbw" secondAttribute="centerX" id="lPM-sn-Nn9"/>
+                            <constraint firstItem="9We-Oi-tbw" firstAttribute="centerY" secondItem="AiJ-ie-68e" secondAttribute="centerY" id="t6g-ka-0Kh"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
