@@ -12,7 +12,19 @@
     setLog.name = set.lift.name;
     setLog.warmup = set.warmup;
     setLog.assistance = set.assistance;
+    setLog.amrap = set.amrap;
     return setLog;
+}
+
+- (id)createWithName:(NSString *)name weight:(NSDecimalNumber *)weight reps:(int)reps warmup:(BOOL)warmup assistance:(BOOL)assistance amrap:(BOOL)amrap {
+    SetLog *log = [self create];
+    log.name = name;
+    log.weight = weight;
+    log.reps = [NSNumber numberWithInt:reps];
+    log.warmup = warmup;
+    log.assistance = assistance;
+    log.amrap = amrap;
+    return log;
 }
 
 @end

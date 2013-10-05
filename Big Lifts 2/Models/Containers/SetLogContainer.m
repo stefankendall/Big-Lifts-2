@@ -7,6 +7,7 @@
     self = [super init];
     if (self) {
         self.setLog = setLog1;
+        self.count = 1;
     }
     return self;
 }

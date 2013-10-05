@@ -15,24 +15,22 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSUInteger combinedSetCount = [[self getCombinedSets] count];
-    return combinedSetCount;
+    return [[self getCombinedSets] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:@"SetLogCell"];
+    SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SetLogCell.class)];
 
     if (cell == nil) {
         cell = [SetLogCell create];
-        [cell setSetLogContainer:[[self getCombinedSets] objectAtIndex:(NSUInteger) [indexPath row]]];
     }
+    [cell setSetLogContainer:[[self getCombinedSets] objectAtIndex:(NSUInteger) [indexPath row]]];
 
     return cell;
 }
 
 - (NSArray *)getCombinedSets {
-    SetLogCombiner *combiner = [SetLogCombiner new];
-    return [combiner combineSetLogs:self.workoutLog.sets];
+    return [[SetLogCombiner new] combineSetLogs:self.workoutLog.sets];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

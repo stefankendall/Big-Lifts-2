@@ -66,7 +66,6 @@
         <relationship name="lift" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Lift" syncable="YES"/>
     </entity>
     <entity name="SetLog" representedClassName="SetLog" syncable="YES">
-        <attribute name="amrap" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="assistance" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>

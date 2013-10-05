@@ -14,13 +14,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:@"SetLogCell"];
+    SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SetLogCell.class)];
 
     if (cell == nil) {
         cell = [SetLogCell create];
-        [cell setSetLogContainer:[self getCombinedSetLogs][(NSUInteger) [indexPath row]]];
     }
-
+    [cell setSetLogContainer:[self getCombinedSetLogs][(NSUInteger) [indexPath row]]];
     return cell;
 }
 

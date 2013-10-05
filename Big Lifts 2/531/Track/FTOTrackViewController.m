@@ -6,6 +6,7 @@
 #import "SetLogCombiner.h"
 #import "FTOTrackToolbarCell.h"
 #import "FTOEditLogViewController.h"
+#import "FTOWorkoutLogAmrapDataSource.h"
 
 typedef enum {
     kShowAll = 2,
@@ -38,7 +39,7 @@ typedef enum {
         WorkoutLog *log = [self getLog][((NSUInteger) [path row])];
         return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:[log workSets]]] count];
     } else {
-        return 0;
+        return 1;
     }
 }
 
@@ -77,13 +78,12 @@ typedef enum {
         [cell setWorkoutLog:workoutLog];
         if (self.showState == kShowWorkSets) {
             cell.workoutLogTableDataSource = [[FTOWorkoutLogWorkSetsDataSource alloc] initWithWorkoutLog:workoutLog];
-            [cell.setTable setDataSource:cell.workoutLogTableDataSource];
-            [cell.setTable setDelegate:cell.workoutLogTableDataSource];
         }
         else if (self.showState == kShowAmrap) {
-
+            cell.workoutLogTableDataSource = [[FTOWorkoutLogAmrapDataSource alloc] initWithWorkoutLog:workoutLog];
         }
-
+        [cell.setTable setDataSource:cell.workoutLogTableDataSource];
+        [cell.setTable setDelegate:cell.workoutLogTableDataSource];
         return cell;
     }
 }

@@ -17,6 +17,7 @@
 #import "Set.h"
 #import "FTOAssistanceStore.h"
 #import "FTOAssistance.h"
+#import "SetHelper.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -107,7 +108,7 @@
 - (void)testChoosesHeaviestAmrapSetForRepsToBeat {
     [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    Set *heaviestAmrapSet = [self.controller heaviestAmrapSet:self.ftoWorkout.workout.sets];
+    Set *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:[self.ftoWorkout.workout.sets array]];
     STAssertEquals([self.ftoWorkout.workout.sets indexOfObject:heaviestAmrapSet], 5U, @"");
 }
 
