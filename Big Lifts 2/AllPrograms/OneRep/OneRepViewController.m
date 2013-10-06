@@ -4,12 +4,19 @@
 
 @interface OneRepViewController()
 @property(nonatomic, strong) NSArray *formulaNames;
+@property(nonatomic, strong) NSArray *formulaDescriptions;
 @end
 
 @implementation OneRepViewController
 
 - (void)awakeFromNib {
-    self.formulaNames = @[@"Epley", @"Brzycki"];
+    self.formulaNames = @[
+            @"Epley",
+            @"Brzycki"];
+    self.formulaDescriptions = @[
+            @"1RM = w(1 + r/30)",
+            @"1RM = w(36/(37-r))"
+    ];
 }
 
 - (void)viewDidLoad {
@@ -18,10 +25,12 @@
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.formulaSelector];
     [self.weightField setDelegate:self];
     [self.repsField setDelegate:self];
-    UIPickerView *formulaPicker = [UIPickerView new];
-    [formulaPicker setDataSource:self];
-    [formulaPicker setDelegate:self];
-    self.formulaSelector.inputView = formulaPicker;
+    [self.formulaSelector setDelegate:self];
+
+    self.formulaPicker = [UIPickerView new];
+    [self.formulaPicker setDataSource:self];
+    [self.formulaPicker setDelegate:self];
+    self.formulaSelector.inputView = self.formulaPicker;
     [self.formulaSelector setText:[self pickerView:nil titleForRow:0 forComponent:0]];
 }
 
@@ -43,6 +52,16 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self updateOneRepMethod];
+    [self updateMaxEstimate];
+}
+
+- (void)updateOneRepMethod {
+    int row = [self.formulaPicker selectedRowInComponent:0];
+    [self.formulaDescription setText:self.formulaDescriptions[(NSUInteger) row]];
+}
+
+- (void)updateMaxEstimate {
     NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text]];
     int reps = [[self.repsField text] intValue];
     NSDecimalNumber *estimate = [[OneRepEstimator new] estimate:weight withReps:reps];
