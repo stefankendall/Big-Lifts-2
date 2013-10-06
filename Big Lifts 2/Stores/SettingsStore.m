@@ -1,16 +1,13 @@
 #import "SettingsStore.h"
 #import "Settings.h"
-#import "BLStoreManager.h"
 
 @implementation SettingsStore
 
 - (void)setupDefaults {
-    Settings *settings = [self first];
-    if (!settings) {
-        Settings *defaultSettings = [NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:[BLStoreManager context]];
-        [defaultSettings setUnits:@"lbs"];
-        [defaultSettings setRoundTo:[NSDecimalNumber decimalNumberWithString:@"5"]];
-    }
+    Settings *settings = [self create];
+    [settings setUnits:@"lbs"];
+    [settings setRoundTo:[NSDecimalNumber decimalNumberWithString:@"5"]];
+    settings.roundingFormula = (NSString *) ROUNDING_FORMULA_EPLEY;
 }
 
 - (void)onLoad {

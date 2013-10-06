@@ -1,8 +1,10 @@
 #import "OneRepViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "OneRepEstimator.h"
+#import "Settings.h"
+#import "SettingsStore.h"
 
-@interface OneRepViewController()
+@interface OneRepViewController ()
 @property(nonatomic, strong) NSArray *formulaNames;
 @property(nonatomic, strong) NSArray *formulaDescriptions;
 @end
@@ -11,12 +13,19 @@
 
 - (void)awakeFromNib {
     self.formulaNames = @[
-            @"Epley",
-            @"Brzycki"];
+            ROUNDING_FORMULA_EPLEY,
+            ROUNDING_FORMULA_BRZYCKI
+    ];
     self.formulaDescriptions = @[
             @"1RM = w(1 + r/30)",
             @"1RM = w(36/(37-r))"
     ];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    int row = [self.formulaNames indexOfObject:[[[SettingsStore instance] first] roundingFormula]];
+    [self.formulaPicker selectRow:row inComponent:0 animated:NO];
+    [self updatePickerDisplayForRow:row];
 }
 
 - (void)viewDidLoad {
@@ -47,17 +56,23 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSString *title = [self pickerView:pickerView titleForRow:row forComponent:component];
-    [self.formulaSelector setText:title];
+    [self updateOneRepMethod];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     [self updateOneRepMethod];
-    [self updateMaxEstimate];
 }
 
 - (void)updateOneRepMethod {
     int row = [self.formulaPicker selectedRowInComponent:0];
+    [[[SettingsStore instance] first] setRoundingFormula:self.formulaNames[(NSUInteger) row]];
+    [self updatePickerDisplayForRow:row];
+    [self updateMaxEstimate];
+}
+
+- (void)updatePickerDisplayForRow:(NSInteger)row {
+    NSString *title = [self pickerView:self.formulaPicker titleForRow:row forComponent:0];
+    [self.formulaSelector setText:title];
     [self.formulaDescription setText:self.formulaDescriptions[(NSUInteger) row]];
 }
 

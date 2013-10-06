@@ -1,6 +1,8 @@
 #import "OneRepViewControllerTests.h"
 #import "OneRepViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
+#import "SettingsStore.h"
+#import "Settings.h"
 
 @implementation OneRepViewControllerTests
 
@@ -27,6 +29,7 @@
     [controller textFieldDidEndEditing:nil];
     STAssertFalse([controller.formulaDescription.text isEqualToString:@""], @"");
     STAssertFalse([currentFormula isEqualToString:controller.formulaDescription.text], @"");
+    STAssertEqualObjects([[[SettingsStore instance] first] roundingFormula], ROUNDING_FORMULA_BRZYCKI, @"");
 }
 
 @end
