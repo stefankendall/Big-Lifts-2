@@ -34,8 +34,8 @@
     [workoutLog2.sets addObject:setLog2_1];
 
     NSMutableString *expected = [@"name,date,weight,reps,estimated max\n" mutableCopy];
-    [expected appendString:@"Press,2/1/13,100,5,116.5\n"];
-    [expected appendString:@"Deadlift,1/23/13,210,2,223.86\n"];
+    [expected appendString:@"Press,2/1/13,100,5,116.7\n"];
+    [expected appendString:@"Deadlift,1/23/13,210,2,224\n"];
 
     NSString *csv = [[FTOLogExporter new] csv];
     STAssertEqualObjects(csv, expected, @"");

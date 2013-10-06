@@ -35,6 +35,7 @@
     tagViewMapping[@2] = @"barLoadingNav";
     tagViewMapping[@4] = @"settingsViewController";
     tagViewMapping[@9] = @"likeNav";
+    tagViewMapping[@10] = @"oneRepNav";
 
     if ([cell tag] == 6) {
         [[[CurrentProgramStore instance] first] setName: nil];

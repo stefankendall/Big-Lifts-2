@@ -25,7 +25,7 @@
                     @"month" : @1,
                     @"day" : @12
             },
-            @"weight" : N(219.8)
+            @"weight" : N(220)
     };
     STAssertEqualObjects(chartEntry, expected, @"");
 }
@@ -65,7 +65,7 @@
     NSArray *expected = @[@{
             @"name" : @"Deadlift",
             @"data" : @[
-                    @{@"weight" : N(223.86), @"date" : @{@"year" : @2013, @"month" : @1, @"day" : @12}}
+                    @{@"weight" : N(224), @"date" : @{@"year" : @2013, @"month" : @1, @"day" : @12}}
             ]
     }];
     STAssertEqualObjects(chartData, expected, [NSString stringWithFormat:@"%@", chartData]);

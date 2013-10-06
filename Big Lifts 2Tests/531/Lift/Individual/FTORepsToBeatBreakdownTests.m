@@ -23,6 +23,7 @@
     SetLog *setLog = [[SetLogStore instance] create];
     setLog.weight = N(155);
     setLog.name = set.lift.name;
+    setLog.reps = @1;
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
     [workoutLog.sets addObject:setLog];
@@ -34,7 +35,7 @@
     STAssertEqualObjects([[breakdown maxFromLog] text], @"155", @"");
     STAssertEqualObjects([[breakdown reps] text], @"6x", @"");
     STAssertEqualObjects([[breakdown weight] text], @"130", @"");
-    STAssertEqualObjects([[breakdown estimatedMax] text], @"155.74", @"");
+    STAssertEqualObjects([[breakdown estimatedMax] text], @"156", @"");
 }
 
 @end
