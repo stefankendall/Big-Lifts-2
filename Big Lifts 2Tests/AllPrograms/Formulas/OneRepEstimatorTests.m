@@ -1,5 +1,7 @@
 #import "OneRepEstimatorTests.h"
 #import "OneRepEstimator.h"
+#import "SettingsStore.h"
+#import "Settings.h"
 
 @implementation OneRepEstimatorTests
 
@@ -11,6 +13,11 @@
 
 - (void) testCutsNumbersToOneDecimalPlace {
     STAssertEqualObjects([[OneRepEstimator new] oneDecimalPlace:N(200.6666)], N(200.7), @"");
+}
+
+- (void) testUsesSavedFormula {
+    [[[SettingsStore instance] first] setRoundingFormula:(NSString *) ROUNDING_FORMULA_BRZYCKI];
+    STAssertEqualObjects([[OneRepEstimator new] estimate:N(100) withReps:5], N(112.5), @"");
 }
 
 @end

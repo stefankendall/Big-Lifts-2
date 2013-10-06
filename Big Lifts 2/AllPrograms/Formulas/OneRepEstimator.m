@@ -1,4 +1,9 @@
 #import "OneRepEstimator.h"
+#import "Settings.h"
+#import "EpleyEstimator.h"
+#import "BLStore.h"
+#import "SettingsStore.h"
+#import "BrzyckiEstimator.h"
 
 @implementation OneRepEstimator
 
@@ -10,9 +15,12 @@
         return N(0);
     }
 
-    NSDecimalNumber *repsDecimal = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInteger:reps] decimalValue]];
-    NSDecimalNumber *factor = [N(1) decimalNumberByAdding:[repsDecimal decimalNumberByDividingBy:N(30)]];
-    return [self oneDecimalPlace:[weight decimalNumberByMultiplyingBy:factor]];
+    NSDictionary *estimators = @{
+            ROUNDING_FORMULA_EPLEY : [EpleyEstimator new],
+            ROUNDING_FORMULA_BRZYCKI : [BrzyckiEstimator new]
+    };
+    NSObject<MaxEstimator> *estimator = estimators[[[[SettingsStore instance] first] roundingFormula]];
+    return [self oneDecimalPlace:[estimator estimate:weight withReps:reps]];
 }
 
 - (NSDecimalNumber *)oneDecimalPlace:(NSDecimalNumber *)number {
