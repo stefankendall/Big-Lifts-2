@@ -3,6 +3,8 @@
 
 NSString * const IAP_BAR_LOADING = @"barLoading";
 NSString * const IAP_GRAPHING = @"graphing";
+NSString * const IAP_1RM = @"oneRepMax";
+
 NSString * const IAP_SS_WARMUP = @"ssWarmup";
 NSString * const IAP_SS_ONUS_WUNSLER = @"ssOnusWunsler";
 NSString * const IAP_SS_PRACTICAL_PROGRAMMING = @"ssPracticalProgramming";
@@ -28,6 +30,7 @@ NSString * const IAP_FTO_CUSTOM = @"ftoCustom";
         self.buyMessages = @{
                 IAP_BAR_LOADING : @"Bar loading is now available throughout the app.",
                 IAP_GRAPHING: @"Graphing is now available.",
+                IAP_1RM: @"One rep maxes are now available.",
                 IAP_SS_ONUS_WUNSLER : @"Onus Wunsler is now available in Starting Strength.",
                 IAP_SS_PRACTICAL_PROGRAMMING : @"Practical Programming is now available in Starting Strength.",
                 IAP_SS_WARMUP : @"Warm-up sets added to Starting Strength.",

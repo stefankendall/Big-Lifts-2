@@ -5,6 +5,7 @@
 }
 @property(weak, nonatomic) IBOutlet UITextField *repsField;
 @property(weak, nonatomic) IBOutlet UILabel *weightField;
+@property (weak, nonatomic) IBOutlet UILabel *oneRepField;
 @property(nonatomic, strong) NSObject <SetRepsDelegate> *delegate;
 
 @property(nonatomic, strong) Set *set;

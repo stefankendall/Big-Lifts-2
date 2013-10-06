@@ -13,6 +13,7 @@
         store.allPurchaseIds = @[
                 IAP_BAR_LOADING,
                 IAP_GRAPHING,
+                IAP_1RM,
                 IAP_SS_ONUS_WUNSLER,
                 IAP_SS_WARMUP,
                 IAP_SS_PRACTICAL_PROGRAMMING,

@@ -3,5 +3,5 @@
 @class SenTestCase;
 @class FTOSetRepsForm;
 
-@interface FTOAmrapFormTests : BLTestCase
+@interface FTOSetRepsFormTests : BLTestCase
 @end

@@ -3,6 +3,11 @@
 #import "OneRepEstimator.h"
 #import "Settings.h"
 #import "SettingsStore.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
+#import "UIViewController+PurchaseOverlay.h"
+#import "UITableViewController+NoEmptyRows.h"
+#import "PurchaseOverlay.h"
 
 @interface OneRepViewController ()
 @property(nonatomic, strong) NSArray *formulaNames;
@@ -26,6 +31,16 @@
     int row = [self.formulaNames indexOfObject:[[[SettingsStore instance] first] roundingFormula]];
     [self.formulaPicker selectRow:row inComponent:0 animated:NO];
     [self updatePickerDisplayForRow:row];
+
+    [self handleIapChange];
+}
+
+- (void)handleIapChange {
+    if (([[IAPAdapter instance] hasPurchased:IAP_1RM])) {
+        [self.view removeGestureRecognizer:[self.view.gestureRecognizers lastObject]];
+        [[self.tableView viewWithTag:kPurchaseOverlayTag] removeFromSuperview];
+        [self.marketingTextCell removeFromSuperview];
+    }
 }
 
 - (void)viewDidLoad {
@@ -41,6 +56,25 @@
     [self.formulaPicker setDelegate:self];
     self.formulaSelector.inputView = self.formulaPicker;
     [self.formulaSelector setText:[self pickerView:nil titleForRow:0 forComponent:0]];
+
+    if (!([[IAPAdapter instance] hasPurchased:IAP_1RM])) {
+        [self disable:IAP_1RM view:self.view];
+    }
+
+    UITapGestureRecognizer *singleFingerTap =
+            [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    [self.view addGestureRecognizer:singleFingerTap];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleIapChange)
+                                                 name:IAP_PURCHASED_NOTIFICATION
+                                               object:nil];
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
+    if ([self.tableView viewWithTag:kPurchaseOverlayTag]) {
+        [[Purchaser new] purchase:IAP_1RM];
+    }
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
