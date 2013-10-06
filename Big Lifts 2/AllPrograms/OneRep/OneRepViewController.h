@@ -1,6 +1,6 @@
 #import "UIViewController+ViewDeckAdditions.h"
 
-@interface OneRepViewController : UITableViewController <UITextFieldDelegate> {}
+@interface OneRepViewController : UITableViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {}
 @property (weak, nonatomic) IBOutlet UITextField *weightField;
 @property (weak, nonatomic) IBOutlet UITextField *repsField;
 @property (weak, nonatomic) IBOutlet UILabel *maxLabel;

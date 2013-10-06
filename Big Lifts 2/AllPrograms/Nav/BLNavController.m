@@ -38,7 +38,7 @@
     tagViewMapping[@10] = @"oneRepNav";
 
     if ([cell tag] == 6) {
-        [[[CurrentProgramStore instance] first] setName: nil];
+        [[[CurrentProgramStore instance] first] setName:nil];
         [[self.viewDeckController navigationController] popViewControllerAnimated:YES];
     } else if ([cell tag] == 8) {
         [self presentFeedbackEmail];

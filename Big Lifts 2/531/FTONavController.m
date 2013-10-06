@@ -1,4 +1,3 @@
-#import <ViewDeck/IIViewDeckController.h>
 #import "FTONavController.h"
 
 @implementation FTONavController
