@@ -7,6 +7,7 @@
 #import "WorkoutStore.h"
 #import "FTOWorkoutStore.h"
 #import "AddCell.h"
+#import "FTOCustomToolbar.h"
 
 
 @interface FTOCustomWeekSelectorViewController ()
@@ -20,16 +21,24 @@
         return 1;
     }
     else {
-        return 2;
+        return 3;
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if ([self.tableView isEditing]) {
         return [[FTOCustomWorkoutStore instance] count];
     }
     else {
-        return 1;
+        if (section == 0) {
+            return 1;
+        }
+        else if (section == 1) {
+            return [[FTOCustomWorkoutStore instance] count];
+        }
+        else {
+            return 1;
+        }
     }
 }
 
@@ -39,12 +48,24 @@
     }
     else {
         if ([indexPath section] == 0) {
+            FTOCustomToolbar *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomToolbar.class)];
+            if (!cell) {
+                cell = [FTOCustomToolbar create];
+            }
+            [cell.templateButton addTarget:self action:@selector(copyTemplate) forControlEvents:UIControlEventTouchUpInside];
+            return cell;
+        }
+        else if ([indexPath section] == 1) {
             return [self viewCell:tableView forIndexPath:indexPath];
         }
         else {
             return [self addCell:tableView];
         }
     }
+}
+
+- (void)copyTemplate {
+
 }
 
 - (UITableViewCell *)viewCell:(UITableView *)tableView forIndexPath:(NSIndexPath *)indexPath {
@@ -71,11 +92,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
+    NSInteger section = [indexPath section];
+    if (section == 1) {
         self.tappedWorkout = [[FTOCustomWorkoutStore instance] atIndex:[indexPath row]];
         [self performSegueWithIdentifier:@"ftoCustomWeekSelectedSegue" sender:self];
     }
-    else {
+    else if (section == 2) {
         FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] create];
         customWorkout.name = @"New Week";
         NSNumber *max = [[FTOCustomWorkoutStore instance] max:@"week"];
@@ -97,17 +119,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [[FTOCustomWorkoutStore instance] removeAtIndex:[indexPath row]];
-        [self recreateWeeks];
+        [[FTOCustomWorkoutStore instance] reorderWeeks];
         [self.tableView reloadData];
     }
-}
-
-- (void)recreateWeeks {
-    for (int week = 1; week < [[FTOCustomWorkoutStore instance] count]; week++) {
-            FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] atIndex:week];
-            customWorkout.week = [NSNumber numberWithInt:week];
-            customWorkout.order = [NSNumber numberWithInt:week];
-        }
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {

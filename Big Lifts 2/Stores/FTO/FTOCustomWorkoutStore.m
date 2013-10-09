@@ -41,4 +41,12 @@
     customWorkout.name = @{@1 : @"5/5/5", @2 : @"3/3/3", @3 : @"5/3/1", @4 : @"Deload"}[[NSNumber numberWithInt:week]];
 }
 
+- (void)reorderWeeks {
+    for (int week = 1; week < [[FTOCustomWorkoutStore instance] count]; week++) {
+        FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] atIndex:week];
+        customWorkout.week = [NSNumber numberWithInt:week];
+        customWorkout.order = [NSNumber numberWithInt:week];
+    }
+}
+
 @end
