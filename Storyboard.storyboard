@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ckh-VZ-HqJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ckh-VZ-HqJ">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -2258,27 +2258,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1RM estimate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWl-dS-lcD">
-                                                    <rect key="frame" x="20" y="11" width="107" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1RM estimate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWl-dS-lcD">
+                                                    <rect key="frame" x="20" y="11" width="130" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="3vz-ye-MoP"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkM-HS-5kQ">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkM-HS-5kQ">
                                                     <rect key="frame" x="209" y="11" width="91" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="91" id="eYf-Su-wgD"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="centerY" secondItem="eux-VP-JEf" secondAttribute="centerY" id="hkU-Bv-vUu"/>
-                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="leading" secondItem="eux-VP-JEf" secondAttribute="leading" constant="20" symbolic="YES" id="zyu-pq-sJ3"/>
+                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="top" secondItem="gkM-HS-5kQ" secondAttribute="top" id="MU2-m2-BTO"/>
+                                                <constraint firstAttribute="trailing" secondItem="gkM-HS-5kQ" secondAttribute="trailing" constant="20" symbolic="YES" id="OUZ-lQ-beZ"/>
+                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="leading" secondItem="eux-VP-JEf" secondAttribute="leading" constant="20" symbolic="YES" id="OUt-Jo-vdg"/>
+                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="centerY" secondItem="eux-VP-JEf" secondAttribute="centerY" id="dPe-o7-Fzn"/>
+                                                <constraint firstItem="gkM-HS-5kQ" firstAttribute="leading" secondItem="XWl-dS-lcD" secondAttribute="trailing" constant="59" id="dhK-g1-oTQ"/>
+                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="baseline" secondItem="gkM-HS-5kQ" secondAttribute="baseline" id="pxF-bf-oX1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
