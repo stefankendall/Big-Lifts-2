@@ -65,7 +65,7 @@
 }
 
 - (void)copyTemplate {
-
+    [self performSegueWithIdentifier:@"ftoCustomCopyTemplate" sender:self];
 }
 
 - (UITableViewCell *)viewCell:(UITableView *)tableView forIndexPath:(NSIndexPath *)indexPath {
@@ -110,8 +110,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    FTOCustomWorkoutViewController *controller = [segue destinationViewController];
-    controller.customWorkout = self.tappedWorkout;
+    if ([[segue identifier] isEqualToString:@"ftoCustomWeekSelectedSegue"]) {
+        FTOCustomWorkoutViewController *controller = [segue destinationViewController];
+        controller.customWorkout = self.tappedWorkout;
+    }
 
     [super prepareForSegue:segue sender:sender];
 }
