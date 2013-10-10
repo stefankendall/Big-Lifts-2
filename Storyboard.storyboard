@@ -1534,10 +1534,10 @@
             </objects>
             <point key="canvasLocation" x="3569" y="2201"/>
         </scene>
-        <!--Table View Controller - Copy Template-->
+        <!--Custom Copy Template View Controller - Copy Template-->
         <scene sceneID="HyR-84-ICu">
             <objects>
-                <tableViewController id="v4P-Sz-qmx" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ftoCustomCopyTemplate" id="v4P-Sz-qmx" customClass="FTOCustomCopyTemplateViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aDP-Ec-VUf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1622,6 +1622,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Copy Template" id="w4n-W3-7U1"/>
+                    <connections>
+                        <outlet property="advanced" destination="GWb-6m-vL6" id="0DH-LU-dZa"/>
+                        <outlet property="joker" destination="foh-0w-dhT" id="a9Z-19-xn7"/>
+                        <outlet property="pyramid" destination="96y-tA-dXi" id="Jxf-fs-reD"/>
+                        <outlet property="standard" destination="zM8-ho-zw1" id="Bk1-u4-seL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHo-5g-5b5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
