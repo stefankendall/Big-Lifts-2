@@ -11,4 +11,5 @@
 
 - (void)addSet:(Set *)set;
 
+- (void)addSets:(NSArray *)newSets;
 @end

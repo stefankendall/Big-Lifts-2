@@ -30,4 +30,10 @@
     self.sets = newSets;
 }
 
+- (void)addSets:(NSArray *)newSets {
+    for (Set *set in newSets) {
+        [self addSet:set];
+    }
+}
+
 @end

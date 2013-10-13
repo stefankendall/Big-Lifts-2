@@ -10,6 +10,22 @@
 
 @implementation FTOTriumvirateStore
 
+- (void)onLoad {
+    [self fixEmptySets];
+}
+
+- (void)fixEmptySets {
+    int count = 0;
+    for (FTOTriumvirate *triumvirate in [self findAll]) {
+        count += [triumvirate.workout.sets count];
+    }
+    if (count < [[FTOLiftStore instance] count] * 10) {
+        NSLog(@"Triumvirate is broken. Re-setting.");
+        [self empty];
+        [self setupDefaults];
+    }
+}
+
 - (NSArray *)findAll {
     return [[super findAll] sortedArrayUsingComparator:^NSComparisonResult(FTOTriumvirate *t1, FTOTriumvirate *t2) {
         return [t1.mainLift.order compare:t2.mainLift.order];
@@ -51,7 +67,7 @@
     FTOTriumvirate *triumvirateLifts = [[FTOTriumvirateStore instance] create];
     triumvirateLifts.mainLift = [[FTOLiftStore instance] find:@"name" value:name];
     triumvirateLifts.workout = [[WorkoutStore instance] create];
-    [triumvirateLifts.workout.sets addObjectsFromArray:sets];
+    [triumvirateLifts.workout addSets:sets];
 }
 
 - (NSArray *)setsForLift:(NSString *)liftName withReps:reps {
