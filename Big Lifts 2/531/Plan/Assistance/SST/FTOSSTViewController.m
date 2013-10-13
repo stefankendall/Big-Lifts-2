@@ -2,7 +2,6 @@
 #import "FTOLiftStore.h"
 #import "FTOLift.h"
 #import "RowTextField.h"
-#import "LiftFormCell.h"
 #import "FTOEditLiftCell.h"
 #import "FTOSSTLiftStore.h"
 #import "FTOSSTLift.h"
@@ -28,7 +27,7 @@
         return cell;
     }
     else {
-        return [self liftFormCellFor:tableView lift:lift];
+        return [self incrementCell:tableView indexPath:indexPath];
     }
 }
 
@@ -40,6 +39,5 @@
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     return cell.bounds.size.height;
 }
-
 
 @end

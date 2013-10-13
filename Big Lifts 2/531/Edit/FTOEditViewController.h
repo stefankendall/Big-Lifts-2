@@ -5,5 +5,5 @@
 
 @interface FTOEditViewController : UITableViewController <UITextFieldDelegate>
 
-- (UITableViewCell *)liftFormCellFor:(UITableView *)tableView lift:(Lift *)lift;
+- (UITableViewCell *)incrementCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath;
 @end

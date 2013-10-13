@@ -4,11 +4,11 @@
 #import "LiftFormCell.h"
 #import "FTOEditLiftCell.h"
 #import "RowTextField.h"
-#import "TextFieldWithCell.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "TrainingMaxRowTextField.h"
 #import "FTOSettings.h"
 #import "FTOSettingsStore.h"
+#import "FTOEditIncrementCell.h"
 
 @implementation FTOEditViewController
 
@@ -25,7 +25,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FTOLift *lift = ([[FTOLiftStore instance] findAll])[(NSUInteger) indexPath.row];
+    FTOLift *lift = (FTOLift *) [self liftAtIndex:[indexPath row]];
     if ([indexPath section] == 0) {
         FTOEditLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOEditLiftCell.class)];
         if (cell == nil) {
@@ -40,7 +40,7 @@
         return cell;
     }
     else {
-        return [self liftFormCellFor:self.tableView lift:lift];
+        return [self incrementCell:self.tableView indexPath:indexPath];
     }
 }
 
@@ -98,14 +98,17 @@
     }
 }
 
-- (UITableViewCell *)liftFormCellFor:(UITableView *)tableView lift:(Lift *)lift {
-    LiftFormCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(LiftFormCell.class)];
+- (UITableViewCell *)incrementCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
+    Lift *lift = [self liftAtIndex:[indexPath row]];
+    FTOEditIncrementCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOEditIncrementCell.class)];
     if (cell == nil) {
-        cell = [LiftFormCell create];
+        cell = [FTOEditIncrementCell create];
     }
     [[cell liftLabel] setText:lift.name];
-    [[cell textField] setText:[lift.increment stringValue]];
-    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:[cell textField]];
+    [[cell increment] setText:[lift.increment stringValue]];
+    [[cell increment] setDelegate:self];
+    [cell increment].indexPath = indexPath;
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:[cell increment]];
     return cell;
 }
 
