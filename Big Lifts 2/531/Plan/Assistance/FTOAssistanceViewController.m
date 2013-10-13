@@ -3,7 +3,6 @@
 #import "FTOAssistanceViewController.h"
 #import "FTOAssistance.h"
 #import "FTOAssistanceStore.h"
-#import "UITableViewController+NoEmptyRows.h"
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
 #import "IAPAdapter.h"
@@ -11,6 +10,8 @@
 @interface FTOAssistanceViewController ()
 @property(nonatomic, strong) NSDictionary *cellMapping;
 @property(nonatomic, strong) NSDictionary *iapCells;
+@property(nonatomic, strong) NSDictionary *assistanceToSegues;
+@property(nonatomic, strong) NSIndexPath *iapIndexPath;
 @end
 
 @implementation FTOAssistanceViewController
@@ -28,15 +29,33 @@
             IAP_FTO_SST : self.sstCell
     };
 
-    [self enableDisableIapCells];
+    self.assistanceToSegues = @{
+            FTO_ASSISTANCE_TRIUMVIRATE : @"ftoTriumvirate",
+            FTO_ASSISTANCE_SST : @"ftoSst"
+    };
+
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(enableDisableIapCells)
+                                             selector:@selector(somethingPurchased)
                                                  name:IAP_PURCHASED_NOTIFICATION
                                                object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self enableDisableIapCells];
     [self checkCurrentAssistance];
+}
+
+- (void)somethingPurchased {
+    if (self.isViewLoaded && self.view.window) {
+        [self enableDisableIapCells];
+        if (self.iapIndexPath) {
+            [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
+            self.iapIndexPath = nil;
+            [self performSegueWithIdentifier:self.assistanceToSegues[
+                    [[[FTOAssistanceStore instance] first] name]
+            ]                         sender:self];
+        }
+    }
 }
 
 - (void)checkCurrentAssistance {
@@ -50,6 +69,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
+        self.iapIndexPath = indexPath;
         [self purchaseFromCell:selectedCell];
     }
     else {
@@ -67,10 +87,6 @@
         return NO;
     }
     return YES;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self emptyView];
 }
 
 @end

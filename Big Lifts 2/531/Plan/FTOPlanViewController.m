@@ -47,6 +47,14 @@
                                                object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    FTOSettings *settings = [[FTOSettingsStore instance] first];
+    [self.trainingMaxField setText:[settings.trainingMax stringValue]];
+    [self.warmupToggle setOn:settings.warmupEnabled];
+    [self enableDisableIapCells];
+    [self checkCurrentVariant];
+}
+
 - (void)somethingPurchased {
     if (self.isViewLoaded && self.view.window) {
         [self enableDisableIapCells];
@@ -74,14 +82,6 @@
         [cell setAccessoryType:UITableViewCellAccessoryNone];
     }];
     [self.variantCells[variant.name] setAccessoryType:UITableViewCellAccessoryCheckmark];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    FTOSettings *settings = [[FTOSettingsStore instance] first];
-    [self.trainingMaxField setText:[settings.trainingMax stringValue]];
-    [self.warmupToggle setOn:settings.warmupEnabled];
-    [self enableDisableIapCells];
-    [self checkCurrentVariant];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
