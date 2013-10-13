@@ -13,7 +13,7 @@
     FTOCustomCopyTemplateViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomCopyTemplate"];
     [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:[self rowFor:controller.pyramid forController:controller] inSection:0]];
     FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals(customWorkout.workout.sets.count, 9U, @"");
+    STAssertEquals(customWorkout.workout.sets.count, 8U, @"");
 }
 
 - (void)testFindsVariantForRow {
