@@ -4,8 +4,9 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *joker;
 @property (weak, nonatomic) IBOutlet UITableViewCell *advanced;
 
-@property(nonatomic, strong) NSDictionary *rowCellMapping;
-@property(nonatomic, strong) NSDictionary *variantCellMapping;
+@property(nonatomic, strong) NSDictionary *textToVariant;
+@property(nonatomic, strong) NSDictionary *iapVariants;
+@property(nonatomic, strong) NSArray *orderedVariants;
 
-- (NSString *)variantForRow:(NSInteger)row;
+- (NSArray *)purchasedOrderedVariants;
 @end
