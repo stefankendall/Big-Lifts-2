@@ -14,6 +14,7 @@
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;
 @property(nonatomic) NSDictionary *iapCells;
+@property(nonatomic) NSIndexPath *iapIndexPath;
 @end
 
 @implementation FTOPlanViewController
@@ -40,13 +41,24 @@
             IAP_FTO_CUSTOM : self.customVariant
     };
 
-    [self checkCurrentVariant];
-    [self enableDisableIapCells];
-
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(enableDisableIapCells)
+                                             selector:@selector(somethingPurchased)
                                                  name:IAP_PURCHASED_NOTIFICATION
                                                object:nil];
+}
+
+- (void)somethingPurchased {
+    if (self.isViewLoaded && self.view.window) {
+        [self enableDisableIapCells];
+        if (self.iapIndexPath) {
+            [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
+            self.iapIndexPath = nil;
+
+            if([[[[FTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_CUSTOM]){
+                [self performSegueWithIdentifier:@"ftoCustomSegue" sender:self];
+            }
+        }
+    }
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
@@ -68,6 +80,8 @@
     FTOSettings *settings = [[FTOSettingsStore instance] first];
     [self.trainingMaxField setText:[settings.trainingMax stringValue]];
     [self.warmupToggle setOn:settings.warmupEnabled];
+    [self enableDisableIapCells];
+    [self checkCurrentVariant];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -80,6 +94,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
+        self.iapIndexPath = indexPath;
         [self purchaseFromCell:selectedCell];
     }
     else if ([indexPath section] == 1) {
