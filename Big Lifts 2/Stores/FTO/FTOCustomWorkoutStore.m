@@ -29,7 +29,7 @@
         return [data createSet];
     }];
 
-    [workout.sets addObjectsFromArray:sets];
+    [workout addSets:sets];
     return workout;
 }
 

@@ -15,7 +15,7 @@
         FTOLift *mainLift = (FTOLift *) [workout.workout.sets[0] lift];
         FTOTriumvirate *assistance = [[FTOTriumvirateStore instance] find:@"mainLift" value:mainLift];
         if (assistance) {
-            [workout.workout.sets addObjectsFromArray:[assistance.workout.sets array]];
+            [workout.workout addSets:[assistance.workout.sets array]];
         }
     }];
 }

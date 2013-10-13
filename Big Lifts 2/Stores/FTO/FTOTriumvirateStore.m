@@ -19,8 +19,7 @@
     for (FTOTriumvirate *triumvirate in [self findAll]) {
         count += [triumvirate.workout.sets count];
     }
-    if (count < [[FTOLiftStore instance] count] * 10) {
-        NSLog(@"Triumvirate is broken. Re-setting.");
+    if (count == 0) {
         [self empty];
         [self setupDefaults];
     }

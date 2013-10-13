@@ -1,4 +1,5 @@
 @class Lift;
+@class Workout;
 
 @interface Set : NSManagedObject
 @property(nonatomic) NSNumber *reps;
@@ -9,6 +10,7 @@
 @property(nonatomic) BOOL amrap;
 @property(nonatomic) BOOL optional;
 @property(nonatomic) BOOL assistance;
+@property(nonatomic) Workout *workout;
 
 - (NSDecimalNumber *) effectiveWeight;
 

@@ -18,6 +18,22 @@
 
 @implementation FTOWorkoutStore
 
+- (void)onLoad {
+    [self fixEmptySets];
+}
+
+- (void)fixEmptySets {
+    NSArray *ftoWorkouts = [self findAll];
+    int setCount = 0;
+    for (FTOWorkout *ftoWorkout in ftoWorkouts) {
+        setCount += [ftoWorkout.workout.sets count];
+    }
+    if (setCount == 0) {
+        [self empty];
+        [self setupDefaults];
+    }
+}
+
 - (void)setupDefaults {
     [self switchTemplate];
 }
@@ -33,7 +49,7 @@
     [self createWorkoutsForEachLift];
     [self markDeloadWorkouts];
     [self remarkDoneLifts:doneLiftsByWeek];
-    if(![[[FTOSettingsStore instance] first] warmupEnabled]){
+    if (![[[FTOSettingsStore instance] first] warmupEnabled]) {
         [self removeWarmup];
     }
 }
@@ -110,7 +126,7 @@
         return [data createSet];
     }];
 
-    [workout.sets addObjectsFromArray:sets];
+    [workout addSets:sets];
     return workout;
 }
 

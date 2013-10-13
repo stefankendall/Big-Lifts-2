@@ -43,7 +43,7 @@
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
         int sets = ftoWorkout.deload ? 3 : 5;
         Set *set = ftoWorkout.workout.sets[0];
-        [ftoWorkout.workout.sets addObjectsFromArray:[self createBoringSets:sets forLift:set.lift]];
+        [ftoWorkout.workout addSets:[self createBoringSets:sets forLift:set.lift]];
     }];
 }
 
