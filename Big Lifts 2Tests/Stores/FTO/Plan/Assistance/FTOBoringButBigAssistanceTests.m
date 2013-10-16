@@ -28,7 +28,7 @@
     STAssertEqualObjects(boringSet.reps, @10, @"");
 
     FTOWorkout *workoutInWeek4 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@4][0];
-    STAssertEquals([workoutInWeek4.workout.sets count], 9U, @"");
+    STAssertEquals([workoutInWeek4.workout.sets count], 6U, @"");
 }
 
 - (void)testUsesBbbPercentage {
