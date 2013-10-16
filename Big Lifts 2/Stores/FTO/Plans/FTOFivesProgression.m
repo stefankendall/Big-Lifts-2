@@ -1,6 +1,7 @@
 #import "FTOFivesProgression.h"
 #import "Lift.h"
 #import "SetData.h"
+#import "FTODeload.h"
 
 @implementation FTOFivesProgression
 
@@ -30,14 +31,7 @@
                     [SetData dataWithReps:5 percentage:N(85) lift:lift],
                     [SetData dataWithReps:5 percentage:N(95) lift:lift]
             ],
-            @4 : @[
-                    [SetData dataWithReps:5 percentage:N(40) lift:lift amrap:NO warmup:YES],
-                    [SetData dataWithReps:5 percentage:N(50) lift:lift amrap:NO warmup:YES],
-                    [SetData dataWithReps:5 percentage:N(60) lift:lift amrap:NO warmup:YES],
-                    [SetData dataWithReps:5 percentage:N(60) lift:lift],
-                    [SetData dataWithReps:5 percentage:N(60) lift:lift],
-                    [SetData dataWithReps:5 percentage:N(60) lift:lift]
-            ]
+            @4 : [[FTODeload new] deloadLifts:(id) lift]
     };
 }
 

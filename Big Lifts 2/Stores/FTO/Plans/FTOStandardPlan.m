@@ -1,6 +1,7 @@
 #import "FTOStandardPlan.h"
 #import "Lift.h"
 #import "SetData.h"
+#import "FTODeload.h"
 
 @implementation FTOStandardPlan
 
@@ -32,20 +33,11 @@
             [SetData dataWithReps:1 percentage:N(95) lift:lift amrap:YES]
     ];
 
-    NSArray *week4Lifts = @[
-            [SetData dataWithReps:5 percentage:N(40) lift:lift amrap:NO warmup:YES],
-            [SetData dataWithReps:5 percentage:N(50) lift:lift amrap:NO warmup:YES],
-            [SetData dataWithReps:5 percentage:N(60) lift:lift amrap:NO warmup:YES],
-            [SetData dataWithReps:5 percentage:N(60) lift:lift],
-            [SetData dataWithReps:5 percentage:N(60) lift:lift],
-            [SetData dataWithReps:5 percentage:N(60) lift:lift]
-    ];
-
     NSDictionary *fresherTemplate = @{
             @1 : week1Lifts,
             @2 : week2Lifts,
             @3 : week3Lifts,
-            @4 : week4Lifts
+            @4 : [[FTODeload new] deloadLifts:lift]
     };
     return fresherTemplate;
 }
