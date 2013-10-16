@@ -8,6 +8,14 @@
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     if ([cell viewWithTag:1]) {
         [self shareOnFacebook];
+    } else if ([cell viewWithTag:2]) {
+        [self followOnTwitter];
+    }
+}
+
+- (void)followOnTwitter {
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=BigLiftsApp"]];
     }
 }
 
