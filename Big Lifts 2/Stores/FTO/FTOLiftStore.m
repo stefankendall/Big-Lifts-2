@@ -3,6 +3,9 @@
 #import "NSArray+Enumerable.h"
 #import "Settings.h"
 #import "SettingsStore.h"
+#import "FTOWorkoutStore.h"
+#import "FTOWorkout.h"
+#import "Workout.h"
 
 @implementation FTOLiftStore
 
@@ -47,5 +50,27 @@
         }];
     }
 }
+
+- (void)dataWasSynced {
+    [self removeUnusedLifts];
+}
+
+- (void)removeUnusedLifts {
+    NSMutableSet *usedLifts = [NSMutableSet new];
+    for (FTOWorkout *ftoWorkout in [[FTOWorkoutStore instance] findAll]) {
+        [usedLifts addObject:[ftoWorkout.workout firstLift]];
+    }
+    NSMutableArray *unusedLifts = [@[] mutableCopy];
+    for (FTOLift *lift in [self findAll]) {
+        if(![usedLifts containsObject:lift]){
+            [unusedLifts addObject:lift];
+        }
+    }
+
+    for( FTOLift *unusedLift in unusedLifts){
+        [self remove:unusedLift];
+    }
+}
+
 
 @end

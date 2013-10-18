@@ -47,4 +47,6 @@
 - (void)registerChangeListener:(void (^)(void))callback;
 
 @property(nonatomic, strong) NSMutableSet *changeCallbacks;
+
+- (void)dataWasSynced;
 @end

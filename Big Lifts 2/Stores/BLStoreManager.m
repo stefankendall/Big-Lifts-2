@@ -134,4 +134,10 @@
     return manager;
 }
 
+- (void)dataWasSynced {
+    for( BLStore *store in self.allStores ){
+        [store dataWasSynced];
+    }
+}
+
 @end

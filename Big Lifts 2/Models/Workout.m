@@ -1,6 +1,7 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "Workout.h"
 #import "Set.h"
+#import "Lift.h"
 
 @implementation Workout
 
@@ -35,6 +36,13 @@
     for (Set *set in newSets) {
         [self addSet:set];
     }
+}
+
+- (Lift *)firstLift {
+    if ([self.sets count] > 0) {
+        return [self.sets[0] lift];
+    }
+    return nil;
 }
 
 @end

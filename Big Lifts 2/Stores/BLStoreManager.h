@@ -18,6 +18,8 @@
 
 @property(nonatomic, strong) NSArray *allStores;
 
+- (void)dataWasSynced;
+
 @property(nonatomic, strong) NSManagedObjectContext *context;
 @property(nonatomic, strong) NSManagedObjectModel *model;
 

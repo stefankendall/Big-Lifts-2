@@ -1,4 +1,5 @@
 @class Set;
+@class Lift;
 
 @interface Workout : NSManagedObject
 @property(nonatomic) NSMutableOrderedSet *sets;
@@ -12,4 +13,6 @@
 - (void)addSet:(Set *)set;
 
 - (void)addSets:(NSArray *)newSets;
+
+- (Lift *)firstLift;
 @end

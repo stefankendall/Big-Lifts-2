@@ -19,11 +19,19 @@
     STAssertEqualObjects(press.increment, [NSDecimalNumber decimalNumberWithString:@"2"], @"");
 }
 
-- (void) testIncrementLifts {
+- (void)testIncrementLifts {
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSDecimalNumber *weight = [squat.weight copy];
     [[FTOLiftStore instance] incrementLifts];
     STAssertEqualObjects(squat.weight, [weight decimalNumberByAdding:N(10)], @"");
+}
+
+- (void)testRemovesUnusedLiftsWhenDataSyncs {
+    FTOLift *badLift1 = [[FTOLiftStore instance] create];
+    STAssertTrue([[[FTOLiftStore instance] findAll] containsObject:badLift1], @"");
+    [[FTOLiftStore instance] dataWasSynced];
+    STAssertFalse([[[FTOLiftStore instance] findAll] containsObject:badLift1], @"");
+    STAssertEquals([[FTOLiftStore instance] count], 4, @"");
 }
 
 @end

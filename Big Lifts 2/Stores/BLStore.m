@@ -188,4 +188,7 @@
 }
 
 
+- (void)dataWasSynced {
+}
+
 @end
