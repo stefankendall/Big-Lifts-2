@@ -21,7 +21,6 @@
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView webViewDelegate:self handler:(WVJBHandler) ^{
     }];
 
-    [self enableDisableIap];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(enableDisableIap)
                                                  name:IAP_PURCHASED_NOTIFICATION
@@ -67,6 +66,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self enableDisableIap];
     [self.webView reload];
 }
 
