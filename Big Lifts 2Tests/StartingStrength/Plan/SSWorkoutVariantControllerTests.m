@@ -16,7 +16,7 @@
 
 - (void)testSelectNoviceWorkoutChangesWorkout {
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
-    [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:SS_WORKOUT_VARIANT_SECTION]];
+    [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
 
     SSWorkout *workoutB = [[SSWorkoutStore instance] last];
     Workout *lastWorkout = workoutB.workouts[2];
@@ -32,7 +32,7 @@
     STAssertEquals([standardCell accessoryType], UITableViewCellAccessoryCheckmark, @"");
     STAssertEquals([noviceCell accessoryType], UITableViewCellAccessoryNone, @"");
 
-    [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:SS_WORKOUT_VARIANT_SECTION]];
+    [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
     SSVariant *variant = [[SSVariantStore instance] first];
     STAssertEqualObjects(variant.name, @"Novice", @"");
 

@@ -26,4 +26,12 @@
     STAssertEqualObjects(settings.roundTo, @1, @"");
 }
 
+-(void) testSetsUpDefaultRoundingOnLoad {
+    Settings *settings = [[SettingsStore instance] first];
+    STAssertNotNil(settings.roundingFormula, @"");
+    settings.roundingFormula = nil;
+    [[SettingsStore instance] onLoad];
+    STAssertNotNil(settings.roundingFormula, @"");
+}
+
 @end

@@ -94,7 +94,7 @@ handleCloudContentCorruptionWithHealthyStore:(BOOL)storeHealthy {
     self.moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [self.moc setPersistentStoreCoordinator:coordinator];
     [self.moc setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [self loadData];
     });
 }

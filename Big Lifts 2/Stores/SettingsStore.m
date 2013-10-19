@@ -11,6 +11,13 @@
 }
 
 - (void)onLoad {
+    Settings *settings = [self first];
+    if (settings) {
+        if (!settings.roundingFormula) {
+            settings.roundingFormula = (NSString *) ROUNDING_FORMULA_EPLEY;
+        }
+    }
+
     [[SettingsStore instance] registerChangeListener:^{
         [self adjustForKg];
     }];
