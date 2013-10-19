@@ -17,7 +17,11 @@
 }
 
 - (BOOL)hasPurchased:(NSString *)productId {
-    if ([self.testPurchases count] == 0) {
+    if([[NSUserDefaults standardUserDefaults] boolForKey:productId]){
+        return YES;
+    }
+
+    if([self.testPurchases count] == 0){
         return [super hasPurchased:productId];
     }
     else {

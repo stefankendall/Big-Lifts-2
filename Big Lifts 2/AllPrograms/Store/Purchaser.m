@@ -60,6 +60,8 @@ NSString *const IAP_FTO_CUSTOM = @"ftoCustom";
 }
 
 - (void)successfulPurchase:(NSString *)purchaseId {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:purchaseId];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     NSString *buyMessage = self.buyMessages[purchaseId];
     if (buyMessage) {
         UIAlertView *thanks = [[UIAlertView alloc] initWithTitle:@"Purchased!"
