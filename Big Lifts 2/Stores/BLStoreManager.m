@@ -39,38 +39,50 @@
 - (void)initializeAllStores:(NSManagedObjectContext *)context withModel:(NSManagedObjectModel *)model {
     self.context = context;
     self.model = model;
-    allStores = @[
-            [CurrentProgramStore instance],
-            [SettingsStore instance],
-            [FTOSettingsStore instance],
-            [BarStore instance],
-            [WorkoutStore instance],
-            [WorkoutLogStore instance],
-            [SetStore instance],
-            [FTOSetStore instance],
-            [SSStateStore instance],
-            [SSLiftStore instance],
-            [SSVariantStore instance],
-            [SSWorkoutStore instance],
-            [FTOVariantStore instance],
-            [FTOBoringButBigStore instance],
-            [FTOAssistanceStore instance],
-            [FTOLiftStore instance],
-            [FTOSSTLiftStore instance],
-            [FTOCustomWorkoutStore instance],
-            [FTOWorkoutStore instance],
-            [FTOTriumvirateLiftStore instance],
-            [FTOTriumvirateStore instance],
-            [PlateStore instance],
-            [SetLogStore instance],
-            [WorkoutLogStore instance],
-            [SJLiftStore instance],
-            [SJWorkoutStore instance]
-    ];
+    [self loadStores];
+}
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:)
-                                                 name:NSManagedObjectContextObjectsDidChangeNotification
-                                               object:context];
+- (void)loadStores {
+    @try {
+        allStores = @[
+                [CurrentProgramStore instance],
+                [SettingsStore instance],
+                [FTOSettingsStore instance],
+                [BarStore instance],
+                [WorkoutStore instance],
+                [WorkoutLogStore instance],
+                [SetStore instance],
+                [FTOSetStore instance],
+                [SSStateStore instance],
+                [SSLiftStore instance],
+                [SSVariantStore instance],
+                [SSWorkoutStore instance],
+                [FTOVariantStore instance],
+                [FTOBoringButBigStore instance],
+                [FTOAssistanceStore instance],
+                [FTOLiftStore instance],
+                [FTOSSTLiftStore instance],
+                [FTOCustomWorkoutStore instance],
+                [FTOWorkoutStore instance],
+                [FTOTriumvirateLiftStore instance],
+                [FTOTriumvirateStore instance],
+                [PlateStore instance],
+                [SetLogStore instance],
+                [WorkoutLogStore instance],
+                [SJLiftStore instance],
+                [SJWorkoutStore instance]
+        ];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"storesLoaded" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:)
+                                                     name:NSManagedObjectContextObjectsDidChangeNotification
+                                                   object:self.context];
+    }
+    @catch (NSException *e) {
+        NSLog(@"Failed to fetch. Trying again");
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [self loadStores];
+        });
+    }
 }
 
 - (void)resetAllStores {
@@ -135,7 +147,7 @@
 }
 
 - (void)dataWasSynced {
-    for( BLStore *store in self.allStores ){
+    for (BLStore *store in self.allStores) {
         [store dataWasSynced];
     }
 }

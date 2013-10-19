@@ -94,13 +94,15 @@ handleCloudContentCorruptionWithHealthyStore:(BOOL)storeHealthy {
     self.moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [self.moc setPersistentStoreCoordinator:coordinator];
     [self.moc setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [self loadData];
-    });
+    [self loadData];
 }
 
 - (void)loadData {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(storesLoaded) name:@"storesLoaded" object:nil];
     [[BLStoreManager instance] initializeAllStores:self.moc withModel:[[self.moc persistentStoreCoordinator] managedObjectModel]];
+}
+
+- (void)storesLoaded {
     UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
     DataLoadingViewController *controller = (DataLoadingViewController *) navController.viewControllers[0];
     controller.dataLoaded = YES;
