@@ -1,5 +1,8 @@
 #import <MessageUI/MessageUI.h>
 #import "Mailer.h"
+#import "CurrentProgram.h"
+#import "BLStore.h"
+#import "CurrentProgramStore.h"
 
 @implementation Mailer
 
@@ -20,7 +23,10 @@
     if ([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *emailController = [[MFMailComposeViewController alloc] init];
         emailController.mailComposeDelegate = self.sender;
-        [emailController setSubject:@"Big Lifts 2 Feedback"];
+        NSString *version = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+        NSString *program = [[[CurrentProgramStore instance] first] name];
+        NSString *subject = [NSString stringWithFormat:@"Big Lifts 2 Feedback - v%@ - %@", version, program];
+        [emailController setSubject:subject];
         [emailController setToRecipients:@[@"biglifts@stefankendall.com"]];
         [self.sender presentViewController:emailController animated:YES completion:nil];
     }
