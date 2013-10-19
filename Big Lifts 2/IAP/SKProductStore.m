@@ -48,6 +48,15 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+- (void)removePurchases {
+    [self.allPurchaseIds each:^(NSString *productId) {
+        if ([[IAPAdapter instance] hasPurchased:productId]) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:productId];
+        }
+    }];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (SKProduct *)productById:(NSString *)productId {
     return [self.products detect:^BOOL(SKProduct *product) {
         return [product.productIdentifier isEqualToString:productId];

@@ -1,6 +1,7 @@
 #import "BLTestCase.h"
 #import "BLStoreManager.h"
 #import "IAPAdapter.h"
+#import "SKProductStore.h"
 
 @implementation BLTestCase
 
@@ -11,6 +12,7 @@
         [self waitForCompletion:5];
     }
 
+    [[SKProductStore instance] removePurchases];
     [[IAPAdapter instance] resetPurchases];
     [[BLStoreManager instance] resetAllStores];
 }

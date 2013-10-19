@@ -4,6 +4,8 @@
 
 + (instancetype)instance;
 
+- (void)removePurchases;
+
 - (SKProduct *)productById:(NSString *)productId;
 
 - (void)loadProducts:(void (^)())callback;
