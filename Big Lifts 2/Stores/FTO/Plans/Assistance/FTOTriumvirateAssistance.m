@@ -7,6 +7,7 @@
 #import "Workout.h"
 #import "FTOWorkout.h"
 #import "Set.h"
+#import "SetStore.h"
 
 @implementation FTOTriumvirateAssistance
 
@@ -15,7 +16,9 @@
         FTOLift *mainLift = (FTOLift *) [workout.workout.sets[0] lift];
         FTOTriumvirate *assistance = [[FTOTriumvirateStore instance] find:@"mainLift" value:mainLift];
         if (assistance) {
-            [workout.workout addSets:[assistance.workout.sets array]];
+            for (Set *set in assistance.workout.sets) {
+                [workout.workout addSet:[[SetStore instance] createFromSet:set]];
+            }
         }
     }];
 }

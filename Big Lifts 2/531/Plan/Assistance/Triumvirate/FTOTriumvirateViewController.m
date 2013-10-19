@@ -4,7 +4,6 @@
 #import "Workout.h"
 #import "FTOTriumvirateStore.h"
 #import "Set.h"
-#import "Set.h"
 #import "FTOTriumvirateCell.h"
 #import "Lift.h"
 #import "FTOTriumvirateSetupViewController.h"
@@ -62,7 +61,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex: section];
+    FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex:section];
     return triumvirate.mainLift.name;
 }
 
