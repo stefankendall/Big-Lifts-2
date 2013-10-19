@@ -35,17 +35,23 @@
         if (callback) {
             callback();
         }
+        [self recordPurchases];
     }];
+}
+
+- (void)recordPurchases {
+    [self.allPurchaseIds each:^(NSString *productId) {
+        if ([[IAPAdapter instance] hasPurchased:productId]) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:productId];
+        }
+    }];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (SKProduct *)productById:(NSString *)productId {
     return [self.products detect:^BOOL(SKProduct *product) {
         return [product.productIdentifier isEqualToString:productId];
     }];
-}
-
-- (BOOL)hasLoaded {
-    return self.products == nil;
 }
 
 @end

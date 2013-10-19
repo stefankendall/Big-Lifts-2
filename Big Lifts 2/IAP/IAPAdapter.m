@@ -17,11 +17,11 @@
 }
 
 - (BOOL)hasPurchased:(NSString *)productId {
-    if([[NSUserDefaults standardUserDefaults] boolForKey:productId]){
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:productId]) {
         return YES;
     }
 
-    if([self.testPurchases count] == 0){
+    if ([self.testPurchases count] == 0) {
         return [super hasPurchased:productId];
     }
     else {
@@ -40,7 +40,10 @@
 - (void)purchaseProductForId:(NSString *)productId completion:(PurchaseCompletionBlock)completionBlock error:(ErrorBlock)err {
 #if (TARGET_IPHONE_SIMULATOR)
     [self addPurchase: productId];
-    completionBlock(NULL);
+    __block PurchaseCompletionBlock purchaseCompletionBlock = completionBlock;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        purchaseCompletionBlock(NULL);
+    });
 #else
     [super purchaseProductForId:productId completion:completionBlock error:err];
 #endif

@@ -60,6 +60,8 @@
     NSString *purchaseId = [[self iapCells] detect:^BOOL(id key, id obj) {
         return selectedCell == obj;
     }];
+    PurchaseOverlay *overlay = (PurchaseOverlay *) [selectedCell viewWithTag:kPurchaseOverlayTag];
+    [overlay setLoading:YES];
     [[Purchaser new] purchase:purchaseId];
 }
 
