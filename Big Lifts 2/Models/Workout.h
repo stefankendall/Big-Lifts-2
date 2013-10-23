@@ -14,5 +14,9 @@
 
 - (void)addSets:(NSArray *)newSets;
 
+- (NSArray *) orderedSets;
+
 - (Lift *)firstLift;
+
+- (void)removeSet:(Set *)set;
 @end

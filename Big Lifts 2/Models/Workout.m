@@ -29,7 +29,7 @@
     NSMutableOrderedSet *newSets = [NSMutableOrderedSet orderedSetWithOrderedSet:self.sets];
     int order = [self.sets count];
     set.workout = self;
-    set.order = [NSNumber numberWithInt: order];
+    set.order = [NSNumber numberWithInt:order];
     [newSets addObject:set];
     self.sets = newSets;
 }
@@ -40,11 +40,34 @@
     }
 }
 
+- (void)removeSet:(Set *)set {
+    [self.sets removeObject:set];
+    [self fixSetOrdering];
+}
+
+- (void)removeSets:(NSArray *)sets {
+    for (Set *set in sets) {
+        [self removeSet:set];
+    }
+}
+
+- (void)fixSetOrdering {
+    [[self orderedSets] eachWithIndex:^(Set *set, NSUInteger index) {
+        set.order = [NSNumber numberWithInt:index];
+    }];
+}
+
+- (NSArray *)orderedSets {
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    return [[self.sets array] sortedArrayUsingDescriptors:@[descriptor]];
+}
+
 - (Lift *)firstLift {
     if ([self.sets count] > 0) {
         return [self.sets[0] lift];
     }
     return nil;
 }
+
 
 @end

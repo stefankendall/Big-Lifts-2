@@ -34,4 +34,27 @@
     STAssertEquals([set3.order intValue], 2, @"" );
 }
 
+- (void) testRemovingSetsFixesOrdering {
+    Workout *workout = [[WorkoutStore instance] create];
+    Set *set1 = [[SetStore instance] create];
+    Set *set2 = [[SetStore instance] create];
+    Set *set3 = [[SetStore instance] create];
+    [workout addSets:@[set1, set2, set3]];
+    [workout removeSet: set2];
+    STAssertEquals([set3.order intValue], 1, @"" );
+}
+
+- (void) testSetsAreRetrievedByOrder {
+    Workout *workout = [[WorkoutStore instance] create];
+    Set *set1 = [[SetStore instance] create];
+    Set *set2 = [[SetStore instance] create];
+    Set *set3 = [[SetStore instance] create];
+    [workout addSets:@[set1, set2, set3]];
+
+    set2.order = [NSNumber numberWithInt:0];
+    set1.order = [NSNumber numberWithInt:1];
+    STAssertEquals(workout.orderedSets[0], set2, @"");
+    STAssertEquals(workout.orderedSets[1], set1, @"");
+}
+
 @end
