@@ -33,7 +33,7 @@
         NSArray *assistanceSets = [[ftoWorkout.workout.sets array] select:^BOOL(Set *set) {
             return set.assistance;
         }];
-        [ftoWorkout.workout.sets removeObjectsInArray:assistanceSets];
+        [ftoWorkout.workout removeSets:assistanceSets];
     }];
 }
 

@@ -89,8 +89,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         int row = [indexPath row];
         Set *set = self.customWorkout.workout.sets[row];
-        [self.customWorkout.workout.sets removeObjectAtIndex:row];
-        [[SetStore instance] remove:set];
+        [self.customWorkout.workout removeSet: set];
         [self.tableView reloadData];
     }
 }

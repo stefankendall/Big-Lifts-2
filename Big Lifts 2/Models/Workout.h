@@ -19,4 +19,6 @@
 - (Lift *)firstLift;
 
 - (void)removeSet:(Set *)set;
+
+- (void)removeSets:(NSArray *)sets;
 @end

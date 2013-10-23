@@ -56,7 +56,7 @@
     NSArray *warmupSets = [[workout.sets array] select:(BOOL (^)(id)) ^(Set *set) {
         return set.warmup;
     }];
-    [workout.sets removeObjectsInArray:warmupSets];
+    [workout removeSets:warmupSets];
 }
 
 @end

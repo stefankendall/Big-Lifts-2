@@ -59,7 +59,7 @@
         NSArray *warmups = [[ftoWorkout.workout.sets array] select:^BOOL(Set *set) {
             return set.warmup;
         }];
-        [ftoWorkout.workout.sets removeObjectsInArray:warmups];
+        [ftoWorkout.workout removeSets:warmups];
     }];
 }
 

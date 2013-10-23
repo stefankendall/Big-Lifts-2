@@ -54,7 +54,7 @@
 
 - (void)removeSets:(int)count {
     NSArray *setsToRemove = [[self.triumvirate matchingSets:self.set] subarrayWithRange:NSMakeRange(0, (NSUInteger) count)];
-    [self.triumvirate.workout.sets removeObjectsInArray:setsToRemove];
+    [self.triumvirate.workout removeSets:setsToRemove];
 }
 
 - (void)addSets:(int)count {
