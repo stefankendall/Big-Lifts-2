@@ -13,7 +13,7 @@
 - (void)testAddsTriumvirateSets {
     [[FTOTriumvirateAssistance new] setup];
     FTOWorkout *workout = [[FTOWorkoutStore instance] first];
-    STAssertEquals([workout.workout.sets count], 16U, @"");
+    STAssertEquals([workout.workout.orderedSets count], 16U, @"");
 }
 
 - (void) testDoesNothingForUnknownLifts {
@@ -23,11 +23,11 @@
     [[FTOTriumvirateAssistance new] setup];
 
     FTOWorkout *cleanWorkout = [[[FTOWorkoutStore instance] findAll] select:^BOOL(FTOWorkout *ftoWorkout) {
-        Lift *lift = [ftoWorkout.workout.sets[0] lift];
+        Lift *lift = [ftoWorkout.workout.orderedSets[0] lift];
         return [lift.name isEqualToString:@"Clean"];
     }][0];
 
-    STAssertEquals([cleanWorkout.workout.sets count], 6U, @"");
+    STAssertEquals([cleanWorkout.workout.orderedSets count], 6U, @"");
 }
 
 @end

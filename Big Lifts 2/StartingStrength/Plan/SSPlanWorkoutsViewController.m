@@ -34,7 +34,7 @@
     int section = [indexPath section];
     SSWorkout *workout = [[SSWorkoutStore instance] atIndex:section];
     Workout *firstWorkout = workout.workouts[(NSUInteger) [indexPath row]];
-    Set *firstSet = firstWorkout.sets[0];
+    Set *firstSet = firstWorkout.orderedSets[0];
     SSLift *lift = (SSLift *) firstSet.lift;
 
     [[cell textLabel] setText:lift.name];

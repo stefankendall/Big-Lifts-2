@@ -20,7 +20,7 @@
 
     SSWorkout *workoutB = [[SSWorkoutStore instance] last];
     Workout *lastWorkout = workoutB.workouts[2];
-    Set *firstSet = lastWorkout.sets[0];
+    Set *firstSet = lastWorkout.orderedSets[0];
     STAssertEqualObjects(firstSet.lift.name, @"Deadlift", @"");
 }
 

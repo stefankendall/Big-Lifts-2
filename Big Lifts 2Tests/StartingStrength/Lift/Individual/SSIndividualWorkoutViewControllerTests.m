@@ -116,7 +116,7 @@
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = ssWorkout.workouts[0];
     self.controller.ssWorkout = ssWorkout;
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], (int) [workout.sets count], @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], (int) [workout.orderedSets count], @"");
 }
 
 - (void)testReturnsCorrectNumberOfRowsWithoutWarmup {

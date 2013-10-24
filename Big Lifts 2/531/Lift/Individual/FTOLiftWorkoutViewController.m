@@ -45,13 +45,13 @@
 }
 
 - (BOOL)hasWarmup {
-    return [[self.ftoWorkout.workout.sets array] detect:^BOOL(Set *set) {
+    return [self.ftoWorkout.workout.orderedSets detect:^BOOL(Set *set) {
         return set.warmup;
     }] != nil;
 }
 
 - (BOOL)hasAssistance {
-    return [[self.ftoWorkout.workout.sets array] detect:^BOOL(Set *set) {
+    return [self.ftoWorkout.workout.orderedSets detect:^BOOL(Set *set) {
         return set.assistance;
     }] != nil;
 }
@@ -89,7 +89,7 @@
         cell = [FTOWorkoutCell create];
     }
     NSNumber *previousReps = [self.variableReps objectForKey:[NSNumber numberWithInteger:effectiveRow]];
-    [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) effectiveRow] withEnteredReps:previousReps];
+    [cell setSet:self.ftoWorkout.workout.orderedSets[(NSUInteger) effectiveRow] withEnteredReps:previousReps];
     return cell;
 }
 
@@ -111,7 +111,7 @@
     FTOLiftWorkoutToolbar *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FTOLiftWorkoutToolbar"];
     if (!cell) {
         cell = [FTOLiftWorkoutToolbar create];
-        Set *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:[self.ftoWorkout.workout.sets array]];
+        Set *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
         int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
         [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
         [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
@@ -126,11 +126,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ftoRepsToBeat"]) {
         FTORepsToBeatBreakdown *breakdown = [segue destinationViewController];
-        [breakdown setLastSet:[[SetHelper new] heaviestAmrapSet:[self.ftoWorkout.workout.sets array]]];
+        [breakdown setLastSet:[[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets]];
     }
     else if ([[segue identifier] isEqualToString:@"ftoSetRepsForm"]) {
         FTOSetRepsForm *form = [segue destinationViewController];
-        Set *tappedSet = self.ftoWorkout.workout.sets[[self.tappedSetRow unsignedIntegerValue]];
+        Set *tappedSet = self.ftoWorkout.workout.orderedSets[[self.tappedSetRow unsignedIntegerValue]];
         NSNumber *previouslyEnteredReps = [self.variableReps objectForKey:self.tappedSetRow];
         if (previouslyEnteredReps) {
             [form setPreviouslyEnteredReps:[previouslyEnteredReps intValue]];
@@ -182,8 +182,8 @@
 }
 
 - (BOOL)missedAmrapReps {
-    NSMutableOrderedSet *sets = self.ftoWorkout.workout.sets;
-    Set *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:[sets array]];
+    NSArray *sets = self.ftoWorkout.workout.orderedSets;
+    Set *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:sets];
     for (int i = 0; i < [sets count]; i++) {
         Set *set = sets[(NSUInteger) i];
         NSNumber *loggedReps = self.variableReps[[NSNumber numberWithInt:i]];
@@ -199,7 +199,7 @@
     log.name = @"5/3/1";
     log.date = [NSDate new];
 
-    NSMutableOrderedSet *sets = self.ftoWorkout.workout.sets;
+    NSArray *sets = self.ftoWorkout.workout.orderedSets;
     for (int i = 0; i < [sets count]; i++) {
         Set *set = sets[(NSUInteger) i];
         NSNumber *reps = self.variableReps[[NSNumber numberWithInt:i]];

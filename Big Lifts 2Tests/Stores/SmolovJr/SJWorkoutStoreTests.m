@@ -14,12 +14,12 @@
     SJWorkout *firstWorkout = [week1Workouts firstObject];
     SJWorkout *lastWorkout = [week1Workouts lastObject];
 
-    STAssertEquals([firstWorkout.workout.sets count], 6U, @"");
-    Set *firstWorkoutSet = [firstWorkout.workout.sets firstObject];
+    STAssertEquals([firstWorkout.workout.orderedSets count], 6U, @"");
+    Set *firstWorkoutSet = [firstWorkout.workout.orderedSets firstObject];
     STAssertEquals([[firstWorkoutSet reps] intValue], 6, @"");
 
-    STAssertEquals([lastWorkout.workout.sets count], 10U, @"");
-    Set *lastWorkoutSet = [lastWorkout.workout.sets firstObject];
+    STAssertEquals([lastWorkout.workout.orderedSets count], 10U, @"");
+    Set *lastWorkoutSet = [lastWorkout.workout.orderedSets firstObject];
     STAssertEquals([[lastWorkoutSet reps] intValue], 3, @"");
 }
 

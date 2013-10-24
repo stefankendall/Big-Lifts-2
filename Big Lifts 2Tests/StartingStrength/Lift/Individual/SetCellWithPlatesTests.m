@@ -14,7 +14,7 @@
 
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.sets[0];
+    Set *set = workout.orderedSets[0];
     set.percentage = N(100);
     set.lift.weight = N(300);
     [cell setSet:set];
@@ -27,7 +27,7 @@
 
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.sets[0];
+    Set *set = workout.orderedSets[0];
     set.percentage = N(100);
     set.lift.weight = N(45);
     [cell setSet:set];

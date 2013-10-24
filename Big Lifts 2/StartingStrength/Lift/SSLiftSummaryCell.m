@@ -9,9 +9,9 @@
 @implementation SSLiftSummaryCell
 
 - (void)setWorkout:(Workout *)workout {
-    Set *lastSet = [workout.sets lastObject];
+    Set *lastSet = [workout.orderedSets lastObject];
     [self.liftLabel setText:lastSet.lift.name];
-    int worksetCount = [[[workout.sets array] select:^BOOL(Set *set) {
+    int worksetCount = [[workout.orderedSets select:^BOOL(Set *set) {
         return !set.warmup;
     }] count];
 

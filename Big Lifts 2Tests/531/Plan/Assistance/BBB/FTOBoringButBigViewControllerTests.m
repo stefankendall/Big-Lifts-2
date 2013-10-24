@@ -19,8 +19,8 @@
     [controller percentageChanged:field];
 
     FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals([ftoWorkout.workout.sets count], 11U, @"");
-    STAssertEqualObjects([[ftoWorkout.workout.sets lastObject] percentage], N(60), @"");
+    STAssertEquals([ftoWorkout.workout.orderedSets count], 11U, @"");
+    STAssertEqualObjects([[ftoWorkout.workout.orderedSets lastObject] percentage], N(60), @"");
 }
 
 - (void)testThreeMonthChallengeUntoggled {
@@ -28,7 +28,7 @@
     [[FTOCycleAdjustor new] nextCycle];
 
     FTOWorkout *ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    STAssertEqualObjects([ftoWorkout.workout.sets.lastObject percentage], N(50), @"");
+    STAssertEqualObjects([ftoWorkout.workout.orderedSets.lastObject percentage], N(50), @"");
 }
 
 - (void)testThreeMonthChallengeToggled {
@@ -40,7 +40,7 @@
     [[FTOCycleAdjustor new] nextCycle];
 
     FTOWorkout *ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    STAssertEqualObjects([ftoWorkout.workout.sets.lastObject percentage], N(60), @"");
+    STAssertEqualObjects([ftoWorkout.workout.orderedSets.lastObject percentage], N(60), @"");
 }
 
 @end

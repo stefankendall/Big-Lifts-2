@@ -108,8 +108,8 @@
 - (void)testChoosesHeaviestAmrapSetForRepsToBeat {
     [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    Set *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:[self.ftoWorkout.workout.sets array]];
-    STAssertEquals([self.ftoWorkout.workout.sets indexOfObject:heaviestAmrapSet], 5U, @"");
+    Set *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
+    STAssertEquals([self.ftoWorkout.workout.orderedSets indexOfObject:heaviestAmrapSet], 5U, @"");
 }
 
 - (void)testDeterminesIfMissedReps {
@@ -139,7 +139,7 @@
     NSArray *warmupSets = [[[self.ftoWorkout.workout sets] array] select:^BOOL(Set *set) {
         return set.warmup;
     }];
-    [self.ftoWorkout.workout.sets removeObjectsInArray:warmupSets];
+    [self.ftoWorkout.workout removeSets:warmupSets];
     int sections = [self.controller numberOfSectionsInTableView:self.controller.tableView];
     STAssertEquals([self.controller tableView:self.controller.tableView numberOfRowsInSection:0], 1, @"");
     STAssertEquals([self.controller tableView:self.controller.tableView numberOfRowsInSection:1], 3, @"");

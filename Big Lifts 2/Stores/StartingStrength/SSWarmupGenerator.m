@@ -7,7 +7,7 @@
 @implementation SSWarmupGenerator
 
 - (void)addWarmup:(Workout *)workout {
-    Set *set = workout.sets[0];
+    Set *set = workout.orderedSets[0];
     NSDictionary *warmups = @{
             @"Squat" : @[
                     [[SetStore instance] createWarmupWithLift:set.lift percentage:N(0)  reps:5],
@@ -47,13 +47,12 @@
 
     NSArray *warmup = warmups[set.lift.name];
     if (warmup) {
-        NSMutableIndexSet *indexes = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [warmup count])];
-        [workout.sets insertObjects:warmup atIndexes:indexes];
+        [workout addSets:warmup atIndex: 0];
     }
 }
 
 - (void)removeWarmup:(Workout *)workout {
-    NSArray *warmupSets = [[workout.sets array] select:(BOOL (^)(id)) ^(Set *set) {
+    NSArray *warmupSets = [workout.orderedSets select:(BOOL (^)(id)) ^(Set *set) {
         return set.warmup;
     }];
     [workout removeSets:warmupSets];

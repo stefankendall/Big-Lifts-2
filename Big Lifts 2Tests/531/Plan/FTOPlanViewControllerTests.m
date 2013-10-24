@@ -57,7 +57,7 @@
 
 - (BOOL)hasWarmup {
     FTOWorkout *workout = [[FTOWorkoutStore instance] first];
-    return [[workout.workout.sets array] detect:^BOOL(Set *set) {
+    return [workout.workout.orderedSets detect:^BOOL(Set *set) {
         return set.warmup;
     }] != nil;
 }

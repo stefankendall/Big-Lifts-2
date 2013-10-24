@@ -18,11 +18,11 @@
     [squatWorkout.sets removeAllObjects];
     Set *squatSet = [[SetStore instance] create];
     squatSet.lift = [[SSLiftStore instance] find:@"name" value:@"Squat"];
-    [squatWorkout.sets addObject:squatSet];
+    [squatWorkout addSet:squatSet];
     [[SSWarmupGenerator new] addWarmup:squatWorkout];
-    STAssertEquals([squatWorkout.sets count], 6U, @"");
-    Set *firstSet = [squatWorkout.sets firstObject];
-    Set *lastSet = [squatWorkout.sets lastObject];
+    STAssertEquals([squatWorkout.orderedSets count], 6U, @"");
+    Set *firstSet = [squatWorkout.orderedSets firstObject];
+    Set *lastSet = [squatWorkout.orderedSets lastObject];
     STAssertTrue(firstSet.warmup, @"");
     STAssertTrue([firstSet.reps intValue] > 0, @"");
     STAssertEqualObjects([firstSet effectiveWeight], @45, @"");
@@ -33,14 +33,14 @@
     SSWorkout *workoutA = [[SSWorkoutStore instance] find:@"name" value:@"A"];
     Workout *squatWorkout = [self findWorkout:workoutA name:@"Squat"];
     [[SSWarmupGenerator new] addWarmup:squatWorkout];
-    STAssertEquals([squatWorkout.sets count], 8U, @"");
+    STAssertEquals([squatWorkout.orderedSets count], 8U, @"");
     [[SSWarmupGenerator new] removeWarmup:squatWorkout];
-    STAssertEquals([squatWorkout.sets count], 3U, @"");
+    STAssertEquals([squatWorkout.orderedSets count], 3U, @"");
 }
 
 - (Workout *)findWorkout:(SSWorkout *)workoutA name:(NSString *)name {
     return [[workoutA.workouts array] detect:^BOOL(Workout *workout) {
-        Set *set = workout.sets[0];
+        Set *set = workout.orderedSets[0];
         return [set.lift.name isEqualToString:name];
     }];
 }

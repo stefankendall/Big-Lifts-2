@@ -10,7 +10,7 @@
 - (void)testCreatesTriumvirateData {
     FTOTriumvirate *benchGroup = [[FTOTriumvirateStore instance] find:@"mainLift" value:
             [[FTOLiftStore instance] find:@"name" value:@"Bench"]];
-    STAssertEquals([benchGroup.workout.sets count], 10U, @"");
+    STAssertEquals([benchGroup.workout.orderedSets count], 10U, @"");
     STAssertEquals([[FTOTriumvirateStore instance] count], 4, @"");
 }
 

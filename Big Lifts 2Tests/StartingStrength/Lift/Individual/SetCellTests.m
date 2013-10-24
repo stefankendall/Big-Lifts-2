@@ -13,7 +13,7 @@
 
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.sets[0];
+    Set *set = workout.orderedSets[0];
     set.lift.weight = N(300);
     set.percentage = N(100);
     [set setReps:[NSNumber numberWithInt:5]];
@@ -29,7 +29,7 @@
     SetCell *cell = [SetCell create];
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.sets[0];
+    Set *set = workout.orderedSets[0];
     set.percentage = N(0);
     [cell setSet:set];
 
@@ -40,7 +40,7 @@
     SetCell *cell = [SetCell create];
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.sets[0];
+    Set *set = workout.orderedSets[0];
     set.reps = @-1;
     set.amrap = YES;
     [cell setSet:set];
@@ -52,7 +52,7 @@
     SetCell *cell = [SetCell create];
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.sets[0];
+    Set *set = workout.orderedSets[0];
     set.reps = @5;
     set.maxReps = @8;
     [cell setSet:set];
@@ -65,7 +65,7 @@
 
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.sets[0];
+    Set *set = workout.orderedSets[0];
     [set setReps:[NSNumber numberWithInt:5]];
     [cell setSet:set withEnteredReps:@7];
     STAssertEqualObjects([[cell repsLabel] text], @"7x", @"");
@@ -76,7 +76,7 @@
 
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
     Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.sets[0];
+    Set *set = workout.orderedSets[0];
     set.lift.usesBar = NO;
     set.percentage = N(0);
     [cell setSet:set withEnteredReps:@7];

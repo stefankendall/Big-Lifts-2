@@ -22,20 +22,20 @@
 - (void)testAddsBoringButBigSets {
     [[FTOBoringButBigAssistance new] setup];
     FTOWorkout *workoutInWeek1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals([workoutInWeek1.workout.sets count], 11U, @"");
-    Set *boringSet = workoutInWeek1.workout.sets[6];
+    STAssertEquals([workoutInWeek1.workout.orderedSets count], 11U, @"");
+    Set *boringSet = workoutInWeek1.workout.orderedSets[6];
     STAssertEqualObjects(boringSet.percentage, N(50), @"");
     STAssertEqualObjects(boringSet.reps, @10, @"");
 
     FTOWorkout *workoutInWeek4 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@4][0];
-    STAssertEquals([workoutInWeek4.workout.sets count], 6U, @"");
+    STAssertEquals([workoutInWeek4.workout.orderedSets count], 6U, @"");
 }
 
 - (void)testUsesBbbPercentage {
     [[[FTOBoringButBigStore instance] first] setPercentage:N(60)];
     [[FTOBoringButBigAssistance new] setup];
     FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEqualObjects([[ftoWorkout.workout.sets lastObject] percentage], N(60), @"");
+    STAssertEqualObjects([[ftoWorkout.workout.orderedSets lastObject] percentage], N(60), @"");
 }
 
 - (void)testIncrementsBbbPercentageIfChallengeOn {

@@ -57,4 +57,19 @@
     STAssertEquals(workout.orderedSets[1], set1, @"");
 }
 
+- (void) testCanInsertSetsAtStart {
+    Workout *workout = [[WorkoutStore instance] create];
+    Set *set1 = [[SetStore instance] create];
+    Set *set2 = [[SetStore instance] create];
+    [workout addSets:@[set1, set2]];
+
+    Set *set3 = [[SetStore instance] create];
+    Set *set4 = [[SetStore instance] create];
+    [workout addSets:@[set3,set4] atIndex:0];
+    STAssertEquals(workout.orderedSets[0], set3, @"");
+    STAssertEquals(workout.orderedSets[1], set4, @"");
+    STAssertEquals(workout.orderedSets[2], set1, @"");
+    STAssertEquals(workout.orderedSets[3], set2, @"");
+}
+
 @end

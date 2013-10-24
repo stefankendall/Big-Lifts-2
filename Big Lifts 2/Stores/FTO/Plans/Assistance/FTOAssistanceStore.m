@@ -30,7 +30,7 @@
 
 - (void)removeAssistance {
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
-        NSArray *assistanceSets = [[ftoWorkout.workout.sets array] select:^BOOL(Set *set) {
+        NSArray *assistanceSets = [ftoWorkout.workout.orderedSets select:^BOOL(Set *set) {
             return set.assistance;
         }];
         [ftoWorkout.workout removeSets:assistanceSets];

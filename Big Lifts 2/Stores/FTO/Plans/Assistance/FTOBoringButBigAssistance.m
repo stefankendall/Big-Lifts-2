@@ -42,7 +42,7 @@
 - (void)addBoringSets {
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
         int sets = ftoWorkout.deload ? 3 : 5;
-        Set *set = ftoWorkout.workout.sets[0];
+        Set *set = ftoWorkout.workout.orderedSets[0];
         [ftoWorkout.workout addSets:[self createBoringSets:sets forLift:set.lift]];
     }];
 }

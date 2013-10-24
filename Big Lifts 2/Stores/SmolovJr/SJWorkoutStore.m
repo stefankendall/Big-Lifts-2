@@ -41,7 +41,7 @@
         set.lift = lift;
         set.percentage = percentage;
         set.reps = [NSNumber numberWithInt:reps];
-        [workout.sets addObject: set];
+        [workout addSet:set];
     }
 
     sjWorkout.workout = workout;

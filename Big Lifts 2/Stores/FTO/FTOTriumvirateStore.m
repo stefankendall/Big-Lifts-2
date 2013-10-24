@@ -17,7 +17,7 @@
 - (void)fixEmptySets {
     int count = 0;
     for (FTOTriumvirate *triumvirate in [self findAll]) {
-        count += [triumvirate.workout.sets count];
+        count += [triumvirate.workout.orderedSets count];
     }
     if (count == 0) {
         [self empty];

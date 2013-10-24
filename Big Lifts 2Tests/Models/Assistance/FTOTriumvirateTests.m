@@ -8,7 +8,7 @@
 
 - (void)testCountsSetsInWorkout {
     FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] first];
-    Set *set = triumvirate.workout.sets[0];
+    Set *set = triumvirate.workout.orderedSets[0];
     int count = [triumvirate countMatchingSets:set];
     STAssertEquals(count, 5, @"");
 }

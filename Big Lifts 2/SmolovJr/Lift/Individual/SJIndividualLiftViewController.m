@@ -42,7 +42,7 @@
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     workoutLog.name = @"Smolov Jr";
     workoutLog.date = [NSDate new];
-    [[self.sjWorkout.workout.sets array] each:^(Set *set) {
+    [self.sjWorkout.workout.orderedSets each:^(Set *set) {
         SetLog *setLog = [[SetLogStore instance] createFromSet:set];
         setLog.weight = [self minimumOrLiftedWeight];
         [workoutLog.sets addObject:setLog];
@@ -63,7 +63,7 @@
         cell = [SJSetCell create];
     }
 
-    [cell setSjWorkout:self.sjWorkout withSet:self.sjWorkout.workout.sets[(NSUInteger) [indexPath row]] withEnteredWeight:self.liftedWeight];
+    [cell setSjWorkout:self.sjWorkout withSet:self.sjWorkout.workout.orderedSets[(NSUInteger) [indexPath row]] withEnteredWeight:self.liftedWeight];
     return cell;
 }
 
@@ -81,7 +81,7 @@
 
 - (NSDecimalNumber *)minimumOrLiftedWeight {
     if (!self.liftedWeight) {
-        NSDecimalNumber *effectiveWeight = [self.sjWorkout.workout.sets[0] effectiveWeight];
+        NSDecimalNumber *effectiveWeight = [self.sjWorkout.workout.orderedSets[0] effectiveWeight];
         return [[WeightRounder new] round:[effectiveWeight decimalNumberByAdding:self.sjWorkout.minWeightAdd]];
     }
     else {

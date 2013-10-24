@@ -43,7 +43,7 @@
 
 - (FTOWorkout *)findWorkout:(int)week withLift:(NSString *)liftName {
     return [[[FTOWorkoutStore instance] findAll] detect:^BOOL(FTOWorkout *workout) {
-        return [workout.week intValue] == week && [[workout.workout.sets[0] lift].name isEqualToString:liftName];
+        return [workout.week intValue] == week && [[workout.workout.orderedSets[0] lift].name isEqualToString:liftName];
     }];
 }
 

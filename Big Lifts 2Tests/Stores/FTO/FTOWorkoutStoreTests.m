@@ -22,7 +22,7 @@
     STAssertEquals( [ftoWorkouts count], 16U, @"");
 
     NSArray *liftNames = [ftoWorkouts collect:^NSString *(FTOWorkout *ftoWorkout) {
-        Set *firstSet = ftoWorkout.workout.sets[0];
+        Set *firstSet = ftoWorkout.workout.orderedSets[0];
         return firstSet.lift.name;
     }];
 
@@ -32,8 +32,8 @@
     STAssertTrue([liftNames containsObject:@"Squat"], @"");
 
     FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertTrue([ftoWorkout.workout.sets[0] isKindOfClass:FTOSet.class], @"");
-    FTOSet *lastSet = [ftoWorkout.workout.sets lastObject];
+    STAssertTrue([ftoWorkout.workout.orderedSets[0] isKindOfClass:FTOSet.class], @"");
+    FTOSet *lastSet = [ftoWorkout.workout.orderedSets lastObject];
     STAssertTrue(lastSet.amrap, @"");
 }
 
@@ -42,7 +42,7 @@
     [[FTOWorkoutStore instance] switchTemplate];
     NSArray *ftoWorkouts = [[FTOWorkoutStore instance] findAll];
     NSArray *liftNames = [ftoWorkouts collect:^NSString *(FTOWorkout *ftoWorkout) {
-        Set *firstSet = ftoWorkout.workout.sets[0];
+        Set *firstSet = ftoWorkout.workout.orderedSets[0];
         return firstSet.lift.name;
     }];
 
@@ -59,7 +59,7 @@
 
 - (void)testFindsDoneLiftsByWeek {
     FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    Lift *firstLift = [[week1Workout1.workout.sets firstObject] lift];
+    Lift *firstLift = [[week1Workout1.workout.orderedSets firstObject] lift];
     week1Workout1.done = YES;
 
     STAssertEqualObjects([[FTOWorkoutStore instance] getDoneLiftsByWeek], @{@1 : @[firstLift]}, @"");
@@ -82,14 +82,14 @@
     [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     [[FTOVariantStore instance] changeTo:FTO_VARIANT_STANDARD];
     FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals([week1Workout1.workout.sets count], 11U, @"");
+    STAssertEquals([week1Workout1.workout.orderedSets count], 11U, @"");
 }
 
 - (void)testDoesNotAddWarmupWhenSwitchingTemplateIfItsOff {
     [[[FTOSettingsStore instance] first] setWarmupEnabled:NO];
     [[FTOWorkoutStore instance] switchTemplate];
     FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] first];
-    STAssertEquals([ftoWorkout.workout.sets count], 3U, @"");
+    STAssertEquals([ftoWorkout.workout.orderedSets count], 3U, @"");
 }
 
 @end

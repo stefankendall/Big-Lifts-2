@@ -30,7 +30,7 @@
 
     SSWorkout *savedWorkout = [[SSWorkoutStore instance] atIndex:0];
     Workout *workout = savedWorkout.workouts[0];
-    SSLift *lift = (SSLift *) ((Set *) workout.sets[0]).lift;
+    SSLift *lift = (SSLift *) ((Set *) workout.orderedSets[0]).lift;
     STAssertTrue([lift.name isEqualToString:@"Bench"], @"");
 }
 
@@ -46,7 +46,7 @@
     [[SSWorkoutStore instance] setupVariant:@"Novice"];
     SSWorkout *ssWorkout = [[SSWorkoutStore instance] last];
     Workout *workout = ssWorkout.workouts[2];
-    Set *firstSet = workout.sets[0];
+    Set *firstSet = workout.orderedSets[0];
     STAssertEqualObjects(firstSet.lift.name, @"Deadlift", @"");
 }
 
@@ -74,11 +74,11 @@
     [[SSWorkoutStore instance] addWarmup];
     SSWorkout *workoutA = [[SSWorkoutStore instance] find:@"name" value:@"A"];
     Workout *squatWorkout = [[workoutA.workouts array] detect:^BOOL(Workout *workout) {
-        Set *set = workout.sets[0];
+        Set *set = workout.orderedSets[0];
         return [set.lift.name isEqualToString:@"Squat"];
     }];
 
-    STAssertEquals([squatWorkout.sets count], 8U, @"");
+    STAssertEquals([squatWorkout.orderedSets count], 8U, @"");
 }
 
 - (void)testActiveWorkoutForPracticalProgramming {

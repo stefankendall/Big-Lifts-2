@@ -70,4 +70,18 @@
 }
 
 
+- (void)addSets:(NSArray *)sets atIndex:(int)index {
+    if (index != 0){
+        [NSException raise:NSInvalidArgumentException
+                    format:@"Not supported"];
+    }
+    NSMutableIndexSet *indexes = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [sets count])];
+    [self.sets insertObjects:sets atIndexes:indexes];
+    int order = -1;
+    for( Set *set in [sets reverseObjectEnumerator]){
+        set.order = [NSNumber numberWithInt:order--];
+    }
+    [self fixSetOrdering];
+}
+
 @end

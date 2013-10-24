@@ -11,7 +11,7 @@
 
 - (void)setWorkout:(SJWorkout *)sjWorkout {
     [self.setsLabel setText:[NSString stringWithFormat:@"%d sets", [sjWorkout.workout.sets count]]];
-    Set *set = [sjWorkout.workout.sets firstObject];
+    Set *set = [sjWorkout.workout.orderedSets firstObject];
     [self.repsLabel setText:[NSString stringWithFormat:@"%d reps", [set.reps intValue]]];
     [self.percentageLabel setText:[NSString stringWithFormat:@"%@%%", [set.percentage stringValue]]];
 

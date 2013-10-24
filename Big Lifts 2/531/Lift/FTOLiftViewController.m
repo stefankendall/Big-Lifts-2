@@ -42,8 +42,8 @@
     NSUInteger index = (NSUInteger) [indexPath row];
     FTOWorkout *ftoWorkout = [self getWorkout:week row:index];
 
-    if([ftoWorkout.workout.sets count] > 0){
-        Set *set = ftoWorkout.workout.sets[0];
+    if([ftoWorkout.workout.orderedSets count] > 0){
+        Set *set = ftoWorkout.workout.orderedSets[0];
         [cell.textLabel setText:set.lift.name];
     }
     else {

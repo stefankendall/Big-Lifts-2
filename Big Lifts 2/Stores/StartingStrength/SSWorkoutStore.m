@@ -174,7 +174,7 @@
         set.lift = lift;
         set.reps = [NSNumber numberWithInt:reps];
         set.percentage = N(100);
-        [workout.sets addObject:set];
+        [workout addSet:set];
     }
 
     return workout;
@@ -182,7 +182,7 @@
 
 - (Workout *)createWorkout:(SSLift *)lift withSets:(int)sets withReps:(int)reps amrap:(BOOL)amrap {
     Workout *workout = [self createWorkout:lift withSets:sets withReps:reps];
-    [[workout.sets array] each:^(Set *set) {
+    [workout.orderedSets each:^(Set *set) {
         set.amrap = amrap;
     }];
     return workout;
@@ -190,7 +190,7 @@
 
 - (void)incrementWeights:(SSWorkout *)ssWorkout {
     for (Workout *workout in ssWorkout.workouts) {
-        Set *firstSet = workout.sets[0];
+        Set *firstSet = workout.orderedSets[0];
         SSLift *lift = (SSLift *) firstSet.lift;
         if (lift.increment) {
             lift.weight = [lift.weight decimalNumberByAdding:lift.increment];
@@ -236,7 +236,7 @@
         return [lastSet.lift.name isEqualToString:@"Bench"] ||
                 [lastSet.lift.name isEqualToString:@"Press"];
     }];
-    Set *set = [workout.sets lastObject];
+    Set *set = [workout.orderedSets lastObject];
     NSString *nextLift = [set.lift.name isEqualToString:@"Bench"] ? @"Press" : @"Bench";
 
     return [ssWorkouts select:^BOOL(SSWorkout *ssWorkout) {

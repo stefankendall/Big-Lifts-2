@@ -56,7 +56,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {
-        self.tappedSet = self.customWorkout.workout.sets[(NSUInteger) [indexPath row]];
+        self.tappedSet = self.customWorkout.workout.orderedSets[(NSUInteger) [indexPath row]];
         [self performSegueWithIdentifier:@"ftoCustomSetSelectedSegue" sender:self];
     }
     else {
@@ -87,8 +87,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        int row = [indexPath row];
-        Set *set = self.customWorkout.workout.sets[row];
+        Set *set = self.customWorkout.workout.orderedSets[(NSUInteger) ([indexPath row])];
         [self.customWorkout.workout removeSet: set];
         [self.tableView reloadData];
     }

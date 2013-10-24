@@ -12,7 +12,7 @@
 - (void)correctEmptyOrderOnSets {
     NSArray *allWorkouts = [self findAll];
     for (Workout *workout in allWorkouts) {
-        if ([[workout.sets firstObject] order] == nil ) {
+        if ([[workout.orderedSets firstObject] order] == nil ) {
             int count = 0;
             for (Set *set in workout.sets) {
                 set.order = [NSNumber numberWithInt:count++];

@@ -13,10 +13,10 @@
 
 - (void)setup {
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *workout) {
-        FTOLift *mainLift = (FTOLift *) [workout.workout.sets[0] lift];
+        FTOLift *mainLift = (FTOLift *) [workout.workout.orderedSets[0] lift];
         FTOTriumvirate *assistance = [[FTOTriumvirateStore instance] find:@"mainLift" value:mainLift];
         if (assistance) {
-            for (Set *set in assistance.workout.sets) {
+            for (Set *set in assistance.workout.orderedSets) {
                 [workout.workout addSet:[[SetStore instance] createFromSet:set]];
             }
         }

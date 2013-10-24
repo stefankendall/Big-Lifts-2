@@ -21,4 +21,6 @@
 - (void)removeSet:(Set *)set;
 
 - (void)removeSets:(NSArray *)sets;
+
+- (void)addSets:(NSArray *)array atIndex:(int)index;
 @end

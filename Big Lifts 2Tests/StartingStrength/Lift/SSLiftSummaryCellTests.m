@@ -32,7 +32,7 @@
     SSLiftSummaryCell *cell = [SSLiftSummaryCell create];
     SSWorkout *workoutA = [[SSWorkoutStore instance] first];
     Workout *workout = workoutA.workouts[0];
-    Set *set = [workout.sets lastObject];
+    Set *set = [workout.orderedSets lastObject];
     set.reps = @-1;
     [cell setWorkout:workout];
 
