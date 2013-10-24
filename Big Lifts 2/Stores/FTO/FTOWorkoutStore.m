@@ -20,6 +20,7 @@
 
 - (void)onLoad {
     [self fixEmptySets];
+    [[FTOWorkoutStore instance] switchTemplate];
 }
 
 - (void)fixEmptySets {
@@ -49,7 +50,9 @@
     [self createWorkoutsForEachLift];
     [self markDeloadWorkouts];
     [self remarkDoneLifts:doneLiftsByWeek];
+    NSLog(@"Checking if should remove warmup");
     if (![[[FTOSettingsStore instance] first] warmupEnabled]) {
+        NSLog(@"Removing warmup");
         [self removeWarmup];
     }
 }

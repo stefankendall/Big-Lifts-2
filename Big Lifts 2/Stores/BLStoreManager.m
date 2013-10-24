@@ -63,15 +63,16 @@
                 [FTOLiftStore instance],
                 [FTOSSTLiftStore instance],
                 [FTOCustomWorkoutStore instance],
-                [FTOWorkoutStore instance],
                 [FTOTriumvirateLiftStore instance],
                 [FTOTriumvirateStore instance],
+                [FTOWorkoutStore instance],
                 [PlateStore instance],
                 [SetLogStore instance],
                 [WorkoutLogStore instance],
                 [SJLiftStore instance],
                 [SJWorkoutStore instance]
         ];
+
         [[NSNotificationCenter defaultCenter] postNotificationName:@"storesLoaded" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleDataModelChange:)
                                                      name:NSManagedObjectContextObjectsDidChangeNotification
