@@ -113,7 +113,7 @@
     <entity name="WorkoutLog" representedClassName="WorkoutLog" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="SetLog" inverseName="workoutLog" inverseEntity="SetLog" syncable="YES"/>
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SetLog" inverseName="workoutLog" inverseEntity="SetLog" syncable="YES"/>
     </entity>
     <elements>
         <element name="Bar" positionX="0" positionY="0" width="0" height="0"/>
