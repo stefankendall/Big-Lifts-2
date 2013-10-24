@@ -12,7 +12,7 @@
 
 - (void)testAddsTriumvirateSets {
     [[FTOTriumvirateAssistance new] setup];
-    FTOWorkout *workout = [[FTOWorkoutStore instance] first];
+    FTOWorkout *workout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertEquals([workout.workout.orderedSets count], 16U, @"");
 }
 

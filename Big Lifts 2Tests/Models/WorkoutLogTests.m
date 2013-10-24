@@ -35,4 +35,18 @@
     STAssertEquals([workoutLog bestSet], set2, @"");
 }
 
+- (void)testGetsOrderedSets {
+    SetLog *set1 = [[SetLogStore instance] create];
+    set1.order = @0;
+    SetLog *set2 = [[SetLogStore instance] create];
+    set2.order = @1;
+    SetLog *set3 = [[SetLogStore instance] create];
+    set3.order = @2;
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    [workoutLog.sets addObjectsFromArray:@[set1, set3, set2]];
+    STAssertEquals(workoutLog.orderedSets[0], set1, @"");
+    STAssertEquals(workoutLog.orderedSets[1], set2, @"");
+    STAssertEquals(workoutLog.orderedSets[2], set3, @"");
+}
+
 @end

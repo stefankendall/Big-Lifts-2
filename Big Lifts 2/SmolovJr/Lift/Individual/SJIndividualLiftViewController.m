@@ -45,7 +45,7 @@
     [self.sjWorkout.workout.orderedSets each:^(Set *set) {
         SetLog *setLog = [[SetLogStore instance] createFromSet:set];
         setLog.weight = [self minimumOrLiftedWeight];
-        [workoutLog.sets addObject:setLog];
+        [workoutLog addSet:setLog];
     }];
 }
 

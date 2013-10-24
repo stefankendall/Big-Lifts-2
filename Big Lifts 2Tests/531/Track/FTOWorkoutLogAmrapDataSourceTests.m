@@ -10,9 +10,9 @@
 
 - (void)testReturnsHeaviestAmrapSet {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
-    SetLog *warmup = [[SetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO];
-    SetLog *work1 = [[SetLogStore instance] createWithName:@"Squat" weight:N(180) reps:2 warmup:NO assistance:NO amrap:YES];
-    SetLog *work2 = [[SetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:YES];
+    SetLog *warmup = [[SetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO order:0];
+    SetLog *work1 = [[SetLogStore instance] createWithName:@"Squat" weight:N(180) reps:2 warmup:NO assistance:NO amrap:YES order:1];
+    SetLog *work2 = [[SetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:YES order:2];
     [workoutLog.sets addObjectsFromArray:@[warmup, work1, work2]];
 
     FTOWorkoutLogAmrapDataSource *dataSource = [[FTOWorkoutLogAmrapDataSource alloc] initWithWorkoutLog:workoutLog];
@@ -23,9 +23,9 @@
 
 - (void)testReturnsLastSetIfNoAmrap {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
-    SetLog *warmup = [[SetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO];
-    SetLog *work1 = [[SetLogStore instance] createWithName:@"Squat" weight:N(150) reps:2 warmup:NO assistance:NO amrap:NO];
-    SetLog *work2 = [[SetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:NO];
+    SetLog *warmup = [[SetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO order:0];
+    SetLog *work1 = [[SetLogStore instance] createWithName:@"Squat" weight:N(150) reps:2 warmup:NO assistance:NO amrap:NO order:1];
+    SetLog *work2 = [[SetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:NO order:2];
     [workoutLog.sets addObjectsFromArray:@[warmup, work1, work2]];
 
     FTOWorkoutLogAmrapDataSource *dataSource = [[FTOWorkoutLogAmrapDataSource alloc] initWithWorkoutLog:workoutLog];

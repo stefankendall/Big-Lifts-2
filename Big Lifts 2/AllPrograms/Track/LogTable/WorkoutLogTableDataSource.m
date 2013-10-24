@@ -30,7 +30,7 @@
 }
 
 - (NSArray *)getCombinedSets {
-    return [[SetLogCombiner new] combineSetLogs:self.workoutLog.sets];
+    return [[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:self.workoutLog.orderedSets]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

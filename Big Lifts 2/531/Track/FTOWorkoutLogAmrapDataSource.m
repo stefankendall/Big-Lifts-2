@@ -16,9 +16,9 @@
         cell = [SetLogCell create];
     }
 
-    SetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:[self.workoutLog.sets array]];
+    SetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
     if (!logToShow) {
-        logToShow = [self.workoutLog.sets lastObject];
+        logToShow = [self.workoutLog.orderedSets lastObject];
     }
 
     [cell setSetLogContainer:[[SetLogContainer alloc] initWithSetLog:logToShow]];

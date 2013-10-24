@@ -28,7 +28,7 @@
 
 - (int)getRowCount:(NSIndexPath *)path {
     WorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
-    return [[[SetLogCombiner new] combineSetLogs:workoutLog.sets] count];
+    return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:workoutLog.orderedSets]] count];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

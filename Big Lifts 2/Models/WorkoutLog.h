@@ -9,6 +9,9 @@
 
 - (NSArray *)workSets;
 
+- (NSArray *)orderedSets;
+
 - (SetLog *)bestSet;
 
+- (void)addSet:(SetLog *)log;
 @end

@@ -13,10 +13,11 @@
     setLog.warmup = set.warmup;
     setLog.assistance = set.assistance;
     setLog.amrap = set.amrap;
+    setLog.order = set.order;
     return setLog;
 }
 
-- (id)createWithName:(NSString *)name weight:(NSDecimalNumber *)weight reps:(int)reps warmup:(BOOL)warmup assistance:(BOOL)assistance amrap:(BOOL)amrap {
+- (id)createWithName:(NSString *)name weight:(NSDecimalNumber *)weight reps:(int)reps warmup:(BOOL)warmup assistance:(BOOL)assistance amrap:(BOOL)amrap order:(int)order {
     SetLog *log = [self create];
     log.name = name;
     log.weight = weight;
@@ -24,6 +25,7 @@
     log.warmup = warmup;
     log.assistance = assistance;
     log.amrap = amrap;
+    log.order = [NSNumber numberWithInt:order];
     return log;
 }
 
