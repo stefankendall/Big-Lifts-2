@@ -76,7 +76,7 @@
     if ([weightText isEqualToString:@""]) {
         weightText = @"0";
     }
-    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText];
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText locale:NSLocale.currentLocale];
 
     if ([indexPath section] == 1) {
         [lift setIncrement:weight];
@@ -89,7 +89,7 @@
             NSNumberFormatter *nf = [NSNumberFormatter new];
             [nf setMaximumFractionDigits:1];
             NSString *oneDecimalMax = [nf stringFromNumber:max];
-            [lift setWeight:[NSDecimalNumber decimalNumberWithString:oneDecimalMax]];
+            [lift setWeight:[NSDecimalNumber decimalNumberWithString:oneDecimalMax locale:NSLocale.currentLocale]];
         }
         else {
             [lift setWeight:weight];

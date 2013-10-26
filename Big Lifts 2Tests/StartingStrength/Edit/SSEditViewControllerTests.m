@@ -35,7 +35,7 @@
     [self.controller textFieldDidEndEditing:[cell textField]];
 
     SSLift *lift = [[SSLiftStore instance] findAll][0];
-    STAssertEquals(lift.weight.doubleValue, 400.5, @"");
+    STAssertEqualObjects(lift.weight, N(400.5), @"");
 }
 
 - (void)testLoadsCellsWithExistingLiftData {

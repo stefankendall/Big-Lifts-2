@@ -195,7 +195,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSString *newWeight = [textField text];
     Bar *bar = [[BarStore instance] first];
-    bar.weight = [NSDecimalNumber decimalNumberWithString:newWeight];
+    bar.weight = [NSDecimalNumber decimalNumberWithString:newWeight locale:NSLocale.currentLocale];
 }
 
 

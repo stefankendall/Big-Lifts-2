@@ -27,7 +27,7 @@
 
     SJLift *lift = [[SJLiftStore instance] first];
     lift.name = liftName;
-    lift.weight = [NSDecimalNumber decimalNumberWithString:max];
+    lift.weight = [NSDecimalNumber decimalNumberWithString:max locale:NSLocale.currentLocale];
 }
 
 @end

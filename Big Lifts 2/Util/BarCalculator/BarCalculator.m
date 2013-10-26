@@ -5,12 +5,12 @@
 
 @interface BarCalculator ()
 @property(nonatomic, strong) NSArray *plates;
-@property(nonatomic) double barWeight;
+@property(nonatomic) NSDecimalNumber *barWeight;
 @end
 
 @implementation BarCalculator
 
-- (BarCalculator *)initWithPlates:(NSArray *)plates barWeight:(double)barWeight {
+- (BarCalculator *)initWithPlates:(NSArray *)plates barWeight:(NSDecimalNumber *)barWeight {
     if (self = [super init]) {
         self.plates = plates;
         self.barWeight = barWeight;
@@ -18,12 +18,12 @@
     return self;
 }
 
-- (NSArray *)platesToMakeWeight:(double)weight {
-    double targetWeight = weight - self.barWeight;
+- (NSArray *)platesToMakeWeight:(NSDecimalNumber *)weight {
+    NSDecimalNumber *targetWeight = [weight decimalNumberBySubtracting:self.barWeight];
     NSArray *remainingPlates = [self copyPlates:self.plates];
     NSMutableArray *plateWeights = [@[] mutableCopy];
 
-    while (targetWeight > 0) {
+    while ([targetWeight compare:N(0)] == NSOrderedDescending) {
         remainingPlates = [remainingPlates select:^(PlateRemaining *p) {
             BOOL countRemaining = p.count > 0;
             return countRemaining;
@@ -34,18 +34,20 @@
             break;
         }
         else {
-            [plateWeights addObject:[NSNumber numberWithDouble:nextPlate.weight]];
+            [plateWeights addObject:nextPlate.weight];
             nextPlate.count -= 2;
-            targetWeight = targetWeight - (2 * nextPlate.weight);
+            targetWeight = [targetWeight decimalNumberBySubtracting:
+                    [nextPlate.weight decimalNumberByMultiplyingBy:N(2)]];
         }
     }
 
     return plateWeights;
 }
 
-- (PlateRemaining *)findPlateClosestToWeight:(double)weight fromPlates:(NSArray *)plates {
+- (PlateRemaining *)findPlateClosestToWeight:(NSDecimalNumber *)weight fromPlates:(NSArray *)plates {
     return [plates detect:^BOOL(PlateRemaining *plate) {
-        return plate.weight * 2 <= weight;
+        NSComparisonResult comparison = [[plate.weight decimalNumberByMultiplyingBy:N(2)] compare:weight];
+        return comparison == NSOrderedSame || comparison == NSOrderedAscending;
     }];
 }
 
@@ -54,6 +56,5 @@
         return [PlateRemaining fromPlate:p];
     })];
 }
-
 
 @end

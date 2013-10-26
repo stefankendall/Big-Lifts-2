@@ -32,7 +32,7 @@
 
 - (IBAction)saveTapped:(id)button {
     Plate *p = [[PlateStore instance] create];
-    p.weight = [NSDecimalNumber decimalNumberWithString:[self.weightTextField text]];
+    p.weight = [NSDecimalNumber decimalNumberWithString:[self.weightTextField text] locale:NSLocale.currentLocale];
     p.count = [NSNumber numberWithInt:[[self.countTextField text] intValue]];
 
     [self.navigationController popViewControllerAnimated:YES];

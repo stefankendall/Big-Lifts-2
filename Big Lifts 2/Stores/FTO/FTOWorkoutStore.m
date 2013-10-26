@@ -20,7 +20,6 @@
 
 - (void)onLoad {
     [self fixEmptySets];
-    [[FTOWorkoutStore instance] switchTemplate];
 }
 
 - (void)fixEmptySets {

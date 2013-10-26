@@ -9,7 +9,7 @@
 - (NSDecimalNumber *)effectiveWeight {
     NSDecimalNumber *effectiveWeight;
     effectiveWeight = [[self.lift.weight decimalNumberByMultiplyingBy:self.percentage]
-            decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"100"]];
+            decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"100" locale:NSLocale.currentLocale]];
 
     if (self.lift.usesBar) {
         Bar *bar = [[BarStore instance] first];

@@ -63,7 +63,7 @@
     TextFieldWithCell *textViewWithCell = (TextFieldWithCell *) textField;
     NSIndexPath *indexPath = [[textViewWithCell cell] indexPath];
 
-    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[textField text]];
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[textField text] locale:NSLocale.currentLocale];
     SSLift *lift = [[SSLiftStore instance] findAll][(NSUInteger) [indexPath row]];
     if ([indexPath section] == 0) {
         [lift setWeight:weight];

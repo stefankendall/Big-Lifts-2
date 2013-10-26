@@ -21,7 +21,7 @@
 
 - (void)createPlateWithWeight:(NSString *)weight count:(int)count {
     Plate *p = [self create];
-    p.weight = [NSDecimalNumber decimalNumberWithString:weight];
+    p.weight = [NSDecimalNumber decimalNumberWithString:weight locale:NSLocale.currentLocale];
     p.count = [NSNumber numberWithInt:count];
 }
 

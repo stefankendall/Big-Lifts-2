@@ -5,11 +5,11 @@
 + (PlateRemaining *)fromPlate:(Plate *)p {
     PlateRemaining *r = [PlateRemaining new];
     r.count = [p.count intValue];
-    r.weight = [p.weight doubleValue];
+    r.weight = p.weight;
     return r;
 }
 
-- (id)initWithWeight:(double)weight count:(int)count {
+- (id)initWithWeight:(NSDecimalNumber *)weight count:(int)count {
     if(self = [super init]){
         self.weight = weight;
         self.count = count;

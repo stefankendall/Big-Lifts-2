@@ -15,7 +15,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     [self.delegate weightChanged:
-            [NSDecimalNumber decimalNumberWithString:[textField text]]];
+            [NSDecimalNumber decimalNumberWithString:[textField text] locale:NSLocale.currentLocale]];
 }
 
 @end

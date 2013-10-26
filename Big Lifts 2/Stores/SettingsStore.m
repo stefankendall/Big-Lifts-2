@@ -6,7 +6,7 @@
 - (void)setupDefaults {
     Settings *settings = [self create];
     [settings setUnits:@"lbs"];
-    [settings setRoundTo:[NSDecimalNumber decimalNumberWithString:@"5"]];
+    [settings setRoundTo:N(5)];
     settings.roundingFormula = (NSString *) ROUNDING_FORMULA_EPLEY;
 }
 
@@ -26,7 +26,7 @@
 - (void)adjustForKg {
     Settings *settings = [[SettingsStore instance] first];
     if ([settings.units isEqualToString:@"kg"] && [settings.roundTo isEqualToNumber:@5]) {
-        settings.roundTo = [NSDecimalNumber decimalNumberWithString:@"1"];
+        settings.roundTo = N(1);
     }
 }
 
@@ -35,10 +35,10 @@
     Settings *settings = [self first];
     if ([settings.units isEqualToString:@"kg"]) {
         if ([increment intValue] == 5) {
-            increment = [NSDecimalNumber decimalNumberWithString:@"2"];
+            increment = N(2);
         }
         else if ([increment intValue] == 10) {
-            increment = [NSDecimalNumber decimalNumberWithString:@"5"];
+            increment = N(5);
         }
     }
     return increment;

@@ -14,7 +14,7 @@
 
 - (IBAction)percentageChanged:(id)sender {
     UITextField *percentageField = sender;
-    NSDecimalNumber *percentage = [NSDecimalNumber decimalNumberWithString:[percentageField text]];
+    NSDecimalNumber *percentage = [NSDecimalNumber decimalNumberWithString:[percentageField text] locale:NSLocale.currentLocale];
     [[[FTOBoringButBigStore instance] first] setPercentage:percentage];
     [[FTOAssistanceStore instance] restore];
 }

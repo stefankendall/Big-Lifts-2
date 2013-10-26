@@ -12,15 +12,15 @@
 
 - (void)setUp {
     [super setUp];
-    self.calculator = [[BarCalculator alloc] initWithPlates:[[PlateStore instance] findAll] barWeight:45];
+    self.calculator = [[BarCalculator alloc] initWithPlates:[[PlateStore instance] findAll] barWeight:N(45)];
 }
 
 - (void)testMakesSimpleWeight {
     NSArray *expected225 = @[@45.0, @45.0];
-    STAssertEqualObjects([self.calculator platesToMakeWeight:225], expected225, @"");
+    STAssertEqualObjects([self.calculator platesToMakeWeight:N(225)], expected225, @"");
 
     NSArray *expected260 = @[@45.0, @45.0, @10.0, @5, @2.5];
-    STAssertEqualObjects([self.calculator platesToMakeWeight:260], expected260, @"");
+    STAssertEqualObjects([self.calculator platesToMakeWeight:N(260)], expected260, @"");
 }
 
 - (void)testCopyPlatesReturnsNewPlates {
@@ -30,40 +30,40 @@
 }
 
 - (void)testFindPlateClosestToWeightMatch {
-    PlateRemaining *plate45 = [[PlateRemaining alloc] initWithWeight:45 count:6];
-    PlateRemaining *plate35 = [[PlateRemaining alloc] initWithWeight:35 count:6];
+    PlateRemaining *plate45 = [[PlateRemaining alloc] initWithWeight:N(45) count:6];
+    PlateRemaining *plate35 = [[PlateRemaining alloc] initWithWeight:N(35) count:6];
     NSArray *plates = @[
             plate45,
             plate35
     ];
 
-    PlateRemaining *p = [self.calculator findPlateClosestToWeight:100 fromPlates:plates];
+    PlateRemaining *p = [self.calculator findPlateClosestToWeight:N(100) fromPlates:plates];
     STAssertEquals(p, plate45, @"");
 }
 
 - (void)testFindPlateClosestToWeightMatchBelowTop {
-    PlateRemaining *plate45 = [[PlateRemaining alloc] initWithWeight:45 count:6];
-    PlateRemaining *plate35 = [[PlateRemaining alloc] initWithWeight:35 count:6];
-    PlateRemaining *plate25 = [[PlateRemaining alloc] initWithWeight:25 count:6];
+    PlateRemaining *plate45 = [[PlateRemaining alloc] initWithWeight:N(45) count:6];
+    PlateRemaining *plate35 = [[PlateRemaining alloc] initWithWeight:N(35) count:6];
+    PlateRemaining *plate25 = [[PlateRemaining alloc] initWithWeight:N(25) count:6];
     NSArray *plates = @[
             plate45,
             plate35,
             plate25
     ];
 
-    PlateRemaining *p = [self.calculator findPlateClosestToWeight:60 fromPlates:plates];
+    PlateRemaining *p = [self.calculator findPlateClosestToWeight:N(60) fromPlates:plates];
     STAssertEquals(p, plate25, @"");
 }
 
 - (void)testFindPlateClosestToWeightNoMatch {
-    PlateRemaining *plate45 = [[PlateRemaining alloc] initWithWeight:45 count:6];
-    PlateRemaining *plate35 = [[PlateRemaining alloc] initWithWeight:35 count:6];
+    PlateRemaining *plate45 = [[PlateRemaining alloc] initWithWeight:N(45) count:6];
+    PlateRemaining *plate35 = [[PlateRemaining alloc] initWithWeight:N(35) count:6];
     NSArray *plates = @[
             plate45,
             plate35
     ];
 
-    PlateRemaining *p = [self.calculator findPlateClosestToWeight:25 fromPlates:plates];
+    PlateRemaining *p = [self.calculator findPlateClosestToWeight:N(25) fromPlates:plates];
     STAssertNil(p, @"");
 }
 

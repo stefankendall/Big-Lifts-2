@@ -111,7 +111,7 @@
 }
 
 - (void)updateMaxEstimate {
-    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text]];
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text] locale:NSLocale.currentLocale];
     int reps = [[self.repsField text] intValue];
     NSDecimalNumber *estimate = [[OneRepEstimator new] estimate:weight withReps:reps];
     if ([estimate compare:N(0)] == NSOrderedDescending) {

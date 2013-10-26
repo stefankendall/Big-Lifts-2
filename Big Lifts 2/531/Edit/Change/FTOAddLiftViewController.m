@@ -44,8 +44,8 @@
 - (IBAction)doneButtonTapped:(id)sender {
     FTOLift *lift = [[FTOLiftStore instance] create];
     lift.name = [self.nameField text];
-    lift.weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text]];
-    lift.increment = [NSDecimalNumber decimalNumberWithString:[self.increaseField text]];
+    lift.weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text] locale:NSLocale.currentLocale];
+    lift.increment = [NSDecimalNumber decimalNumberWithString:[self.increaseField text] locale:NSLocale.currentLocale];
     lift.usesBar = YES;
 
     [[FTOWorkoutStore instance] switchTemplate];

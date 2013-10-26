@@ -2,11 +2,11 @@
 
 @interface BarCalculator : NSObject
 
-- (BarCalculator *) initWithPlates: (NSArray *) plates barWeight: (double) weight;
+- (BarCalculator *) initWithPlates: (NSArray *) plates barWeight: (NSDecimalNumber *) weight;
 
-- (NSArray *)platesToMakeWeight:(double)weight;
+- (NSArray *)platesToMakeWeight:(NSDecimalNumber *)weight;
 
 - (NSArray *)copyPlates:(NSArray *)plates;
 
-- (PlateRemaining *)findPlateClosestToWeight:(double)weight fromPlates:(NSArray *)plates;
+- (PlateRemaining *)findPlateClosestToWeight:(NSDecimalNumber *)weight fromPlates:(NSArray *)plates;
 @end

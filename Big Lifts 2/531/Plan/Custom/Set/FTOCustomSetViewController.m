@@ -22,7 +22,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     int reps = [[self.repsLabel text] intValue];
-    NSDecimalNumber *percentage = [NSDecimalNumber decimalNumberWithString:[self.percentageLabel text]];
+    NSDecimalNumber *percentage = [NSDecimalNumber decimalNumberWithString:[self.percentageLabel text] locale:NSLocale.currentLocale];
     [self.set setReps:[NSNumber numberWithInt:reps]];
     [self.set setPercentage:percentage];
 }

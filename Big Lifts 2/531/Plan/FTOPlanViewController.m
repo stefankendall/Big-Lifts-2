@@ -87,7 +87,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (self.trainingMaxField == textField) {
         FTOSettings *settings = [[FTOSettingsStore instance] first];
-        settings.trainingMax = [NSDecimalNumber decimalNumberWithString:[textField text]];
+        settings.trainingMax = [NSDecimalNumber decimalNumberWithString:[textField text] locale:NSLocale.currentLocale];
     }
 }
 

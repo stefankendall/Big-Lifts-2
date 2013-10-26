@@ -2,9 +2,9 @@
 
 @interface PlateRemaining : NSObject
 @property(nonatomic) int count;
-@property(nonatomic) double weight;
+@property(nonatomic) NSDecimalNumber *weight;
 
 + (PlateRemaining *)fromPlate:(Plate *)p;
 
-- (id)initWithWeight:(double)weight count:(int)count;
+- (id)initWithWeight:(NSDecimalNumber *)weight count:(int)count;
 @end

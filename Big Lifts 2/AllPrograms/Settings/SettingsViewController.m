@@ -97,7 +97,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSString *newRoundingOption = self.roundingOptions[(NSUInteger) row];
     Settings *settings = [[SettingsStore instance] first];
-    settings.roundTo = [NSDecimalNumber decimalNumberWithString:newRoundingOption];
+    settings.roundTo = [NSDecimalNumber decimalNumberWithString:newRoundingOption locale:NSLocale.currentLocale];
     [self reloadData];
 }
 

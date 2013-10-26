@@ -12,9 +12,9 @@
 
     Bar *bar = [[BarStore instance] first];
     BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[PlateStore instance] findAll]
-                                                            barWeight:[bar.weight doubleValue]];
+                                                            barWeight:bar.weight];
 
-    NSArray *plates = [calculator platesToMakeWeight:[[set roundedEffectiveWeight] doubleValue]];
+    NSArray *plates = [calculator platesToMakeWeight:[set roundedEffectiveWeight]];
     NSString *platesText = @"";
     if ([plates count] != 0) {
         platesText = [NSString stringWithFormat:@"[%@]", [plates componentsJoinedByString:@", "]];
