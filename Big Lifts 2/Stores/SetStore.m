@@ -5,12 +5,6 @@
 
 @implementation SetStore
 
-- (void)onLoad {
-    [[self findAll] each:^(Set *set) {
-        NSLog(@"%@", set.order);
-    }];
-}
-
 - (Set *)createWithLift:(Lift *)lift percentage:(NSDecimalNumber *)percentage {
     Set *set = [[SetStore instance] create];
     set.lift = lift;

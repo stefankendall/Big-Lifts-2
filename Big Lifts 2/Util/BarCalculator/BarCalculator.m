@@ -20,7 +20,6 @@
 
 - (NSArray *)platesToMakeWeight:(NSDecimalNumber *)weight {
     NSDecimalNumber *targetWeight = [weight decimalNumberBySubtracting:self.barWeight];
-    NSLog(@"Target: %@", targetWeight);
     NSArray *remainingPlates = [self copyPlates:self.plates];
     NSMutableArray *plateWeights = [@[] mutableCopy];
 

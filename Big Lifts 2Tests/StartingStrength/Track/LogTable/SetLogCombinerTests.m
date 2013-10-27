@@ -28,7 +28,6 @@
     [workoutLog.sets addObject:set2];
 
     NSArray *combined = [[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:@[set1, set2]]];
-    NSLog(@"%@", combined);
     STAssertEquals([combined count], (NSUInteger) 1, @"");
     SetLogContainer *setLogContainer = [combined objectAtIndex:0];
     STAssertTrue([setLogContainer isKindOfClass:SetLogContainer.class], @"");
