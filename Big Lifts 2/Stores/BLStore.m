@@ -144,7 +144,11 @@
 
 - (NSOrderedSet *)unique:(NSString *)keyName {
     NSArray *allValues = [[self findAll] collect:^id(id obj) {
-        return [obj valueForKeyPath:keyName];
+        id value = [obj valueForKeyPath:keyName];
+        if( value == nil ){
+            value = [NSNull null];
+        }
+        return value;
     }];
 
     return [[NSOrderedSet alloc] initWithArray:allValues];

@@ -20,6 +20,22 @@
     [[SettingsStore instance] registerChangeListener:^{
         [self adjustForKg];
     }];
+
+    if ([self orderingBroken]) {
+        [self fixOrdering];
+    }
+}
+
+- (void)fixOrdering {
+    int order = 0;
+    for (FTOLift *lift in [self findAll]) {
+        [lift setOrder:[NSNumber numberWithInt:order++]];
+    }
+}
+
+- (BOOL)orderingBroken {
+    NSOrderedSet *orders = [self unique:@"order"];
+    return [orders count] != [self count] || [orders containsObject:[NSNull null]];
 }
 
 - (void)incrementLifts {
@@ -62,12 +78,12 @@
     }
     NSMutableArray *unusedLifts = [@[] mutableCopy];
     for (FTOLift *lift in [self findAll]) {
-        if(![usedLifts containsObject:lift]){
+        if (![usedLifts containsObject:lift]) {
             [unusedLifts addObject:lift];
         }
     }
 
-    for( FTOLift *unusedLift in unusedLifts){
+    for (FTOLift *unusedLift in unusedLifts) {
         [self remove:unusedLift];
     }
 }

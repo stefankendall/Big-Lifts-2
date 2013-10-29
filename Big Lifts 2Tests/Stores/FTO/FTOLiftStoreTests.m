@@ -34,4 +34,18 @@
     STAssertEquals([[FTOLiftStore instance] count], 4, @"");
 }
 
+- (void)testDetectsBrokenOrderingNil {
+    FTOLift *lift = [[FTOLiftStore instance] findAll][2];
+    lift.order = nil;
+    STAssertTrue([[FTOLiftStore instance] orderingBroken], @"");
+}
+
+- (void)testDetectsBrokenOrderingDuplication {
+    FTOLift *lift1 = [[FTOLiftStore instance] findAll][2];
+    FTOLift *lift2 = [[FTOLiftStore instance] findAll][3];
+    lift1.order = [NSNumber numberWithInt:1];
+    lift2.order = [NSNumber numberWithInt:1];
+    STAssertTrue([[FTOLiftStore instance] orderingBroken], @"");
+}
+
 @end

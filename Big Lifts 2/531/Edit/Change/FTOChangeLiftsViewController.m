@@ -112,19 +112,25 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
        toIndexPath:(NSIndexPath *)destinationIndexPath {
     int sourceRow = [sourceIndexPath row];
     int destRow = [destinationIndexPath row];
-    if( sourceRow == destRow ){
+    if (sourceRow == destRow) {
         return;
     }
 
     FTOLift *source = [[FTOLiftStore instance] atIndex:sourceRow];
     FTOLift *dest = [[FTOLiftStore instance] atIndex:destRow];
-    source.order = [NSNumber numberWithDouble:[dest.order doubleValue] + 0.5];
+
+    if( dest.order < source.order ){
+        source.order = [NSNumber numberWithDouble:[dest.order doubleValue] - 0.5];
+    } else {
+        source.order = [NSNumber numberWithDouble:[dest.order doubleValue] + 0.5];
+    }
+
     [self restitchLiftOrder];
 }
 
 - (void)restitchLiftOrder {
     NSArray *lifts = [[FTOLiftStore instance] findAll];
-    for(int i = 0; i < [lifts count]; i++){
+    for (int i = 0; i < [lifts count]; i++) {
         [lifts[(NSUInteger) i] setOrder:[NSNumber numberWithInt:i]];
     }
     [[FTOWorkoutStore instance] reorderWorkoutsToLifts];
