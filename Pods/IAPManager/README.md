@@ -40,7 +40,7 @@ How-to
                                           
                                               NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];                                                                                                                 [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
                                               [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-                                              [numberFormatter setLocale:extrasPackProduct.priceLocale];
+                                              [numberFormatter setLocale:premium.priceLocale];
                                               NSString *formattedPrice = [numberFormatter stringFromNumber:premium.price];
                                               NSLog(@"super premium: %@ for %@", premium.localizedTitle, formattedPrice);
                                           }
@@ -49,7 +49,7 @@ How-to
     - To purchase a product:
 ```objective-c
 [[IAPManager sharedIAPManager] purchaseProductForId:@"superpremiumversion"
-                                         completion:^{
+                                         completion:^(SKPaymentTransaction *transaction) {
                                              [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                                              UIAlertView *thanks = [[UIAlertView alloc] initWithTitle:@"Thanks!"
                                                                                               message:@"The extra features are now available"
@@ -63,3 +63,9 @@ How-to
                                          }];
 ```                                         
       StoreKit will then ask the user if they want to purchase the product.
+
+## Contact
+
+![Travis CI build status](https://api.travis-ci.org/mruegenberg/IAPManager.png)
+
+Bug reports and pull requests are welcome! Contact me via e-mail or just by opening an issue on GitHub.

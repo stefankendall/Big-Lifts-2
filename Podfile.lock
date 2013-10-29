@@ -15,12 +15,17 @@ DEPENDENCIES:
   - CTCustomTableViewCell (= 2)
   - Facebook-iOS-SDK (= 3.7.1)
   - FlurrySDK (= 4.2.3)
-  - IAPManager
+  - IAPManager (from `https://github.com/mruegenberg/IAPManager`, commit `46f75a812ed6d3ca5f17e966b7543594f24ef866`)
   - MRCEnumerable
   - TPKeyboardAvoiding (= 1.1)
   - UbiquityStoreManager
   - ViewDeck (= 2.2.11)
   - WebViewJavascriptBridge (= 4.0.1)
+
+EXTERNAL SOURCES:
+  IAPManager:
+    :commit: 46f75a812ed6d3ca5f17e966b7543594f24ef866
+    :git: https://github.com/mruegenberg/IAPManager
 
 SPEC CHECKSUMS:
   CTCustomTableViewCell: d3a141b32843da29aefb2157bbc143dd210b05f3
