@@ -17,4 +17,6 @@ extern NSString * const IAP_PURCHASED_NOTIFICATION;
 
 @interface Purchaser : NSObject
 - (void)purchase:(NSString *)purchaseId;
+
+- (void)savePurchase:(NSString *)purchaseId;
 @end

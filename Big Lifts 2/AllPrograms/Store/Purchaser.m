@@ -60,8 +60,7 @@ NSString *const IAP_FTO_CUSTOM = @"ftoCustom";
 }
 
 - (void)successfulPurchase:(NSString *)purchaseId {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:purchaseId];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self savePurchase:purchaseId];
     NSString *buyMessage = self.buyMessages[purchaseId];
     if (buyMessage) {
         UIAlertView *thanks = [[UIAlertView alloc] initWithTitle:@"Purchased!"
@@ -70,6 +69,11 @@ NSString *const IAP_FTO_CUSTOM = @"ftoCustom";
         [thanks performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
     }
     [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:IAP_PURCHASED_NOTIFICATION object:nil]];
+}
+
+- (void)savePurchase:(NSString *)purchaseId {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:purchaseId];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
