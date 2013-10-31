@@ -27,8 +27,8 @@
     [self.setCell setSet:set];
 }
 
-- (void)setSet:(Set *)set withEnteredReps:(NSNumber *)enteredReps {
-    [self.setCell setSet:set withEnteredReps:enteredReps];
+- (void)setSet:(Set *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight {
+    [self.setCell setSet:set withEnteredReps:enteredReps withEnteredWeight: weight];
 }
 
 @end

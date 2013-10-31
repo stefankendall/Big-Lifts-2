@@ -67,8 +67,18 @@
     Workout *workout = [ssWorkout workouts][0];
     Set *set = workout.orderedSets[0];
     [set setReps:[NSNumber numberWithInt:5]];
-    [cell setSet:set withEnteredReps:@7];
+    [cell setSet:set withEnteredReps:@7 withEnteredWeight:nil ];
     STAssertEqualObjects([[cell repsLabel] text], @"7x", @"");
+}
+
+- (void)testEnteredWeight {
+    SetCell *cell = [SetCell create];
+    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
+    Workout *workout = [ssWorkout workouts][0];
+    Set *set = workout.orderedSets[0];
+    [set setReps:[NSNumber numberWithInt:5]];
+    [cell setSet:set withEnteredReps:@1 withEnteredWeight:N(50)];
+    STAssertEqualObjects([[cell weightLabel] text], @"50 lbs", @"");
 }
 
 - (void)testShowsNoWeightIfWeight0AndNoBar{
@@ -79,7 +89,7 @@
     Set *set = workout.orderedSets[0];
     set.lift.usesBar = NO;
     set.percentage = N(0);
-    [cell setSet:set withEnteredReps:@7];
+    [cell setSet:set withEnteredReps:@7 withEnteredWeight:N(0) ];
     STAssertEqualObjects([[cell weightLabel] text], @"", @"");
 }
 

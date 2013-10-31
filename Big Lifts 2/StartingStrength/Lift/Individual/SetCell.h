@@ -11,9 +11,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *optionalLabel;
 @property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
 @property (nonatomic) NSNumber *enteredReps;
+@property (nonatomic) NSDecimalNumber *enteredWeight;
 
 
 - (void)setSet:(Set *) set;
-- (void)setSet:(Set *)set withEnteredReps: (NSNumber *) enteredReps;
+
+- (void)setSet:(Set *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight;
 
 @end

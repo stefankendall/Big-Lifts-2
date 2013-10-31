@@ -89,7 +89,8 @@
         cell = [FTOWorkoutCell create];
     }
     NSNumber *previousReps = [self.variableReps objectForKey:[NSNumber numberWithInteger:effectiveRow]];
-    [cell setSet:self.ftoWorkout.workout.orderedSets[(NSUInteger) effectiveRow] withEnteredReps:previousReps];
+    NSNumber *previousWeight = [self.variableWeight objectForKey:[NSNumber numberWithInteger:effectiveRow]];
+    [cell setSet:self.ftoWorkout.workout.orderedSets[(NSUInteger) effectiveRow] withEnteredReps:previousReps withEnteredWeight:previousWeight];
     return cell;
 }
 
@@ -136,8 +137,8 @@
         if (previouslyEnteredReps) {
             [form setPreviouslyEnteredReps:[previouslyEnteredReps intValue]];
         }
-        if( previouslyEnteredWeight ){
-            [form setPreviouslyEnteredWeight: previouslyEnteredWeight];
+        if (previouslyEnteredWeight) {
+            [form setPreviouslyEnteredWeight:previouslyEnteredWeight];
         }
         [form setSet:tappedSet];
         [form setDelegate:self];
