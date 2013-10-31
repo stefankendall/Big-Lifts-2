@@ -1,9 +1,7 @@
 #import "FTOSetRepsForm.h"
 #import "Set.h"
-#import "SettingsStore.h"
-#import "Settings.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "SetRepsDelegate.h"
+#import "SetChangeDelegate.h"
 #import "UITableViewController+NoEmptyRows.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
@@ -23,14 +21,14 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSNumber *reps = [NSNumber numberWithInt:[[textField text] intValue]];
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text] locale:NSLocale.currentLocale];
     [self updateMaxForReps:[reps intValue]];
     [self.delegate repsChanged:reps];
+    [self.delegate weightChanged:weight];
 }
 
 - (void)setupFields {
-    Settings *settings = [[SettingsStore instance] first];
-    NSString *weightText = [[self.set roundedEffectiveWeight] stringValue];
-    [self.weightField setText:[NSString stringWithFormat:@"%@ %@", weightText, settings.units]];
+    [self.weightField setPlaceholder:[[self.set roundedEffectiveWeight] stringValue]];
 
     int repsForMax = [self.set.reps intValue];
     [self.repsField setPlaceholder:[self.set.reps stringValue]];
@@ -38,11 +36,24 @@
         [self.repsField setText:[NSString stringWithFormat:@"%d", self.previouslyEnteredReps]];
         repsForMax = self.previouslyEnteredReps;
     }
+    if (self.previouslyEnteredWeight) {
+        [self.weightField setText:[self.previouslyEnteredWeight stringValue]];
+    }
     [self updateMaxForReps:repsForMax];
 }
 
+- (NSDecimalNumber *)currentWeight {
+    NSString *enteredWeightString = self.weightField.text;
+    if (![enteredWeightString isEqualToString:@""]) {
+        return [NSDecimalNumber decimalNumberWithString:enteredWeightString locale:NSLocale.currentLocale];
+    }
+    else {
+        return [self.set roundedEffectiveWeight];
+    }
+}
+
 - (void)updateMaxForReps:(int)reps {
-    [self.oneRepField setText:[[[OneRepEstimator new] estimate:[self.set roundedEffectiveWeight] withReps:reps] stringValue]];
+    [self.oneRepField setText:[[[OneRepEstimator new] estimate:self.currentWeight withReps:reps] stringValue]];
 }
 
 - (IBAction)liftIncomplete:(id)sender {

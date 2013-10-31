@@ -21,7 +21,7 @@
     [controller setSet:set];
     [controller setupFields];
 
-    STAssertEqualObjects([[controller weightField] text], @"180 lbs", @"");
+    STAssertEqualObjects([[controller weightField] placeholder], @"180", @"");
     STAssertEqualObjects([[controller repsField] placeholder], @"3", @"");
 }
 
@@ -63,6 +63,19 @@
     [controller viewWillAppear:YES];
 
     STAssertEqualObjects([[controller oneRepField] text], @"210", @"");
+}
+
+- (void) testUsesPreviouslyEnteredWeightForOneRepMax {
+    FTOSetRepsForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
+    FTOSet *set = [[FTOSetStore instance] create];
+    set.percentage = N(100);
+    set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    set.lift.weight = N(300);
+    set.reps = @1;
+    [controller setSet:set];
+    [controller setPreviouslyEnteredWeight:set.lift.weight];
+    [controller viewWillAppear:YES];
+    STAssertEqualObjects([[controller oneRepField] text], @"300", @"");
 }
 
 @end

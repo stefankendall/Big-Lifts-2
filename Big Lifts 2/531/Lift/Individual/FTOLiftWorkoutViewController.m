@@ -132,8 +132,12 @@
         FTOSetRepsForm *form = [segue destinationViewController];
         Set *tappedSet = self.ftoWorkout.workout.orderedSets[[self.tappedSetRow unsignedIntegerValue]];
         NSNumber *previouslyEnteredReps = [self.variableReps objectForKey:self.tappedSetRow];
+        NSDecimalNumber *previouslyEnteredWeight = [self.variableWeight objectForKey:self.tappedSetRow];
         if (previouslyEnteredReps) {
             [form setPreviouslyEnteredReps:[previouslyEnteredReps intValue]];
+        }
+        if( previouslyEnteredWeight ){
+            [form setPreviouslyEnteredWeight: previouslyEnteredWeight];
         }
         [form setSet:tappedSet];
         [form setDelegate:self];
@@ -179,6 +183,7 @@
 - (void)setWorkout:(FTOWorkout *)ftoWorkout1 {
     self.ftoWorkout = ftoWorkout1;
     self.variableReps = [@{} mutableCopy];
+    self.variableWeight = [@{} mutableCopy];
 }
 
 - (BOOL)missedAmrapReps {
@@ -206,11 +211,16 @@
         if (reps != nil && [reps intValue] == 0) {
             continue;
         }
+        NSDecimalNumber *weight = self.variableWeight[[NSNumber numberWithInt:i]];
 
         SetLog *setLog = [[SetLogStore instance] createFromSet:set];
         if (reps != nil) {
             setLog.reps = reps;
         }
+        if (weight != nil ) {
+            setLog.weight = weight;
+        }
+
         [log.sets addObject:setLog];
     }
 }
@@ -224,6 +234,10 @@
 
 - (void)repsChanged:(NSNumber *)reps {
     self.variableReps[self.tappedSetRow] = reps;
+}
+
+- (void)weightChanged:(NSDecimalNumber *)weight {
+    self.variableWeight[self.tappedSetRow] = weight;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
