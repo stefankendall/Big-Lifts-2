@@ -43,7 +43,9 @@
 - (void)testCanArrangeLifts {
     FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
     FTOLift *firstLift = [[FTOLiftStore instance] first];
+    STAssertEqualObjects(firstLift.order, @0, @"");
     FTOLift *secondLift = [[FTOLiftStore instance] atIndex:1];
+    STAssertEqualObjects(secondLift.order, @1, @"");
     FTOWorkout *firstWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     FTOWorkout *secondWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][1];
     [controller tableView:controller.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] toIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
