@@ -1,4 +1,4 @@
-#import "FTOSetRepsForm.h"
+#import "FTOSetChangeForm.h"
 #import "Set.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "SetChangeDelegate.h"
@@ -7,11 +7,13 @@
 #import "Purchaser.h"
 #import "OneRepEstimator.h"
 
-@implementation FTOSetRepsForm
+@implementation FTOSetChangeForm
 
 - (void)viewDidLoad {
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.repsField];
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.weightField];
     [self.repsField setDelegate:self];
+    [self.weightField setDelegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -20,11 +22,10 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSNumber *reps = [NSNumber numberWithInt:[[textField text] intValue]];
-    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text] locale:NSLocale.currentLocale];
+    NSNumber *reps = [NSNumber numberWithInt:[self currentReps]];
     [self updateMaxForReps:[reps intValue]];
     [self.delegate repsChanged:reps];
-    [self.delegate weightChanged:weight];
+    [self.delegate weightChanged:self.currentWeight];
 }
 
 - (void)setupFields {
@@ -42,6 +43,16 @@
     [self updateMaxForReps:repsForMax];
 }
 
+- (int)currentReps {
+    NSString *repsText = [self.repsField text];
+    if(![repsText isEqualToString:@""]){
+        return [repsText intValue];
+    }
+    else {
+        return [self.set.reps intValue];
+    }
+}
+
 - (NSDecimalNumber *)currentWeight {
     NSString *enteredWeightString = self.weightField.text;
     if (![enteredWeightString isEqualToString:@""]) {
@@ -53,16 +64,12 @@
 }
 
 - (void)updateMaxForReps:(int)reps {
-    [self.oneRepField setText:[[[OneRepEstimator new] estimate:self.currentWeight withReps:reps] stringValue]];
+    [self.oneRepField setText:[[[OneRepEstimator new] estimate:self.currentWeight withReps:self.currentReps] stringValue]];
 }
 
 - (IBAction)liftIncomplete:(id)sender {
     [self.delegate repsChanged:@0];
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self emptyView];
 }
 
 @end

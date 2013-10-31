@@ -1,6 +1,6 @@
-#import "FTOSetRepsFormTests.h"
+#import "FTOSetChangeFormTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
-#import "FTOSetRepsForm.h"
+#import "FTOSetChangeForm.h"
 #import "SetStore.h"
 #import "FTOSetStore.h"
 #import "FTOSet.h"
@@ -9,10 +9,10 @@
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 
-@implementation FTOSetRepsFormTests
+@implementation FTOSetChangeFormTests
 
 - (void)testSetSetSetsFormFields {
-    FTOSetRepsForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
+    FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     FTOSet *set = [[FTOSetStore instance] create];
     set.percentage = N(100);
     set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
@@ -26,20 +26,20 @@
 }
 
 - (void)testHidesOneRepEstimateWithoutIAP {
-    FTOSetRepsForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
+    FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     [controller viewWillAppear:YES];
     STAssertTrue( [controller.oneRepField isHidden], @"");
 }
 
 - (void)testShowsOneRepEstimateWithIAP {
     [[IAPAdapter instance] addPurchase:IAP_1RM];
-    FTOSetRepsForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
+    FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     [controller viewWillAppear:YES];
     STAssertFalse( [controller.oneRepField isHidden], @"");
 }
 
 - (void)testSetsOneRepMaxWhenViewAppears {
-    FTOSetRepsForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
+    FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     FTOSet *set = [[FTOSetStore instance] create];
     set.percentage = N(100);
     set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
@@ -52,7 +52,7 @@
 }
 
 - (void)testUsesPreviousEnteredRepsForOneRepMax {
-    FTOSetRepsForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
+    FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     FTOSet *set = [[FTOSetStore instance] create];
     set.percentage = N(100);
     set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
@@ -66,7 +66,7 @@
 }
 
 - (void) testUsesPreviouslyEnteredWeightForOneRepMax {
-    FTOSetRepsForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
+    FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     FTOSet *set = [[FTOSetStore instance] create];
     set.percentage = N(100);
     set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];

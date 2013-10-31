@@ -11,7 +11,7 @@
 #import "FTOLiftWorkoutToolbar.h"
 #import "FTORepsToBeatCalculator.h"
 #import "FTORepsToBeatBreakdown.h"
-#import "FTOSetRepsForm.h"
+#import "FTOSetChangeForm.h"
 #import "SetLog.h"
 #import "FTOCycleAdjustor.h"
 #import "UITableViewController+NoEmptyRows.h"
@@ -129,7 +129,7 @@
         [breakdown setLastSet:[[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets]];
     }
     else if ([[segue identifier] isEqualToString:@"ftoSetRepsForm"]) {
-        FTOSetRepsForm *form = [segue destinationViewController];
+        FTOSetChangeForm *form = [segue destinationViewController];
         Set *tappedSet = self.ftoWorkout.workout.orderedSets[[self.tappedSetRow unsignedIntegerValue]];
         NSNumber *previouslyEnteredReps = [self.variableReps objectForKey:self.tappedSetRow];
         NSDecimalNumber *previouslyEnteredWeight = [self.variableWeight objectForKey:self.tappedSetRow];

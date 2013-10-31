@@ -1,7 +1,7 @@
 @class Set;
 @protocol SetChangeDelegate;
 
-@interface FTOSetRepsForm : UITableViewController <UITextFieldDelegate> {
+@interface FTOSetChangeForm : UITableViewController <UITextFieldDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UITextField *repsField;
 @property (weak, nonatomic) IBOutlet UITextField *weightField;
