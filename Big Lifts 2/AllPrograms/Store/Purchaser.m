@@ -57,6 +57,7 @@ NSString *const IAP_FTO_CUSTOM = @"ftoCustom";
                                                     message:@"Something went wrong trying to connect to the store. Please try again later."
                                                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [error performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:IAP_PURCHASED_NOTIFICATION object:nil]];
 }
 
 - (void)successfulPurchase:(NSString *)purchaseId {

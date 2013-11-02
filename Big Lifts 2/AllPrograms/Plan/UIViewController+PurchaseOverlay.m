@@ -9,7 +9,8 @@
 @implementation UIViewController (PurchaseOverlay)
 
 - (void)disable:(NSString *)purchaseId view:(UIView *)view {
-    if (![view viewWithTag:kPurchaseOverlayTag]) {
+    PurchaseOverlay *overlay = (PurchaseOverlay *) [view viewWithTag:kPurchaseOverlayTag];
+    if (!overlay) {
         PurchaseOverlay *overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
         CGRect frame = CGRectMake(0, 0, [view frame].size.width, [view frame].size.height);
         [overlay setFrame:frame];
@@ -26,6 +27,9 @@
             UITableViewCell *cell = (UITableViewCell *) view;
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         }
+    }
+    else {
+        [overlay setLoading:NO];
     }
 }
 
