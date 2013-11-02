@@ -5,6 +5,13 @@
 
 @implementation WorkoutLogStore
 
+- (WorkoutLog *)createWithName:(NSString *)name date:(NSDate *)date {
+    WorkoutLog *workoutLog = [self create];
+    workoutLog.name = name;
+    workoutLog.date = date;
+    return workoutLog;
+}
+
 - (void)onLoad {
     [self correctEmptyOrderOnSets];
 }

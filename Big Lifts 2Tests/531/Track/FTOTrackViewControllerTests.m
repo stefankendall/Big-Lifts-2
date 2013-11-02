@@ -9,6 +9,7 @@
 #import "SetLogStore.h"
 #import "SetLog.h"
 #import "FTOSettingsStore.h"
+#import "FTOTrackToolbarCell.h"
 
 @implementation FTOTrackViewControllerTests
 
@@ -32,14 +33,17 @@
 
 - (void)testViewButtonTappedTogglesText {
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
-    [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work", @"");
+    FTOTrackToolbarCell *cell = (FTOTrackToolbarCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertEqualObjects([cell.viewButton titleForState:UIControlStateNormal], @"Work", @"");
     [controller viewButtonTapped:nil];
-    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Last", @"");
+    cell = (FTOTrackToolbarCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertEqualObjects([cell.viewButton titleForState:UIControlStateNormal], @"Last", @"");
     [controller viewButtonTapped:nil];
-    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"All", @"");
+    cell = (FTOTrackToolbarCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertEqualObjects([cell.viewButton titleForState:UIControlStateNormal], @"All", @"");
     [controller viewButtonTapped:nil];
-    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work", @"");
+    cell = (FTOTrackToolbarCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    STAssertEqualObjects([cell.viewButton titleForState:UIControlStateNormal], @"Work", @"");
 }
 
 - (void)testViewButtonTappedChangesView {
@@ -96,6 +100,32 @@
     [[[FTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt:kShowAmrap]];
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     STAssertEquals(controller.showState, kShowAmrap, @"");
+}
+
+- (void)testCanSortLogAlphabetically {
+    NSDateFormatter *df = [NSDateFormatter new];
+    [df setDateFormat:@"yyyy-MM-dd"];
+    WorkoutLog *oldBench = [[WorkoutLogStore instance] createWithName:@"5/3/1" date: [df dateFromString:@"2013-01-01"]];
+    [oldBench addSet:[[SetLogStore instance] createWithName:@"Bench" weight:N(200) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    WorkoutLog *oldSquat = [[WorkoutLogStore instance] createWithName:@"5/3/1" date: [df dateFromString:@"2013-01-03"]];
+    [oldSquat addSet:[[SetLogStore instance] createWithName:@"Squat" weight:N(300) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    WorkoutLog *newBench = [[WorkoutLogStore instance] createWithName:@"5/3/1" date: [df dateFromString:@"2013-01-05"]];
+    [newBench addSet:[[SetLogStore instance] createWithName:@"Bench" weight:N(205) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    WorkoutLog *newSquat = [[WorkoutLogStore instance] createWithName:@"5/3/1" date: [df dateFromString:@"2013-01-07"]];
+    [newSquat addSet:[[SetLogStore instance] createWithName:@"Squat" weight:N(310) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+
+    FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
+    STAssertEquals([controller getLog][0], newSquat, @"");
+    STAssertEquals([controller getLog][1], newBench, @"");
+    STAssertEquals([controller getLog][2], oldSquat, @"");
+    STAssertEquals([controller getLog][3], oldBench, @"");
+
+    [controller sortButtonTapped: nil];
+
+    STAssertEquals([controller getLog][0], newBench, @"");
+    STAssertEquals([controller getLog][1], oldBench, @"");
+    STAssertEquals([controller getLog][2], newSquat, @"");
+    STAssertEquals([controller getLog][3], oldSquat, @"");
 }
 
 - (int)getCellRowCount:(FTOTrackViewController *)controller {

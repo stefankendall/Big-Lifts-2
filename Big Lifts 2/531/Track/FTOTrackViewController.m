@@ -9,6 +9,7 @@
 #import "FTOWorkoutLogAmrapDataSource.h"
 #import "FTOSettings.h"
 #import "FTOSettingsStore.h"
+#import "SetLog.h"
 
 @interface FTOTrackViewController ()
 @property(nonatomic) WorkoutLog *tappedLog;
@@ -19,10 +20,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.showState = (ShowState) [[[[FTOSettingsStore instance] first] logState] intValue];
+    self.trackSort = (TrackSort) 0;
 }
 
 - (NSArray *)getLog {
-    return [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
+    NSArray *log = [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
+
+    if(self.trackSort == kNewest){
+        return log;
+    }
+    else {
+        return [log sortedArrayUsingComparator:^NSComparisonResult(WorkoutLog *log1, WorkoutLog *log2) {
+            SetLog *setLog1 = [log1.orderedSets firstObject];
+            SetLog *setLog2 = [log2.orderedSets firstObject];
+            if([setLog1.name isEqualToString:setLog2.name]){
+                return [log2.date compare:log1.date];
+            }
+            else {
+                return [setLog1.name compare:setLog2.name];
+            }
+        }];
+    }
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
@@ -44,17 +62,25 @@
             cell = [FTOTrackToolbarCell create];
         }
         [cell.viewButton addTarget:self action:@selector(viewButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.sortButton addTarget:self action:@selector(sortButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         [self setupDeleteButton:cell.deleteButton];
-        self.viewButton = cell.viewButton;
         if (self.showState == kShowAll) {
-            [self.viewButton setTitle:@"All" forState:UIControlStateNormal];
+            [cell.viewButton setTitle:@"All" forState:UIControlStateNormal];
         }
         else if (self.showState == kShowWorkSets) {
-            [self.viewButton setTitle:@"Work" forState:UIControlStateNormal];
+            [cell.viewButton setTitle:@"Work" forState:UIControlStateNormal];
         }
         else {
-            [self.viewButton setTitle:@"Last" forState:UIControlStateNormal];
+            [cell.viewButton setTitle:@"Last" forState:UIControlStateNormal];
         }
+
+        if (self.trackSort == kNewest){
+            [cell.sortButton setTitle:@"Newest" forState:UIControlStateNormal];
+        }
+        else {
+            [cell.sortButton setTitle:@"A-Z" forState:UIControlStateNormal];
+        }
+
         return cell;
     }
     else {
@@ -80,6 +106,11 @@
         [cell.setTable setDelegate:cell.workoutLogTableDataSource];
         return cell;
     }
+}
+
+- (void)sortButtonTapped:(id)sortButtonTapped {
+    self.trackSort = (self.trackSort + 1) % 2;
+    [self.tableView reloadData];
 }
 
 - (void)viewButtonTapped:(id)sender {

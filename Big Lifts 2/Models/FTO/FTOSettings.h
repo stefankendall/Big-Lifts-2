@@ -4,6 +4,11 @@ typedef enum {
     kShowAmrap = 1
 } ShowState;
 
+typedef enum {
+    kNewest = 0,
+    kAlphabetical = 1
+} TrackSort;
+
 @interface FTOSettings : NSManagedObject
 @property(nonatomic) NSDecimalNumber *trainingMax;
 @property(nonatomic) BOOL warmupEnabled;
