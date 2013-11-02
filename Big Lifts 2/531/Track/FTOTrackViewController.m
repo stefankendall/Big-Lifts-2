@@ -50,10 +50,10 @@
             [self.viewButton setTitle:@"All" forState:UIControlStateNormal];
         }
         else if (self.showState == kShowWorkSets) {
-            [self.viewButton setTitle:@"Work Sets" forState:UIControlStateNormal];
+            [self.viewButton setTitle:@"Work" forState:UIControlStateNormal];
         }
         else {
-            [self.viewButton setTitle:@"Last Set" forState:UIControlStateNormal];
+            [self.viewButton setTitle:@"Last" forState:UIControlStateNormal];
         }
         return cell;
     }

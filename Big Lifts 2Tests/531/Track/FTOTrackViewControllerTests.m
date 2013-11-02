@@ -33,13 +33,13 @@
 - (void)testViewButtonTappedTogglesText {
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work Sets", @"");
+    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work", @"");
     [controller viewButtonTapped:nil];
-    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Last Set", @"");
+    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Last", @"");
     [controller viewButtonTapped:nil];
     STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"All", @"");
     [controller viewButtonTapped:nil];
-    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work Sets", @"");
+    STAssertEqualObjects([controller.viewButton titleForState:UIControlStateNormal], @"Work", @"");
 }
 
 - (void)testViewButtonTappedChangesView {
