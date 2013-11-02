@@ -26,7 +26,7 @@
     setLog.reps = @1;
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
-    [workoutLog.sets addObject:setLog];
+    [workoutLog addSet:setLog];
 
     [breakdown setLastSet:set];
     [breakdown viewWillAppear:YES];

@@ -25,7 +25,7 @@
     [[WorkoutLogStore instance] create];
     WorkoutLog *log = [[WorkoutLogStore instance] create];
     log.name = @"5/3/1";
-    [log.sets addObject:[[SetLogStore instance] create]];
+    [log addSet:[[SetLogStore instance] create]];
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     STAssertEquals([controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
@@ -47,9 +47,9 @@
     log.name = @"5/3/1";
     SetLog *setLog = [[SetLogStore instance] create];
     setLog.warmup = YES;
-    [log.sets addObject:setLog];
-    [log.sets addObject:[[SetLogStore instance] create]];
-    [log.sets addObject:[[SetLogStore instance] create]];
+    [log addSet:setLog];
+    [log addSet:[[SetLogStore instance] create]];
+    [log addSet:[[SetLogStore instance] create]];
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     int TWO_WORK_SETS = 2;
     STAssertEquals([self getCellRowCount:controller], TWO_WORK_SETS, @"");

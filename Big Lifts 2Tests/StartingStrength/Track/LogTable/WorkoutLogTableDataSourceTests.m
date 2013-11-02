@@ -12,11 +12,11 @@
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     SetLog *set1 = [[SetLogStore instance] create];
     set1.name = @"Squat";
-    [workoutLog.sets addObject:set1];
+    [workoutLog addSet:set1];
 
     SetLog *set2 = [[SetLogStore instance] create];
     set2.name = @"Press";
-    [workoutLog.sets addObject:set2];
+    [workoutLog addSet:set2];
 
     WorkoutLogTableDataSource *dataSource = [[WorkoutLogTableDataSource alloc] initWithWorkoutLog:workoutLog];
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
@@ -26,11 +26,11 @@
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     SetLog *set1 = [[SetLogStore instance] create];
     set1.name = @"Squat";
-    [workoutLog.sets addObject:set1];
+    [workoutLog addSet:set1];
 
     SetLog *set2 = [[SetLogStore instance] create];
     set2.name = @"Squat";
-    [workoutLog.sets addObject:set2];
+    [workoutLog addSet:set2];
 
     WorkoutLogTableDataSource *dataSource = [[WorkoutLogTableDataSource alloc] initWithWorkoutLog:workoutLog];
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 1, @"");

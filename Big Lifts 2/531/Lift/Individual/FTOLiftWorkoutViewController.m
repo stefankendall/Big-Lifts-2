@@ -201,9 +201,9 @@
 }
 
 - (void)logWorkout {
-    WorkoutLog *log = [[WorkoutLogStore instance] create];
-    log.name = @"5/3/1";
-    log.date = [NSDate new];
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    workoutLog.name = @"5/3/1";
+    workoutLog.date = [NSDate new];
 
     NSArray *sets = self.ftoWorkout.workout.orderedSets;
     for (int i = 0; i < [sets count]; i++) {
@@ -222,7 +222,7 @@
             setLog.weight = weight;
         }
 
-        [log.sets addObject:setLog];
+        [workoutLog addSet:setLog];
     }
 }
 

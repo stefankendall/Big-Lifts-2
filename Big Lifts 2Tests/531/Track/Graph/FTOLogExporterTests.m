@@ -31,7 +31,7 @@
     setLog2_1.weight = N(100);
     setLog2_1.reps = @5;
     setLog2_1.name = @"Press";
-    [workoutLog2.sets addObject:setLog2_1];
+    [workoutLog2 addSet:setLog2_1];
 
     NSMutableString *expected = [@"name,date,weight,reps,estimated max\n" mutableCopy];
     [expected appendString:@"Press,2/1/13,100,5,116.7\n"];

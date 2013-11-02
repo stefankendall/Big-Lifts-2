@@ -14,7 +14,7 @@
     for (WorkoutLog *workoutLog in allWorkouts) {
         if ([[workoutLog.orderedSets firstObject] order] == nil ) {
             int count = 0;
-            for (SetLog *set in workoutLog.sets) {
+            for (SetLog *set in workoutLog.orderedSets) {
                 set.order = [NSNumber numberWithInt:count++];
             }
         }

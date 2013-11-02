@@ -66,7 +66,7 @@
 
     for (Workout *workout in self.ssWorkout.workouts) {
         for (Set *set in [workout workSets]) {
-            [log.sets addObject:[[SetLogStore instance] createFromSet:set]];
+            [log addSet:[[SetLogStore instance] createFromSet:set]];
         }
     }
 }

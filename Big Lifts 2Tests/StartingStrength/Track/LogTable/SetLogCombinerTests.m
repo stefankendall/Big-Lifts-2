@@ -19,13 +19,13 @@
     set1.name = @"Squat";
     set1.reps = @3;
     set1.weight = N(100);
-    [workoutLog.sets addObject:set1];
+    [workoutLog addSet:set1];
 
     SetLog *set2 = [[SetLogStore instance] create];
     set2.name = @"Squat";
     set2.reps = @3;
     set2.weight = N(100);
-    [workoutLog.sets addObject:set2];
+    [workoutLog addSet:set2];
 
     NSArray *combined = [[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:@[set1, set2]]];
     STAssertEquals([combined count], (NSUInteger) 1, @"");
@@ -40,19 +40,19 @@
     set1.name = @"Squat";
     set1.reps = @3;
     set1.weight = N(100);
-    [workoutLog.sets addObject:set1];
+    [workoutLog addSet:set1];
 
     SetLog *set2 = [[SetLogStore instance] create];
     set2.name = @"Squat";
     set2.reps = @3;
     set2.weight = N(140);
-    [workoutLog.sets addObject:set2];
+    [workoutLog addSet:set2];
 
     SetLog *set3 = [[SetLogStore instance] create];
     set3.name = @"Squat";
     set3.reps = @3;
     set3.weight = N(100);
-    [workoutLog.sets addObject:set3];
+    [workoutLog addSet:set3];
 
     NSArray *combined = [[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:@[set1, set2, set3]]];
     STAssertEquals([combined count], (NSUInteger) 3, @"");

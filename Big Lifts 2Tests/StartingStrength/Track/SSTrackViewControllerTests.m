@@ -20,9 +20,9 @@
 - (void)createWorkoutLog {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     workoutLog.name = @"Starting Strength";
-    [workoutLog.sets addObject:[[SetLogStore instance] create]];
-    [workoutLog.sets addObject:[[SetLogStore instance] create]];
-    [workoutLog.sets addObject:[[SetLogStore instance] create]];
+    [workoutLog addSet:[[SetLogStore instance] create]];
+    [workoutLog addSet:[[SetLogStore instance] create]];
+    [workoutLog addSet:[[SetLogStore instance] create]];
 }
 
 - (void)testHeightForRowAtIndexPathIsNonZeroAfterDelete {

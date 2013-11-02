@@ -67,7 +67,7 @@
     [self.controller repsChanged:@0];
     [self.controller doneButtonTapped:nil];
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] find:@"name" value:@"5/3/1"];
-    STAssertEquals([workoutLog.sets count], 5U, @"");
+    STAssertEquals([workoutLog.orderedSets count], 5U, @"");
 }
 
 - (void)testTappingAmrapCellCausesSegue {
