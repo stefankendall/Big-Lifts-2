@@ -12,6 +12,9 @@
 #import "WeightRounder.h"
 #import "IIViewDeckController.h"
 #import "SJWorkoutStore.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
+#import "SJSetCellWithPlates.h"
 
 @interface SJIndividualLiftViewController ()
 @property(nonatomic, strong) NSDecimalNumber *liftedWeight;
@@ -58,13 +61,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SJSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SJSetCell.class)];
+    Class class = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SJSetCellWithPlates.class : SJSetCell.class;
+    SJSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(class)];
     if (!cell) {
-        cell = [SJSetCell create];
+        cell = [class create];
     }
-
     [cell setSjWorkout:self.sjWorkout withSet:self.sjWorkout.workout.orderedSets[(NSUInteger) [indexPath row]] withEnteredWeight:self.liftedWeight];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[self tableView:tableView cellForRowAtIndexPath:indexPath] frame].size.height;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
