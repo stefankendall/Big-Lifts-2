@@ -1,3 +1,5 @@
+#import <MRCEnumerable/NSArray+Utilities.h>
+#import <MRCEnumerable/NSSet+Utilities.h>
 #import "FTOLiftStore.h"
 #import "FTOLift.h"
 #import "NSArray+Enumerable.h"
@@ -24,6 +26,8 @@
     if ([self orderingBroken]) {
         [self fixOrdering];
     }
+
+    [self dataWasSynced];
 }
 
 - (void)fixOrdering {
@@ -69,6 +73,33 @@
 
 - (void)dataWasSynced {
     [self removeUnusedLifts];
+    [self removeDoubledLifts];
+}
+
+- (void)removeDoubledLifts {
+    NSMutableSet *doubledLiftNames = [NSMutableSet new];
+    for (FTOLift *lift in [self findAll]) {
+        if ([[self findAllWhere:@"name" value:lift.name] count] > 1) {
+            [doubledLiftNames addObject:lift.name];
+        }
+    }
+    if (![doubledLiftNames empty]) {
+        for (NSString *liftName in doubledLiftNames) {
+            NSLog(@"Removing: %@", liftName);
+            NSArray *lifts = [self findAllWhere:@"name" value:liftName];
+            FTOLift *lift1 = lifts[0];
+            FTOLift *lift2 = lifts[1];
+            FTOLift *liftToRemove = nil;
+            if ([lift1.weight compare:lift2.weight] == NSOrderedDescending) {
+                liftToRemove = lift2;
+            }
+            else {
+                liftToRemove = lift1;
+            }
+            [self remove:liftToRemove];
+        }
+        [[FTOWorkoutStore instance] restoreTemplate];
+    }
 }
 
 - (void)removeUnusedLifts {
@@ -83,8 +114,11 @@
         }
     }
 
-    for (FTOLift *unusedLift in unusedLifts) {
-        [self remove:unusedLift];
+    if (![unusedLifts empty]) {
+        for (FTOLift *unusedLift in unusedLifts) {
+            [self remove:unusedLift];
+        }
+        [[FTOWorkoutStore instance] restoreTemplate];
     }
 }
 
