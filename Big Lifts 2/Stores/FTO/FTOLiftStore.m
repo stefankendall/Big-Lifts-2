@@ -85,7 +85,6 @@
     }
     if (![doubledLiftNames empty]) {
         for (NSString *liftName in doubledLiftNames) {
-            NSLog(@"Removing: %@", liftName);
             NSArray *lifts = [self findAllWhere:@"name" value:liftName];
             FTOLift *lift1 = lifts[0];
             FTOLift *lift2 = lifts[1];
