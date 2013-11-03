@@ -57,8 +57,8 @@
         WorkoutLogCell *cell = (WorkoutLogCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(WorkoutLogCell.class)];
         if (!cell) {
             cell = [WorkoutLogCell create];
-            [cell setWorkoutLog:[self getLog][(NSUInteger) [indexPath row]]];
         }
+        [cell setWorkoutLog:[self getLog][(NSUInteger) [indexPath row]]];
         return cell;
     }
 }
