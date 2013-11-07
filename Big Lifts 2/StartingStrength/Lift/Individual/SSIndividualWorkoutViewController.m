@@ -13,6 +13,7 @@
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "SetCellWithPlates.h"
+#import "SetLog.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -64,9 +65,12 @@
     log.name = @"Starting Strength";
     log.date = [NSDate date];
 
+    int order = 0;
     for (Workout *workout in self.ssWorkout.workouts) {
         for (Set *set in [workout workSets]) {
-            [log addSet:[[SetLogStore instance] createFromSet:set]];
+            SetLog *setLog = [[SetLogStore instance] createFromSet:set];
+            setLog.order = [NSNumber numberWithInt:order++];
+            [log addSet:setLog];
         }
     }
 }

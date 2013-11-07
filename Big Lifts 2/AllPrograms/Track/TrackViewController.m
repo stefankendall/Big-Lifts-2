@@ -28,11 +28,7 @@
 
 - (int)getRowCount:(NSIndexPath *)path {
     WorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
-    return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:workoutLog.orderedSets]] count];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self emptyView];
+    return [workoutLog.orderedSets count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -54,13 +50,17 @@
         return cell;
     }
     else {
-        WorkoutLogCell *cell = (WorkoutLogCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(WorkoutLogCell.class)];
-        if (!cell) {
+        return [self getWorkoutLogCell:tableView indexPath:indexPath];
+    }
+}
+
+- (UITableViewCell *)getWorkoutLogCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
+    WorkoutLogCell *cell = (WorkoutLogCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(WorkoutLogCell.class)];
+    if (!cell) {
             cell = [WorkoutLogCell create];
         }
-        [cell setWorkoutLog:[self getLog][(NSUInteger) [indexPath row]]];
-        return cell;
-    }
+    [cell setWorkoutLog:[self getLog][(NSUInteger) [indexPath row]]];
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle

@@ -87,6 +87,7 @@
 		545902DBF4BFDB74EE3B1E44 /* SSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A9BCBEE999725C40F30 /* SSWorkout.m */; };
 		545902EFCD9F9F1EBA65EAD0 /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */; };
 		545902F0BC58AB172DD6BC5E /* SJSetCellWithPlates.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900CAE6D409CA1EF180D2 /* SJSetCellWithPlates.m */; };
+		545902F7A6BB2E8704F6D35C /* SSWorkoutLogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901F1F797C343B8834834 /* SSWorkoutLogDataSource.m */; };
 		545902FCC55404D23E2371B6 /* WeightRounderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FDB8CA58939CD289C59 /* WeightRounderTests.m */; };
 		5459030178CDB3541A5DF85B /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590EA1850C09016389A994 /* TextFieldCell.xib */; };
 		54590310C9716D13D45EE24A /* StepperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900ACE07DCFE4AFDFB743 /* StepperCell.m */; };
@@ -428,6 +429,7 @@
 		5459009D708C85D73598095F /* AddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCell.m; sourceTree = "<group>"; };
 		545900A08C2C00EB4457CF7E /* BLTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLTestCase.m; sourceTree = "<group>"; };
 		545900ACE07DCFE4AFDFB743 /* StepperCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepperCell.m; sourceTree = "<group>"; };
+		545900AEB0039EC0E53217D7 /* SSWorkoutLogDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkoutLogDataSource.h; sourceTree = "<group>"; };
 		545900B7BC22B78ED5B7189E /* FTOCustomWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomWorkoutViewController.m; sourceTree = "<group>"; };
 		545900BBA3B4304E1C2E2F20 /* SSWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkout.h; sourceTree = "<group>"; };
 		545900BC7437BC4F0DF65474 /* 101-gameplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "101-gameplan.png"; sourceTree = "<group>"; };
@@ -480,6 +482,7 @@
 		545901E316778F0DEA187B91 /* FTOLiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftViewController.m; sourceTree = "<group>"; };
 		545901EB94DA8D701E89016F /* FTODeload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTODeload.h; sourceTree = "<group>"; };
 		545901EFE2FF6E163E6DE39C /* FTOBoringButBigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOBoringButBigViewController.h; sourceTree = "<group>"; };
+		545901F1F797C343B8834834 /* SSWorkoutLogDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkoutLogDataSource.m; sourceTree = "<group>"; };
 		545901F53CA008CA954401BF /* FTOBoringButBigAssistanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOBoringButBigAssistanceTests.m; sourceTree = "<group>"; };
 		545901F56B3627441C838476 /* SetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
 		54590200B2CA6B53EE57B43B /* FTOCustomToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomToolbar.m; sourceTree = "<group>"; };
@@ -2236,6 +2239,8 @@
 			children = (
 				5459084B5272E0A8A289018A /* SSTrackViewController.m */,
 				5459072F4052B97BCB6E1D5A /* SSTrackViewController.h */,
+				545901F1F797C343B8834834 /* SSWorkoutLogDataSource.m */,
+				545900AEB0039EC0E53217D7 /* SSWorkoutLogDataSource.h */,
 			);
 			path = Track;
 			sourceTree = "<group>";
@@ -3053,6 +3058,7 @@
 				54590C71FF672BBA9B1E8D73 /* AddPurchaseViewController.m in Sources */,
 				545902F0BC58AB172DD6BC5E /* SJSetCellWithPlates.m in Sources */,
 				5459001E5B4F96C22B3EB944 /* LogCellWithSets.m in Sources */,
+				545902F7A6BB2E8704F6D35C /* SSWorkoutLogDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
