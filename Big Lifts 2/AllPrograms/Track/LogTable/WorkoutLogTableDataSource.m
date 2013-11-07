@@ -15,7 +15,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self getCombinedSets] count];
+    return [[self.workoutLog orderedSets] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -24,13 +24,9 @@
     if (cell == nil) {
         cell = [SetLogCell create];
     }
-    [cell setSetLogContainer:[[self getCombinedSets] objectAtIndex:(NSUInteger) [indexPath row]]];
+    [cell setSetLog:[[self.workoutLog orderedSets] objectAtIndex:(NSUInteger) [indexPath row]]];
 
     return cell;
-}
-
-- (NSArray *)getCombinedSets {
-    return [[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:self.workoutLog.orderedSets]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

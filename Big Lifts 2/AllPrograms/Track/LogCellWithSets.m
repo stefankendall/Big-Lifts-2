@@ -1,19 +1,18 @@
-#import "SetLogCell.h"
+#import "LogCellWithSets.h"
+#import "SetLogContainer.h"
 #import "SetLog.h"
-#import "Settings.h"
 #import "SettingsStore.h"
+#import "Settings.h"
 
-@implementation SetLogCell
+@implementation LogCellWithSets
 
-int const SET_LOG_CELL_HEIGHT = 30;
-
-- (void)setSetLog:(SetLog *)setLog {
-    _setLog = setLog;
-
+- (void)setSetLogContainer:(SetLogContainer *)setLogContainer {
+    self.setLog = setLogContainer.setLog;
     [self.liftNameLabel setText:[self.setLog name]];
+    [self.setsLabel setText:[NSString stringWithFormat:@"%dx", setLogContainer.count]];
     int reps = [[self.setLog reps] intValue];
     if (reps > 0) {
-        [self.repsLabel setText:[NSString stringWithFormat:@"%dx", reps]];
+        [self.repsLabel setText:[NSString stringWithFormat:@"%d", reps]];
     }
     else {
         [self.repsLabel setText:@""];

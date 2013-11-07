@@ -21,7 +21,7 @@
         logToShow = [self.workoutLog.orderedSets lastObject];
     }
 
-    [cell setSetLogContainer:[[SetLogContainer alloc] initWithSetLog:logToShow]];
+    [cell setSetLog:logToShow];
     return cell;
 }
 @end

@@ -22,7 +22,7 @@
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
 }
 
-- (void)testCombinesIdenticalSets {
+- (void)testDoesNotCombinesIdenticalSets {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     SetLog *set1 = [[SetLogStore instance] create];
     set1.name = @"Squat";
@@ -33,7 +33,7 @@
     [workoutLog addSet:set2];
 
     WorkoutLogTableDataSource *dataSource = [[WorkoutLogTableDataSource alloc] initWithWorkoutLog:workoutLog];
-    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 1, @"");
+    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
 }
 
 @end

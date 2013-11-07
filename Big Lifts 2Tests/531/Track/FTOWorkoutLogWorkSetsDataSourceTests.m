@@ -28,7 +28,7 @@
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
 }
 
-- (void) testCombinesWorkSets {
+- (void) testDoesNotCombinesWorkSets {
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     SetLog *work1 = [[SetLogStore instance] create];
     work1.reps = @3;
@@ -45,7 +45,7 @@
     [workoutLog.sets addObjectsFromArray:@[work1, work2, work3]];
 
     FTOWorkoutLogWorkSetsDataSource *dataSource = [[FTOWorkoutLogWorkSetsDataSource alloc] initWithWorkoutLog:workoutLog];
-    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
+    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 3, @"");
 }
 
 @end
