@@ -9,6 +9,28 @@
     [[SettingsStore instance] registerChangeListener:^{
         [self adjustForKg];
     }];
+    [self removeDuplicatedPlates];
+}
+
+- (void)dataWasSynced {
+    [self removeDuplicatedPlates];
+}
+
+- (void)removeDuplicatedPlates {
+    NSArray *plates = [[PlateStore instance] findAll];
+    NSMutableSet *duplicatedPlates = [NSMutableSet new];
+    for (Plate *plate in plates) {
+        if ([[[PlateStore instance] findAllWhere:@"weight" value:plate.weight] count] > 1) {
+            [duplicatedPlates addObject:plate.weight];
+        }
+    }
+
+    for (NSDecimalNumber *weight in duplicatedPlates) {
+        NSArray *dupes = [[PlateStore instance] findAllWhere:@"weight" value:weight];
+        for (int i = 1; i < [dupes count]; i++) {
+            [[PlateStore instance] remove:dupes[(NSUInteger) i]];
+        }
+    }
 }
 
 - (void)setupDefaults {

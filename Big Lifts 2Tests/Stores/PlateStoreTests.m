@@ -13,11 +13,23 @@
     STAssertEquals([[plate count] intValue], 6, @"");
 }
 
+- (void)testRemovesDuplicatedPlatesOnLoad {
+    Plate *p45 = [[PlateStore instance] create];
+    p45.count = [NSNumber numberWithInt:2];
+    p45.weight = N(45);
+    Plate *p35 = [[PlateStore instance] create];
+    p35.count = [NSNumber numberWithInt:2];
+    p35.weight = N(35);
+
+    [[PlateStore instance] onLoad];
+    STAssertEquals([[PlateStore instance] count], 6, @"");
+}
+
 - (void)testCanFindPlatesSortedByWeight {
     NSArray *allPlates = [[PlateStore instance] findAll];
     for (int i = 0; i < [allPlates count] - 1; i++) {
-        Plate *currentPlate = allPlates[i];
-        Plate *nextPlate = allPlates[i + 1];
+        Plate *currentPlate = allPlates[(NSUInteger) i];
+        Plate *nextPlate = allPlates[(NSUInteger) (i + 1)];
 
         double weight1 = [currentPlate.weight doubleValue];
         double weight2 = [nextPlate.weight doubleValue];
