@@ -1,0 +1,2 @@
+@interface PaddingTextField : UITextField
+@end

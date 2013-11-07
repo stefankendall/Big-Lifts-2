@@ -222,6 +222,7 @@
 		5459092B5D68C6020453A0A6 /* SJLiftViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459002515A242B6C9771BF8 /* SJLiftViewControllerTests.m */; };
 		5459093250EBC222EAB89203 /* TextFieldWithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CA19668BB712D631143 /* TextFieldWithCell.m */; };
 		54590938523CBE923C9E67D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */; };
+		54590962354A225F0C003AC3 /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459061539809C53BF272957 /* PaddingTextField.m */; };
 		54590966D765C721BDF1529C /* FTOCustomWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590888172950172BB561C4 /* FTOCustomWorkout.m */; };
 		5459096DAEF1ED3C018EFAB7 /* FTOTriumvirateAssistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C7F633F12351C88DB0C /* FTOTriumvirateAssistance.m */; };
 		5459097857AFDF9C5428279C /* FTORepsToBeatBreakdownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F8F1C32D48230C5267C /* FTORepsToBeatBreakdownTests.m */; };
@@ -641,6 +642,7 @@
 		545906050E521704714A25D5 /* BLStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLStore.h; sourceTree = "<group>"; };
 		5459060AD911EF9BC2296DF1 /* SetLogTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLogTests.h; sourceTree = "<group>"; };
 		5459060D4D99407BD2138CFD /* ProgramSelectorViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramSelectorViewControllerTests.h; sourceTree = "<group>"; };
+		5459061539809C53BF272957 /* PaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaddingTextField.m; sourceTree = "<group>"; };
 		5459061D3076FD31760BA03F /* PriceFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceFormatter.m; sourceTree = "<group>"; };
 		5459061D50029E17B4D7F178 /* SSPlanWorkoutsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPlanWorkoutsViewControllerTests.m; sourceTree = "<group>"; };
 		5459062296CD9B1159B9B120 /* PurchaseOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseOverlay.m; sourceTree = "<group>"; };
@@ -994,6 +996,7 @@
 		54590F9EB5B3526720E60922 /* 09-chat-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-chat-2@2x.png"; sourceTree = "<group>"; };
 		54590FA06F0B0073AB524C55 /* FTOTriumvirateLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTriumvirateLift.h; sourceTree = "<group>"; };
 		54590FB0B5C5B94AC5A3309F /* SJWorkoutSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJWorkoutSummaryCell.m; sourceTree = "<group>"; };
+		54590FB1F9DD24390C30B7A3 /* PaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaddingTextField.h; sourceTree = "<group>"; };
 		54590FB2EEB9AA83D84FAA17 /* FTOEditLiftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOEditLiftCell.h; sourceTree = "<group>"; };
 		54590FB7664105B2ECDCBC48 /* RowTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowTextField.m; sourceTree = "<group>"; };
 		54590FC0BBF16F6EBC4D43BC /* MaxEstimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxEstimator.h; sourceTree = "<group>"; };
@@ -1449,6 +1452,8 @@
 				5459009D708C85D73598095F /* AddCell.m */,
 				545903F64719180F5A5049F2 /* AddCell.h */,
 				54590D07C52DA57BED515A81 /* AddCell.xib */,
+				5459061539809C53BF272957 /* PaddingTextField.m */,
+				54590FB1F9DD24390C30B7A3 /* PaddingTextField.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -3059,6 +3064,7 @@
 				545902F0BC58AB172DD6BC5E /* SJSetCellWithPlates.m in Sources */,
 				5459001E5B4F96C22B3EB944 /* LogCellWithSets.m in Sources */,
 				545907FCCC39ABD37C39CD42 /* CombinedSetWorkoutLogTableDataSource.m in Sources */,
+				54590962354A225F0C003AC3 /* PaddingTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
