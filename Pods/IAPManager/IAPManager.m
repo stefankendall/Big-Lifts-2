@@ -40,9 +40,10 @@ NSURL *purchasesURL() {
         self.purchasedItems = [NSMutableArray arrayWithContentsOfURL:purchasesURL()];
         if(self.purchasedItems == nil) {
             self.purchasedItems = [NSMutableArray array];
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
-            [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
-        }
+		}
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+
         self.products = [NSMutableDictionary dictionary];
         self.productRequests = [NSMutableArray array];
         self.payments = [NSMutableArray array];
@@ -157,27 +158,23 @@ NSURL *purchasesURL() {
     for(SKPaymentTransaction *transaction in transactions) {
         switch (transaction.transactionState) {
             case SKPaymentTransactionStateRestored: // sic!
-            case SKPaymentTransactionStatePurchased:
-            {
+            case SKPaymentTransactionStatePurchased: {
                 [self.purchasedItems addObject:transaction.payment.productIdentifier];
                 newPurchases = YES;
                 [queue finishTransaction:transaction];
                 break;
             }
-            case SKPaymentTransactionStateFailed:
-            {
+            case SKPaymentTransactionStateFailed: {
                 [queue finishTransaction:transaction];
                 break;
             }
-            case SKPaymentTransactionStatePurchasing:
-            {
+            case SKPaymentTransactionStatePurchasing: {
 #ifdef DEBUG
                 NSLog(@"%@ is being processed by the App Store...", transaction.payment.productIdentifier);
 #endif
                 break;
             }
-            default:
-                break;
+            default: break;
         }
     }
     
@@ -207,22 +204,18 @@ NSURL *purchasesURL() {
         
         switch (transaction.transactionState) {
             case SKPaymentTransactionStateRestored: // sic!
-            case SKPaymentTransactionStatePurchased:
-            {
+            case SKPaymentTransactionStatePurchased: {
                 if(completion) completion(transaction);
                 break;
             }
-            case SKPaymentTransactionStateFailed:
-            {
+            case SKPaymentTransactionStateFailed: {
                 if(err) err(transaction.error);
                 break;
             }
-            case SKPaymentTransactionStatePurchasing:
-            {
+            case SKPaymentTransactionStatePurchasing: {
                 break;
             }
-            default:
-                break;
+            default: break;
         }
     }
 }
