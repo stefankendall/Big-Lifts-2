@@ -3,7 +3,7 @@
 #import "WorkoutLog.h"
 #import "SetLogCombiner.h"
 #import "WorkoutLogCell.h"
-#import "SSWorkoutLogDataSource.h"
+#import "CombinedSetWorkoutLogTableDataSource.h"
 
 @implementation SSTrackViewController
 
@@ -23,7 +23,7 @@
     }
     WorkoutLog *workoutLog = [self getLog][(NSUInteger) [indexPath row]];
     [cell setWorkoutLog:workoutLog];
-    cell.workoutLogTableDataSource = [[SSWorkoutLogDataSource alloc] initWithWorkoutLog:workoutLog];
+    cell.workoutLogTableDataSource = [[CombinedSetWorkoutLogTableDataSource alloc] initWithWorkoutLog:workoutLog];
     [cell.setTable setDataSource:cell.workoutLogTableDataSource];
     [cell.setTable setDelegate:cell.workoutLogTableDataSource];
     return cell;

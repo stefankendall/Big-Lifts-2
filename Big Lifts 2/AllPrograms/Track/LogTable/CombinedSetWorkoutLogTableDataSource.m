@@ -1,10 +1,11 @@
-#import "SSWorkoutLogDataSource.h"
+#import "WorkoutLogTableDataSource.h"
 #import "WorkoutLog.h"
 #import "SetLogCell.h"
 #import "SetLogCombiner.h"
 #import "LogCellWithSets.h"
+#import "CombinedSetWorkoutLogTableDataSource.h"
 
-@implementation SSWorkoutLogDataSource
+@implementation CombinedSetWorkoutLogTableDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[self getCombinedSets] count];
