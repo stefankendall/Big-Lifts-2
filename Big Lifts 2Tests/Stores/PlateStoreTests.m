@@ -28,11 +28,17 @@
 - (void)testAdjustsWhenUnitsChange {
     Settings *settings = [[SettingsStore instance] first];
     settings.units = @"kg";
-
     [[PlateStore instance] adjustForKg];
-
     Plate *plate = [[PlateStore instance] first];
     STAssertEquals([plate.weight doubleValue], 20.0, @"");
+}
+
+- (void)testDoesNotAdjustPlatesWhenUnitsLbs {
+    Settings *settings = [[SettingsStore instance] first];
+    settings.units = @"lbs";
+    [[PlateStore instance] adjustForKg];
+    Plate *plate = [[PlateStore instance] first];
+    STAssertEqualObjects(plate.weight, N(45.0), @"");
 }
 
 @end
