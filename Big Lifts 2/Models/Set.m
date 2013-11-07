@@ -8,8 +8,14 @@
 
 - (NSDecimalNumber *)effectiveWeight {
     NSDecimalNumber *effectiveWeight;
-    effectiveWeight = [[self.lift.weight decimalNumberByMultiplyingBy:self.percentage]
-            decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"100" locale:NSLocale.currentLocale]];
+    NSDecimalNumberHandler *handler = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain
+                                                                                             scale:NSDecimalNoScale
+                                                                                  raiseOnExactness:NO
+                                                                                   raiseOnOverflow:NO
+                                                                                  raiseOnUnderflow:NO
+                                                                               raiseOnDivideByZero:NO];
+    effectiveWeight = [[self.lift.weight decimalNumberByMultiplyingBy:self.percentage withBehavior:handler]
+            decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"100" locale:NSLocale.currentLocale] withBehavior:handler];
 
     if (self.lift.usesBar) {
         Bar *bar = [[BarStore instance] first];
