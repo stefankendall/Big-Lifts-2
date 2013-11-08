@@ -2,6 +2,8 @@
 #import "SJWorkout.h"
 #import "Workout.h"
 #import "Set.h"
+#import "SettingsStore.h"
+#import "Settings.h"
 
 @implementation SJWorkoutSummaryCell
 
@@ -16,7 +18,8 @@
     [self.percentageLabel setText:[NSString stringWithFormat:@"%@%%", [set.percentage stringValue]]];
 
     if ([sjWorkout.maxWeightAdd intValue] > 0) {
-        [self.addWeightRangeLabel setText:[NSString stringWithFormat:@"+%@-%@ lbs", sjWorkout.minWeightAdd, sjWorkout.maxWeightAdd]];
+        [self.addWeightRangeLabel setText:[NSString stringWithFormat:@"+%@-%@ %@", sjWorkout.minWeightAdd, sjWorkout.maxWeightAdd,
+                                                                     [[[SettingsStore instance] first] units]]];
     }
     else {
         [self.addWeightRangeLabel setText:@""];
