@@ -20,4 +20,10 @@
     STAssertEqualObjects([controller.roundToField text], @"1", @"");
 }
 
+- (void) testSelectsRoundingValueOnAppear {
+    [[[SettingsStore instance] first] setRoundTo:N(2.5)];
+    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
+    STAssertEquals([controller.roundToPicker selectedRowInComponent:0], 1, @"");
+}
+
 @end

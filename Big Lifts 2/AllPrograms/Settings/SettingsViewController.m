@@ -14,7 +14,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     [self reloadData];
 }
 
@@ -27,6 +26,7 @@
     NSDictionary *unitsSegments = @{@"lbs" : @0, @"kg" : @1};
     [unitsSegmentedControl setSelectedSegmentIndex:[[unitsSegments objectForKey:settings.units] integerValue]];
     [self.roundToField setText:[settings.roundTo stringValue]];
+    [self.roundToPicker selectRow:[self.roundingOptions indexOfObject:settings.roundTo] inComponent:0 animated:NO];
 }
 
 - (IBAction)unitsChanged:(id)sender {
@@ -44,7 +44,7 @@
 }
 
 - (void)setupRoundTo {
-    self.roundingOptions = @[@"1", @"2.5", @"5"];
+    self.roundingOptions = @[N(1), N(2.5), N(5)];
     self.roundToPicker = [UIPickerView new];
     [self.roundToPicker setDataSource:self];
     [self.roundToPicker setDelegate:self];
@@ -54,7 +54,7 @@
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
     UILabel *label = [UILabel new];
-    [label setText:self.roundingOptions[(NSUInteger) row]];
+    [label setText:[self.roundingOptions[(NSUInteger) row] stringValue]];
     return label;
 }
 
@@ -95,9 +95,8 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSString *newRoundingOption = self.roundingOptions[(NSUInteger) row];
     Settings *settings = [[SettingsStore instance] first];
-    settings.roundTo = [NSDecimalNumber decimalNumberWithString:newRoundingOption locale:NSLocale.currentLocale];
+    settings.roundTo = self.roundingOptions[(NSUInteger) row];
     [self reloadData];
 }
 
