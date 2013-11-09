@@ -6,4 +6,5 @@
 
 - (WorkoutLog *)createWithName:(NSString *)name date:(NSDate *)date;
 
+- (void)fixUnorderedStartingStrengthLogs;
 @end
