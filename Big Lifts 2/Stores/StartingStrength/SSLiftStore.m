@@ -9,9 +9,7 @@
 }
 
 - (void)setupDefaults {
-    if ([self count] == 0) {
-        [self addMissingLifts:@[@"Bench", @"Deadlift", @"Power Clean", @"Press", @"Squat"]];
-    }
+    [self addMissingLifts:@[@"Bench", @"Deadlift", @"Power Clean", @"Press", @"Squat"]];
 }
 
 - (void)onLoad {
