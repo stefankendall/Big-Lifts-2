@@ -93,7 +93,7 @@ handleCloudContentCorruptionWithHealthyStore:(BOOL)storeHealthy {
 - (void)ubiquityStoreManager:(UbiquityStoreManager *)manager didLoadStoreForCoordinator:(NSPersistentStoreCoordinator *)coordinator isCloud:(BOOL)isCloudStore {
     self.moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [self.moc setPersistentStoreCoordinator:coordinator];
-    [self.moc setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+    [self.moc setMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy];
     [self loadData];
 }
 
