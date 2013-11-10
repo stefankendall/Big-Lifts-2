@@ -286,6 +286,7 @@
 		54590C2B1D4A795A210A44B4 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590192C4EC8D647914DD49 /* TrackViewController.m */; };
 		54590C360EBF209831E141B8 /* PriceFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459061D3076FD31760BA03F /* PriceFormatter.m */; };
 		54590C37B1137766B05BE830 /* FTOBoringButBigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590895392DE88836AA5121 /* FTOBoringButBigViewController.m */; };
+		54590C3F920B7CC6C96D588A /* FTOHeavierPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A718023A74639AEFD1F /* FTOHeavierPlan.m */; };
 		54590C3FB63D22E55390C097 /* BarStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907B5B9167633A1252361 /* BarStore.m */; };
 		54590C527ED11E785DE60183 /* FTOAssistanceStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904BF936ECD76DE9FE184 /* FTOAssistanceStore.m */; };
 		54590C71FF672BBA9B1E8D73 /* AddPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459019F9DBAC44613EEB49F /* AddPurchaseViewController.m */; };
@@ -649,6 +650,7 @@
 		5459062296CD9B1159B9B120 /* PurchaseOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseOverlay.m; sourceTree = "<group>"; };
 		5459062E1FD6E0C38192CC68 /* SKProductFake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProductFake.m; sourceTree = "<group>"; };
 		54590645125642900D49667E /* FTOLogGraphTransformerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLogGraphTransformerTests.h; sourceTree = "<group>"; };
+		5459064A3AF269A574109BE9 /* FTOHeavierPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOHeavierPlan.h; sourceTree = "<group>"; };
 		5459064CFFD072B48EB7682D /* EpleyEstimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EpleyEstimator.m; sourceTree = "<group>"; };
 		545906518F77CC8A6E793E81 /* UIViewController+HandleReturn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HandleReturn.m"; sourceTree = "<group>"; };
 		54590659C88134015D9ADD06 /* SJSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SJSetCell.xib; sourceTree = "<group>"; };
@@ -821,6 +823,7 @@
 		54590A4EF590C71A910F0DF9 /* LiftFormCellHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiftFormCellHelper.m; sourceTree = "<group>"; };
 		54590A62336B90DAE69326C1 /* FTOTrackViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTrackViewControllerTests.m; sourceTree = "<group>"; };
 		54590A6A3B3CFE21478C7406 /* FTOSetStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSetStore.h; sourceTree = "<group>"; };
+		54590A718023A74639AEFD1F /* FTOHeavierPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOHeavierPlan.m; sourceTree = "<group>"; };
 		54590A7477987ACB6EA4DEFD /* RowUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowUIButton.m; sourceTree = "<group>"; };
 		54590A97034B9487111C3D57 /* FTOSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSettings.h; sourceTree = "<group>"; };
 		54590A9BCBEE999725C40F30 /* SSWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkout.m; sourceTree = "<group>"; };
@@ -2280,6 +2283,8 @@
 				545902D0EA6032C0E880AD9C /* FTOCustomPlan.h */,
 				5459022BC3CEB6D3F00C80B4 /* FTODeload.m */,
 				545901EB94DA8D701E89016F /* FTODeload.h */,
+				54590A718023A74639AEFD1F /* FTOHeavierPlan.m */,
+				5459064A3AF269A574109BE9 /* FTOHeavierPlan.h */,
 			);
 			path = Plans;
 			sourceTree = "<group>";
@@ -3071,6 +3076,7 @@
 				5459001E5B4F96C22B3EB944 /* LogCellWithSets.m in Sources */,
 				545907FCCC39ABD37C39CD42 /* CombinedSetWorkoutLogTableDataSource.m in Sources */,
 				54590962354A225F0C003AC3 /* PaddingTextField.m in Sources */,
+				54590C3F920B7CC6C96D588A /* FTOHeavierPlan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

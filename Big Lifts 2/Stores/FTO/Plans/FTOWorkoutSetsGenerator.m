@@ -10,6 +10,7 @@
 #import "FTOAdvancedPlan.h"
 #import "FTOFivesProgression.h"
 #import "FTOCustomPlan.h"
+#import "FTOHeavierPlan.h"
 
 @implementation FTOWorkoutSetsGenerator
 
@@ -37,6 +38,7 @@
 - (NSObject <FTOPlan> *)planForVariant:(NSString *)variant {
     NSDictionary *templatePlans = @{
             FTO_VARIANT_STANDARD : [FTOStandardPlan new],
+            FTO_VARIANT_HEAVIER : [FTOHeavierPlan new],
             FTO_VARIANT_PYRAMID : [FTOPyramidPlan new],
             FTO_VARIANT_JOKER : [FTOJokerPlan new],
             FTO_VARIANT_SIX_WEEK : [FTOSixWeekPlan new],

@@ -25,6 +25,7 @@
 
     self.variantCells = @{
             FTO_VARIANT_STANDARD : self.standardVariant,
+            FTO_VARIANT_HEAVIER : self.heavierVariant,
             FTO_VARIANT_PYRAMID : self.pyramidVariant,
             FTO_VARIANT_JOKER : self.jokerVariant,
             FTO_VARIANT_SIX_WEEK : self.sixWeekVariant,
