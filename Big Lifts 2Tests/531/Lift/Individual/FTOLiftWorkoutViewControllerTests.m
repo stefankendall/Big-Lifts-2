@@ -148,4 +148,9 @@
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:1], @"Workout", @"");
 }
 
+- (void)testWeightChangedNilWeightDoesntCrash {
+    self.controller.tappedSetRow = @0;
+    [self.controller weightChanged:nil];
+}
+
 @end

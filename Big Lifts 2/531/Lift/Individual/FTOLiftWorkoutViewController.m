@@ -238,7 +238,9 @@
 }
 
 - (void)weightChanged:(NSDecimalNumber *)weight {
-    self.variableWeight[self.tappedSetRow] = weight;
+    if (weight) {
+        self.variableWeight[self.tappedSetRow] = weight;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
