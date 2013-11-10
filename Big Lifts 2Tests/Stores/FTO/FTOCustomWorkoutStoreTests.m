@@ -10,7 +10,7 @@
     STAssertEquals([customWorkouts count], 4U, @"");
 
     FTOCustomWorkout *customWorkout = customWorkouts[0];
-    STAssertEquals([[customWorkout.workout sets] count], 6U, @"");
+    STAssertEquals([customWorkout.workout.orderedSets count], 6U, @"");
 }
 
 @end

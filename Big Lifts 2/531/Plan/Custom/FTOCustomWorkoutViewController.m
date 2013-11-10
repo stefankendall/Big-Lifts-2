@@ -21,7 +21,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return [[self.customWorkout.workout sets] count];
+        return [[self.customWorkout.workout orderedSets] count];
     }
     else {
         return 1;
@@ -40,7 +40,7 @@
             cell = [FTOCustomSetCell create];
         }
 
-        Set *set = [self.customWorkout.workout sets][(NSUInteger) [indexPath row]];
+        Set *set = self.customWorkout.workout.orderedSets[(NSUInteger) [indexPath row]];
         [cell setSet:set];
 
         return cell;

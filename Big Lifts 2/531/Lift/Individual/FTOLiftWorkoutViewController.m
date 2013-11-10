@@ -227,7 +227,7 @@
 }
 
 - (BOOL)shouldShowRepsToBeat {
-    Set *amrapSet = [[[self.ftoWorkout.workout sets] array] detect:^BOOL(Set *set) {
+    Set *amrapSet = [[self.ftoWorkout.workout orderedSets] detect:^BOOL(Set *set) {
         return set.amrap;
     }];
     return amrapSet != nil;

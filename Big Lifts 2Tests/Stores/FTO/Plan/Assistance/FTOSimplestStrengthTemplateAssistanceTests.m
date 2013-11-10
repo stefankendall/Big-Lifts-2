@@ -16,8 +16,8 @@
 - (void)testSetsUpWeekPercentages {
     [[FTOSimplestStrengthTemplateAssistance new] setup];
     FTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Squat"];
-    STAssertEquals([[week1Workout.workout sets] count], 9U, @"");
-    Set *lastSet = [week1Workout.workout sets][8];
+    STAssertEquals([week1Workout.workout.orderedSets count], 9U, @"");
+    Set *lastSet = week1Workout.workout.orderedSets[8];
     STAssertEquals([lastSet.reps intValue], 10, @"");
     STAssertEqualObjects(lastSet.percentage, N(70), @"");
 }
@@ -37,7 +37,7 @@
     [[FTOSimplestStrengthTemplateAssistance new] setup];
 
     FTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Front Squat"];
-    STAssertEquals([[week1Workout.workout sets] count], 9U, @"");
+    STAssertEquals([week1Workout.workout.orderedSets count], 9U, @"");
     STAssertEquals([[FTOSSTLiftStore instance] count], 4, @"");
 }
 

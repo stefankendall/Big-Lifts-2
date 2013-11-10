@@ -15,7 +15,7 @@
     [[FTOBoringButBigAssistance new] setup];
 
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *workout) {
-        STAssertFalse([[[workout.workout sets] lastObject] amrap], @"");
+        STAssertFalse([[workout.workout.orderedSets lastObject] amrap], @"");
     }];
 }
 

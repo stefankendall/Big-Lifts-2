@@ -91,7 +91,7 @@
         cell = [setClass create];
     }
     Workout *workout = [self getCurrentWorkout];
-    Set *set = [[workout sets] objectAtIndex:(NSUInteger) [indexPath row]];
+    Set *set = [workout.orderedSets objectAtIndex:(NSUInteger) [indexPath row]];
     [cell setSet:set];
     if ([set.percentage isEqual:N(100)]) {
         [cell.percentageLabel setHidden:YES];

@@ -136,7 +136,7 @@
 }
 
 - (void)testHidesWarmupSectionIfNoWarmup {
-    NSArray *warmupSets = [[[self.ftoWorkout.workout sets] array] select:^BOOL(Set *set) {
+    NSArray *warmupSets = [self.ftoWorkout.workout.orderedSets select:^BOOL(Set *set) {
         return set.warmup;
     }];
     [self.ftoWorkout.workout removeSets:warmupSets];

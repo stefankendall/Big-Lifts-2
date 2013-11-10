@@ -11,7 +11,7 @@
 - (void)testSetsLabelsForSet {
     FTOCustomSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomSet"];
     FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] first];
-    Set *set = [[customWorkout.workout sets] firstObject];
+    Set *set = [customWorkout.workout.orderedSets firstObject];
     set.amrap = YES;
     set.reps = @7;
     set.percentage = N(45);
@@ -28,7 +28,7 @@
 - (void)testSetsReps {
     FTOCustomSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomSet"];
     FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] first];
-    Set *set = [[customWorkout.workout sets] firstObject];
+    Set *set = [customWorkout.workout.orderedSets firstObject];
     set.reps = @7;
     [controller setSet:set];
     [controller viewWillAppear:YES];

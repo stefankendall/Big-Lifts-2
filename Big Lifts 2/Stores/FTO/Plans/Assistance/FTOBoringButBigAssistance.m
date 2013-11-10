@@ -33,7 +33,7 @@
 
 - (void)removeAmrapFromWorkouts {
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
-        [[[ftoWorkout.workout sets] array] each:^(Set *set) {
+        [ftoWorkout.workout.orderedSets each:^(Set *set) {
             set.amrap = NO;
         }];
     }];
