@@ -18,7 +18,7 @@
     Settings *settings = [[SettingsStore instance] first];
     settings.units = @"kg";
 
-    Set *set = [((Workout *) workoutA.workouts[0]).sets lastObject];
+    Set *set = [((Workout *) workoutA.workouts[0]).orderedSets lastObject];
     set.percentage = N(100);
     set.lift.weight = N(200.5);
     [cell setWorkout:workoutA.workouts[0]];

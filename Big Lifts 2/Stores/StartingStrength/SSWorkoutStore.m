@@ -232,7 +232,7 @@
 - (NSArray *)filterToAlternateBenchOrPress:(NSArray *)ssWorkouts {
     SSState *state = [[SSStateStore instance] first];
     Workout *workout = [[state.lastWorkout.workouts array] detect:^BOOL(Workout *workout1) {
-        Set *lastSet = [workout1.sets lastObject];
+        Set *lastSet = [workout1.orderedSets lastObject];
         return [lastSet.lift.name isEqualToString:@"Bench"] ||
                 [lastSet.lift.name isEqualToString:@"Press"];
     }];
@@ -241,7 +241,7 @@
 
     return [ssWorkouts select:^BOOL(SSWorkout *ssWorkout) {
         return [[ssWorkout.workouts array] detect:^BOOL(Workout *workout1) {
-            Set *set1 = [workout1.sets lastObject];
+            Set *set1 = [workout1.orderedSets lastObject];
             return [set1.lift.name isEqualToString:nextLift];
         }] != nil;
     }];

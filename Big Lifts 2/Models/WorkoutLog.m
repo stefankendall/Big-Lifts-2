@@ -17,7 +17,7 @@
 }
 
 - (SetLog *)bestSet {
-    __block SetLog *bestSet = [self.sets firstObject];
+    __block SetLog *bestSet = [self.orderedSets firstObject];
     [self.orderedSets each:^(SetLog *set) {
         NSDecimalNumber *bestMaxEstimate = [[OneRepEstimator new] estimate:bestSet.weight withReps:[bestSet.reps intValue]];
         NSDecimalNumber *maxEstimateForSet = [[OneRepEstimator new] estimate:set.weight withReps:[set.reps intValue]];

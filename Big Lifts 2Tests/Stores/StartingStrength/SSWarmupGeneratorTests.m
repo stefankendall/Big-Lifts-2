@@ -15,7 +15,7 @@
 - (void)testGeneratesSquatWarmup {
     SSWorkout *workoutA = [[SSWorkoutStore instance] find:@"name" value:@"A"];
     Workout *squatWorkout = [self findWorkout:workoutA name:@"Squat"];
-    [squatWorkout.sets removeAllObjects];
+    [squatWorkout removeSets:squatWorkout.orderedSets];
     Set *squatSet = [[SetStore instance] create];
     squatSet.lift = [[SSLiftStore instance] find:@"name" value:@"Squat"];
     [squatWorkout addSet:squatSet];

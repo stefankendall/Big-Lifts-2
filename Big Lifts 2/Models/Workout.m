@@ -6,19 +6,19 @@
 @implementation Workout
 
 - (NSArray *)workSets {
-    return [[self.sets array] select:^BOOL(Set *set) {
+    return [self.orderedSets select:^BOOL(Set *set) {
         return !set.warmup && !set.assistance;
     }];
 }
 
 - (NSArray *)warmupSets {
-    return [[self.sets array] select:^BOOL(Set *set) {
+    return [self.orderedSets select:^BOOL(Set *set) {
         return set.warmup && !set.assistance;
     }];
 }
 
 - (NSArray *)assistanceSets {
-    return [[self.sets array] select:^BOOL(Set *set) {
+    return [self.orderedSets select:^BOOL(Set *set) {
         return set.assistance;
     }];
 }
@@ -63,8 +63,8 @@
 }
 
 - (Lift *)firstLift {
-    if ([self.sets count] > 0) {
-        return [self.sets[0] lift];
+    if ([self.orderedSets count] > 0) {
+        return [self.orderedSets[0] lift];
     }
     return nil;
 }
