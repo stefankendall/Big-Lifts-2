@@ -5,11 +5,16 @@
 #import "Lift.h"
 #import "PaddingTextField.h"
 #import "TextViewInputAccessoryBuilder.h"
+#import "FTOSettings.h"
+#import "FTOSettingsStore.h"
 
 @implementation FTORepsToBeatBreakdown
 
 - (void)viewDidLoad {
-    self.configOptions = @[@"Use Everything", @"Log Only"];
+    self.configOptions = @{
+            [NSNumber numberWithInt:kRepsToBeatEverything] : @"Use Everything",
+            [NSNumber numberWithInt:kRepsToBeatLogOnly] : @"Log Only"
+    };
 
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.configTextField];
     [self.configTextField setDelegate:self];
@@ -20,8 +25,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
     [self.enteredOneRepMax setText:[self.lastSet.lift.weight stringValue]];
     NSDecimalNumber *logMax = [[FTORepsToBeatCalculator new] findLogMax:(id) self.lastSet.lift];
     [self.maxFromLog setText:[logMax stringValue]];
@@ -33,6 +36,10 @@
 
     NSDecimalNumber *estimatedMax = [[OneRepEstimator new] estimate:lastSetWeight withReps:minimumReps];
     [self.estimatedMax setText:[estimatedMax stringValue]];
+
+    NSNumber *repsToBeatConfig = [[[FTOSettingsStore instance] first] repsToBeatConfig];
+    [self.configPicker selectRow:[repsToBeatConfig integerValue] inComponent:0 animated:NO];
+    [self.configTextField setText:self.configOptions[repsToBeatConfig]];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -44,11 +51,13 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return self.configOptions[(NSUInteger) row];
+    return self.configOptions[[NSNumber numberWithInt:row]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    [self.configTextField setText:self.configOptions[(NSUInteger) [self.configPicker selectedRowInComponent:0]]];
+    NSNumber *repsToBeatConfig = [NSNumber numberWithInt:[self.configPicker selectedRowInComponent:0]];
+    [[[FTOSettingsStore instance] first] setRepsToBeatConfig:repsToBeatConfig];
+    [self.configTextField setText:self.configOptions[repsToBeatConfig]];
 }
 
 @end

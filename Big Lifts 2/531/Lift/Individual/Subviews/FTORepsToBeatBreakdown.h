@@ -12,5 +12,5 @@
 
 @property(nonatomic, strong) Set *lastSet;
 @property(nonatomic, strong) UIPickerView *configPicker;
-@property(nonatomic, strong) NSArray *configOptions;
+@property(nonatomic, strong) NSDictionary *configOptions;
 @end
