@@ -9,8 +9,14 @@ typedef enum {
     kAlphabetical = 1
 } TrackSort;
 
+typedef enum {
+    kRepsToBeatEverything = 0,
+    kRepsToBeatLogOnly = 1
+} RepsToBeatConfig;
+
 @interface FTOSettings : NSManagedObject
 @property(nonatomic) NSDecimalNumber *trainingMax;
 @property(nonatomic) BOOL warmupEnabled;
 @property(nonatomic) NSNumber *logState;
+@property(nonatomic) NSNumber *repsToBeatConfig;
 @end
