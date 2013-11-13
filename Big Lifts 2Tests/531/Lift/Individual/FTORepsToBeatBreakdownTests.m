@@ -49,12 +49,21 @@
     STAssertEqualObjects([[breakdown configTextField] text], @"Log Only", @"");
 }
 
-- (void)testCanChangeStoredOneRepConfig {
+- (void)testCanChangeStoredOneRepConfigLogOnly {
+    Set *set = [[[[[FTOWorkoutStore instance] first] workout] sets] lastObject];
+    set.lift.weight = N(150);
+    set.reps = @4;
+    set.percentage = N(100);
+
     FTORepsToBeatBreakdown *breakdown = [self getControllerByStoryboardIdentifier:@"ftoRepsToBeat"];
+    [breakdown setLastSet:set];
+
     [breakdown.configPicker selectRow:1 inComponent:0 animated:NO];
     [breakdown textFieldDidEndEditing:nil];
     STAssertEquals([[[[FTOSettingsStore instance] first] repsToBeatConfig] intValue], kRepsToBeatLogOnly, @"");
-    STFail(@"Test actual breakdown and calculation gets changed.");
+    STAssertEqualObjects([[breakdown reps] text], @"0x", @"");
+    STAssertEqualObjects([[breakdown weight] text], @"135", @"");
+    STAssertEqualObjects([[breakdown estimatedMax] text], @"0", @"");
 }
 
 @end

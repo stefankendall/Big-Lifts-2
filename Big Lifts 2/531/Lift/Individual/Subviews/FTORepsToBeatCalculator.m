@@ -6,6 +6,8 @@
 #import "SetLog.h"
 #import "WorkoutLog.h"
 #import "WorkoutLogStore.h"
+#import "FTOSettingsStore.h"
+#import "FTOSettings.h"
 
 @implementation FTORepsToBeatCalculator
 
@@ -13,8 +15,20 @@
     NSDecimalNumber *max = lift.weight;
     NSDecimalNumber *logMax = [self findLogMax:lift];
 
-    max = [logMax compare:max] == NSOrderedDescending ? logMax : max;
-    return [self findRepsToBeat:max withWeight:weight];
+    FTOSettings *ftoSettings = [[FTOSettingsStore instance] first];
+    if ([[ftoSettings repsToBeatConfig] intValue] == kRepsToBeatLogOnly) {
+        max = logMax;
+    }
+    else {
+        max = [logMax compare:max] == NSOrderedDescending ? logMax : max;
+    }
+
+    if ([max isEqualToNumber:N(0)]) {
+        return 0;
+    }
+    else {
+        return [self findRepsToBeat:max withWeight:weight];
+    }
 }
 
 - (NSDecimalNumber *)findLogMax:(FTOLift *)lift {

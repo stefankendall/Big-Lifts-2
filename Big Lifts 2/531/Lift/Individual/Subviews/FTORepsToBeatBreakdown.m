@@ -29,6 +29,14 @@
     NSDecimalNumber *logMax = [[FTORepsToBeatCalculator new] findLogMax:(id) self.lastSet.lift];
     [self.maxFromLog setText:[logMax stringValue]];
 
+    [self setBreakdownLabels];
+
+    NSNumber *repsToBeatConfig = [[[FTOSettingsStore instance] first] repsToBeatConfig];
+    [self.configPicker selectRow:[repsToBeatConfig integerValue] inComponent:0 animated:NO];
+    [self.configTextField setText:self.configOptions[repsToBeatConfig]];
+}
+
+- (void)setBreakdownLabels {
     NSDecimalNumber *lastSetWeight = [self.lastSet roundedEffectiveWeight];
     int minimumReps = [[FTORepsToBeatCalculator new] repsToBeat:(id) self.lastSet.lift atWeight:lastSetWeight];
     [self.reps setText:[NSString stringWithFormat:@"%dx", minimumReps]];
@@ -36,10 +44,6 @@
 
     NSDecimalNumber *estimatedMax = [[OneRepEstimator new] estimate:lastSetWeight withReps:minimumReps];
     [self.estimatedMax setText:[estimatedMax stringValue]];
-
-    NSNumber *repsToBeatConfig = [[[FTOSettingsStore instance] first] repsToBeatConfig];
-    [self.configPicker selectRow:[repsToBeatConfig integerValue] inComponent:0 animated:NO];
-    [self.configTextField setText:self.configOptions[repsToBeatConfig]];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -58,6 +62,8 @@
     NSNumber *repsToBeatConfig = [NSNumber numberWithInt:[self.configPicker selectedRowInComponent:0]];
     [[[FTOSettingsStore instance] first] setRepsToBeatConfig:repsToBeatConfig];
     [self.configTextField setText:self.configOptions[repsToBeatConfig]];
+
+    [self setBreakdownLabels];
 }
 
 @end
