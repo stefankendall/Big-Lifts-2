@@ -113,7 +113,6 @@
     </entity>
     <entity name="WorkoutLog" representedClassName="WorkoutLog" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="deload" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="SetLog" inverseName="workoutLog" inverseEntity="SetLog" syncable="YES"/>
     </entity>

@@ -204,6 +204,7 @@
     WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
     workoutLog.date = [NSDate new];
+    workoutLog.deload = self.ftoWorkout.deload;
 
     NSArray *sets = self.ftoWorkout.workout.orderedSets;
     for (int i = 0; i < [sets count]; i++) {

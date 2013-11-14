@@ -10,8 +10,11 @@
 - (NSArray *)buildDataFromLog {
     NSMutableArray *chartData = [@[] mutableCopy];
 
-    NSEnumerator *log = [[[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] reverseObjectEnumerator];
-    for (WorkoutLog *workoutLog in log) {
+    NSArray *allLogs = [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
+    NSArray *noDeload = [allLogs select:^BOOL(WorkoutLog *workoutLog) {
+        return !workoutLog.deload;
+    }];
+    for (WorkoutLog *workoutLog in [noDeload reverseObjectEnumerator]) {
         SetLog *bestSetFromWorkout = [workoutLog bestSet];
         NSMutableArray *liftLogEntries = [self logEntriesFromChart:chartData forName:bestSetFromWorkout.name];
         [liftLogEntries addObject:[self logToChartEntry:workoutLog withSet:bestSetFromWorkout]];

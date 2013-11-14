@@ -6,6 +6,7 @@
 @property(nonatomic) NSString *name;
 @property(nonatomic) NSMutableOrderedSet *sets;
 @property(nonatomic) NSDate *date;
+@property(nonatomic) BOOL deload;
 
 - (NSArray *)workSets;
 

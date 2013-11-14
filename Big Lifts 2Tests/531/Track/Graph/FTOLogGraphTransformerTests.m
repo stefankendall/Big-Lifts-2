@@ -15,8 +15,7 @@
     [workoutLog.sets addObjectsFromArray:@[set]];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd"];
-    NSDate *myDate = [df dateFromString:@"2013-01-12"];
-    workoutLog.date = myDate;
+    workoutLog.date = [df dateFromString:@"2013-01-12"];
 
     NSDictionary *chartEntry = [[FTOLogGraphTransformer new] logToChartEntry:workoutLog withSet:set];
     NSDictionary *expected = @{
@@ -57,8 +56,7 @@
     workoutLog.name = @"5/3/1";
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd"];
-    NSDate *myDate = [df dateFromString:@"2013-01-12"];
-    workoutLog.date = myDate;
+    workoutLog.date = [df dateFromString:@"2013-01-12"];
     [workoutLog.sets addObjectsFromArray:@[set1, set2]];
 
     NSArray *chartData = [[FTOLogGraphTransformer new] buildDataFromLog];
@@ -69,6 +67,24 @@
             ]
     }];
     STAssertEqualObjects(chartData, expected, [NSString stringWithFormat:@"%@", chartData]);
+}
+
+- (void)testDoesNotInlucdeDeload {
+    SetLog *set1 = [[SetLogStore instance] create];
+    set1.name = @"Deadlift";
+    set1.weight = N(200);
+    set1.reps = @3;
+
+    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    workoutLog.deload = YES;
+    workoutLog.name = @"5/3/1";
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd"];
+    workoutLog.date = [df dateFromString:@"2013-01-12"];
+
+    [workoutLog addSet:set1];
+    NSArray *chartData = [[FTOLogGraphTransformer new] buildDataFromLog];
+    STAssertEqualObjects(chartData, @[], @"");
 }
 
 @end
