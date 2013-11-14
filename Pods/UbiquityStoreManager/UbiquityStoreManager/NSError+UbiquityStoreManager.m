@@ -27,7 +27,7 @@ NSString *const USMStoreURLsErrorKey = @"USMStoreURLsErrorKey";
             NSLog( @"and provide details of the conditions and whether or not you notice" );
             NSLog( @"any sync issues afterwards.  Error userInfo:" );
             for (id key in dict) {
-                id value = [dict objectForKey:key];
+                id value = dict[key];
                 NSLog( @"[%@] %@ => [%@] %@", [key class], key, [value class], value );
             }
             NSLog( @"Error Debug Description:\n%@", [self debugDescription] );
@@ -47,7 +47,7 @@ NSString *const USMStoreURLsErrorKey = @"USMStoreURLsErrorKey";
         // Severity: Critical To Cloud Content
         // Cause: Validation Error -- non-optional property with a nil value.  The other end of a required relationship is missing from the store.
         // Action: Mark corrupt, request rebuild.
-        NSManagedObject *object = [[error userInfo] objectForKey:NSValidationObjectErrorKey];
+        NSManagedObject *object = [error userInfo][NSValidationObjectErrorKey];
         NSPersistentStoreCoordinator *psc = object.managedObjectContext.persistentStoreCoordinator;
         NSMutableArray *storeURLs = [NSMutableArray arrayWithCapacity:[psc.persistentStores count]];
         for (NSPersistentStore *store in psc.persistentStores)
@@ -58,19 +58,19 @@ NSString *const USMStoreURLsErrorKey = @"USMStoreURLsErrorKey";
         }];
         return YES;
     }
-    if ([(NSString *)[error.userInfo objectForKey:@"reason"] hasPrefix:@"Error reading the log file at location: (null)"]) {
+    if ([(NSString *)(error.userInfo)[@"reason"] hasPrefix:@"Error reading the log file at location: (null)"]) {
         // Severity: Delayed Import?
         // Cause: Log file failed to download?
         // Action: Ignore.
         return YES;
     }
 
-    if ([self handleError:[error.userInfo objectForKey:NSUnderlyingErrorKey]])
+    if ([self handleError:(error.userInfo)[NSUnderlyingErrorKey]])
         return YES;
-    if ([self handleError:[error.userInfo objectForKey:@"underlyingError"]])
+    if ([self handleError:(error.userInfo)[@"underlyingError"]])
         return YES;
 
-    NSArray *errors = [error.userInfo objectForKey:@"NSDetailedErrors"];
+    NSArray *errors = (error.userInfo)[@"NSDetailedErrors"];
     for (NSError *error_ in errors)
         if ([self handleError:error_])
             return YES;
