@@ -13,6 +13,20 @@
 
 - (void)setupDefaults {
     [self createWorkoutsForVariant:FTO_VARIANT_STANDARD];
+    [self removeDuplicates];
+}
+
+- (void)dataWasSynced {
+    [self removeDuplicates];
+}
+
+- (void)removeDuplicates {
+    for (FTOCustomWorkout *ftoCustom in [self findAll]) {
+        NSArray *allEntries = [self findAllWhere:@"week" value:ftoCustom.week];
+        for (int i = 1; i < [allEntries count]; i++) {
+            [self remove:allEntries[(NSUInteger) i]];
+        }
+    }
 }
 
 - (void)createWorkoutsForVariant:(NSString *)variant {
