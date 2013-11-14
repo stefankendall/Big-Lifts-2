@@ -7,4 +7,5 @@
 @property(weak, nonatomic) IBOutlet UITextField *roundToField;
 @property(strong, nonatomic) UIPickerView *roundToPicker;
 
+@property(nonatomic, strong) NSArray *roundingText;
 @end

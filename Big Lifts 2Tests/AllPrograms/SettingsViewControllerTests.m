@@ -12,7 +12,7 @@
     STAssertFalse([[controller.roundToField text] isEqualToString:@""], @"");
 }
 
-- (void) testChangesRoundToOnPickerChange {
+- (void)testChangesRoundToOnPickerChange {
     SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
     [controller pickerView:nil didSelectRow:0 inComponent:0];
     Settings *settings = [[SettingsStore instance] first];
@@ -20,7 +20,15 @@
     STAssertEqualObjects([controller.roundToField text], @"1", @"");
 }
 
-- (void) testSelectsRoundingValueOnAppear {
+- (void)testSetsNearest5RoundTo {
+    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
+    [controller pickerView:nil didSelectRow:3 inComponent:0];
+    Settings *settings = [[SettingsStore instance] first];
+    STAssertEqualObjects(settings.roundTo, [NSDecimalNumber decimalNumberWithString:(NSString *) NEAREST_5_ROUNDING], @"");
+    STAssertEqualObjects([controller.roundToField text], @"Nearest 5", @"");
+}
+
+- (void)testSelectsRoundingValueOnAppear {
     [[[SettingsStore instance] first] setRoundTo:N(2.5)];
     SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
     STAssertEquals([controller.roundToPicker selectedRowInComponent:0], 1, @"");
