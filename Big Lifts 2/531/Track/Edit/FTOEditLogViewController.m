@@ -8,14 +8,20 @@
     UIDatePicker *datePicker = [UIDatePicker new];
     [datePicker setDate:self.workoutLog.date];
     [self.dateField setInputView:datePicker];
-    [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
+    [datePicker addTarget:self action:@selector(updateWorkoutLog:) forControlEvents:UIControlEventValueChanged];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.dateField];
+    [self.deloadSwitch addTarget:self action:@selector(updateWorkoutLog:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [self updateDateFieldText];
 }
 
-- (void)updateTextField:(id)sender {
+- (void)updateWorkoutLog:(id)sender {
     UIDatePicker *picker = (UIDatePicker *) self.dateField.inputView;
     self.workoutLog.date = picker.date;
+    self.workoutLog.deload = [self.deloadSwitch isOn];
+
     [self updateDateFieldText];
 }
 
@@ -23,10 +29,6 @@
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [self.dateField setText:[dateFormatter stringFromDate:self.workoutLog.date]];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self emptyView];
 }
 
 @end
