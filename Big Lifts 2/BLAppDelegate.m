@@ -2,7 +2,6 @@
 #import "BLAppDelegate.h"
 #import "SKProductStore.h"
 #import "BLStoreManager.h"
-#import "Flurry.h"
 #import "DataLoadingViewController.h"
 
 @interface BLAppDelegate ()
