@@ -99,7 +99,9 @@ handleCloudContentCorruptionWithHealthyStore:(BOOL)storeHealthy {
 
 - (void)loadData {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(storesLoaded) name:@"storesLoaded" object:nil];
-    [[BLStoreManager instance] initializeAllStores:self.moc withModel:[[self.moc persistentStoreCoordinator] managedObjectModel]];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [[BLStoreManager instance] initializeAllStores:self.moc withModel:[[self.moc persistentStoreCoordinator] managedObjectModel]];
+    });
 }
 
 - (void)storesLoaded {
