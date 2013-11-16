@@ -14,8 +14,8 @@
     STAssertEqualObjects([[WeightRounder new] round:N(85.4)], @85, @"");
 }
 
-- (void) testRoundsTo2p5 {
-    [[[SettingsStore instance] first] setRoundTo: N(2.5)];
+- (void)testRoundsTo2p5 {
+    [[[SettingsStore instance] first] setRoundTo:N(2.5)];
     STAssertEqualObjects([[WeightRounder new] round:N(81.24)], @80, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(82.5)], @82.5, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(83.75)], @85, @"");
@@ -28,10 +28,17 @@
 }
 
 - (void)testRoundsTo1 {
-    [[[SettingsStore instance] first] setRoundTo: N(1)];
+    [[[SettingsStore instance] first] setRoundTo:N(1)];
     STAssertEqualObjects([[WeightRounder new] round:N(166)], @166, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(166.3)], @166, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(166.5)], @167, @"");
+}
+
+- (void)testRoundToNearest5 {
+    [[[SettingsStore instance] first] setRoundTo:[NSDecimalNumber decimalNumberWithString:NEAREST_5_ROUNDING]];
+    STAssertEqualObjects([[WeightRounder new] round:N(166)], @165, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(160)], @165, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(159)], @155, @"");
 }
 
 @end
