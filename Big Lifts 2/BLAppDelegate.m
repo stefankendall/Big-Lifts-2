@@ -1,3 +1,4 @@
+#import <Crashlytics/Crashlytics.h>
 #import "BLAppDelegate.h"
 #import "SKProductStore.h"
 #import "BLStoreManager.h"
@@ -19,11 +20,10 @@
                                        containerIdentifier:nil
                                     additionalStoreOptions:nil
                                                   delegate:self];
+    [Crashlytics startWithAPIKey:@"f1f936528fec614b3f5e265a22c4bef0a92d8dc4"];
     manager.cloudEnabled = YES;
     [[SKProductStore instance] loadProducts:^{
     }];
-    [Flurry setCrashReportingEnabled:YES];
-    [Flurry startSession:@"FW43KTWNCSNYJRDR39WY"];
     return YES;
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02069B9817A9E89100E19211 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02069B9717A9E89100E19211 /* Images.xcassets */; };
+		024A2AD11837C90800565451 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 024A2AD01837C90800565451 /* Crashlytics.framework */; };
 		024CD5FD1736D68600EDA8AB /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */; };
 		029E3AED17A4454100113103 /* Highcharts-3.0.2 in Resources */ = {isa = PBXBuildFile; fileRef = 029E3AEC17A4454100113103 /* Highcharts-3.0.2 */; };
 		029E3AF017A4934800113103 /* highcharts_transformer.js in Resources */ = {isa = PBXBuildFile; fileRef = 029E3AEE17A4934800113103 /* highcharts_transformer.js */; };
@@ -381,6 +382,7 @@
 		02069B9717A9E89100E19211 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		021237A817C65C59003C54F7 /* 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 5.xcdatamodel; path = "Big Lifts 2/Big_Lifts_2.xcdatamodeld/5.xcdatamodel"; sourceTree = "<group>"; };
 		021AF45B1819929C00C5A5B7 /* 23.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 23.xcdatamodel; sourceTree = "<group>"; };
+		024A2AD01837C90800565451 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		024CD5FC1736D68600EDA8AB /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../Storyboard.storyboard; sourceTree = "<group>"; };
 		0272C62C180B3915005A03CD /* 18.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 18.xcdatamodel; path = "Big Lifts 2/Big_Lifts_2.xcdatamodeld/18.xcdatamodel"; sourceTree = "<group>"; };
 		027B44C017FCEDD400D4F528 /* 14.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 14.xcdatamodel; path = "Big Lifts 2/Big_Lifts_2.xcdatamodeld/14.xcdatamodel"; sourceTree = "<group>"; };
@@ -405,7 +407,7 @@
 		02DC342317C9592800312731 /* 29-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart.png"; sourceTree = "<group>"; };
 		02DC342417C9592800312731 /* 29-heart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29-heart@2x.png"; sourceTree = "<group>"; };
 		02DC342717C9820900312731 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
-		02E9E7E61831CA61003179DD /* 25.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 25.xcdatamodel; sourceTree = "<group>"; };
+		02E9E7E61831CA61003179DD /* 25.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 25.xcdatamodel; sourceTree = "<group>"; };
 		02F8EE9717B9B5E40084F233 /* 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 2.xcdatamodel; path = "Big Lifts 2/Big_Lifts_2.xcdatamodeld/2.xcdatamodel"; sourceTree = "<group>"; };
 		02FDF4D217E4FE5C00DE92E4 /* 11.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 11.xcdatamodel; path = "Big Lifts 2/Big_Lifts_2.xcdatamodeld/11.xcdatamodel"; sourceTree = "<group>"; };
 		545900095AB2AF5A89E39D44 /* 20-gear-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear-2.png"; sourceTree = "<group>"; };
@@ -1040,6 +1042,7 @@
 				54590602539AB52533BBAE57 /* CoreGraphics.framework in Frameworks */,
 				02B5E51817F3AE060018A856 /* StoreKit.framework in Frameworks */,
 				54590A0F663D13F7AF1C3095 /* CoreData.framework in Frameworks */,
+				024A2AD11837C90800565451 /* Crashlytics.framework in Frameworks */,
 				545905527F5502367565C568 /* QuartzCore.framework in Frameworks */,
 				D5CA871EE07A486AA13842C1 /* libPods.a in Frameworks */,
 				54590557C7EC3FAFF763DCA4 /* MessageUI.framework in Frameworks */,
@@ -2164,6 +2167,7 @@
 		54590BED2B74CA641FF32060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				024A2AD01837C90800565451 /* Crashlytics.framework */,
 				02B5E51917F3BAEC0018A856 /* Security.framework */,
 				02B5E51717F3AE060018A856 /* StoreKit.framework */,
 				545909344AEA6A82F1DB578A /* UIKit.framework */,
@@ -2596,6 +2600,7 @@
 				5459043150E502390785D704 /* Frameworks */,
 				54590F1205CD6696062D4496 /* Resources */,
 				B0C3C0507773400F8C72F406 /* Copy Pods Resources */,
+				024A2ACF1837C8B800565451 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2753,6 +2758,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		024A2ACF1837C8B800565451 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run f1f936528fec614b3f5e265a22c4bef0a92d8dc4";
+		};
 		545902E23E0DC619D028961E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3120,6 +3138,10 @@
 				CODE_SIGN_ENTITLEMENTS = "Big Lifts 2/Big Lifts 2.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/stefankendall/work/Big-Lifts-2",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
@@ -3170,6 +3192,10 @@
 				CODE_SIGN_ENTITLEMENTS = "Big Lifts 2/Big Lifts 2.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/stefankendall/work/Big-Lifts-2",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
