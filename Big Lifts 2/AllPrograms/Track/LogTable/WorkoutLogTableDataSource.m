@@ -2,6 +2,11 @@
 #import "WorkoutLog.h"
 #import "SetLogCell.h"
 #import "LogMaxEstimateCell.h"
+#import "SetHelper.h"
+#import "OneRepEstimator.h"
+#import "SetLog.h"
+#import "SettingsStore.h"
+#import "Settings.h"
 
 const int SETS_SECTION = 0;
 const int ESTIMATED_MAX_SECTION = 1;
@@ -49,6 +54,13 @@ const int ESTIMATED_MAX_SECTION = 1;
     if (!cell) {
         cell = [LogMaxEstimateCell create];
     }
+    SetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
+    if (!logToShow) {
+        logToShow = [self.workoutLog.orderedSets lastObject];
+    }
+    NSDecimalNumber *estimate = [[OneRepEstimator new] estimate:logToShow.weight withReps:[logToShow.reps intValue]];
+    NSString *units = [[[SettingsStore instance] first] units];
+    [cell.maxEstimate setText:[NSString stringWithFormat:@"%@ %@", [estimate stringValue], units]];
     return cell;
 }
 

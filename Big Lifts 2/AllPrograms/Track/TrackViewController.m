@@ -1,7 +1,6 @@
 #import "TrackViewController.h"
 #import "WorkoutLogStore.h"
 #import "WorkoutLogCell.h"
-#import "SetLogCombiner.h"
 #import "WorkoutLogTableDataSource.h"
 #import "WorkoutLog.h"
 #import "TrackToolbarCell.h"
@@ -57,8 +56,8 @@
 - (UITableViewCell *)getWorkoutLogCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
     WorkoutLogCell *cell = (WorkoutLogCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(WorkoutLogCell.class)];
     if (!cell) {
-            cell = [WorkoutLogCell create];
-        }
+        cell = [WorkoutLogCell create];
+    }
     [cell setWorkoutLog:[self getLog][(NSUInteger) [indexPath row]]];
     return cell;
 }

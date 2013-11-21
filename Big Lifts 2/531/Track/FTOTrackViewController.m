@@ -7,9 +7,9 @@
 #import "FTOTrackToolbarCell.h"
 #import "FTOEditLogViewController.h"
 #import "FTOWorkoutLogAmrapDataSource.h"
-#import "FTOSettings.h"
 #import "FTOSettingsStore.h"
 #import "SetLog.h"
+#import "LogMaxEstimateCell.h"
 
 @interface FTOTrackViewController ()
 @property(nonatomic) WorkoutLog *tappedLog;
@@ -23,17 +23,28 @@
     self.trackSort = (TrackSort) 0;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath section] == 0) {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+    else {
+        WorkoutLogCell *cell = (WorkoutLogCell *) [self tableView:tableView cellForRowAtIndexPath:indexPath];
+        CGFloat estMaxHeight = [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:ESTIMATED_MAX_SECTION]];
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath] + estMaxHeight;
+    }
+}
+
 - (NSArray *)getLog {
     NSArray *log = [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
 
-    if(self.trackSort == kNewest){
+    if (self.trackSort == kNewest) {
         return log;
     }
     else {
         return [log sortedArrayUsingComparator:^NSComparisonResult(WorkoutLog *log1, WorkoutLog *log2) {
             SetLog *setLog1 = [log1.orderedSets firstObject];
             SetLog *setLog2 = [log2.orderedSets firstObject];
-            if([setLog1.name isEqualToString:setLog2.name]){
+            if ([setLog1.name isEqualToString:setLog2.name]) {
                 return [log2.date compare:log1.date];
             }
             else {
@@ -74,7 +85,7 @@
             [cell.viewButton setTitle:@"Last" forState:UIControlStateNormal];
         }
 
-        if (self.trackSort == kNewest){
+        if (self.trackSort == kNewest) {
             [cell.sortButton setTitle:@"Newest" forState:UIControlStateNormal];
         }
         else {
@@ -115,7 +126,7 @@
 
 - (void)viewButtonTapped:(id)sender {
     self.showState = (self.showState + 1) % 3;
-    [[[FTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt: self.showState]];
+    [[[FTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt:self.showState]];
     [self.tableView reloadData];
 }
 
