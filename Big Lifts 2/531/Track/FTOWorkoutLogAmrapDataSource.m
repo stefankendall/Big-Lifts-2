@@ -12,7 +12,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.section == SETS_SECTION){
-        SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:@"SetLogCell"];
+        SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SetLogCell.class)];
         if (cell == nil) {
             cell = [SetLogCell create];
         }
@@ -21,9 +21,11 @@
             logToShow = [self.workoutLog.orderedSets lastObject];
         }
         [cell setSetLog:logToShow];
+        return cell;
     }
     else {
         return [self maxEstimateCell: tableView];
     }
 }
+
 @end

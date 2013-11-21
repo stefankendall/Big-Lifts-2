@@ -1,6 +1,7 @@
 #import "WorkoutLogTableDataSource.h"
 #import "WorkoutLog.h"
 #import "SetLogCell.h"
+#import "LogMaxEstimateCell.h"
 
 const int SETS_SECTION = 0;
 const int ESTIMATED_MAX_SECTION = 1;
@@ -39,12 +40,16 @@ const int ESTIMATED_MAX_SECTION = 1;
         return cell;
     }
     else {
-        return [self maxEstimateCell: tableView];
+        return [self maxEstimateCell:tableView];
     }
 }
 
-- (UITableViewCell *)maxEstimateCell: (UITableView *)tableView {
-    return nil;
+- (UITableViewCell *)maxEstimateCell:(UITableView *)tableView {
+    LogMaxEstimateCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(LogMaxEstimateCell.class)];
+    if (!cell) {
+        cell = [LogMaxEstimateCell create];
+    }
+    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
