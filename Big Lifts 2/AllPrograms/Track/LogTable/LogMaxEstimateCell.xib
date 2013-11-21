@@ -14,33 +14,30 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450.5 lbs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTd-ov-bVs">
-                        <rect key="frame" x="232" y="0.0" width="68" height="31"/>
+                        <rect key="frame" x="244" y="0.0" width="71" height="31"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="68" id="8Tb-lS-ano"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Est." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqu-41-BGs">
-                        <rect key="frame" x="194" y="0.0" width="30" height="31"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="est." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqu-41-BGs">
+                        <rect key="frame" x="206" y="0.0" width="30" height="31"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="qxw-wB-r4c"/>
+                            <constraint firstAttribute="width" constant="30" id="6Z9-uA-NCL"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="oqu-41-BGs" firstAttribute="top" secondItem="rTd-ov-bVs" secondAttribute="top" id="Awb-qh-t9A"/>
-                    <constraint firstItem="rTd-ov-bVs" firstAttribute="top" secondItem="j4G-kp-9fT" secondAttribute="top" id="RTh-Nc-m29"/>
-                    <constraint firstAttribute="bottom" secondItem="rTd-ov-bVs" secondAttribute="bottom" id="YQj-11-MrO"/>
-                    <constraint firstAttribute="trailing" secondItem="rTd-ov-bVs" secondAttribute="trailing" constant="20" symbolic="YES" id="byD-xm-Deq"/>
-                    <constraint firstItem="oqu-41-BGs" firstAttribute="baseline" secondItem="rTd-ov-bVs" secondAttribute="baseline" id="luy-3T-uDO"/>
-                    <constraint firstItem="rTd-ov-bVs" firstAttribute="leading" secondItem="oqu-41-BGs" secondAttribute="trailing" constant="8" symbolic="YES" id="mRs-eU-UKN"/>
+                    <constraint firstAttribute="trailing" secondItem="rTd-ov-bVs" secondAttribute="trailing" constant="5" id="AKC-pc-3Ym"/>
+                    <constraint firstItem="rTd-ov-bVs" firstAttribute="leading" secondItem="oqu-41-BGs" secondAttribute="trailing" constant="8" symbolic="YES" id="QWq-dt-aVp"/>
+                    <constraint firstItem="rTd-ov-bVs" firstAttribute="top" secondItem="oqu-41-BGs" secondAttribute="top" id="acd-iD-xkO"/>
+                    <constraint firstItem="oqu-41-BGs" firstAttribute="baseline" secondItem="rTd-ov-bVs" secondAttribute="baseline" id="jFg-Vt-NhG"/>
+                    <constraint firstAttribute="bottom" secondItem="rTd-ov-bVs" secondAttribute="bottom" id="ws3-po-ZUM"/>
+                    <constraint firstItem="oqu-41-BGs" firstAttribute="top" secondItem="j4G-kp-9fT" secondAttribute="top" id="xAv-fS-QcR"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
