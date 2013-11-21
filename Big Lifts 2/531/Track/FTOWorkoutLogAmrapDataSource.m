@@ -5,23 +5,25 @@
 #import "WorkoutLog.h"
 
 @implementation FTOWorkoutLogAmrapDataSource
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:@"SetLogCell"];
-
-    if (cell == nil) {
-        cell = [SetLogCell create];
+    if(indexPath.section == SETS_SECTION){
+        SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:@"SetLogCell"];
+        if (cell == nil) {
+            cell = [SetLogCell create];
+        }
+        SetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
+        if (!logToShow) {
+            logToShow = [self.workoutLog.orderedSets lastObject];
+        }
+        [cell setSetLog:logToShow];
     }
-
-    SetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
-    if (!logToShow) {
-        logToShow = [self.workoutLog.orderedSets lastObject];
+    else {
+        return [self maxEstimateCell: tableView];
     }
-
-    [cell setSetLog:logToShow];
-    return cell;
 }
 @end
