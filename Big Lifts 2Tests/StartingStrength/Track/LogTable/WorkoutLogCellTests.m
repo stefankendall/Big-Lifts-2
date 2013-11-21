@@ -24,8 +24,7 @@
     WorkoutLogCell *cell = [WorkoutLogCell create];
 
     [cell setWorkoutLog:workoutLog];
-    STAssertEqualObjects([[cell dateLabel] text], @"05/06", @"");
-
+    STAssertEqualObjects([[cell dateLabel] text], @"5/6/04", @"");
 }
 
 @end

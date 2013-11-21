@@ -9,7 +9,7 @@
     workoutLog = workoutLog1;
 
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setDateFormat:@"MM/dd"];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     [self.dateLabel setText:[dateFormatter stringFromDate:self.workoutLog.date]];
 
     self.workoutLogTableDataSource = [[WorkoutLogTableDataSource alloc] initWithWorkoutLog:self.workoutLog];
