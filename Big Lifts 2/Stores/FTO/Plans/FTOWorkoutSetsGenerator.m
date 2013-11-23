@@ -50,4 +50,8 @@
     return templatePlans[variant];
 }
 
+- (NSArray *) incrementMaxesWeeks {
+    return [[self planForCurrentVariant] incrementMaxesWeeks];
+}
+
 @end

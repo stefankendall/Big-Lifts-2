@@ -2,6 +2,7 @@
 #import "Lift.h"
 #import "SetData.h"
 #import "FTODeload.h"
+#import "FTOStandardPlan.h"
 
 @implementation FTOFivesProgression
 
@@ -36,7 +37,11 @@
 }
 
 - (NSArray *)deloadWeeks {
-    return @[@4];
+    return [[FTOStandardPlan new] deloadWeeks];
+}
+
+- (NSArray *)incrementMaxesWeeks {
+    return [[FTOStandardPlan new] incrementMaxesWeeks];
 }
 
 @end

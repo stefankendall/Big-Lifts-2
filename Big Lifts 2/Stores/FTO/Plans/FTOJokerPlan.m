@@ -36,4 +36,8 @@
     return [[FTOStandardPlan new] deloadWeeks];
 }
 
+- (NSArray *)incrementMaxesWeeks {
+    return [[FTOStandardPlan new] incrementMaxesWeeks];
+}
+
 @end

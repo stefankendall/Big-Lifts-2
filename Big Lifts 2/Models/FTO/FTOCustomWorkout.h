@@ -7,4 +7,6 @@
 @property(nonatomic) NSString *name;
 @property(nonatomic, strong) NSNumber *order;
 @property(nonatomic) BOOL deload;
+@property(nonatomic) BOOL incrementAfterWeek;
+
 @end

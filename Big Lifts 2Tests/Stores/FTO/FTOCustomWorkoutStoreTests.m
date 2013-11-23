@@ -22,4 +22,8 @@
     STAssertEquals([[FTOCustomWorkoutStore instance] count], 4, @"");
 }
 
+- (void)testMarksDeloadAndIncrementWeeksFromVariant {
+    STFail(@"");
+}
+
 @end

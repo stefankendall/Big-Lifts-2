@@ -8,4 +8,6 @@
 - (NSDictionary *)setsFor:(FTOLift *)lift withTemplate:(NSString *)variant;
 
 - (NSArray *)deloadWeeks;
+
+- (NSArray *)incrementMaxesWeeks;
 @end

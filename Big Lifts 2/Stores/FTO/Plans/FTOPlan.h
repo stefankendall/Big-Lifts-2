@@ -6,4 +6,6 @@
 - (NSDictionary *)generate:(Lift *)lift;
 
 - (NSArray *)deloadWeeks;
+
+- (NSArray *)incrementMaxesWeeks;
 @end

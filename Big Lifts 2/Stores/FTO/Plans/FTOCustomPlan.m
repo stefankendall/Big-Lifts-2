@@ -30,5 +30,8 @@
     return @[@4];
 }
 
+- (NSArray *)incrementMaxesWeeks {
+    return @[];
+}
 
 @end

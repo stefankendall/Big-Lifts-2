@@ -315,6 +315,7 @@
 
 /* Begin PBXFileReference section */
 		0214C4ACD4BF4ABBB5B11B7F /* FBFriendPickerCacheDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBFriendPickerCacheDescriptor.m; path = src/FBFriendPickerCacheDescriptor.m; sourceTree = "<group>"; };
+		02A636F71840F15F00871512 /* 27.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = 27.xcdatamodel; path = "../Big Lifts 2/Big_Lifts_2.xcdatamodeld/27.xcdatamodel"; sourceTree = "<group>"; };
 		02B39055F08247B39E59E20B /* FBCacheDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBCacheDescriptor.h; path = src/FBCacheDescriptor.h; sourceTree = "<group>"; };
 		032AF1E08CE94FFEB622CA2D /* FBSystemAccountStoreAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSystemAccountStoreAdapter.h; path = src/FBSystemAccountStoreAdapter.h; sourceTree = "<group>"; };
 		04919E027B2840EC8E2918DC /* FBGraphObjectPagingLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBGraphObjectPagingLoader.h; path = src/FBGraphObjectPagingLoader.h; sourceTree = "<group>"; };
@@ -340,7 +341,7 @@
 		18CD5167C03849719F28BD70 /* FBFriendPickerViewDefaultPNG.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBFriendPickerViewDefaultPNG.h; path = src/FBFriendPickerViewDefaultPNG.h; sourceTree = "<group>"; };
 		1959E8C8D1FD453BAC48BD52 /* libPods-WebViewJavascriptBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebViewJavascriptBridge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		196C232411714144BEF9F75B /* FBDialogsData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBDialogsData.h; path = src/FBDialogsData.h; sourceTree = "<group>"; };
-		19CC95994C354DD4968E4652 /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; includeInIndex = 1; name = WebViewJavascriptBridge.js.txt; path = WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
+		19CC95994C354DD4968E4652 /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WebViewJavascriptBridge.js.txt; path = WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
 		1AB6DFA0B90C4ED399C83304 /* FBFrictionlessDialogSupportDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBFrictionlessDialogSupportDelegate.h; path = src/FBFrictionlessDialogSupportDelegate.h; sourceTree = "<group>"; };
 		1B98F25F06154334B0914946 /* Facebook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Facebook.h; path = src/Facebook.h; sourceTree = "<group>"; };
 		1C00A0778CF747F498F0D44D /* FBErrorUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBErrorUtility.m; path = src/FBErrorUtility.m; sourceTree = "<group>"; };
@@ -705,6 +706,7 @@
 		474A30586D6542CC8FEA7999 = {
 			isa = PBXGroup;
 			children = (
+				02A636F71840F15F00871512 /* 27.xcdatamodel */,
 				5FA1C163A48041ECA5AD0918 /* Podfile */,
 				5854B1565E27461C96D84057 /* Frameworks */,
 				6C2E83362FD54A5B99928BD9 /* Pods */,
@@ -739,7 +741,6 @@
 				90B117F4DFA2436CB0B30264 /* JRSwizzle.m */,
 				2619B34C7CAC4194A55E7B48 /* Support Files */,
 			);
-			name = JRSwizzle;
 			path = JRSwizzle;
 			sourceTree = "<group>";
 		};
@@ -803,7 +804,6 @@
 				848AACEBF9AF43D0AF908593 /* CTCustomTableViewCell.m */,
 				18DC207A274C4968A1E60030 /* Support Files */,
 			);
-			name = CTCustomTableViewCell;
 			path = CTCustomTableViewCell;
 			sourceTree = "<group>";
 		};
@@ -842,7 +842,6 @@
 				05890A55A3074B0AAD730F20 /* Resources */,
 				E22CCD69053D458FB8CDFB5C /* Support Files */,
 			);
-			name = WebViewJavascriptBridge;
 			path = WebViewJavascriptBridge;
 			sourceTree = "<group>";
 		};
@@ -873,7 +872,6 @@
 				C7FAE53EFD3E47B1A6108963 /* NSSet+Utilities.m */,
 				FC44139ADD744E4BA6C683F0 /* Support Files */,
 			);
-			name = MRCEnumerable;
 			path = MRCEnumerable;
 			sourceTree = "<group>";
 		};
@@ -884,7 +882,6 @@
 				361426F940524C73BE49AE9F /* IAPManager.m */,
 				F9D817E1BA1D49B1BD80A50A /* Support Files */,
 			);
-			name = IAPManager;
 			path = IAPManager;
 			sourceTree = "<group>";
 		};
@@ -927,7 +924,6 @@
 				30E2A680BA4B42B3A7DA02D8 /* IIWrapController.m */,
 				5F455F7BAF034CCA8B4A2288 /* Support Files */,
 			);
-			name = ViewDeck;
 			path = ViewDeck;
 			sourceTree = "<group>";
 		};
@@ -940,7 +936,6 @@
 				D1CF7CE30BFC4BFCA69FC513 /* TPKeyboardAvoidingTableView.m */,
 				B0EDC5EA2DB84FBD96FBC59C /* Support Files */,
 			);
-			name = TPKeyboardAvoiding;
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
@@ -1134,7 +1129,6 @@
 				9B19189F763F425B9D699DB0 /* Resources */,
 				BEA0D3826AF44285B4244931 /* Support Files */,
 			);
-			name = "Facebook-iOS-SDK";
 			path = "Facebook-iOS-SDK";
 			sourceTree = "<group>";
 		};
@@ -1149,7 +1143,6 @@
 				C8A9A2ED33C4402B9E1AEE48 /* UbiquityStoreManager.m */,
 				5DEC30276565485BA8918A02 /* Support Files */,
 			);
-			name = UbiquityStoreManager;
 			path = UbiquityStoreManager;
 			sourceTree = "<group>";
 		};
@@ -1531,8 +1524,6 @@
 			mainGroup = 474A30586D6542CC8FEA7999;
 			productRefGroup = E8EF0DE8F99B485ABB3EAAF7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-			);
 			projectRoot = "";
 			targets = (
 				D007A55EB3E54ED499D57F4E /* Pods */,

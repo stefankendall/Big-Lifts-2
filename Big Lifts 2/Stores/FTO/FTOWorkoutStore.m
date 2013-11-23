@@ -48,6 +48,7 @@
     [self empty];
     [self createWorkoutsForEachLift];
     [self markDeloadWorkouts];
+    [self markWeekIncrements];
     [self remarkDoneLifts:doneLiftsByWeek];
     if (![[[FTOSettingsStore instance] first] warmupEnabled]) {
         [self removeWarmup];
@@ -95,6 +96,14 @@
     for (NSNumber *week in [[FTOWorkoutSetsGenerator new] deloadWeeks]) {
         [[[FTOWorkoutStore instance] findAllWhere:@"week" value:week] each:^(FTOWorkout *deloadWorkout) {
             deloadWorkout.deload = YES;
+        }];
+    }
+}
+
+- (void)markWeekIncrements {
+    for (NSNumber *week in [[FTOWorkoutSetsGenerator new] incrementMaxesWeeks]) {
+        [[[FTOWorkoutStore instance] findAllWhere:@"week" value:week] each:^(FTOWorkout *deloadWorkout) {
+            deloadWorkout.incrementAfterWeek = YES;
         }];
     }
 }

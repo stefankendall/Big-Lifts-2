@@ -53,6 +53,8 @@
     customWorkout.week = [NSNumber numberWithInt:week];
     customWorkout.order = [NSNumber numberWithInt:order];
     customWorkout.name = @{@1 : @"5/5/5", @2 : @"3/3/3", @3 : @"5/3/1", @4 : @"Deload"}[[NSNumber numberWithInt:week]];
+    customWorkout.deload = nil;
+    customWorkout.incrementAfterWeek = nil;
 }
 
 - (void)reorderWeeks {

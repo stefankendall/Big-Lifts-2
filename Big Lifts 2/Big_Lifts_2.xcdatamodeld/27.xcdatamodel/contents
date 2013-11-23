@@ -15,7 +15,6 @@
     </entity>
     <entity name="FTOCustomWorkout" representedClassName="FTOCustomWorkout" syncable="YES">
         <attribute name="deload" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="incrementAfterWeek" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="week" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -43,7 +42,6 @@
     <entity name="FTOWorkout" representedClassName="FTOWorkout" syncable="YES">
         <attribute name="deload" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="done" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="incrementAfterWeek" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="week" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" syncable="YES"/>
