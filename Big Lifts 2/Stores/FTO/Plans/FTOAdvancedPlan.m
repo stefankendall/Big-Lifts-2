@@ -44,5 +44,8 @@
     return [[FTOStandardPlan new] incrementMaxesWeeks];
 }
 
+- (NSArray *)weekNames {
+    return [[FTOStandardPlan new] weekNames];
+}
 
 @end

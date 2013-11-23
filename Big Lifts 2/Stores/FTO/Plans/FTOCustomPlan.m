@@ -6,6 +6,7 @@
 #import "NSArray+Enumerable.h"
 #import "Set.h"
 #import "SetData.h"
+#import "FTOStandardPlan.h"
 
 @implementation FTOCustomPlan
 
@@ -27,7 +28,13 @@
 }
 
 - (NSArray *)deloadWeeks {
-    return @[@4];
+    NSMutableArray *weeks = [@[] mutableCopy];
+    for (FTOCustomWorkout *customWorkout in [[FTOCustomWorkoutStore instance] findAll]) {
+        if(![weeks containsObject:customWorkout.week] && customWorkout.deload){
+            [weeks addObject:customWorkout.week];
+        }
+    }
+    return weeks;
 }
 
 - (NSArray *)incrementMaxesWeeks {
@@ -38,6 +45,10 @@
         }
     }
     return weeks;
+}
+
+- (NSArray *)weekNames {
+    return [[FTOStandardPlan new] weekNames];
 }
 
 @end

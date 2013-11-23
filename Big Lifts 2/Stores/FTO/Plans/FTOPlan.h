@@ -8,4 +8,6 @@
 - (NSArray *)deloadWeeks;
 
 - (NSArray *)incrementMaxesWeeks;
+
+- (NSArray *)weekNames;
 @end

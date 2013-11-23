@@ -43,4 +43,9 @@
     return @[@4];
 }
 
+- (NSArray *)weekNames {
+    return @[@"5/5/5", @"3/3/3", @"5/3/1", @"Deload"];
+}
+
+
 @end

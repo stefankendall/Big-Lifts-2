@@ -16,6 +16,10 @@
 
 @implementation FTOCustomWeekSelectorViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if ([self.tableView isEditing]) {
         return 1;
