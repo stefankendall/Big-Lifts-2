@@ -1,8 +1,10 @@
 #import "BarCalculatorTests.h"
 #import "BarCalculator.h"
 #import "PlateStore.h"
-#import "BLStoreManager.h"
 #import "PlateRemaining.h"
+#import "BarStore.h"
+#import "SettingsStore.h"
+#import "Settings.h"
 
 @interface BarCalculatorTests ()
 @property(nonatomic) BarCalculator *calculator;
@@ -27,6 +29,15 @@
     NSArray *copy = [self.calculator copyPlates:[[PlateStore instance] findAll]];
     STAssertEquals((int) [copy count], [[PlateStore instance] count], @"");
     STAssertTrue([copy[0] isKindOfClass:PlateRemaining.class], @"");
+}
+
+- (void)testCalculates70kg {
+    [[[SettingsStore instance] first] setUnits:@"kg"];
+    [[BarStore instance] adjustWeightForSettings];
+    [[PlateStore instance] adjustForKg];
+    self.calculator = [[BarCalculator alloc] initWithPlates:[[PlateStore instance] findAll] barWeight:N(20)];
+    NSArray *expected70 = @[@20, @5];
+    STAssertEqualObjects([self.calculator platesToMakeWeight:N(70)], expected70, @"");
 }
 
 - (void)testFindPlateClosestToWeightMatch {

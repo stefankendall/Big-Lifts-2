@@ -9,7 +9,7 @@
 
 - (void)testBarWeightHasDefaults {
     Bar *bar = [[BarStore instance] first];
-    STAssertEquals( [[bar weight] doubleValue], 45.0, @"");
+    STAssertEqualObjects([bar weight], N(45), @"");
 }
 
 - (void)testBarWeightAdjustsWithUnits {
@@ -18,7 +18,7 @@
 
     [[BarStore instance] adjustWeightForSettings];
     Bar *bar = [[BarStore instance] first];
-    STAssertEquals( [[bar weight] doubleValue], 20.4, @"");
+    STAssertEqualObjects( [bar weight], N(20), @"");
 }
 
 @end

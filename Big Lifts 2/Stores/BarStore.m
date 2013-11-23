@@ -20,7 +20,7 @@
     Bar *bar = [[BarStore instance] first];
     Settings *settings = [[SettingsStore instance] first];
     if ([settings.units isEqualToString:@"kg"]) {
-        bar.weight = N(20.4);
+        bar.weight = N(20);
     }
 }
 
