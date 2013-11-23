@@ -16,4 +16,5 @@
     #import <CoreData/CoreData.h>
 
 #define N(x) [NSDecimalNumber decimalNumberWithString: @"" #x]
+#define NSIP(r,s) [NSIndexPath indexPathForRow: (r) inSection: (s)]
 #endif

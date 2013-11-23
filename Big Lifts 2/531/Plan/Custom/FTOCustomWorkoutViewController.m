@@ -7,6 +7,7 @@
 #import "SetStore.h"
 #import "FTOSetStore.h"
 #import "AddCell.h"
+#import "FTOCustomWorkoutToolbar.h"
 
 @interface FTOCustomWorkoutViewController ()
 
@@ -16,11 +17,14 @@
 @implementation FTOCustomWorkoutViewController
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
+        return 1;
+    }
+    else if (section == 1) {
         return [[self.customWorkout.workout orderedSets] count];
     }
     else {
@@ -34,7 +38,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
+    if (indexPath.section == 0) {
+        FTOCustomWorkoutToolbar *toolbar = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomWorkoutToolbar.class)];
+        if (!toolbar) {
+            toolbar = [FTOCustomWorkoutToolbar create];
+        }
+        [toolbar.incrementAfterWeekSwitch setOn:self.customWorkout.incrementAfterWeek];
+        [toolbar.incrementAfterWeekSwitch addTarget:self action:@selector(incrementAfterWeeksChange:) forControlEvents:UIControlEventValueChanged];
+        return toolbar;
+    }
+    else if ([indexPath section] == 1) {
         FTOCustomSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomSetCell.class)];
         if (!cell) {
             cell = [FTOCustomSetCell create];
@@ -42,7 +55,6 @@
 
         Set *set = self.customWorkout.workout.orderedSets[(NSUInteger) [indexPath row]];
         [cell setSet:set];
-
         return cell;
     }
     else {
@@ -54,8 +66,13 @@
     }
 }
 
+- (void)incrementAfterWeeksChange:(id)toggle {
+    UISwitch *incrementSwitch = toggle;
+    [self.customWorkout setIncrementAfterWeek:[incrementSwitch isOn]];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
+    if ([indexPath section] == 1) {
         self.tappedSet = self.customWorkout.workout.orderedSets[(NSUInteger) [indexPath row]];
         [self performSegueWithIdentifier:@"ftoCustomSetSelectedSegue" sender:self];
     }
@@ -88,13 +105,13 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Set *set = self.customWorkout.workout.orderedSets[(NSUInteger) ([indexPath row])];
-        [self.customWorkout.workout removeSet: set];
+        [self.customWorkout.workout removeSet:set];
         [self.tableView reloadData];
     }
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
+    if ([indexPath section] == 1) {
         return UITableViewCellEditingStyleDelete;
     }
     else {
