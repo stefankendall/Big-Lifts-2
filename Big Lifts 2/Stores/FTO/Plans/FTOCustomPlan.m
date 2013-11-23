@@ -31,7 +31,13 @@
 }
 
 - (NSArray *)incrementMaxesWeeks {
-    return @[];
+    NSMutableArray *weeks = [@[] mutableCopy];
+    for (FTOCustomWorkout *customWorkout in [[FTOCustomWorkoutStore instance] findAll]) {
+        if(![weeks containsObject:customWorkout.week] && customWorkout.incrementAfterWeek){
+            [weeks addObject:customWorkout.week];
+        }
+    }
+    return weeks;
 }
 
 @end

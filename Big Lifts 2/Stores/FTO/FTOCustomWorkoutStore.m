@@ -8,6 +8,8 @@
 #import "WorkoutStore.h"
 #import "FTOVariant.h"
 #import "FTOCustomWorkout.h"
+#import "FTOVariantStore.h"
+#import "FTOPlan.h"
 
 @implementation FTOCustomWorkoutStore
 
@@ -30,8 +32,9 @@
 }
 
 - (void)createWorkoutsForVariant:(NSString *)variant {
-    for (int week = 1; week <= 4; week++) {
-        [self createWithWorkout:[self createWorkoutForWeek:week variant:variant] week:week order:week];
+    NSDictionary *sets = [[FTOWorkoutSetsGenerator new] setsFor:nil withTemplate:variant];
+    for (int week = 1; week <= [[sets allKeys] count]; week++) {
+        [self createWithWorkout:[self createWorkoutForWeek:week variant:variant] week:week order:week variant:variant];
     }
 }
 
@@ -47,14 +50,16 @@
     return workout;
 }
 
-- (void)createWithWorkout:(id)workout week:(int)week order:(int)order {
+- (void)createWithWorkout:(id)workout week:(int)week order:(int)order variant: (NSString *)variant{
     FTOCustomWorkout *customWorkout = [self create];
     customWorkout.workout = workout;
     customWorkout.week = [NSNumber numberWithInt:week];
     customWorkout.order = [NSNumber numberWithInt:order];
     customWorkout.name = @{@1 : @"5/5/5", @2 : @"3/3/3", @3 : @"5/3/1", @4 : @"Deload"}[[NSNumber numberWithInt:week]];
-    customWorkout.deload = nil;
-    customWorkout.incrementAfterWeek = nil;
+
+    NSObject <FTOPlan> *ftoPlan = [[FTOWorkoutSetsGenerator new] planForVariant:variant];
+    customWorkout.deload = [[ftoPlan deloadWeeks] containsObject:[NSNumber numberWithInt:week]];
+    customWorkout.incrementAfterWeek = [[ftoPlan incrementMaxesWeeks] containsObject:[NSNumber numberWithInt:week]];
 }
 
 - (void)reorderWeeks {
