@@ -10,6 +10,8 @@
 
 - (NSArray *)deloadWeeks;
 
+- (id)planForCurrentVariant;
+
 - (NSObject <FTOPlan> *)planForVariant:(NSString *)variant;
 
 - (NSArray *)incrementMaxesWeeks;

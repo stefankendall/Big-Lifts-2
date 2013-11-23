@@ -10,7 +10,6 @@
 #import "SetData.h"
 #import "FTOVariant.h"
 #import "FTOVariantStore.h"
-#import "FTOCustomWorkoutStore.h"
 #import "FTOAssistanceStore.h"
 #import "FTOSettingsStore.h"
 #import "FTOSettings.h"
@@ -109,15 +108,9 @@
 }
 
 - (void)createWorkoutsForEachLift {
-    int weeks = 4;
-
     FTOVariant *variant = [[FTOVariantStore instance] first];
-    if ([variant.name isEqualToString:FTO_VARIANT_SIX_WEEK]) {
-        weeks = 7;
-    }
-    else if ([variant.name isEqualToString:FTO_VARIANT_CUSTOM]) {
-        weeks = [[FTOCustomWorkoutStore instance] count];
-    }
+    NSObject <FTOPlan> *ftoPlan = [[FTOWorkoutSetsGenerator new] planForVariant:variant.name];
+    int weeks = [[[ftoPlan generate:nil] allKeys] count];
 
     NSArray *lifts = [[FTOLiftStore instance] findAll];
     for (int week = 1; week <= weeks; week++) {

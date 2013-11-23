@@ -3,14 +3,14 @@
 #import "FTOWorkoutStore.h"
 #import "FTOWorkout.h"
 #import "FTOLiftStore.h"
-#import "FTOVariantStore.h"
-#import "FTOVariant.h"
 #import "FTOAssistanceStore.h"
+#import "FTOPlan.h"
+#import "FTOWorkoutSetsGenerator.h"
 
 @implementation FTOCycleAdjustor
 
 - (void)checkForCycleChange {
-    if ([self midPointOfSixWeekCycle]) {
+    if ([self shouldIncrementLifts]) {
         [[FTOLiftStore instance] incrementLifts];
     }
 
@@ -19,33 +19,55 @@
     }
 }
 
+- (BOOL)shouldIncrementLifts {
+    if ([self cycleNeedsToIncrement]) {
+        return YES;
+    }
+
+    return [self reachedEndOfIncrementWeek];
+}
+
 - (void)nextCycle {
-    [[FTOLiftStore instance] incrementLifts];
     [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
-            ftoWorkout.done = NO;
-        }];
+        ftoWorkout.done = NO;
+    }];
     [[FTOAssistanceStore instance] cycleChange];
 }
 
-- (BOOL)midPointOfSixWeekCycle {
-    if ([[[[FTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_SIX_WEEK]) {
-        BOOL firstHalfDone = YES;
-        for (int week = 1; week <= 3; week++) {
-            firstHalfDone &= [[[FTOWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:week]] detect:^BOOL(FTOWorkout *ftoWorkout) {
+- (BOOL)reachedEndOfIncrementWeek {
+    NSObject <FTOPlan> *ftoPlan = [[FTOWorkoutSetsGenerator new] planForCurrentVariant];
+    for (NSNumber *incrementWeek in [ftoPlan incrementMaxesWeeks]) {
+        BOOL upToIncrementDone = YES;
+        for (int week = 1; week <= [incrementWeek intValue]; week++) {
+            upToIncrementDone &= [[[FTOWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:week]] detect:^BOOL(FTOWorkout *ftoWorkout) {
                 return !ftoWorkout.done;
             }] == nil;
         }
 
-        BOOL anyInSecondHalfDone = NO;
-        for(int week = 4; week <= 7; week++ ){
-            anyInSecondHalfDone |= [[[FTOWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:week]] detect:^BOOL(FTOWorkout *ftoWorkout) {
+        BOOL anyInNextPartDone = NO;
+        int finalWeek = [self finalWeek:ftoPlan];
+
+        for (int week = [incrementWeek intValue] + 1; week <= finalWeek; week++) {
+            anyInNextPartDone |= [[[FTOWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:week]] detect:^BOOL(FTOWorkout *ftoWorkout) {
                 return ftoWorkout.done;
             }] != nil;
         }
 
-        return firstHalfDone && !anyInSecondHalfDone;
+        return upToIncrementDone && !anyInNextPartDone;
     }
+
     return NO;
+}
+
+- (int)finalWeek:(NSObject <FTOPlan> *)ftoPlan {
+    int finalWeek = 0;
+    NSArray *allWeeks = [[ftoPlan generate:nil] allKeys];
+    for (NSNumber *week in allWeeks) {
+        if ([week intValue] > finalWeek) {
+            finalWeek = [week intValue];
+        }
+    }
+    return finalWeek;
 }
 
 - (BOOL)cycleNeedsToIncrement {

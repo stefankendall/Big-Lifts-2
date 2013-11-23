@@ -28,7 +28,7 @@
     [[FTOWorkoutStore instance] switchTemplate];
 
     [self setupMidSixWeekLiftsDone];
-    STAssertTrue([[FTOCycleAdjustor new] midPointOfSixWeekCycle], @"");
+    STAssertTrue([[FTOCycleAdjustor new] shouldIncrementLifts], @"");
 }
 
 - (void)testMidCycleSixWeekDoesntTriggerPastMid {
@@ -38,12 +38,12 @@
     [self setupMidSixWeekLiftsDone];
     FTOWorkout *firstWorkoutPastCycle = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:4]] firstObject];
     firstWorkoutPastCycle.done = YES;
-    STAssertFalse([[FTOCycleAdjustor new] midPointOfSixWeekCycle], @"");
+    STAssertFalse([[FTOCycleAdjustor new] shouldIncrementLifts], @"");
 }
 
 - (void)testMidCycleSixWeekDoesntTriggerForNonSixWeek {
     [self setupMidSixWeekLiftsDone];
-    STAssertFalse([[FTOCycleAdjustor new] midPointOfSixWeekCycle], @"");
+    STAssertFalse([[FTOCycleAdjustor new] shouldIncrementLifts], @"");
 }
 
 - (void)setupMidSixWeekLiftsDone {

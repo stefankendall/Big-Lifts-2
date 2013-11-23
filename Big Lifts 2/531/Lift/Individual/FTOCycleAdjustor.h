@@ -1,9 +1,11 @@
 @interface FTOCycleAdjustor : NSObject
 - (void)checkForCycleChange;
 
+- (BOOL)shouldIncrementLifts;
+
 - (void)nextCycle;
 
-- (BOOL)midPointOfSixWeekCycle;
+- (BOOL)reachedEndOfIncrementWeek;
 
 - (BOOL)cycleNeedsToIncrement;
 @end
