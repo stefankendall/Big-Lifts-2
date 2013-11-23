@@ -1,0 +1,49 @@
+@interface BLJStore : NSObject
+
+- (id)create;
+
+- (void)empty;
+
+- (void)remove:(id)object;
+
+- (void)reset;
+
+- (void)setupDefaults;
+
+- (NSString *)modelName;
+
+- (id)first;
+
+- (id)last;
+
+- (id)find:(NSString *)name value:(id)value;
+
+- (NSArray *)findAll;
+
+- (NSArray *)findAllWhere:(NSString *)name value:(id)value;
+
+- (NSArray *)findAllWithSort:(NSSortDescriptor *)sortDescriptor;
+
+- (id)findBy:(NSPredicate *)predicate;
+
+- (id)atIndex:(int)index;
+
+- (NSNumber *)max:(NSString *)property;
+
+- (void)removeAtIndex:(int)index;
+
+- (int)count;
+
+- (NSOrderedSet *)unique:(NSString *)string;
+
++ (instancetype)instance;
+
+- (void)onLoad;
+
+- (void)sync;
+
+- (void)load;
+
+@property(nonatomic, strong) NSArray *data;
+
+@end

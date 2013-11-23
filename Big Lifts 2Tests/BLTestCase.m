@@ -2,6 +2,7 @@
 #import "BLStoreManager.h"
 #import "IAPAdapter.h"
 #import "SKProductStore.h"
+#import "BLJStoreManager.h"
 
 @implementation BLTestCase
 
@@ -15,6 +16,7 @@
     [[SKProductStore instance] removePurchases];
     [[IAPAdapter instance] resetPurchases];
     [[BLStoreManager instance] resetAllStores];
+    [[BLJStoreManager instance] resetAllStores];
 }
 
 - (void)dataLoaded {
