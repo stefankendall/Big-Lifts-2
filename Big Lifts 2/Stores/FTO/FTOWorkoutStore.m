@@ -19,6 +19,7 @@
 
 - (void)onLoad {
     [self fixEmptySets];
+    [self markWeekIncrements];
 }
 
 - (void)fixEmptySets {
@@ -101,8 +102,8 @@
 
 - (void)markWeekIncrements {
     for (NSNumber *week in [[FTOWorkoutSetsGenerator new] incrementMaxesWeeks]) {
-        [[[FTOWorkoutStore instance] findAllWhere:@"week" value:week] each:^(FTOWorkout *deloadWorkout) {
-            deloadWorkout.incrementAfterWeek = YES;
+        [[[FTOWorkoutStore instance] findAllWhere:@"week" value:week] each:^(FTOWorkout *ftoWorkout) {
+            ftoWorkout.incrementAfterWeek = YES;
         }];
     }
 }
