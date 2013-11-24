@@ -1,9 +1,8 @@
 #import "JSet.h"
-#import "Workout.h"
-#import "Lift.h"
 #import "WeightRounder.h"
 #import "JBar.h"
 #import "JLift.h"
+#import "JBarStore.h"
 
 @implementation JSet
 
