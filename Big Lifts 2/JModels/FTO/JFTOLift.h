@@ -1,4 +1,6 @@
-@interface JFTOLift : NSObject
+#import "JSONModel.h"
+
+@interface JFTOLift : JSONModel
 
 @property(nonatomic) NSString *name;
 @property(nonatomic) NSDecimalNumber *weight;

@@ -17,35 +17,32 @@
 #import "JSONValueTransformer.h"
 
 #pragma mark - functions
-extern BOOL isNull(id value)
-{
+extern BOOL isNull(id value) {
     if (!value) return YES;
     if ([value isKindOfClass:[NSNull class]]) return YES;
-    
+
     return NO;
 }
 
 @implementation JSONValueTransformer
 
--(id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
-        _primitivesNames = @{@"f":@"float", @"i":@"int", @"d":@"double", @"l":@"long", @"c":@"BOOL", @"s":@"short", @"q":@"long",
-                             //and some famos aliases of primitive types
-                             // BOOL is now "B" on iOS __LP64 builds
-                             @"I":@"NSInteger", @"B":@"BOOL"};
+        _primitivesNames = @{@"f" : @"float", @"i" : @"int", @"d" : @"double", @"l" : @"long", @"c" : @"BOOL", @"s" : @"short", @"q" : @"long",
+                //and some famos aliases of primitive types
+                // BOOL is now "B" on iOS __LP64 builds
+                @"I" : @"NSInteger", @"B" : @"BOOL"};
     }
     return self;
 }
 
-+(Class)classByResolvingClusterClasses:(Class)sourceClass
-{
++ (Class)classByResolvingClusterClasses:(Class)sourceClass {
     //check for all variations of strings
     if ([sourceClass isSubclassOfClass:[NSString class]]) {
         return [NSString class];
     }
-    
+
     //check for all variations of numbers
     if ([sourceClass isSubclassOfClass:[NSNumber class]]) {
         return [NSNumber class];
@@ -55,7 +52,7 @@ extern BOOL isNull(id value)
     if ([sourceClass isSubclassOfClass:[NSArray class]]) {
         return [NSArray class];
     }
-    
+
     //check for all variations of arrays
     if ([sourceClass isSubclassOfClass:[NSDictionary class]]) {
         return [NSDictionary class];
@@ -71,132 +68,114 @@ extern BOOL isNull(id value)
 }
 
 #pragma mark - NSMutableString <-> NSString
--(NSMutableString*)NSMutableStringFromNSString:(NSString*)string
-{
+- (NSMutableString *)NSMutableStringFromNSString:(NSString *)string {
     return [NSMutableString stringWithString:string];
 }
 
 #pragma mark - NSMutableArray <-> NSArray
--(NSMutableArray*)NSMutableArrayFromNSArray:(NSArray*)array
-{
+- (NSMutableArray *)NSMutableArrayFromNSArray:(NSArray *)array {
     return [NSMutableArray arrayWithArray:array];
 }
 
 #pragma mark - NSMutableDictionary <-> NSDictionary
--(NSMutableDictionary*)NSMutableDictionaryFromNSDictionary:(NSDictionary*)dict
-{
+- (NSMutableDictionary *)NSMutableDictionaryFromNSDictionary:(NSDictionary *)dict {
     return [NSMutableDictionary dictionaryWithDictionary:dict];
 }
 
 #pragma mark - NSSet <-> NSArray
--(NSSet*)NSSetFromNSArray:(NSArray*)array
-{
+- (NSSet *)NSSetFromNSArray:(NSArray *)array {
     return [NSSet setWithArray:array];
 }
 
--(NSMutableSet*)NSMutableSetFromNSArray:(NSArray*)array
-{
+- (NSMutableSet *)NSMutableSetFromNSArray:(NSArray *)array {
     return [NSMutableSet setWithArray:array];
 }
 
--(id)JSONObjectFromNSSet:(NSSet*)set
-{
+- (id)JSONObjectFromNSSet:(NSSet *)set {
     return [set allObjects];
 }
 
--(id)JSONObjectFromNSMutableSet:(NSMutableSet*)set
-{
+- (id)JSONObjectFromNSMutableSet:(NSMutableSet *)set {
     return [set allObjects];
 }
 
 
 #pragma mark - BOOL <-> number/string
--(NSNumber*)BOOLFromNSNumber:(NSNumber*)number
-{
+- (NSNumber *)BOOLFromNSNumber:(NSNumber *)number {
     if (isNull(number)) return @0;
     return number;
 }
 
--(NSNumber*)BOOLFromNSString:(NSString*)string
-{
+- (NSNumber *)BOOLFromNSString:(NSString *)string {
     int val = [string intValue];
-    if (val!=0) val=1;
+    if (val != 0) val = 1;
     return @(val);
 }
 
--(NSNumber*)JSONObjectFromBOOL:(NSNumber*)number
-{
+- (NSNumber *)JSONObjectFromBOOL:(NSNumber *)number {
     return number;
 }
 
 #pragma mark - string/number <-> float
--(float)floatFromObject:(id)obj
-{
+- (float)floatFromObject:(id)obj {
     return [obj floatValue];
 }
 
--(float)floatFromNSString:(NSString*)string
-{
+- (float)floatFromNSString:(NSString *)string {
     return [self floatFromObject:string];
 }
 
--(float)floatFromNSNumber:(NSNumber*)number
-{
+- (float)floatFromNSNumber:(NSNumber *)number {
     return [self floatFromObject:number];
 }
 
--(NSNumber*)NSNumberFromfloat:(float)f
-{
+- (NSNumber *)NSNumberFromfloat:(float)f {
     return [NSNumber numberWithFloat:f];
 }
 
 #pragma mark - string <-> number
--(NSNumber*)NSNumberFromNSString:(NSString*)string
-{
-    return [NSNumber numberWithFloat: [string doubleValue]];
+- (NSNumber *)NSNumberFromNSString:(NSString *)string {
+    return [NSNumber numberWithFloat:[string doubleValue]];
 }
 
--(NSString*)NSStringFromNSNumber:(NSNumber*)number
-{
+- (NSString *)NSStringFromNSNumber:(NSNumber *)number {
     return [number stringValue];
 }
 
--(NSNumber*)NSDecimalNumberFromNSString:(NSString*)string
-{
+- (NSNumber *)NSDecimalNumberFromNSString:(NSString *)string {
     return [NSDecimalNumber decimalNumberWithString:string];
 }
 
--(NSString*)NSStringFromNSDecimalNumber:(NSDecimalNumber*)number
-{
+- (NSDecimalNumber *)NSDecimalNumberFromNSNumber:(NSNumber *)number {
+    return [NSDecimalNumber decimalNumberWithDecimal:[number decimalValue]];
+}
+
+- (NSString *)NSStringFromNSDecimalNumber:(NSDecimalNumber *)number {
     return [number stringValue];
 }
 
 #pragma mark - string <-> url
--(NSURL*)NSURLFromNSString:(NSString*)string
-{
-    return [NSURL URLWithString: [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+- (NSURL *)NSURLFromNSString:(NSString *)string {
+    return [NSURL URLWithString:[string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
--(NSString*)JSONObjectFromNSURL:(NSURL*)url
-{
+- (NSString *)JSONObjectFromNSURL:(NSURL *)url {
     return [url absoluteString];
 }
 
 #pragma mark - string <-> date
--(NSDate*)NSDateFromNSString:(NSString*)string
-{
+- (NSDate *)NSDateFromNSString:(NSString *)string {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     string = [string stringByReplacingOccurrencesOfString:@":" withString:@""]; // this is such an ugly code, is this the only way?
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HHmmssZZZZ"];
-    
-    return [dateFormatter dateFromString: string];
+
+    return [dateFormatter dateFromString:string];
 }
 
--(NSString*)JSONObjectFromNSDate:(NSDate*)date
-{
+- (NSString *)JSONObjectFromNSDate:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
-    
+
     return [dateFormatter stringFromDate:date];
 }
 

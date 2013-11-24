@@ -1,3 +1,4 @@
+#import <JSONModel/JSONModel.h>
 #import "NSArray+Enumerable.h"
 #import "BLJStore.h"
 
@@ -14,7 +15,7 @@
 
 - (id)create {
     NSObject *object = [[self modelClass] new];
-    [self.data addObject: object];
+    [self.data addObject:object];
     return object;
 }
 
@@ -134,8 +135,16 @@
 
 - (void)sync {
     NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
-    [keyValueStore setObject:nil forKey:[self keyNameForStore]];
+    [keyValueStore setObject:[self serialize] forKey:[self keyNameForStore]];
     [keyValueStore synchronize];
+}
+
+- (NSArray *)serialize {
+    NSMutableArray *serialized = [@[] mutableCopy];
+    for (JSONModel *model in self.data) {
+        [serialized addObject:[model toJSONString]];
+    }
+    return serialized;
 }
 
 - (NSString *)keyNameForStore {
@@ -143,6 +152,18 @@
 }
 
 - (void)load {
+    NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
+    NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
+    self.data = [self deserialize:serializedData];
+}
+
+- (NSMutableArray *)deserialize:(NSArray *)serialized {
+    NSMutableArray *deserialized = [@[] mutableCopy];
+    for (NSString *string in serialized) {
+        JSONModel *model = [[[self modelClass] alloc] initWithString:string error:nil];
+        [deserialized addObject:model];
+    }
+    return deserialized;
 }
 
 - (void)setupDefaults {

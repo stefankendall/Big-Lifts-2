@@ -59,13 +59,25 @@
     STAssertEqualObjects([[FTOLiftJStore instance] findAll], expected, @"");
 }
 
+- (void)testSerialize {
+    JFTOLift *lift1 = [[FTOLiftJStore instance] create];
+    lift1.name = @"A";
+    lift1.increment = N(5.5);
+    lift1.usesBar = YES;
+    lift1.weight = N(100);
+    lift1.order = @0;
+
+    NSArray *serialized = [[FTOLiftJStore instance] serialize];
+    STAssertNotNil(serialized, @"");
+}
+
 - (void)testSync {
     JFTOLift *lift1 = [[FTOLiftJStore instance] create];
     lift1.name = @"A";
     lift1.increment = N(5.5);
     lift1.usesBar = YES;
     lift1.weight = N(100);
-    lift1.order = nil;
+    lift1.order = @1;
 
     [[FTOLiftJStore instance] sync];
     [[FTOLiftJStore instance] empty];
@@ -76,7 +88,6 @@
     STAssertEqualObjects(syncedLift.increment, N(5.5), @"");
     STAssertEquals(syncedLift.usesBar, YES, @"");
     STAssertEqualObjects(syncedLift.weight, N(100), @"");
-    STAssertEquals(syncedLift.order, nil, @"");
 }
 
 @end

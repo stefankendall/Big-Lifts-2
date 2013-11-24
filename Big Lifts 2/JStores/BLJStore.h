@@ -1,6 +1,6 @@
 @interface BLJStore : NSObject
 
-- (Class) modelClass;
+- (Class)modelClass;
 
 - (id)create;
 
@@ -39,6 +39,8 @@
 - (NSOrderedSet *)unique:(NSString *)string;
 
 + (instancetype)instance;
+
+- (NSArray *)serialize;
 
 - (void)onLoad;
 
