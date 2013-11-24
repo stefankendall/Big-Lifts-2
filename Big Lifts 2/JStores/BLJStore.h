@@ -46,6 +46,8 @@
 
 - (void)load;
 
+- (void)setDefaultsForObject:(id)object;
+
 @property(nonatomic, strong) NSMutableArray *data;
 
 @end

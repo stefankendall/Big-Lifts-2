@@ -1,4 +1,4 @@
-#import <JSONModel/JSONModel.h>
+#import "JSONModel/JSONModel.h"
 
 @interface JSettings : JSONModel
 @property(nonatomic) NSString *units;

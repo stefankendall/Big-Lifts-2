@@ -7,4 +7,9 @@
     return JWorkout.class;
 }
 
+- (void)setDefaultsForObject:(id)object {
+    JWorkout *workout = object;
+    workout.sets = [@[] mutableCopy];
+}
+
 @end

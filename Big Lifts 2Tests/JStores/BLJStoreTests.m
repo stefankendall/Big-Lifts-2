@@ -7,6 +7,13 @@
 - (void)setUp {
     [super setUp];
     [[JFTOLiftStore instance] empty];
+    [[JFTOLiftStore instance] sync];
+}
+
+- (void)testNoKey {
+    NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
+    NSArray *array = [keyValueStore arrayForKey:@"BADKEY"];
+    STAssertEqualObjects(array, nil, @"");
 }
 
 - (void)testCreate {

@@ -12,20 +12,9 @@
     STAssertEquals([[plate count] intValue], 6, @"");
 }
 
-- (void)testRemovesDuplicatedPlatesOnLoad {
-    JPlate *p45 = [[JPlateStore instance] create];
-    p45.count = [NSNumber numberWithInt:2];
-    p45.weight = N(45);
-    JPlate *p35 = [[JPlateStore instance] create];
-    p35.count = [NSNumber numberWithInt:2];
-    p35.weight = N(35);
-
-    [[JPlateStore instance] onLoad];
-    STAssertEquals([[JPlateStore instance] count], 6, @"");
-}
-
 - (void)testCanFindPlatesSortedByWeight {
     NSArray *allPlates = [[JPlateStore instance] findAll];
+    STAssertTrue([allPlates count] > 0, @"");
     for (int i = 0; i < [allPlates count] - 1; i++) {
         JPlate *currentPlate = allPlates[(NSUInteger) i];
         JPlate *nextPlate = allPlates[(NSUInteger) (i + 1)];

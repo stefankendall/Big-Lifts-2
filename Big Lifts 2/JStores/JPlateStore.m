@@ -25,7 +25,13 @@
 }
 
 - (NSArray *)findAll {
-    return [super findAllWithSort:[[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO]];
+    NSLog(@"Plates123");
+    NSLog(@"%@", self.data);
+
+    NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO]];
+    NSArray *dataSortedByWeight = [self.data sortedArrayUsingDescriptors:sortDescriptors];
+    NSLog(@"%@", dataSortedByWeight);
+    return dataSortedByWeight;
 }
 
 - (void)adjustForKg {

@@ -18,22 +18,6 @@
     STAssertEquals([set3.order intValue], 2, @"" );
 }
 
-- (void)testFixesSetsWithBrokenOrderingOnLoad {
-    JWorkout *workout = [[JWorkoutStore instance] create];
-    JSet *set1 = [[JSetStore instance] create];
-    JSet *set2 = [[JSetStore instance] create];
-    JSet *set3 = [[JSetStore instance] create];
-    [workout addSets:@[set1, set2, set3]];
-    set1.order = nil;
-    set2.order = nil;
-    set3.order = nil;
-
-    [[JWorkoutStore instance] onLoad];
-    STAssertEquals([set1.order intValue], 0, @"" );
-    STAssertEquals([set2.order intValue], 1, @"" );
-    STAssertEquals([set3.order intValue], 2, @"" );
-}
-
 - (void)testRemovingSetsFixesOrdering {
     JWorkout *workout = [[JWorkoutStore instance] create];
     JSet *set1 = [[JSetStore instance] create];

@@ -11,7 +11,11 @@
 - (id)create {
     NSObject *object = [[self modelClass] new];
     [self.data addObject:object];
+    [self setDefaultsForObject: object];
     return object;
+}
+
+- (void)setDefaultsForObject:(id)object {
 }
 
 - (void)empty {
@@ -40,6 +44,8 @@
 }
 
 - (NSArray *)findAll {
+    NSLog(@"Data:");
+    NSLog(@"%@", self.data);
     NSSortDescriptor *order = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
     return [self.data sortedArrayUsingDescriptors:@[order]];
 }
@@ -149,7 +155,16 @@
 - (void)load {
     NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
     NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
-    self.data = [self deserialize:serializedData];
+    if (serializedData) {
+        self.data = [self deserialize:serializedData];
+    }
+    else {
+        self.data = [@[] mutableCopy];
+    }
+
+    if ([self.data count] == 0) {
+        [self setupDefaults];
+    }
 }
 
 - (NSMutableArray *)deserialize:(NSArray *)serialized {

@@ -9,7 +9,7 @@
 
 - (NSArray *)findAll {
     NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
-    return [super findAllWithSort:sd];
+    return [self.data sortedArrayUsingDescriptors:@[sd]];
 }
 
 - (JWorkoutLog *)createWithName:(NSString *)name date:(NSDate *)date {
