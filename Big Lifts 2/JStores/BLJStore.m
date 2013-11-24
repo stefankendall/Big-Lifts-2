@@ -8,11 +8,6 @@
     [NSException raise:@"Must implement" format:@""];
 }
 
-- (NSString *)modelName {
-    NSString *className = NSStringFromClass([self class]);
-    return [className substringToIndex:([className rangeOfString:@"Store"]).location];
-}
-
 - (id)create {
     NSObject *object = [[self modelClass] new];
     [self.data addObject:object];
@@ -148,7 +143,7 @@
 }
 
 - (NSString *)keyNameForStore {
-    return [[self modelName] stringByAppendingString:@"Store"];
+    return NSStringFromClass([self class]);
 }
 
 - (void)load {

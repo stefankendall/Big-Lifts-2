@@ -4,7 +4,7 @@
 
 + (BLJStoreManager *)instance;
 
-- (void)initializeAllStores;
+- (void)loadStores;
 
 - (void)resetAllStores;
 

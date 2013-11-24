@@ -1,11 +1,5 @@
 #import "JSONModel.h"
+#import "JLift.h"
 
-@interface JFTOLift : JSONModel
-
-@property(nonatomic) NSString *name;
-@property(nonatomic) NSDecimalNumber *weight;
-@property(nonatomic) NSNumber *order;
-@property(nonatomic) NSDecimalNumber *increment;
-@property(nonatomic) BOOL usesBar;
-
+@interface JFTOLift : JLift
 @end

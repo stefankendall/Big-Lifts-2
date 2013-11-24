@@ -12,8 +12,6 @@
 
 - (void)setupDefaults;
 
-- (NSString *)modelName;
-
 - (id)first;
 
 - (id)last;

@@ -3,10 +3,6 @@
 
 @implementation BLJStoreManager
 
-- (void)initializeAllStores {
-    [self loadStores];
-}
-
 - (void)loadStores {
     self.allStores = @[
     ];
