@@ -1,8 +1,8 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
-#import "FTOLiftJStore.h"
+#import "JFTOLiftStore.h"
 #import "JFTOLift.h"
 
-@implementation FTOLiftJStore
+@implementation JFTOLiftStore
 
 - (Class)modelClass {
     return JFTOLift.class;

@@ -1,89 +1,89 @@
 #import "BLJStoreTests.h"
-#import "FTOLiftJStore.h"
+#import "JFTOLiftStore.h"
 #import "JFTOLift.h"
 
 @implementation BLJStoreTests
 
 - (void)setUp {
     [super setUp];
-    [[FTOLiftJStore instance] empty];
+    [[JFTOLiftStore instance] empty];
 }
 
 - (void)testCreate {
-    JFTOLift *lift = [[FTOLiftJStore instance] create];
+    JFTOLift *lift = [[JFTOLiftStore instance] create];
     STAssertNotNil(lift, @"");
 }
 
 - (void)testCount {
-    [[FTOLiftJStore instance] create];
-    [[FTOLiftJStore instance] create];
-    STAssertEquals([[FTOLiftJStore instance] count], 2, @"");
+    [[JFTOLiftStore instance] create];
+    [[JFTOLiftStore instance] create];
+    STAssertEquals([[JFTOLiftStore instance] count], 2, @"");
 }
 
 - (void)testEmpty {
-    [[FTOLiftJStore instance] create];
-    [[FTOLiftJStore instance] empty];
-    STAssertEquals([[FTOLiftJStore instance] count], 0, @"");
+    [[JFTOLiftStore instance] create];
+    [[JFTOLiftStore instance] empty];
+    STAssertEquals([[JFTOLiftStore instance] count], 0, @"");
 }
 
 - (void)testFirstLast {
-    JFTOLift *lift1 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift1 = [[JFTOLiftStore instance] create];
     lift1.order = @0;
-    JFTOLift *lift3 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift3 = [[JFTOLiftStore instance] create];
     lift3.order = @2;
-    JFTOLift *lift2 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift2 = [[JFTOLiftStore instance] create];
     lift2.order = @1;
 
-    STAssertEquals([[FTOLiftJStore instance] first], lift1, @"");
-    STAssertEquals([[FTOLiftJStore instance] last], lift3, @"");
+    STAssertEquals([[JFTOLiftStore instance] first], lift1, @"");
+    STAssertEquals([[JFTOLiftStore instance] last], lift3, @"");
 }
 
 - (void)testFindByNameValue {
-    JFTOLift *lift1 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift1 = [[JFTOLiftStore instance] create];
     lift1.name = @"A";
-    JFTOLift *lift2 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift2 = [[JFTOLiftStore instance] create];
     lift2.name = @"B";
-    JFTOLift *lift3 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift3 = [[JFTOLiftStore instance] create];
     lift3.name = @"C";
 
-    STAssertEquals([[FTOLiftJStore instance] find:@"name" value:@"B"], lift2, @"");
+    STAssertEquals([[JFTOLiftStore instance] find:@"name" value:@"B"], lift2, @"");
 }
 
 - (void)testFindAll {
-    JFTOLift *lift1 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift1 = [[JFTOLiftStore instance] create];
     lift1.name = @"A";
-    JFTOLift *lift2 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift2 = [[JFTOLiftStore instance] create];
     lift2.name = @"B";
 
     NSArray *expected = @[lift1, lift2];
-    STAssertEqualObjects([[FTOLiftJStore instance] findAll], expected, @"");
+    STAssertEqualObjects([[JFTOLiftStore instance] findAll], expected, @"");
 }
 
 - (void)testSerialize {
-    JFTOLift *lift1 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift1 = [[JFTOLiftStore instance] create];
     lift1.name = @"A";
     lift1.increment = N(5.5);
     lift1.usesBar = YES;
     lift1.weight = N(100);
     lift1.order = @0;
 
-    NSArray *serialized = [[FTOLiftJStore instance] serialize];
+    NSArray *serialized = [[JFTOLiftStore instance] serialize];
     STAssertNotNil(serialized, @"");
 }
 
 - (void)testSync {
-    JFTOLift *lift1 = [[FTOLiftJStore instance] create];
+    JFTOLift *lift1 = [[JFTOLiftStore instance] create];
     lift1.name = @"A";
     lift1.increment = N(5.5);
     lift1.usesBar = YES;
     lift1.weight = N(100);
     lift1.order = @1;
 
-    [[FTOLiftJStore instance] sync];
-    [[FTOLiftJStore instance] empty];
-    [[FTOLiftJStore instance] load];
+    [[JFTOLiftStore instance] sync];
+    [[JFTOLiftStore instance] empty];
+    [[JFTOLiftStore instance] load];
 
-    JFTOLift *syncedLift = [[FTOLiftJStore instance] first];
+    JFTOLift *syncedLift = [[JFTOLiftStore instance] first];
     STAssertEqualObjects(syncedLift.name, @"A", @"");
     STAssertEqualObjects(syncedLift.increment, N(5.5), @"");
     STAssertEquals(syncedLift.usesBar, YES, @"");
