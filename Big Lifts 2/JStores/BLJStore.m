@@ -3,27 +3,32 @@
 
 @implementation BLJStore
 
-- (id)create {
-    return nil;
-}
-
-- (void)empty {
-}
-
-- (void)remove:(id)object {
-}
-
-- (void)reset {
-    [self empty];
-    [self setupDefaults];
-}
-
-- (void)setupDefaults {
+- (Class)modelClass {
+    [NSException raise:@"Must implement" format:@""];
 }
 
 - (NSString *)modelName {
     NSString *className = NSStringFromClass([self class]);
     return [className substringToIndex:([className rangeOfString:@"Store"]).location];
+}
+
+- (id)create {
+    NSObject *object = [[self modelClass] new];
+    [self.data addObject: object];
+    return object;
+}
+
+- (void)empty {
+    self.data = [@[] mutableCopy];
+}
+
+- (void)remove:(id)object {
+    [self.data removeObject:object];
+}
+
+- (void)reset {
+    [self empty];
+    [self setupDefaults];
 }
 
 - (id)first {
@@ -39,7 +44,8 @@
 }
 
 - (NSArray *)findAll {
-    return @[];
+    NSSortDescriptor *order = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+    return [self.data sortedArrayUsingDescriptors:@[order]];
 }
 
 - (NSArray *)findAllWhere:(NSString *)name value:(id)value {
@@ -127,11 +133,19 @@
 }
 
 - (void)sync {
+    NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
+    [keyValueStore setObject:nil forKey:[self keyNameForStore]];
+    [keyValueStore synchronize];
+}
 
+- (NSString *)keyNameForStore {
+    return [[self modelName] stringByAppendingString:@"Store"];
 }
 
 - (void)load {
+}
 
+- (void)setupDefaults {
 }
 
 @end

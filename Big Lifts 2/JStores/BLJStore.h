@@ -1,5 +1,7 @@
 @interface BLJStore : NSObject
 
+- (Class) modelClass;
+
 - (id)create;
 
 - (void)empty;
@@ -44,6 +46,6 @@
 
 - (void)load;
 
-@property(nonatomic, strong) NSArray *data;
+@property(nonatomic, strong) NSMutableArray *data;
 
 @end

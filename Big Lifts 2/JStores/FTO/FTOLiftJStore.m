@@ -4,6 +4,10 @@
 
 @implementation FTOLiftJStore
 
+- (Class)modelClass {
+    return JFTOLift.class;
+}
+
 - (void)setupDefaults {
     [self createWithName:@"Bench" increment:5 order:0];
     [self createWithName:@"Squat" increment:10 order:1];

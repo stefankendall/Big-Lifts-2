@@ -17,7 +17,7 @@
 - (void)testCount {
     [[FTOLiftJStore instance] create];
     [[FTOLiftJStore instance] create];
-    STAssertEquals([[FTOLiftJStore instance] count], 1, @"");
+    STAssertEquals([[FTOLiftJStore instance] count], 2, @"");
 }
 
 - (void)testEmpty {
@@ -55,9 +55,28 @@
     JFTOLift *lift2 = [[FTOLiftJStore instance] create];
     lift2.name = @"B";
 
-    NSArray *expected = @[lift1,lift2];
+    NSArray *expected = @[lift1, lift2];
     STAssertEqualObjects([[FTOLiftJStore instance] findAll], expected, @"");
 }
 
+- (void)testSync {
+    JFTOLift *lift1 = [[FTOLiftJStore instance] create];
+    lift1.name = @"A";
+    lift1.increment = N(5.5);
+    lift1.usesBar = YES;
+    lift1.weight = N(100);
+    lift1.order = nil;
+
+    [[FTOLiftJStore instance] sync];
+    [[FTOLiftJStore instance] empty];
+    [[FTOLiftJStore instance] load];
+
+    JFTOLift *syncedLift = [[FTOLiftJStore instance] first];
+    STAssertEqualObjects(syncedLift.name, @"A", @"");
+    STAssertEqualObjects(syncedLift.increment, N(5.5), @"");
+    STAssertEquals(syncedLift.usesBar, YES, @"");
+    STAssertEqualObjects(syncedLift.weight, N(100), @"");
+    STAssertEquals(syncedLift.order, nil, @"");
+}
 
 @end
