@@ -44,8 +44,6 @@
 }
 
 - (NSArray *)findAll {
-    NSLog(@"Data:");
-    NSLog(@"%@", self.data);
     NSSortDescriptor *order = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
     return [self.data sortedArrayUsingDescriptors:@[order]];
 }

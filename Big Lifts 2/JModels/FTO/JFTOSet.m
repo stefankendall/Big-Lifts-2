@@ -2,6 +2,8 @@
 #import "JLift.h"
 #import "JBar.h"
 #import "JBarStore.h"
+#import "JFTOSettings.h"
+#import "JFTOSettingsStore.h"
 
 @implementation JFTOSet
 
