@@ -10,6 +10,16 @@
 #import "JWorkoutLogStore.h"
 #import "JWorkoutStore.h"
 #import "JFTOLiftStore.h"
+#import "JFTOAssistanceStore.h"
+#import "JFTOBoringButBigStore.h"
+#import "JFTOCustomWorkoutStore.h"
+#import "JFTOSetStore.h"
+#import "JFTOSettingsStore.h"
+#import "JFTOSSTLiftStore.h"
+#import "JFTOTriumvirateLiftStore.h"
+#import "JFTOTriumvirateStore.h"
+#import "JFTOVariantStore.h"
+#import "JFTOWorkoutStore.h"
 
 @implementation BLJStoreManager
 
@@ -44,7 +54,17 @@
                 [JSetStore instance],
                 [JWorkoutLogStore instance],
                 [JWorkoutStore instance],
-                [JFTOLiftStore instance]
+                [JFTOSettingsStore instance],
+                [JFTOVariantStore instance],
+                [JFTOAssistanceStore instance],
+                [JFTOBoringButBigStore instance],
+                [JFTOCustomWorkoutStore instance],
+                [JFTOLiftStore instance],
+                [JFTOSetStore instance],
+                [JFTOSSTLiftStore instance],
+                [JFTOTriumvirateLiftStore instance],
+                [JFTOTriumvirateStore instance],
+                [JFTOWorkoutStore instance]
         ];
     }
 

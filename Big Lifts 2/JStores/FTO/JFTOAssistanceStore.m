@@ -1,6 +1,5 @@
 #import "JFTOAssistanceStore.h"
 #import "JFTOAssistance.h"
-#import "FTOAssistance.h"
 #import "JFTOWorkout.h"
 #import "JSet.h"
 #import "JWorkout.h"
@@ -11,6 +10,7 @@
 #import "FTOSimplestStrengthTemplateAssistance.h"
 #import "JFTOWorkoutStore.h"
 #import "NSArray+Enumerable.h"
+#import "FTOAssistance.h"
 
 @implementation JFTOAssistanceStore
 

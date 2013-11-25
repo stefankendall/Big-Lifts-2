@@ -13,6 +13,7 @@
 #import "JFTOLiftStore.h"
 #import "JWorkoutStore.h"
 #import "SetData.h"
+#import "JLift.h"
 
 @implementation JFTOWorkoutStore
 
@@ -130,7 +131,7 @@
     NSArray *workouts = [self findAll];
     for (JFTOWorkout *workout in workouts) {
         if ([workout.workout.orderedSets count] > 0) {
-            Lift *lift = [workout.workout.orderedSets[0] lift];
+            JLift *lift = [workout.workout.orderedSets[0] lift];
             workout.order = lift.order;
         }
     }

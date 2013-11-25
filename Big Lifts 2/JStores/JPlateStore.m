@@ -10,11 +10,11 @@
 }
 
 - (void)setupDefaults {
-    [self createPlateWithWeight:N(45.0) count:6];
-    [self createPlateWithWeight:N(35.0) count:6];
-    [self createPlateWithWeight:N(25.0) count:6];
-    [self createPlateWithWeight:N(10.0) count:6];
-    [self createPlateWithWeight:N(5.0) count:6];
+    [self createPlateWithWeight:N(45) count:6];
+    [self createPlateWithWeight:N(35) count:6];
+    [self createPlateWithWeight:N(25) count:6];
+    [self createPlateWithWeight:N(10) count:6];
+    [self createPlateWithWeight:N(5) count:6];
     [self createPlateWithWeight:N(2.5) count:6];
 }
 
@@ -25,12 +25,9 @@
 }
 
 - (NSArray *)findAll {
-    NSLog(@"Plates123");
     NSLog(@"%@", self.data);
-
     NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO]];
     NSArray *dataSortedByWeight = [self.data sortedArrayUsingDescriptors:sortDescriptors];
-    NSLog(@"%@", dataSortedByWeight);
     return dataSortedByWeight;
 }
 
