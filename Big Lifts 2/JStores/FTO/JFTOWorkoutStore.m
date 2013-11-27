@@ -14,6 +14,7 @@
 #import "JWorkoutStore.h"
 #import "SetData.h"
 #import "JLift.h"
+#import "JSetData.h"
 
 @implementation JFTOWorkoutStore
 
@@ -112,7 +113,7 @@
 - (JWorkout *)createWorkoutForLift:(FTOLift *)lift week:(int)week {
     JWorkout *workout = [[JWorkoutStore instance] create];
     NSArray *setData = [[FTOWorkoutSetsGenerator new] setsForWeek:week lift:lift];
-    NSArray *sets = [setData collect:^id(SetData *data) {
+    NSArray *sets = [setData collect:^id(JSetData *data) {
         return [data createSet];
     }];
 

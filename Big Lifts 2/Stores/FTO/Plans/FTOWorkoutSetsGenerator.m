@@ -1,7 +1,6 @@
 #import "FTOWorkoutSetsGenerator.h"
 #import "FTOVariant.h"
 #import "FTOVariantStore.h"
-#import "FTOPlan.h"
 #import "FTOStandardPlan.h"
 #import "FTOPyramidPlan.h"
 #import "FTOJokerPlan.h"
@@ -50,7 +49,7 @@
     return templatePlans[variant];
 }
 
-- (NSArray *) incrementMaxesWeeks {
+- (NSArray *)incrementMaxesWeeks {
     return [[self planForCurrentVariant] incrementMaxesWeeks];
 }
 
