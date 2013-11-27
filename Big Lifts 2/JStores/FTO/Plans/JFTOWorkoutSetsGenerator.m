@@ -1,7 +1,17 @@
-#import "FTOWorkoutSetsGenerator.h"
-#import "FTOVariant.h"
-#import "FTOVariantStore.h"
 #import "JFTOLift.h"
+#import "JFTOPlan.h"
+#import "JFTOVariantStore.h"
+#import "JFTOVariant.h"
+#import "FTOVariant.h"
+#import "JFTOJokerPlan.h"
+#import "JFTOPyramidPlan.h"
+#import "JFTOHeavierPlan.h"
+#import "JFTOStandardPlan.h"
+#import "JFTOSixWeekPlan.h"
+#import "JFTOFirstSetLastMultipleSetsPlan.h"
+#import "JFTOAdvancedPlan.h"
+#import "JFTOFivesProgression.h"
+#import "JFTOCustomPlan.h"
 #import "JFTOWorkoutSetsGenerator.h"
 
 @implementation JFTOWorkoutSetsGenerator
@@ -23,7 +33,7 @@
 }
 
 - (id)planForCurrentVariant {
-    FTOVariant *variant = [[FTOVariantStore instance] first];
+    JFTOVariant *variant = [[JFTOVariantStore instance] first];
     return [self planForVariant:variant.name];
 }
 

@@ -1,9 +1,4 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
-#import "FTOWorkoutStore.h"
-#import "Set.h"
-#import "FTOBoringButBig.h"
-#import "FTOBoringButBigStore.h"
-#import "SetData.h"
 #import "JFTOBoringButBigAssistance.h"
 #import "JFTOBoringButBig.h"
 #import "JFTOBoringButBigStore.h"
@@ -52,7 +47,7 @@
 
 - (NSArray *)createBoringSets:(int)numberOfSets forLift:(JLift *)lift {
     NSMutableArray *sets = [@[] mutableCopy];
-    NSDecimalNumber *percentage = [[[FTOBoringButBigStore instance] first] percentage];
+    NSDecimalNumber *percentage = [[[JFTOBoringButBigStore instance] first] percentage];
     for (int set = 0; set < numberOfSets; set++) {
         JFTOSet *ftoSet = [[JFTOSetStore instance] create];
         ftoSet.lift = lift;

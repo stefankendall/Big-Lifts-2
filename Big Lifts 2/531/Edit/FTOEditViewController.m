@@ -83,9 +83,9 @@
     }
     else {
         if ([textField isKindOfClass:TrainingMaxRowTextField.class]) {
-            NSDecimalNumber *trainingMax = [[[FTOSettingsStore instance] first] trainingMax];
+            FTOSettings *ftoSettings = [[FTOSettingsStore instance] first];
             NSDecimalNumber *max =
-                    [[N(100) decimalNumberByDividingBy:trainingMax] decimalNumberByMultiplyingBy:weight];
+                    [[N(100) decimalNumberByDividingBy:[ftoSettings trainingMax]] decimalNumberByMultiplyingBy:weight];
             NSNumberFormatter *nf = [NSNumberFormatter new];
             [nf setMaximumFractionDigits:1];
             NSString *oneDecimalMax = [nf stringFromNumber:max];

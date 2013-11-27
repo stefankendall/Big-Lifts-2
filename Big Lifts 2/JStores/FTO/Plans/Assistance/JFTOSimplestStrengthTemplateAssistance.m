@@ -1,8 +1,4 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
-#import "FTOLiftStore.h"
-#import "FTOLift.h"
-#import "Set.h"
-#import "SetStore.h"
 #import "JFTOSimplestStrengthTemplateAssistance.h"
 #import "JFTOLiftStore.h"
 #import "JFTOLift.h"
@@ -12,6 +8,7 @@
 #import "JFTOSSTLift.h"
 #import "JFTOSSTLiftStore.h"
 #import "JSet.h"
+#import "JSetStore.h"
 
 @implementation JFTOSimplestStrengthTemplateAssistance
 
@@ -54,7 +51,7 @@
 
     JFTOSSTLift *sstLift = [[JFTOSSTLiftStore instance] find:@"associatedLift" value:lift];
     [weekData each:^(NSDictionary *data) {
-        JSet *set = [[SetStore instance] create];
+        JSet *set = [[JSetStore instance] create];
         set.reps = data[@"reps"];
         set.percentage = data[@"percentage"];
         set.lift = sstLift;

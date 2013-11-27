@@ -1,7 +1,6 @@
 #import "JFTOLift.h"
-#import "FTOPlan.h"
 
-@class JFTOLift;
+@protocol JFTOPlan;
 
 @interface JFTOWorkoutSetsGenerator : NSObject
 - (NSArray *)setsForWeek:(int)week lift:(JFTOLift *)lift;
@@ -14,7 +13,7 @@
 
 - (id)planForCurrentVariant;
 
-- (NSObject <FTOPlan> *)planForVariant:(NSString *)variant;
+- (NSObject <JFTOPlan> *)planForVariant:(NSString *)variant;
 
 - (NSArray *)incrementMaxesWeeks;
 @end
