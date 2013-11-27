@@ -4,17 +4,17 @@
 #import "JFTOWorkout.h"
 #import "JFTOAssistanceStore.h"
 #import "JFTOSettingsStore.h"
-#import "FTOSettings.h"
 #import "JWorkout.h"
 #import "JSet.h"
-#import "FTOWorkoutSetsGenerator.h"
 #import "JFTOVariant.h"
 #import "JFTOVariantStore.h"
 #import "JFTOLiftStore.h"
 #import "JWorkoutStore.h"
-#import "SetData.h"
 #import "JLift.h"
 #import "JSetData.h"
+#import "JFTOWorkoutSetsGenerator.h"
+#import "JFTOPlan.h"
+#import "JFTOSettings.h"
 
 @implementation JFTOWorkoutStore
 
@@ -81,7 +81,7 @@
 }
 
 - (void)markDeloadWorkouts {
-    for (NSNumber *week in [[FTOWorkoutSetsGenerator new] deloadWeeks]) {
+    for (NSNumber *week in [[JFTOWorkoutSetsGenerator new] deloadWeeks]) {
         [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:week] each:^(JFTOWorkout *deloadWorkout) {
             deloadWorkout.deload = YES;
         }];
@@ -89,7 +89,7 @@
 }
 
 - (void)markWeekIncrements {
-    for (NSNumber *week in [[FTOWorkoutSetsGenerator new] incrementMaxesWeeks]) {
+    for (NSNumber *week in [[JFTOWorkoutSetsGenerator new] incrementMaxesWeeks]) {
         [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:week] each:^(JFTOWorkout *ftoWorkout) {
             ftoWorkout.incrementAfterWeek = YES;
         }];
@@ -98,21 +98,21 @@
 
 - (void)createWorkoutsForEachLift {
     JFTOVariant *variant = [[JFTOVariantStore instance] first];
-    NSObject <FTOPlan> *ftoPlan = [[FTOWorkoutSetsGenerator new] planForVariant:variant.name];
+    NSObject <JFTOPlan> *ftoPlan = [[JFTOWorkoutSetsGenerator new] planForVariant:variant.name];
     int weeks = [[[ftoPlan generate:nil] allKeys] count];
 
     NSArray *lifts = [[JFTOLiftStore instance] findAll];
     for (int week = 1; week <= weeks; week++) {
         for (int i = 0; i < [lifts count]; i++) {
-            FTOLift *lift = lifts[(NSUInteger) i];
+            JFTOLift *lift = lifts[(NSUInteger) i];
             [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
         }
     }
 }
 
-- (JWorkout *)createWorkoutForLift:(FTOLift *)lift week:(int)week {
+- (JWorkout *)createWorkoutForLift:(JFTOLift *)lift week:(int)week {
     JWorkout *workout = [[JWorkoutStore instance] create];
-    NSArray *setData = [[FTOWorkoutSetsGenerator new] setsForWeek:week lift:lift];
+    NSArray *setData = [[JFTOWorkoutSetsGenerator new] setsForWeek:week lift:lift];
     NSArray *sets = [setData collect:^id(JSetData *data) {
         return [data createSet];
     }];

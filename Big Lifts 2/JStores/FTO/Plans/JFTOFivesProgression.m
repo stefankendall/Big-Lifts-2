@@ -1,6 +1,7 @@
 #import "JSetData.h"
 #import "JFTODeload.h"
 #import "JFTOStandardPlan.h"
+#import "JFTOFivesProgression.h"
 
 @implementation JFTOFivesProgression
 
