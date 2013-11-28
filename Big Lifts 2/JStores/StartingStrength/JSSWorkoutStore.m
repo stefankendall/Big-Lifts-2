@@ -15,6 +15,10 @@
 
 @implementation JSSWorkoutStore
 
+- (Class)modelClass {
+    return JSSWorkout.class;
+}
+
 - (void)setupDefaults {
     [self setupVariant:@"Standard"];
 }

@@ -74,7 +74,8 @@
 
 - (NSNumber *)max:(NSString *)property {
     NSArray *allValues = [[self findAll] collect:^id(id obj) {
-        return [obj valueForKeyPath:property];
+        id value = [obj valueForKeyPath:property];
+        return value ? value : @-1;
     }];
     NSArray *sorted = [allValues sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [obj1 compare:obj2];

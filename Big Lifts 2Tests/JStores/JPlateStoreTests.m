@@ -33,12 +33,4 @@
     STAssertEqualObjects(plate.weight, N(20), @"");
 }
 
-- (void)testDoesNotAdjustPlatesWhenUnitsLbs {
-    JSettings *settings = [[JSettingsStore instance] first];
-    settings.units = @"lbs";
-    [[JPlateStore instance] adjustForKg];
-    JPlate *plate = [[JPlateStore instance] first];
-    STAssertEqualObjects(plate.weight, N(45), @"");
-}
-
 @end
