@@ -1,6 +1,7 @@
 #import "BLJStore.h"
+#import "JLiftStore.h"
 
-@interface JFTOLiftStore : BLJStore
+@interface JFTOLiftStore : JLiftStore
 - (void)incrementLifts;
 
 - (void)adjustForKg;

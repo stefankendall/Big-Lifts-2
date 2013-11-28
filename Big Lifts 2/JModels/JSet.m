@@ -19,7 +19,7 @@
 
     if (self.lift.usesBar) {
         JBar *bar = [[JBarStore instance] first];
-        if ([effectiveWeight compare:bar.weight] == NSOrderedAscending) {
+        if (!effectiveWeight || [effectiveWeight compare:bar.weight] == NSOrderedAscending) {
             return bar.weight;
         }
     }

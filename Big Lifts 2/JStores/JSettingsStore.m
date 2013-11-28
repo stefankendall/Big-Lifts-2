@@ -36,12 +36,12 @@
 
 - (NSDecimalNumber *)defaultLbsIncrementForLift:(NSString *)liftName {
     NSDictionary *defaultIncrements = @{
-            @"Press" : @5,
-            @"Bench" : @5,
-            @"Power Clean" : @5,
-            @"Deadlift" : @10,
-            @"Squat" : @10,
-            @"Back Extension" : @0
+            @"Press" : N(5),
+            @"Bench" : N(5),
+            @"Power Clean" : N(5),
+            @"Deadlift" : N(10),
+            @"Squat" : N(10),
+            @"Back Extension" : N(0)
     };
 
     return defaultIncrements[liftName];

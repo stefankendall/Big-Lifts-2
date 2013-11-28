@@ -1,7 +1,6 @@
 #import "JSONModel/JSONModel.h"
 
-@class Workout;
-@class Lift;
+@class JWorkout;
 @class JLift;
 
 @interface JSet : JSONModel
@@ -14,7 +13,7 @@
 @property(nonatomic) BOOL amrap;
 @property(nonatomic) BOOL optional;
 @property(nonatomic) BOOL assistance;
-@property(nonatomic) Workout *workout;
+@property(nonatomic) JWorkout *workout;
 
 - (NSDecimalNumber *) effectiveWeight;
 

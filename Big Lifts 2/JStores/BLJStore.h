@@ -12,6 +12,8 @@
 
 - (void)setupDefaults;
 
+- (void)setDefaultsForObject:(id)object;
+
 - (id)first;
 
 - (id)last;

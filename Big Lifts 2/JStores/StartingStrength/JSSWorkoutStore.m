@@ -2,13 +2,13 @@
 #import "JSSStateStore.h"
 #import "JSSState.h"
 #import "JSSVariant.h"
+#import "JSSWorkout.h"
 #import "JSSVariantStore.h"
 #import "JSSLiftStore.h"
 #import "JSSLift.h"
 #import "JWorkoutStore.h"
 #import "JWorkout.h"
 #import "JSetStore.h"
-#import "JSSWorkout.h"
 #import "JSet.h"
 #import "NSArray+Enumerable.h"
 #import "JSSWarmupGenerator.h"
@@ -17,6 +17,11 @@
 
 - (Class)modelClass {
     return JSSWorkout.class;
+}
+
+- (void)setDefaultsForObject:(id)object {
+    JSSWorkout *ssWorkout = object;
+    ssWorkout.workouts = [@[] mutableCopy];
 }
 
 - (void)setupDefaults {
@@ -193,9 +198,15 @@
     for (JWorkout *workout in ssWorkout.workouts) {
         JSet *firstSet = workout.orderedSets[0];
         JSSLift *lift = (JSSLift *) firstSet.lift;
+        NSLog(@"Weight %@", lift.weight);
+        NSLog(@"Increment %@", lift.increment);
         if (lift.increment) {
+            NSLog(@"Incrementing");
+            NSLog(@"Sum: %@", [lift.weight decimalNumberByAdding:lift.increment]);
+            NSLog(@"Sum: %@", [lift.weight decimalNumberByAdding:N(10)]);
             lift.weight = [lift.weight decimalNumberByAdding:lift.increment];
         }
+        NSLog(@"New Weight %@", lift.weight);
     }
 }
 

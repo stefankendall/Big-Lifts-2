@@ -55,7 +55,7 @@
 - (void)remarkDoneLifts:(NSDictionary *)doneLiftsByWeek {
     [doneLiftsByWeek each:^(NSNumber *week, NSArray *lifts) {
         NSArray *weekWorkouts = [self findAllWhere:@"week" value:week];
-        [lifts each:^(Lift *lift) {
+        [lifts each:^(JLift *lift) {
             JFTOWorkout *matchingWorkout = [weekWorkouts detect:^BOOL(JFTOWorkout *ftoWorkout) {
                 return [[ftoWorkout.workout.orderedSets firstObject] lift] == lift;
             }];
@@ -73,7 +73,7 @@
             if (!doneLiftsByWeek[ftoWorkout.week]) {
                 doneLiftsByWeek[ftoWorkout.week] = [@[] mutableCopy];
             }
-            Lift *lift = [[ftoWorkout.workout.orderedSets firstObject] lift];
+            JLift *lift = [[ftoWorkout.workout.orderedSets firstObject] lift];
             [doneLiftsByWeek[ftoWorkout.week] addObject:lift];
         }
     }];
