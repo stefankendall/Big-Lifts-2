@@ -2,7 +2,6 @@
 #import "JFTOLiftStore.h"
 #import "JFTOLift.h"
 #import "JSettingsStore.h"
-#import "JSettings.h"
 
 @implementation JFTOLiftStore
 
@@ -36,17 +35,14 @@
 
 - (void)adjustForKg {
     JSettingsStore *settingsStore = [JSettingsStore instance];
-    JSettings *settings = [settingsStore first];
-    if ([settings.units isEqualToString:@"kg"]) {
-        NSArray *liftNames = [[self findAll] collect:^id(JLift *lift) {
-            return lift.name;
-        }];
-        [liftNames each:^(NSString *liftName) {
-            JFTOLift *lift = [[JFTOLiftStore instance] find:@"name" value:liftName];
-            lift.increment = [settingsStore defaultLbsIncrementForLift:lift.name] ?
-                    [settingsStore defaultIncrementForLift:lift.name] : lift.increment;
-        }];
-    }
+    NSArray *liftNames = [[self findAll] collect:^id(JLift *lift) {
+        return lift.name;
+    }];
+    [liftNames each:^(NSString *liftName) {
+        JFTOLift *lift = [[JFTOLiftStore instance] find:@"name" value:liftName];
+        lift.increment = [settingsStore defaultLbsIncrementForLift:lift.name] ?
+                [settingsStore defaultIncrementForLift:lift.name] : lift.increment;
+    }];
 }
 
 @end

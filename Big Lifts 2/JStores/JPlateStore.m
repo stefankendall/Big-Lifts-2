@@ -1,7 +1,5 @@
 #import "JPlateStore.h"
 #import "JPlate.h"
-#import "JSettingsStore.h"
-#import "JSettings.h"
 
 @implementation JPlateStore
 
@@ -25,25 +23,21 @@
 }
 
 - (NSArray *)findAll {
-    NSLog(@"%@", self.data);
     NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"weight" ascending:NO]];
     NSArray *dataSortedByWeight = [self.data sortedArrayUsingDescriptors:sortDescriptors];
     return dataSortedByWeight;
 }
 
 - (void)adjustForKg {
-    JSettings *settings = [[JSettingsStore instance] first];
-    if ([settings.units isEqualToString:@"kg"]) {
-        JPlate *firstPlate = [self first];
-        if ([firstPlate.weight isEqualToNumber:N(45.0)]) {
-            [self empty];
-            [self createPlateWithWeight:N(20.0) count:6];
-            [self createPlateWithWeight:N(15.0) count:6];
-            [self createPlateWithWeight:N(10.0) count:6];
-            [self createPlateWithWeight:N(5.0) count:6];
-            [self createPlateWithWeight:N(2.5) count:6];
-            [self createPlateWithWeight:N(1) count:6];
-        }
+    JPlate *firstPlate = [self first];
+    if ([firstPlate.weight isEqualToNumber:N(45.0)]) {
+        [self empty];
+        [self createPlateWithWeight:N(20.0) count:6];
+        [self createPlateWithWeight:N(15.0) count:6];
+        [self createPlateWithWeight:N(10.0) count:6];
+        [self createPlateWithWeight:N(5.0) count:6];
+        [self createPlateWithWeight:N(2.5) count:6];
+        [self createPlateWithWeight:N(1) count:6];
     }
 }
 

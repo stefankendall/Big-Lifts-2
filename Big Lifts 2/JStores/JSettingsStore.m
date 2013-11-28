@@ -17,9 +17,7 @@
 
 - (void)adjustForKg {
     JSettings *settings = [self first];
-    if ([settings.units isEqualToString:@"kg"] && [settings.roundTo isEqualToNumber:@5]) {
-        settings.roundTo = N(1);
-    }
+    settings.roundTo = N(1);
 }
 
 - (NSDecimalNumber *)defaultIncrementForLift:(NSString *)liftName {
