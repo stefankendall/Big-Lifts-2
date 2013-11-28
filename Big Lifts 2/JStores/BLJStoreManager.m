@@ -20,11 +20,17 @@
 #import "JFTOTriumvirateStore.h"
 #import "JFTOVariantStore.h"
 #import "JFTOWorkoutStore.h"
+#import "JSSLiftStore.h"
+#import "JSSStateStore.h"
+#import "JSSVariantStore.h"
+#import "JSSWorkoutStore.h"
+#import "JSJLiftStore.h"
+#import "JSJWorkoutStore.h"
 
 @implementation BLJStoreManager
 
 - (void)loadStores {
-    for(BLJStore *store in self.allStores){
+    for (BLJStore *store in self.allStores) {
         [store load];
     }
 }
@@ -64,7 +70,13 @@
                 [JFTOSSTLiftStore instance],
                 [JFTOTriumvirateLiftStore instance],
                 [JFTOTriumvirateStore instance],
-                [JFTOWorkoutStore instance]
+                [JFTOWorkoutStore instance],
+                [JSSStateStore instance],
+                [JSSLiftStore instance],
+                [JSSVariantStore instance],
+                [JSSWorkoutStore instance],
+                [JSJLiftStore instance],
+                [JSJWorkoutStore instance]
         ];
     }
 
