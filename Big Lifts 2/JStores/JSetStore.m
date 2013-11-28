@@ -1,5 +1,6 @@
 #import "JSetStore.h"
 #import "JSet.h"
+#import "JLift.h"
 
 @implementation JSetStore
 
