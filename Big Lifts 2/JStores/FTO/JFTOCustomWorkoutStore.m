@@ -1,12 +1,12 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "JFTOCustomWorkoutStore.h"
 #import "JFTOCustomWorkout.h"
-#import "FTOVariant.h"
-#import "FTOWorkoutSetsGenerator.h"
 #import "JWorkout.h"
 #import "JWorkoutStore.h"
-#import "SetData.h"
 #import "JSetData.h"
+#import "FTOVariant.h"
+#import "JFTOWorkoutSetsGenerator.h"
+#import "JFTOPlan.h"
 
 @implementation JFTOCustomWorkoutStore
 
@@ -19,7 +19,7 @@
 }
 
 - (void)createWorkoutsForVariant:(NSString *)variant {
-    NSDictionary *sets = [[FTOWorkoutSetsGenerator new] setsFor:nil withTemplate:variant];
+    NSDictionary *sets = [[JFTOWorkoutSetsGenerator new] setsFor:nil withTemplate:variant];
     for (int week = 1; week <= [[sets allKeys] count]; week++) {
         [self createWithWorkout:[self createWorkoutForWeek:week variant:variant] week:week order:week variant:variant];
     }
@@ -27,7 +27,7 @@
 
 - (JWorkout *)createWorkoutForWeek:(int)week variant:(NSString *)variant {
     JWorkout *workout = [[JWorkoutStore instance] create];
-    NSDictionary *workoutPlan = [[FTOWorkoutSetsGenerator new] setsFor:nil withTemplate:variant];
+    NSDictionary *workoutPlan = [[JFTOWorkoutSetsGenerator new] setsFor:nil withTemplate:variant];
     NSArray *setData = workoutPlan[[NSNumber numberWithInt:week]];
     NSArray *sets = [setData collect:^id(JSetData *data) {
         return [data createSet];
@@ -38,7 +38,7 @@
 }
 
 - (void)createWithWorkout:(id)workout week:(int)week order:(int)order variant:(NSString *)variant {
-    NSObject <FTOPlan> *ftoPlan = [[FTOWorkoutSetsGenerator new] planForVariant:variant];
+    NSObject <JFTOPlan> *ftoPlan = [[JFTOWorkoutSetsGenerator new] planForVariant:variant];
     JFTOCustomWorkout *customWorkout = [self create];
     customWorkout.workout = workout;
     customWorkout.week = [NSNumber numberWithInt:week];

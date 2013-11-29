@@ -3,6 +3,7 @@
 #import "SKProductStore.h"
 #import "BLStoreManager.h"
 #import "DataLoadingViewController.h"
+#import "BLJStoreManager.h"
 
 @interface BLAppDelegate ()
 @property(nonatomic, strong) NSManagedObjectContext *moc;
@@ -23,6 +24,8 @@
     manager.cloudEnabled = YES;
     [[SKProductStore instance] loadProducts:^{
     }];
+
+    [[BLJStoreManager instance] loadStores];
     return YES;
 }
 
