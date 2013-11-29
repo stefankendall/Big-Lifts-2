@@ -2,5 +2,5 @@
 
 @interface JCurrentProgram : JSONModel
 
-@property(nonatomic) NSString *name;
+@property(nonatomic) NSString<Optional> *name;
 @end

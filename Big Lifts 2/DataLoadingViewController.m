@@ -1,6 +1,6 @@
 #import "DataLoadingViewController.h"
-#import "CurrentProgramStore.h"
-#import "CurrentProgram.h"
+#import "JCurrentProgramStore.h"
+#import "JCurrentProgram.h"
 
 @implementation DataLoadingViewController
 
@@ -25,7 +25,7 @@
 }
 
 - (void)segueToApp {
-    CurrentProgram *program = [[CurrentProgramStore instance] first];
+    JCurrentProgram *program = [[JCurrentProgramStore instance] first];
     if (program.name) {
         [self performSegueWithIdentifier:@"dataLoadedSegueToProgram" sender:self];
     }

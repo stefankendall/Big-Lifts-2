@@ -35,6 +35,12 @@
     }
 }
 
+- (void)syncStores {
+    for (BLJStore *store in self.allStores) {
+        [store sync];
+    }
+}
+
 - (void)resetAllStores {
     for (BLJStore *store in self.allStores) {
         [store empty];

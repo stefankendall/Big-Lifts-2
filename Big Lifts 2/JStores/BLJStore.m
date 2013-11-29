@@ -11,7 +11,7 @@
 - (id)create {
     NSObject *object = [[self modelClass] new];
     [self.data addObject:object];
-    [self setDefaultsForObject: object];
+    [self setDefaultsForObject:object];
     return object;
 }
 
@@ -171,7 +171,12 @@
     NSMutableArray *deserialized = [@[] mutableCopy];
     for (NSString *string in serialized) {
         JSONModel *model = [[[self modelClass] alloc] initWithString:string error:nil];
-        [deserialized addObject:model];
+        if (model != nil ) {
+            [deserialized addObject:model];
+        }
+        else {
+            NSLog(@"Could not deserialize: %@", string);
+        }
     }
     return deserialized;
 }

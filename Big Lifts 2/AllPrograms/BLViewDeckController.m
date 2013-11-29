@@ -1,6 +1,5 @@
 #import "BLViewDeckController.h"
-#import "CurrentProgram.h"
-#import "CurrentProgramStore.h"
+#import "JCurrentProgramStore.h"
 
 @implementation BLViewDeckController
 
@@ -22,7 +21,7 @@
             }
     };
 
-    NSString *program = [[[CurrentProgramStore instance] first] name];
+    NSString *program = [[[JCurrentProgramStore instance] first] name];
     self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:
             programControllers[program][@"main"]]
                             leftViewController:[storyboard instantiateViewControllerWithIdentifier:
@@ -43,7 +42,7 @@
             @"Smolov Jr" : @"sjEditNav"
     };
 
-    NSString *program = [[[CurrentProgramStore instance] first] name];
+    NSString *program = [[[JCurrentProgramStore instance] first] name];
     [self setCenterController:[storyboard instantiateViewControllerWithIdentifier:
             firstTimeControllers[program]]];
 }

@@ -20,7 +20,9 @@
                                        containerIdentifier:nil
                                     additionalStoreOptions:nil
                                                   delegate:self];
+#if (!TARGET_IPHONE_SIMULATOR)
     [Crashlytics startWithAPIKey:@"f1f936528fec614b3f5e265a22c4bef0a92d8dc4"];
+#endif
     manager.cloudEnabled = YES;
     [[SKProductStore instance] loadProducts:^{
     }];
@@ -42,6 +44,13 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self beginBackgroundUpdateTask];
+        @try {
+            [[BLJStoreManager instance] syncStores];
+        }
+        @catch (NSException *e) {
+            //TODO
+            NSLog(@"Syncing has issues. Fix later");
+        }
         [self saveContext];
         [self endBackgroundUpdateTask];
     });

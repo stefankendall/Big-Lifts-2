@@ -2,9 +2,9 @@
 #import "ProgramSelectorViewController.h"
 #import "SettingsStore.h"
 #import "Settings.h"
-#import "CurrentProgramStore.h"
-#import "CurrentProgram.h"
 #import "BLViewDeckController.h"
+#import "JCurrentProgramStore.h"
+#import "JCurrentProgram.h"
 
 @interface ProgramSelectorViewController ()
 @property(nonatomic) BOOL firstTimeInApp;
@@ -52,8 +52,8 @@
 }
 
 - (void)rememberSelectedProgram:(NSString *)segueName {
-    CurrentProgramStore *store = [CurrentProgramStore instance];
-    CurrentProgram *program = [store first];
+    JCurrentProgramStore *store = [JCurrentProgramStore instance];
+    JCurrentProgram *program = [store first];
     if (!program) {
         self.firstTimeInApp = YES;
         program = [store create];

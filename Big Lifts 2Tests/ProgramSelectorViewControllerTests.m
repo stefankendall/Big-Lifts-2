@@ -1,8 +1,7 @@
 #import "ProgramSelectorViewControllerTests.h"
 #import "ProgramSelectorViewController.h"
-#import "CurrentProgramStore.h"
-#import "CurrentProgram.h"
-#import "BLStoreManager.h"
+#import "JCurrentProgramStore.h"
+#import "JCurrentProgram.h"
 
 @implementation ProgramSelectorViewControllerTests
 
@@ -10,17 +9,17 @@
     ProgramSelectorViewController *controller = [ProgramSelectorViewController new];
     [controller rememberSelectedProgram:@"ssSegue"];
 
-    CurrentProgramStore *store = [CurrentProgramStore instance];
+    JCurrentProgramStore *store = [JCurrentProgramStore instance];
     STAssertEquals([store count], 1, @"");
-    CurrentProgram *program = [store first];
+    JCurrentProgram *program = [store first];
     STAssertTrue([[program name] isEqualToString:@"Starting Strength"], @"");
 }
 
 - (void)testRemembersSelectedProgramOverwritesExistingProgram {
     ProgramSelectorViewController *controller = [ProgramSelectorViewController new];
 
-    CurrentProgramStore *store = [CurrentProgramStore instance];
-    CurrentProgram *program = [store create];
+    JCurrentProgramStore *store = [JCurrentProgramStore instance];
+    JCurrentProgram *program = [store create];
     program.name = @"5/3/1";
 
     [controller rememberSelectedProgram:@"ssSegue"];
