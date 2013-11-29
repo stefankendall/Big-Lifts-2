@@ -4,18 +4,18 @@
 #import "FTOWorkout.h"
 #import "Workout.h"
 #import "FTOWorkoutCell.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
-#import "SetLogStore.h"
 #import "Set.h"
 #import "FTOLiftWorkoutToolbar.h"
 #import "FTORepsToBeatCalculator.h"
 #import "FTORepsToBeatBreakdown.h"
 #import "FTOSetChangeForm.h"
-#import "SetLog.h"
 #import "FTOCycleAdjustor.h"
 #import "UITableViewController+NoEmptyRows.h"
 #import "SetHelper.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
+#import "JSetLogStore.h"
+#import "JSetLog.h"
 
 @implementation FTOLiftWorkoutViewController
 
@@ -201,7 +201,7 @@
 }
 
 - (void)logWorkout {
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
     workoutLog.date = [NSDate new];
     workoutLog.deload = self.ftoWorkout.deload;
@@ -215,7 +215,7 @@
         }
         NSDecimalNumber *weight = self.variableWeight[[NSNumber numberWithInt:i]];
 
-        SetLog *setLog = [[SetLogStore instance] createFromSet:set];
+        JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
         if (reps != nil) {
             setLog.reps = reps;
         }

@@ -7,6 +7,11 @@
     return JWorkoutLog.class;
 }
 
+- (void)setDefaultsForObject:(id)object {
+    JWorkoutLog *log = object;
+    log.sets = [@[] mutableCopy];
+}
+
 - (NSArray *)findAll {
     NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
     return [self.data sortedArrayUsingDescriptors:@[sd]];

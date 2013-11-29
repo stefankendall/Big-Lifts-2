@@ -1,18 +1,18 @@
 #import "SJTrackViewController.h"
-#import "WorkoutLogStore.h"
+#import "JWorkoutLogStore.h"
 #import "CombinedSetWorkoutLogTableDataSource.h"
 #import "SetLogCombiner.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLog.h"
 #import "WorkoutLogCell.h"
 
 @implementation SJTrackViewController
 
 - (NSArray *)getLog {
-    return [[WorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov Jr"];
+    return [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov Jr"];
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
-    WorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
+    JWorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
     return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:workoutLog.orderedSets]] count];
 }
 
@@ -21,7 +21,7 @@
     if (!cell) {
         cell = [WorkoutLogCell create];
     }
-    WorkoutLog *workoutLog = [self getLog][(NSUInteger) [indexPath row]];
+    JWorkoutLog *workoutLog = [self getLog][(NSUInteger) [indexPath row]];
     [cell setWorkoutLog:workoutLog];
     cell.workoutLogTableDataSource = [[CombinedSetWorkoutLogTableDataSource alloc] initWithWorkoutLog:workoutLog];
     [cell.setTable setDataSource:cell.workoutLogTableDataSource];

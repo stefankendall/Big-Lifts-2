@@ -1,27 +1,22 @@
 #import "SetLogCombinerTests.h"
-#import "SetLogStore.h"
-#import "SetLog.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
+#import "JSetLogStore.h"
+#import "JSetLog.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
 #import "SetLogCombiner.h"
 #import "SetLogContainer.h"
-#import "FTOTriumvirateAssistance.h"
-#import "FTOWorkoutStore.h"
-#import "FTOTriumvirate.h"
-#import "Workout.h"
-#import "NSArray+Enumerable.h"
 
 @implementation SetLogCombinerTests
 
 - (void)testCombinesIdenticalSets {
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
-    SetLog *set1 = [[SetLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
+    JSetLog *set1 = [[JSetLogStore instance] create];
     set1.name = @"Squat";
     set1.reps = @3;
     set1.weight = N(100);
     [workoutLog addSet:set1];
 
-    SetLog *set2 = [[SetLogStore instance] create];
+    JSetLog *set2 = [[JSetLogStore instance] create];
     set2.name = @"Squat";
     set2.reps = @3;
     set2.weight = N(100);
@@ -35,20 +30,20 @@
 }
 
 - (void)testCombinesSequentialSets {
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
-    SetLog *set1 = [[SetLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
+    JSetLog *set1 = [[JSetLogStore instance] create];
     set1.name = @"Squat";
     set1.reps = @3;
     set1.weight = N(100);
     [workoutLog addSet:set1];
 
-    SetLog *set2 = [[SetLogStore instance] create];
+    JSetLog *set2 = [[JSetLogStore instance] create];
     set2.name = @"Squat";
     set2.reps = @3;
     set2.weight = N(140);
     [workoutLog addSet:set2];
 
-    SetLog *set3 = [[SetLogStore instance] create];
+    JSetLog *set3 = [[JSetLogStore instance] create];
     set3.name = @"Squat";
     set3.reps = @3;
     set3.weight = N(100);

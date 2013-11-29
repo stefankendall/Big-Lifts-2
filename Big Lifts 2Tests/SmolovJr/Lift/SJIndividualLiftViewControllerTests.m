@@ -2,8 +2,8 @@
 #import "SJIndividualLiftViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SJWorkoutStore.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "SJSetCellWithPlates.h"
@@ -15,9 +15,9 @@
     controller.sjWorkout = [[SJWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     [controller doneButtonTapped:nil];
 
-    NSArray *smolovLogs = [[WorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov Jr"];
+    NSArray *smolovLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov Jr"];
     STAssertEquals([smolovLogs count], 1U, @"");
-    WorkoutLog *workoutLog = smolovLogs[0];
+    JWorkoutLog *workoutLog = smolovLogs[0];
     STAssertEquals([workoutLog.orderedSets count], 6U, @"");
 }
 

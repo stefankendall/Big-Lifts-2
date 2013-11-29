@@ -1,21 +1,21 @@
 #import "FTOTrackViewControllerTests.h"
 #import "BLStore.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
 #import "FTOTrackViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "WorkoutLogCell.h"
 #import "WorkoutLogTableDataSource.h"
-#import "SetLogStore.h"
-#import "SetLog.h"
+#import "JSetLogStore.h"
+#import "JSetLog.h"
 #import "FTOSettingsStore.h"
 #import "FTOTrackToolbarCell.h"
 
 @implementation FTOTrackViewControllerTests
 
 - (void)testReturnsRowForEachLog {
-    [[WorkoutLogStore instance] create];
-    WorkoutLog *log = [[WorkoutLogStore instance] create];
+    [[JWorkoutLogStore instance] create];
+    JWorkoutLog *log = [[JWorkoutLogStore instance] create];
     log.name = @"5/3/1";
 
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
@@ -23,10 +23,10 @@
 }
 
 - (void)testReturnsCorrectRows {
-    [[WorkoutLogStore instance] create];
-    WorkoutLog *log = [[WorkoutLogStore instance] create];
+    [[JWorkoutLogStore instance] create];
+    JWorkoutLog *log = [[JWorkoutLogStore instance] create];
     log.name = @"5/3/1";
-    [log addSet:[[SetLogStore instance] create]];
+    [log addSet:[[JSetLogStore instance] create]];
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     STAssertEquals([controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
@@ -47,13 +47,13 @@
 }
 
 - (void)testViewButtonTappedChangesView {
-    WorkoutLog *log = [[WorkoutLogStore instance] create];
+    JWorkoutLog *log = [[JWorkoutLogStore instance] create];
     log.name = @"5/3/1";
-    SetLog *setLog = [[SetLogStore instance] create];
+    JSetLog *setLog = [[JSetLogStore instance] create];
     setLog.warmup = YES;
     [log addSet:setLog];
-    [log addSet:[[SetLogStore instance] create]];
-    [log addSet:[[SetLogStore instance] create]];
+    [log addSet:[[JSetLogStore instance] create]];
+    [log addSet:[[JSetLogStore instance] create]];
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     int TWO_WORK_SETS = 2;
     STAssertEquals([self getCellRowCount:controller], TWO_WORK_SETS, @"");
@@ -69,15 +69,15 @@
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd"];
 
-    WorkoutLog *log1 = [[WorkoutLogStore instance] create];
+    JWorkoutLog *log1 = [[JWorkoutLogStore instance] create];
     log1.name = @"5/3/1";
     log1.date = [df dateFromString:@"2013-01-12"];
 
-    WorkoutLog *log2 = [[WorkoutLogStore instance] create];
+    JWorkoutLog *log2 = [[JWorkoutLogStore instance] create];
     log2.name = @"5/3/1";
     log2.date = [df dateFromString:@"2013-02-01"];
 
-    WorkoutLog *log3 = [[WorkoutLogStore instance] create];
+    JWorkoutLog *log3 = [[JWorkoutLogStore instance] create];
     log3.name = @"5/3/1";
     log3.date = [df dateFromString:@"2013-01-17"];
 
@@ -87,7 +87,7 @@
 }
 
 - (void)testDoesNotSegueWhenToolbarTapped {
-    WorkoutLog *log1 = [[WorkoutLogStore instance] create];
+    JWorkoutLog *log1 = [[JWorkoutLogStore instance] create];
     log1.name = @"5/3/1";
     UINavigationController *nav = [self getControllerByStoryboardIdentifier:@"ftoTrackNavController"];
     FTOTrackViewController *controller = [nav viewControllers][0];
@@ -105,14 +105,14 @@
 - (void)testCanSortLogAlphabetically {
     NSDateFormatter *df = [NSDateFormatter new];
     [df setDateFormat:@"yyyy-MM-dd"];
-    WorkoutLog *oldBench = [[WorkoutLogStore instance] createWithName:@"5/3/1" date: [df dateFromString:@"2013-01-01"]];
-    [oldBench addSet:[[SetLogStore instance] createWithName:@"Bench" weight:N(200) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
-    WorkoutLog *oldSquat = [[WorkoutLogStore instance] createWithName:@"5/3/1" date: [df dateFromString:@"2013-01-03"]];
-    [oldSquat addSet:[[SetLogStore instance] createWithName:@"Squat" weight:N(300) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
-    WorkoutLog *newBench = [[WorkoutLogStore instance] createWithName:@"5/3/1" date: [df dateFromString:@"2013-01-05"]];
-    [newBench addSet:[[SetLogStore instance] createWithName:@"Bench" weight:N(205) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
-    WorkoutLog *newSquat = [[WorkoutLogStore instance] createWithName:@"5/3/1" date: [df dateFromString:@"2013-01-07"]];
-    [newSquat addSet:[[SetLogStore instance] createWithName:@"Squat" weight:N(310) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    JWorkoutLog *oldBench = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[df dateFromString:@"2013-01-01"]];
+    [oldBench addSet:[[JSetLogStore instance] createWithName:@"Bench" weight:N(200) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    JWorkoutLog *oldSquat = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[df dateFromString:@"2013-01-03"]];
+    [oldSquat addSet:[[JSetLogStore instance] createWithName:@"Squat" weight:N(300) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    JWorkoutLog *newBench = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[df dateFromString:@"2013-01-05"]];
+    [newBench addSet:[[JSetLogStore instance] createWithName:@"Bench" weight:N(205) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    JWorkoutLog *newSquat = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[df dateFromString:@"2013-01-07"]];
+    [newSquat addSet:[[JSetLogStore instance] createWithName:@"Squat" weight:N(310) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
 
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     STAssertEquals([controller getLog][0], newSquat, @"");
@@ -120,7 +120,7 @@
     STAssertEquals([controller getLog][2], oldSquat, @"");
     STAssertEquals([controller getLog][3], oldBench, @"");
 
-    [controller sortButtonTapped: nil];
+    [controller sortButtonTapped:nil];
 
     STAssertEquals([controller getLog][0], newBench, @"");
     STAssertEquals([controller getLog][1], oldBench, @"");

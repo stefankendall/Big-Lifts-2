@@ -1,17 +1,17 @@
 #import "FTOLogGraphTransformerTests.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
-#import "SetLog.h"
-#import "SetLogStore.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
+#import "JSetLog.h"
+#import "JSetLogStore.h"
 #import "FTOLogGraphTransformer.h"
 
 @implementation FTOLogGraphTransformerTests
 
 - (void)testLogToChartEntry {
-    SetLog *set = [[SetLogStore instance] create];
+    JSetLog *set = [[JSetLogStore instance] create];
     set.weight = N(200);
     set.reps = @3;
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     [workoutLog.sets addObjectsFromArray:@[set]];
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd"];
@@ -42,17 +42,17 @@
 }
 
 - (void)testGeneratesOneLogPerWorkout {
-    SetLog *set1 = [[SetLogStore instance] create];
+    JSetLog *set1 = [[JSetLogStore instance] create];
     set1.name = @"Deadlift";
     set1.weight = N(200);
     set1.reps = @3;
 
-    SetLog *set2 = [[SetLogStore instance] create];
+    JSetLog *set2 = [[JSetLogStore instance] create];
     set1.name = @"Deadlift";
     set1.weight = N(210);
     set1.reps = @2;
 
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd"];
@@ -70,12 +70,12 @@
 }
 
 - (void)testDoesNotInlucdeDeload {
-    SetLog *set1 = [[SetLogStore instance] create];
+    JSetLog *set1 = [[JSetLogStore instance] create];
     set1.name = @"Deadlift";
     set1.weight = N(200);
     set1.reps = @3;
 
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.deload = YES;
     workoutLog.name = @"5/3/1";
     NSDateFormatter *df = [[NSDateFormatter alloc] init];

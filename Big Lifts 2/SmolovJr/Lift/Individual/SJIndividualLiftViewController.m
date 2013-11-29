@@ -5,16 +5,16 @@
 #import "SJSetCell.h"
 #import "SJSetWeightViewController.h"
 #import "Set.h"
-#import "WorkoutLog.h"
-#import "WorkoutLogStore.h"
-#import "SetLogStore.h"
-#import "SetLog.h"
 #import "WeightRounder.h"
 #import "IIViewDeckController.h"
 #import "SJWorkoutStore.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "SJSetCellWithPlates.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
+#import "JSetLog.h"
+#import "JSetLogStore.h"
 
 @interface SJIndividualLiftViewController ()
 @property(nonatomic, strong) NSDecimalNumber *liftedWeight;
@@ -42,11 +42,11 @@
 }
 
 - (void)logWorkout {
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"Smolov Jr";
     workoutLog.date = [NSDate new];
     [self.sjWorkout.workout.orderedSets each:^(Set *set) {
-        SetLog *setLog = [[SetLogStore instance] createFromSet:set];
+        JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
         setLog.weight = [self minimumOrLiftedWeight];
         [workoutLog addSet:setLog];
     }];

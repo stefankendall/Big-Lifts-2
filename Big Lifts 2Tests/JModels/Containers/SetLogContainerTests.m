@@ -1,17 +1,17 @@
-#import "SetLogTests.h"
-#import "SetLog.h"
-#import "SetLogStore.h"
+#import "SetLogContainerTests.h"
+#import "JSetLogStore.h"
+#import "JSetLog.h"
 #import "SetLogContainer.h"
 
-@implementation SetLogTests
+@implementation SetLogContainerTests
 
 - (void)testIsEqualSameValues {
-    SetLog *log1 = [[SetLogStore instance] create];
+    JSetLog *log1 = [[JSetLogStore instance] create];
     log1.name = @"Squat";
     log1.reps = @5;
     log1.weight = N(255.5);
 
-    SetLog *log2 = [[SetLogStore instance] create];
+    JSetLog *log2 = [[JSetLogStore instance] create];
     log2.name = @"Squat";
     log2.reps = @5;
     log2.weight = N(255.5);
@@ -25,12 +25,12 @@
 }
 
 - (void)testIsEqualDifferentValues {
-    SetLog *log1 = [[SetLogStore instance] create];
+    JSetLog *log1 = [[JSetLogStore instance] create];
     log1.name = @"Squat";
     log1.reps = @4;
     log1.weight = N(255.5);
 
-    SetLog *log2 = [[SetLogStore instance] create];
+    JSetLog *log2 = [[JSetLogStore instance] create];
     log2.name = @"Squat";
     log2.reps = @5;
     log2.weight = N(255.5);

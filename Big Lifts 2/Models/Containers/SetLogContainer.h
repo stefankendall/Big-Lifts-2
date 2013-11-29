@@ -1,9 +1,9 @@
-@class SetLog;
+@class JSetLog;
 
 @interface SetLogContainer : NSObject
 
-- (id) initWithSetLog: (SetLog*) setLog;
+- (id)initWithSetLog:(JSetLog *)setLog;
 
-@property(nonatomic, strong) SetLog *setLog;
+@property(nonatomic, strong) JSetLog *setLog;
 @property(nonatomic) int count;
 @end

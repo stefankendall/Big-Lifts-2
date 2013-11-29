@@ -1,8 +1,7 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "SetHelper.h"
 #import "Set.h"
-#import "SetLog.h"
-#import "SetLog.h"
+#import "JSetLog.h"
 
 @implementation SetHelper
 - (Set *)heaviestAmrapSet:(NSArray *)sets {
@@ -21,9 +20,9 @@
     return heaviestAmrap;
 }
 
-- (SetLog *)heaviestAmrapSetLog:(NSArray *)sets {
-    __block SetLog *heaviestAmrap = nil;
-    [sets each:^(SetLog *testSet) {
+- (JSetLog *)heaviestAmrapSetLog:(NSArray *)sets {
+    __block JSetLog *heaviestAmrap = nil;
+    [sets each:^(JSetLog *testSet) {
         if ([testSet amrap]) {
             if (!heaviestAmrap) {
                 heaviestAmrap = testSet;

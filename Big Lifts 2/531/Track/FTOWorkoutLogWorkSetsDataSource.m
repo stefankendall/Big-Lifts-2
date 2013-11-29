@@ -1,6 +1,6 @@
 #import "FTOWorkoutLogWorkSetsDataSource.h"
 #import "SetLogCell.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLog.h"
 
 @implementation FTOWorkoutLogWorkSetsDataSource
 

@@ -1,5 +1,5 @@
 #import "SetLogCell.h"
-#import "SetLog.h"
+#import "JSetLog.h"
 #import "Settings.h"
 #import "SettingsStore.h"
 
@@ -7,7 +7,7 @@
 
 int const SET_LOG_CELL_HEIGHT = 30;
 
-- (void)setSetLog:(SetLog *)setLog {
+- (void)setSetLog:(JSetLog *)setLog {
     _setLog = setLog;
 
     [self.liftNameLabel setText:[self.setLog name]];

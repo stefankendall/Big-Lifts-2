@@ -1,9 +1,9 @@
 #import "SSIndividualWorkoutViewControllerTests.h"
 #import "SSIndividualWorkoutViewController.h"
 #import "SSWorkoutStore.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
-#import "SetLog.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
+#import "JSetLog.h"
 #import "SSWorkout.h"
 #import "SSLiftStore.h"
 #import "SSLift.h"
@@ -45,29 +45,29 @@
     self.controller.ssWorkout = [[SSWorkoutStore instance] first];
     [self.controller doneButtonTapped:nil];
 
-    WorkoutLogStore *logStore = [WorkoutLogStore instance];
-    WorkoutLog *workoutLog = [logStore first];
+    JWorkoutLogStore *logStore = [JWorkoutLogStore instance];
+    JWorkoutLog *workoutLog = [logStore first];
     STAssertEquals([logStore count], 1, @"");
     NSOrderedSet *workSets = [workoutLog sets];
 
     STAssertEquals([workSets count], (NSUInteger) 7, @"");
     STAssertNotNil(workoutLog.date, @"");
 
-    STAssertTrue([((SetLog *) workSets[0]).name isEqualToString:@"Squat"], @"");
-    STAssertTrue([((SetLog *) workSets[1]).name isEqualToString:@"Squat"], @"");
-    STAssertTrue([((SetLog *) workSets[2]).name isEqualToString:@"Squat"], @"");
-    STAssertTrue([((SetLog *) workSets[3]).name isEqualToString:@"Bench"], @"");
-    STAssertTrue([((SetLog *) workSets[4]).name isEqualToString:@"Bench"], @"");
-    STAssertTrue([((SetLog *) workSets[5]).name isEqualToString:@"Bench"], @"");
-    STAssertTrue([((SetLog *) workSets[6]).name isEqualToString:@"Deadlift"], @"");
+    STAssertTrue([((JSetLog *) workSets[0]).name isEqualToString:@"Squat"], @"");
+    STAssertTrue([((JSetLog *) workSets[1]).name isEqualToString:@"Squat"], @"");
+    STAssertTrue([((JSetLog *) workSets[2]).name isEqualToString:@"Squat"], @"");
+    STAssertTrue([((JSetLog *) workSets[3]).name isEqualToString:@"Bench"], @"");
+    STAssertTrue([((JSetLog *) workSets[4]).name isEqualToString:@"Bench"], @"");
+    STAssertTrue([((JSetLog *) workSets[5]).name isEqualToString:@"Bench"], @"");
+    STAssertTrue([((JSetLog *) workSets[6]).name isEqualToString:@"Deadlift"], @"");
 }
 
 - (void)testTappingDoneButtonWithoutWarmup {
     self.controller.ssWorkout = [[SSWorkoutStore instance] first];
     [self.controller doneButtonTapped:nil];
 
-    WorkoutLogStore *logStore = [WorkoutLogStore instance];
-    WorkoutLog *workoutLog = [logStore first];
+    JWorkoutLogStore *logStore = [JWorkoutLogStore instance];
+    JWorkoutLog *workoutLog = [logStore first];
     STAssertEquals([[workoutLog sets] count], (NSUInteger) 7, @"");
 }
 

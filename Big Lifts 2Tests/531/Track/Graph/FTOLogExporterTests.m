@@ -1,33 +1,33 @@
 #import "FTOLogExporterTests.h"
 #import "FTOLogExporter.h"
-#import "WorkoutLog.h"
-#import "WorkoutLogStore.h"
-#import "SetLog.h"
-#import "SetLogStore.h"
+#import "JWorkoutLog.h"
+#import "JWorkoutLogStore.h"
+#import "JSetLog.h"
+#import "JSetLogStore.h"
 
 @implementation FTOLogExporterTests
 
 - (void)testConvertsWorkoutLogsIntoCsv {
-    WorkoutLog *workoutLog1 = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog1 = [[JWorkoutLogStore instance] create];
     workoutLog1.name = @"5/3/1";
     workoutLog1.date = [self dateFor:@"2013-01-23"];
 
-    SetLog *setLog1 = [[SetLogStore instance] create];
+    JSetLog *setLog1 = [[JSetLogStore instance] create];
     setLog1.weight = N(200);
     setLog1.reps = @3;
     setLog1.name = @"Deadlift";
 
-    SetLog *setLog2 = [[SetLogStore instance] create];
+    JSetLog *setLog2 = [[JSetLogStore instance] create];
     setLog2.weight = N(210);
     setLog2.reps = @2;
     setLog2.name = @"Deadlift";
     [workoutLog1.sets addObjectsFromArray:@[setLog1, setLog2]];
 
-    WorkoutLog *workoutLog2 = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog2 = [[JWorkoutLogStore instance] create];
     workoutLog2.name = @"5/3/1";
     workoutLog2.date = [self dateFor:@"2013-02-01"];
 
-    SetLog *setLog2_1 = [[SetLogStore instance] create];
+    JSetLog *setLog2_1 = [[JSetLogStore instance] create];
     setLog2_1.weight = N(100);
     setLog2_1.reps = @5;
     setLog2_1.name = @"Press";

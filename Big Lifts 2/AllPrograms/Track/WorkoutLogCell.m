@@ -1,11 +1,11 @@
 #import "WorkoutLogCell.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLog.h"
 #import "WorkoutLogTableDataSource.h"
 
 @implementation WorkoutLogCell
 @synthesize workoutLog;
 
-- (void)setWorkoutLog:(WorkoutLog *)workoutLog1 {
+- (void)setWorkoutLog:(JWorkoutLog *)workoutLog1 {
     workoutLog = workoutLog1;
 
     NSDateFormatter *dateFormatter = [NSDateFormatter new];

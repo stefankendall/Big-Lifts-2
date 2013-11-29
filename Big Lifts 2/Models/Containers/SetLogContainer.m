@@ -1,9 +1,9 @@
 #import "SetLogContainer.h"
-#import "SetLog.h"
+#import "JSetLog.h"
 
 @implementation SetLogContainer
 
-- (id)initWithSetLog:(SetLog *)setLog1 {
+- (id)initWithSetLog:(JSetLog *)setLog1 {
     self = [super init];
     if (self) {
         self.setLog = setLog1;

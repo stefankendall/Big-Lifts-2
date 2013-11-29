@@ -1,10 +1,10 @@
 #import "WorkoutLogTableDataSource.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLog.h"
 #import "SetLogCell.h"
 #import "LogMaxEstimateCell.h"
 #import "SetHelper.h"
 #import "OneRepEstimator.h"
-#import "SetLog.h"
+#import "JSetLog.h"
 #import "SettingsStore.h"
 #import "Settings.h"
 
@@ -13,7 +13,7 @@ const int ESTIMATED_MAX_SECTION = 1;
 
 @implementation WorkoutLogTableDataSource
 
-- (id)initWithWorkoutLog:(WorkoutLog *)workoutLog1 {
+- (id)initWithWorkoutLog:(JWorkoutLog *)workoutLog1 {
     self = [super init];
     if (self) {
         self.workoutLog = workoutLog1;
@@ -54,7 +54,7 @@ const int ESTIMATED_MAX_SECTION = 1;
     if (!cell) {
         cell = [LogMaxEstimateCell create];
     }
-    SetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
+    JSetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
     if (!logToShow) {
         logToShow = [self.workoutLog.orderedSets lastObject];
     }

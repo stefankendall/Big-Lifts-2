@@ -1,6 +1,6 @@
 #import "FTOEditLogViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLog.h"
 
 @implementation FTOEditLogViewController
 

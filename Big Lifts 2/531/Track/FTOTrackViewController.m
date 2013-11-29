@@ -1,18 +1,17 @@
 #import "FTOTrackViewController.h"
-#import "WorkoutLogStore.h"
 #import "WorkoutLogCell.h"
-#import "FTOWorkoutLogWorkSetsDataSource.h"
-#import "WorkoutLog.h"
-#import "SetLogCombiner.h"
+#import "JWorkoutLog.h"
 #import "FTOTrackToolbarCell.h"
 #import "FTOEditLogViewController.h"
-#import "FTOWorkoutLogAmrapDataSource.h"
 #import "FTOSettingsStore.h"
-#import "SetLog.h"
-#import "LogMaxEstimateCell.h"
+#import "JSetLog.h"
+#import "SetLogCombiner.h"
+#import "FTOWorkoutLogAmrapDataSource.h"
+#import "FTOWorkoutLogWorkSetsDataSource.h"
+#import "JWorkoutLogStore.h"
 
 @interface FTOTrackViewController ()
-@property(nonatomic) WorkoutLog *tappedLog;
+@property(nonatomic) JWorkoutLog *tappedLog;
 @end
 
 @implementation FTOTrackViewController
@@ -35,15 +34,15 @@
 }
 
 - (NSArray *)getLog {
-    NSArray *log = [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
+    NSArray *log = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
 
     if (self.trackSort == kNewest) {
         return log;
     }
     else {
-        return [log sortedArrayUsingComparator:^NSComparisonResult(WorkoutLog *log1, WorkoutLog *log2) {
-            SetLog *setLog1 = [log1.orderedSets firstObject];
-            SetLog *setLog2 = [log2.orderedSets firstObject];
+        return [log sortedArrayUsingComparator:^NSComparisonResult(JWorkoutLog *log1, JWorkoutLog *log2) {
+            JSetLog *setLog1 = [log1.orderedSets firstObject];
+            JSetLog *setLog2 = [log2.orderedSets firstObject];
             if ([setLog1.name isEqualToString:setLog2.name]) {
                 return [log2.date compare:log1.date];
             }
@@ -59,7 +58,7 @@
         return [super getRowCount:[NSIndexPath indexPathForRow:(NSUInteger) [path row] inSection:[path section]]];
     }
     else if (self.showState == kShowWorkSets) {
-        WorkoutLog *log = [self getLog][((NSUInteger) [path row])];
+        JWorkoutLog *log = [self getLog][((NSUInteger) [path row])];
         return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:[log workSets]]] count];
     } else {
         return 1;
@@ -105,7 +104,7 @@
             cell = [WorkoutLogCell create];
         }
 
-        WorkoutLog *workoutLog = [self getLog][((NSUInteger) [indexPath row])];
+        JWorkoutLog *workoutLog = [self getLog][((NSUInteger) [indexPath row])];
         [cell setWorkoutLog:workoutLog];
         if (self.showState == kShowWorkSets) {
             cell.workoutLogTableDataSource = [[FTOWorkoutLogWorkSetsDataSource alloc] initWithWorkoutLog:workoutLog];

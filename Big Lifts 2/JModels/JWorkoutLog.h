@@ -1,10 +1,10 @@
-#import <JSONModel/JSONModel.h>
+#import "JSONModel/JSONModel.h"
 
 @class JSetLog;
 
 @interface JWorkoutLog : JSONModel
 @property(nonatomic) NSString *name;
-@property(nonatomic) NSMutableOrderedSet *sets;
+@property(nonatomic) NSMutableArray *sets;
 @property(nonatomic) NSDate *date;
 @property(nonatomic) BOOL deload;
 

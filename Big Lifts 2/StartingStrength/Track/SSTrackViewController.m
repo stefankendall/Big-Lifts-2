@@ -1,6 +1,6 @@
 #import "SSTrackViewController.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
 #import "SetLogCombiner.h"
 #import "WorkoutLogCell.h"
 #import "CombinedSetWorkoutLogTableDataSource.h"
@@ -8,11 +8,11 @@
 @implementation SSTrackViewController
 
 - (NSArray *)getLog {
-    return [[WorkoutLogStore instance] findAllWhere:@"name" value:@"Starting Strength"];
+    return [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Starting Strength"];
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
-    WorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
+    JWorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
     return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:workoutLog.orderedSets]] count];
 }
 
@@ -21,7 +21,7 @@
     if (!cell) {
         cell = [WorkoutLogCell create];
     }
-    WorkoutLog *workoutLog = [self getLog][(NSUInteger) [indexPath row]];
+    JWorkoutLog *workoutLog = [self getLog][(NSUInteger) [indexPath row]];
     [cell setWorkoutLog:workoutLog];
     cell.workoutLogTableDataSource = [[CombinedSetWorkoutLogTableDataSource alloc] initWithWorkoutLog:workoutLog];
     [cell.setTable setDataSource:cell.workoutLogTableDataSource];

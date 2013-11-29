@@ -2,12 +2,11 @@
 #import "FTORepsToBeatCalculator.h"
 #import "FTOLift.h"
 #import "OneRepEstimator.h"
-#import "SetLogStore.h"
-#import "SetLog.h"
-#import "WorkoutLog.h"
-#import "WorkoutLogStore.h"
 #import "FTOSettingsStore.h"
 #import "FTOSettings.h"
+#import "JWorkoutLog.h"
+#import "JWorkoutLogStore.h"
+#import "JSetLog.h"
 
 @implementation FTORepsToBeatCalculator
 
@@ -32,15 +31,15 @@
 }
 
 - (NSDecimalNumber *)findLogMax:(FTOLift *)lift {
-    NSArray *ftoLogs = [[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
-    NSArray *ftoLogsForLift = [ftoLogs select:^BOOL(WorkoutLog *workoutLog) {
-        SetLog *set = [[workoutLog sets] lastObject];
+    NSArray *ftoLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
+    NSArray *ftoLogsForLift = [ftoLogs select:^BOOL(JWorkoutLog *workoutLog) {
+        JSetLog *set = [[workoutLog sets] lastObject];
         return [set.name isEqualToString:lift.name];
     }];
 
     __block NSDecimalNumber *logMax = N(0);
-    [ftoLogsForLift each:^(WorkoutLog *workoutLog) {
-        SetLog *setLog = [[workoutLog sets] lastObject];
+    [ftoLogsForLift each:^(JWorkoutLog *workoutLog) {
+        JSetLog *setLog = [[workoutLog sets] lastObject];
         NSDecimalNumber *logEstimate = [[OneRepEstimator new] estimate:setLog.weight withReps:[setLog.reps intValue]];
         if ([logEstimate compare:logMax] == NSOrderedDescending) {
             logMax = logEstimate;

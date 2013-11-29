@@ -17,7 +17,6 @@
     setLog.warmup = set.warmup;
     setLog.assistance = set.assistance;
     setLog.amrap = set.amrap;
-    setLog.order = set.order;
     return setLog;
 }
 
@@ -29,7 +28,6 @@
     log.warmup = warmup;
     log.assistance = assistance;
     log.amrap = amrap;
-    log.order = [NSNumber numberWithInt:order];
     return log;
 }
 

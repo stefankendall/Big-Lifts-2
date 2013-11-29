@@ -1,6 +1,6 @@
 #import "LogCellWithSets.h"
 #import "SetLogContainer.h"
-#import "SetLog.h"
+#import "JSetLog.h"
 #import "SettingsStore.h"
 #import "Settings.h"
 

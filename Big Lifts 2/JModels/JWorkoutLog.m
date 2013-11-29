@@ -6,8 +6,7 @@
 @implementation JWorkoutLog
 
 - (NSArray *)orderedSets {
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-    return [[self.sets array] sortedArrayUsingDescriptors:@[descriptor]];
+    return self.sets;
 }
 
 - (NSArray *)workSets {
@@ -29,9 +28,7 @@
 }
 
 - (void)addSet:(JSetLog *)log {
-    NSMutableOrderedSet *newSets = [NSMutableOrderedSet orderedSetWithOrderedSet:self.sets];
-    [newSets addObject:log];
-    self.sets = newSets;
+    [self.sets addObject:log];
 }
 
 @end

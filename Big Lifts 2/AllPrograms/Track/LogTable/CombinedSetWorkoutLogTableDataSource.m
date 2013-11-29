@@ -1,9 +1,9 @@
 #import "WorkoutLogTableDataSource.h"
-#import "WorkoutLog.h"
 #import "SetLogCell.h"
 #import "SetLogCombiner.h"
 #import "LogCellWithSets.h"
 #import "CombinedSetWorkoutLogTableDataSource.h"
+#import "JWorkoutLog.h"
 
 @implementation CombinedSetWorkoutLogTableDataSource
 

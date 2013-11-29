@@ -2,18 +2,18 @@
 #import "SSIndividualWorkoutViewController.h"
 #import "SSWorkout.h"
 #import "IIViewDeckController.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
 #import "Workout.h"
 #import "Set.h"
-#import "SetLogStore.h"
 #import "SSWorkoutStore.h"
 #import "SSStateStore.h"
 #import "SSState.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "SetCellWithPlates.h"
-#import "SetLog.h"
+#import "JSetLogStore.h"
+#import "JSetLog.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -60,16 +60,14 @@
 }
 
 - (void)logWorkout {
-    WorkoutLogStore *store = [WorkoutLogStore instance];
-    WorkoutLog *log = [store create];
+    JWorkoutLogStore *store = [JWorkoutLogStore instance];
+    JWorkoutLog *log = [store create];
     log.name = @"Starting Strength";
     log.date = [NSDate date];
 
-    int order = 0;
     for (Workout *workout in self.ssWorkout.workouts) {
         for (Set *set in [workout workSets]) {
-            SetLog *setLog = [[SetLogStore instance] createFromSet:set];
-            setLog.order = [NSNumber numberWithInt:order++];
+            JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
             [log addSet:setLog];
         }
     }

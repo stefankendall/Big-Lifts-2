@@ -2,10 +2,10 @@
 #import "FTOLift.h"
 #import "FTOLiftStore.h"
 #import "FTORepsToBeatCalculator.h"
-#import "SetLog.h"
-#import "SetLogStore.h"
-#import "WorkoutLog.h"
-#import "WorkoutLogStore.h"
+#import "JSetLog.h"
+#import "JSetLogStore.h"
+#import "JWorkoutLog.h"
+#import "JWorkoutLogStore.h"
 #import "FTOSettingsStore.h"
 #import "FTOSettings.h"
 
@@ -23,9 +23,9 @@
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
 
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
-    SetLog *setLog = [[SetLogStore instance] create];
+    JSetLog *setLog = [[JSetLogStore instance] create];
     setLog.name = @"Squat";
     setLog.reps = @5;
     setLog.weight = N(190);
@@ -41,9 +41,9 @@
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
 
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
-    SetLog *setLog = [[SetLogStore instance] create];
+    JSetLog *setLog = [[JSetLogStore instance] create];
     setLog.name = @"Squat";
     setLog.reps = @1;
     setLog.weight = N(190);
@@ -59,9 +59,9 @@
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
 
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
-    SetLog *setLog = [[SetLogStore instance] create];
+    JSetLog *setLog = [[JSetLogStore instance] create];
     setLog.name = @"Deadlift";
     setLog.reps = @1;
     setLog.weight = N(190);

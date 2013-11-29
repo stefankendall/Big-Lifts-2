@@ -1,9 +1,9 @@
 #import "SSTrackViewControllerTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSTrackViewController.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
-#import "SetLogStore.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
+#import "JSetLogStore.h"
 #import "WorkoutLogCell.h"
 
 @interface SSTrackViewControllerTests ()
@@ -18,11 +18,11 @@
 }
 
 - (void)createWorkoutLog {
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"Starting Strength";
-    [workoutLog addSet:[[SetLogStore instance] create]];
-    [workoutLog addSet:[[SetLogStore instance] create]];
-    [workoutLog addSet:[[SetLogStore instance] create]];
+    [workoutLog addSet:[[JSetLogStore instance] create]];
+    [workoutLog addSet:[[JSetLogStore instance] create]];
+    [workoutLog addSet:[[JSetLogStore instance] create]];
 }
 
 - (void)testHeightForRowAtIndexPathIsNonZeroAfterDelete {
@@ -45,7 +45,7 @@
 }
 
 - (void)testFiltersByLogName {
-    WorkoutLog *log = [[WorkoutLogStore instance] create];
+    JWorkoutLog *log = [[JWorkoutLogStore instance] create];
     log.name = @"5/3/1";
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
@@ -54,7 +54,7 @@
     [self createWorkoutLog];
     [self createWorkoutLog];
     [self.controller tableView:nil commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    STAssertEquals([[WorkoutLogStore instance] count], 1, @"");
+    STAssertEquals([[JWorkoutLogStore instance] count], 1, @"");
 }
 
 @end

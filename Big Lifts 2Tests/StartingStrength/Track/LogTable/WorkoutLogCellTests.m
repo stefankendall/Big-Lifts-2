@@ -1,13 +1,13 @@
 #import "WorkoutLogCellTests.h"
 #import "WorkoutLogCell.h"
 #import "BLStoreManager.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
 
 @implementation WorkoutLogCellTests
 
 - (void)testSetWorkoutSetsTableDataSource {
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     WorkoutLogCell *cell = [WorkoutLogCell create];
 
     [cell setWorkoutLog:workoutLog];
@@ -15,7 +15,7 @@
 }
 
 - (void)testSetWorkoutFormatsDate {
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     NSDateComponents *comps = [NSDateComponents new];
     [comps setDay:6];
     [comps setMonth:5];

@@ -1,13 +1,13 @@
-@class WorkoutLog;
+@class JWorkoutLog;
 
 extern const int SETS_SECTION;
 extern const int ESTIMATED_MAX_SECTION;
 
 @interface WorkoutLogTableDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
-@property(nonatomic, strong) WorkoutLog *workoutLog;
+@property(nonatomic, strong) JWorkoutLog *workoutLog;
 
-- (id)initWithWorkoutLog:(WorkoutLog *)log;
+- (id)initWithWorkoutLog:(JWorkoutLog *)log;
 
 - (UITableViewCell *)maxEstimateCell: (UITableView *)tableView;
 @end

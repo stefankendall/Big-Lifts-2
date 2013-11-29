@@ -1,12 +1,12 @@
+#import "JSetLog.h"
 #import "FTOLiftWorkoutViewControllerTests.h"
 #import "FTOWorkout.h"
 #import "FTOWorkoutStore.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOLiftWorkoutViewController.h"
 #import "Workout.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
-#import "SetLog.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
 #import "SetCellWithPlates.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
@@ -56,17 +56,17 @@
 - (void)testTappingDoneButtonSavesLog {
     [self.controller doneButtonTapped:nil];
 
-    STAssertEquals([[[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] count], 1U, @"");
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] find:@"name" value:@"5/3/1"];
+    STAssertEquals([[[JWorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] count], 1U, @"");
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] find:@"name" value:@"5/3/1"];
     STAssertNotNil(workoutLog.date, @"");
     STAssertTrue(self.ftoWorkout.done, @"");
-}
+}                                         
 
 - (void)testDoesNotSave0RepsInLog {
     self.controller.tappedSetRow = @0;
     [self.controller repsChanged:@0];
     [self.controller doneButtonTapped:nil];
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] find:@"name" value:@"5/3/1"];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] find:@"name" value:@"5/3/1"];
     STAssertEquals([workoutLog.orderedSets count], 5U, @"");
 }
 
@@ -82,8 +82,8 @@
     [self.controller repsChanged:@7];
     [self.controller doneButtonTapped:nil];
 
-    WorkoutLog *log = [[WorkoutLogStore instance] first];
-    SetLog *lastSet = [[log sets] lastObject];
+    JWorkoutLog *log = [[JWorkoutLogStore instance] first];
+    JSetLog *lastSet = [[log sets] lastObject];
     STAssertEqualObjects(lastSet.reps, @7, @"");
 }
 

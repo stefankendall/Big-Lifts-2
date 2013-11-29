@@ -1,9 +1,9 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOLogExporter.h"
-#import "WorkoutLog.h"
-#import "WorkoutLogStore.h"
-#import "SetLog.h"
 #import "OneRepEstimator.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
+#import "JSetLog.h"
 
 @implementation FTOLogExporter
 
@@ -11,8 +11,8 @@
     NSMutableString *csv = [@"name,date,weight,reps,estimated max\n" mutableCopy];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [[[WorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] each:^(WorkoutLog *log) {
-        SetLog *bestSet = [log bestSet];
+    [[[JWorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] each:^(JWorkoutLog *log) {
+        JSetLog *bestSet = [log bestSet];
         [csv appendString:bestSet.name];
         [csv appendString:@","];
         [csv appendString:[dateFormatter stringFromDate:log.date]];

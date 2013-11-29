@@ -1,15 +1,15 @@
 #import "CTCustomTableViewCell.h"
 
-@class WorkoutLog;
+@class JWorkoutLog;
 @class WorkoutLogTableDataSource;
 
 @interface WorkoutLogCell : CTCustomTableViewCell {
 }
 
-@property(nonatomic) WorkoutLog *workoutLog;
+@property(nonatomic) JWorkoutLog *workoutLog;
 @property(nonatomic, strong) WorkoutLogTableDataSource *workoutLogTableDataSource;
 @property(weak, nonatomic) IBOutlet UITableView *setTable;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
-- (void)setWorkoutLog:(WorkoutLog *)workoutLog;
+- (void)setWorkoutLog:(JWorkoutLog *)workoutLog;
 @end

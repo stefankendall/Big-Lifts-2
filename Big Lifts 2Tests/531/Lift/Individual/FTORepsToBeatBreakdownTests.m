@@ -6,10 +6,10 @@
 #import "Workout.h"
 #import "Lift.h"
 #import "FTOWorkout.h"
-#import "SetLog.h"
-#import "SetLogStore.h"
-#import "WorkoutLogStore.h"
-#import "WorkoutLog.h"
+#import "JSetLog.h"
+#import "JSetLogStore.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
 #import "FTOSettings.h"
 #import "FTOSettingsStore.h"
 #import "PaddingTextField.h"
@@ -23,11 +23,11 @@
     set.reps = @4;
     set.percentage = N(95);
 
-    SetLog *setLog = [[SetLogStore instance] create];
+    JSetLog *setLog = [[JSetLogStore instance] create];
     setLog.weight = N(155);
     setLog.name = set.lift.name;
     setLog.reps = @1;
-    WorkoutLog *workoutLog = [[WorkoutLogStore instance] create];
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
     [workoutLog addSet:setLog];
 

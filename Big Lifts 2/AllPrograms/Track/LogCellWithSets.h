@@ -1,11 +1,11 @@
 #import <CTCustomTableViewCell/CTCustomTableViewCell.h>
 
 @class SetLogContainer;
-@class SetLog;
+@class JSetLog;
 
 @interface LogCellWithSets : CTCustomTableViewCell {}
 
-@property(nonatomic, strong) SetLog *setLog;
+@property(nonatomic, strong) JSetLog *setLog;
 @property (weak, nonatomic) IBOutlet UILabel *liftNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *setsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *repsLabel;

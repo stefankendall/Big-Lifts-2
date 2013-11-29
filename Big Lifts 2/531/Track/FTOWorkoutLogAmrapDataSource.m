@@ -1,8 +1,8 @@
 #import "FTOWorkoutLogAmrapDataSource.h"
 #import "SetLogCell.h"
-#import "SetLogContainer.h"
 #import "SetHelper.h"
-#import "WorkoutLog.h"
+#import "JSetLog.h"
+#import "JWorkoutLog.h"
 
 @implementation FTOWorkoutLogAmrapDataSource
 
@@ -16,7 +16,7 @@
         if (cell == nil) {
             cell = [SetLogCell create];
         }
-        SetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
+        JSetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
         if (!logToShow) {
             logToShow = [self.workoutLog.orderedSets lastObject];
         }

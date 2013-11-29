@@ -1,8 +1,8 @@
 #import "TrackViewController.h"
-#import "WorkoutLogStore.h"
+#import "JWorkoutLogStore.h"
 #import "WorkoutLogCell.h"
 #import "WorkoutLogTableDataSource.h"
-#import "WorkoutLog.h"
+#import "JWorkoutLog.h"
 #import "TrackToolbarCell.h"
 
 @implementation TrackViewController
@@ -26,7 +26,7 @@
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
-    WorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
+    JWorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
     return [workoutLog.orderedSets count];
 }
 
@@ -65,8 +65,8 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        WorkoutLog *log = [self getLog][(NSUInteger) [indexPath row]];
-        [[WorkoutLogStore instance] remove:log];
+        JWorkoutLog *log = [self getLog][(NSUInteger) [indexPath row]];
+        [[JWorkoutLogStore instance] remove:log];
         [tableView reloadData];
     }
 }

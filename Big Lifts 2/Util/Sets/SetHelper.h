@@ -1,8 +1,8 @@
-@class SetLog;
+@class JSetLog;
 
 @interface SetHelper : NSObject
 
 - (id)heaviestAmrapSet:(NSArray *)sets;
 
-- (SetLog *)heaviestAmrapSetLog:(NSArray *)sets;
+- (JSetLog *)heaviestAmrapSetLog:(NSArray *)sets;
 @end
