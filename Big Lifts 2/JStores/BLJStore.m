@@ -90,6 +90,7 @@
 }
 
 - (void)removeAtIndex:(int)index {
+    [self.data removeObjectAtIndex:(NSUInteger) index];
 };
 
 - (int)count {

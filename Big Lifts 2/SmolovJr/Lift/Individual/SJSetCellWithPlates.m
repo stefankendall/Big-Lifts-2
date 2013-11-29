@@ -1,17 +1,17 @@
 #import "SJSetCellWithPlates.h"
 #import "SJWorkout.h"
 #import "Set.h"
-#import "PlateStore.h"
 #import "BarCalculator.h"
-#import "BarStore.h"
-#import "Bar.h"
+#import "JBarStore.h"
+#import "JBar.h"
+#import "JPlateStore.h"
 
 @implementation SJSetCellWithPlates
 
 - (void)setSjWorkout:(SJWorkout *)sjWorkout withSet:(Set *)set withEnteredWeight:(NSDecimalNumber *)weight {
     [super setSjWorkout:sjWorkout withSet:set withEnteredWeight:weight];
-    Bar *bar = [[BarStore instance] first];
-    BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[PlateStore instance] findAll]
+    JBar *bar = [[JBarStore instance] first];
+    BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll]
                                                             barWeight:bar.weight];
 
     NSArray *plates = [calculator platesToMakeWeight:[set roundedEffectiveWeight]];

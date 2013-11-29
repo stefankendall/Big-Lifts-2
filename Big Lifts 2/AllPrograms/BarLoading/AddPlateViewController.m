@@ -1,8 +1,7 @@
 #import "AddPlateViewController.h"
-#import "PlateStore.h"
-#import "Plate.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "TextFieldCell.h"
+#import "JPlateStore.h"
+#import "JPlate.h"
 
 @interface AddPlateViewController ()
 @property(nonatomic, strong) NSDictionary *formCells;
@@ -31,7 +30,7 @@
 }
 
 - (IBAction)saveTapped:(id)button {
-    Plate *p = [[PlateStore instance] create];
+    JPlate *p = [[JPlateStore instance] create];
     p.weight = [NSDecimalNumber decimalNumberWithString:[self.weightTextField text] locale:NSLocale.currentLocale];
     p.count = [NSNumber numberWithInt:[[self.countTextField text] intValue]];
 

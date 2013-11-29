@@ -1,17 +1,17 @@
 #import "SetCellWithPlates.h"
 #import "Set.h"
 #import "BarCalculator.h"
-#import "PlateStore.h"
-#import "BarStore.h"
-#import "Bar.h"
+#import "JBarStore.h"
+#import "JBar.h"
+#import "JPlateStore.h"
 
 @implementation SetCellWithPlates
 
 - (void)setSet:(Set *)set {
     [super setSet:set];
 
-    Bar *bar = [[BarStore instance] first];
-    BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[PlateStore instance] findAll]
+    JBar *bar = [[JBarStore instance] first];
+    BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll]
                                                             barWeight:bar.weight];
 
     NSArray *plates = [calculator platesToMakeWeight:[set roundedEffectiveWeight]];

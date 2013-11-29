@@ -1,9 +1,9 @@
 #import "AddPlateViewControllerTests.h"
 #import "AddPlateViewController.h"
 #import "BLStore.h"
-#import "PlateStore.h"
-#import "Plate.h"
 #import "SenTestCase+ControllerTestAdditions.h"
+#import "JPlateStore.h"
+#import "JPlate.h"
 
 @implementation AddPlateViewControllerTests
 
@@ -12,11 +12,11 @@
     [controller.weightTextField setText:@"100"];
     [controller.countTextField setText:@"14"];
 
-    int oldCount = [[PlateStore instance] count];
+    int oldCount = [[JPlateStore instance] count];
     [controller saveTapped:nil];
 
-    STAssertEquals([[PlateStore instance] count], oldCount + 1, @"");
-    Plate *p = [[PlateStore instance] atIndex:0];
+    STAssertEquals([[JPlateStore instance] count], oldCount + 1, @"");
+    JPlate *p = [[JPlateStore instance] atIndex:0];
     STAssertEquals([p.count intValue], 14, @"");
 }
 

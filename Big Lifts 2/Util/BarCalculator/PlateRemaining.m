@@ -1,8 +1,8 @@
 #import "PlateRemaining.h"
-#import "Plate.h"
+#import "JPlate.h"
 
 @implementation PlateRemaining
-+ (PlateRemaining *)fromPlate:(Plate *)p {
++ (PlateRemaining *)fromPlate:(JPlate *)p {
     PlateRemaining *r = [PlateRemaining new];
     r.count = [p.count intValue];
     r.weight = p.weight;
@@ -10,12 +10,10 @@
 }
 
 - (id)initWithWeight:(NSDecimalNumber *)weight count:(int)count {
-    if(self = [super init]){
+    if (self = [super init]) {
         self.weight = weight;
         self.count = count;
     }
     return self;
 }
-
-
 @end

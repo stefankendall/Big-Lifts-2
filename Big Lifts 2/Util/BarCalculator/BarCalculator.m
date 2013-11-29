@@ -1,7 +1,7 @@
 #import "BarCalculator.h"
-#import "Plate.h"
 #import "PlateRemaining.h"
 #import "MRCEnumerable.h"
+#import "JPlate.h"
 
 @interface BarCalculator ()
 @property(nonatomic, strong) NSArray *plates;
@@ -52,7 +52,7 @@
 }
 
 - (NSArray *)copyPlates:(NSArray *)plates {
-    return [plates collect:(^(Plate *p) {
+    return [plates collect:(^(JPlate *p) {
         return [PlateRemaining fromPlate:p];
     })];
 }

@@ -3,15 +3,15 @@
 #import "BarLoadingViewController.h"
 #import "IAPAdapter.h"
 #import "PurchaseOverlay.h"
-#import "PlateStore.h"
 #import "WeightTableCell.h"
 #import "StepperWithCell.h"
-#import "Plate.h"
 #import "BarWeightCell.h"
 #import "RowUIButton.h"
 #import "TextFieldWithCell.h"
-#import "Bar.h"
-#import "BarStore.h"
+#import "JBarStore.h"
+#import "JBar.h"
+#import "JPlateStore.h"
+#import "JPlate.h"
 
 @implementation BarLoadingViewControllerTests
 
@@ -41,7 +41,7 @@
 - (void)testAddsOneRowForAddingPlates {
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
     UITableViewCell *addCell = [controller tableView:nil cellForRowAtIndexPath:
-            [NSIndexPath indexPathForRow:[[PlateStore instance] count] inSection:1]];
+            [NSIndexPath indexPathForRow:[[JPlateStore instance] count] inSection:1]];
     NSString *addText = [[addCell textLabel] text];
     STAssertTrue([addText rangeOfString:@"Add"].location != NSNotFound, @"");
 }
@@ -58,7 +58,7 @@
     WeightTableCell *cell = (WeightTableCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [cell.stepper setValue:1];
     [controller plateCountChanged:cell.stepper];
-    Plate *p = [[PlateStore instance] atIndex:0];
+    JPlate *p = [[JPlateStore instance] atIndex:0];
     STAssertEquals([p.count intValue], 7, @"");
 }
 
@@ -66,7 +66,7 @@
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
     WeightTableCell *cell = (WeightTableCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [cell.stepper setValue:-2];
-    Plate *p = [[PlateStore instance] atIndex:0];
+    JPlate *p = [[JPlateStore instance] atIndex:0];
     p.count = [NSNumber numberWithInt:1];
     [controller plateCountChanged:cell.stepper];
     STAssertEquals([p.count intValue], 0, @"");
@@ -76,7 +76,7 @@
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
     WeightTableCell *cell = (WeightTableCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [cell.stepper setValue:-2];
-    Plate *p = [[PlateStore instance] atIndex:0];
+    JPlate *p = [[JPlateStore instance] atIndex:0];
     p.count = [NSNumber numberWithInt:1];
 
     [controller plateCountChanged:cell.stepper];
@@ -114,9 +114,9 @@
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
     RowUIButton *button = [RowUIButton new];
     button.indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-    int oldCount = [[PlateStore instance] count];
+    int oldCount = [[JPlateStore instance] count];
     [controller deleteButtonTapped:button];
-    STAssertEquals( [[PlateStore instance] count], oldCount - 1, @"");
+    STAssertEquals( [[JPlateStore instance] count], oldCount - 1, @"");
 }
 
 - (void)testBarWeightCanBeChanged {
@@ -125,12 +125,12 @@
     [textField setText:@"33"];
     [controller textFieldDidEndEditing:textField];
 
-    Bar *bar = [[BarStore instance] first];
+    JBar *bar = [[JBarStore instance] first];
     STAssertEqualObjects(bar.weight, N(33), @"");
 }
 
 - (void) testShowsFractionalPlates {
-    Plate *fractionalPlate = [[PlateStore instance] create];
+    JPlate *fractionalPlate = [[JPlateStore instance] create];
     fractionalPlate.weight = N(1.25);
     fractionalPlate.count = @2;
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];

@@ -1,20 +1,20 @@
 #import "BarLoadingViewController.h"
-#import "PlateStore.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
 #import "UIViewController+PurchaseOverlay.h"
 #import "WeightTableCell.h"
-#import "Plate.h"
 #import "Settings.h"
 #import "SettingsStore.h"
 #import "BarWeightCell.h"
-#import "Bar.h"
-#import "BarStore.h"
+#import "JBarStore.h"
 #import "TextFieldWithCell.h"
 #import "RowUIButton.h"
 #import "StepperWithCell.h"
 #import "AddCell.h"
+#import "JBar.h"
+#import "JPlateStore.h"
+#import "JPlate.h"
 
 @interface BarLoadingViewController()
 
@@ -61,7 +61,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath row] == [[PlateStore instance] count]) {
+    if ([indexPath row] == [[JPlateStore instance] count]) {
         [self performSegueWithIdentifier:@"barLoadingAddPlateSegue" sender:self];
     }
 }
@@ -85,7 +85,7 @@
     }
     else {
         int ADD_ROW_COUNT = 1;
-        return [[PlateStore instance] count] + ADD_ROW_COUNT;
+        return [[JPlateStore instance] count] + ADD_ROW_COUNT;
     }
 }
 
@@ -100,7 +100,7 @@
 
 - (UITableViewCell *)getPlateCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
-    if (row == [[PlateStore instance] count]) {
+    if (row == [[JPlateStore instance] count]) {
         AddCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
         if (cell == nil) {
             cell = [AddCell create];
@@ -114,7 +114,7 @@
             cell = [WeightTableCell create];
         }
 
-        Plate *plate = [[PlateStore instance] atIndex:row];
+        JPlate *plate = [[JPlateStore instance] atIndex:row];
         Settings *settings = [[SettingsStore instance] first];
         [cell.weightLabel setText:[plate.weight stringValue]];
         [cell.unitsLabel setText:settings.units];
@@ -134,7 +134,7 @@
 - (void)deleteButtonTapped:(id)deleteButton {
     RowUIButton *button = deleteButton;
     int row = [[button indexPath] row];
-    [[PlateStore instance] removeAtIndex:row];
+    [[JPlateStore instance] removeAtIndex:row];
     [self.tableView reloadData];
 }
 
@@ -145,7 +145,7 @@
         cell = [BarWeightCell create];
     }
 
-    Bar *bar = [[BarStore instance] first];
+    JBar *bar = [[JBarStore instance] first];
     [[cell textField] setText:[bar.weight stringValue]];
     [[cell textField] setDelegate:self];
     self.barWeightTextField = [cell textField];
@@ -158,7 +158,7 @@
     StepperWithCell *stepperWithCell = (StepperWithCell *) plateStepper;
 
     int row = [[[stepperWithCell cell] indexPath] row];
-    Plate *p = [[PlateStore instance] atIndex:row];
+    JPlate *p = [[JPlateStore instance] atIndex:row];
 
     int additiveCount = (int) [stepperWithCell value];
     int currentPlateCount = [p.count intValue];
@@ -194,7 +194,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSString *newWeight = [textField text];
-    Bar *bar = [[BarStore instance] first];
+    JBar *bar = [[JBarStore instance] first];
     bar.weight = [NSDecimalNumber decimalNumberWithString:newWeight locale:NSLocale.currentLocale];
 }
 

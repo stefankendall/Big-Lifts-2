@@ -1,7 +1,6 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOAddLiftViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "PlateStore.h"
 #import "FTOLift.h"
 #import "FTOLiftStore.h"
 #import "FTOWorkoutStore.h"
