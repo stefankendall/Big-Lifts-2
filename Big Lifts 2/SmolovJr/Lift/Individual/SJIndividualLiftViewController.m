@@ -1,13 +1,13 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "SJIndividualLiftViewController.h"
-#import "SJWorkout.h"
+#import "JSJWorkout.h"
 #import "Workout.h"
 #import "SJSetCell.h"
 #import "SJSetWeightViewController.h"
-#import "Set.h"
+#import "JSet.h"
 #import "WeightRounder.h"
 #import "IIViewDeckController.h"
-#import "SJWorkoutStore.h"
+#import "JSJWorkoutStore.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "SJSetCellWithPlates.h"
@@ -15,6 +15,7 @@
 #import "JWorkoutLog.h"
 #import "JSetLog.h"
 #import "JSetLogStore.h"
+#import "JWorkout.h"
 
 @interface SJIndividualLiftViewController ()
 @property(nonatomic, strong) NSDecimalNumber *liftedWeight;
@@ -31,11 +32,11 @@
 }
 
 - (void)checkForCompletion {
-    BOOL workoutsRemaining = [[[SJWorkoutStore instance] findAll] detect:^BOOL(SJWorkout *sjWorkout) {
+    BOOL workoutsRemaining = [[[JSJWorkoutStore instance] findAll] detect:^BOOL(JSJWorkout *sjWorkout) {
         return !sjWorkout.done;
     }] != nil;
     if (!workoutsRemaining) {
-        [[[SJWorkoutStore instance] findAll] each:^(SJWorkout *sjWorkout) {
+        [[[JSJWorkoutStore instance] findAll] each:^(JSJWorkout *sjWorkout) {
             sjWorkout.done = NO;
         }];
     }
@@ -45,7 +46,7 @@
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"Smolov Jr";
     workoutLog.date = [NSDate new];
-    [self.sjWorkout.workout.orderedSets each:^(Set *set) {
+    [self.sjWorkout.workout.orderedSets each:^(JSet *set) {
         JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
         setLog.weight = [self minimumOrLiftedWeight];
         [workoutLog addSet:setLog];

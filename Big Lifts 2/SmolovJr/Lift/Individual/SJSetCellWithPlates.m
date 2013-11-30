@@ -1,6 +1,6 @@
 #import "SJSetCellWithPlates.h"
-#import "SJWorkout.h"
-#import "Set.h"
+#import "JSJWorkout.h"
+#import "JSet.h"
 #import "BarCalculator.h"
 #import "JBarStore.h"
 #import "JBar.h"
@@ -8,7 +8,7 @@
 
 @implementation SJSetCellWithPlates
 
-- (void)setSjWorkout:(SJWorkout *)sjWorkout withSet:(Set *)set withEnteredWeight:(NSDecimalNumber *)weight {
+- (void)setSjWorkout:(JSJWorkout *)sjWorkout withSet:(JSet *)set withEnteredWeight:(NSDecimalNumber *)weight {
     [super setSjWorkout:sjWorkout withSet:set withEnteredWeight:weight];
     JBar *bar = [[JBarStore instance] first];
     BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll]

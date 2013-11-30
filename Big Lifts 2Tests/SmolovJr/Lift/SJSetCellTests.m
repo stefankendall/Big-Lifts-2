@@ -1,21 +1,21 @@
 #import "SJSetCellTests.h"
 #import "SJSetCell.h"
-#import "SJWorkoutStore.h"
-#import "SJWorkout.h"
-#import "Workout.h"
-#import "SJLift.h"
-#import "SJLiftStore.h"
+#import "JSJWorkoutStore.h"
+#import "JSJWorkout.h"
+#import "JWorkout.h"
+#import "JSJLift.h"
+#import "JSJLiftStore.h"
 
 @implementation SJSetCellTests
 
 - (void)testSetsLabels {
-    SJLift *sjLift = [[SJLiftStore instance] first];
+    JSJLift *sjLift = [[JSJLiftStore instance] first];
     [sjLift setName:@"Power Clean"];
     [sjLift setWeight:N(200)];
 
     SJSetCell *cell = [SJSetCell create];
-    SJWorkout *sjWorkout = [[SJWorkoutStore instance] findAllWhere:@"week" value:@2][0];
-    Set *set = sjWorkout.workout.orderedSets[0];
+    JSJWorkout *sjWorkout = [[JSJWorkoutStore instance] findAllWhere:@"week" value:@2][0];
+    JSet *set = sjWorkout.workout.orderedSets[0];
     [cell setSjWorkout:sjWorkout withSet:set withEnteredWeight:nil];
 
     STAssertEqualObjects([cell.liftLabel text], @"Power Clean", @"");
@@ -24,11 +24,11 @@
     STAssertEqualObjects([cell.weightRangeLabel text], @"150-160 lbs", @"");
 }
 
-- (void) testSetsEnteredWeightIfAvailable {
+- (void)testSetsEnteredWeightIfAvailable {
     SJSetCell *cell = [SJSetCell create];
-    SJWorkout *sjWorkout = [[SJWorkoutStore instance] findAllWhere:@"week" value:@2][0];
-    Set *set = sjWorkout.workout.orderedSets[0];
-    [cell setSjWorkout:sjWorkout withSet:set withEnteredWeight: N(150)];
+    JSJWorkout *sjWorkout = [[JSJWorkoutStore instance] findAllWhere:@"week" value:@2][0];
+    JSet *set = sjWorkout.workout.orderedSets[0];
+    [cell setSjWorkout:sjWorkout withSet:set withEnteredWeight:N(150)];
     STAssertEqualObjects([cell.weightRangeLabel text], @"150 lbs", @"");
 }
 

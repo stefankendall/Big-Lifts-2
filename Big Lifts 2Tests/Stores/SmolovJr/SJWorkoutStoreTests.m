@@ -1,9 +1,7 @@
 #import "SJWorkoutStoreTests.h"
 #import "SJWorkoutStore.h"
 #import "SJWorkout.h"
-#import "NSArray+Utilities.h"
 #import "Workout.h"
-#import "SetData.h"
 #import "Set.h"
 
 @implementation SJWorkoutStoreTests

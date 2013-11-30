@@ -1,6 +1,7 @@
 #import "CTCustomTableViewCell/CTCustomTableViewCell.h"
 
-@class SJWorkout;
+@class JSJWorkout;
+
 
 @interface SJWorkoutSummaryCell : CTCustomTableViewCell {}
 
@@ -9,6 +10,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addWeightRangeLabel;
 
--(void) setWorkout: (SJWorkout *) sjWorkout;
+-(void) setWorkout: (JSJWorkout *) sjWorkout;
 
 @end

@@ -1,9 +1,10 @@
 #import "SJWorkoutSummaryCell.h"
-#import "SJWorkout.h"
 #import "Workout.h"
-#import "Set.h"
+#import "JSet.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
+#import "JSJWorkout.h"
+#import "JWorkout.h"
 
 @implementation SJWorkoutSummaryCell
 
@@ -11,9 +12,9 @@
     [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 }
 
-- (void)setWorkout:(SJWorkout *)sjWorkout {
+- (void)setWorkout:(JSJWorkout *)sjWorkout {
     [self.setsLabel setText:[NSString stringWithFormat:@"%d sets", [sjWorkout.workout.orderedSets count]]];
-    Set *set = [sjWorkout.workout.orderedSets firstObject];
+    JSet *set = [sjWorkout.workout.orderedSets firstObject];
     [self.repsLabel setText:[NSString stringWithFormat:@"%d reps", [set.reps intValue]]];
     [self.percentageLabel setText:[NSString stringWithFormat:@"%@%%", [set.percentage stringValue]]];
 

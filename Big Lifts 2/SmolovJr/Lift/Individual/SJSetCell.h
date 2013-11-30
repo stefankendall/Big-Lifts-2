@@ -1,6 +1,7 @@
 #import "SetCell.h"
 
-@class SJWorkout;
+@class JSJWorkout;
+@class JSet;
 
 @interface SJSetCell : SetCell {
 }
@@ -9,5 +10,5 @@
 @property(weak, nonatomic) IBOutlet UILabel *weightRangeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *repsLabel;
 
-- (void)setSjWorkout:(SJWorkout *)sjWorkout withSet:(Set *)set withEnteredWeight:(NSDecimalNumber *)weight;
+- (void)setSjWorkout:(JSJWorkout *)sjWorkout withSet:(JSet *)set withEnteredWeight:(NSDecimalNumber *)weight;
 @end

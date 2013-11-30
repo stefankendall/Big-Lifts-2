@@ -1,14 +1,14 @@
 #import "SJSetCell.h"
-#import "SJWorkout.h"
-#import "Set.h"
-#import "Lift.h"
+#import "JSJWorkout.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
 #import "WeightRounder.h"
+#import "JSet.h"
+#import "JLift.h"
 
 @implementation SJSetCell
 
-- (void)setSjWorkout:(SJWorkout *)sjWorkout withSet:(Set *)set withEnteredWeight:(NSDecimalNumber *)enteredWeight {
+- (void)setSjWorkout:(JSJWorkout *)sjWorkout withSet:(JSet *)set withEnteredWeight:(NSDecimalNumber *)enteredWeight {
     [self.liftLabel setText:set.lift.name];
     [self.repsLabel setText:[NSString stringWithFormat:@"%@x", set.reps]];
     [self.percentageLabel setText:[NSString stringWithFormat:@"%@%%", set.percentage]];

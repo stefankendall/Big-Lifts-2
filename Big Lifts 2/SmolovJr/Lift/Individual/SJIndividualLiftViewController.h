@@ -1,10 +1,10 @@
 #import "SetWeightDelegate.h"
 
-@class SJWorkout;
+@class JSJWorkout;
 
 @interface SJIndividualLiftViewController : UITableViewController <SetWeightDelegate>
 
-@property(nonatomic, strong) SJWorkout *sjWorkout;
+@property(nonatomic, strong) JSJWorkout *sjWorkout;
 
 - (IBAction)doneButtonTapped:(id)sender;
 @end

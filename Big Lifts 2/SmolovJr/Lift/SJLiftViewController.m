@@ -2,10 +2,11 @@
 #import "SJWorkoutStore.h"
 #import "SJWorkoutSummaryCell.h"
 #import "SJIndividualLiftViewController.h"
+#import "JSJWorkout.h"
 
 @interface SJLiftViewController()
 
-@property(nonatomic, strong) SJWorkout *tappedWorkout;
+@property(nonatomic, strong) JSJWorkout *tappedWorkout;
 @end
 
 @implementation SJLiftViewController
