@@ -51,7 +51,7 @@
 }
 
 - (NSArray *)findAll {
-    if([[self modelClass] instancesRespondToSelector:@selector(order)]){
+    if ([[self modelClass] instancesRespondToSelector:@selector(order)]) {
         NSSortDescriptor *order = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
         return [self.data sortedArrayUsingDescriptors:@[order]];
     }
@@ -167,6 +167,7 @@
 - (void)load {
     NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
     NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
+    NSLog(@"Store: %@", [self keyNameForStore]);
     if (serializedData) {
         self.data = [self deserialize:serializedData];
     }
@@ -183,7 +184,7 @@
     NSMutableArray *deserialized = [@[] mutableCopy];
     for (NSString *string in serialized) {
         JSONModel *model = [self deserializeObject:string];
-        if (model != nil ) {
+        if (model != nil) {
             [deserialized addObject:model];
         }
         else {
@@ -195,8 +196,8 @@
 
 - (JSONModel *)deserializeObject:(NSString *)string {
     NSMutableDictionary *obj = [NSJSONSerialization JSONObjectWithData:[string dataUsingEncoding:NSUTF8StringEncoding]
-                                             options:NSJSONReadingMutableContainers
-                                               error:nil];
+                                                               options:NSJSONReadingMutableContainers
+                                                                 error:nil];
     JSONModel *model = [[[self modelClass] alloc] initWithDictionary:obj error:nil];
     return model;
 }

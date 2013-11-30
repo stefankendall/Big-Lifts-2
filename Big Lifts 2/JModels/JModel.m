@@ -38,15 +38,16 @@
 
 + (NSMutableArray *)arrayOfModelsFromDictionaries:(NSArray *)array error:(NSError **)err {
     if (isNull(array)) return nil;
-    BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class]];
     NSMutableArray *list = [@[] mutableCopy];
     for (NSString *value in array) {
+        BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class]];
         id associatedObject = [store find:@"uuid" value:value];
         if (associatedObject) {
             [list addObject:associatedObject];
         }
         else {
-            NSLog(@"Could not load associated uuid: %@ for store: %@", value, NSStringFromClass([store class]));
+            NSLog(@"Loading model: %@, Could not load associated uuid: %@ for store: %@", NSStringFromClass([self class]),
+                    value, NSStringFromClass([store class]));
         }
     }
     return list;

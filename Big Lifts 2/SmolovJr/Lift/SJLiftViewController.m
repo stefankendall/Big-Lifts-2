@@ -1,8 +1,8 @@
 #import "SJLiftViewController.h"
-#import "SJWorkoutStore.h"
 #import "SJWorkoutSummaryCell.h"
 #import "SJIndividualLiftViewController.h"
 #import "JSJWorkout.h"
+#import "JSJWorkoutStore.h"
 
 @interface SJLiftViewController()
 
@@ -12,11 +12,11 @@
 @implementation SJLiftViewController
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[[SJWorkoutStore instance] unique:@"week"] count];
+    return [[[JSJWorkoutStore instance] unique:@"week"] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *workoutsInWeek = [[SJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:(section + 1)]];
+    NSArray *workoutsInWeek = [[JSJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:(section + 1)]];
     return [workoutsInWeek count];
 }
 
@@ -26,7 +26,7 @@
         cell = [SJWorkoutSummaryCell create];
     }
 
-    NSArray *workoutsInWeek = [[SJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
+    NSArray *workoutsInWeek = [[JSJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
     [cell setWorkout:workoutsInWeek[(NSUInteger) [indexPath row]]];
     return cell;
 }
@@ -36,7 +36,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *workoutsInWeek = [[SJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
+    NSArray *workoutsInWeek = [[JSJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
     self.tappedWorkout = workoutsInWeek[(NSUInteger) [indexPath row]];
     [self performSegueWithIdentifier:@"sjLiftSegue" sender:self];
 }

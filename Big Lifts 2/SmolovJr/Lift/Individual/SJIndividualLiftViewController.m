@@ -1,7 +1,6 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "SJIndividualLiftViewController.h"
 #import "JSJWorkout.h"
-#import "Workout.h"
 #import "SJSetCell.h"
 #import "SJSetWeightViewController.h"
 #import "JSet.h"

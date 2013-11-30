@@ -5,6 +5,7 @@
 #import "BLStoreManager.h"
 #import "IAPAdapter.h"
 #import "Settings.h"
+#import "BLJStoreManager.h"
 
 @interface SettingsViewController ()
 @property(nonatomic, strong) NSArray *roundingOptions;
@@ -95,6 +96,7 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == actionSheet.destructiveButtonIndex) {
         [[BLStoreManager instance] resetAllStores];
+        [[BLJStoreManager instance] resetAllStores];
     }
 }
 
