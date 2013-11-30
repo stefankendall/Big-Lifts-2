@@ -52,4 +52,14 @@
     return list;
 }
 
+-(id)initWithDictionary:(id)possibleUuid error:(NSError**)err {
+    if([possibleUuid isKindOfClass:NSString.class]){
+        BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class]];
+        return [store find:@"uuid" value:possibleUuid];
+    }
+    else {
+        return [super initWithDictionary:possibleUuid error:err];
+    }
+}
+
 @end
