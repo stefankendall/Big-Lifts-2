@@ -3,8 +3,10 @@
 @class JLift;
 @class JSet;
 
+@protocol JSet;
+
 @interface JWorkout : JModel
-@property(nonatomic) NSMutableArray *sets;
+@property(nonatomic) NSMutableArray<JSet> *sets;
 
 - (NSArray *)workSets;
 
