@@ -11,4 +11,6 @@
 - (void)resetAllStores;
 
 @property(nonatomic, strong) NSArray *allStores;
+
+- (BLJStore *)storeForModel:(Class)pClass;
 @end

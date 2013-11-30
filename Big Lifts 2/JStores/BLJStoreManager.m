@@ -44,6 +44,7 @@
 - (void)resetAllStores {
     for (BLJStore *store in self.allStores) {
         [store empty];
+        [store sync];
     }
 
     for (BLJStore *store in self.allStores) {
@@ -77,16 +78,25 @@
                 [JFTOTriumvirateLiftStore instance],
                 [JFTOTriumvirateStore instance],
                 [JFTOWorkoutStore instance],
-                [JSSStateStore instance],
                 [JSSLiftStore instance],
                 [JSSVariantStore instance],
                 [JSSWorkoutStore instance],
+                [JSSStateStore instance],
                 [JSJLiftStore instance],
                 [JSJWorkoutStore instance]
         ];
     }
 
     return manager;
+}
+
+- (BLJStore *)storeForModel:(Class)pClass {
+    for (BLJStore *store in [self allStores]) {
+        if([store modelClass] == pClass){
+            return store;
+        }
+    }
+    return nil;
 }
 
 @end

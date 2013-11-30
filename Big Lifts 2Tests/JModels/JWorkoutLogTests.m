@@ -8,7 +8,7 @@
 
 - (void)testSerializesSetsAsUuids {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
-    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO order:0];
+    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO];
     [workoutLog addSet:setLog1];
     NSArray *serialized = [[JWorkoutLogStore instance] serialize];
     NSString *workoutLogJson = serialized[0];
@@ -21,7 +21,7 @@
 
 - (void)testDeserializesUuidsAsSets {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
-    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO order:0];
+    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO];
     [workoutLog addSet:setLog1];
     NSArray *serialized = [[JWorkoutLogStore instance] serialize];
     NSString *workoutLogJson = serialized[0];
@@ -33,8 +33,8 @@
 
 - (void)testSerializesAndDeserializesSets {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
-    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO order:0];
-    JSetLog *setLog2 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(120) reps:3 warmup:NO assistance:NO amrap:YES order:1];
+    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO];
+    JSetLog *setLog2 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(120) reps:3 warmup:NO assistance:NO amrap:YES];
     [workoutLog addSet:setLog1];
     [workoutLog addSet:setLog2];
 

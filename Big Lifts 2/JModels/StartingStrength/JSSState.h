@@ -3,6 +3,6 @@
 @class JSSWorkout;
 
 @interface JSSState : JModel
-@property(nonatomic) JSSWorkout *lastWorkout;
+@property(nonatomic) JSSWorkout<Optional> *lastWorkout;
 @property(nonatomic) NSNumber *workoutAAlternation;
 @end

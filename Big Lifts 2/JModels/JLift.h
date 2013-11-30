@@ -2,7 +2,7 @@
 
 @interface JLift : JModel
 
-@property(nonatomic) NSString *name;
+@property(nonatomic) NSString<Optional> *name;
 @property(nonatomic) NSDecimalNumber<Optional> *weight;
 @property(nonatomic) NSNumber<Optional> *order;
 @property(nonatomic) NSDecimalNumber<Optional> *increment;

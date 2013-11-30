@@ -20,7 +20,7 @@
     return setLog;
 }
 
-- (id)createWithName:(NSString *)name weight:(NSDecimalNumber *)weight reps:(int)reps warmup:(BOOL)warmup assistance:(BOOL)assistance amrap:(BOOL)amrap order:(int)order {
+- (id)createWithName:(NSString *)name weight:(NSDecimalNumber *)weight reps:(int)reps warmup:(BOOL)warmup assistance:(BOOL)assistance amrap:(BOOL)amrap {
     JSetLog *log = [self create];
     log.name = name;
     log.weight = weight;

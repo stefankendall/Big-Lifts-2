@@ -1,5 +1,7 @@
 #import "JModel.h"
 #import "JSONModelClassProperty.h"
+#import "BLJStore.h"
+#import "BLJStoreManager.h"
 
 @implementation JModel
 
@@ -32,6 +34,22 @@
     }
 
     return [dictionary copy];
+}
+
++ (NSMutableArray *)arrayOfModelsFromDictionaries:(NSArray *)array error:(NSError **)err {
+    if (isNull(array)) return nil;
+    BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class]];
+    NSMutableArray *list = [@[] mutableCopy];
+    for (NSString *value in array) {
+        id associatedObject = [store find:@"uuid" value:value];
+        if (associatedObject) {
+            [list addObject:associatedObject];
+        }
+        else {
+            NSLog(@"Could not load associated uuid: %@ for store: %@", value, NSStringFromClass([store class]));
+        }
+    }
+    return list;
 }
 
 @end

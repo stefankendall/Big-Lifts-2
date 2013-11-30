@@ -1,4 +1,4 @@
-#import <JSONModel/JSONModel.h>
+#import "JModel.h"
 #import "NSArray+Enumerable.h"
 #import "BLJStore.h"
 
@@ -51,8 +51,13 @@
 }
 
 - (NSArray *)findAll {
-    NSSortDescriptor *order = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-    return [self.data sortedArrayUsingDescriptors:@[order]];
+    if([[self modelClass] instancesRespondToSelector:@selector(order)]){
+        NSSortDescriptor *order = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+        return [self.data sortedArrayUsingDescriptors:@[order]];
+    }
+    else {
+        return self.data;
+    }
 }
 
 - (NSArray *)findAllWhere:(NSString *)name value:(id)value {

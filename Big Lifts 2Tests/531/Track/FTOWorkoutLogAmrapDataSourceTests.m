@@ -11,9 +11,9 @@
 
 - (void)testReturnsHeaviestAmrapSet {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
-    JSetLog *warmup = [[JSetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO order:0];
-    JSetLog *work1 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(180) reps:2 warmup:NO assistance:NO amrap:YES order:1];
-    JSetLog *work2 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:YES order:2];
+    JSetLog *warmup = [[JSetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO];
+    JSetLog *work1 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(180) reps:2 warmup:NO assistance:NO amrap:YES];
+    JSetLog *work2 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:YES];
     [workoutLog.sets addObjectsFromArray:@[warmup, work1, work2]];
 
     FTOWorkoutLogAmrapDataSource *dataSource = [[FTOWorkoutLogAmrapDataSource alloc] initWithWorkoutLog:workoutLog];
@@ -24,9 +24,9 @@
 
 - (void)testReturnsLastSetIfNoAmrap {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
-    JSetLog *warmup = [[JSetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO order:0];
-    JSetLog *work1 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(150) reps:2 warmup:NO assistance:NO amrap:NO order:1];
-    JSetLog *work2 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:NO order:2];
+    JSetLog *warmup = [[JSetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO];
+    JSetLog *work1 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(150) reps:2 warmup:NO assistance:NO amrap:NO];
+    JSetLog *work2 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:NO];
     [workoutLog.sets addObjectsFromArray:@[warmup, work1, work2]];
 
     FTOWorkoutLogAmrapDataSource *dataSource = [[FTOWorkoutLogAmrapDataSource alloc] initWithWorkoutLog:workoutLog];
@@ -37,9 +37,9 @@
 
 - (void)testHasMaxEstimateCell {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
-    JSetLog *warmup = [[JSetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO order:0];
-    JSetLog *work1 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(150) reps:2 warmup:NO assistance:NO amrap:NO order:1];
-    JSetLog *work2 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:NO order:2];
+    JSetLog *warmup = [[JSetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO];
+    JSetLog *work1 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(150) reps:2 warmup:NO assistance:NO amrap:NO];
+    JSetLog *work2 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(175) reps:1 warmup:NO assistance:NO amrap:NO];
     [workoutLog.sets addObjectsFromArray:@[warmup, work1, work2]];
     FTOWorkoutLogAmrapDataSource *dataSource = [[FTOWorkoutLogAmrapDataSource alloc] initWithWorkoutLog:workoutLog];
     STAssertEquals([dataSource tableView:nil numberOfRowsInSection:ESTIMATED_MAX_SECTION], 1, @"");

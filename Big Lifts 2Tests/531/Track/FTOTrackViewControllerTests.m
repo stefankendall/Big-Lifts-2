@@ -106,13 +106,13 @@
     NSDateFormatter *df = [NSDateFormatter new];
     [df setDateFormat:@"yyyy-MM-dd"];
     JWorkoutLog *oldBench = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[df dateFromString:@"2013-01-01"]];
-    [oldBench addSet:[[JSetLogStore instance] createWithName:@"Bench" weight:N(200) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    [oldBench addSet:[[JSetLogStore instance] createWithName:@"Bench" weight:N(200) reps:5 warmup:NO assistance:NO amrap:YES]];
     JWorkoutLog *oldSquat = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[df dateFromString:@"2013-01-03"]];
-    [oldSquat addSet:[[JSetLogStore instance] createWithName:@"Squat" weight:N(300) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    [oldSquat addSet:[[JSetLogStore instance] createWithName:@"Squat" weight:N(300) reps:5 warmup:NO assistance:NO amrap:YES]];
     JWorkoutLog *newBench = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[df dateFromString:@"2013-01-05"]];
-    [newBench addSet:[[JSetLogStore instance] createWithName:@"Bench" weight:N(205) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    [newBench addSet:[[JSetLogStore instance] createWithName:@"Bench" weight:N(205) reps:5 warmup:NO assistance:NO amrap:YES]];
     JWorkoutLog *newSquat = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[df dateFromString:@"2013-01-07"]];
-    [newSquat addSet:[[JSetLogStore instance] createWithName:@"Squat" weight:N(310) reps:5 warmup:NO assistance:NO amrap:YES order:0]];
+    [newSquat addSet:[[JSetLogStore instance] createWithName:@"Squat" weight:N(310) reps:5 warmup:NO assistance:NO amrap:YES]];
 
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     STAssertEquals([controller getLog][0], newSquat, @"");
