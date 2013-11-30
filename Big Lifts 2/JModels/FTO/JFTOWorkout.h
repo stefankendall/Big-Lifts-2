@@ -1,8 +1,8 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
 @class JWorkout;
 
-@interface JFTOWorkout : JSONModel
+@interface JFTOWorkout : JModel
 
 @property(nonatomic) JWorkout *workout;
 @property(nonatomic) NSNumber *week;

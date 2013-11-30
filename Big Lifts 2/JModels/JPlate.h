@@ -1,6 +1,6 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
-@interface JPlate : JSONModel
+@interface JPlate : JModel
 
 @property(nonatomic) NSNumber *count;
 @property(nonatomic) NSDecimalNumber *weight;

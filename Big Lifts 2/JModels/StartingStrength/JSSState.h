@@ -1,8 +1,8 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
 @class JSSWorkout;
 
-@interface JSSState : JSONModel
+@interface JSSState : JModel
 @property(nonatomic) JSSWorkout *lastWorkout;
 @property(nonatomic) NSNumber *workoutAAlternation;
 @end

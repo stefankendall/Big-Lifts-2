@@ -1,6 +1,6 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
-@interface JLift : JSONModel
+@interface JLift : JModel
 
 @property(nonatomic) NSString *name;
 @property(nonatomic) NSDecimalNumber<Optional> *weight;

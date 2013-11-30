@@ -1,5 +1,5 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
-@interface JFTOAssistance : JSONModel
+@interface JFTOAssistance : JModel
 @property(nonatomic) NSString *name;
 @end

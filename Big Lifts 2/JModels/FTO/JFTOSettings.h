@@ -1,6 +1,6 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
-@interface JFTOSettings : JSONModel
+@interface JFTOSettings : JModel
 
 @property(nonatomic) NSDecimalNumber *trainingMax;
 @property(nonatomic) BOOL warmupEnabled;

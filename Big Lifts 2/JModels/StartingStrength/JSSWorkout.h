@@ -1,6 +1,6 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
-@interface JSSWorkout : JSONModel
+@interface JSSWorkout : JModel
 
 @property(nonatomic) NSString *name;
 @property(nonatomic) NSNumber *order;

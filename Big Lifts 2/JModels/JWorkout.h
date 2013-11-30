@@ -1,9 +1,9 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
 @class JLift;
 @class JSet;
 
-@interface JWorkout : JSONModel
+@interface JWorkout : JModel
 @property(nonatomic) NSMutableArray *sets;
 
 - (NSArray *)workSets;

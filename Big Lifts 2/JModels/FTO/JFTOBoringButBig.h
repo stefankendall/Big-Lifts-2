@@ -1,6 +1,6 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
-@interface JFTOBoringButBig : JSONModel
+@interface JFTOBoringButBig : JModel
 
 @property(nonatomic) NSDecimalNumber *percentage;
 @property(nonatomic) BOOL threeMonthChallenge;

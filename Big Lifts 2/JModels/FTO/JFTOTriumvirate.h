@@ -1,10 +1,10 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
 @class JSet;
 @class JLift;
 @class JWorkout;
 
-@interface JFTOTriumvirate : JSONModel
+@interface JFTOTriumvirate : JModel
 @property(nonatomic) JWorkout *workout;
 @property(nonatomic) JLift *mainLift;
 

@@ -1,5 +1,5 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
-@interface JBar : JSONModel
+@interface JBar : JModel
 @property(nonatomic) NSDecimalNumber *weight;
 @end

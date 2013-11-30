@@ -1,8 +1,8 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
 @class JLift;
 
-@interface JSet : JSONModel
+@interface JSet : JModel
 @property(nonatomic) NSNumber *reps;
 @property(nonatomic) NSNumber<Optional> *maxReps;
 @property(nonatomic) NSNumber<Optional> *order;

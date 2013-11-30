@@ -1,6 +1,6 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
-@interface JCurrentProgram : JSONModel
+@interface JCurrentProgram : JModel
 
 @property(nonatomic) NSString<Optional> *name;
 @end

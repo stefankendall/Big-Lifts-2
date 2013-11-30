@@ -1,4 +1,4 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 #import "JSet.h"
 
 @interface JFTOSet : JSet
