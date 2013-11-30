@@ -26,6 +26,7 @@
 #import "JSSWorkoutStore.h"
 #import "JSJLiftStore.h"
 #import "JSJWorkoutStore.h"
+#import "NSArray+Enumerable.h"
 
 @implementation BLJStoreManager
 
@@ -59,30 +60,33 @@
         manager = [BLJStoreManager new];
         manager.allStores = @[
                 [JSettingsStore instance],
-                [JBarStore instance],
-                [JCurrentProgramStore instance],
-                [JLiftStore instance],
-                [JPlateStore instance],
-                [JSetLogStore instance],
-                [JSetStore instance],
-                [JWorkoutLogStore instance],
-                [JWorkoutStore instance],
                 [JFTOSettingsStore instance],
+                [JBarStore instance],
+                [JPlateStore instance],
+                [JCurrentProgramStore instance],
+
+                [JLiftStore instance],
+                [JSJLiftStore instance],
+                [JFTOLiftStore instance],
+                [JFTOTriumvirateLiftStore instance],
+                [JFTOSSTLiftStore instance],
+                [JSSLiftStore instance],
+                [JSetStore instance],
+
+                [JSetLogStore instance],
+                [JWorkoutLogStore instance],
+
+                [JWorkoutStore instance],
                 [JFTOVariantStore instance],
                 [JFTOAssistanceStore instance],
                 [JFTOBoringButBigStore instance],
                 [JFTOCustomWorkoutStore instance],
-                [JFTOLiftStore instance],
                 [JFTOSetStore instance],
-                [JFTOSSTLiftStore instance],
-                [JFTOTriumvirateLiftStore instance],
                 [JFTOTriumvirateStore instance],
                 [JFTOWorkoutStore instance],
-                [JSSLiftStore instance],
                 [JSSVariantStore instance],
                 [JSSWorkoutStore instance],
                 [JSSStateStore instance],
-                [JSJLiftStore instance],
                 [JSJWorkoutStore instance]
         ];
     }
@@ -90,13 +94,21 @@
     return manager;
 }
 
-- (BLJStore *)storeForModel:(Class)pClass {
-    for (BLJStore *store in [self allStores]) {
-        if([store modelClass] == pClass){
+- (BLJStore *)storeForModel:(Class)pClass withUuid:(NSString *)uuid {
+    NSArray *matchingStores = [[self allStores] select:^(BLJStore *store) {
+        return (BOOL) [[store modelClass] isSubclassOfClass: pClass];
+    }];
+    if([matchingStores count] == 1){
+        return [matchingStores firstObject];
+    }
+
+    for (BLJStore *store in matchingStores) {
+        if([store find:@"uuid" value:uuid]){
             return store;
         }
     }
     return nil;
+
 }
 
 @end

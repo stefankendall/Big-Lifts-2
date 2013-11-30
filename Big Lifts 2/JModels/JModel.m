@@ -40,7 +40,7 @@
     if (isNull(array)) return nil;
     NSMutableArray *list = [@[] mutableCopy];
     for (NSString *value in array) {
-        BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class]];
+        BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class] withUuid:value];
         id associatedObject = [store find:@"uuid" value:value];
         if (associatedObject) {
             [list addObject:associatedObject];
@@ -55,7 +55,7 @@
 
 -(id)initWithDictionary:(id)possibleUuid error:(NSError**)err {
     if([possibleUuid isKindOfClass:NSString.class]){
-        BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class]];
+        BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class] withUuid:nil ];
         return [store find:@"uuid" value:possibleUuid];
     }
     else {

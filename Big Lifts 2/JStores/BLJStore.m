@@ -167,7 +167,6 @@
 - (void)load {
     NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
     NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
-    NSLog(@"Store: %@", [self keyNameForStore]);
     if (serializedData) {
         self.data = [self deserialize:serializedData];
     }
