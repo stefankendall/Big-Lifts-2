@@ -48,8 +48,7 @@
             [[BLJStoreManager instance] syncStores];
         }
         @catch (NSException *e) {
-            //TODO
-            NSLog(@"Syncing has issues. Fix later");
+            NSLog(@"Couldn't sync?");
         }
         [self saveContext];
         [self endBackgroundUpdateTask];

@@ -198,15 +198,9 @@
     for (JWorkout *workout in ssWorkout.workouts) {
         JSet *firstSet = workout.orderedSets[0];
         JSSLift *lift = (JSSLift *) firstSet.lift;
-        NSLog(@"Weight %@", lift.weight);
-        NSLog(@"Increment %@", lift.increment);
         if (lift.increment) {
-            NSLog(@"Incrementing");
-            NSLog(@"Sum: %@", [lift.weight decimalNumberByAdding:lift.increment]);
-            NSLog(@"Sum: %@", [lift.weight decimalNumberByAdding:N(10)]);
             lift.weight = [lift.weight decimalNumberByAdding:lift.increment];
         }
-        NSLog(@"New Weight %@", lift.weight);
     }
 }
 
