@@ -1,13 +1,14 @@
 #import "OneRepViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "OneRepEstimator.h"
-#import "Settings.h"
-#import "SettingsStore.h"
+#import "JSettings.h"
+#import "JSettingsStore.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "UIViewController+PurchaseOverlay.h"
 #import "UITableViewController+NoEmptyRows.h"
 #import "PurchaseOverlay.h"
+#import "Settings.h"
 
 @interface OneRepViewController ()
 @property(nonatomic, strong) NSArray *formulaNames;
@@ -28,7 +29,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSString *roundingFormula = [[[SettingsStore instance] first] roundingFormula];
+    NSString *roundingFormula = [[[JSettingsStore instance] first] roundingFormula];
     int row = [self.formulaNames indexOfObject:roundingFormula];
     [self.formulaPicker selectRow:row inComponent:0 animated:NO];
     [self updatePickerDisplayForRow:row];
@@ -99,7 +100,7 @@
 
 - (void)updateOneRepMethod {
     int row = [self.formulaPicker selectedRowInComponent:0];
-    [[[SettingsStore instance] first] setRoundingFormula:self.formulaNames[(NSUInteger) row]];
+    [[[JSettingsStore instance] first] setRoundingFormula:self.formulaNames[(NSUInteger) row]];
     [self updatePickerDisplayForRow:row];
     [self updateMaxEstimate];
 }

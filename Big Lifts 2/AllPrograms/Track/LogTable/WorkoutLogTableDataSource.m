@@ -5,8 +5,8 @@
 #import "SetHelper.h"
 #import "OneRepEstimator.h"
 #import "JSetLog.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 const int SETS_SECTION = 0;
 const int ESTIMATED_MAX_SECTION = 1;
@@ -59,7 +59,7 @@ const int ESTIMATED_MAX_SECTION = 1;
         logToShow = [self.workoutLog.orderedSets lastObject];
     }
     NSDecimalNumber *estimate = [[OneRepEstimator new] estimate:logToShow.weight withReps:[logToShow.reps intValue]];
-    NSString *units = [[[SettingsStore instance] first] units];
+    NSString *units = [[[JSettingsStore instance] first] units];
     [cell.maxEstimate setText:[NSString stringWithFormat:@"%@ %@", [estimate stringValue], units]];
     return cell;
 }

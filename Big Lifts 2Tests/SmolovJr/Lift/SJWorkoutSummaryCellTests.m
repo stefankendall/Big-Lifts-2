@@ -1,8 +1,8 @@
 #import "SJWorkoutSummaryCellTests.h"
 #import "SJWorkoutSummaryCell.h"
 #import "SJWorkoutStore.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation SJWorkoutSummaryCellTests
 
@@ -22,7 +22,7 @@
 }
 
 - (void)testAdjustsForKg {
-    [[[SettingsStore instance] first] setUnits:@"kg"];
+    [[[JSettingsStore instance] first] setUnits:@"kg"];
     [[SJWorkoutStore instance] adjustForKg];
 
     SJWorkoutSummaryCell *cell = [SJWorkoutSummaryCell create];

@@ -4,8 +4,8 @@
 #import "PurchaseOverlay.h"
 #import "UIViewController+PurchaseOverlay.h"
 #import "WeightTableCell.h"
-#import "Settings.h"
-#import "SettingsStore.h"
+#import "JSettings.h"
+#import "JSettingsStore.h"
 #import "BarWeightCell.h"
 #import "JBarStore.h"
 #import "TextFieldWithCell.h"
@@ -115,7 +115,7 @@
         }
 
         JPlate *plate = [[JPlateStore instance] atIndex:row];
-        Settings *settings = [[SettingsStore instance] first];
+        JSettings *settings = [[JSettingsStore instance] first];
         [cell.weightLabel setText:[plate.weight stringValue]];
         [cell.unitsLabel setText:settings.units];
         [cell.countLabel setText:[plate.count stringValue]];

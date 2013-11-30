@@ -1,9 +1,9 @@
 #import "OneRepEstimator.h"
-#import "Settings.h"
+#import "JSettings.h"
 #import "EpleyEstimator.h"
-#import "BLStore.h"
-#import "SettingsStore.h"
+#import "JSettingsStore.h"
 #import "BrzyckiEstimator.h"
+#import "Settings.h"
 
 @implementation OneRepEstimator
 
@@ -19,7 +19,7 @@
             ROUNDING_FORMULA_EPLEY : [EpleyEstimator new],
             ROUNDING_FORMULA_BRZYCKI : [BrzyckiEstimator new]
     };
-    NSObject<MaxEstimator> *estimator = estimators[[[[SettingsStore instance] first] roundingFormula]];
+    NSObject <MaxEstimator> *estimator = estimators[[[[JSettingsStore instance] first] roundingFormula]];
     return [self oneDecimalPlace:[estimator estimate:weight withReps:reps]];
 }
 

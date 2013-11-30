@@ -2,8 +2,8 @@
 #import "SJWorkout.h"
 #import "Set.h"
 #import "Lift.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 #import "WeightRounder.h"
 
 @implementation SJSetCell
@@ -15,7 +15,7 @@
 
 
     NSDecimalNumber *effectiveWeight = set.effectiveWeight;
-    NSString *units = [[[SettingsStore instance] first] units];
+    NSString *units = [[[JSettingsStore instance] first] units];
     if (enteredWeight) {
         [self.weightRangeLabel setText:[NSString stringWithFormat:@"%@ %@",
                                                                   enteredWeight,

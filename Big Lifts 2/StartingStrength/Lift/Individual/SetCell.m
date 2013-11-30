@@ -1,7 +1,7 @@
 #import "SetCell.h"
 #import "Set.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 #import "Lift.h"
 
 @implementation SetCell
@@ -19,7 +19,7 @@
         [self.weightLabel setText:@""];
     }
     else {
-        Settings *settings = [[SettingsStore instance] first];
+        JSettings *settings = [[JSettingsStore instance] first];
         NSDecimalNumber *weight = [set roundedEffectiveWeight];
         if (self.enteredWeight) {
             weight = self.enteredWeight;

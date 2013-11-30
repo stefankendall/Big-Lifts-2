@@ -8,15 +8,8 @@
 #import "Workout.h"
 #import "SettingsStore.h"
 #import "Settings.h"
-#import "NSDictionaryMutator.h"
 
 @implementation SJWorkoutStore
-
-- (void)onLoad {
-    [[SettingsStore instance] registerChangeListener:^{
-        [self adjustForKg];
-    }];
-}
 
 - (void)setupDefaults {
     [self createWorkoutInWeek:1 order:1 sets:6 reps:6 percentage:N(70) minWeightAdd:0 maxWeightAdd:0];
@@ -62,22 +55,22 @@
     NSArray *week2Workouts = [self findAllWhere:@"week" value:@2];
     NSArray *week3Workouts = [self findAllWhere:@"week" value:@3];
     for (SJWorkout *workout in week2Workouts) {
-        if ([workout.minWeightAdd isEqualToNumber:N(10)] && [units isEqualToString:@"kg"]){
+        if ([workout.minWeightAdd isEqualToNumber:N(10)] && [units isEqualToString:@"kg"]) {
             workout.minWeightAdd = N(5);
             workout.maxWeightAdd = N(10);
         }
-        else if ([workout.minWeightAdd isEqualToNumber:N(5)] && [units isEqualToString:@"lbs"]){
+        else if ([workout.minWeightAdd isEqualToNumber:N(5)] && [units isEqualToString:@"lbs"]) {
             workout.minWeightAdd = N(10);
             workout.maxWeightAdd = N(20);
         }
     }
 
     for (SJWorkout *workout in week3Workouts) {
-        if ([workout.minWeightAdd isEqualToNumber:N(15)] && [units isEqualToString:@"kg"]){
+        if ([workout.minWeightAdd isEqualToNumber:N(15)] && [units isEqualToString:@"kg"]) {
             workout.minWeightAdd = N(7);
             workout.maxWeightAdd = N(12);
         }
-        else if ([workout.minWeightAdd isEqualToNumber:N(7)] && [units isEqualToString:@"lbs"]){
+        else if ([workout.minWeightAdd isEqualToNumber:N(7)] && [units isEqualToString:@"lbs"]) {
             workout.minWeightAdd = N(15);
             workout.maxWeightAdd = N(25);
         }

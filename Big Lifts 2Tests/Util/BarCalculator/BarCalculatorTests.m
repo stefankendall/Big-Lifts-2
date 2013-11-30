@@ -1,8 +1,8 @@
 #import "BarCalculatorTests.h"
 #import "BarCalculator.h"
 #import "PlateRemaining.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 #import "JBarStore.h"
 #import "JPlateStore.h"
 
@@ -32,7 +32,7 @@
 }
 
 - (void)testCalculates70kg {
-    [[[SettingsStore instance] first] setUnits:@"kg"];
+    [[[JSettingsStore instance] first] setUnits:@"kg"];
     [[JBarStore instance] adjustWeightForKg];
     [[JPlateStore instance] adjustForKg];
     self.calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll] barWeight:N(20)];

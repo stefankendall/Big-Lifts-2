@@ -6,8 +6,8 @@
 #import "SSWorkoutStore.h"
 #import "Workout.h"
 #import "Set.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation SSLiftSummaryCellTests
 
@@ -15,7 +15,7 @@
     SSLiftSummaryCell *cell = [SSLiftSummaryCell create];
     SSWorkout *workoutA = [[SSWorkoutStore instance] first];
 
-    Settings *settings = [[SettingsStore instance] first];
+    JSettings *settings = [[JSettingsStore instance] first];
     settings.units = @"kg";
 
     Set *set = [((Workout *) workoutA.workouts[0]).orderedSets lastObject];

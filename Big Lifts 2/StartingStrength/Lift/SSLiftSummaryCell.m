@@ -3,8 +3,8 @@
 #import "SSLift.h"
 #import "Workout.h"
 #import "Set.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation SSLiftSummaryCell
 
@@ -22,7 +22,7 @@
         [self.setsAndRepsLabel setText:[NSString stringWithFormat:@"%dx", worksetCount]];
     }
 
-    Settings *settings = [[SettingsStore instance] first];
+    JSettings *settings = [[JSettingsStore instance] first];
     [self.weightLabel setText:[NSString stringWithFormat:@"%@ %@", [lastSet effectiveWeight], settings.units]];
 }
 

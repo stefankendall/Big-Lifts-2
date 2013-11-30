@@ -1,7 +1,7 @@
 #import <ViewDeck/IIViewDeckController.h>
 #import "ProgramSelectorViewController.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 #import "BLViewDeckController.h"
 #import "JCurrentProgramStore.h"
 #import "JCurrentProgram.h"
@@ -23,7 +23,7 @@
 - (IBAction)unitsChanged:(id)sender {
     UISegmentedControl *unitsControl = sender;
     NSArray *unitsMapping = @[@"lbs", @"kg"];
-    [[[SettingsStore instance] first] setUnits:unitsMapping[(NSUInteger) [unitsControl selectedSegmentIndex]]];
+    [[[JSettingsStore instance] first] setUnits:unitsMapping[(NSUInteger) [unitsControl selectedSegmentIndex]]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -31,7 +31,7 @@
 }
 
 - (void)reloadData {
-    Settings *settings = [[SettingsStore instance] first];
+    JSettings *settings = [[JSettingsStore instance] first];
     NSDictionary *unitsSegments = @{@"lbs" : @0, @"kg" : @1};
     [unitsSegmentedControl setSelectedSegmentIndex:[[unitsSegments objectForKey:settings.units] integerValue]];
 }

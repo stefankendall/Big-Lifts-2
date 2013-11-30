@@ -1,6 +1,7 @@
 #import "OneRepEstimatorTests.h"
 #import "OneRepEstimator.h"
-#import "SettingsStore.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 #import "Settings.h"
 
 @implementation OneRepEstimatorTests
@@ -16,7 +17,7 @@
 }
 
 - (void) testUsesSavedFormula {
-    [[[SettingsStore instance] first] setRoundingFormula:(NSString *) ROUNDING_FORMULA_BRZYCKI];
+    [[[JSettingsStore instance] first] setRoundingFormula:(NSString *) ROUNDING_FORMULA_BRZYCKI];
     STAssertEqualObjects([[OneRepEstimator new] estimate:N(100) withReps:5], N(112.5), @"");
 }
 

@@ -1,11 +1,12 @@
 #import "WeightRounder.h"
+#import "JSettings.h"
+#import "JSettingsStore.h"
 #import "Settings.h"
-#import "SettingsStore.h"
 
 @implementation WeightRounder
 
 - (NSDecimalNumber *)round:(NSDecimalNumber *)number {
-    Settings *settings = [[SettingsStore instance] first];
+    JSettings *settings = [[JSettingsStore instance] first];
     if ([settings.roundTo isEqualToNumber:[NSDecimalNumber decimalNumberWithString:NEAREST_5_ROUNDING]]) {
         return [self roundToNearest5:number];
     }

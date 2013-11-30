@@ -1,7 +1,7 @@
 #import "SetLogCell.h"
 #import "JSetLog.h"
-#import "Settings.h"
-#import "SettingsStore.h"
+#import "JSettings.h"
+#import "JSettingsStore.h"
 
 @implementation SetLogCell
 
@@ -19,7 +19,7 @@ int const SET_LOG_CELL_HEIGHT = 30;
         [self.repsLabel setText:@""];
     }
 
-    Settings *settings = [[SettingsStore instance] first];
+    JSettings *settings = [[JSettingsStore instance] first];
     NSString *weightText = [NSString stringWithFormat:@"%@ %@", [self.setLog weight], [settings units]];
     [self.weightLabel setText:weightText];
 }

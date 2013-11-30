@@ -2,8 +2,8 @@
 #import "SJWorkout.h"
 #import "Workout.h"
 #import "Set.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation SJWorkoutSummaryCell
 
@@ -19,7 +19,7 @@
 
     if ([sjWorkout.maxWeightAdd intValue] > 0) {
         [self.addWeightRangeLabel setText:[NSString stringWithFormat:@"+%@-%@ %@", sjWorkout.minWeightAdd, sjWorkout.maxWeightAdd,
-                                                                     [[[SettingsStore instance] first] units]]];
+                                                                     [[[JSettingsStore instance] first] units]]];
     }
     else {
         [self.addWeightRangeLabel setText:@""];

@@ -1,9 +1,10 @@
 #import "SettingsViewController.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "BLStoreManager.h"
 #import "IAPAdapter.h"
+#import "Settings.h"
 
 @interface SettingsViewController ()
 @property(nonatomic, strong) NSArray *roundingOptions;
@@ -22,7 +23,7 @@
 }
 
 - (void)reloadData {
-    Settings *settings = [[SettingsStore instance] first];
+    JSettings *settings = [[JSettingsStore instance] first];
     NSDictionary *unitsSegments = @{@"lbs" : @0, @"kg" : @1};
     [unitsSegmentedControl setSelectedSegmentIndex:[[unitsSegments objectForKey:settings.units] integerValue]];
 
@@ -34,7 +35,7 @@
 - (IBAction)unitsChanged:(id)sender {
     UISegmentedControl *unitsControl = sender;
     NSArray *unitsMapping = @[@"lbs", @"kg"];
-    [[[SettingsStore instance] first] setUnits:unitsMapping[(NSUInteger) [unitsControl selectedSegmentIndex]]];
+    [[[JSettingsStore instance] first] setUnits:unitsMapping[(NSUInteger) [unitsControl selectedSegmentIndex]]];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -98,7 +99,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    Settings *settings = [[SettingsStore instance] first];
+    JSettings *settings = [[JSettingsStore instance] first];
     settings.roundTo = self.roundingOptions[(NSUInteger) row];
     [self reloadData];
 }

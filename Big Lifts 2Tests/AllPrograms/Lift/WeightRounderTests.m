@@ -1,6 +1,7 @@
 #import "WeightRounderTests.h"
 #import "WeightRounder.h"
-#import "SettingsStore.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 #import "Settings.h"
 
 @implementation WeightRounderTests
@@ -15,7 +16,7 @@
 }
 
 - (void)testRoundsTo2p5 {
-    [[[SettingsStore instance] first] setRoundTo:N(2.5)];
+    [[[JSettingsStore instance] first] setRoundTo:N(2.5)];
     STAssertEqualObjects([[WeightRounder new] round:N(81.24)], @80, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(82.5)], @82.5, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(83.75)], @85, @"");
@@ -28,14 +29,14 @@
 }
 
 - (void)testRoundsTo1 {
-    [[[SettingsStore instance] first] setRoundTo:N(1)];
+    [[[JSettingsStore instance] first] setRoundTo:N(1)];
     STAssertEqualObjects([[WeightRounder new] round:N(166)], @166, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(166.3)], @166, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(166.5)], @167, @"");
 }
 
 - (void)testRoundToNearest5 {
-    [[[SettingsStore instance] first] setRoundTo:[NSDecimalNumber decimalNumberWithString:NEAREST_5_ROUNDING]];
+    [[[JSettingsStore instance] first] setRoundTo:[NSDecimalNumber decimalNumberWithString:NEAREST_5_ROUNDING]];
     STAssertEqualObjects([[WeightRounder new] round:N(166)], @165, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(160)], @165, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(159)], @155, @"");

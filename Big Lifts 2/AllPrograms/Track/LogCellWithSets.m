@@ -1,8 +1,8 @@
 #import "LogCellWithSets.h"
 #import "SetLogContainer.h"
 #import "JSetLog.h"
-#import "SettingsStore.h"
-#import "Settings.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation LogCellWithSets
 
@@ -18,7 +18,7 @@
         [self.repsLabel setText:@""];
     }
 
-    Settings *settings = [[SettingsStore instance] first];
+    JSettings *settings = [[JSettingsStore instance] first];
     NSString *weightText = [NSString stringWithFormat:@"%@ %@", [self.setLog weight], [settings units]];
     [self.weightLabel setText:weightText];
 }
