@@ -6,6 +6,53 @@
 
 @implementation JWorkoutLogTests
 
+- (void)testSerializesSetsAsUuids {
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
+    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO order:0];
+    [workoutLog addSet:setLog1];
+    NSArray *serialized = [[JWorkoutLogStore instance] serialize];
+    NSString *workoutLogJson = serialized[0];
+    NSDictionary *deserialized = [NSJSONSerialization JSONObjectWithData: [workoutLogJson dataUsingEncoding:NSUTF8StringEncoding]
+                                                                 options: NSJSONReadingMutableContainers
+                                                                   error: nil];
+    NSArray *sets = deserialized[@"sets"];
+    STAssertEqualObjects(sets[0], setLog1.uuid, @"");
+}
+
+- (void)testDeserializesUuidsAsSets {
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
+    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO order:0];
+    [workoutLog addSet:setLog1];
+    NSArray *serialized = [[JWorkoutLogStore instance] serialize];
+    NSString *workoutLogJson = serialized[0];
+
+    JWorkoutLog *deserializedWorkoutLog = (JWorkoutLog *) [[JWorkoutLogStore instance] deserializeObject:workoutLogJson];
+    STAssertEquals([deserializedWorkoutLog.sets count], 1U, @"");
+    STAssertEquals(deserializedWorkoutLog.sets[0], setLog1, @"");
+}
+
+- (void)testSerializesAndDeserializesSets {
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
+    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO order:0];
+    JSetLog *setLog2 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(120) reps:3 warmup:NO assistance:NO amrap:YES order:1];
+    [workoutLog addSet:setLog1];
+    [workoutLog addSet:setLog2];
+
+    [[JWorkoutLogStore instance] sync];
+    [[JWorkoutLogStore instance] load];
+
+    JWorkoutLog *syncedLog = [[JWorkoutLogStore instance] first];
+    STAssertEquals([syncedLog.sets count], 2U, @"");
+
+    JSetLog *syncedLog1 = syncedLog.orderedSets[0];
+    STAssertEqualObjects(syncedLog1.name, @"Bench", @"");
+    STAssertEqualObjects(syncedLog1.weight, N(100), @"");
+
+    JSetLog *syncedLog2 = syncedLog.orderedSets[1];
+    STAssertEqualObjects(syncedLog2.name, @"Bench", @"");
+    STAssertEqualObjects(syncedLog2.weight, N(120), @"");
+}
+
 - (void)testWorkSets {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     JSetLog *warmup = [[JSetLogStore instance] create];

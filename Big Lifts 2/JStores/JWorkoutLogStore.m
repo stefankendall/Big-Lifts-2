@@ -10,6 +10,7 @@
 - (void)setDefaultsForObject:(id)object {
     JWorkoutLog *log = object;
     log.sets = [@[] mutableCopy];
+    log.deload = NO;
 }
 
 - (NSArray *)findAll {

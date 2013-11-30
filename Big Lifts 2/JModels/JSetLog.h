@@ -1,6 +1,6 @@
-#import "JSONModel/JSONModel.h"
+#import "JModel.h"
 
-@interface JSetLog : JSONModel
+@interface JSetLog : JModel
 
 @property(nonatomic) NSNumber *reps;
 @property(nonatomic) NSDecimalNumber *weight;

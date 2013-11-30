@@ -70,6 +70,7 @@
 		545901CE12C9F9C3C09BFEAE /* BarWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C64320B2FCA3001738B /* BarWeightCell.m */; };
 		545901E1F00851566E10BA05 /* FTOCustomSetViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590286E4F5F72055AE1E41 /* FTOCustomSetViewControllerTests.m */; };
 		545901F98001B87F562C480D /* 19-circle-check.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590C1C555809556275F648 /* 19-circle-check.png */; };
+		54590202B12A72A7137F91B0 /* JModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E329344C4F3E0CDA7B5 /* JModel.m */; };
 		5459020478E78CABDB1A4AC2 /* setupgraph.js in Resources */ = {isa = PBXBuildFile; fileRef = 545907D40FFC27789CBC0D68 /* setupgraph.js */; };
 		5459020E26CB353D4A4AA929 /* JSettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590207C6216D64502805A0 /* JSettingsStore.m */; };
 		5459020E459D35A74FF4225D /* LiftFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DBFD8F2F297F4D3E5FE /* LiftFormCell.m */; };
@@ -1145,6 +1146,7 @@
 		54590CCBE7E0321BBCCDAFE7 /* SetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTests.m; sourceTree = "<group>"; };
 		54590CD0755DF1E421CCE6A2 /* FTOCustomWorkoutStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomWorkoutStoreTests.h; sourceTree = "<group>"; };
 		54590CD1DDDD16B9FFD8BBD9 /* SJEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJEditViewController.m; sourceTree = "<group>"; };
+		54590CD4EED488AA5B6D71FC /* JModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JModel.h; sourceTree = "<group>"; };
 		54590CD741E7D36B1E225D1F /* JFTOVariantStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOVariantStore.h; sourceTree = "<group>"; };
 		54590CD8B751652B856B078F /* FTOStandardPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOStandardPlan.m; sourceTree = "<group>"; };
 		54590CD975E0619B049A4AA0 /* SSLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftViewControllerTests.h; sourceTree = "<group>"; };
@@ -1197,6 +1199,7 @@
 		54590E1638159FD4F8D503E1 /* AddPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPurchaseViewController.h; sourceTree = "<group>"; };
 		54590E294389B52D0E46F2BE /* JSSVariantStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSVariantStore.m; sourceTree = "<group>"; };
 		54590E2B9027CEBA1FBD08FE /* FTOCustomSetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomSetCell.m; sourceTree = "<group>"; };
+		54590E329344C4F3E0CDA7B5 /* JModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JModel.m; sourceTree = "<group>"; };
 		54590E359B424F73E427D654 /* FTOCustomWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomWorkoutStoreTests.m; sourceTree = "<group>"; };
 		54590E390C6C5DC4B60953A9 /* CombinedSetWorkoutLogTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CombinedSetWorkoutLogTableDataSource.h; sourceTree = "<group>"; };
 		54590E3A225EE7AB887CE8AA /* WorkoutLogTableDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutLogTableDataSourceTests.h; sourceTree = "<group>"; };
@@ -1451,6 +1454,8 @@
 				545905D50CCFD1B4E5778FA6 /* JWorkoutLog.h */,
 				54590904B57A6C6483A6E410 /* StartingStrength */,
 				54590A617334799C3D72DDBD /* SmolovJr */,
+				54590E329344C4F3E0CDA7B5 /* JModel.m */,
+				54590CD4EED488AA5B6D71FC /* JModel.h */,
 			);
 			path = JModels;
 			sourceTree = "<group>";
@@ -3777,6 +3782,7 @@
 				545908EC8D82040ABC3403EF /* JSJWorkout.m in Sources */,
 				54590E927352287C375A329B /* JSJLiftStore.m in Sources */,
 				5459083135F799D31A88ED56 /* JSJWorkoutStore.m in Sources */,
+				54590202B12A72A7137F91B0 /* JModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

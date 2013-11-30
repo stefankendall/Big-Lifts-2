@@ -149,6 +149,8 @@ lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
 
   -(instancetype)initWithDictionary:(NSDictionary*)dict error:(NSError **)err;
 
+- (NSArray *)__properties__;
+
 /** @name Exporting model contents */
 
   -(NSDictionary*)toDictionary;

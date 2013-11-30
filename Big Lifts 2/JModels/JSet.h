@@ -6,7 +6,7 @@
 @property(nonatomic) NSNumber *reps;
 @property(nonatomic) NSNumber<Optional> *maxReps;
 @property(nonatomic) NSNumber<Optional> *order;
-@property(nonatomic) NSDecimalNumber *percentage;
+@property(nonatomic) NSDecimalNumber<Optional> *percentage;
 @property(nonatomic) JLift *lift;
 @property(nonatomic) BOOL warmup;
 @property(nonatomic) BOOL amrap;

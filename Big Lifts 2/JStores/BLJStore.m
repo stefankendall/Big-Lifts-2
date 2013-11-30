@@ -10,9 +10,16 @@
 
 - (id)create {
     NSObject *object = [[self modelClass] new];
+    [self addUuid:object];
     [self.data addObject:object];
     [self setDefaultsForObject:object];
     return object;
+}
+
+- (void)addUuid:(NSObject *)object {
+    if ([object respondsToSelector:@selector(uuid)]) {
+        [object setValue:[[NSUUID UUID] UUIDString] forKey:@"uuid"];
+    }
 }
 
 - (void)setDefaultsForObject:(id)object {
@@ -170,7 +177,7 @@
 - (NSMutableArray *)deserialize:(NSArray *)serialized {
     NSMutableArray *deserialized = [@[] mutableCopy];
     for (NSString *string in serialized) {
-        JSONModel *model = [[[self modelClass] alloc] initWithString:string error:nil];
+        JSONModel *model = [self deserializeObject:string];
         if (model != nil ) {
             [deserialized addObject:model];
         }
@@ -179,6 +186,14 @@
         }
     }
     return deserialized;
+}
+
+- (JSONModel *)deserializeObject:(NSString *)string {
+    NSMutableDictionary *obj = [NSJSONSerialization JSONObjectWithData:[string dataUsingEncoding:NSUTF8StringEncoding]
+                                             options:NSJSONReadingMutableContainers
+                                               error:nil];
+    JSONModel *model = [[[self modelClass] alloc] initWithDictionary:obj error:nil];
+    return model;
 }
 
 - (void)setupDefaults {

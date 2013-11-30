@@ -1,3 +1,5 @@
+@class JSONModel;
+
 @interface BLJStore : NSObject
 
 - (Class)modelClass;
@@ -9,6 +11,8 @@
 - (void)remove:(id)object;
 
 - (void)reset;
+
+- (JSONModel *)deserializeObject:(NSString *)string;
 
 - (void)setupDefaults;
 
