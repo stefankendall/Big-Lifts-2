@@ -9,6 +9,7 @@
 #import "FTOWorkout.h"
 #import "Workout.h"
 #import "Set.h"
+#import "JFTOAssistance.h"
 
 @implementation FTOAssistanceStore
 

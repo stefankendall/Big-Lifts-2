@@ -1,8 +1,6 @@
 #import <ViewDeck/IIViewDeckController.h>
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOLiftWorkoutViewController.h"
-#import "FTOWorkout.h"
-#import "Workout.h"
 #import "FTOWorkoutCell.h"
 #import "JSet.h"
 #import "FTOLiftWorkoutToolbar.h"
@@ -115,7 +113,7 @@
     if (!cell) {
         cell = [FTOLiftWorkoutToolbar create];
         JSet *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
-        int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
+        int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:(id) heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
         [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
         [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
     }
