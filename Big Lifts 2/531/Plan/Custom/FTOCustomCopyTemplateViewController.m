@@ -1,7 +1,7 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOCustomCopyTemplateViewController.h"
 #import "JFTOVariant.h"
-#import "FTOCustomWorkoutStore.h"
+#import "JFTOCustomWorkoutStore.h"
 #import "Purchaser.h"
 #import "IAPAdapter.h"
 #import "FTOVariant.h"
@@ -61,7 +61,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *text = self.purchasedOrderedVariants[(NSUInteger) [indexPath row]];
     NSString *variant = self.textToVariant[text];
-    [[FTOCustomWorkoutStore instance] setupVariant:variant];
+    [[JFTOCustomWorkoutStore instance] setupVariant:variant];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

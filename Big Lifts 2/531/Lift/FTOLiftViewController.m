@@ -7,7 +7,7 @@
 #import "JLift.h"
 #import "JFTOVariant.h"
 #import "JFTOVariantStore.h"
-#import "FTOCustomWorkoutStore.h"
+#import "JFTOCustomWorkoutStore.h"
 #import "JFTOWorkout.h"
 #import "FTOVariant.h"
 
@@ -95,7 +95,7 @@
         };
     }
     else if ([variant.name isEqualToString:FTO_VARIANT_CUSTOM]) {
-        return [[[FTOCustomWorkoutStore instance] find:@"week" value:[NSNumber numberWithInteger:section + 1]] name];
+        return [[[JFTOCustomWorkoutStore instance] find:@"week" value:[NSNumber numberWithInteger:section + 1]] name];
     }
 
     return mapping[[NSNumber numberWithInteger:section]];

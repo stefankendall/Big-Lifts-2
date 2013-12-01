@@ -1,17 +1,17 @@
 #import "FTOCustomWorkoutViewController.h"
-#import "FTOCustomWorkout.h"
+#import "JFTOCustomWorkout.h"
 #import "Workout.h"
 #import "FTOCustomSetCell.h"
-#import "Set.h"
+#import "JSet.h"
 #import "FTOCustomSetViewController.h"
-#import "SetStore.h"
 #import "FTOSetStore.h"
 #import "AddCell.h"
 #import "FTOCustomWorkoutToolbar.h"
+#import "JWorkout.h"
 
 @interface FTOCustomWorkoutViewController ()
 
-@property(nonatomic, strong) Set *tappedSet;
+@property(nonatomic, strong) JSet *tappedSet;
 @end
 
 @implementation FTOCustomWorkoutViewController
@@ -53,7 +53,7 @@
             cell = [FTOCustomSetCell create];
         }
 
-        Set *set = self.customWorkout.workout.orderedSets[(NSUInteger) [indexPath row]];
+        JSet *set = self.customWorkout.workout.orderedSets[(NSUInteger) [indexPath row]];
         [cell setSet:set];
         return cell;
     }
@@ -104,7 +104,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Set *set = self.customWorkout.workout.orderedSets[(NSUInteger) ([indexPath row])];
+        JSet *set = self.customWorkout.workout.orderedSets[(NSUInteger) ([indexPath row])];
         [self.customWorkout.workout removeSet:set];
         [self.tableView reloadData];
     }

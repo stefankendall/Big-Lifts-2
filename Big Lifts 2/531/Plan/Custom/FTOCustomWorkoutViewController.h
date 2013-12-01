@@ -1,8 +1,8 @@
-@class FTOCustomWorkout;
+@class JFTOCustomWorkout;
 
 @interface FTOCustomWorkoutViewController : UITableViewController
 
-@property(nonatomic, strong) FTOCustomWorkout *customWorkout;
+@property(nonatomic, strong) JFTOCustomWorkout *customWorkout;
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *deleteSetsButton;
 
 - (void)addSet;

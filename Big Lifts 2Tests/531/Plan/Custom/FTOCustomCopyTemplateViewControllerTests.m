@@ -1,12 +1,12 @@
+#import "JWorkout.h"
 #import "FTOCustomCopyTemplateViewControllerTests.h"
 #import "FTOCustomCopyTemplateViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
-#import "FTOCustomWorkoutStore.h"
-#import "FTOCustomWorkout.h"
-#import "Workout.h"
+#import "JFTOCustomWorkoutStore.h"
 #import "FTOVariant.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
+#import "JFTOCustomWorkout.h"
 
 @implementation FTOCustomCopyTemplateViewControllerTests
 
@@ -14,7 +14,7 @@
     FTOCustomCopyTemplateViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomCopyTemplate"];
     int pyramidRow = [[controller purchasedOrderedVariants] indexOfObject:FTO_VARIANT_PYRAMID];
     [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:pyramidRow inSection:0]];
-    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertEquals(customWorkout.workout.orderedSets.count, 8U, @"");
 }
 

@@ -1,7 +1,7 @@
 #import "FTOCustomWeekSelectorViewController.h"
-#import "FTOCustomWorkoutStore.h"
+#import "JFTOCustomWorkoutStore.h"
 #import "FTOCustomWorkoutViewController.h"
-#import "FTOCustomWorkout.h"
+#import "JFTOCustomWorkout.h"
 #import "FTOCustomWeekEditCell.h"
 #import "RowTextField.h"
 #import "JFTOWorkoutStore.h"
@@ -10,7 +10,7 @@
 #import "JWorkoutStore.h"
 
 @interface FTOCustomWeekSelectorViewController ()
-@property(nonatomic, strong) FTOCustomWorkout *tappedWorkout;
+@property(nonatomic, strong) JFTOCustomWorkout *tappedWorkout;
 @end
 
 @implementation FTOCustomWeekSelectorViewController
@@ -30,14 +30,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([self.tableView isEditing]) {
-        return [[FTOCustomWorkoutStore instance] count];
+        return [[JFTOCustomWorkoutStore instance] count];
     }
     else {
         if (section == 0) {
             return 1;
         }
         else if (section == 1) {
-            return [[FTOCustomWorkoutStore instance] count];
+            return [[JFTOCustomWorkoutStore instance] count];
         }
         else {
             return 1;
@@ -72,7 +72,7 @@
 }
 
 - (UITableViewCell *)viewCell:(UITableView *)tableView forIndexPath:(NSIndexPath *)indexPath {
-    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] atIndex:[indexPath row]];
+    JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] atIndex:[indexPath row]];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOCustomWeekCell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOCustomWeekCell"];
@@ -83,7 +83,7 @@
 }
 
 - (UITableViewCell *)editCell:(UITableView *)tableView forIndexPath:(NSIndexPath *)indexPath {
-    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] atIndex:[indexPath row]];
+    JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] atIndex:[indexPath row]];
     FTOCustomWeekEditCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomWeekEditCell.class)];
     if (!cell) {
         cell = [FTOCustomWeekEditCell create];
@@ -97,13 +97,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger section = [indexPath section];
     if (section == 1) {
-        self.tappedWorkout = [[FTOCustomWorkoutStore instance] atIndex:[indexPath row]];
+        self.tappedWorkout = [[JFTOCustomWorkoutStore instance] atIndex:[indexPath row]];
         [self performSegueWithIdentifier:@"ftoCustomWeekSelectedSegue" sender:self];
     }
     else if (section == 2) {
-        FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] create];
+        JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] create];
         customWorkout.name = @"New Week";
-        NSNumber *max = [[FTOCustomWorkoutStore instance] max:@"week"];
+        NSNumber *max = [[JFTOCustomWorkoutStore instance] max:@"week"];
         NSNumber *week = [NSNumber numberWithInt:[max intValue] + 1];
         customWorkout.week = week;
         customWorkout.order = week;
@@ -123,8 +123,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [[FTOCustomWorkoutStore instance] removeAtIndex:[indexPath row]];
-        [[FTOCustomWorkoutStore instance] reorderWeeks];
+        [[JFTOCustomWorkoutStore instance] removeAtIndex:[indexPath row]];
+        [[JFTOCustomWorkoutStore instance] reorderWeeks];
         [self.tableView reloadData];
     }
 }
@@ -153,7 +153,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     RowTextField *rowTextField = (RowTextField *) textField;
-    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] atIndex:[rowTextField.indexPath row]];
+    JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] atIndex:[rowTextField.indexPath row]];
     customWorkout.name = [rowTextField text];
 }
 

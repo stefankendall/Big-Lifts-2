@@ -1,17 +1,17 @@
 #import "FTOCustomSetViewControllerTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOCustomSetViewController.h"
-#import "FTOCustomWorkoutStore.h"
-#import "FTOCustomWorkout.h"
-#import "Workout.h"
-#import "Set.h"
+#import "JFTOCustomWorkoutStore.h"
+#import "JFTOCustomWorkout.h"
+#import "JWorkout.h"
+#import "JSet.h"
 
 @implementation FTOCustomSetViewControllerTests
 
 - (void)testSetsLabelsForSet {
     FTOCustomSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomSet"];
-    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] first];
-    Set *set = [customWorkout.workout.orderedSets firstObject];
+    JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] first];
+    JSet *set = [customWorkout.workout.orderedSets firstObject];
     set.amrap = YES;
     set.reps = @7;
     set.percentage = N(45);
@@ -27,8 +27,8 @@
 
 - (void)testSetsReps {
     FTOCustomSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomSet"];
-    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] first];
-    Set *set = [customWorkout.workout.orderedSets firstObject];
+    JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] first];
+    JSet *set = [customWorkout.workout.orderedSets firstObject];
     set.reps = @7;
     [controller setSet:set];
     [controller viewWillAppear:YES];

@@ -1,10 +1,10 @@
 #import "FTOCustomWeekSelectorViewControllerTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOCustomWeekSelectorViewController.h"
-#import "FTOCustomWorkoutStore.h"
+#import "JFTOCustomWorkoutStore.h"
 #import "FTOCustomWeekEditCell.h"
 #import "RowTextField.h"
-#import "FTOCustomWorkout.h"
+#import "JFTOCustomWorkout.h"
 
 @implementation FTOCustomWeekSelectorViewControllerTests
 
@@ -22,8 +22,8 @@
     [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:
             [NSIndexPath indexPathForRow:0 inSection:0]];
 
-    STAssertEquals([[FTOCustomWorkoutStore instance] count], 3, @"");
-    FTOCustomWorkout *customWorkout = [[FTOCustomWorkoutStore instance] first];
+    STAssertEquals([[JFTOCustomWorkoutStore instance] count], 3, @"");
+    JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] first];
     STAssertEquals(customWorkout.week, @1, @"");
 }
 
@@ -35,16 +35,16 @@
     [cell.nameField setText:@"Starter week"];
     [controller textFieldDidEndEditing:cell.nameField];
 
-    FTOCustomWorkout *firstWorkout = [[FTOCustomWorkoutStore instance] first];
+    JFTOCustomWorkout *firstWorkout = [[JFTOCustomWorkoutStore instance] first];
     STAssertEqualObjects(firstWorkout.name, @"Starter week", @"");
 }
 
-- (void) testCanAddWeeks {
+- (void)testCanAddWeeks {
     FTOCustomWeekSelectorViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomWeekSelector"];
     [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
 
-    STAssertEquals([[FTOCustomWorkoutStore instance] count], 5, @"");
-    STAssertTrue([[[FTOCustomWorkoutStore instance] unique:@"week"] containsObject:@5], @"");
+    STAssertEquals([[JFTOCustomWorkoutStore instance] count], 5, @"");
+    STAssertTrue([[[JFTOCustomWorkoutStore instance] unique:@"week"] containsObject:@5], @"");
 }
 
 @end
