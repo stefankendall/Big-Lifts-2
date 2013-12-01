@@ -2,7 +2,6 @@
 #import <MRCEnumerable/NSDictionary+Enumerable.h>
 #import "FTOPlanViewController.h"
 #import "JFTOSettingsStore.h"
-#import "FTOSettings.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "JFTOVariant.h"
 #import "JFTOVariantStore.h"

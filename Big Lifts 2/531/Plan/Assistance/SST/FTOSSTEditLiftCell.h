@@ -1,5 +1,4 @@
 #import "CTCustomTableViewCell/CTCustomTableViewCell.h"
-#import "FTOLift.h"
 #import "FTOEditLiftCell.h"
 
 @class RowTextField;

@@ -1,5 +1,4 @@
 #import "SJWorkoutSummaryCell.h"
-#import "Workout.h"
 #import "JSet.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"

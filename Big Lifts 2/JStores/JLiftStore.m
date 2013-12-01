@@ -1,6 +1,5 @@
 #import "JLiftStore.h"
 #import "JLift.h"
-#import "Lift.h"
 
 @implementation JLiftStore
 
@@ -9,7 +8,7 @@
 }
 
 - (void)setDefaultsForObject:(id)object {
-    Lift *lift = object;
+    JLift *lift = object;
     lift.weight = N(0);
 }
 

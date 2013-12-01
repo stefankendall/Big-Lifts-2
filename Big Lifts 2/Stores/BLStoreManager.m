@@ -1,29 +1,6 @@
 #import "BLStoreManager.h"
-#import "SettingsStore.h"
-#import "WorkoutStore.h"
-#import "SetStore.h"
-#import "SSLiftStore.h"
-#import "SSWorkoutStore.h"
-#import "CurrentProgramStore.h"
 #import "WorkoutLogStore.h"
-#import "PlateStore.h"
-#import "BarStore.h"
 #import "SetLogStore.h"
-#import "SSVariantStore.h"
-#import "SSStateStore.h"
-#import "FTOLiftStore.h"
-#import "FTOWorkoutStore.h"
-#import "FTOSetStore.h"
-#import "FTOSettingsStore.h"
-#import "FTOVariantStore.h"
-#import "FTOAssistanceStore.h"
-#import "FTOTriumvirateLiftStore.h"
-#import "FTOTriumvirateStore.h"
-#import "FTOSSTLiftStore.h"
-#import "FTOBoringButBigStore.h"
-#import "SJLiftStore.h"
-#import "SJWorkoutStore.h"
-#import "FTOCustomWorkoutStore.h"
 
 @implementation BLStoreManager
 @synthesize allStores;
@@ -45,32 +22,8 @@
 - (void)loadStores {
     @try {
         allStores = @[
-                [CurrentProgramStore instance],
-                [SettingsStore instance],
-                [FTOSettingsStore instance],
-                [BarStore instance],
-                [WorkoutStore instance],
-                [WorkoutLogStore instance],
-                [SetStore instance],
-                [FTOSetStore instance],
-                [SSStateStore instance],
-                [SSLiftStore instance],
-                [SSVariantStore instance],
-                [SSWorkoutStore instance],
-                [FTOVariantStore instance],
-                [FTOBoringButBigStore instance],
-                [FTOAssistanceStore instance],
-                [FTOLiftStore instance],
-                [FTOSSTLiftStore instance],
-                [FTOCustomWorkoutStore instance],
-                [FTOTriumvirateLiftStore instance],
-                [FTOTriumvirateStore instance],
-                [FTOWorkoutStore instance],
-                [PlateStore instance],
                 [SetLogStore instance],
                 [WorkoutLogStore instance],
-                [SJLiftStore instance],
-                [SJWorkoutStore instance]
         ];
 
         [[NSNotificationCenter defaultCenter] postNotificationName:@"storesLoaded" object:nil];

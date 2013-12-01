@@ -1,6 +1,5 @@
 #import "JSettingsStore.h"
 #import "JSettings.h"
-#import "Settings.h"
 
 @implementation JSettingsStore
 

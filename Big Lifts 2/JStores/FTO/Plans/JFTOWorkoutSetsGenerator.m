@@ -2,7 +2,6 @@
 #import "JFTOPlan.h"
 #import "JFTOVariantStore.h"
 #import "JFTOVariant.h"
-#import "FTOVariant.h"
 #import "JFTOJokerPlan.h"
 #import "JFTOPyramidPlan.h"
 #import "JFTOHeavierPlan.h"

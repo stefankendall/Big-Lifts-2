@@ -4,7 +4,7 @@
 
 @implementation SetLogCombiner
 
-- (NSArray *)combineSetLogs:(NSOrderedSet *)setLogs {
+- (NSArray *)combineSetLogs:(NSArray *)setLogs {
     NSMutableArray *combined = [@[] mutableCopy];
 
     for (int i = 0; i < [setLogs count]; i++) {

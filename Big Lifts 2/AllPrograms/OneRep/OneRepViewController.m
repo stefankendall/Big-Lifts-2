@@ -6,9 +6,7 @@
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "UIViewController+PurchaseOverlay.h"
-#import "UITableViewController+NoEmptyRows.h"
 #import "PurchaseOverlay.h"
-#import "Settings.h"
 
 @interface OneRepViewController ()
 @property(nonatomic, strong) NSArray *formulaNames;

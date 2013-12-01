@@ -1,6 +1,5 @@
 #import "JFTOSettingsStore.h"
 #import "JFTOSettings.h"
-#import "FTOSettings.h"
 
 @implementation JFTOSettingsStore
 

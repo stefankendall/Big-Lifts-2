@@ -3,14 +3,13 @@
 #import "JFTOWorkout.h"
 #import "JSet.h"
 #import "JWorkout.h"
-#import "FTOAssistanceProtocol.h"
-#import "FTONoneAssistance.h"
-#import "FTOBoringButBigAssistance.h"
-#import "FTOTriumvirateAssistance.h"
-#import "FTOSimplestStrengthTemplateAssistance.h"
 #import "JFTOWorkoutStore.h"
 #import "NSArray+Enumerable.h"
-#import "FTOAssistance.h"
+#import "JFTOAssistanceProtocol.h"
+#import "JFTOTriumvirateAssistance.h"
+#import "JFTOBoringButBigAssistance.h"
+#import "JFTONoneAssistance.h"
+#import "JFTOSimplestStrengthTemplateAssistance.h"
 
 @implementation JFTOAssistanceStore
 
@@ -44,7 +43,7 @@
 }
 
 - (void)addAssistance {
-    NSObject <FTOAssistanceProtocol> *generator = [self assistanceGeneratorForName:[[self first] name]];
+    NSObject <JFTOAssistanceProtocol> *generator = [self assistanceGeneratorForName:[[self first] name]];
     [generator setup];
 }
 
@@ -52,12 +51,12 @@
     [[self assistanceGeneratorForName:[[self first] name]] cycleChange];
 }
 
-- (NSObject <FTOAssistanceProtocol> *)assistanceGeneratorForName:(NSString *)name {
+- (NSObject <JFTOAssistanceProtocol> *)assistanceGeneratorForName:(NSString *)name {
     NSDictionary *assistanceGenerators = @{
-            FTO_ASSISTANCE_NONE : [FTONoneAssistance new],
-            FTO_ASSISTANCE_BORING_BUT_BIG : [FTOBoringButBigAssistance new],
-            FTO_ASSISTANCE_TRIUMVIRATE : [FTOTriumvirateAssistance new],
-            FTO_ASSISTANCE_SST : [FTOSimplestStrengthTemplateAssistance new]
+            FTO_ASSISTANCE_NONE : [JFTONoneAssistance new],
+            FTO_ASSISTANCE_BORING_BUT_BIG : [JFTOBoringButBigAssistance new],
+            FTO_ASSISTANCE_TRIUMVIRATE : [JFTOTriumvirateAssistance new],
+            FTO_ASSISTANCE_SST : [JFTOSimplestStrengthTemplateAssistance new]
     };
     return assistanceGenerators[name];
 }

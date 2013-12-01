@@ -6,7 +6,6 @@
 #import "JFTOSettingsStore.h"
 #import "JSet.h"
 #import "JLift.h"
-#import "FTOSettings.h"
 #import "JFTOSettings.h"
 
 @implementation FTORepsToBeatBreakdown

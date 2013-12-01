@@ -1,5 +1,4 @@
 #import "CTCustomTableViewCell/CTCustomTableViewCell.h"
-#import "FTOLift.h"
 
 @class RowTextField;
 @class TrainingMaxRowTextField;

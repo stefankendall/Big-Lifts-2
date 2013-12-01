@@ -4,7 +4,6 @@
 #import "JSSWorkoutStore.h"
 #import "NSDictionaryMutator.h"
 #import "JSSVariantStore.h"
-#import "SSVariant.h"
 #import "IAPAdapter.h"
 #import "PurchaseOverlay.h"
 #import "Purchaser.h"

@@ -3,7 +3,6 @@
 #import "EpleyEstimator.h"
 #import "JSettingsStore.h"
 #import "BrzyckiEstimator.h"
-#import "Settings.h"
 
 @implementation OneRepEstimator
 

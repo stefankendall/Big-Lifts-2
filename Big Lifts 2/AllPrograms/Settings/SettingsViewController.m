@@ -4,7 +4,6 @@
 #import "TextViewInputAccessoryBuilder.h"
 #import "BLStoreManager.h"
 #import "IAPAdapter.h"
-#import "Settings.h"
 #import "BLJStoreManager.h"
 
 @interface SettingsViewController ()

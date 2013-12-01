@@ -1,6 +1,5 @@
 #import "WorkoutLogStore.h"
 #import "WorkoutLog.h"
-#import "Lift.h"
 #import "SetLog.h"
 #import "NSArray+Enumerable.h"
 

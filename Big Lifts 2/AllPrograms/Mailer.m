@@ -1,6 +1,5 @@
 #import <MessageUI/MessageUI.h>
 #import "Mailer.h"
-#import "CurrentProgram.h"
 #import "JCurrentProgramStore.h"
 
 @implementation Mailer

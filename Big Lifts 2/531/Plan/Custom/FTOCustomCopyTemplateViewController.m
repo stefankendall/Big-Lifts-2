@@ -4,7 +4,6 @@
 #import "JFTOCustomWorkoutStore.h"
 #import "Purchaser.h"
 #import "IAPAdapter.h"
-#import "FTOVariant.h"
 
 @implementation FTOCustomCopyTemplateViewController
 

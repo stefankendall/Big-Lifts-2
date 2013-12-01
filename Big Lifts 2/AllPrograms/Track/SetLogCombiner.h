@@ -1,3 +1,3 @@
 @interface SetLogCombiner : NSObject
-- (NSArray *) combineSetLogs: (NSOrderedSet *) setLogs;
+- (NSArray *) combineSetLogs: (NSArray *) setLogs;
 @end

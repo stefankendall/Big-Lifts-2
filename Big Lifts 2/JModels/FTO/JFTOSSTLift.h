@@ -1,5 +1,4 @@
 #import "JModel.h"
-#import "Lift.h"
 #import "JLift.h"
 
 @class JFTOLift;

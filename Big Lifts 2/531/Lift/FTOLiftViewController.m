@@ -9,7 +9,6 @@
 #import "JFTOVariantStore.h"
 #import "JFTOCustomWorkoutStore.h"
 #import "JFTOWorkout.h"
-#import "FTOVariant.h"
 
 @interface FTOLiftViewController ()
 

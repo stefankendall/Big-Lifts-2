@@ -1,7 +1,6 @@
 #import "WeightRounder.h"
 #import "JSettings.h"
 #import "JSettingsStore.h"
-#import "Settings.h"
 
 @implementation WeightRounder
 
