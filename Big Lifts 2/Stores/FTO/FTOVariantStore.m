@@ -1,6 +1,7 @@
 #import "FTOVariantStore.h"
 #import "FTOVariant.h"
 #import "FTOWorkoutStore.h"
+#import "JFTOVariant.h"
 
 @implementation FTOVariantStore
 

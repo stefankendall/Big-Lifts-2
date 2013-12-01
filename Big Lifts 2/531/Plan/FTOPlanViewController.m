@@ -10,7 +10,7 @@
 #import "PurchaseOverlay.h"
 #import "IAPAdapter.h"
 #import "JFTOWorkoutStore.h"
-#import "FTOVariant.h"
+#import "JFTOSettings.h"
 
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;

@@ -10,6 +10,7 @@
 #import "FTOFivesProgression.h"
 #import "FTOCustomPlan.h"
 #import "FTOHeavierPlan.h"
+#import "JFTOVariant.h"
 
 @implementation FTOWorkoutSetsGenerator
 

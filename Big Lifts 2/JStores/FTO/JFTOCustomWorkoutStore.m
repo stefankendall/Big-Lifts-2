@@ -4,9 +4,9 @@
 #import "JWorkout.h"
 #import "JWorkoutStore.h"
 #import "JSetData.h"
-#import "FTOVariant.h"
 #import "JFTOWorkoutSetsGenerator.h"
 #import "JFTOPlan.h"
+#import "JFTOVariant.h"
 
 @implementation JFTOCustomWorkoutStore
 

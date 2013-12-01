@@ -1,5 +1,6 @@
 #import "FTOSettingsStore.h"
 #import "FTOSettings.h"
+#import "JFTOSettings.h"
 
 @implementation FTOSettingsStore
 
@@ -17,6 +18,5 @@
         settings.repsToBeatConfig = [NSNumber numberWithInt:kRepsToBeatEverything];
     }
 }
-
 
 @end

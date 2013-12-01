@@ -1,13 +1,12 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTORepsToBeatCalculator.h"
-#import "FTOLift.h"
 #import "OneRepEstimator.h"
+#import "JFTOLift.h"
 #import "JFTOSettingsStore.h"
-#import "FTOSettings.h"
+#import "JFTOSettings.h"
 #import "JWorkoutLog.h"
 #import "JWorkoutLogStore.h"
 #import "JSetLog.h"
-#import "JFTOSettings.h"
 
 @implementation FTORepsToBeatCalculator
 

@@ -1,6 +1,6 @@
 #import "TrackViewController.h"
 #import "UITableViewController+NoEmptyRows.h"
-#import "FTOSettings.h"
+#import "JFTOSettings.h"
 
 @interface FTOTrackViewController : TrackViewController {}
 - (void)sortButtonTapped:(id)sortButtonTapped;

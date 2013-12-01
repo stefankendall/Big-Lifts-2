@@ -1,4 +1,4 @@
-@class FTOLift;
+@class JFTOLift;
 
 @interface FTORepsToBeatCalculator : NSObject
 

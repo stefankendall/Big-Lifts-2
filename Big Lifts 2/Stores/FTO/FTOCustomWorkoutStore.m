@@ -6,8 +6,8 @@
 #import "NSArray+Enumerable.h"
 #import "FTOWorkoutSetsGenerator.h"
 #import "WorkoutStore.h"
-#import "FTOVariant.h"
 #import "FTOCustomWorkout.h"
+#import "JFTOVariant.h"
 
 @implementation FTOCustomWorkoutStore
 
