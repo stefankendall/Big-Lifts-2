@@ -1,18 +1,18 @@
 #import "SJIndividualLiftViewControllerTests.h"
 #import "SJIndividualLiftViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
-#import "SJWorkoutStore.h"
 #import "JWorkoutLogStore.h"
 #import "JWorkoutLog.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "SJSetCellWithPlates.h"
+#import "JSJWorkoutStore.h"
 
 @implementation SJIndividualLiftViewControllerTests
 
 - (void)testLogsSetsWhenDoneButtonTapped {
     SJIndividualLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"sjIndividualLift"];
-    controller.sjWorkout = [[SJWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    controller.sjWorkout = [[JSJWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     [controller doneButtonTapped:nil];
 
     NSArray *smolovLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov Jr"];
@@ -24,7 +24,7 @@
 - (void)testShowsPlates {
     [[IAPAdapter instance] addPurchase:IAP_BAR_LOADING];
     SJIndividualLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"sjIndividualLift"];
-    controller.sjWorkout = [[SJWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    controller.sjWorkout = [[JSJWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     UITableViewCell *cell = [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     STAssertTrue([cell isKindOfClass:SJSetCellWithPlates.class], @"");
 }

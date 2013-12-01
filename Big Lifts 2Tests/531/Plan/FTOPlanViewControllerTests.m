@@ -1,12 +1,11 @@
 #import "FTOPlanViewControllerTests.h"
 #import "FTOPlanViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
-#import "FTOVariant.h"
 #import "JFTOVariantStore.h"
 #import "PurchaseOverlay.h"
 #import "JFTOSettingsStore.h"
-#import "FTOSettings.h"
 #import "JFTOVariant.h"
+#import "JFTOSettings.h"
 
 @implementation FTOPlanViewControllerTests
 

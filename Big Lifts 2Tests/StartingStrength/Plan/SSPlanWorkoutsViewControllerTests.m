@@ -3,11 +3,11 @@
 #import "SSPlanWorkoutsViewController.h"
 #import "JSSVariantStore.h"
 #import "JWorkout.h"
-#import "SSWorkout.h"
 #import "JSSWorkoutStore.h"
 #import "JSet.h"
 #import "JLift.h"
 #import "JSSVariant.h"
+#import "JSSWorkout.h"
 
 @interface SSPlanWorkoutsViewControllerTests ()
 

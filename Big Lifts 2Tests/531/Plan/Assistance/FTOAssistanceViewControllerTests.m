@@ -2,7 +2,6 @@
 #import "FTOAssistanceViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "JFTOAssistanceStore.h"
-#import "FTOAssistance.h"
 #import "Purchaser.h"
 #import "IAPAdapter.h"
 #import "JFTOAssistance.h"
@@ -23,7 +22,7 @@
 }
 
 - (void)testTappingRowChangesAssistance {
-    FTOAssistance *assistance = [[JFTOAssistanceStore instance] first];
+    JFTOAssistance *assistance = [[JFTOAssistanceStore instance] first];
     [assistance setName:FTO_ASSISTANCE_BORING_BUT_BIG];
     FTOAssistanceViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoAssistance"];
     [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];

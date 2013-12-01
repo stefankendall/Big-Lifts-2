@@ -2,18 +2,17 @@
 #import "FTORepsToBeatBreakdown.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "JFTOWorkoutStore.h"
-#import "Workout.h"
-#import "FTOWorkout.h"
 #import "JSetLog.h"
 #import "JSetLogStore.h"
 #import "JWorkoutLogStore.h"
 #import "JWorkoutLog.h"
-#import "FTOSettings.h"
 #import "JFTOSettingsStore.h"
 #import "PaddingTextField.h"
 #import "JSet.h"
 #import "JLift.h"
 #import "JFTOSettings.h"
+#import "JFTOCustomWorkout.h"
+#import "JWorkout.h"
 
 @implementation FTORepsToBeatBreakdownTests
 

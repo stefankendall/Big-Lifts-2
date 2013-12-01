@@ -6,7 +6,6 @@
 #import "JWorkoutLog.h"
 #import "JWorkoutLogStore.h"
 #import "JFTOSettingsStore.h"
-#import "FTOSettings.h"
 #import "JFTOLift.h"
 #import "JFTOSettings.h"
 

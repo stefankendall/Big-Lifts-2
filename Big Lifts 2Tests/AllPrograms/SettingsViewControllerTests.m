@@ -1,10 +1,8 @@
 #import "SettingsViewControllerTests.h"
 #import "SettingsViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
-#import "BLStore.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
-#import "Settings.h"
 
 @implementation SettingsViewControllerTests
 

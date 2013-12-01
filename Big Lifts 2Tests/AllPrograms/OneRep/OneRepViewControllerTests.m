@@ -3,7 +3,6 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
-#import "Settings.h"
 
 @implementation OneRepViewControllerTests
 

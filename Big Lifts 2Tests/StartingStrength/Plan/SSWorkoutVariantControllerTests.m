@@ -6,7 +6,6 @@
 #import "JSSWorkoutStore.h"
 #import "JWorkout.h"
 #import "JSSVariantStore.h"
-#import "SSVariant.h"
 #import "IAPAdapter.h"
 #import "PurchaseOverlay.h"
 #import "Purchaser.h"

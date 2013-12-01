@@ -8,7 +8,6 @@
 #import "NSArray+Enumerable.h"
 #import "JSSStateStore.h"
 #import "JSSState.h"
-#import "Workout.h"
 
 @implementation JSSWorkoutStoreTests
 
@@ -29,7 +28,7 @@
     [workoutA.workouts exchangeObjectAtIndex:0 withObjectAtIndex:1];
 
     JSSWorkout *savedWorkout = [[JSSWorkoutStore instance] atIndex:0];
-    Workout *workout = savedWorkout.workouts[0];
+    JWorkout *workout = savedWorkout.workouts[0];
     JSSLift *lift = (JSSLift *) ((JSet *) workout.orderedSets[0]).lift;
     STAssertTrue([lift.name isEqualToString:@"Bench"], @"");
 }
@@ -45,7 +44,7 @@
 - (void)testSwitchToNovice {
     [[JSSWorkoutStore instance] setupVariant:@"Novice"];
     JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] last];
-    Workout *workout = ssWorkout.workouts[2];
+    JWorkout *workout = ssWorkout.workouts[2];
     JSet *firstSet = workout.orderedSets[0];
     STAssertEqualObjects(firstSet.lift.name, @"Deadlift", @"");
 }
@@ -73,7 +72,7 @@
     [[JSSWorkoutStore instance] setupVariant:@"Standard"];
     [[JSSWorkoutStore instance] addWarmup];
     JSSWorkout *workoutA = [[JSSWorkoutStore instance] find:@"name" value:@"A"];
-    Workout *squatWorkout = [workoutA.workouts detect:^BOOL(Workout *workout) {
+    JWorkout *squatWorkout = [workoutA.workouts detect:^BOOL(JWorkout *workout) {
         JSet *set = workout.orderedSets[0];
         return [set.lift.name isEqualToString:@"Squat"];
     }];
