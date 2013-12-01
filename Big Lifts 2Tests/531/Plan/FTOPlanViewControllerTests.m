@@ -4,7 +4,7 @@
 #import "FTOVariant.h"
 #import "JFTOVariantStore.h"
 #import "PurchaseOverlay.h"
-#import "FTOSettingsStore.h"
+#import "JFTOSettingsStore.h"
 #import "FTOSettings.h"
 #import "JFTOVariant.h"
 
@@ -33,7 +33,7 @@
 }
 
 - (void)testSetsWarmupToggleOnLoad {
-    [[[FTOSettingsStore instance] first] setWarmupEnabled:NO];
+    [[[JFTOSettingsStore instance] first] setWarmupEnabled:NO];
     FTOPlanViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoPlan"];
     [controller viewWillAppear:YES];
     STAssertFalse([controller.warmupToggle isOn], @"");

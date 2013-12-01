@@ -5,7 +5,7 @@
 #import "FTOAssistanceStore.h"
 #import "FTOAssistance.h"
 #import "FTOWorkout.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
 #import "SetData.h"
 #import "FTOCycleAdjustor.h"
 
@@ -18,7 +18,7 @@
     field.text = @"60";
     [controller percentageChanged:field];
 
-    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    FTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertEquals([ftoWorkout.workout.orderedSets count], 11U, @"");
     STAssertEqualObjects([[ftoWorkout.workout.orderedSets lastObject] percentage], N(60), @"");
 }
@@ -27,7 +27,7 @@
     [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     [[FTOCycleAdjustor new] nextCycle];
 
-    FTOWorkout *ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    FTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     STAssertEqualObjects([ftoWorkout.workout.orderedSets.lastObject percentage], N(50), @"");
 }
 
@@ -39,7 +39,7 @@
     [controller toggleThreeMonthChallenge:toggle];
     [[FTOCycleAdjustor new] nextCycle];
 
-    FTOWorkout *ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    FTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     STAssertEqualObjects([ftoWorkout.workout.orderedSets.lastObject percentage], N(60), @"");
 }
 

@@ -1,31 +1,31 @@
 #import "FTOCycleAdjustorTests.h"
 #import "FTOCycleAdjustor.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
 #import "NSArray+Enumerable.h"
-#import "FTOWorkout.h"
 #import "JFTOVariantStore.h"
+#import "JFTOWorkout.h"
 #import "FTOVariant.h"
 
 @implementation FTOCycleAdjustorTests
 
 - (void)testDetectsCycleNeedingToAdjust {
-    [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
+    [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *ftoWorkout) {
         ftoWorkout.done = YES;
     }];
     STAssertTrue([[FTOCycleAdjustor new] cycleNeedsToIncrement], @"");
 }
 
 - (void)testDetectsCycleNotNeedingToAdjust {
-    [[[FTOWorkoutStore instance] findAll] each:^(FTOWorkout *ftoWorkout) {
+    [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *ftoWorkout) {
         ftoWorkout.done = YES;
     }];
-    [[[FTOWorkoutStore instance] first] setDone:NO];
+    [[[JFTOWorkoutStore instance] first] setDone:NO];
     STAssertFalse([[FTOCycleAdjustor new] cycleNeedsToIncrement], @"");
 }
 
 - (void)testMidCycleSixWeek {
     [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
-    [[FTOWorkoutStore instance] switchTemplate];
+    [[JFTOWorkoutStore instance] switchTemplate];
 
     [self setupMidSixWeekLiftsDone];
     STAssertTrue([[FTOCycleAdjustor new] shouldIncrementLifts], @"");
@@ -33,10 +33,10 @@
 
 - (void)testMidCycleSixWeekDoesntTriggerPastMid {
     [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
-    [[FTOWorkoutStore instance] switchTemplate];
+    [[JFTOWorkoutStore instance] switchTemplate];
 
     [self setupMidSixWeekLiftsDone];
-    FTOWorkout *firstWorkoutPastCycle = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:4]] firstObject];
+    JFTOWorkout *firstWorkoutPastCycle = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:4]] firstObject];
     firstWorkoutPastCycle.done = YES;
     STAssertFalse([[FTOCycleAdjustor new] shouldIncrementLifts], @"");
 }
@@ -48,7 +48,7 @@
 
 - (void)setupMidSixWeekLiftsDone {
     for (int week = 1; week <= 3; week++) {
-        [[[FTOWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:week]] each:^(FTOWorkout *workout) {
+        [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:week]] each:^(JFTOWorkout *workout) {
             workout.done = YES;
         }];
     }

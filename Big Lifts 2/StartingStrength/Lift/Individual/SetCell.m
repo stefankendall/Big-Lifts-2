@@ -1,12 +1,12 @@
 #import "SetCell.h"
-#import "Set.h"
+#import "JSet.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
-#import "Lift.h"
+#import "JLift.h"
 
 @implementation SetCell
 
-- (void)setSet:(Set *)set {
+- (void)setSet:(JSet *)set {
     [self setRepsLabelText:set];
     [self setPercentageLabelText:set];
     [self setWeightLabelText:set];
@@ -14,7 +14,7 @@
     [self.optionalLabel setHidden:!set.optional];
 }
 
-- (void)setWeightLabelText:(Set *)set {
+- (void)setWeightLabelText:(JSet *)set {
     if (!set.lift.usesBar && [[set roundedEffectiveWeight] isEqualToNumber:@0]) {
         [self.weightLabel setText:@""];
     }
@@ -29,7 +29,7 @@
     }
 }
 
-- (void)setPercentageLabelText:(Set *)set {
+- (void)setPercentageLabelText:(JSet *)set {
     if ([[set percentage] compare:N(0)] == NSOrderedDescending) {
         [self.percentageLabel setText:[NSString stringWithFormat:@"%@%%", [set.percentage stringValue]]];
     }
@@ -38,7 +38,7 @@
     }
 }
 
-- (void)setRepsLabelText:(Set *)set {
+- (void)setRepsLabelText:(JSet *)set {
     if ([[set reps] intValue] <= 0 && [set amrap]) {
         [self.repsLabel setText:@"AMRAP"];
     }
@@ -50,13 +50,13 @@
     }
 }
 
-- (void)setSet:(Set *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight {
+- (void)setSet:(JSet *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight {
     self.enteredReps = enteredReps;
     self.enteredWeight = weight;
     [self setSet:set];
 }
 
-- (NSString *)getRepsString:(Set *)set {
+- (NSString *)getRepsString:(JSet *)set {
     if (self.enteredReps != nil) {
         return [NSString stringWithFormat:@"%@x", self.enteredReps];
     }

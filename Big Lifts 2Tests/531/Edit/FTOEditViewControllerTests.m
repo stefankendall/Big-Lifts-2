@@ -2,7 +2,7 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOEditViewController.h"
 #import "NSArray+Enumerable.h"
-#import "FTOLiftStore.h"
+#import "JFTOLiftStore.h"
 #import "LiftFormCell.h"
 #import "FTOEditLiftCell.h"
 #import "RowTextField.h"
@@ -47,7 +47,7 @@
 
 - (void)testHasAllLifts {
     NSMutableArray *lifts = [@[] mutableCopy];
-    for (int i = 0; i < [[FTOLiftStore instance] count]; i++) {
+    for (int i = 0; i < [[JFTOLiftStore instance] count]; i++) {
         FTOEditLiftCell *cell = (FTOEditLiftCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         [lifts addObject:cell.liftName.text];
     }

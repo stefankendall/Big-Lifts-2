@@ -4,7 +4,7 @@
 #import "SetStore.h"
 #import "FTOSetStore.h"
 #import "FTOSet.h"
-#import "FTOLiftStore.h"
+#import "JFTOLiftStore.h"
 #import "Lift.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
@@ -15,7 +15,7 @@
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     FTOSet *set = [[FTOSetStore instance] create];
     set.percentage = N(100);
-    set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    set.lift = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     set.lift.weight = N(200);
     set.reps = @3;
     [controller setSet:set];
@@ -42,7 +42,7 @@
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     FTOSet *set = [[FTOSetStore instance] create];
     set.percentage = N(100);
-    set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    set.lift = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     set.lift.weight = N(200);
     set.reps = @3;
     [controller setSet:set];
@@ -55,7 +55,7 @@
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     FTOSet *set = [[FTOSetStore instance] create];
     set.percentage = N(100);
-    set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    set.lift = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     set.lift.weight = N(200);
     set.reps = @3;
     [controller setSet:set];
@@ -69,7 +69,7 @@
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     FTOSet *set = [[FTOSetStore instance] create];
     set.percentage = N(100);
-    set.lift = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    set.lift = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     set.lift.weight = N(300);
     set.reps = @1;
     [controller setSet:set];

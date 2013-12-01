@@ -4,4 +4,6 @@
 - (void)switchTemplate;
 
 - (void)restoreTemplate;
+
+- (void)reorderWorkoutsToLifts;
 @end

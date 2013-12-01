@@ -2,7 +2,7 @@
 #import "FTOLiftViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "JFTOVariantStore.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
 #import "FTOVariant.h"
 
 @implementation FTOLiftViewControllerTests
@@ -13,16 +13,16 @@
     STAssertEquals([controller numberOfSectionsInTableView:nil], 4, @"");
 }
 
-- (void) testHasLiftNamesInCells {
+- (void)testHasLiftNamesInCells {
     FTOLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLift"];
     UITableViewCell *cell = [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     STAssertEqualObjects([[cell textLabel] text], @"Bench", @"");
 }
 
-- (void) testHasSectionsForSixWeek {
+- (void)testHasSectionsForSixWeek {
     FTOLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLift"];
-    [[[JFTOVariantStore instance] first] setName: FTO_VARIANT_SIX_WEEK];
-    [[FTOWorkoutStore instance] switchTemplate];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
+    [[JFTOWorkoutStore instance] switchTemplate];
 
     STAssertEquals([controller numberOfSectionsInTableView:nil], 7, @"");
     STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:3], @"5/5/5", @"");

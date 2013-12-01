@@ -1,13 +1,13 @@
 #import "FTOAddLiftViewControllerTests.h"
 #import "FTOAddLiftViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
-#import "FTOLiftStore.h"
-#import "FTOWorkoutStore.h"
-#import "FTOLift.h"
+#import "JFTOLiftStore.h"
+#import "JFTOWorkoutStore.h"
+#import "JFTOLift.h"
 
 @implementation FTOAddLiftViewControllerTests
 
--(void) testAllFieldsAreFilled {
+- (void)testAllFieldsAreFilled {
     FTOAddLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoAddLift"];
     STAssertFalse([controller allFieldsAreFilled], @"");
 
@@ -19,25 +19,25 @@
     STAssertTrue([controller allFieldsAreFilled], @"");
 }
 
-- (void) testAddsLifts {
+- (void)testAddsLifts {
     FTOAddLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoAddLift"];
     [controller.nameField setText:@"Name"];
     [controller.weightField setText:@"130.5"];
     [controller.increaseField setText:@"2"];
 
-    int oldCount = [[FTOLiftStore instance] count];
+    int oldCount = [[JFTOLiftStore instance] count];
     [controller doneButtonTapped:nil];
-    STAssertEquals(oldCount + 1, [[FTOLiftStore instance] count], @"");
+    STAssertEquals(oldCount + 1, [[JFTOLiftStore instance] count], @"");
 
-    FTOLift *lift = [[FTOLiftStore instance] find:@"name" value:@"Name"];
+    JFTOLift *lift = [[JFTOLiftStore instance] find:@"name" value:@"Name"];
     STAssertTrue(lift.usesBar, @"");
 }
 
-- (void) testAddsLiftsToWorkouts {
+- (void)testAddsLiftsToWorkouts {
     FTOAddLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoAddLift"];
-    int oldCount = [[FTOWorkoutStore instance] count];
+    int oldCount = [[JFTOWorkoutStore instance] count];
     [controller doneButtonTapped:nil];
-    STAssertEquals(oldCount + 4, [[FTOWorkoutStore instance] count], @"");
+    STAssertEquals(oldCount + 4, [[JFTOWorkoutStore instance] count], @"");
 }
 
 @end

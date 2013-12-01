@@ -1,14 +1,14 @@
 #import "FTOEditViewController.h"
-#import "FTOLiftStore.h"
-#import "FTOLift.h"
+#import "JFTOLiftStore.h"
+#import "JFTOLift.h"
 #import "LiftFormCell.h"
 #import "FTOEditLiftCell.h"
 #import "RowTextField.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "TrainingMaxRowTextField.h"
-#import "FTOSettings.h"
-#import "FTOSettingsStore.h"
+#import "JFTOSettingsStore.h"
 #import "FTOEditIncrementCell.h"
+#import "JFTOSettings.h"
 
 @implementation FTOEditViewController
 
@@ -21,11 +21,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[FTOLiftStore instance] count];
+    return [[JFTOLiftStore instance] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FTOLift *lift = (FTOLift *) [self liftAtIndex:[indexPath row]];
+    JFTOLift *lift = (JFTOLift *) [self liftAtIndex:[indexPath row]];
     if ([indexPath section] == 0) {
         FTOEditLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOEditLiftCell.class)];
         if (cell == nil) {
@@ -72,7 +72,7 @@
     RowTextField *rowTextField = (RowTextField *) textField;
     NSIndexPath *indexPath = [rowTextField indexPath];
     NSString *weightText = [textField text];
-    Lift *lift = [self liftAtIndex:[indexPath row]];
+    JLift *lift = [self liftAtIndex:[indexPath row]];
     if ([weightText isEqualToString:@""]) {
         weightText = @"0";
     }
@@ -83,7 +83,7 @@
     }
     else {
         if ([textField isKindOfClass:TrainingMaxRowTextField.class]) {
-            FTOSettings *ftoSettings = [[FTOSettingsStore instance] first];
+            JFTOSettings *ftoSettings = [[JFTOSettingsStore instance] first];
             NSDecimalNumber *max =
                     [[N(100) decimalNumberByDividingBy:[ftoSettings trainingMax]] decimalNumberByMultiplyingBy:weight];
             NSNumberFormatter *nf = [NSNumberFormatter new];
@@ -99,7 +99,7 @@
 }
 
 - (UITableViewCell *)incrementCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
-    Lift *lift = [self liftAtIndex:[indexPath row]];
+    JLift *lift = [self liftAtIndex:[indexPath row]];
     FTOEditIncrementCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOEditIncrementCell.class)];
     if (cell == nil) {
         cell = [FTOEditIncrementCell create];
@@ -112,8 +112,8 @@
     return cell;
 }
 
-- (Lift *)liftAtIndex:(int)index {
-    return [[FTOLiftStore instance] atIndex:index];
+- (JLift *)liftAtIndex:(int)index {
+    return [[JFTOLiftStore instance] atIndex:index];
 }
 
 @end

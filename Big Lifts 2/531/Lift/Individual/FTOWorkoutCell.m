@@ -1,5 +1,5 @@
 #import "FTOWorkoutCell.h"
-#import "Set.h"
+#import "JSet.h"
 #import "SetCellWithPlates.h"
 #import "Purchaser.h"
 #import "IAPAdapter.h"
@@ -23,11 +23,11 @@
     [self addSubview:contentView];
 }
 
-- (void)setSet:(Set *)set {
+- (void)setSet:(JSet *)set {
     [self.setCell setSet:set];
 }
 
-- (void)setSet:(Set *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight {
+- (void)setSet:(JSet *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight {
     [self.setCell setSet:set withEnteredReps:enteredReps withEnteredWeight: weight];
 }
 

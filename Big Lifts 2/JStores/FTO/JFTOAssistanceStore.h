@@ -2,4 +2,6 @@
 
 @interface JFTOAssistanceStore : BLJStore
 - (void)addAssistance;
+
+- (void)cycleChange;
 @end

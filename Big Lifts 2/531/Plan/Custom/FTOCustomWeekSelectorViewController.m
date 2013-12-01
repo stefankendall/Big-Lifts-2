@@ -4,11 +4,10 @@
 #import "FTOCustomWorkout.h"
 #import "FTOCustomWeekEditCell.h"
 #import "RowTextField.h"
-#import "WorkoutStore.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
 #import "AddCell.h"
 #import "FTOCustomToolbar.h"
-
+#import "JWorkoutStore.h"
 
 @interface FTOCustomWeekSelectorViewController ()
 @property(nonatomic, strong) FTOCustomWorkout *tappedWorkout;
@@ -108,7 +107,7 @@
         NSNumber *week = [NSNumber numberWithInt:[max intValue] + 1];
         customWorkout.week = week;
         customWorkout.order = week;
-        customWorkout.workout = [[WorkoutStore instance] create];
+        customWorkout.workout = [[JWorkoutStore instance] create];
         [self.tableView reloadData];
     }
 }
@@ -168,7 +167,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
-        [[FTOWorkoutStore instance] switchTemplate];
+        [[JFTOWorkoutStore instance] switchTemplate];
     }
 }
 

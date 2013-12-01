@@ -1,18 +1,17 @@
 #import "FTOWorkoutCellTests.h"
 #import "FTOWorkoutCell.h"
-#import "FTOWorkout.h"
-#import "FTOWorkoutStore.h"
-#import "Workout.h"
-#import "Set.h"
-#import "Lift.h"
-#import "FTOSet.h"
+#import "JFTOWorkoutStore.h"
+#import "JFTOSet.h"
+#import "JFTOWorkout.h"
+#import "JLift.h"
+#import "JWorkout.h"
 
 @implementation FTOWorkoutCellTests
 
 - (void)testSetSetSetsLabels {
     FTOWorkoutCell *cell = [FTOWorkoutCell create];
-    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] first];
-    Set *set = ftoWorkout.workout.orderedSets[0];
+    JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] first];
+    JSet *set = ftoWorkout.workout.orderedSets[0];
     set.lift.weight = [NSDecimalNumber decimalNumberWithString:@"200"];
     set.percentage = [NSDecimalNumber decimalNumberWithString:@"60"];
     [cell setSet:set];
@@ -23,8 +22,8 @@
 
 - (void)testAdjustForAmrap {
     FTOWorkoutCell *cell = [FTOWorkoutCell create];
-    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] first];
-    FTOSet *set = ftoWorkout.workout.orderedSets[0];
+    JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] first];
+    JFTOSet *set = ftoWorkout.workout.orderedSets[0];
     set.amrap = YES;
     [cell setSet:set];
     STAssertEqualObjects([[cell.setCell repsLabel] text], @"5+", @"");

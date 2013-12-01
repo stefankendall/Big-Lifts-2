@@ -1,11 +1,10 @@
 #import "FTOEditLiftCell.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "RowTextField.h"
-#import "FTOSettings.h"
-#import "BLStore.h"
-#import "FTOSettingsStore.h"
+#import "JFTOSettingsStore.h"
 #import "WeightRounder.h"
 #import "TrainingMaxRowTextField.h"
+#import "JFTOSettings.h"
 
 @implementation FTOEditLiftCell
 
@@ -23,7 +22,7 @@
 }
 
 - (void)updateTrainingMax:(NSDecimalNumber *)weight {
-    FTOSettings *settings = [[FTOSettingsStore instance] first];
+    JFTOSettings *settings = [[JFTOSettingsStore instance] first];
     NSDecimalNumber *trainingWeight = [[weight decimalNumberByMultiplyingBy:settings.trainingMax] decimalNumberByDividingBy:N(100)];
     [self.trainingMax setText:[[[WeightRounder new] roundTo1:trainingWeight] stringValue]];
 }

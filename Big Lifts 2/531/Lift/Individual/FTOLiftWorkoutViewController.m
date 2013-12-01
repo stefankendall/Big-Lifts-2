@@ -4,9 +4,10 @@
 #import "FTOWorkout.h"
 #import "Workout.h"
 #import "FTOWorkoutCell.h"
-#import "Set.h"
+#import "JSet.h"
 #import "FTOLiftWorkoutToolbar.h"
 #import "FTORepsToBeatCalculator.h"
+#import "JFTOWorkout.h"
 #import "FTORepsToBeatBreakdown.h"
 #import "FTOSetChangeForm.h"
 #import "FTOCycleAdjustor.h"
@@ -16,6 +17,7 @@
 #import "JWorkoutLog.h"
 #import "JSetLogStore.h"
 #import "JSetLog.h"
+#import "JWorkout.h"
 
 @implementation FTOLiftWorkoutViewController
 
@@ -45,13 +47,13 @@
 }
 
 - (BOOL)hasWarmup {
-    return [self.ftoWorkout.workout.orderedSets detect:^BOOL(Set *set) {
+    return [self.ftoWorkout.workout.orderedSets detect:^BOOL(JSet *set) {
         return set.warmup;
     }] != nil;
 }
 
 - (BOOL)hasAssistance {
-    return [self.ftoWorkout.workout.orderedSets detect:^BOOL(Set *set) {
+    return [self.ftoWorkout.workout.orderedSets detect:^BOOL(JSet *set) {
         return set.assistance;
     }] != nil;
 }
@@ -112,7 +114,7 @@
     FTOLiftWorkoutToolbar *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FTOLiftWorkoutToolbar"];
     if (!cell) {
         cell = [FTOLiftWorkoutToolbar create];
-        Set *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
+        JSet *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
         int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
         [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
         [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
@@ -131,7 +133,7 @@
     }
     else if ([[segue identifier] isEqualToString:@"ftoSetRepsForm"]) {
         FTOSetChangeForm *form = [segue destinationViewController];
-        Set *tappedSet = self.ftoWorkout.workout.orderedSets[[self.tappedSetRow unsignedIntegerValue]];
+        JSet *tappedSet = self.ftoWorkout.workout.orderedSets[[self.tappedSetRow unsignedIntegerValue]];
         NSNumber *previouslyEnteredReps = [self.variableReps objectForKey:self.tappedSetRow];
         NSDecimalNumber *previouslyEnteredWeight = [self.variableWeight objectForKey:self.tappedSetRow];
         if (previouslyEnteredReps) {
@@ -181,7 +183,7 @@
     [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
 }
 
-- (void)setWorkout:(FTOWorkout *)ftoWorkout1 {
+- (void)setWorkout:(JFTOWorkout *)ftoWorkout1 {
     self.ftoWorkout = ftoWorkout1;
     self.variableReps = [@{} mutableCopy];
     self.variableWeight = [@{} mutableCopy];
@@ -189,9 +191,9 @@
 
 - (BOOL)missedAmrapReps {
     NSArray *sets = self.ftoWorkout.workout.orderedSets;
-    Set *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:sets];
+    JSet *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:sets];
     for (int i = 0; i < [sets count]; i++) {
-        Set *set = sets[(NSUInteger) i];
+        JSet *set = sets[(NSUInteger) i];
         NSNumber *loggedReps = self.variableReps[[NSNumber numberWithInt:i]];
         if (set == heaviestAmrapSet && loggedReps && [loggedReps compare:set.reps] == NSOrderedAscending) {
             return YES;
@@ -208,7 +210,7 @@
 
     NSArray *sets = self.ftoWorkout.workout.orderedSets;
     for (int i = 0; i < [sets count]; i++) {
-        Set *set = sets[(NSUInteger) i];
+        JSet *set = sets[(NSUInteger) i];
         NSNumber *reps = self.variableReps[[NSNumber numberWithInt:i]];
         if (reps != nil && [reps intValue] == 0) {
             continue;
@@ -228,7 +230,7 @@
 }
 
 - (BOOL)shouldShowRepsToBeat {
-    Set *amrapSet = [[self.ftoWorkout.workout orderedSets] detect:^BOOL(Set *set) {
+    JSet *amrapSet = [[self.ftoWorkout.workout orderedSets] detect:^BOOL(JSet *set) {
         return set.amrap;
     }];
     return amrapSet != nil;

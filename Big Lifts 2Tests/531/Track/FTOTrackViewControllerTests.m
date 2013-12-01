@@ -8,7 +8,7 @@
 #import "WorkoutLogTableDataSource.h"
 #import "JSetLogStore.h"
 #import "JSetLog.h"
-#import "FTOSettingsStore.h"
+#import "JFTOSettingsStore.h"
 #import "FTOTrackToolbarCell.h"
 
 @implementation FTOTrackViewControllerTests
@@ -97,7 +97,7 @@
 }
 
 - (void)testStartsLogStateInSavedState {
-    [[[FTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt:kShowAmrap]];
+    [[[JFTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt:kShowAmrap]];
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
     STAssertEquals(controller.showState, kShowAmrap, @"");
 }

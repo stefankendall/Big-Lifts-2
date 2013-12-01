@@ -1,18 +1,18 @@
 #import "FTORepsToBeatCalculatorTests.h"
 #import "FTOLift.h"
-#import "FTOLiftStore.h"
+#import "JFTOLiftStore.h"
 #import "FTORepsToBeatCalculator.h"
 #import "JSetLog.h"
 #import "JSetLogStore.h"
 #import "JWorkoutLog.h"
 #import "JWorkoutLogStore.h"
-#import "FTOSettingsStore.h"
+#import "JFTOSettingsStore.h"
 #import "FTOSettings.h"
 
 @implementation FTORepsToBeatCalculatorTests
 
 - (void)testGivesRepsToBeatBasedOnTheMax {
-    FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    JFTOLift *squat = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
 
     int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:squat atWeight:N(180)];
@@ -20,7 +20,7 @@
 }
 
 - (void)testGivesRepsToBeatBasedOnTheLog {
-    FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    JFTOLift *squat = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
 
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
@@ -36,9 +36,9 @@
 }
 
 - (void)testDoesNotUseEnteredMaxesWhenConfigIsLogOnly {
-    [[[FTOSettingsStore instance] first] setRepsToBeatConfig:[NSNumber numberWithInt:kRepsToBeatLogOnly]];
+    [[[JFTOSettingsStore instance] first] setRepsToBeatConfig:[NSNumber numberWithInt:kRepsToBeatLogOnly]];
 
-    FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    JFTOLift *squat = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
 
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
@@ -54,9 +54,9 @@
 }
 
 - (void)testReturns0WhenConfigIsLogOnlyAndNoLog {
-    [[[FTOSettingsStore instance] first] setRepsToBeatConfig:[NSNumber numberWithInt:kRepsToBeatLogOnly]];
+    [[[JFTOSettingsStore instance] first] setRepsToBeatConfig:[NSNumber numberWithInt:kRepsToBeatLogOnly]];
 
-    FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
+    JFTOLift *squat = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
 
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];

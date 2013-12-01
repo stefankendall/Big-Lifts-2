@@ -1,12 +1,12 @@
 #import "FTORepsToBeatBreakdown.h"
 #import "FTORepsToBeatCalculator.h"
-#import "Set.h"
 #import "OneRepEstimator.h"
-#import "Lift.h"
 #import "PaddingTextField.h"
 #import "TextViewInputAccessoryBuilder.h"
+#import "JFTOSettingsStore.h"
+#import "JSet.h"
+#import "JLift.h"
 #import "FTOSettings.h"
-#import "FTOSettingsStore.h"
 
 @implementation FTORepsToBeatBreakdown
 
@@ -31,7 +31,7 @@
 
     [self setBreakdownLabels];
 
-    NSNumber *repsToBeatConfig = [[[FTOSettingsStore instance] first] repsToBeatConfig];
+    NSNumber *repsToBeatConfig = [[[JFTOSettingsStore instance] first] repsToBeatConfig];
     [self.configPicker selectRow:[repsToBeatConfig integerValue] inComponent:0 animated:NO];
     [self.configTextField setText:self.configOptions[repsToBeatConfig]];
 }
@@ -60,7 +60,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSNumber *repsToBeatConfig = [NSNumber numberWithInt:[self.configPicker selectedRowInComponent:0]];
-    [[[FTOSettingsStore instance] first] setRepsToBeatConfig:repsToBeatConfig];
+    [[[JFTOSettingsStore instance] first] setRepsToBeatConfig:repsToBeatConfig];
     [self.configTextField setText:self.configOptions[repsToBeatConfig]];
 
     [self setBreakdownLabels];

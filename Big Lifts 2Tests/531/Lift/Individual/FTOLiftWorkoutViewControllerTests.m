@@ -1,10 +1,9 @@
+#import "JFTOWorkout.h"
 #import "JSetLog.h"
 #import "FTOLiftWorkoutViewControllerTests.h"
-#import "FTOWorkout.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOLiftWorkoutViewController.h"
-#import "Workout.h"
 #import "JWorkoutLogStore.h"
 #import "JWorkoutLog.h"
 #import "SetCellWithPlates.h"
@@ -18,18 +17,19 @@
 #import "FTOAssistanceStore.h"
 #import "FTOAssistance.h"
 #import "SetHelper.h"
+#import "JWorkout.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
 @property(nonatomic) FTOLiftWorkoutViewController *controller;
-@property(nonatomic) FTOWorkout *ftoWorkout;
+@property(nonatomic) JFTOWorkout *ftoWorkout;
 @end
 
 @implementation FTOLiftWorkoutViewControllerTests
 
 - (void)setUp {
     [super setUp];
-    self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     self.controller = [self getControllerByStoryboardIdentifier:@"ftoLiftWorkout"];
     [self.controller setWorkout:self.ftoWorkout];
 }
@@ -40,7 +40,7 @@
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:2], 3, @"");
 
     [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
-    self.controller.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    self.controller.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:2], 5, @"");
 }
 
@@ -49,7 +49,7 @@
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:1], @"Warm-up", @"");
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:2], @"Workout", @"");
     [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
-    self.controller.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    self.controller.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:2], @"Assistance", @"");
 }
 
@@ -107,20 +107,20 @@
 
 - (void)testChoosesHeaviestAmrapSetForRepsToBeat {
     [[JFTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
-    self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     Set *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
     STAssertEquals([self.ftoWorkout.workout.orderedSets indexOfObject:heaviestAmrapSet], 5U, @"");
 }
 
 - (void)testDeterminesIfMissedReps {
-    self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     [self.controller setWorkout:self.ftoWorkout];
     [self.controller setVariableReps:[@{@5 : @4} mutableCopy]];
     STAssertTrue([self.controller missedAmrapReps], @"");
 }
 
 - (void)testDeterminesIfMissedRepsNoFailure {
-    self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     [self.controller setWorkout:self.ftoWorkout];
     [self.controller setVariableReps:[@{@5 : @5} mutableCopy]];
     STAssertFalse([self.controller missedAmrapReps], @"");

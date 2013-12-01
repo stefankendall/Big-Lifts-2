@@ -1,13 +1,12 @@
 #import "SetChangeDelegate.h"
 
-@class FTOWorkout;
-@class Set;
+@class JFTOWorkout;
 
 @interface FTOLiftWorkoutViewController : UITableViewController <UITextFieldDelegate, SetChangeDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
-@property(nonatomic, strong) FTOWorkout *ftoWorkout;
+@property(nonatomic, strong) JFTOWorkout *ftoWorkout;
 
 @property(nonatomic) NSNumber *tappedSetRow;
 
@@ -16,7 +15,7 @@
 
 - (IBAction)doneButtonTapped:(id)sender;
 
-- (void)setWorkout:(FTOWorkout *)ftoWorkout1;
+- (void)setWorkout:(JFTOWorkout *)ftoWorkout1;
 
 - (BOOL)missedAmrapReps;
 

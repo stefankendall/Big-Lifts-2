@@ -1,7 +1,7 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import <MRCEnumerable/NSDictionary+Enumerable.h>
 #import "FTOPlanViewController.h"
-#import "FTOSettingsStore.h"
+#import "JFTOSettingsStore.h"
 #import "FTOSettings.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "JFTOVariant.h"
@@ -9,7 +9,7 @@
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
 #import "IAPAdapter.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
 #import "FTOVariant.h"
 
 @interface FTOPlanViewController ()
@@ -50,7 +50,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    FTOSettings *settings = [[FTOSettingsStore instance] first];
+    JFTOSettings *settings = [[JFTOSettingsStore instance] first];
     [self.trainingMaxField setText:[settings.trainingMax stringValue]];
     [self.warmupToggle setOn:settings.warmupEnabled];
     [self enableDisableIapCells];
@@ -88,7 +88,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (self.trainingMaxField == textField) {
-        FTOSettings *settings = [[FTOSettingsStore instance] first];
+        JFTOSettings *settings = [[JFTOSettingsStore instance] first];
         settings.trainingMax = [NSDecimalNumber decimalNumberWithString:[textField text] locale:NSLocale.currentLocale];
     }
 }
@@ -110,8 +110,8 @@
 
 - (IBAction)toggleWarmup:(id)sender {
     UISwitch *toggle = sender;
-    [[[FTOSettingsStore instance] first] setWarmupEnabled:toggle.isOn];
-    [[FTOWorkoutStore instance] switchTemplate];
+    [[[JFTOSettingsStore instance] first] setWarmupEnabled:toggle.isOn];
+    [[JFTOWorkoutStore instance] switchTemplate];
 }
 
 @end

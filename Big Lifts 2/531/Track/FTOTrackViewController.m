@@ -3,7 +3,7 @@
 #import "JWorkoutLog.h"
 #import "FTOTrackToolbarCell.h"
 #import "FTOEditLogViewController.h"
-#import "FTOSettingsStore.h"
+#import "JFTOSettingsStore.h"
 #import "JSetLog.h"
 #import "SetLogCombiner.h"
 #import "FTOWorkoutLogAmrapDataSource.h"
@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.showState = (ShowState) [[[[FTOSettingsStore instance] first] logState] intValue];
+    self.showState = (ShowState) [[[[JFTOSettingsStore instance] first] logState] intValue];
     self.trackSort = (TrackSort) 0;
 }
 
@@ -125,7 +125,7 @@
 
 - (void)viewButtonTapped:(id)sender {
     self.showState = (self.showState + 1) % 3;
-    [[[FTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt:self.showState]];
+    [[[JFTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt:self.showState]];
     [self.tableView reloadData];
 }
 

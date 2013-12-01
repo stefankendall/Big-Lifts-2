@@ -1,24 +1,25 @@
 #import "FTORepsToBeatBreakdownTests.h"
 #import "FTORepsToBeatBreakdown.h"
 #import "SenTestCase+ControllerTestAdditions.h"
-#import "Set.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
 #import "Workout.h"
-#import "Lift.h"
 #import "FTOWorkout.h"
 #import "JSetLog.h"
 #import "JSetLogStore.h"
 #import "JWorkoutLogStore.h"
 #import "JWorkoutLog.h"
 #import "FTOSettings.h"
-#import "FTOSettingsStore.h"
+#import "JFTOSettingsStore.h"
 #import "PaddingTextField.h"
+#import "JSet.h"
+#import "JLift.h"
+#import "JFTOSettings.h"
 
 @implementation FTORepsToBeatBreakdownTests
 
 - (void)testSetsLabelsForSet {
     FTORepsToBeatBreakdown *breakdown = [self getControllerByStoryboardIdentifier:@"ftoRepsToBeat"];
-    Set *set = [[[[[FTOWorkoutStore instance] first] workout] sets] lastObject];
+    JSet *set = [[[[[JFTOWorkoutStore instance] first] workout] sets] lastObject];
     set.lift.weight = N(150);
     set.reps = @4;
     set.percentage = N(95);
@@ -42,7 +43,7 @@
 }
 
 - (void)testSetsStoredOneRepConfig {
-    FTOSettings *ftoSettings = [[FTOSettingsStore instance] first];
+    JFTOSettings *ftoSettings = [[JFTOSettingsStore instance] first];
     [ftoSettings setRepsToBeatConfig:[NSNumber numberWithInt:kRepsToBeatLogOnly]];
     FTORepsToBeatBreakdown *breakdown = [self getControllerByStoryboardIdentifier:@"ftoRepsToBeat"];
     STAssertEquals([[breakdown configPicker] selectedRowInComponent:0], 1, @"");
@@ -50,7 +51,7 @@
 }
 
 - (void)testCanChangeStoredOneRepConfigLogOnly {
-    Set *set = [[[[[FTOWorkoutStore instance] first] workout] sets] lastObject];
+    JSet *set = [[[[[JFTOWorkoutStore instance] first] workout] sets] lastObject];
     set.lift.weight = N(150);
     set.reps = @4;
     set.percentage = N(100);
@@ -60,7 +61,7 @@
 
     [breakdown.configPicker selectRow:1 inComponent:0 animated:NO];
     [breakdown textFieldDidEndEditing:nil];
-    STAssertEquals([[[[FTOSettingsStore instance] first] repsToBeatConfig] intValue], kRepsToBeatLogOnly, @"");
+    STAssertEquals([[[[JFTOSettingsStore instance] first] repsToBeatConfig] intValue], kRepsToBeatLogOnly, @"");
     STAssertEqualObjects([[breakdown reps] text], @"0x", @"");
     STAssertEqualObjects([[breakdown weight] text], @"135", @"");
     STAssertEqualObjects([[breakdown estimatedMax] text], @"0", @"");

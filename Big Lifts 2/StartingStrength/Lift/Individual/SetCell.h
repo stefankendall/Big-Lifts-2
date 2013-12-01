@@ -1,6 +1,6 @@
 #import "CTCustomTableViewCell.h"
 
-@class Set;
+@class JSet;
 
 @interface SetCell : CTCustomTableViewCell {
 }
@@ -14,8 +14,8 @@
 @property (nonatomic) NSDecimalNumber *enteredWeight;
 
 
-- (void)setSet:(Set *) set;
+- (void)setSet:(JSet *) set;
 
-- (void)setSet:(Set *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight;
+- (void)setSet:(JSet *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight;
 
 @end

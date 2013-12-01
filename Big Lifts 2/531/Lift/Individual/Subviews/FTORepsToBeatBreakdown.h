@@ -1,4 +1,4 @@
-@class Set;
+@class JSet;
 @class PaddingTextField;
 
 @interface FTORepsToBeatBreakdown : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate> {
@@ -10,7 +10,7 @@
 @property(weak, nonatomic) IBOutlet UILabel *estimatedMax;
 @property (weak, nonatomic) IBOutlet PaddingTextField *configTextField;
 
-@property(nonatomic, strong) Set *lastSet;
+@property(nonatomic, strong) JSet *lastSet;
 @property(nonatomic, strong) UIPickerView *configPicker;
 @property(nonatomic, strong) NSDictionary *configOptions;
 @end

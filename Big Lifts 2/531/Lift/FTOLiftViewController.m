@@ -1,19 +1,19 @@
 #import "FTOLiftViewController.h"
 #import "FTOLiftWorkoutViewController.h"
-#import "FTOLiftStore.h"
-#import "FTOWorkoutStore.h"
-#import "FTOWorkout.h"
-#import "Workout.h"
-#import "Set.h"
-#import "Lift.h"
+#import "JFTOLiftStore.h"
+#import "JFTOWorkoutStore.h"
+#import "JWorkout.h"
+#import "JSet.h"
+#import "JLift.h"
 #import "JFTOVariant.h"
 #import "JFTOVariantStore.h"
 #import "FTOCustomWorkoutStore.h"
+#import "JFTOWorkout.h"
 #import "FTOVariant.h"
 
 @interface FTOLiftViewController ()
 
-@property(nonatomic) FTOWorkout *nextWorkout;
+@property(nonatomic) JFTOWorkout *nextWorkout;
 @end
 
 @implementation FTOLiftViewController
@@ -24,12 +24,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     int week = section + 1;
-    NSArray *liftsPerWeek = [[FTOWorkoutStore instance] findAllWhere:@"week" value:(id) [NSNumber numberWithInt:week]];
+    NSArray *liftsPerWeek = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:(id) [NSNumber numberWithInt:week]];
     return [liftsPerWeek count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[[FTOWorkoutStore instance] unique:@"week"] count];
+    return [[[JFTOWorkoutStore instance] unique:@"week"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -41,10 +41,10 @@
 
     int week = [indexPath section] + 1;
     NSUInteger index = (NSUInteger) [indexPath row];
-    FTOWorkout *ftoWorkout = [self getWorkout:week row:index];
+    JFTOWorkout *ftoWorkout = [self getWorkout:week row:index];
 
-    if([ftoWorkout.workout.orderedSets count] > 0){
-        Set *set = ftoWorkout.workout.orderedSets[0];
+    if ([ftoWorkout.workout.orderedSets count] > 0) {
+        JSet *set = ftoWorkout.workout.orderedSets[0];
         [cell.textLabel setText:set.lift.name];
     }
     else {
@@ -62,8 +62,8 @@
     return cell;
 }
 
-- (FTOWorkout *)getWorkout:(int)week row:(NSUInteger)index {
-    FTOWorkout *ftoWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:(id) [NSNumber numberWithInt:week]][index];
+- (JFTOWorkout *)getWorkout:(int)week row:(NSUInteger)index {
+    JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:(id) [NSNumber numberWithInt:week]][index];
     return ftoWorkout;
 }
 
@@ -86,7 +86,7 @@
                 @6 : @"Deload"
         };
     }
-    else if([variant.name isEqualToString:FTO_VARIANT_ADVANCED]){
+    else if ([variant.name isEqualToString:FTO_VARIANT_ADVANCED]) {
         mapping = @{
                 @0 : @"Week 1",
                 @1 : @"Week 2",
@@ -94,8 +94,8 @@
                 @3 : @"Deload (opt.)",
         };
     }
-    else if ([variant.name isEqualToString:FTO_VARIANT_CUSTOM]){
-        return [[[FTOCustomWorkoutStore instance] find: @"week" value: [NSNumber numberWithInteger:section+1]] name];
+    else if ([variant.name isEqualToString:FTO_VARIANT_CUSTOM]) {
+        return [[[FTOCustomWorkoutStore instance] find:@"week" value:[NSNumber numberWithInteger:section + 1]] name];
     }
 
     return mapping[[NSNumber numberWithInteger:section]];

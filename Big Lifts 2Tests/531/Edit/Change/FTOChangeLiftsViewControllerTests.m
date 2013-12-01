@@ -3,10 +3,10 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOChangeLiftCell.h"
 #import "RowTextField.h"
-#import "FTOLiftStore.h"
-#import "FTOLift.h"
-#import "FTOWorkout.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOLiftStore.h"
+#import "JFTOWorkoutStore.h"
+#import "JFTOLift.h"
+#import "JFTOWorkout.h"
 
 @implementation FTOChangeLiftsViewControllerTests
 
@@ -20,7 +20,7 @@
     FTOChangeLiftCell *cell = (FTOChangeLiftCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [cell.textField setText:@"Power Clean"];
     [controller textFieldDidEndEditing:(id) cell.textField];
-    STAssertEqualObjects([[[FTOLiftStore instance] first] name], @"Power Clean", @"");
+    STAssertEqualObjects([[[JFTOLiftStore instance] first] name], @"Power Clean", @"");
 }
 
 - (void)testTappingAddRowCausesSegue {
@@ -42,18 +42,18 @@
 
 - (void)testCanArrangeLifts {
     FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
-    FTOLift *firstLift = [[FTOLiftStore instance] first];
+    JFTOLift *firstLift = [[JFTOLiftStore instance] first];
     STAssertEqualObjects(firstLift.order, @0, @"");
-    FTOLift *secondLift = [[FTOLiftStore instance] atIndex:1];
+    JFTOLift *secondLift = [[JFTOLiftStore instance] atIndex:1];
     STAssertEqualObjects(secondLift.order, @1, @"");
-    FTOWorkout *firstWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    FTOWorkout *secondWorkout = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][1];
+    JFTOWorkout *firstWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    JFTOWorkout *secondWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][1];
     [controller tableView:controller.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] toIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    STAssertEquals([[FTOLiftStore instance] first], secondLift, @"");
-    STAssertEquals([[FTOLiftStore instance] atIndex:1], firstLift, @"");
-    STAssertEqualObjects([[[FTOWorkoutStore instance] first] order], @0, @"");
-    STAssertEquals([[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0], secondWorkout, @"");
-    STAssertEquals([[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][1], firstWorkout, @"");
+    STAssertEquals([[JFTOLiftStore instance] first], secondLift, @"");
+    STAssertEquals([[JFTOLiftStore instance] atIndex:1], firstLift, @"");
+    STAssertEqualObjects([[[JFTOWorkoutStore instance] first] order], @0, @"");
+    STAssertEquals([[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0], secondWorkout, @"");
+    STAssertEquals([[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][1], firstWorkout, @"");
 }
 
 @end

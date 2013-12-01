@@ -1,11 +1,11 @@
 #import "FTOChangeLiftsViewController.h"
-#import "FTOLiftStore.h"
+#import "JFTOLiftStore.h"
 #import "FTOChangeLiftCell.h"
-#import "FTOLift.h"
 #import "RowTextField.h"
 #import "UITableViewController+NoEmptyRows.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
 #import "AddCell.h"
+#import "JFTOLift.h"
 
 @implementation FTOChangeLiftsViewController
 
@@ -22,7 +22,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return [[FTOLiftStore instance] count];
+        return [[JFTOLiftStore instance] count];
     }
     else {
         return 1;
@@ -36,7 +36,7 @@
             cell = [FTOChangeLiftCell create];
         }
 
-        Lift *lift = [self liftAtIndex:[indexPath row]];
+        JLift *lift = [self liftAtIndex:[indexPath row]];
         [cell.textField setText:lift.name];
         [cell.textField setDelegate:self];
         [cell.textField setIndexPath:indexPath];
@@ -53,8 +53,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [[FTOLiftStore instance] removeAtIndex:[indexPath row]];
-        [[FTOWorkoutStore instance] switchTemplate];
+        [[JFTOLiftStore instance] removeAtIndex:[indexPath row]];
+        [[JFTOWorkoutStore instance] switchTemplate];
         [self.tableView reloadData];
     }
 }
@@ -68,12 +68,12 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     RowTextField *rowTextField = (RowTextField *) textField;
-    Lift *lift = [self liftAtIndex:[rowTextField.indexPath row]];
+    JLift *lift = [self liftAtIndex:[rowTextField.indexPath row]];
     [lift setName:[textField text]];
 }
 
-- (Lift *)liftAtIndex:(int)index {
-    return [[FTOLiftStore instance] atIndex:index];
+- (JLift *)liftAtIndex:(int)index {
+    return [[JFTOLiftStore instance] atIndex:index];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -116,10 +116,10 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
         return;
     }
 
-    FTOLift *source = [[FTOLiftStore instance] atIndex:sourceRow];
-    FTOLift *dest = [[FTOLiftStore instance] atIndex:destRow];
+    JFTOLift *source = [[JFTOLiftStore instance] atIndex:sourceRow];
+    JFTOLift *dest = [[JFTOLiftStore instance] atIndex:destRow];
 
-    if([dest.order doubleValue] < [source.order doubleValue] ){
+    if ([dest.order doubleValue] < [source.order doubleValue]) {
         source.order = [NSNumber numberWithDouble:[dest.order doubleValue] - 0.5];
     } else {
         source.order = [NSNumber numberWithDouble:[dest.order doubleValue] + 0.5];
@@ -129,12 +129,12 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 - (void)restitchLiftOrder {
-    NSArray *lifts = [[FTOLiftStore instance] findAll];
+    NSArray *lifts = [[JFTOLiftStore instance] findAll];
     for (int i = 0; i < [lifts count]; i++) {
-        Lift *lift = lifts[(NSUInteger) i];
+        JLift *lift = lifts[(NSUInteger) i];
         [lift setOrder:[NSNumber numberWithInt:i]];
     }
-    [[FTOWorkoutStore instance] reorderWorkoutsToLifts];
+    [[JFTOWorkoutStore instance] reorderWorkoutsToLifts];
 }
 
 @end

@@ -2,19 +2,20 @@
 #import "FTORepsToBeatCalculator.h"
 #import "FTOLift.h"
 #import "OneRepEstimator.h"
-#import "FTOSettingsStore.h"
+#import "JFTOSettingsStore.h"
 #import "FTOSettings.h"
 #import "JWorkoutLog.h"
 #import "JWorkoutLogStore.h"
 #import "JSetLog.h"
+#import "JFTOSettings.h"
 
 @implementation FTORepsToBeatCalculator
 
-- (int)repsToBeat:(FTOLift *)lift atWeight:(NSDecimalNumber *)weight {
+- (int)repsToBeat:(JFTOLift *)lift atWeight:(NSDecimalNumber *)weight {
     NSDecimalNumber *max = lift.weight;
     NSDecimalNumber *logMax = [self findLogMax:lift];
 
-    FTOSettings *ftoSettings = [[FTOSettingsStore instance] first];
+    JFTOSettings *ftoSettings = [[JFTOSettingsStore instance] first];
     if ([[ftoSettings repsToBeatConfig] intValue] == kRepsToBeatLogOnly) {
         max = logMax;
     }
@@ -30,7 +31,7 @@
     }
 }
 
-- (NSDecimalNumber *)findLogMax:(FTOLift *)lift {
+- (NSDecimalNumber *)findLogMax:(JFTOLift *)lift {
     NSArray *ftoLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
     NSArray *ftoLogsForLift = [ftoLogs select:^BOOL(JWorkoutLog *workoutLog) {
         JSetLog *set = [[workoutLog sets] lastObject];

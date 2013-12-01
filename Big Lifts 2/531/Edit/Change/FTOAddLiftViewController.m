@@ -1,9 +1,9 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOAddLiftViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "FTOLift.h"
-#import "FTOLiftStore.h"
-#import "FTOWorkoutStore.h"
+#import "JFTOLiftStore.h"
+#import "JFTOWorkoutStore.h"
+#import "JFTOLift.h"
 
 @implementation FTOAddLiftViewController
 
@@ -41,13 +41,13 @@
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
-    FTOLift *lift = [[FTOLiftStore instance] create];
+    JFTOLift *lift = [[JFTOLiftStore instance] create];
     lift.name = [self.nameField text];
     lift.weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text] locale:NSLocale.currentLocale];
     lift.increment = [NSDecimalNumber decimalNumberWithString:[self.increaseField text] locale:NSLocale.currentLocale];
     lift.usesBar = YES;
 
-    [[FTOWorkoutStore instance] switchTemplate];
+    [[JFTOWorkoutStore instance] switchTemplate];
 
     [self.navigationController popViewControllerAnimated:YES];
 }
