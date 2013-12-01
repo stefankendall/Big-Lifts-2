@@ -9,6 +9,8 @@
 
 - (void)addWarmup;
 
+- (void)removeWarmup;
+
 - (void)incrementWeights:(JSSWorkout *)ssWorkout;
 
 - (JSSWorkout *)activeWorkoutFor:(NSString *)name;

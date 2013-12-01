@@ -1,7 +1,7 @@
 #import "SSStartingWeightTableDataSourceTests.h"
 #import "SSStartingWeightTableDataSource.h"
 #import "TextViewCell.h"
-#import "SSLiftStore.h"
+#import "JSSLiftStore.h"
 #import "SSLift.h"
 
 @implementation SSStartingWeightTableDataSourceTests
@@ -21,7 +21,7 @@
 
     [source textViewDidEndEditing:[cell textView]];
 
-    SSLift *lift = [[SSLiftStore instance] findAll][0];
+    JSSLift *lift = [[JSSLiftStore instance] findAll][0];
     STAssertEquals(lift.weight.doubleValue, 400.5, @"");
 }
 @end

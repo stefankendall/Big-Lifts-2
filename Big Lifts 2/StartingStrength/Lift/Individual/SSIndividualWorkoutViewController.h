@@ -1,8 +1,8 @@
-@class SSWorkout;
+@class JSSWorkout;
 
 @interface SSIndividualWorkoutViewController : UITableViewController <UITableViewDelegate> {
 }
-@property(nonatomic, strong) SSWorkout * ssWorkout;
+@property(nonatomic, strong) JSSWorkout * ssWorkout;
 @property(nonatomic) int workoutIndex;
 
 - (IBAction)nextButtonTapped:(id)sender;

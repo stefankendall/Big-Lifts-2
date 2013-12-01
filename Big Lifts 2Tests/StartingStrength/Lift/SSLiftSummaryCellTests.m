@@ -1,24 +1,24 @@
-#import "Lift.h"
 #import "SSLiftSummaryCellTests.h"
 #import "SSLiftSummaryCell.h"
-#import "SSLiftStore.h"
-#import "SSWorkout.h"
-#import "SSWorkoutStore.h"
-#import "Workout.h"
-#import "Set.h"
+#import "JSSLiftStore.h"
+#import "JSSWorkoutStore.h"
+#import "JWorkout.h"
+#import "JSet.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
+#import "JSSWorkout.h"
+#import "JLift.h"
 
 @implementation SSLiftSummaryCellTests
 
 - (void)testSetWorkoutSetsValues {
     SSLiftSummaryCell *cell = [SSLiftSummaryCell create];
-    SSWorkout *workoutA = [[SSWorkoutStore instance] first];
+    JSSWorkout *workoutA = [[JSSWorkoutStore instance] first];
 
     JSettings *settings = [[JSettingsStore instance] first];
     settings.units = @"kg";
 
-    Set *set = [((Workout *) workoutA.workouts[0]).orderedSets lastObject];
+    JSet *set = [((JWorkout *) workoutA.workouts[0]).orderedSets lastObject];
     set.percentage = N(100);
     set.lift.weight = N(200.5);
     [cell setWorkout:workoutA.workouts[0]];
@@ -30,9 +30,9 @@
 
 - (void)testNegativeReps {
     SSLiftSummaryCell *cell = [SSLiftSummaryCell create];
-    SSWorkout *workoutA = [[SSWorkoutStore instance] first];
-    Workout *workout = workoutA.workouts[0];
-    Set *set = [workout.orderedSets lastObject];
+    JSSWorkout *workoutA = [[JSSWorkoutStore instance] first];
+    JWorkout *workout = workoutA.workouts[0];
+    JSet *set = [workout.orderedSets lastObject];
     set.reps = @-1;
     [cell setWorkout:workout];
 

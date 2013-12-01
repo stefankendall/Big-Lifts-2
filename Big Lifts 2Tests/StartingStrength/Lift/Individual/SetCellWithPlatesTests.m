@@ -1,20 +1,19 @@
 #import "SetCellWithPlatesTests.h"
-#import "BLStoreManager.h"
 #import "SetCellWithPlates.h"
-#import "SSWorkoutStore.h"
-#import "SSWorkout.h"
-#import "Workout.h"
-#import "Set.h"
-#import "Lift.h"
+#import "JSSWorkoutStore.h"
+#import "JSSWorkout.h"
+#import "JSet.h"
+#import "JLift.h"
+#import "JWorkout.h"
 
 @implementation SetCellWithPlatesTests
 
--(void) testSetCellSetsPlates {
+- (void)testSetCellSetsPlates {
     SetCellWithPlates *cell = [SetCellWithPlates create];
 
-    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
-    Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.orderedSets[0];
+    JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
+    JWorkout *workout = [ssWorkout workouts][0];
+    JSet *set = workout.orderedSets[0];
     set.percentage = N(100);
     set.lift.weight = N(300);
     [cell setSet:set];
@@ -22,12 +21,12 @@
     STAssertEqualObjects([[cell platesLabel] text], @"[45, 45, 35, 2.5]", @"");
 }
 
--(void) testSetCellWithoutPlates {
+- (void)testSetCellWithoutPlates {
     SetCellWithPlates *cell = [SetCellWithPlates create];
 
-    SSWorkout *ssWorkout = [[SSWorkoutStore instance] first];
-    Workout *workout = [ssWorkout workouts][0];
-    Set *set = workout.orderedSets[0];
+    JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
+    JWorkout *workout = [ssWorkout workouts][0];
+    JSet *set = workout.orderedSets[0];
     set.percentage = N(100);
     set.lift.weight = N(45);
     [cell setSet:set];

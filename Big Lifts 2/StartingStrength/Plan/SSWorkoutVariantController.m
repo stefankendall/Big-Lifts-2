@@ -1,13 +1,14 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import <MRCEnumerable/NSDictionary+Enumerable.h>
 #import "SSWorkoutVariantController.h"
-#import "SSWorkoutStore.h"
+#import "JSSWorkoutStore.h"
 #import "NSDictionaryMutator.h"
-#import "SSVariantStore.h"
+#import "JSSVariantStore.h"
 #import "SSVariant.h"
 #import "IAPAdapter.h"
 #import "PurchaseOverlay.h"
 #import "Purchaser.h"
+#import "JSSVariant.h"
 
 int const SS_WORKOUT_VARIANT_SECTION = 1;
 
@@ -34,7 +35,7 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
 
 - (void)viewWillAppear:(BOOL)animated {
     [self enableOrDisableIapCells];
-    [self.warmupToggle setOn:[[[SSVariantStore instance] first] warmupEnabled]];
+    [self.warmupToggle setOn:[[[JSSVariantStore instance] first] warmupEnabled]];
 }
 
 - (void)enableOrDisableIapCells {
@@ -59,14 +60,14 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
     else {
         if ([indexPath section] == 1) {
             NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
-            [[SSWorkoutStore instance] setupVariant:variantName];
+            [[JSSWorkoutStore instance] setupVariant:variantName];
             [self checkSelectedVariant];
         }
     }
 }
 
 - (void)checkSelectedVariant {
-    SSVariant *variant = [[SSVariantStore instance] first];
+    JSSVariant *variant = [[JSSVariantStore instance] first];
     [self uncheckAllRows];
 
     int index = [[[NSDictionaryMutator new] invert:self.variantMapping][variant.name] intValue];
@@ -83,11 +84,11 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
 
 - (IBAction)toggleWarmup:(id)sender {
     BOOL warmupOn = [self.warmupToggle isOn];
-    [[[SSVariantStore instance] first] setWarmupEnabled:warmupOn];
+    [[[JSSVariantStore instance] first] setWarmupEnabled:warmupOn];
 
-    [[SSWorkoutStore instance] removeWarmup];
+    [[JSSWorkoutStore instance] removeWarmup];
     if (warmupOn) {
-        [[SSWorkoutStore instance] addWarmup];
+        [[JSSWorkoutStore instance] addWarmup];
     }
 }
 

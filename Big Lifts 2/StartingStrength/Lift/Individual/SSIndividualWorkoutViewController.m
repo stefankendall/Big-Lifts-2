@@ -1,19 +1,19 @@
 #import <IAPManager/IAPManager.h>
 #import "SSIndividualWorkoutViewController.h"
-#import "SSWorkout.h"
 #import "IIViewDeckController.h"
 #import "JWorkoutLogStore.h"
 #import "JWorkoutLog.h"
-#import "Workout.h"
-#import "Set.h"
-#import "SSWorkoutStore.h"
-#import "SSStateStore.h"
-#import "SSState.h"
+#import "JSSWorkoutSTore.h"
+#import "JSSStateStore.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "SetCellWithPlates.h"
 #import "JSetLogStore.h"
 #import "JSetLog.h"
+#import "JSSWorkout.h"
+#import "JSSState.h"
+#import "JWorkout.h"
+#import "JSet.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -40,7 +40,7 @@
 - (void)doneButtonTapped:(id)o {
     [self logWorkout];
     [self saveState];
-    [[SSWorkoutStore instance] incrementWeights:self.ssWorkout];
+    [[JSSWorkoutStore instance] incrementWeights:self.ssWorkout];
     UIViewController *controller = [[self navigationController] viewControllers][0];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     [controller.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ssTrackViewController"]];
@@ -48,13 +48,13 @@
 
 - (void)adjustAlternation {
     if ([self.ssWorkout.name isEqualToString:@"A"]) {
-        SSState *state = [[SSStateStore instance] first];
+        JSSState *state = [[JSSStateStore instance] first];
         state.workoutAAlternation = [state.workoutAAlternation intValue] == 0 ? @1 : @0;
     }
 }
 
 - (void)saveState {
-    SSState *state = [[SSStateStore instance] first];
+    JSSState *state = [[JSSStateStore instance] first];
     state.lastWorkout = self.ssWorkout;
     [self adjustAlternation];
 }
@@ -65,8 +65,8 @@
     log.name = @"Starting Strength";
     log.date = [NSDate date];
 
-    for (Workout *workout in self.ssWorkout.workouts) {
-        for (Set *set in [workout workSets]) {
+    for (JWorkout *workout in self.ssWorkout.workouts) {
+        for (JSet *set in [workout workSets]) {
             JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
             [log addSet:setLog];
         }
@@ -77,7 +77,7 @@
     return [[[self getCurrentWorkout] sets] count];
 }
 
-- (Workout *)getCurrentWorkout {
+- (JWorkout *)getCurrentWorkout {
     return [[self.ssWorkout workouts] objectAtIndex:(NSUInteger) self.workoutIndex];
 }
 
@@ -88,8 +88,8 @@
     if (cell == nil) {
         cell = [setClass create];
     }
-    Workout *workout = [self getCurrentWorkout];
-    Set *set = [workout.orderedSets objectAtIndex:(NSUInteger) [indexPath row]];
+    JWorkout *workout = [self getCurrentWorkout];
+    JSet *set = [workout.orderedSets objectAtIndex:(NSUInteger) [indexPath row]];
     [cell setSet:set];
     if ([set.percentage isEqual:N(100)]) {
         [cell.percentageLabel setHidden:YES];

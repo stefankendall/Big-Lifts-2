@@ -1,12 +1,11 @@
 #import "SSEditViewControllerTests.h"
 #import "TextFieldCell.h"
 #import "TextFieldWithCell.h"
-#import "SSLift.h"
-#import "BLStore.h"
-#import "SSLiftStore.h"
+#import "JSSLiftStore.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSEditViewController.h"
 #import "LiftFormCellHelper.h"
+#import "JSSLift.h"
 
 @interface SSEditViewControllerTests ()
 
@@ -21,7 +20,7 @@
 }
 
 - (void)testHasAllLifts {
-    NSArray *lifts = [LiftFormCellHelper getLiftNamesFromCells:self.controller count:[[SSLiftStore instance] count]];
+    NSArray *lifts = [LiftFormCellHelper getLiftNamesFromCells:self.controller count:[[JSSLiftStore instance] count]];
     STAssertTrue([lifts containsObject:@"Squat"], @"");
     STAssertTrue([lifts containsObject:@"Deadlift"], @"");
     STAssertTrue([lifts containsObject:@"Press"], @"");
@@ -34,12 +33,12 @@
     [[cell textField] setText:@"400.5"];
     [self.controller textFieldDidEndEditing:[cell textField]];
 
-    SSLift *lift = [[SSLiftStore instance] findAll][0];
+    JSSLift *lift = [[JSSLiftStore instance] findAll][0];
     STAssertEqualObjects(lift.weight, N(400.5), @"");
 }
 
 - (void)testLoadsCellsWithExistingLiftData {
-    SSLift *lift = [[SSLiftStore instance] findAll][2];
+    JSSLift *lift = [[JSSLiftStore instance] findAll][2];
     [lift setWeight:[NSDecimalNumber decimalNumberWithString:@"200"]];
 
     TextFieldCell *cell = (TextFieldCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
@@ -65,7 +64,7 @@
     [[cell textField] setText:@"6"];
     [self.controller textFieldDidEndEditing:[cell textField]];
 
-    SSLift *lift = [[SSLiftStore instance] first];
+    JSSLift *lift = [[JSSLiftStore instance] first];
     STAssertEqualObjects(lift.increment, [NSDecimalNumber decimalNumberWithString:@"6"], @"");
 }
 

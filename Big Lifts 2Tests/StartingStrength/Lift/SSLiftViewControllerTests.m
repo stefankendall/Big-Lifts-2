@@ -1,14 +1,14 @@
+#import "JLift.h"
+#import "JSSWorkout.h"
 #import "SSLiftViewControllerTests.h"
 #import "SSLiftViewController.h"
-#import "SSWorkoutStore.h"
+#import "JSSWorkoutStore.h"
 #import "SenTestCase+ControllerTestAdditions.h"
-#import "SSStateStore.h"
-#import "SSState.h"
-#import "SSWorkout.h"
-#import "Workout.h"
-#import "Set.h"
-#import "Lift.h"
+#import "JSSStateStore.h"
 #import "SSLiftSummaryCell.h"
+#import "JSSState.h"
+#import "JSet.h"
+#import "JWorkout.h"
 
 @implementation SSLiftViewControllerTests
 
@@ -26,16 +26,16 @@
 
 - (void)testSetsAppropriateWorkoutBasedOnLastWorkout {
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
-    SSState *state = [[SSStateStore instance] first];
-    state.lastWorkout = [[SSWorkoutStore instance] first];
+    JSSState *state = [[JSSStateStore instance] first];
+    state.lastWorkout = [[JSSWorkoutStore instance] first];
 
     [controller viewWillAppear:YES];
 
-    STAssertEqualObjects(controller.ssWorkout, [[SSWorkoutStore instance] last], @"");
+    STAssertEqualObjects(controller.ssWorkout, [[JSSWorkoutStore instance] last], @"");
 }
 
 - (void)testSwitchToWorkoutIndexHonorsAlternation {
-    [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
+    [[JSSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
     controller.aWorkout = NO;
     [controller switchWorkout];
@@ -43,15 +43,15 @@
 }
 
 - (void)testSwitchToWorkoutOnusAWeeks {
-    [[SSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
+    [[JSSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
-    SSState *state = [[SSStateStore instance] first];
+    JSSState *state = [[JSSStateStore instance] first];
     state.workoutAAlternation = @1;
     controller.aWorkout = YES;
     [controller switchWorkout];
     STAssertEqualObjects(controller.ssWorkout.name, @"A", @"");
-    Workout *lastWorkout = controller.ssWorkout.workouts[2];
-    Set *set = lastWorkout.orderedSets[0];
+    JWorkout *lastWorkout = controller.ssWorkout.workouts[2];
+    JSet *set = lastWorkout.orderedSets[0];
     STAssertEqualObjects(set.lift.name, @"Power Clean", @"");
 }
 

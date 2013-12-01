@@ -1,10 +1,10 @@
 #import "SSEditViewController.h"
-#import "SSLiftStore.h"
-#import "SSLift.h"
+#import "JSSLiftStore.h"
 #import "TextFieldWithCell.h"
 #import "TextFieldCell.h"
 #import "LiftFormCell.h"
 #import "TextViewInputAccessoryBuilder.h"
+#import "JSSLift.h"
 
 @implementation SSEditViewController
 
@@ -23,7 +23,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[SSLiftStore instance] count];
+    return [[JSSLiftStore instance] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -32,7 +32,7 @@
         cell = [LiftFormCell create];
     }
 
-    SSLift *lift = ([[SSLiftStore instance] findAll])[(NSUInteger) indexPath.row];
+    JSSLift *lift = ([[JSSLiftStore instance] findAll])[(NSUInteger) indexPath.row];
     [[cell liftLabel] setText:lift.name];
 
     [cell setIndexPath:indexPath];
@@ -64,7 +64,7 @@
     NSIndexPath *indexPath = [[textViewWithCell cell] indexPath];
 
     NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[textField text] locale:NSLocale.currentLocale];
-    SSLift *lift = [[SSLiftStore instance] findAll][(NSUInteger) [indexPath row]];
+    JSSLift *lift = [[JSSLiftStore instance] findAll][(NSUInteger) [indexPath row]];
     if ([indexPath section] == 0) {
         [lift setWeight:weight];
     }

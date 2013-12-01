@@ -1,11 +1,11 @@
 #import "SSPlanWorkoutsViewController.h"
-#import "SSVariant.h"
-#import "SSVariantStore.h"
-#import "SSWorkoutStore.h"
-#import "SSWorkout.h"
-#import "Workout.h"
-#import "Set.h"
-#import "SSLift.h"
+#import "JSSVariantStore.h"
+#import "JSSWorkoutStore.h"
+#import "JWorkout.h"
+#import "JSet.h"
+#import "JSSLift.h"
+#import "JSSWorkout.h"
+#import "JSSVariant.h"
 
 @implementation SSPlanWorkoutsViewController
 
@@ -16,12 +16,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
-    SSVariant *variant = [[SSVariantStore instance] first];
+    JSSVariant *variant = [[JSSVariantStore instance] first];
     [self.variantButton setTitle:variant.name];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[[SSWorkoutStore instance] atIndex:section] workouts] count];
+    return [[[[JSSWorkoutStore instance] atIndex:section] workouts] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -32,10 +32,10 @@
     }
 
     int section = [indexPath section];
-    SSWorkout *workout = [[SSWorkoutStore instance] atIndex:section];
-    Workout *firstWorkout = workout.workouts[(NSUInteger) [indexPath row]];
-    Set *firstSet = firstWorkout.orderedSets[0];
-    SSLift *lift = (SSLift *) firstSet.lift;
+    JSSWorkout *workout = [[JSSWorkoutStore instance] atIndex:section];
+    JWorkout *firstWorkout = workout.workouts[(NSUInteger) [indexPath row]];
+    JSet *firstSet = firstWorkout.orderedSets[0];
+    JSSLift *lift = (JSSLift *) firstSet.lift;
 
     [[cell textLabel] setText:lift.name];
     [cell setBackgroundColor:[UIColor whiteColor]];
@@ -44,11 +44,11 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[SSWorkoutStore instance] count];
+    return [[JSSWorkoutStore instance] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    SSWorkout *workout = [[SSWorkoutStore instance] atIndex:section];
+    JSSWorkout *workout = [[JSSWorkoutStore instance] atIndex:section];
     return workout.name;
 }
 
@@ -60,7 +60,6 @@
     return proposedDestinationIndexPath;
 }
 
-
 - (void) tableView:(UITableView *)tableView
 moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
        toIndexPath:(NSIndexPath *)destinationIndexPath {
@@ -69,7 +68,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     }
 
     int section = [sourceIndexPath section];
-    SSWorkout *workout = [[SSWorkoutStore instance] atIndex:section];
+    JSSWorkout *workout = [[JSSWorkoutStore instance] atIndex:section];
     [workout.workouts exchangeObjectAtIndex:(NSUInteger) [sourceIndexPath row] withObjectAtIndex:(NSUInteger) [destinationIndexPath row]];
 }
 

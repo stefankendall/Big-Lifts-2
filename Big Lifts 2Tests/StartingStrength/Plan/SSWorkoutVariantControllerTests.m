@@ -1,16 +1,17 @@
+#import "JLift.h"
+#import "JSet.h"
 #import "SSWorkoutVariantControllerTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSWorkoutVariantController.h"
-#import "SSWorkoutStore.h"
-#import "SSWorkout.h"
-#import "Workout.h"
-#import "Set.h"
-#import "Lift.h"
-#import "SSVariantStore.h"
+#import "JSSWorkoutStore.h"
+#import "JWorkout.h"
+#import "JSSVariantStore.h"
 #import "SSVariant.h"
 #import "IAPAdapter.h"
 #import "PurchaseOverlay.h"
 #import "Purchaser.h"
+#import "JSSWorkout.h"
+#import "JSSVariant.h"
 
 @implementation SSWorkoutVariantControllerTests
 
@@ -18,9 +19,9 @@
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
     [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
 
-    SSWorkout *workoutB = [[SSWorkoutStore instance] last];
-    Workout *lastWorkout = workoutB.workouts[2];
-    Set *firstSet = lastWorkout.orderedSets[0];
+    JSSWorkout *workoutB = [[JSSWorkoutStore instance] last];
+    JWorkout *lastWorkout = workoutB.workouts[2];
+    JSet *firstSet = lastWorkout.orderedSets[0];
     STAssertEqualObjects(firstSet.lift.name, @"Deadlift", @"");
 }
 
@@ -33,7 +34,7 @@
     STAssertEquals([noviceCell accessoryType], UITableViewCellAccessoryNone, @"");
 
     [controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:1]];
-    SSVariant *variant = [[SSVariantStore instance] first];
+    JSSVariant *variant = [[JSSVariantStore instance] first];
     STAssertEqualObjects(variant.name, @"Novice", @"");
 
     STAssertEquals([standardCell accessoryType], UITableViewCellAccessoryNone, @"");
@@ -41,7 +42,7 @@
 }
 
 - (void)testShowsSelectedButtonForCurrentVariant {
-    SSVariant *variant = [[SSVariantStore instance] first];
+    JSSVariant *variant = [[JSSVariantStore instance] first];
     variant.name = @"Novice";
 
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
@@ -68,7 +69,7 @@
 }
 
 - (void)testWarmupEnabledSetsToggle {
-    [[[SSVariantStore instance] first] setWarmupEnabled: YES];
+    [[[JSSVariantStore instance] first] setWarmupEnabled:YES];
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
     [controller viewWillAppear:YES];
     STAssertTrue([controller.warmupToggle isOn], @"");
@@ -77,8 +78,8 @@
 - (void)testToggleChangesWarmupEnabled {
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
     [controller.warmupToggle setOn:YES];
-    [controller toggleWarmup: controller.warmupToggle];
-    STAssertTrue([[[SSVariantStore instance] first] warmupEnabled], @"");
+    [controller toggleWarmup:controller.warmupToggle];
+    STAssertTrue([[[JSSVariantStore instance] first] warmupEnabled], @"");
 }
 
 @end

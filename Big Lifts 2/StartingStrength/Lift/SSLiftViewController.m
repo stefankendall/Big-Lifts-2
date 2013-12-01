@@ -1,17 +1,17 @@
 #import "SSLiftViewController.h"
-#import "SSWorkoutStore.h"
-#import "SSWorkout.h"
+#import "JSSWorkoutSTore.h"
 #import "SSIndividualWorkoutViewController.h"
-#import "SSState.h"
-#import "SSStateStore.h"
+#import "JSSStateStore.h"
 #import "SSLiftSummaryCell.h"
+#import "JSSWorkout.h"
 #import "SSLiftToolbarCell.h"
+#import "JSSState.h"
 
 @implementation SSLiftViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    SSState *state = [[SSStateStore instance] first];
-    if( state.lastWorkout ){
+    JSSState *state = [[JSSStateStore instance] first];
+    if (state.lastWorkout) {
         self.aWorkout = [state.lastWorkout.name isEqualToString:@"B"];
     }
     else {
@@ -22,7 +22,7 @@
 }
 
 - (void)switchWorkout {
-    self.ssWorkout = [[SSWorkoutStore instance] activeWorkoutFor:self.aWorkout ? @"A" : @"B"];
+    self.ssWorkout = [[JSSWorkoutStore instance] activeWorkoutFor:self.aWorkout ? @"A" : @"B"];
     [self.tableView reloadData];
 }
 
@@ -54,8 +54,8 @@
         }
         [cell.workoutSelector setSelectedSegmentIndex:self.aWorkout ? 0 : 1];
         [cell.workoutSelector addTarget:self
-                             action:@selector(workoutChanged:)
-                   forControlEvents:UIControlEventValueChanged];
+                                 action:@selector(workoutChanged:)
+                       forControlEvents:UIControlEventValueChanged];
         return cell;
     }
     else {
