@@ -1,7 +1,6 @@
-@class Workout;
-@class Set;
-@class FTOTriumvirate;
+@class JSet;
+@class JWorkout;
 
 @interface FTOTriumvirateViewController : UITableViewController {}
-- (NSArray *)uniqueSetsFor:(Workout *)workout;
+- (NSArray *)uniqueSetsFor:(JWorkout *)workout;
 @end

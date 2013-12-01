@@ -1,5 +1,5 @@
-@class FTOTriumvirate;
-@class Set;
+@class JFTOTriumvirate;
+@class JSet;
 
 @interface FTOTriumvirateSetupViewController : UITableViewController <UITextFieldDelegate> {
 }
@@ -9,7 +9,7 @@
 @property(weak, nonatomic) IBOutlet UITextField *repsField;
 
 
-- (void)setupForm:(FTOTriumvirate *)triumvirate forSet:(Set *)set;
+- (void)setupForm:(JFTOTriumvirate *)triumvirate forSet:(JSet *)set;
 
 - (void)removeSets:(int)count;
 

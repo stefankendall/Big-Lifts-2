@@ -1,16 +1,16 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOTriumvirateViewController.h"
-#import "FTOTriumvirate.h"
-#import "Workout.h"
-#import "FTOTriumvirateStore.h"
-#import "Set.h"
+#import "JFTOTriumvirate.h"
+#import "JWorkout.h"
+#import "JSet.h"
 #import "FTOTriumvirateCell.h"
-#import "Lift.h"
 #import "FTOTriumvirateSetupViewController.h"
+#import "JLift.h"
+#import "JFTOTriumvirateStore.h"
 
 @interface FTOTriumvirateViewController ()
-@property(nonatomic, strong) FTOTriumvirate *triumvirateToEdit;
-@property(nonatomic, strong) Set *setToEdit;
+@property(nonatomic, strong) JFTOTriumvirate *triumvirateToEdit;
+@property(nonatomic, strong) JSet *setToEdit;
 @end
 
 @implementation FTOTriumvirateViewController
@@ -20,13 +20,13 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[FTOTriumvirateStore instance] count];
+    return [[JFTOTriumvirateStore instance] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex:section];
+    JFTOTriumvirate *triumvirate = [[JFTOTriumvirateStore instance] atIndex:section];
     NSMutableArray *uniqueLifts = [@[] mutableCopy];
-    [triumvirate.workout.orderedSets each:^(Set *set) {
+    [triumvirate.workout.orderedSets each:^(JSet *set) {
         if (![uniqueLifts containsObject:set.lift]) {
             [uniqueLifts addObject:set.lift];
         }
@@ -40,16 +40,16 @@
         cell = [FTOTriumvirateCell create];
     }
 
-    FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex:[indexPath section]];
+    JFTOTriumvirate *triumvirate = [[JFTOTriumvirateStore instance] atIndex:[indexPath section]];
     NSArray *uniqueSets = [self uniqueSetsFor:triumvirate.workout];
-    Set *set = uniqueSets[(NSUInteger) [indexPath row]];
+    JSet *set = uniqueSets[(NSUInteger) [indexPath row]];
     [cell setSet:set withCount:[triumvirate countMatchingSets:set]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex:[indexPath section]];
-    Set *set = [self uniqueSetsFor:triumvirate.workout][(NSUInteger) [indexPath row]];
+    JFTOTriumvirate *triumvirate = [[JFTOTriumvirateStore instance] atIndex:[indexPath section]];
+    JSet *set = [self uniqueSetsFor:triumvirate.workout][(NSUInteger) [indexPath row]];
     self.triumvirateToEdit = triumvirate;
     self.setToEdit = set;
     [self performSegueWithIdentifier:@"ftoTriumvirateSetupSegue" sender:self];
@@ -61,14 +61,14 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    FTOTriumvirate *triumvirate = [[FTOTriumvirateStore instance] atIndex:section];
+    JFTOTriumvirate *triumvirate = [[JFTOTriumvirateStore instance] atIndex:section];
     return triumvirate.mainLift.name;
 }
 
-- (NSArray *)uniqueSetsFor:(Workout *)workout {
+- (NSArray *)uniqueSetsFor:(JWorkout *)workout {
     NSMutableArray *uniques = [@[] mutableCopy];
-    [workout.orderedSets each:^(Set *set) {
-        if (![uniques detect:^BOOL(Set *unique) {
+    [workout.orderedSets each:^(JSet *set) {
+        if (![uniques detect:^BOOL(JSet *unique) {
             return unique.lift == set.lift;
         }]) {
             [uniques addObject:set];

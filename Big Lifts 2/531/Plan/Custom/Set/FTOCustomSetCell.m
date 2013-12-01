@@ -1,9 +1,9 @@
 #import "FTOCustomSetCell.h"
-#import "Set.h"
+#import "JSet.h"
 
 @implementation FTOCustomSetCell
 
-- (void)setSet:(Set *)set {
+- (void)setSet:(JSet *)set {
     NSString *reps = [set.reps stringValue];
 
     if( set.amrap ){

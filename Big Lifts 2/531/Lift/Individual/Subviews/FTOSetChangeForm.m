@@ -1,11 +1,10 @@
 #import "FTOSetChangeForm.h"
-#import "Set.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "SetChangeDelegate.h"
-#import "UITableViewController+NoEmptyRows.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "OneRepEstimator.h"
+#import "JSet.h"
 
 @implementation FTOSetChangeForm
 
@@ -45,7 +44,7 @@
 
 - (int)currentReps {
     NSString *repsText = [self.repsField text];
-    if(![repsText isEqualToString:@""]){
+    if (![repsText isEqualToString:@""]) {
         return [repsText intValue];
     }
     else {

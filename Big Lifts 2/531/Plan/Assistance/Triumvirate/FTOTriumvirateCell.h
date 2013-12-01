@@ -1,7 +1,7 @@
 #import "CTCustomTableViewCell/CTCustomTableViewCell.h"
 
 @class SetLogContainer;
-@class Set;
+@class JSet;
 
 @interface FTOTriumvirateCell : CTCustomTableViewCell {
 }
@@ -9,6 +9,6 @@
 @property(weak, nonatomic) IBOutlet UILabel *setsLabel;
 @property(weak, nonatomic) IBOutlet UILabel *repsLabel;
 
-- (void)setSet:(Set *)set withCount: (int) count;
+- (void)setSet:(JSet *)set withCount: (int) count;
 
 @end

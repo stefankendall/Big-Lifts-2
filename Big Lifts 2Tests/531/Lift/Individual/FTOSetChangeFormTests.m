@@ -1,19 +1,18 @@
 #import "FTOSetChangeFormTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOSetChangeForm.h"
-#import "SetStore.h"
-#import "FTOSetStore.h"
-#import "FTOSet.h"
+#import "JFTOSetStore.h"
 #import "JFTOLiftStore.h"
-#import "Lift.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
+#import "JFTOSet.h"
+#import "JLift.h"
 
 @implementation FTOSetChangeFormTests
 
 - (void)testSetSetSetsFormFields {
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
-    FTOSet *set = [[FTOSetStore instance] create];
+    JFTOSet *set = [[JFTOSetStore instance] create];
     set.percentage = N(100);
     set.lift = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     set.lift.weight = N(200);
@@ -40,7 +39,7 @@
 
 - (void)testSetsOneRepMaxWhenViewAppears {
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
-    FTOSet *set = [[FTOSetStore instance] create];
+    JFTOSet *set = [[JFTOSetStore instance] create];
     set.percentage = N(100);
     set.lift = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     set.lift.weight = N(200);
@@ -53,7 +52,7 @@
 
 - (void)testUsesPreviousEnteredRepsForOneRepMax {
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
-    FTOSet *set = [[FTOSetStore instance] create];
+    JFTOSet *set = [[JFTOSetStore instance] create];
     set.percentage = N(100);
     set.lift = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     set.lift.weight = N(200);
@@ -65,9 +64,9 @@
     STAssertEqualObjects([[controller oneRepField] text], @"210", @"");
 }
 
-- (void) testUsesPreviouslyEnteredWeightForOneRepMax {
+- (void)testUsesPreviouslyEnteredWeightForOneRepMax {
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
-    FTOSet *set = [[FTOSetStore instance] create];
+    JFTOSet *set = [[JFTOSetStore instance] create];
     set.percentage = N(100);
     set.lift = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     set.lift.weight = N(300);

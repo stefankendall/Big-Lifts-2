@@ -1,15 +1,15 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOTriumvirateSetupViewController.h"
-#import "FTOTriumvirate.h"
-#import "Set.h"
-#import "Lift.h"
+#import "JSet.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "Workout.h"
-#import "SetStore.h"
+#import "JLift.h"
+#import "JFTOTriumvirate.h"
+#import "JWorkout.h"
+#import "JSetStore.h"
 
 @interface FTOTriumvirateSetupViewController ()
-@property(nonatomic, strong) FTOTriumvirate *triumvirate;
-@property(nonatomic, strong) Set *set;
+@property(nonatomic, strong) JFTOTriumvirate *triumvirate;
+@property(nonatomic, strong) JSet *set;
 @end
 
 @implementation FTOTriumvirateSetupViewController
@@ -24,7 +24,7 @@
     [self.setsField setDelegate:self];
 }
 
-- (void)setupForm:(FTOTriumvirate *)triumvirate forSet:(Set *)set {
+- (void)setupForm:(JFTOTriumvirate *)triumvirate forSet:(JSet *)set {
     self.triumvirate = triumvirate;
     self.set = set;
 }
@@ -38,7 +38,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     self.set.lift.name = [self.nameField text];
-    [[self.triumvirate matchingSets:self.set] each:^(Set *set) {
+    [[self.triumvirate matchingSets:self.set] each:^(JSet *set) {
         set.reps = [NSNumber numberWithInteger:[[self.repsField text] intValue]];
     }];
 
@@ -59,7 +59,7 @@
 
 - (void)addSets:(int)count {
     for (int i = 0; i < count; i++) {
-        Set *newSet = [[SetStore instance] create];
+        JSet *newSet = [[JSetStore instance] create];
         newSet.lift = self.set.lift;
         newSet.reps = self.set.reps;
         [self.triumvirate.workout addSet:newSet];

@@ -1,18 +1,18 @@
 #import "FTOTriumvirateCellTests.h"
 #import "FTOTriumvirateCell.h"
-#import "FTOTriumvirate.h"
-#import "FTOTriumvirateStore.h"
-#import "Workout.h"
-#import "Set.h"
-#import "Lift.h"
+#import "JFTOTriumvirateStore.h"
+#import "JSet.h"
+#import "JFTOTriumvirate.h"
+#import "JWorkout.h"
+#import "JLift.h"
 
 @implementation FTOTriumvirateCellTests
 
 - (void)testSetsLabels {
     FTOTriumvirateCell *cell = [FTOTriumvirateCell create];
-    FTOTriumvirate *triumvirateMovement = [[FTOTriumvirateStore instance] first];
+    JFTOTriumvirate *triumvirateMovement = [[JFTOTriumvirateStore instance] first];
 
-    Set *set = triumvirateMovement.workout.orderedSets[0];
+    JSet *set = triumvirateMovement.workout.orderedSets[0];
     set.lift.name = @"Dumbbell Bench";
     set.reps = @12;
 

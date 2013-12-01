@@ -1,6 +1,6 @@
 #import "CTCustomTableViewCell/CTCustomTableViewCell.h"
 
-@class Set;
+@class JSet;
 @class JSetLog;
 @class SetLogContainer;
 

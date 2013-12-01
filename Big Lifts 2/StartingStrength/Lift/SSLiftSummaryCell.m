@@ -1,17 +1,17 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "SSLiftSummaryCell.h"
-#import "SSLift.h"
-#import "Workout.h"
-#import "Set.h"
+#import "JSet.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
+#import "JLift.h"
+#import "JWorkout.h"
 
 @implementation SSLiftSummaryCell
 
-- (void)setWorkout:(Workout *)workout {
-    Set *lastSet = [workout.orderedSets lastObject];
+- (void)setWorkout:(JWorkout *)workout {
+    JSet *lastSet = [workout.orderedSets lastObject];
     [self.liftLabel setText:lastSet.lift.name];
-    int worksetCount = [[workout.orderedSets select:^BOOL(Set *set) {
+    int worksetCount = [[workout.orderedSets select:^BOOL(JSet *set) {
         return !set.warmup;
     }] count];
 

@@ -1,10 +1,9 @@
 #import "FTOCustomWorkoutViewController.h"
 #import "JFTOCustomWorkout.h"
-#import "Workout.h"
 #import "FTOCustomSetCell.h"
 #import "JSet.h"
 #import "FTOCustomSetViewController.h"
-#import "FTOSetStore.h"
+#import "JFTOSetStore.h"
 #import "AddCell.h"
 #import "FTOCustomWorkoutToolbar.h"
 #import "JWorkout.h"
@@ -87,7 +86,7 @@
 }
 
 - (void)addSet {
-    [self.customWorkout.workout addSet:[[FTOSetStore instance] create]];
+    [self.customWorkout.workout addSet:[[JFTOSetStore instance] create]];
     [self.tableView reloadData];
 }
 

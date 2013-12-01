@@ -1,12 +1,12 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "SetHelper.h"
-#import "Set.h"
+#import "JSet.h"
 #import "JSetLog.h"
 
 @implementation SetHelper
-- (Set *)heaviestAmrapSet:(NSArray *)sets {
-    __block Set *heaviestAmrap = nil;
-    [sets each:^(Set *testSet) {
+- (JSet *)heaviestAmrapSet:(NSArray *)sets {
+    __block JSet *heaviestAmrap = nil;
+    [sets each:^(JSet *testSet) {
         if ([testSet amrap]) {
             if (!heaviestAmrap) {
                 heaviestAmrap = testSet;

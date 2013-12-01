@@ -1,5 +1,5 @@
 #import "FTOCustomSetViewController.h"
-#import "Set.h"
+#import "JSet.h"
 #import "TextViewInputAccessoryBuilder.h"
 
 @implementation FTOCustomSetViewController

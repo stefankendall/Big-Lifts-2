@@ -1,5 +1,5 @@
 #import "SetCellWithPlates.h"
-#import "Set.h"
+#import "JSet.h"
 #import "BarCalculator.h"
 #import "JBarStore.h"
 #import "JBar.h"
@@ -7,7 +7,7 @@
 
 @implementation SetCellWithPlates
 
-- (void)setSet:(Set *)set {
+- (void)setSet:(JSet *)set {
     [super setSet:set];
 
     JBar *bar = [[JBarStore instance] first];

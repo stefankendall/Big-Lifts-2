@@ -1,13 +1,12 @@
 #import "CTCustomTableViewCell.h"
 
-@class SSLift;
-@class Workout;
+@class JWorkout;
 
-@interface SSLiftSummaryCell : CTCustomTableViewCell
-{}
-@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
-@property (weak, nonatomic) IBOutlet UILabel *liftLabel;
-@property (weak, nonatomic) IBOutlet UILabel *setsAndRepsLabel;
+@interface SSLiftSummaryCell : CTCustomTableViewCell {
+}
+@property(weak, nonatomic) IBOutlet UILabel *weightLabel;
+@property(weak, nonatomic) IBOutlet UILabel *liftLabel;
+@property(weak, nonatomic) IBOutlet UILabel *setsAndRepsLabel;
 
-- (void)setWorkout:(Workout *)workout;
+- (void)setWorkout:(JWorkout *)workout;
 @end
