@@ -1,5 +1,4 @@
 #import "FTORepsToBeatCalculatorTests.h"
-#import "FTOLift.h"
 #import "JFTOLiftStore.h"
 #import "FTORepsToBeatCalculator.h"
 #import "JSetLog.h"
@@ -8,6 +7,8 @@
 #import "JWorkoutLogStore.h"
 #import "JFTOSettingsStore.h"
 #import "FTOSettings.h"
+#import "JFTOLift.h"
+#import "JFTOSettings.h"
 
 @implementation FTORepsToBeatCalculatorTests
 

@@ -14,6 +14,7 @@
 #import "FTOAssistance.h"
 #import "FTOSettingsStore.h"
 #import "FTOSettings.h"
+#import "JFTOVariant.h"
 
 @implementation FTOWorkoutStoreTests
 

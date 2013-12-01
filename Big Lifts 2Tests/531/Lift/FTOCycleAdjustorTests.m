@@ -4,7 +4,7 @@
 #import "NSArray+Enumerable.h"
 #import "JFTOVariantStore.h"
 #import "JFTOWorkout.h"
-#import "FTOVariant.h"
+#import "JFTOVariant.h"
 
 @implementation FTOCycleAdjustorTests
 

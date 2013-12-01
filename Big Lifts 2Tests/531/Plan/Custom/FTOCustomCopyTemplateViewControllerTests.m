@@ -3,10 +3,10 @@
 #import "FTOCustomCopyTemplateViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "JFTOCustomWorkoutStore.h"
-#import "FTOVariant.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "JFTOCustomWorkout.h"
+#import "JFTOVariant.h"
 
 @implementation FTOCustomCopyTemplateViewControllerTests
 

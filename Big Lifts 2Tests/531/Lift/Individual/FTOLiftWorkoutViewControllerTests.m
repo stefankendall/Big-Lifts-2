@@ -11,13 +11,13 @@
 #import "Purchaser.h"
 #import "FTOWorkoutCell.h"
 #import "JFTOVariantStore.h"
-#import "FTOVariant.h"
 #import "NSArray+Enumerable.h"
 #import "Set.h"
 #import "FTOAssistanceStore.h"
 #import "FTOAssistance.h"
 #import "SetHelper.h"
 #import "JWorkout.h"
+#import "JFTOVariant.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -60,7 +60,7 @@
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] find:@"name" value:@"5/3/1"];
     STAssertNotNil(workoutLog.date, @"");
     STAssertTrue(self.ftoWorkout.done, @"");
-}                                         
+}
 
 - (void)testDoesNotSave0RepsInLog {
     self.controller.tappedSetRow = @0;

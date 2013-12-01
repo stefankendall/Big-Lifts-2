@@ -3,7 +3,7 @@
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "JFTOVariantStore.h"
 #import "JFTOWorkoutStore.h"
-#import "FTOVariant.h"
+#import "JFTOVariant.h"
 
 @implementation FTOLiftViewControllerTests
 

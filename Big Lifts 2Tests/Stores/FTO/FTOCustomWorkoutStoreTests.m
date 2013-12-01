@@ -2,7 +2,7 @@
 #import "FTOCustomWorkoutStore.h"
 #import "FTOCustomWorkout.h"
 #import "Workout.h"
-#import "FTOVariant.h"
+#import "JFTOVariant.h"
 
 @implementation FTOCustomWorkoutStoreTests
 
