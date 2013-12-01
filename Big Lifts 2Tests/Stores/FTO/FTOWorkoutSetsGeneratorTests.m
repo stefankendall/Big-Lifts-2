@@ -2,7 +2,7 @@
 #import "FTOWorkoutSetsGenerator.h"
 #import "FTOLiftStore.h"
 #import "Set.h"
-#import "FTOVariantStore.h"
+#import "JFTOVariantStore.h"
 #import "FTOVariant.h"
 #import "SetData.h"
 
@@ -20,7 +20,7 @@
 }
 
 - (void)testGeneratesPyramidSets {
-    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_PYRAMID];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_PYRAMID];
     FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSArray *sets = [generator setsForWeek:1 lift:squat];
@@ -30,7 +30,7 @@
 }
 
 - (void)testGeneratesJokerSets {
-    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_JOKER];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_JOKER];
     FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSArray *sets = [generator setsForWeek:1 lift:squat];
@@ -38,14 +38,14 @@
 }
 
 - (void)testGeneratesSixWeek {
-    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
     FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
     NSDictionary *template = [generator setsFor:[[FTOLiftStore instance] find:@"name" value:@"Squat"]];
     STAssertEquals([[template allKeys] count], 7U, @"");
 }
 
 - (void)testFirstSetLastMultipleSets {
-    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS];
     FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSArray *sets = [generator setsForWeek:1 lift:squat];
@@ -55,7 +55,7 @@
 }
 
 - (void)testCustom {
-    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_CUSTOM];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_CUSTOM];
     FTOWorkoutSetsGenerator *generator = [FTOWorkoutSetsGenerator new];
     FTOLift *squat = [[FTOLiftStore instance] find:@"name" value:@"Squat"];
     NSArray *sets = [generator setsForWeek:1 lift:squat];

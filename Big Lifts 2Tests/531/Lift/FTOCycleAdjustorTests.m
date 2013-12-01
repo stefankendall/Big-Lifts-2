@@ -3,7 +3,7 @@
 #import "FTOWorkoutStore.h"
 #import "NSArray+Enumerable.h"
 #import "FTOWorkout.h"
-#import "FTOVariantStore.h"
+#import "JFTOVariantStore.h"
 #import "FTOVariant.h"
 
 @implementation FTOCycleAdjustorTests
@@ -24,7 +24,7 @@
 }
 
 - (void)testMidCycleSixWeek {
-    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
     [[FTOWorkoutStore instance] switchTemplate];
 
     [self setupMidSixWeekLiftsDone];
@@ -32,7 +32,7 @@
 }
 
 - (void)testMidCycleSixWeekDoesntTriggerPastMid {
-    [[[FTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
     [[FTOWorkoutStore instance] switchTemplate];
 
     [self setupMidSixWeekLiftsDone];

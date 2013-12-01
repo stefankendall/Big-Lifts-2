@@ -11,7 +11,7 @@
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 #import "FTOWorkoutCell.h"
-#import "FTOVariantStore.h"
+#import "JFTOVariantStore.h"
 #import "FTOVariant.h"
 #import "NSArray+Enumerable.h"
 #import "Set.h"
@@ -106,7 +106,7 @@
 }
 
 - (void)testChoosesHeaviestAmrapSetForRepsToBeat {
-    [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
+    [[JFTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     self.ftoWorkout = [[[FTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     Set *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
     STAssertEquals([self.ftoWorkout.workout.orderedSets indexOfObject:heaviestAmrapSet], 5U, @"");

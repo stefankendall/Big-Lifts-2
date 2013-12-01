@@ -1,9 +1,10 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOCustomCopyTemplateViewController.h"
-#import "FTOVariant.h"
+#import "JFTOVariant.h"
 #import "FTOCustomWorkoutStore.h"
 #import "Purchaser.h"
 #import "IAPAdapter.h"
+#import "FTOVariant.h"
 
 @implementation FTOCustomCopyTemplateViewController
 

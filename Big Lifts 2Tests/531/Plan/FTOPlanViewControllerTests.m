@@ -2,10 +2,11 @@
 #import "FTOPlanViewController.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOVariant.h"
-#import "FTOVariantStore.h"
+#import "JFTOVariantStore.h"
 #import "PurchaseOverlay.h"
 #import "FTOSettingsStore.h"
 #import "FTOSettings.h"
+#import "JFTOVariant.h"
 
 @implementation FTOPlanViewControllerTests
 
@@ -22,7 +23,7 @@
 - (void)testSelectVariant {
     FTOPlanViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoPlan"];
     [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:1]];
-    FTOVariant *variant = [[FTOVariantStore instance] first];
+    JFTOVariant *variant = [[JFTOVariantStore instance] first];
     STAssertEqualObjects(variant.name, FTO_VARIANT_PYRAMID, @"");
 }
 

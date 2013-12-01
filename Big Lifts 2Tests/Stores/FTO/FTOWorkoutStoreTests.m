@@ -8,7 +8,7 @@
 #import "Lift.h"
 #import "FTOSet.h"
 #import "FTOLiftStore.h"
-#import "FTOVariantStore.h"
+#import "JFTOVariantStore.h"
 #import "FTOVariant.h"
 #import "FTOAssistanceStore.h"
 #import "FTOAssistance.h"
@@ -69,7 +69,7 @@
     FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     week1Workout1.done = YES;
 
-    [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
+    [[JFTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
 
     week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertTrue(week1Workout1.done, @"");
@@ -79,8 +79,8 @@
 
 - (void)testReappliesAssistanceWhenSwitchingTemplates {
     [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
-    [[FTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
-    [[FTOVariantStore instance] changeTo:FTO_VARIANT_STANDARD];
+    [[JFTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
+    [[JFTOVariantStore instance] changeTo:FTO_VARIANT_STANDARD];
     FTOWorkout *week1Workout1 = [[FTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertEquals([week1Workout1.workout.orderedSets count], 11U, @"");
 }

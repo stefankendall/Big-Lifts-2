@@ -4,12 +4,13 @@
 #import "FTOSettingsStore.h"
 #import "FTOSettings.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "FTOVariant.h"
-#import "FTOVariantStore.h"
+#import "JFTOVariant.h"
+#import "JFTOVariantStore.h"
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
 #import "IAPAdapter.h"
 #import "FTOWorkoutStore.h"
+#import "FTOVariant.h"
 
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;
@@ -63,7 +64,7 @@
             [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
             self.iapIndexPath = nil;
 
-            if([[[[FTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_CUSTOM]){
+            if([[[[JFTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_CUSTOM]){
                 [self performSegueWithIdentifier:@"ftoCustomSegue" sender:self];
             }
         }
@@ -78,7 +79,7 @@
 }
 
 - (void)checkCurrentVariant {
-    FTOVariant *variant = [[FTOVariantStore instance] first];
+    JFTOVariant *variant = [[JFTOVariantStore instance] first];
     [[self.variantCells allValues] each:^(UITableViewCell *cell) {
         [cell setAccessoryType:UITableViewCellAccessoryNone];
     }];
@@ -102,7 +103,7 @@
         NSString *newVariantName = [self.variantCells detect:^BOOL(id key, UITableViewCell *cell) {
             return cell == selectedCell;
         }];
-        [[FTOVariantStore instance] changeTo:newVariantName];
+        [[JFTOVariantStore instance] changeTo:newVariantName];
         [self checkCurrentVariant];
     }
 }

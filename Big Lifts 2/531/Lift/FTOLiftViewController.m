@@ -6,9 +6,10 @@
 #import "Workout.h"
 #import "Set.h"
 #import "Lift.h"
-#import "FTOVariant.h"
-#import "FTOVariantStore.h"
+#import "JFTOVariant.h"
+#import "JFTOVariantStore.h"
 #import "FTOCustomWorkoutStore.h"
+#import "FTOVariant.h"
 
 @interface FTOLiftViewController ()
 
@@ -67,7 +68,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    FTOVariant *variant = [[FTOVariantStore instance] first];
+    JFTOVariant *variant = [[JFTOVariantStore instance] first];
     NSDictionary *mapping = @{
             @0 : @"5/5/5",
             @1 : @"3/3/3",
