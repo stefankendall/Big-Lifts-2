@@ -1,7 +1,7 @@
 #import "FTOBoringButBigViewController.h"
 #import "JFTOBoringButBigStore.h"
 #import "JFTOBoringButBig.h"
-#import "FTOAssistanceStore.h"
+#import "JFTOAssistanceStore.h"
 
 @implementation FTOBoringButBigViewController
 
@@ -15,7 +15,7 @@
     UITextField *percentageField = sender;
     NSDecimalNumber *percentage = [NSDecimalNumber decimalNumberWithString:[percentageField text] locale:NSLocale.currentLocale];
     [[[JFTOBoringButBigStore instance] first] setPercentage:percentage];
-    [[FTOAssistanceStore instance] restore];
+    [[JFTOAssistanceStore instance] restore];
 }
 
 - (IBAction)toggleThreeMonthChallenge:(id)sender {

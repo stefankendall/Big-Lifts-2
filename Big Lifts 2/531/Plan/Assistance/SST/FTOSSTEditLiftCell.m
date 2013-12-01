@@ -1,12 +1,13 @@
 #import "FTOEditLiftCell.h"
 #import "FTOSSTEditLiftCell.h"
-#import "FTOSSTLift.h"
+#import "JFTOSSTLift.h"
+#import "JFTOLift.h"
 
 @implementation FTOSSTEditLiftCell
 
-- (void)setLift:(Lift *)lift {
+- (void)setLift:(JLift *)lift {
     [super setLift:lift];
-    FTOSSTLift *sstLift = (FTOSSTLift *) lift;
+    JFTOSSTLift *sstLift = (JFTOSSTLift *) lift;
     [self.associatedLiftLabel setText:sstLift.associatedLift.name];
 }
 

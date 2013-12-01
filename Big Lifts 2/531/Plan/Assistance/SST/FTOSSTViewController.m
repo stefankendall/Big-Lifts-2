@@ -1,20 +1,18 @@
 #import "FTOSSTViewController.h"
-#import "FTOLiftStore.h"
-#import "FTOLift.h"
 #import "RowTextField.h"
 #import "FTOEditLiftCell.h"
-#import "FTOSSTLiftStore.h"
-#import "FTOSSTLift.h"
+#import "JFTOSSTLiftStore.h"
+#import "JFTOSSTLift.h"
 #import "FTOSSTEditLiftCell.h"
 
 @implementation FTOSSTViewController
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[FTOSSTLiftStore instance] count];
+    return [[JFTOSSTLiftStore instance] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FTOSSTLift *lift = (FTOSSTLift *) [self liftAtIndex:[indexPath row]];
+    JFTOSSTLift *lift = (JFTOSSTLift *) [self liftAtIndex:[indexPath row]];
     if ([indexPath section] == 0) {
         FTOSSTEditLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOSSTEditLiftCell.class)];
         if (cell == nil) {
@@ -31,8 +29,8 @@
     }
 }
 
-- (Lift *)liftAtIndex:(int)index {
-    return [[FTOSSTLiftStore instance] atIndex:index];
+- (JLift *)liftAtIndex:(int)index {
+    return [[JFTOSSTLiftStore instance] atIndex:index];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

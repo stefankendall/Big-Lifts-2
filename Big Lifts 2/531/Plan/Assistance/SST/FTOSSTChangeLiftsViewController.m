@@ -1,18 +1,18 @@
 #import "FTOSSTChangeLiftsViewController.h"
-#import "Lift.h"
-#import "FTOSSTLiftStore.h"
+#import "JLift.h"
+#import "JFTOSSTLiftStore.h"
 
 @implementation FTOSSTChangeLiftsViewController
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[FTOSSTLiftStore instance] count];
+    return [[JFTOSSTLiftStore instance] count];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
-- (Lift *)liftAtIndex:(int)index {
-    return [[FTOSSTLiftStore instance] atIndex:index];
+- (JLift *)liftAtIndex:(int)index {
+    return [[JFTOSSTLiftStore instance] atIndex:index];
 }
 
 @end

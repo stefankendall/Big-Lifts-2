@@ -5,6 +5,7 @@
 #import "WeightRounder.h"
 #import "TrainingMaxRowTextField.h"
 #import "JFTOSettings.h"
+#import "JLift.h"
 
 @implementation FTOEditLiftCell
 
@@ -13,7 +14,7 @@
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.trainingMax];
 }
 
-- (void)setLift:(Lift *)lift {
+- (void)setLift:(JLift *)lift {
     [[self liftName] setText:lift.name];
     if ([lift.weight doubleValue] > 0) {
         [[self max] setText:[lift.weight stringValue]];

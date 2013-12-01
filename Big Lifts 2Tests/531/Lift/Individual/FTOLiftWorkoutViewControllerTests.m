@@ -12,12 +12,12 @@
 #import "FTOWorkoutCell.h"
 #import "JFTOVariantStore.h"
 #import "NSArray+Enumerable.h"
-#import "Set.h"
-#import "FTOAssistanceStore.h"
-#import "FTOAssistance.h"
+#import "JFTOAssistanceStore.h"
 #import "SetHelper.h"
 #import "JWorkout.h"
 #import "JFTOVariant.h"
+#import "JSet.h"
+#import "JFTOAssistance.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -39,7 +39,7 @@
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], 3, @"");
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:2], 3, @"");
 
-    [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
+    [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     self.controller.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     STAssertEquals([self.controller tableView:nil numberOfRowsInSection:2], 5, @"");
 }
@@ -48,7 +48,7 @@
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:0], @"", @"");
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:1], @"Warm-up", @"");
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:2], @"Workout", @"");
-    [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
+    [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     self.controller.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:2], @"Assistance", @"");
 }
@@ -108,7 +108,7 @@
 - (void)testChoosesHeaviestAmrapSetForRepsToBeat {
     [[JFTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    Set *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
+    JSet *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
     STAssertEquals([self.ftoWorkout.workout.orderedSets indexOfObject:heaviestAmrapSet], 5U, @"");
 }
 
@@ -136,7 +136,7 @@
 }
 
 - (void)testHidesWarmupSectionIfNoWarmup {
-    NSArray *warmupSets = [self.ftoWorkout.workout.orderedSets select:^BOOL(Set *set) {
+    NSArray *warmupSets = [self.ftoWorkout.workout.orderedSets select:^BOOL(JSet *set) {
         return set.warmup;
     }];
     [self.ftoWorkout.workout removeSets:warmupSets];

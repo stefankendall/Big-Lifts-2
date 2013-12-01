@@ -1,11 +1,11 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import <MRCEnumerable/NSDictionary+Enumerable.h>
 #import "FTOAssistanceViewController.h"
-#import "FTOAssistance.h"
-#import "FTOAssistanceStore.h"
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
 #import "IAPAdapter.h"
+#import "JFTOAssistanceStore.h"
+#import "JFTOAssistance.h"
 
 @interface FTOAssistanceViewController ()
 @property(nonatomic, strong) NSDictionary *cellMapping;
@@ -52,7 +52,7 @@
             [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
             self.iapIndexPath = nil;
             [self performSegueWithIdentifier:self.assistanceToSegues[
-                    [[[FTOAssistanceStore instance] first] name]
+                    [[[JFTOAssistanceStore instance] first] name]
             ]                         sender:self];
         }
     }
@@ -62,7 +62,7 @@
     [[self.cellMapping allValues] each:^(UITableViewCell *cell) {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }];
-    NSString *name = [[[FTOAssistanceStore instance] first] name];
+    NSString *name = [[[JFTOAssistanceStore instance] first] name];
     [self.cellMapping[name] setAccessoryType:UITableViewCellAccessoryCheckmark];
 }
 
@@ -76,7 +76,7 @@
         NSString *assistanceType = [self.cellMapping detect:^BOOL(NSString *type, UITableViewCell *cell) {
             return selectedCell == cell;
         }];
-        [[FTOAssistanceStore instance] changeTo:assistanceType];
+        [[JFTOAssistanceStore instance] changeTo:assistanceType];
         [self checkCurrentAssistance];
     }
 }

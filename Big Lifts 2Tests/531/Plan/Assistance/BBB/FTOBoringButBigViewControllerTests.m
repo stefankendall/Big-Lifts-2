@@ -1,45 +1,46 @@
-#import "Workout.h"
+#import "JWorkout.h"
 #import "FTOBoringButBigViewControllerTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOBoringButBigViewController.h"
-#import "FTOAssistanceStore.h"
-#import "FTOAssistance.h"
-#import "FTOWorkout.h"
+#import "JFTOAssistanceStore.h"
+#import "JFTOWorkout.h"
 #import "JFTOWorkoutStore.h"
-#import "SetData.h"
 #import "FTOCycleAdjustor.h"
+#import "JFTOAssistance.h"
+#import "JSet.h"
 
 @implementation FTOBoringButBigViewControllerTests
 
 - (void)testChangingPercentageUpdatesBbbLifts {
-    [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
+    [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     FTOBoringButBigViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoBoring"];
     UITextField *field = [UITextField new];
     field.text = @"60";
     [controller percentageChanged:field];
 
-    FTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertEquals([ftoWorkout.workout.orderedSets count], 11U, @"");
-    STAssertEqualObjects([[ftoWorkout.workout.orderedSets lastObject] percentage], N(60), @"");
+    JSet *set = [ftoWorkout.workout.orderedSets lastObject];
+    STAssertEqualObjects([set percentage], N(60), @"");
 }
 
 - (void)testThreeMonthChallengeUntoggled {
-    [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
+    [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     [[FTOCycleAdjustor new] nextCycle];
 
-    FTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    JFTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     STAssertEqualObjects([ftoWorkout.workout.orderedSets.lastObject percentage], N(50), @"");
 }
 
 - (void)testThreeMonthChallengeToggled {
-    [[FTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
+    [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     FTOBoringButBigViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoBoring"];
     UISwitch *toggle = [UISwitch new];
     [toggle setOn:YES];
     [controller toggleThreeMonthChallenge:toggle];
     [[FTOCycleAdjustor new] nextCycle];
 
-    FTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
+    JFTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     STAssertEqualObjects([ftoWorkout.workout.orderedSets.lastObject percentage], N(60), @"");
 }
 
