@@ -33,7 +33,7 @@
 
 - (void)testCalculates70kg {
     [[[JSettingsStore instance] first] setUnits:@"kg"];
-    [[JBarStore instance] adjustWeightForKg];
+    [[JBarStore instance] adjustForKg];
     [[JPlateStore instance] adjustForKg];
     self.calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll] barWeight:N(20)];
     NSArray *expected70 = @[@20, @5];

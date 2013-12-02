@@ -73,7 +73,7 @@
 - (id)findBy:(NSPredicate *)predicate {
     NSArray *all = [self findAll];
     NSArray *results = [all filteredArrayUsingPredicate:predicate];
-    if (results.count != 1) {
+    if (results.count == 0) {
         return nil;
     }
 
@@ -148,7 +148,11 @@
 
 - (void)sync {
     NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
-    [keyValueStore setObject:[self serialize] forKey:[self keyNameForStore]];
+    NSArray *serialized = [self serialize];
+    NSString *storeKey = [self keyNameForStore];
+//    NSLog(@"Store key: %@", storeKey);
+//    NSLog(@"Serialized: %@", serialized);
+    [keyValueStore setObject:serialized forKey:storeKey];
     [keyValueStore synchronize];
 }
 

@@ -71,22 +71,25 @@
                 [JFTOTriumvirateLiftStore instance],
                 [JFTOSSTLiftStore instance],
                 [JSSLiftStore instance],
+
                 [JSetStore instance],
+                [JFTOSetStore instance],
+                [JWorkoutStore instance],
 
                 [JSetLogStore instance],
                 [JWorkoutLogStore instance],
 
-                [JWorkoutStore instance],
                 [JFTOVariantStore instance],
+                [JSSVariantStore instance],
+                [JSSStateStore instance],
+
                 [JFTOAssistanceStore instance],
                 [JFTOBoringButBigStore instance],
                 [JFTOCustomWorkoutStore instance],
-                [JFTOSetStore instance],
                 [JFTOTriumvirateStore instance],
+
                 [JFTOWorkoutStore instance],
-                [JSSVariantStore instance],
                 [JSSWorkoutStore instance],
-                [JSSStateStore instance],
                 [JSJWorkoutStore instance]
         ];
     }

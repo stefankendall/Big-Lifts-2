@@ -2,7 +2,6 @@
 #import "JSSLift.h"
 #import "NSArray+Enumerable.h"
 #import "JSettingsStore.h"
-#import "JSettings.h"
 
 @implementation JSSLiftStore
 

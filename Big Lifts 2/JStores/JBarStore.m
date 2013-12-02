@@ -14,10 +14,9 @@
     bar.weight = N(45);
 }
 
-- (void)adjustWeightForKg {
-    JBar *bar = [self first];
-    JSettings *settings = [[JSettingsStore instance] first];
-    if ([settings.units isEqualToString:@"kg"]) {
+- (void)adjustForKg {
+    if ([[[[JSettingsStore instance] first] units] isEqualToString:@"kg"]) {
+        JBar *bar = [self first];
         bar.weight = N(20);
     }
 }

@@ -40,7 +40,7 @@
     }];
     [liftNames each:^(NSString *liftName) {
         JFTOLift *lift = [[JFTOLiftStore instance] find:@"name" value:liftName];
-        lift.increment = [settingsStore defaultLbsIncrementForLift:lift.name] ?
+        lift.increment = [lift.increment isEqualToNumber:[settingsStore defaultLbsIncrementForLift:lift.name]] ?
                 [settingsStore defaultIncrementForLift:lift.name] : lift.increment;
     }];
 }

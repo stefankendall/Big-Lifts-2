@@ -6,6 +6,8 @@
 #import "JFTOLiftStore.h"
 #import "JSJLift.h"
 #import "JSJLiftStore.h"
+#import "JFTOSetStore.h"
+#import "JFTOSet.h"
 
 @implementation BLJStoreManagerTests
 
@@ -17,6 +19,9 @@
     STAssertEquals([[BLJStoreManager instance] storeForModel:JLift.class withUuid: lift.uuid], [JLiftStore instance], @"");
     STAssertEquals([[BLJStoreManager instance] storeForModel:JLift.class withUuid: ftoLift.uuid], [JFTOLiftStore instance], @"");
     STAssertEquals([[BLJStoreManager instance] storeForModel:JLift.class withUuid: sjLift.uuid], [JSJLiftStore instance], @"");
+
+    JFTOSet *ftoSet = [[JFTOSetStore instance] create];
+    STAssertEquals([[BLJStoreManager instance] storeForModel:JFTOSet.class withUuid: ftoSet.uuid], [JFTOSetStore instance], @"");
 }
 
 @end

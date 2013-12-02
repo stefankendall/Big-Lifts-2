@@ -15,7 +15,7 @@
     JSettings *settings = [[JSettingsStore instance] first];
     settings.units = @"kg";
 
-    [[JBarStore instance] adjustWeightForKg];
+    [[JBarStore instance] adjustForKg];
     JBar *bar = [[JBarStore instance] first];
     STAssertEqualObjects( [bar weight], N(20), @"");
 }

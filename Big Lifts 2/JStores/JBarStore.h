@@ -1,5 +1,5 @@
 #import "BLJStore.h"
 
 @interface JBarStore : BLJStore
-- (void)adjustWeightForKg;
+- (void)adjustForKg;
 @end

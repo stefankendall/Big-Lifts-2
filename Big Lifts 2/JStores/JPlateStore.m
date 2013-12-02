@@ -1,5 +1,7 @@
 #import "JPlateStore.h"
 #import "JPlate.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation JPlateStore
 
@@ -29,15 +31,17 @@
 }
 
 - (void)adjustForKg {
-    JPlate *firstPlate = [self first];
-    if ([firstPlate.weight isEqualToNumber:N(45.0)]) {
-        [self empty];
-        [self createPlateWithWeight:N(20.0) count:6];
-        [self createPlateWithWeight:N(15.0) count:6];
-        [self createPlateWithWeight:N(10.0) count:6];
-        [self createPlateWithWeight:N(5.0) count:6];
-        [self createPlateWithWeight:N(2.5) count:6];
-        [self createPlateWithWeight:N(1) count:6];
+    if ([[[[JSettingsStore instance] first] units] isEqualToString:@"kg"]) {
+        JPlate *firstPlate = [self first];
+        if ([firstPlate.weight isEqualToNumber:N(45.0)]) {
+            [self empty];
+            [self createPlateWithWeight:N(20.0) count:6];
+            [self createPlateWithWeight:N(15.0) count:6];
+            [self createPlateWithWeight:N(10.0) count:6];
+            [self createPlateWithWeight:N(5.0) count:6];
+            [self createPlateWithWeight:N(2.5) count:6];
+            [self createPlateWithWeight:N(1) count:6];
+        }
     }
 }
 
