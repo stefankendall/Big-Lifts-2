@@ -4,15 +4,9 @@
 
 @implementation DataLoadingViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self performSelector:@selector(pollForReady) withObject:nil afterDelay:0.5];
-}
-
 - (void)viewDidAppear:(BOOL)animated {
-    if (self.dataLoaded) {
-        [self segueToApp];
-    }
+    self.dataLoaded = YES;
+    [self performSelector:@selector(pollForReady) withObject:nil afterDelay:0.5];
 }
 
 - (void)pollForReady {
@@ -32,7 +26,6 @@
     else {
         [self performSegueWithIdentifier:@"dataLoadedSegue" sender:self];
     }
-
 }
 
 @end

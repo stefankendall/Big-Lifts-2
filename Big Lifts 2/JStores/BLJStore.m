@@ -147,13 +147,12 @@
 }
 
 - (void)sync {
-    NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
     NSArray *serialized = [self serialize];
     NSString *storeKey = [self keyNameForStore];
 //    NSLog(@"Store key: %@", storeKey);
 //    NSLog(@"Serialized: %@", serialized);
-    [keyValueStore setObject:serialized forKey:storeKey];
-    [keyValueStore synchronize];
+    [[NSUbiquitousKeyValueStore defaultStore] setObject:serialized forKey:storeKey];
+    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
 }
 
 - (NSArray *)serialize {
