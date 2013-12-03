@@ -41,9 +41,9 @@
             jSetLog.name = setLog.name;
             jSetLog.warmup = setLog.warmup;
             jSetLog.amrap = setLog.amrap;
+            [jWorkoutLog.sets addObject: jSetLog];
         }
     }
-    self.doneCallback();
 }
 
 - (void)initManager {
