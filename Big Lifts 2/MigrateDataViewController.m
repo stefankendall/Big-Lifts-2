@@ -22,7 +22,14 @@
 }
 
 - (BOOL)hasExistingICloudStore {
-    return YES;
+    NSURL *urlForApplicationContainer = [[[NSFileManager defaultManager] URLsForDirectory:NSApplicationSupportDirectory
+                                                                                                                   inDomains:NSUserDomainMask] lastObject];
+    NSURL *storePath = [[urlForApplicationContainer URLByAppendingPathComponent:@"UbiquityStore" isDirectory:NO]
+            URLByAppendingPathExtension:@"sqlite"];
+
+    BOOL storeExists = [[NSFileManager defaultManager] fileExistsAtPath:storePath.path];
+    NSLog(@"Store exists: %@", [NSNumber numberWithBool:storeExists]);
+    return storeExists;
 }
 
 - (IBAction)migrateData:(id)sender {
