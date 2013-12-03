@@ -325,7 +325,7 @@ typedef enum {
  *
  * You probably won't need to touch this (it is set from init).
  */
-@property(nonatomic, weak) id<UbiquityStoreManagerDelegate> delegate;
+@property(nonatomic, strong) id<UbiquityStoreManagerDelegate> delegate;
 
 /**
  * The URL where the local store will be loaded from.
