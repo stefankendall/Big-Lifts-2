@@ -10,13 +10,6 @@
     return JFTOSSTLift.class;
 }
 
-- (void)onLoad {
-    //TODO: Handle this
-//    [[FTOLiftStore instance] registerChangeListener:^{
-//        [self adjustSstLiftsToMainLifts];
-//    }];
-}
-
 - (void)adjustSstLiftsToMainLifts {
     [self removeMissingLifts];
     [self addNeededLifts];

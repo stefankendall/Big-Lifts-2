@@ -26,4 +26,8 @@
     STAssertEqualObjects(squat.weight, [weight decimalNumberByAdding:N(10)], @"");
 }
 
+- (void)testAdjustsSstLiftsWhenLiftsAreModified {
+    STFail(@"");
+}
+
 @end

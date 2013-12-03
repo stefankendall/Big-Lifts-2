@@ -2,6 +2,7 @@
 #import "JFTOLiftStore.h"
 #import "JFTOLift.h"
 #import "JSettingsStore.h"
+#import "JFTOSSTLiftStore.h"
 
 @implementation JFTOLiftStore
 
@@ -14,9 +15,6 @@
     [self createWithName:@"Squat" increment:10 order:1];
     [self createWithName:@"Press" increment:5 order:2];
     [self createWithName:@"Deadlift" increment:10 order:3];
-}
-
-- (void)onLoad {
 }
 
 - (void)incrementLifts {
@@ -43,6 +41,22 @@
         lift.increment = [lift.increment isEqualToNumber:[settingsStore defaultLbsIncrementForLift:lift.name]] ?
                 [settingsStore defaultIncrementForLift:lift.name] : lift.increment;
     }];
+}
+
+- (void)removeAtIndex:(int)index1 {
+    [super removeAtIndex:index1];
+    [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
+}
+
+- (void)remove:(id)object {
+    [super remove:object];
+    [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
+}
+
+- (id)create {
+    JFTOLift *lift = [super create];
+    [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
+    return lift;
 }
 
 @end
