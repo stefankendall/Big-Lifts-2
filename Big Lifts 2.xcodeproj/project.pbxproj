@@ -343,6 +343,7 @@
 		54590E8382ABEC6E3D903F96 /* JSSWorkoutStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900B5AB8462D93F5E7477 /* JSSWorkoutStoreTests.m */; };
 		54590E927352287C375A329B /* JSJLiftStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590613C2E86FC343274FBB /* JSJLiftStore.m */; };
 		54590EAE14966115646647AA /* SJSetWeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459083D4EE0C698851B482A /* SJSetWeightViewController.m */; };
+		54590EB067EA3E59C36705C5 /* LogMigrator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459093B4652D50AB9B94DA2 /* LogMigrator.m */; };
 		54590EB5163071B88354668E /* FTOSetChangeFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DC468D48E6708C0AF1F /* FTOSetChangeFormTests.m */; };
 		54590EBCB56EE431B77A75A8 /* FTOTriumvirateSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DEED1DC5A9D332A01AC /* FTOTriumvirateSetupViewController.m */; };
 		54590ED8505695775DEA0C53 /* WhatNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900443A36CA79DE726BED /* WhatNextViewController.m */; };
@@ -473,6 +474,7 @@
 		5459014893A2978E375E2EEE /* FTOTrackToolbarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOTrackToolbarCell.xib; sourceTree = "<group>"; };
 		5459014BD58A350501E2C0E0 /* FTOLiftWorkoutToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftWorkoutToolbar.h; sourceTree = "<group>"; };
 		5459014D9CF377B87E618515 /* SJNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJNavController.h; sourceTree = "<group>"; };
+		5459014E6D04C832E6A8842E /* LogMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogMigrator.h; sourceTree = "<group>"; };
 		5459014F29F4DC2B28194F39 /* JFTOTriumvirateLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOTriumvirateLift.h; sourceTree = "<group>"; };
 		54590155A3CB2CDBFC9FEEAD /* FTOWorkoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutCell.h; sourceTree = "<group>"; };
 		54590160279041FE2B448ACB /* SSLiftSummaryCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftSummaryCellTests.m; sourceTree = "<group>"; };
@@ -783,6 +785,7 @@
 		5459092FFE2633540A1AF2AC /* OneRepEstimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneRepEstimator.m; sourceTree = "<group>"; };
 		545909344AEA6A82F1DB578A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5459093636BBE4ADD4B20D5C /* SJWorkoutSummaryCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJWorkoutSummaryCellTests.m; sourceTree = "<group>"; };
+		5459093B4652D50AB9B94DA2 /* LogMigrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogMigrator.m; sourceTree = "<group>"; };
 		545909415F01436FE79252ED /* JSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSet.h; sourceTree = "<group>"; };
 		54590946B5EBF08CC35CB9DE /* FTORepsToBeatBreakdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTORepsToBeatBreakdown.h; sourceTree = "<group>"; };
 		5459094860FD40BF2AC39701 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1253,6 +1256,8 @@
 				5459038F4A78E505BF4D5C1F /* NSDictionaryMutator.h */,
 				545905E1361C467A1622D2E2 /* BarCalculator */,
 				54590F9D04233CA43D205824 /* Sets */,
+				5459093B4652D50AB9B94DA2 /* LogMigrator.m */,
+				5459014E6D04C832E6A8842E /* LogMigrator.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -3133,6 +3138,7 @@
 				54590202B12A72A7137F91B0 /* JModel.m in Sources */,
 				545905B21C36BB9C6CD764C8 /* SetLogContainer.m in Sources */,
 				54590C96FD0CBBA653610DF5 /* MigrateDataViewController.m in Sources */,
+				54590EB067EA3E59C36705C5 /* LogMigrator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

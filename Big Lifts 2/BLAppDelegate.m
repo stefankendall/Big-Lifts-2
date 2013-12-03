@@ -3,25 +3,12 @@
 #import "SKProductStore.h"
 #import "BLJStoreManager.h"
 
-@interface BLAppDelegate ()
-@property(nonatomic, strong) NSManagedObjectContext *moc;
-@end
-
 @implementation BLAppDelegate
-
-@synthesize manager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #if (!TARGET_IPHONE_SIMULATOR)
     [Crashlytics startWithAPIKey:@"f1f936528fec614b3f5e265a22c4bef0a92d8dc4"];
 #endif
-//    manager = [[UbiquityStoreManager alloc] initStoreNamed:nil
-//                                    withManagedObjectModel:nil
-//                                             localStoreURL:nil
-//                                       containerIdentifier:nil
-//                                    additionalStoreOptions:nil
-//                                                  delegate:self];
-//    manager.cloudEnabled = YES;
     [[SKProductStore instance] loadProducts:^{
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -77,33 +64,6 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-}
-
-- (void)ubiquityStoreManager:(UbiquityStoreManager *)manager willLoadStoreIsCloud:(BOOL)isCloudStore {
-    self.moc = nil;
-}
-
-- (BOOL)                ubiquityStoreManager:(UbiquityStoreManager *)manager
-handleCloudContentCorruptionWithHealthyStore:(BOOL)storeHealthy {
-    return NO;
-}
-
-- (void)ubiquityStoreManager:(UbiquityStoreManager *)manager didLoadStoreForCoordinator:(NSPersistentStoreCoordinator *)coordinator isCloud:(BOOL)isCloudStore {
-    self.moc = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [self.moc setPersistentStoreCoordinator:coordinator];
-    [self.moc setMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy];
-    [self loadData];
-}
-
-- (void)loadData {
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(storesLoaded) name:@"storesLoaded" object:nil];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//        [[BLStoreManager instance] initializeAllStores:self.moc withModel:[[self.moc persistentStoreCoordinator] managedObjectModel]];
-//    });
-}
-
-- (NSManagedObjectContext *)managedObjectContextForUbiquityChangesInManager:(UbiquityStoreManager *)manager1 {
-    return self.moc;
 }
 
 @end

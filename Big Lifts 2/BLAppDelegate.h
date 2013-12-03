@@ -6,7 +6,6 @@
 @interface BLAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property(strong, nonatomic) UIWindow *window;
-@property(readonly, strong, nonatomic) UbiquityStoreManager *manager;
 
 @property(nonatomic) UIBackgroundTaskIdentifier backgroundUpdateTask;
 

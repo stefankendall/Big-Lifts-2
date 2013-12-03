@@ -1,4 +1,5 @@
 #import "MigrateDataViewController.h"
+#import "LogMigrator.h"
 
 @implementation MigrateDataViewController
 
@@ -27,6 +28,10 @@
 - (IBAction)migrateData:(id)sender {
     [self.migrateDataButton setEnabled:NO];
     [self.startFreshButton setEnabled:NO];
+
+    [[LogMigrator new] migrate: ^{
+        [self performSegueWithIdentifier:@"startAppFromMigrate" sender:self];
+    }];
 }
 
 @end
