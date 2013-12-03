@@ -44,6 +44,7 @@
             [jWorkoutLog.sets addObject: jSetLog];
         }
     }
+    self.doneCallback();
 }
 
 - (void)initManager {
