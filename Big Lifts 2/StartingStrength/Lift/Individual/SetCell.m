@@ -24,6 +24,7 @@
         if (self.enteredWeight) {
             weight = self.enteredWeight;
         }
+        weight = weight == nil ? N(0) : weight;
         NSString *weightText = [NSString stringWithFormat:@"%@ %@", weight, settings.units];
         [self.weightLabel setText:weightText];
     }
