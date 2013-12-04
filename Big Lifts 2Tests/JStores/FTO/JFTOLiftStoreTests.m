@@ -3,6 +3,7 @@
 #import "JFTOLiftStore.h"
 #import "JSettings.h"
 #import "JSettingsStore.h"
+#import "JFTOSSTLiftStore.h"
 
 @implementation JFTOLiftStoreTests
 
@@ -24,10 +25,6 @@
     NSDecimalNumber *weight = [squat.weight copy];
     [[JFTOLiftStore instance] incrementLifts];
     STAssertEqualObjects(squat.weight, [weight decimalNumberByAdding:N(10)], @"");
-}
-
-- (void)testAdjustsSstLiftsWhenLiftsAreModified {
-    STFail(@"");
 }
 
 @end

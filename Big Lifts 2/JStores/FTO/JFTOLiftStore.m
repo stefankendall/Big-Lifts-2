@@ -11,10 +11,12 @@
 }
 
 - (void)setupDefaults {
+    self.isSettingDefaults = YES;
     [self createWithName:@"Bench" increment:5 order:0];
     [self createWithName:@"Squat" increment:10 order:1];
     [self createWithName:@"Press" increment:5 order:2];
     [self createWithName:@"Deadlift" increment:10 order:3];
+    self.isSettingDefaults = NO;
 }
 
 - (void)incrementLifts {
@@ -55,7 +57,9 @@
 
 - (id)create {
     JFTOLift *lift = [super create];
-    [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
+    if (!self.isSettingDefaults) {
+        [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
+    }
     return lift;
 }
 
