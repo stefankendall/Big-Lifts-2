@@ -6,4 +6,5 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *triumvirateCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *sstCell;
 
+@property(nonatomic, copy) NSString *selectedAssitanceType;
 @end

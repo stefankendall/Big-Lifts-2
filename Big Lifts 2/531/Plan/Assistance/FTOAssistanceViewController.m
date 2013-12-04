@@ -49,13 +49,18 @@
     if (self.isViewLoaded && self.view.window) {
         [self enableDisableIapCells];
         if (self.iapIndexPath) {
-            [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
-            self.iapIndexPath = nil;
-            [self performSegueWithIdentifier:self.assistanceToSegues[
-                    [[[JFTOAssistanceStore instance] first] name]
-            ]                         sender:self];
+            UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:self.iapIndexPath];
+            if (![self cellStillHasPurchaseOverlay:cell]) {
+                [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
+                self.iapIndexPath = nil;
+                [self performSegueWithIdentifier:self.assistanceToSegues[self.selectedAssitanceType] sender:self];
+            }
         }
     }
+}
+
+- (UIView *)cellStillHasPurchaseOverlay:(UITableViewCell *)cell {
+    return [cell viewWithTag:kPurchaseOverlayTag];
 }
 
 - (void)checkCurrentAssistance {
@@ -68,14 +73,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    NSString *assistanceType = [self.cellMapping detect:^BOOL(NSString *type, UITableViewCell *cell) {
+        return selectedCell == cell;
+    }];
     if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
         self.iapIndexPath = indexPath;
+        self.selectedAssitanceType = assistanceType;
         [self purchaseFromCell:selectedCell];
     }
     else {
-        NSString *assistanceType = [self.cellMapping detect:^BOOL(NSString *type, UITableViewCell *cell) {
-            return selectedCell == cell;
-        }];
         [[JFTOAssistanceStore instance] changeTo:assistanceType];
         [self checkCurrentAssistance];
     }
