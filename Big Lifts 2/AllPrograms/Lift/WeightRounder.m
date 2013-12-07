@@ -14,6 +14,8 @@
     }
     else if ([settings.roundTo isEqualToNumber:@2.5]) {
         return [self roundTo2p5:number];
+    } else if ([settings.roundTo isEqualToNumber:@2]) {
+        return [self roundTo2:number];
     } else {
         return [self roundTo1:number];
     }
@@ -46,6 +48,22 @@
 - (NSDecimalNumber *)roundTo1:(NSDecimalNumber *)number {
     return [number decimalNumberByRoundingAccordingToBehavior:
             [[NSDecimalNumberHandler alloc] initWithRoundingMode:NSRoundPlain scale:0 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO]];
+}
+
+- (NSDecimalNumber *)roundTo2:(NSDecimalNumber *)number {
+    NSDecimalNumber *roundedTo1 = [self roundTo1:number];
+
+    if ([roundedTo1 intValue] % 2 == 0) {
+        return roundedTo1;
+    }
+    else {
+        if ([roundedTo1 compare:number] == NSOrderedDescending) {
+            return [roundedTo1 decimalNumberBySubtracting:N(1)];
+        }
+        else {
+            return [roundedTo1 decimalNumberByAdding:N(1)];
+        }
+    }
 }
 
 - (NSDecimalNumber *)roundTo2p5:(NSDecimalNumber *)number {

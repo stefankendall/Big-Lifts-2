@@ -41,4 +41,12 @@
     STAssertEqualObjects([[WeightRounder new] round:N(159)], @155, @"");
 }
 
+- (void)testRoundsTo2 {
+    [[[JSettingsStore instance] first] setRoundTo:N(2)];
+    STAssertEqualObjects([[WeightRounder new] round:N(166)], @166, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(160)], @160, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(159)], @160, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(158.9)], @158, @"");
+}
+
 @end
