@@ -11,6 +11,9 @@
     } else if ([cell viewWithTag:2]) {
         [self followOnTwitter];
     }
+    else if ([cell viewWithTag:3]) {
+        [self rateApp];
+    }
 }
 
 - (void)followOnTwitter {
@@ -29,6 +32,11 @@
                                           NSLog(@"Neither of these get hit. Figure this out later.");
                                       }
                                   }];
+}
+
+- (void)rateApp {
+    NSString *rateUrl = @"itms-apps://itunes.apple.com/app/id661503150";
+    [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:rateUrl]];
 }
 
 @end
