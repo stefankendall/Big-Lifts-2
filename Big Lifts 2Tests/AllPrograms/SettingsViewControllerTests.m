@@ -33,4 +33,17 @@
     STAssertEquals([controller.roundToPicker selectedRowInComponent:0], 1, @"");
 }
 
+-(void)testSetsKeepScreenOnAppear {
+    [[[JSettingsStore instance] first] setScreenAlwaysOn:YES];
+    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
+    STAssertTrue([controller.keepScreenOnSwitch isOn], @"");
+}
+
+- (void)testCanChangeScreenOnPreference {
+    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
+    [controller.keepScreenOnSwitch setOn:YES];
+    [controller keepScreenOnChanged: controller.keepScreenOnSwitch];
+    STAssertTrue([[[JSettingsStore instance] first] screenAlwaysOn], @"");
+}
+
 @end

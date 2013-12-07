@@ -28,7 +28,6 @@
             URLByAppendingPathExtension:@"sqlite"];
 
     BOOL storeExists = [[NSFileManager defaultManager] fileExistsAtPath:storePath.path];
-    NSLog(@"Store exists: %@", [NSNumber numberWithBool:storeExists]);
     return storeExists;
 }
 

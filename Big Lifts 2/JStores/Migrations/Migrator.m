@@ -9,7 +9,8 @@
     [[JVersionStore instance] load];
     JVersion *version = [[JVersionStore instance] first];
 
-    if([version.version intValue] < 2){
+    //first migration must run every time, since I was missing the version property on existing installs
+    if([version.version intValue] <= 2){
         [[Migrate1to2 new] run];
         version.version = @2;
     }

@@ -23,4 +23,9 @@ NSString *NEAREST_5_ROUNDING = @"5.5";
     [[JSJWorkoutStore instance] adjustForKg];
 }
 
+- (void)setScreenAlwaysOn:(BOOL)screenAlwaysOn {
+    _screenAlwaysOn = screenAlwaysOn;
+    [[UIApplication sharedApplication] setIdleTimerDisabled:screenAlwaysOn];
+}
+
 @end

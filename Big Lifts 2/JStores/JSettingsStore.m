@@ -7,10 +7,16 @@
     return JSettings.class;
 }
 
+- (void)onLoad {
+    JSettings *settings = [self first];
+    [[UIApplication sharedApplication] setIdleTimerDisabled:settings.screenAlwaysOn];
+}
+
 - (void)setupDefaults {
     JSettings *settings = [self create];
     [settings setUnits:@"lbs"];
     [settings setRoundTo:N(5)];
+    settings.screenAlwaysOn = NO;
     settings.roundingFormula = (NSString *) ROUNDING_FORMULA_EPLEY;
 }
 

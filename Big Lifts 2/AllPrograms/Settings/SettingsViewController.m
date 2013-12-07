@@ -30,12 +30,17 @@
     NSUInteger roundingRow = [self.roundingOptions indexOfObject:settings.roundTo];
     [self.roundToField setText:self.roundingText[roundingRow]];
     [self.roundToPicker selectRow:roundingRow inComponent:0 animated:NO];
+    [self.keepScreenOnSwitch setOn:[[[JSettingsStore instance] first] screenAlwaysOn]];
 }
 
 - (IBAction)unitsChanged:(id)sender {
     UISegmentedControl *unitsControl = sender;
     NSArray *unitsMapping = @[@"lbs", @"kg"];
     [[[JSettingsStore instance] first] setUnits:unitsMapping[(NSUInteger) [unitsControl selectedSegmentIndex]]];
+}
+
+- (IBAction)keepScreenOnChanged:(id)sender {
+    [[[JSettingsStore instance] first] setScreenAlwaysOn: self.keepScreenOnSwitch.isOn];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
