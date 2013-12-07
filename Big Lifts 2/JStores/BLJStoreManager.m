@@ -27,12 +27,15 @@
 #import "JSJLiftStore.h"
 #import "JSJWorkoutStore.h"
 #import "NSArray+Enumerable.h"
+#import "JVersionStore.h"
 
 @implementation BLJStoreManager
 
 - (void)loadStores {
     for (BLJStore *store in self.allStores) {
-        [store load];
+        if (store != [JVersionStore instance]) {
+            [store load];
+        }
     }
 }
 
@@ -59,6 +62,8 @@
     if (!manager) {
         manager = [BLJStoreManager new];
         manager.allStores = @[
+                [JVersionStore instance],
+
                 [JSettingsStore instance],
                 [JFTOSettingsStore instance],
                 [JBarStore instance],
@@ -99,14 +104,14 @@
 
 - (BLJStore *)storeForModel:(Class)pClass withUuid:(NSString *)uuid {
     NSArray *matchingStores = [[self allStores] select:^(BLJStore *store) {
-        return (BOOL) [[store modelClass] isSubclassOfClass: pClass];
+        return (BOOL) [[store modelClass] isSubclassOfClass:pClass];
     }];
-    if([matchingStores count] == 1){
+    if ([matchingStores count] == 1) {
         return [matchingStores firstObject];
     }
 
     for (BLJStore *store in matchingStores) {
-        if([store find:@"uuid" value:uuid]){
+        if ([store find:@"uuid" value:uuid]) {
             return store;
         }
     }

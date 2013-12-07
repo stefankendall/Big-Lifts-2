@@ -9,4 +9,5 @@ extern NSString *NEAREST_5_ROUNDING;
 @property(nonatomic) NSString *units;
 @property(nonatomic) NSDecimalNumber *roundTo;
 @property(nonatomic) NSString *roundingFormula;
+@property(nonatomic) BOOL screenAlwaysOn;
 @end

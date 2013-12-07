@@ -13,4 +13,5 @@
 @property(nonatomic, strong) NSArray *allStores;
 
 - (BLJStore *)storeForModel:(Class)pClass withUuid:(NSString *)uuid;
+
 @end

@@ -134,10 +134,6 @@
     if (![stores objectForKey:key]) {
         BLJStore *store = [self new];
         [stores setObject:store forKey:key];
-        if ([store count] == 0) {
-            [store setupDefaults];
-        }
-        [store onLoad];
     }
 
     return [stores objectForKey:key];
@@ -180,6 +176,7 @@
     if ([self.data count] == 0) {
         [self setupDefaults];
     }
+    [self onLoad];
 }
 
 - (NSMutableArray *)deserialize:(NSArray *)serialized {

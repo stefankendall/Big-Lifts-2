@@ -52,7 +52,7 @@
 
 - (void)load;
 
-- (void)setDefaultsForObject:(id)object;
+- (NSString *)keyNameForStore;
 
 @property(nonatomic, strong) NSMutableArray *data;
 

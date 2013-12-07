@@ -2,6 +2,7 @@
 #import "BLAppDelegate.h"
 #import "SKProductStore.h"
 #import "BLJStoreManager.h"
+#import "Migrator.h"
 
 @implementation BLAppDelegate
 
@@ -18,6 +19,7 @@
     //hack to get callback to fire.
     [[NSUbiquitousKeyValueStore defaultStore] setString:@"testValue" forKey:@"testKey"];
     [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+    [[Migrator new] migrateStores];
     [[BLJStoreManager instance] loadStores];
     return YES;
 }
