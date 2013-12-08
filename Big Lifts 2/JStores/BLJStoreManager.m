@@ -28,6 +28,7 @@
 #import "JSJWorkoutStore.h"
 #import "NSArray+Enumerable.h"
 #import "JVersionStore.h"
+#import "JFTOBoringButBigLiftStore.h"
 
 @implementation BLJStoreManager
 
@@ -73,6 +74,8 @@
                 [JLiftStore instance],
                 [JSJLiftStore instance],
                 [JFTOLiftStore instance],
+
+                [JFTOBoringButBigLiftStore instance],
                 [JFTOTriumvirateLiftStore instance],
                 [JFTOSSTLiftStore instance],
                 [JSSLiftStore instance],

@@ -3,13 +3,17 @@
 #import "JFTOLiftStore.h"
 #import "JSettings.h"
 #import "JSettingsStore.h"
-#import "JFTOSSTLiftStore.h"
 
 @implementation JFTOLiftStoreTests
 
 - (void)testSetsIncrements {
     JFTOLift *lift = [[JFTOLiftStore instance] first];
     STAssertFalse([lift.increment doubleValue] == 0, @"");
+}
+
+- (void)testOrdersNewLifts {
+    JFTOLift *newLift = [[JFTOLiftStore instance] create];
+    STAssertEqualObjects(newLift.order, @4, @"");
 }
 
 - (void)testIncrementsHonorsUnits {
