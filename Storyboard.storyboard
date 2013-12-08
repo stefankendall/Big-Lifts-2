@@ -1761,13 +1761,7 @@
                             <outlet property="delegate" destination="HmK-PX-N45" id="ig3-kF-mFz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Boring But Big" id="31J-rg-dpO">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="L1e-Gq-FXw">
-                            <connections>
-                                <segue destination="FJ9-Jf-B9j" kind="push" id="Boh-oG-DR1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Boring But Big" id="31J-rg-dpO"/>
                     <connections>
                         <outlet property="percentageField" destination="GXK-49-tSN" id="hAz-bl-o11"/>
                         <outlet property="threeMonthToggle" destination="bID-8M-0m0" id="k9N-l1-rPY"/>
@@ -1776,35 +1770,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqx-F0-tid" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3569" y="1526"/>
-        </scene>
-        <!--Boring But Big Edit View Controller - Edit Lifts-->
-        <scene sceneID="Iqg-PO-4xr">
-            <objects>
-                <tableViewController storyboardIdentifier="ftoBoringEdit" id="FJ9-Jf-B9j" customClass="FTOBoringButBigEditViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="MAF-z9-NFO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vgq-kN-RRr">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vgq-kN-RRr" id="0Vq-Im-Bir">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="FJ9-Jf-B9j" id="JnM-Wx-LpT"/>
-                            <outlet property="delegate" destination="FJ9-Jf-B9j" id="7Jr-CU-7IG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Edit Lifts" id="Kil-tb-IKg"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mD0-BJ-VTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3970" y="1526"/>
         </scene>
         <!--Triumvirate View Controller - Triumvirate-->
         <scene sceneID="1T2-pe-6z4">
@@ -2654,7 +2619,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMd-zu-KbO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4963" y="2201"/>
+            <point key="canvasLocation" x="4501" y="1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yhR-T9-aoo">
@@ -2669,7 +2634,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnJ-qP-fic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4584" y="2201"/>
+            <point key="canvasLocation" x="4122" y="1507"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zud-Oy-sRH">
