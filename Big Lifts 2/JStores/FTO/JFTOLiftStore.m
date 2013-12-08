@@ -3,6 +3,7 @@
 #import "JFTOLift.h"
 #import "JSettingsStore.h"
 #import "JFTOSSTLiftStore.h"
+#import "JFTOBoringButBigLiftStore.h"
 
 @implementation JFTOLiftStore
 
@@ -17,6 +18,12 @@
     [self createWithName:@"Press" increment:5 order:2];
     [self createWithName:@"Deadlift" increment:10 order:3];
     self.isSettingDefaults = NO;
+}
+
+- (void)setDefaultsForObject:(id)object {
+    JFTOLift *ftoLift = object;
+    NSNumber *maxOrder = [self max:@"order"];
+    ftoLift.order = maxOrder ? [NSNumber numberWithInt:[maxOrder intValue] + 1] : @0;
 }
 
 - (void)incrementLifts {
@@ -48,17 +55,20 @@
 - (void)removeAtIndex:(int)index1 {
     [super removeAtIndex:index1];
     [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
+    [[JFTOBoringButBigLiftStore instance] adjustToMainLifts];
 }
 
 - (void)remove:(id)object {
     [super remove:object];
     [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
+    [[JFTOBoringButBigLiftStore instance] adjustToMainLifts];
 }
 
 - (id)create {
     JFTOLift *lift = [super create];
     if (!self.isSettingDefaults) {
         [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
+        [[JFTOBoringButBigLiftStore instance] adjustToMainLifts];
     }
     return lift;
 }
