@@ -6,6 +6,15 @@
 
 @implementation JWorkoutLogTests
 
+- (void)testSetLogsCascadeDelete {
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
+    JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO];
+    [workoutLog addSet:setLog1];
+
+    [[JWorkoutLogStore instance] remove:workoutLog];
+    STAssertEquals([[JSetLogStore instance] count], 0, @"");
+}
+
 - (void)testSerializesSetsAsUuids {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
     JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO];

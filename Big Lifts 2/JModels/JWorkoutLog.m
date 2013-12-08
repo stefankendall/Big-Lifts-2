@@ -5,6 +5,10 @@
 
 @implementation JWorkoutLog
 
+- (NSArray *)cascadeDeleteClasses {
+    return @[JSetLog.class];
+}
+
 - (NSArray *)orderedSets {
     return self.sets;
 }

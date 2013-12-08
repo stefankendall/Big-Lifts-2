@@ -63,4 +63,9 @@
     }
 }
 
+- (NSArray *)cascadeDeleteClasses {
+    return @[];
+}
+
+
 @end

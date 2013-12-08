@@ -5,6 +5,10 @@
 
 @implementation JWorkout
 
+- (NSArray *)cascadeDeleteClasses {
+    return @[JSet.class];
+}
+
 - (NSArray *)workSets {
     return [self.orderedSets select:^BOOL(JSet *set) {
         return !set.warmup && !set.assistance;
@@ -63,7 +67,6 @@
     }
     return nil;
 }
-
 
 - (void)addSets:(NSArray *)sets atIndex:(int)index {
     if (index != 0) {

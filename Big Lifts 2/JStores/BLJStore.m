@@ -1,6 +1,8 @@
 #import "JModel.h"
 #import "NSArray+Enumerable.h"
 #import "BLJStore.h"
+#import "JSONModelClassProperty.h"
+#import "BLJStoreManager.h"
 
 @implementation BLJStore
 
@@ -31,7 +33,32 @@
 
 - (void)remove:(id)object {
     [self.data removeObject:object];
+    [self removeCascadeAssociations:object];
 }
+
+- (void)removeCascadeAssociations:(JModel *)model {
+    for (JSONModelClassProperty *p in [model __properties__]) {
+        id value = [model valueForKey:p.name];
+        if (isNull(value)) {
+            continue;
+        }
+
+        if ([value isKindOfClass:[NSArray class]]) {
+            NSArray *array = (NSArray *) value;
+            for (JModel *association in array) {
+                if (![[model cascadeDeleteClasses] containsObject:association.class]) {
+                    break;
+                }
+                BLJStore *store = [[BLJStoreManager instance] storeForModel:association.class withUuid:association.uuid];
+                [store remove:association];
+            }
+        }
+    }
+}
+
+- (void)removeAtIndex:(int)index {
+    [self remove:[self.data objectAtIndex:(NSUInteger) index]];
+};
 
 - (void)reset {
     [self empty];
@@ -100,10 +127,6 @@
         return nil;
     }
 }
-
-- (void)removeAtIndex:(int)index {
-    [self.data removeObjectAtIndex:(NSUInteger) index];
-};
 
 - (int)count {
     return [[self findAll] count];
