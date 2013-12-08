@@ -4,11 +4,13 @@
 #import "JFTOLift.h"
 #import "PaddingTextField.h"
 #import "PaddingRowTextField.h"
+#import "JFTOBoringButBigLift.h"
+#import "JFTOBoringButBigLiftStore.h"
 
 @implementation FTOBoringButBigEditViewController
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[JFTOLiftStore instance] count];
+    return [[JFTOBoringButBigLiftStore instance] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -17,20 +19,23 @@
         cell = [FTOBoringButBigEditCell create];
     }
 
-    JFTOLift *ftoLift = [[JFTOLiftStore instance] atIndex:indexPath.row];
-    [[cell forLift] setText:ftoLift.name];
-    [[cell useLift] setText:ftoLift.name];
+    JFTOBoringButBigLift *bbbLift = [[JFTOBoringButBigLiftStore instance] atIndex:indexPath.row];
+    [[cell forLift] setText:bbbLift.mainLift.name];
+    [[cell useLift] setText:bbbLift.boringLift.name];
     [[cell useLift] setDelegate:self];
     [[cell useLift] setIndexPath:indexPath];
-
-    [cell.liftPicker selectRow:indexPath.row inComponent:0 animated:NO];
-
+    cell.useLift.cell = cell;
+    [cell.liftPicker selectRow:[[[JFTOLiftStore instance] findAll] indexOfObject:bbbLift.boringLift] inComponent:0 animated:NO];
     return cell;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     PaddingRowTextField *rowTextField = (PaddingRowTextField *) textField;
-    NSLog(@"%i", rowTextField.indexPath.row);
+    JFTOBoringButBigLift *bbbLift = [[JFTOBoringButBigLiftStore instance] atIndex:rowTextField.indexPath.row];
+    FTOBoringButBigEditCell *editCell = (FTOBoringButBigEditCell *) rowTextField.cell;
+    int selectedRow = [editCell.liftPicker selectedRowInComponent:0];
+    bbbLift.boringLift = [[JFTOLiftStore instance] atIndex:selectedRow];
+    [self.tableView reloadData];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -4,6 +4,10 @@
 #import "FTOBoringButBigEditCell.h"
 #import "PaddingTextField.h"
 #import "PaddingRowTextField.h"
+#import "JFTOBoringButBigLift.h"
+#import "JFTOBoringButBigLiftStore.h"
+#import "JLift.h"
+#import "JFTOLift.h"
 
 @implementation FTOBoringButBigEditViewControllerTests
 
@@ -14,4 +18,19 @@
     STAssertEqualObjects([[cell useLift] text], @"Bench", @"");
 }
 
+- (void)testCanChangeBbbLifts {
+    FTOBoringButBigEditViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoBoringEdit"];
+    FTOBoringButBigEditCell *cell = (FTOBoringButBigEditCell *)
+            [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
+
+    [cell.liftPicker selectRow:1 inComponent:0 animated:NO];
+    [controller textFieldDidEndEditing:cell.useLift];
+
+    JFTOBoringButBigLift *bbbLift = [[JFTOBoringButBigLiftStore instance] atIndex:0];
+    STAssertEqualObjects(bbbLift.boringLift.name, @"Squat", @"");
+
+    cell = (FTOBoringButBigEditCell *)
+            [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
+    STAssertEqualObjects([cell.useLift text], @"Squat", @"");
+}
 @end
