@@ -148,8 +148,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.tappedSetRow = [NSNumber numberWithInteger:[self effectiveRowFor:indexPath]];
-    [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
+    if(indexPath.section != [self toolbarSection]){
+        self.tappedSetRow = [NSNumber numberWithInteger:[self effectiveRowFor:indexPath]];
+        [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
+    }
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
