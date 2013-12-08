@@ -21,7 +21,7 @@
 
 - (void)testSetsNearest5RoundTo {
     SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
-    [controller pickerView:nil didSelectRow:3 inComponent:0];
+    [controller pickerView:nil didSelectRow:4 inComponent:0];
     JSettings *settings = [[JSettingsStore instance] first];
     STAssertEqualObjects(settings.roundTo, [NSDecimalNumber decimalNumberWithString:(NSString *) NEAREST_5_ROUNDING], @"");
     STAssertEqualObjects([controller.roundToField text], @"Nearest 5", @"");
@@ -30,7 +30,7 @@
 - (void)testSelectsRoundingValueOnAppear {
     [[[JSettingsStore instance] first] setRoundTo:N(2.5)];
     SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
-    STAssertEquals([controller.roundToPicker selectedRowInComponent:0], 1, @"");
+    STAssertEquals([controller.roundToPicker selectedRowInComponent:0], 2, @"");
 }
 
 -(void)testSetsKeepScreenOnAppear {

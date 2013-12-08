@@ -8,6 +8,9 @@
 #import "JWorkout.h"
 #import "JFTOSetStore.h"
 #import "JFTOSet.h"
+#import "JFTOLift.h"
+#import "JFTOBoringButBigLift.h"
+#import "JFTOBoringButBigLiftStore.h"
 
 @implementation JFTOBoringButBigAssistance
 
@@ -40,17 +43,19 @@
 - (void)addBoringSets {
     [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *ftoWorkout) {
         int sets = ftoWorkout.deload ? 3 : 5;
-        JSet *set = ftoWorkout.workout.orderedSets[0];
-        [ftoWorkout.workout addSets:[self createBoringSets:sets forLift:set.lift]];
+        JFTOSet *set = ftoWorkout.workout.orderedSets[0];
+        [ftoWorkout.workout addSets:[self createBoringSets:sets forLift:(JFTOLift *) set.lift]];
     }];
 }
 
-- (NSArray *)createBoringSets:(int)numberOfSets forLift:(JLift *)lift {
+- (NSArray *)createBoringSets:(int)numberOfSets forLift:(JFTOLift *)mainLift {
+    JFTOBoringButBigLift *bbbLift = [[JFTOBoringButBigLiftStore instance] find:@"mainLift" value:mainLift];
+
     NSMutableArray *sets = [@[] mutableCopy];
     NSDecimalNumber *percentage = [[[JFTOBoringButBigStore instance] first] percentage];
     for (int set = 0; set < numberOfSets; set++) {
         JFTOSet *ftoSet = [[JFTOSetStore instance] create];
-        ftoSet.lift = lift;
+        ftoSet.lift = bbbLift.boringLift;
         ftoSet.percentage = percentage;
         ftoSet.reps = @10;
         ftoSet.assistance = YES;

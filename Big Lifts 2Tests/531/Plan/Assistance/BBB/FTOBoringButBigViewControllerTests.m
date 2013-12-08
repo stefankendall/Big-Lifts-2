@@ -11,12 +11,13 @@
 
 @implementation FTOBoringButBigViewControllerTests
 
-- (void)testChangingPercentageUpdatesBbbLifts {
+- (void)testChangingPercentage {
     [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     FTOBoringButBigViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoBoring"];
     UITextField *field = [UITextField new];
     field.text = @"60";
     [controller percentageChanged:field];
+    [[JFTOAssistanceStore instance] restore];
 
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     STAssertEquals([ftoWorkout.workout.orderedSets count], 11U, @"");

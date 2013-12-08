@@ -8,6 +8,9 @@
 #import "JFTOBoringButBig.h"
 #import "JFTOBoringButBigStore.h"
 #import "NSArray+Enumerable.h"
+#import "JFTOLiftStore.h"
+#import "JFTOBoringButBigLift.h"
+#import "JFTOBoringButBigLiftStore.h"
 
 @implementation JFTOBoringButBigAssistanceTests
 
@@ -29,6 +32,17 @@
 
     JFTOWorkout *workoutInWeek4 = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@4][0];
     STAssertEquals([workoutInWeek4.workout.orderedSets count], 6U, @"");
+}
+
+- (void)testCanUseDifferentLifts {
+    JFTOBoringButBigLift *bbbLift = [[JFTOBoringButBigLiftStore instance] first];
+    JFTOLift *deadlift = [[JFTOLiftStore instance] find:@"name" value: @"Deadlift"];
+    bbbLift.boringLift = deadlift;
+    [[JFTOBoringButBigAssistance new] setup];
+
+    JFTOWorkout *workoutInWeek1 = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
+    JSet *boringSet = workoutInWeek1.workout.orderedSets[6];
+    STAssertEqualObjects(boringSet.lift, deadlift, @"");
 }
 
 - (void)testUsesBbbPercentage {
