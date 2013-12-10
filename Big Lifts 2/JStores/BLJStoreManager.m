@@ -29,6 +29,7 @@
 #import "NSArray+Enumerable.h"
 #import "JVersionStore.h"
 #import "JFTOBoringButBigLiftStore.h"
+#import "JTimerStore.h"
 
 @implementation BLJStoreManager
 
@@ -70,6 +71,8 @@
                 [JBarStore instance],
                 [JPlateStore instance],
                 [JCurrentProgramStore instance],
+
+                [JTimerStore instance],
 
                 [JLiftStore instance],
                 [JSJLiftStore instance],
