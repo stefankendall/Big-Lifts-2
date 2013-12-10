@@ -5,6 +5,10 @@
 @implementation WeightRounder
 
 - (NSDecimalNumber *)round:(NSDecimalNumber *)number {
+    if (number == nil ) {
+        return N(0);
+    }
+
     JSettings *settings = [[JSettingsStore instance] first];
     if ([settings.roundTo isEqualToNumber:[NSDecimalNumber decimalNumberWithString:NEAREST_5_ROUNDING]]) {
         return [self roundToNearest5:number];

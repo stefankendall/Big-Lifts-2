@@ -12,6 +12,8 @@
 #import "JSSWorkout.h"
 #import "JSSVariant.h"
 
+const int SS_WORKOUT_VARIANT_SECTION = 1;
+
 @implementation SSWorkoutVariantControllerTests
 
 - (void)testSelectNoviceWorkoutChangesWorkout {

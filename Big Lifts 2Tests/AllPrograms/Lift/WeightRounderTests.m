@@ -27,6 +27,11 @@
     STAssertEqualObjects([[WeightRounder new] round:N(90)], @90, @"");
 }
 
+- (void)testDoesNotCrashOnBoundaryInputs {
+    STAssertEqualObjects([[WeightRounder new] round:N(0)], @0, @"");
+    STAssertEqualObjects([[WeightRounder new] round:nil], @0, @"");
+}
+
 - (void)testRoundsTo1 {
     [[[JSettingsStore instance] first] setRoundTo:N(1)];
     STAssertEqualObjects([[WeightRounder new] round:N(166)], @166, @"");
