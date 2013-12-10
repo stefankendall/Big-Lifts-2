@@ -28,6 +28,29 @@
     }
 }
 
+- (void)suspend {
+    if (self.timer) {
+        [[NSUbiquitousKeyValueStore defaultStore]           setObject:
+                [NSNumber numberWithInt:self.secondsRemaining] forKey:@"timerSecondsRemaining"];
+
+        [[NSUbiquitousKeyValueStore defaultStore] setObject:[NSDate new] forKey:@"timerSuspendDate"];
+        [self.timer invalidate];
+    }
+}
+
+- (void)resume {
+    NSNumber *secondsRemaining = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"timerSecondsRemaining"];
+    if (secondsRemaining) {
+        NSDate *suspendDate = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"timerSuspendDate"];
+        NSDate *now = [NSDate new];
+        int secondsElapsed = (int) (now.timeIntervalSince1970 - suspendDate.timeIntervalSince1970);
+        [self start:[secondsRemaining intValue] - secondsElapsed];
+
+        [[NSUbiquitousKeyValueStore defaultStore] removeObjectForKey:@"timerSuspendDate"];
+        [[NSUbiquitousKeyValueStore defaultStore] removeObjectForKey:@"timerSecondsRemaining"];
+    }
+}
+
 - (void)timerTick:(id)t {
     self.secondsRemaining--;
     if (self.secondsRemaining <= 0) {

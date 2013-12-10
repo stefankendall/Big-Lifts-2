@@ -12,6 +12,10 @@
 
 - (void)start:(int)seconds;
 
+- (void)suspend;
+
+- (void)resume;
+
 - (NSString *)formattedTimeRemaining;
 
 - (BOOL)isRunning;

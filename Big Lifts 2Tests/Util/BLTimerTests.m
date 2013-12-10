@@ -17,4 +17,13 @@
     STAssertEqualObjects([[BLTimer instance] formattedTimeRemaining], @"0:01", @"");
 }
 
+- (void)testCanSuspendAndResume {
+    [[BLTimer instance] start:135];
+    [[BLTimer instance] suspend];
+    [[BLTimer instance] resume];
+
+    STAssertEquals([[BLTimer instance] secondsRemaining], 135, @"");
+
+}
+
 @end
