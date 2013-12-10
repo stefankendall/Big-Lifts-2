@@ -377,6 +377,7 @@
 		54590F338C58BBDE058F268D /* FTOTrackViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A62336B90DAE69326C1 /* FTOTrackViewControllerTests.m */; };
 		54590F436968555AB5D781DD /* 89-dumbells.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590C972A28B99BD9BE45E6 /* 89-dumbells.png */; };
 		54590F6239B85A3242F4CD77 /* FTOSSTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904B6CB4BEC4F99ABA1EA /* FTOSSTViewController.m */; };
+		54590F72D522A5EFF93247E0 /* LogRecoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F427FA3B34739AEC54E /* LogRecoveryViewController.m */; };
 		54590F808AB9CDB211B574DC /* JFTOFivesProgression.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590864C0ACEB73ABE4BD22 /* JFTOFivesProgression.m */; };
 		54590F84DE455E652727E21D /* FTOCustomWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900B7BC22B78ED5B7189E /* FTOCustomWorkoutViewController.m */; };
 		54590F8645C5779DAD073E4D /* 20-gear-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545907580FE81D4530CD48F3 /* 20-gear-2@2x.png */; };
@@ -568,6 +569,7 @@
 		545902D7321491EEFEDA0A33 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		545902D88DDE3CFD7EADA190 /* JFTOBoringButBigStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBigStore.h; sourceTree = "<group>"; };
 		545902DBAFF98090455072CB /* IAPAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPAdapter.m; sourceTree = "<group>"; };
+		545902E2CD9C623329F60304 /* LogRecoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogRecoveryViewController.h; sourceTree = "<group>"; };
 		545902EB5C9556D16CAE046B /* JSSLiftStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSLiftStoreTests.h; sourceTree = "<group>"; };
 		545902EE8537115023FA40C5 /* TextFieldWithCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldWithCell.h; sourceTree = "<group>"; };
 		545902FB0C01913A5494B509 /* LogCellWithSets.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCellWithSets.xib; sourceTree = "<group>"; };
@@ -1073,6 +1075,7 @@
 		54590F2534A0C6BBEFF41D74 /* JBarStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBarStoreTests.h; sourceTree = "<group>"; };
 		54590F2D764E435EA309B3BC /* SetLogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLogCell.h; sourceTree = "<group>"; };
 		54590F3795D9AC9767D67976 /* FTOWorkoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutCell.m; sourceTree = "<group>"; };
+		54590F427FA3B34739AEC54E /* LogRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogRecoveryViewController.m; sourceTree = "<group>"; };
 		54590F5179F0F172261028FA /* FTOLogGraphTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogGraphTransformerTests.m; sourceTree = "<group>"; };
 		54590F5BD6ECFDDAF2A4972C /* JFTOSSTLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOSSTLiftStoreTests.m; sourceTree = "<group>"; };
 		54590F5DDE3F5D77E7CFB815 /* FTOPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOPlanViewController.m; sourceTree = "<group>"; };
@@ -1990,6 +1993,8 @@
 				54590B483B5A0D7222840DF1 /* SettingsViewController.h */,
 				5459019F9DBAC44613EEB49F /* AddPurchaseViewController.m */,
 				54590E1638159FD4F8D503E1 /* AddPurchaseViewController.h */,
+				54590F427FA3B34739AEC54E /* LogRecoveryViewController.m */,
+				545902E2CD9C623329F60304 /* LogRecoveryViewController.h */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -3283,6 +3288,7 @@
 				54590EF8655C12DE9B7EFD3C /* BLTimer.m in Sources */,
 				54590A80C21844247A6993FA /* JTimer.m in Sources */,
 				545909490D6EF5542B0134EB /* JTimerStore.m in Sources */,
+				54590F72D522A5EFF93247E0 /* LogRecoveryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
