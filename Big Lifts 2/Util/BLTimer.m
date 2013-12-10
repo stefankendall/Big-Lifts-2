@@ -1,5 +1,6 @@
 #import "BLTimer.h"
 #import "TimerObserver.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation BLTimer
 
@@ -30,9 +31,14 @@
 - (void)timerTick:(id)t {
     self.secondsRemaining--;
     if (self.secondsRemaining <= 0) {
+        [self timerDone];
         [self stopTimer];
     }
     [self.observer timerTick];
+}
+
+- (void)timerDone {
+    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
 }
 
 - (NSString *)formattedTimeRemaining {

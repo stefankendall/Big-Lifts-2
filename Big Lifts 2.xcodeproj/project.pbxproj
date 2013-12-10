@@ -298,6 +298,7 @@
 		54590C043756606ECADA0385 /* SSWorkoutVariantControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C46C7D98FAB10F4C933 /* SSWorkoutVariantControllerTests.m */; };
 		54590C06BEEEC50D57D5EF0C /* JSSStateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590826D734A8373C6ECD76 /* JSSStateStore.m */; };
 		54590C13D0A5A69D62AAF195 /* JSSWarmupGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903A2F9BA0FA1709467D4 /* JSSWarmupGenerator.m */; };
+		54590C153CB6C4C5FA161BA0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545904168FB3BA47ECC7F750 /* AudioToolbox.framework */; };
 		54590C2B1D4A795A210A44B4 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590192C4EC8D647914DD49 /* TrackViewController.m */; };
 		54590C360EBF209831E141B8 /* PriceFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459061D3076FD31760BA03F /* PriceFormatter.m */; };
 		54590C37B1137766B05BE830 /* FTOBoringButBigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590895392DE88836AA5121 /* FTOBoringButBigViewController.m */; };
@@ -621,6 +622,7 @@
 		5459040F479643433C2416D9 /* RowUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowUIButton.h; sourceTree = "<group>"; };
 		54590412B8A132866C019EAE /* SetLogCellTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLogCellTests.h; sourceTree = "<group>"; };
 		54590412D3B6171940B0E960 /* BLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLAppDelegate.h; sourceTree = "<group>"; };
+		545904168FB3BA47ECC7F750 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5459042041044B48CF57AD62 /* SJEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJEditViewController.h; sourceTree = "<group>"; };
 		54590426011C12606BE512C4 /* 19-circle-check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-circle-check@2x.png"; sourceTree = "<group>"; };
 		5459042CD385F6E5F549221F /* JFTOCustomWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomWorkoutStoreTests.m; sourceTree = "<group>"; };
@@ -1133,6 +1135,7 @@
 				545905527F5502367565C568 /* QuartzCore.framework in Frameworks */,
 				D5CA871EE07A486AA13842C1 /* libPods.a in Frameworks */,
 				54590557C7EC3FAFF763DCA4 /* MessageUI.framework in Frameworks */,
+				54590C153CB6C4C5FA161BA0 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2382,6 +2385,7 @@
 				54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */,
 				B188DC3574B54B28BFA105B5 /* libPods.a */,
 				5459086473D46113652A8E53 /* MessageUI.framework */,
+				545904168FB3BA47ECC7F750 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
