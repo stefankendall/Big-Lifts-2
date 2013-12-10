@@ -16,6 +16,8 @@
 #import "JSetLogStore.h"
 #import "JSetLog.h"
 #import "JWorkout.h"
+#import "TimerViewController.h"
+#import "BLTimer.h"
 
 @implementation FTOLiftWorkoutViewController
 
@@ -27,6 +29,8 @@
     else {
         [self.doneButton setTitle:@"Done"];
     }
+
+    [[BLTimer instance] setObserver:self];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -112,12 +116,34 @@
     FTOLiftWorkoutToolbar *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FTOLiftWorkoutToolbar"];
     if (!cell) {
         cell = [FTOLiftWorkoutToolbar create];
-        JSet *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
-        int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:(id) heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
-        [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
-        [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
     }
+    JSet *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
+    int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:(id) heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
+    [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
+    [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
+
+    self.timerButton = cell.timerButton;
+    if ([[BLTimer instance] isRunning]) {
+        [self.timerButton setTitle:[[BLTimer instance] formattedTimeRemaining] forState:UIControlStateNormal];
+    }
+
+    [cell.timerButton addTarget:self action:@selector(goToTimer) forControlEvents:UIControlEventTouchUpInside];
     return cell;
+}
+
+- (void)goToTimer {
+    [self performSegueWithIdentifier:@"ftoGoToTimer" sender:self];
+}
+
+- (void)timerTick {
+    [UIView setAnimationsEnabled:NO];
+    if([[BLTimer instance] isRunning]){
+        [self.timerButton setTitle:[[BLTimer instance] formattedTimeRemaining] forState:UIControlStateNormal];
+    }
+    else {
+        [self.timerButton setTitle:@"Timer" forState:UIControlStateNormal];
+    }
+    [UIView setAnimationsEnabled:YES];
 }
 
 - (void)showRepsToBeatBreakdown:(id)showRepsToBeatBreakdown {
@@ -148,7 +174,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section != [self toolbarSection]){
+    if (indexPath.section != [self toolbarSection]) {
         self.tappedSetRow = [NSNumber numberWithInteger:[self effectiveRowFor:indexPath]];
         [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
     }
