@@ -12,6 +12,7 @@
             @"Standard" : FTO_VARIANT_STANDARD,
             @"Heavier" : FTO_VARIANT_HEAVIER,
             @"Pyramid" : FTO_VARIANT_PYRAMID,
+            @"Six Week" : FTO_VARIANT_SIX_WEEK,
             @"5/3/1 with Joker" : FTO_VARIANT_JOKER,
             @"Advanced 5/3/1" : FTO_VARIANT_ADVANCED
     };
@@ -20,6 +21,7 @@
             @"Standard",
             @"Heavier",
             @"Pyramid",
+            @"Six Week",
             @"5/3/1 with Joker",
             @"Advanced 5/3/1"
     ];
