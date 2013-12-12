@@ -199,7 +199,13 @@
         JSet *firstSet = workout.orderedSets[0];
         JSSLift *lift = (JSSLift *) firstSet.lift;
         if (lift.increment) {
-            lift.weight = [lift.weight decimalNumberByAdding:lift.increment];
+            NSDecimalNumberHandler *handler = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundPlain
+                                                                                                     scale:NSDecimalNoScale
+                                                                                          raiseOnExactness:NO
+                                                                                           raiseOnOverflow:NO
+                                                                                          raiseOnUnderflow:NO
+                                                                                       raiseOnDivideByZero:NO];
+            lift.weight = [lift.weight decimalNumberByAdding:lift.increment withBehavior:handler];
         }
     }
 }
