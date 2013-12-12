@@ -1,3 +1,4 @@
+#import <Crashlytics/Crashlytics.h>
 #import "BLJStoreManager.h"
 #import "BLJStore.h"
 #import "JBarStore.h"
@@ -36,7 +37,15 @@
 - (void)loadStores {
     for (BLJStore *store in self.allStores) {
         if (store != [JVersionStore instance]) {
-            [store load];
+            @try {
+                [store load];
+            }
+            @catch (NSException *e) {
+                //TODO: log with crashlytics when they update the library.
+                [store empty];
+                [store sync];
+                [store setupDefaults];
+            }
         }
     }
 }
