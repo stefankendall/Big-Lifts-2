@@ -22,6 +22,13 @@
     }];
 }
 
+- (void) testDoesNotCrashWhenAWorkoutIsEmpty {
+    JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] first];
+    ftoWorkout.workout.sets = [@[] mutableCopy];
+    [[JFTOBoringButBigAssistance new] setup];
+    STAssertEquals([ftoWorkout.workout.sets count], 0U, @"");
+}
+
 - (void)testAddsBoringButBigSets {
     [[JFTOBoringButBigAssistance new] setup];
     JFTOWorkout *workoutInWeek1 = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];

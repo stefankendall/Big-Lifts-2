@@ -41,11 +41,15 @@
 }
 
 - (void)addBoringSets {
-    [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *ftoWorkout) {
+    for(JFTOWorkout *ftoWorkout in [[JFTOWorkoutStore instance] findAll]) {
+        if([ftoWorkout.workout.orderedSets count] == 0){
+            continue;
+        }
+
         int sets = ftoWorkout.deload ? 3 : 5;
         JFTOSet *set = ftoWorkout.workout.orderedSets[0];
         [ftoWorkout.workout addSets:[self createBoringSets:sets forLift:(JFTOLift *) set.lift]];
-    }];
+    };
 }
 
 - (NSArray *)createBoringSets:(int)numberOfSets forLift:(JFTOLift *)mainLift {

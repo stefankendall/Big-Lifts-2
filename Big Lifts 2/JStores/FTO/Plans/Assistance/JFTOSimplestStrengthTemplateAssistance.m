@@ -46,6 +46,9 @@
 
     NSArray *weekData = weeksToData[[NSNumber numberWithInt:week]];
     JFTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAll] detect:^BOOL(JFTOWorkout *workout) {
+        if([workout.workout.orderedSets count] == 0){
+            return false;
+        }
         return [workout.week intValue] == week && [workout.workout.orderedSets[0] lift] == lift;
     }];
 
