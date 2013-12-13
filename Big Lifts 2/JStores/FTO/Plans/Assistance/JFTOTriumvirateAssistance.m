@@ -1,4 +1,3 @@
-#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "JFTOTriumvirateAssistance.h"
 #import "JFTOWorkout.h"
 #import "JFTOWorkoutStore.h"
@@ -12,7 +11,11 @@
 @implementation JFTOTriumvirateAssistance
 
 - (void)setup {
-    [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *workout) {
+    for (JFTOWorkout *workout in [[JFTOWorkoutStore instance] findAll]) {
+        if ([workout.workout.orderedSets count] == 0) {
+            continue;
+        }
+
         JFTOLift *mainLift = [workout.workout.orderedSets[0] lift];
         JFTOTriumvirate *assistance = [[JFTOTriumvirateStore instance] find:@"mainLift" value:mainLift];
         if (assistance) {
@@ -20,7 +23,7 @@
                 [workout.workout addSet:[[JSetStore instance] createFromSet:set]];
             }
         }
-    }];
+    };
 }
 
 - (void)cycleChange {
