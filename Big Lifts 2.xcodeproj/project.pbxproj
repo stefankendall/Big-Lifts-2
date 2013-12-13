@@ -113,6 +113,7 @@
 		5459045603F5EA7AB6C93BD6 /* NSDictionaryMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590494F141B78460DB4086 /* NSDictionaryMutator.m */; };
 		5459045E748A54D8B551EBB7 /* LiftFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545906F530DF8514F5885C60 /* LiftFormCell.xib */; };
 		5459046C27D56EF0BCC59AB0 /* JSSWarmupGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A67A69F72969BBE509E /* JSSWarmupGeneratorTests.m */; };
+		5459047B3FE05410438336E0 /* DecimalNumberHandlers.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903F6F5181EFE8588CCB9 /* DecimalNumberHandlers.m */; };
 		5459047CB757D8FD6BFC1F2B /* JFTOCustomPlanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590ED985A14F56A7239459 /* JFTOCustomPlanTests.m */; };
 		545904975C5FB8CB4BCAF5FE /* TrainingMaxRowTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459021F7658EDDD9578FA00 /* TrainingMaxRowTextField.m */; };
 		545904A8CDCF32E59414EE39 /* JSSLiftStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905017F105B5D2EDC2E11 /* JSSLiftStore.m */; };
@@ -591,6 +592,7 @@
 		54590337BF62FA85FB5AC29F /* JFTOFivesProgression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOFivesProgression.h; sourceTree = "<group>"; };
 		545903498D3FC59BC27BB7FD /* JFTOHeavierPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOHeavierPlan.h; sourceTree = "<group>"; };
 		5459034D2F86FDEBD7750E16 /* FTOPlanViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOPlanViewControllerTests.m; sourceTree = "<group>"; };
+		5459034DAC9DB2FF14D7F186 /* DecimalNumberHandlers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecimalNumberHandlers.h; sourceTree = "<group>"; };
 		54590357E2A4ED7830E96D04 /* FTOLogGraphTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogGraphTransformer.m; sourceTree = "<group>"; };
 		5459035ACC4AC43DEA0D8BEA /* SKProductStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKProductStore.m; sourceTree = "<group>"; };
 		5459035B2414D0420A431AAD /* SSLiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftViewController.h; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 		545903EF0D8FDA78391B10E0 /* JFTOTriumvirateLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOTriumvirateLiftStore.h; sourceTree = "<group>"; };
 		545903F5B69F14820DEA4A97 /* FTORepsToBeatCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTORepsToBeatCalculator.h; sourceTree = "<group>"; };
 		545903F64719180F5A5049F2 /* AddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCell.h; sourceTree = "<group>"; };
+		545903F6F5181EFE8588CCB9 /* DecimalNumberHandlers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecimalNumberHandlers.m; sourceTree = "<group>"; };
 		545903FA71FDF0464D85F210 /* JFTOCustomWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomWorkout.h; sourceTree = "<group>"; };
 		545903FB0D04B83859F16238 /* FTOGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOGraphViewController.m; sourceTree = "<group>"; };
 		545903FE6588DF2DDD91B832 /* WeightRounder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightRounder.m; sourceTree = "<group>"; };
@@ -1337,6 +1340,8 @@
 				54590085F19C3AEF8312104F /* BLTimer.m */,
 				54590B7C5D1EAD64F87F7499 /* BLTimer.h */,
 				54590958257FFFC7FE54EF19 /* TimerObserver.h */,
+				545903F6F5181EFE8588CCB9 /* DecimalNumberHandlers.m */,
+				5459034DAC9DB2FF14D7F186 /* DecimalNumberHandlers.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -3289,6 +3294,7 @@
 				54590A80C21844247A6993FA /* JTimer.m in Sources */,
 				545909490D6EF5542B0134EB /* JTimerStore.m in Sources */,
 				54590F72D522A5EFF93247E0 /* LogRecoveryViewController.m in Sources */,
+				5459047B3FE05410438336E0 /* DecimalNumberHandlers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
