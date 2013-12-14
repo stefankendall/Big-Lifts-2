@@ -171,7 +171,6 @@
 //    NSLog(@"Store key: %@", storeKey);
 //    NSLog(@"Serialized: %@", serialized);
     [[NSUbiquitousKeyValueStore defaultStore] setObject:serialized forKey:storeKey];
-    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
 }
 
 - (NSArray *)serialize {

@@ -54,6 +54,7 @@
     for (BLJStore *store in self.allStores) {
         [store sync];
     }
+    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
 }
 
 - (void)resetAllStores {
