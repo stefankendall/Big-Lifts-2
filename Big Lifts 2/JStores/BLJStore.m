@@ -176,7 +176,13 @@
 - (NSArray *)serialize {
     NSMutableArray *serialized = [@[] mutableCopy];
     for (JSONModel *model in self.data) {
-        [serialized addObject:[model toJSONString]];
+        NSString *serialModel = [model toJSONString];
+        if (serialModel != nil ) {
+            [serialized addObject:serialModel];
+        }
+        else {
+            //TODO: Log with crashlytics when possible
+        }
     }
     return serialized;
 }
