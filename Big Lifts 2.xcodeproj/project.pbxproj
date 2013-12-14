@@ -309,7 +309,6 @@
 		54590C7136D39938F718D337 /* JFTOSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908338610CA4EE698B6D1 /* JFTOSettings.m */; };
 		54590C71FF672BBA9B1E8D73 /* AddPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459019F9DBAC44613EEB49F /* AddPurchaseViewController.m */; };
 		54590C8AA3ABC9758005DD6F /* FTOCycleAdjustorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C4A4001DD4DC7B4825D /* FTOCycleAdjustorTests.m */; };
-		54590C96FD0CBBA653610DF5 /* MigrateDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900870F4B9C727EED7DE0 /* MigrateDataViewController.m */; };
 		54590CA08FAE2AE52F417AA7 /* JFTOSetStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901D482B2F03C20D4DD00 /* JFTOSetStore.m */; };
 		54590CA0C0A52BE1D5DD5E04 /* JFTOStandardPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459020494A6DFB7B24DD7B6 /* JFTOStandardPlan.m */; };
 		54590CA16CF55075F05D1D6C /* SetLogCombinerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A3D784F18F9E89107F0 /* SetLogCombinerTests.m */; };
@@ -464,7 +463,6 @@
 		5459007B6987629B8596BCAF /* JBarStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBarStoreTests.m; sourceTree = "<group>"; };
 		5459007BFBC3A916E3BC7514 /* JFTOSSTLiftStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOSSTLiftStoreTests.h; sourceTree = "<group>"; };
 		54590085F19C3AEF8312104F /* BLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLTimer.m; sourceTree = "<group>"; };
-		545900870F4B9C727EED7DE0 /* MigrateDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MigrateDataViewController.m; sourceTree = "<group>"; };
 		545900871BB391AD40324521 /* FTOLiftWorkoutViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftWorkoutViewControllerTests.h; sourceTree = "<group>"; };
 		5459009D708C85D73598095F /* AddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCell.m; sourceTree = "<group>"; };
 		545900A0750D9AC94319536C /* FTOBoringButBigEditViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOBoringButBigEditViewControllerTests.h; sourceTree = "<group>"; };
@@ -931,7 +929,6 @@
 		54590B50C23DF7962F2F70DE /* JLiftStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLiftStore.m; sourceTree = "<group>"; };
 		54590B5636203A4388688461 /* FTOWorkoutLogWorkSetsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutLogWorkSetsDataSource.h; sourceTree = "<group>"; };
 		54590B5A590446CAA807F97F /* JCurrentProgramStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCurrentProgramStore.h; sourceTree = "<group>"; };
-		54590B5B648721A42A902B55 /* MigrateDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MigrateDataViewController.h; sourceTree = "<group>"; };
 		54590B5C01F4143851D99E8E /* JSetTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSetTests.h; sourceTree = "<group>"; };
 		54590B5C84D60726AEBE8914 /* BLJStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLJStoreManager.h; sourceTree = "<group>"; };
 		54590B5E5D0286E78E1BA9B6 /* FTOCustomWeekEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomWeekEditCell.m; sourceTree = "<group>"; };
@@ -2658,8 +2655,6 @@
 				5459061EA1CB19C30F96C924 /* SmolovJr */,
 				5459085BC84F93902049CF9A /* JStores */,
 				54590090FE5311E7ACFA2B14 /* JModels */,
-				545900870F4B9C727EED7DE0 /* MigrateDataViewController.m */,
-				54590B5B648721A42A902B55 /* MigrateDataViewController.h */,
 			);
 			path = "Big Lifts 2";
 			sourceTree = "<group>";
@@ -3278,7 +3273,6 @@
 				5459083135F799D31A88ED56 /* JSJWorkoutStore.m in Sources */,
 				54590202B12A72A7137F91B0 /* JModel.m in Sources */,
 				545905B21C36BB9C6CD764C8 /* SetLogContainer.m in Sources */,
-				54590C96FD0CBBA653610DF5 /* MigrateDataViewController.m in Sources */,
 				54590EB067EA3E59C36705C5 /* LogMigrator.m in Sources */,
 				54590B5B5EE582C79D015BF5 /* JVersion.m in Sources */,
 				545906B72FA3FFA2AAA510A7 /* JVersionStore.m in Sources */,
