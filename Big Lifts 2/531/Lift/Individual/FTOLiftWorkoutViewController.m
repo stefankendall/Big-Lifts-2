@@ -16,7 +16,6 @@
 #import "JSetLogStore.h"
 #import "JSetLog.h"
 #import "JWorkout.h"
-#import "TimerViewController.h"
 #import "BLTimer.h"
 
 @implementation FTOLiftWorkoutViewController
@@ -117,10 +116,16 @@
     if (!cell) {
         cell = [FTOLiftWorkoutToolbar create];
     }
-    JSet *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
-    int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:(id) heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
-    [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
-    [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
+    if([self shouldShowRepsToBeat]){
+        [cell.repsToBeat setHidden:NO];
+        JSet *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
+        int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:(id) heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
+        [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
+        [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    else {
+        [cell.repsToBeat setHidden:YES];
+    }
 
     self.timerButton = cell.timerButton;
     if ([[BLTimer instance] isRunning]) {
@@ -309,18 +314,11 @@
 }
 
 - (int)toolbarSection {
-    int toolbarSection = 0;
-    if (![self shouldShowRepsToBeat]) {
-        toolbarSection = -1;
-    }
-    return toolbarSection;
+    return 0;
 }
 
 - (int)warmupSection {
     int warmupSection = 1;
-    if (![self shouldShowRepsToBeat]) {
-        warmupSection--;
-    }
     if (![self hasWarmup]) {
         warmupSection = -1;
     }
@@ -329,9 +327,6 @@
 
 - (int)workoutSection {
     int workoutSection = 2;
-    if (![self shouldShowRepsToBeat]) {
-        workoutSection--;
-    }
     if (![self hasWarmup]) {
         workoutSection--;
     }
@@ -340,9 +335,6 @@
 
 - (int)assistanceSection {
     int assistanceSection = 3;
-    if (![self shouldShowRepsToBeat]) {
-        assistanceSection--;
-    }
     if (![self hasWarmup]) {
         assistanceSection--;
     }

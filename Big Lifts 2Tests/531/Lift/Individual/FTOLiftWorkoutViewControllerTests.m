@@ -41,7 +41,7 @@
 
     [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     self.controller.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:2], 5, @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:3], 5, @"");
 }
 
 - (void)testHasSectionTitles {
@@ -50,7 +50,7 @@
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:2], @"Workout", @"");
     [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     self.controller.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:2], @"Assistance", @"");
+    STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:3], @"Assistance", @"");
 }
 
 - (void)testTappingDoneButtonSavesLog {

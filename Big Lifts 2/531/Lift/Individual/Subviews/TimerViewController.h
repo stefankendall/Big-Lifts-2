@@ -1,5 +1,4 @@
 @class PaddingTextField;
-@protocol TimerProtocol;
 
 @interface TimerViewController : UITableViewController {
 }

@@ -1,10 +1,9 @@
 #import "SetChangeDelegate.h"
-#import "TimerProtocol.h"
 #import "TimerObserver.h"
 
 @class JFTOWorkout;
 
-@interface FTOLiftWorkoutViewController : UITableViewController <UITextFieldDelegate, SetChangeDelegate, TimerProtocol, TimerObserver> {
+@interface FTOLiftWorkoutViewController : UITableViewController <UITextFieldDelegate, SetChangeDelegate, TimerObserver> {
 }
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
