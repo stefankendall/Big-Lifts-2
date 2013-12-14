@@ -5,7 +5,6 @@
 @implementation DataLoadingViewController
 
 - (void)viewDidAppear:(BOOL)animated {
-    self.dataLoaded = YES;
     [self performSelector:@selector(pollForReady) withObject:nil afterDelay:0.5];
 }
 

@@ -4,6 +4,7 @@
 #import "BLJStoreManager.h"
 #import "Migrator.h"
 #import "BLTimer.h"
+#import "DataLoadingViewController.h"
 
 @implementation BLAppDelegate
 
@@ -20,9 +21,18 @@
     //hack to get callback to fire.
     [[NSUbiquitousKeyValueStore defaultStore] setString:@"testValue" forKey:@"testKey"];
     [[NSUbiquitousKeyValueStore defaultStore] synchronize];
-    [[Migrator new] migrateStores];
-    [[BLJStoreManager instance] loadStores];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(allDataLoaded) name:@"jstoresLoaded" object:nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[Migrator new] migrateStores];
+        [[BLJStoreManager instance] loadStores];
+    });
     return YES;
+}
+
+- (void)allDataLoaded {
+    UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
+    DataLoadingViewController *controller = (DataLoadingViewController *) navController.viewControllers[0];
+    controller.dataLoaded = YES;
 }
 
 - (void)keyValueStoreChanged:(NSNotification *)notification {

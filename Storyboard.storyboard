@@ -226,12 +226,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7cI-Cg-dWf" kind="relationship" relationship="rootViewController" id="cqh-2X-tTR"/>
+                        <segue destination="yuh-6g-6Fk" kind="relationship" relationship="rootViewController" id="v2U-zb-slO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="La5-VI-LRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-185" y="-1881"/>
+            <point key="canvasLocation" x="-137" y="-1237"/>
         </scene>
         <!--Data Loading View Controller-->
         <scene sceneID="o6B-jD-wVu">
@@ -2941,95 +2941,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HnJ-QQ-9Z3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3753" y="-624"/>
-        </scene>
-        <!--Migrate Data View Controller-->
-        <scene sceneID="Krv-nF-eFe">
-            <objects>
-                <viewController storyboardIdentifier="migrateView" id="7cI-Cg-dWf" customClass="MigrateDataViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WKO-nF-cYk"/>
-                        <viewControllerLayoutGuide type="bottom" id="XQF-Td-9bC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n7Q-z7-lZz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7c0-Ab-X6B">
-                                <rect key="frame" x="20" y="20" width="280" height="122"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Over the past few weeks, I have completely reworked how data is saved and loaded to make the app more stable going forward. This is the only time you will see this message.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you have had loading/crashing issues, I recommend you start fresh." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="rlJ-oy-a2f">
-                                <rect key="frame" x="20" y="150" width="280" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="AeY-bV-7et"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The log will be migrated, but other data will need to be re-entered." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="mNq-vN-Kdh">
-                                <rect key="frame" x="20" y="203" width="280" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="gcz-Xl-syD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5C-8z-iXf">
-                                <rect key="frame" x="88" y="256" width="212" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Migrate log to new data format">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="migrateData:" destination="7cI-Cg-dWf" eventType="touchUpInside" id="6bi-NL-vSe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fve-aa-L6j">
-                                <rect key="frame" x="220" y="294" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="t8I-v0-yxs"/>
-                                </constraints>
-                                <state key="normal" title="Start fresh"/>
-                                <connections>
-                                    <segue destination="yuh-6g-6Fk" kind="push" identifier="startAppFromMigrate" id="reS-uB-5BQ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="H5C-8z-iXf" firstAttribute="top" secondItem="mNq-vN-Kdh" secondAttribute="bottom" constant="8" symbolic="YES" id="25Z-h0-ndP"/>
-                            <constraint firstItem="Fve-aa-L6j" firstAttribute="trailing" secondItem="H5C-8z-iXf" secondAttribute="trailing" id="2xQ-53-mDc"/>
-                            <constraint firstItem="7c0-Ab-X6B" firstAttribute="leading" secondItem="rlJ-oy-a2f" secondAttribute="leading" id="AfA-DQ-BvB"/>
-                            <constraint firstItem="mNq-vN-Kdh" firstAttribute="trailing" secondItem="rlJ-oy-a2f" secondAttribute="trailing" id="KVw-Vy-f73"/>
-                            <constraint firstAttribute="trailing" secondItem="7c0-Ab-X6B" secondAttribute="trailing" constant="20" symbolic="YES" id="ZhL-ED-eVF"/>
-                            <constraint firstItem="rlJ-oy-a2f" firstAttribute="top" secondItem="7c0-Ab-X6B" secondAttribute="bottom" constant="8" symbolic="YES" id="bdt-yi-jw7"/>
-                            <constraint firstItem="mNq-vN-Kdh" firstAttribute="leading" secondItem="rlJ-oy-a2f" secondAttribute="leading" id="cmo-dW-KL2"/>
-                            <constraint firstItem="Fve-aa-L6j" firstAttribute="top" secondItem="H5C-8z-iXf" secondAttribute="bottom" constant="8" id="isq-nM-Avf"/>
-                            <constraint firstItem="mNq-vN-Kdh" firstAttribute="top" secondItem="rlJ-oy-a2f" secondAttribute="bottom" constant="8" symbolic="YES" id="kgI-zq-hwr"/>
-                            <constraint firstItem="7c0-Ab-X6B" firstAttribute="trailing" secondItem="rlJ-oy-a2f" secondAttribute="trailing" id="m2P-d8-snn"/>
-                            <constraint firstItem="mNq-vN-Kdh" firstAttribute="trailing" secondItem="H5C-8z-iXf" secondAttribute="trailing" id="nGq-HD-oH4"/>
-                            <constraint firstItem="7c0-Ab-X6B" firstAttribute="leading" secondItem="n7Q-z7-lZz" secondAttribute="leading" constant="20" symbolic="YES" id="qZb-YA-aFm"/>
-                            <constraint firstItem="7c0-Ab-X6B" firstAttribute="top" secondItem="n7Q-z7-lZz" secondAttribute="top" constant="20" symbolic="YES" id="sjl-RZ-31G"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="bvZ-hJ-Wm2"/>
-                    <connections>
-                        <outlet property="migrateDataButton" destination="H5C-8z-iXf" id="wqI-it-7Uz"/>
-                        <outlet property="startFreshButton" destination="Fve-aa-L6j" id="iSj-hj-L30"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FhU-ab-mtq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="334" y="-1881"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KvW-7R-OEc">

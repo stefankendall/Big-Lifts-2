@@ -1,4 +1,3 @@
-#import <Crashlytics/Crashlytics.h>
 #import "BLJStoreManager.h"
 #import "BLJStore.h"
 #import "JBarStore.h"
@@ -48,6 +47,7 @@
             }
         }
     }
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"jstoresLoaded" object:nil]];
 }
 
 - (void)syncStores {
