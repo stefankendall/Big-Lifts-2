@@ -128,6 +128,7 @@
 		5459051B98394707AC1F89F6 /* BLViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A246ED0F76535710297 /* BLViewDeckController.m */; };
 		5459053036A0F33822943C43 /* FTOTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900FE54752F2F2F387961 /* FTOTrackViewController.m */; };
 		54590532C033933E6CE23657 /* LogMaxEstimateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5459022954EDA9D3B234BFA6 /* LogMaxEstimateCell.xib */; };
+		545905393398BF8BF98710F5 /* SetHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590614477436BE0829BE74 /* SetHelperTests.m */; };
 		5459053B54730AC68D43BEC5 /* JFTOHeavierPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B9BE7DC4451924A9013 /* JFTOHeavierPlan.m */; };
 		5459054D344D3E784B584BCF /* 172-pricetag.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590526735E78D9EF6F22F0 /* 172-pricetag.png */; };
 		545905527F5502367565C568 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */; };
@@ -706,6 +707,7 @@
 		54590608218798BD8FDD13EA /* JFTOBoringButBigAssistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOBoringButBigAssistance.m; sourceTree = "<group>"; };
 		5459060D4D99407BD2138CFD /* ProgramSelectorViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramSelectorViewControllerTests.h; sourceTree = "<group>"; };
 		54590613C2E86FC343274FBB /* JSJLiftStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSJLiftStore.m; sourceTree = "<group>"; };
+		54590614477436BE0829BE74 /* SetHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetHelperTests.m; sourceTree = "<group>"; };
 		5459061539809C53BF272957 /* PaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaddingTextField.m; sourceTree = "<group>"; };
 		54590617CABC0699E22ED1BD /* JSJWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSJWorkout.h; sourceTree = "<group>"; };
 		5459061D3076FD31760BA03F /* PriceFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceFormatter.m; sourceTree = "<group>"; };
@@ -820,6 +822,7 @@
 		545908D4422379D6CD14ACDC /* BLJStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLJStore.h; sourceTree = "<group>"; };
 		545908D4D0FA8D519DA57659 /* JFTOSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOSettings.h; sourceTree = "<group>"; };
 		545908D98098163F8E98589C /* JSJLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSJLift.h; sourceTree = "<group>"; };
+		545908DC5D9BA608D8EC1B34 /* SetHelperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetHelperTests.h; sourceTree = "<group>"; };
 		545908E0120D96962DFF2B9A /* graph.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = graph.html; sourceTree = "<group>"; };
 		545908EA9ACB906702FE0F2B /* FTOLiftWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftWorkoutViewController.h; sourceTree = "<group>"; };
 		545908EC908F5C83F54E4FFC /* JWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWorkout.h; sourceTree = "<group>"; };
@@ -1572,6 +1575,15 @@
 				54590ED5715A57A04E97E76B /* PriceFormatter.h */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		54590453A5A39A4D8E43F989 /* Sets */ = {
+			isa = PBXGroup;
+			children = (
+				54590614477436BE0829BE74 /* SetHelperTests.m */,
+				545908DC5D9BA608D8EC1B34 /* SetHelperTests.h */,
+			);
+			path = Sets;
 			sourceTree = "<group>";
 		};
 		5459049041925052BA223873 /* Edit */ = {
@@ -2660,6 +2672,7 @@
 				54590FD3AB7F7748F9C47CFD /* BarCalculator */,
 				54590B2626B2BA3F46507E90 /* BLTimerTests.m */,
 				54590245B8BD2726A42F396D /* BLTimerTests.h */,
+				54590453A5A39A4D8E43F989 /* Sets */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -3061,6 +3074,7 @@
 				545907D47BDD6CCE6873AD23 /* JFTOBoringButBigLiftStoreTests.m in Sources */,
 				545903669155D105CD9B6494 /* BLTimerTests.m in Sources */,
 				54590619546F870F9597BE9B /* TimerViewControllerTests.m in Sources */,
+				545905393398BF8BF98710F5 /* SetHelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

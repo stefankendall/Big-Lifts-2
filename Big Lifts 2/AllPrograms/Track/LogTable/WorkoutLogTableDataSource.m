@@ -56,7 +56,7 @@ const int ESTIMATED_MAX_SECTION = 1;
     }
     JSetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
     if (!logToShow) {
-        logToShow = [self.workoutLog.orderedSets lastObject];
+        logToShow = [self.workoutLog.workSets lastObject];
     }
     NSDecimalNumber *estimate = [[OneRepEstimator new] estimate:logToShow.weight withReps:[logToShow.reps intValue]];
     NSString *units = [[[JSettingsStore instance] first] units];
