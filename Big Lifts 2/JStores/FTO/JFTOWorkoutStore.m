@@ -74,7 +74,9 @@
                 doneLiftsByWeek[ftoWorkout.week] = [@[] mutableCopy];
             }
             JLift *lift = [[ftoWorkout.workout.orderedSets firstObject] lift];
-            [doneLiftsByWeek[ftoWorkout.week] addObject:lift];
+            if (lift) {
+                [doneLiftsByWeek[ftoWorkout.week] addObject:lift];
+            }
         }
     }];
     return doneLiftsByWeek;
