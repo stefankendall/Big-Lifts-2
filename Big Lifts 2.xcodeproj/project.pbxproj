@@ -295,6 +295,7 @@
 		54590BD23B8B8A55DAE52C93 /* SJSetCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906D7DB4FB94D9BFDDDDC /* SJSetCellTests.m */; };
 		54590BD4AA44B42AD2260D39 /* ProgramSelectorViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907BCC2F2400246302060 /* ProgramSelectorViewControllerTests.m */; };
 		54590BEBC514A9B2D4075C60 /* FTOCustomCopyTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907FCF46ECB325E229200 /* FTOCustomCopyTemplateViewController.m */; };
+		54590BF7A5C9A0BD31213408 /* DataLoaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901C7662EFE536D05E5ED /* DataLoaded.m */; };
 		54590BFFB8F504A8943F30DA /* JFTOSimplestStrengthTemplateAssistanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459068C1513DE8DB6D23DD4 /* JFTOSimplestStrengthTemplateAssistanceTests.m */; };
 		54590C00FFB8D2B35F7D8336 /* SSTrackViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900AA0F099B4203A5C4E5 /* SSTrackViewControllerTests.m */; };
 		54590C043756606ECADA0385 /* SSWorkoutVariantControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C46C7D98FAB10F4C933 /* SSWorkoutVariantControllerTests.m */; };
@@ -518,6 +519,7 @@
 		545901ABBD67C8BDEA18C5BD /* Big Lifts 2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Big Lifts 2-Prefix.pch"; sourceTree = "<group>"; };
 		545901B0BED22AC7C1A7861D /* FTOCustomWeekEditCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOCustomWeekEditCell.xib; sourceTree = "<group>"; };
 		545901C2C9F654FCDCD2B364 /* JWorkoutLogTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWorkoutLogTests.h; sourceTree = "<group>"; };
+		545901C7662EFE536D05E5ED /* DataLoaded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoaded.m; sourceTree = "<group>"; };
 		545901D2678F1FE916C879B4 /* FTORepsToBeatBreakdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTORepsToBeatBreakdown.m; sourceTree = "<group>"; };
 		545901D482B2F03C20D4DD00 /* JFTOSetStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOSetStore.m; sourceTree = "<group>"; };
 		545901DE79DAB4F1EBBFA44A /* BLStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLStore.m; sourceTree = "<group>"; };
@@ -1094,6 +1096,7 @@
 		54590FB1F9DD24390C30B7A3 /* PaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaddingTextField.h; sourceTree = "<group>"; };
 		54590FB2EEB9AA83D84FAA17 /* FTOEditLiftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOEditLiftCell.h; sourceTree = "<group>"; };
 		54590FB7664105B2ECDCBC48 /* RowTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowTextField.m; sourceTree = "<group>"; };
+		54590FBD329675D5A967649C /* DataLoaded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoaded.h; sourceTree = "<group>"; };
 		54590FC0BBF16F6EBC4D43BC /* MaxEstimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxEstimator.h; sourceTree = "<group>"; };
 		54590FC1E36E2FC55B6FF5D5 /* BLStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLStoreManager.m; sourceTree = "<group>"; };
 		54590FC3BE2DB9E8C76B0B9C /* JFTODeload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTODeload.h; sourceTree = "<group>"; };
@@ -2660,6 +2663,8 @@
 				5459061EA1CB19C30F96C924 /* SmolovJr */,
 				5459085BC84F93902049CF9A /* JStores */,
 				54590090FE5311E7ACFA2B14 /* JModels */,
+				545901C7662EFE536D05E5ED /* DataLoaded.m */,
+				54590FBD329675D5A967649C /* DataLoaded.h */,
 			);
 			path = "Big Lifts 2";
 			sourceTree = "<group>";
@@ -3295,6 +3300,7 @@
 				545909490D6EF5542B0134EB /* JTimerStore.m in Sources */,
 				54590F72D522A5EFF93247E0 /* LogRecoveryViewController.m in Sources */,
 				5459047B3FE05410438336E0 /* DecimalNumberHandlers.m in Sources */,
+				54590BF7A5C9A0BD31213408 /* DataLoaded.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

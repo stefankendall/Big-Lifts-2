@@ -5,6 +5,7 @@
 #import "Migrator.h"
 #import "BLTimer.h"
 #import "DataLoadingViewController.h"
+#import "DataLoaded.h"
 
 @implementation BLAppDelegate
 
@@ -28,9 +29,7 @@
 }
 
 - (void)allDataLoaded {
-    UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
-    DataLoadingViewController *controller = (DataLoadingViewController *) navController.viewControllers[0];
-    controller.dataLoaded = YES;
+    [[DataLoaded instance] setLoaded:YES];
 }
 
 - (void)keyValueStoreChanged:(NSNotification *)notification {
