@@ -70,8 +70,9 @@
 
 + (BLJStoreManager *)instance {
     static BLJStoreManager *manager = nil;
+    static dispatch_once_t onceToken = 0;
 
-    if (!manager) {
+    dispatch_once(&onceToken, ^{
         manager = [BLJStoreManager new];
         manager.allStores = @[
                 [JVersionStore instance],
@@ -113,7 +114,7 @@
                 [JSSWorkoutStore instance],
                 [JSJWorkoutStore instance]
         ];
-    }
+    });
 
     return manager;
 }
@@ -132,7 +133,6 @@
         }
     }
     return nil;
-
 }
 
 @end

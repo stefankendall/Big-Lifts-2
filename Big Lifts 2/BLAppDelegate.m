@@ -18,8 +18,6 @@
                                              selector:@selector(keyValueStoreChanged:)
                                                  name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
                                                object:nil];
-    //hack to get callback to fire.
-    [[NSUbiquitousKeyValueStore defaultStore] setString:@"testValue" forKey:@"testKey"];
     [[NSUbiquitousKeyValueStore defaultStore] synchronize];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(allDataLoaded) name:@"jstoresLoaded" object:nil];
     dispatch_async(dispatch_get_main_queue(), ^{

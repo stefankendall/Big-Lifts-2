@@ -6,13 +6,19 @@
 @implementation Migrator
 
 - (void)migrateStores {
-    [[JVersionStore instance] load];
-    JVersion *version = [[JVersionStore instance] first];
+    @try {
+        [[JVersionStore instance] load];
+        JVersion *version = [[JVersionStore instance] first];
 
-    //first migration must run every time, since I was missing the version property on existing installs
-    if([version.version intValue] <= 2){
-        [[Migrate1to2 new] run];
-        version.version = @2;
+        //first migration must run every time, since I was missing the version property on existing installs
+        if([version.version intValue] <= 2){
+            [[Migrate1to2 new] run];
+            version.version = @2;
+        }
+    }
+    @catch(NSException *e){
+        //TODO: log with crashlytics
+        //Trying to fix startup issue
     }
 }
 
