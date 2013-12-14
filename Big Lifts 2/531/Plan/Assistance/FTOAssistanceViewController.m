@@ -53,7 +53,10 @@
             if (![self cellStillHasPurchaseOverlay:cell]) {
                 [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
                 self.iapIndexPath = nil;
-                [self performSegueWithIdentifier:self.assistanceToSegues[self.selectedAssitanceType] sender:self];
+                NSString *segue = self.assistanceToSegues[self.selectedAssitanceType];
+                if (segue) {
+                    [self performSegueWithIdentifier:segue sender:self];
+                }
             }
         }
     }
