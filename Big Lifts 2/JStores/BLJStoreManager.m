@@ -31,6 +31,8 @@
 #import "JFTOBoringButBigLiftStore.h"
 #import "JTimerStore.h"
 #import "DataLoaded.h"
+#import "JFTOCustomAssistanceLiftStore.h"
+#import "JFTOCustomAssistanceWorkoutStore.h"
 
 @implementation BLJStoreManager
 
@@ -118,6 +120,7 @@
                 [JFTOTriumvirateLiftStore instance],
                 [JFTOSSTLiftStore instance],
                 [JSSLiftStore instance],
+                [JFTOCustomAssistanceLiftStore instance],
 
                 [JSetStore instance],
                 [JFTOSetStore instance],
@@ -134,6 +137,7 @@
                 [JFTOBoringButBigStore instance],
                 [JFTOCustomWorkoutStore instance],
                 [JFTOTriumvirateStore instance],
+                [JFTOCustomAssistanceWorkoutStore instance],
 
                 [JFTOWorkoutStore instance],
                 [JSSWorkoutStore instance],

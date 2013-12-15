@@ -1,6 +1,5 @@
 #import "JModel.h"
 
-@class Workout;
 @class JWorkout;
 
 @interface JFTOCustomWorkout : JModel

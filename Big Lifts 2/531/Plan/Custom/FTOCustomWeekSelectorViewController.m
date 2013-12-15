@@ -104,7 +104,7 @@
         JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] create];
         customWorkout.name = @"New Week";
         NSNumber *max = [[JFTOCustomWorkoutStore instance] max:@"week"];
-        NSNumber *week = [NSNumber numberWithInt:[max intValue] + 1];
+        NSNumber *week = max ? [NSNumber numberWithInt:[max intValue] + 1] : @1;
         customWorkout.week = week;
         customWorkout.order = week;
         customWorkout.workout = [[JWorkoutStore instance] create];

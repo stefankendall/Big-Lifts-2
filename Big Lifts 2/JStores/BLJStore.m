@@ -132,20 +132,29 @@
 }
 
 - (NSNumber *)max:(NSString *)property {
+    if ([self count] == 0) {
+        return nil;
+    }
+
     NSArray *allValues = [[self findAll] collect:^id(id obj) {
         id value = [obj valueForKeyPath:property];
-        return value ? value : @-1;
+        return value ? value : [NSNull new];
     }];
     NSArray *sorted = [allValues sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        if ([obj1 isEqual:[NSNull new]] && [obj2 isEqual:[NSNull new]]) {
+            return NSOrderedSame;
+        }
+        else if ([obj1 isEqual:[NSNull new]]) {
+            return NSOrderedAscending;
+        }
+        else if ([obj2 isEqual:[NSNull new]]) {
+            return NSOrderedDescending;
+        }
+
         return [obj1 compare:obj2];
     }];
 
-    if ([sorted count] > 0) {
-        return [sorted lastObject];
-    }
-    else {
-        return nil;
-    }
+    return [[sorted lastObject] isEqual:[NSNull new]] ? nil : [sorted lastObject];
 }
 
 - (int)count {

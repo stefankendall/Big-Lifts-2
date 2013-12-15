@@ -4,6 +4,7 @@
 #import "JSettingsStore.h"
 #import "JFTOSSTLiftStore.h"
 #import "JFTOBoringButBigLiftStore.h"
+#import "JFTOCustomAssistanceWorkoutStore.h"
 
 @implementation JFTOLiftStore
 
@@ -54,21 +55,24 @@
 
 - (void)removeAtIndex:(int)index1 {
     [super removeAtIndex:index1];
-    [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
-    [[JFTOBoringButBigLiftStore instance] adjustToMainLifts];
+    [self liftsChanged];
 }
 
 - (void)remove:(id)object {
     [super remove:object];
+    [self liftsChanged];
+}
+
+- (void)liftsChanged {
     [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
     [[JFTOBoringButBigLiftStore instance] adjustToMainLifts];
+    [[JFTOCustomAssistanceWorkoutStore instance] adjustToMainLifts];
 }
 
 - (id)create {
     JFTOLift *lift = [super create];
     if (!self.isSettingDefaults) {
-        [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
-        [[JFTOBoringButBigLiftStore instance] adjustToMainLifts];
+        [self liftsChanged];
     }
     return lift;
 }
