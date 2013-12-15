@@ -20,16 +20,12 @@
                                                  name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
                                                object:nil];
     [[NSUbiquitousKeyValueStore defaultStore] synchronize];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(allDataLoaded) name:@"jstoresLoaded" object:nil];
     dispatch_async(dispatch_get_main_queue(), ^{
         [[Migrator new] migrateStores];
         [[BLJStoreManager instance] loadStores];
+        [[DataLoaded instance] setLoaded:YES];
     });
     return YES;
-}
-
-- (void)allDataLoaded {
-    [[DataLoaded instance] setLoaded:YES];
 }
 
 - (void)keyValueStoreChanged:(NSNotification *)notification {

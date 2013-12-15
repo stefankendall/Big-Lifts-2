@@ -47,7 +47,6 @@
             }
         }
     }
-    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"jstoresLoaded" object:nil]];
 }
 
 - (void)syncStores {
