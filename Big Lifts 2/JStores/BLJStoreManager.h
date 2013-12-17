@@ -10,6 +10,8 @@
 
 - (void)resetAllStores;
 
+- (void)resetAllStoresExceptLog;
+
 @property(nonatomic, strong) NSArray *allStores;
 
 - (BLJStore *)storeForModel:(Class)pClass withUuid:(NSString *)uuid;

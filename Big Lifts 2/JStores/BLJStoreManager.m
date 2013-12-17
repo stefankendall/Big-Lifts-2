@@ -67,6 +67,22 @@
     }
 }
 
+- (void)resetAllStoresExceptLog {
+    NSMutableArray *stores = [@[] mutableCopy];
+    [stores addObjectsFromArray:self.allStores];
+    [stores removeObject:[JWorkoutLogStore instance]];
+    [stores removeObject:[JSetLogStore instance]];
+
+    for (BLJStore *store in stores) {
+        [store empty];
+        [store sync];
+    }
+
+    for (BLJStore *store in stores) {
+        [store setupDefaults];
+    }
+}
+
 + (BLJStoreManager *)instance {
     static BLJStoreManager *manager = nil;
     static dispatch_once_t onceToken = 0;
