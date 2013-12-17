@@ -17,7 +17,7 @@
 - (void)done {
     [[BLJStoreManager instance] syncStores];
     [[DataLoaded instance] setLoaded:YES];
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 @end

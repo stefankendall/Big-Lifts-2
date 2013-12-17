@@ -30,11 +30,16 @@
 #import "JVersionStore.h"
 #import "JFTOBoringButBigLiftStore.h"
 #import "JTimerStore.h"
+#import "DataLoaded.h"
 
 @implementation BLJStoreManager
 
 - (void)loadStores {
     for (BLJStore *store in self.allStores) {
+        if ([[DataLoaded instance] timedOut]) {
+            return;
+        }
+
         if (store != [JVersionStore instance]) {
             @try {
                 [store load];
@@ -47,6 +52,7 @@
             }
         }
     }
+    [[DataLoaded instance] setLoaded:YES];
 }
 
 - (void)syncStores {

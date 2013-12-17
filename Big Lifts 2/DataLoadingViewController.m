@@ -19,6 +19,7 @@
 }
 
 - (void)timeout {
+    [[DataLoaded instance] setTimedOut:YES];
     [self performSegueWithIdentifier:@"appTimedOut" sender:self];
 }
 

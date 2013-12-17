@@ -4,8 +4,6 @@
 #import "BLJStoreManager.h"
 #import "Migrator.h"
 #import "BLTimer.h"
-#import "DataLoadingViewController.h"
-#import "DataLoaded.h"
 
 @implementation BLAppDelegate
 
@@ -20,10 +18,9 @@
                                                  name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
                                                object:nil];
     [[NSUbiquitousKeyValueStore defaultStore] synchronize];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         [[Migrator new] migrateStores];
         [[BLJStoreManager instance] loadStores];
-        [[DataLoaded instance] setLoaded:YES];
     });
     return YES;
 }
