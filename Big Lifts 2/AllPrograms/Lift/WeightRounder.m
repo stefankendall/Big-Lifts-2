@@ -1,6 +1,7 @@
 #import "WeightRounder.h"
 #import "JSettings.h"
 #import "JSettingsStore.h"
+#import "DecimalNumberHandlers.h"
 
 @implementation WeightRounder
 
@@ -97,12 +98,12 @@
     NSDecimalNumber *decimals = [number decimalNumberBySubtracting:wholeNumbers];
     int lastDigit = [wholeNumbers intValue] % 10;
     NSDecimalNumber *lastDigitDecimal = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInteger:lastDigit] decimalValue]];
-    return [lastDigitDecimal decimalNumberByAdding:decimals];
+    return [lastDigitDecimal decimalNumberByAdding:decimals withBehavior:DecimalNumberHandlers.noRaise];
 }
 
 - (NSDecimalNumber *)roundTo5:(NSDecimalNumber *)number {
-    int base5Round = [[number decimalNumberByDividingBy:N(5)] intValue] * 5;
-    int lastTwoDigits = [[number decimalNumberByMultiplyingBy:N(10)] intValue] % 100;
+    int base5Round = [[number decimalNumberByDividingBy:N(5) withBehavior:DecimalNumberHandlers.noRaise] intValue] * 5;
+    int lastTwoDigits = [[number decimalNumberByMultiplyingBy:N(10) withBehavior:DecimalNumberHandlers.noRaise] intValue] % 100;
     if (lastTwoDigits >= 50) {
         lastTwoDigits -= 50;
     }
