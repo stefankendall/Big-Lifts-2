@@ -190,6 +190,7 @@
 		545907638E55EC01779EA1E0 /* AddPlateViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590927CEE3296B9E67DF45 /* AddPlateViewControllerTests.m */; };
 		54590777504BCFFEC5AA03D9 /* FTOChangeLiftsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459046DF299D3F773B367FB /* FTOChangeLiftsViewControllerTests.m */; };
 		54590789F38F656B797F7198 /* JFTOCustomWorkoutStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459042CD385F6E5F549221F /* JFTOCustomWorkoutStoreTests.m */; };
+		5459078BFC47A926CC1910F5 /* AppTimedOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CA84515BDC8B6BA7FCF /* AppTimedOutViewController.m */; };
 		545907942CCF5B25403F3DA1 /* FTOCustomSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590DBA152DE96A6B475701 /* FTOCustomSetCell.xib */; };
 		5459079BEF1B4D70AE7E5D37 /* JFTOAssistanceStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904A432A5E8C6002F0EA3 /* JFTOAssistanceStore.m */; };
 		545907ADF6730E1C29DD67C5 /* JSSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904D3571129012EA634C1 /* JSSWorkout.m */; };
@@ -868,6 +869,7 @@
 		545909DAD39D1876F9EB656F /* SetCellWithPlatesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCellWithPlatesTests.m; sourceTree = "<group>"; };
 		545909DC3F80282A04B44F91 /* FTOAddLiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOAddLiftViewController.m; sourceTree = "<group>"; };
 		545909DDF05CB3A959B0A669 /* AddPlateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateViewController.m; sourceTree = "<group>"; };
+		545909E259BF9874F11A3EEA /* AppTimedOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTimedOutViewController.h; sourceTree = "<group>"; };
 		545909E2AD3ADBCACEDEABF4 /* FTOSSTViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSSTViewControllerTests.h; sourceTree = "<group>"; };
 		545909E419463E503E18EEA4 /* JFTOTriumvirate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOTriumvirate.m; sourceTree = "<group>"; };
 		545909E9246097EE882B86C8 /* JFTOTriumvirateStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOTriumvirateStore.m; sourceTree = "<group>"; };
@@ -987,6 +989,7 @@
 		54590CA19668BB712D631143 /* TextFieldWithCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldWithCell.m; sourceTree = "<group>"; };
 		54590CA332CE6FA216724598 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		54590CA6F4BCD8026D948694 /* JWorkoutLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWorkoutLog.m; sourceTree = "<group>"; };
+		54590CA84515BDC8B6BA7FCF /* AppTimedOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTimedOutViewController.m; sourceTree = "<group>"; };
 		54590CB81D8DBECEF0729166 /* FTOWorkoutLogAmrapDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutLogAmrapDataSource.m; sourceTree = "<group>"; };
 		54590CC3FE703B3884C52DD6 /* FTOCycleAdjustorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCycleAdjustorTests.h; sourceTree = "<group>"; };
 		54590CD1DDDD16B9FFD8BBD9 /* SJEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJEditViewController.m; sourceTree = "<group>"; };
@@ -2665,6 +2668,8 @@
 				54590090FE5311E7ACFA2B14 /* JModels */,
 				545901C7662EFE536D05E5ED /* DataLoaded.m */,
 				54590FBD329675D5A967649C /* DataLoaded.h */,
+				54590CA84515BDC8B6BA7FCF /* AppTimedOutViewController.m */,
+				545909E259BF9874F11A3EEA /* AppTimedOutViewController.h */,
 			);
 			path = "Big Lifts 2";
 			sourceTree = "<group>";
@@ -3301,6 +3306,7 @@
 				54590F72D522A5EFF93247E0 /* LogRecoveryViewController.m in Sources */,
 				5459047B3FE05410438336E0 /* DecimalNumberHandlers.m in Sources */,
 				54590BF7A5C9A0BD31213408 /* DataLoaded.m in Sources */,
+				5459078BFC47A926CC1910F5 /* AppTimedOutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

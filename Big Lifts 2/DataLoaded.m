@@ -8,6 +8,7 @@
     dispatch_once(&onceToken, ^{
         dataLoaded = [DataLoaded new];
         dataLoaded.loaded = NO;
+        dataLoaded.viewLoaded = NO;
     });
     return dataLoaded;
 }
