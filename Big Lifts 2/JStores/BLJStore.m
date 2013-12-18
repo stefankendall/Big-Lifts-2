@@ -46,14 +46,34 @@
         if ([value isKindOfClass:[NSArray class]]) {
             NSArray *array = (NSArray *) value;
             for (JModel *association in array) {
-                if (![[model cascadeDeleteClasses] containsObject:association.class]) {
+                if (![self model:model shouldDeleteAssociation:association]) {
                     break;
                 }
-                BLJStore *store = [[BLJStoreManager instance] storeForModel:association.class withUuid:association.uuid];
-                [store remove:association];
+                [self removeModelFromItsStore:association];
+            }
+        }
+        else if ([value isKindOfClass:JModel.class]) {
+            JModel *valueModel = value;
+            if ([self model:model shouldDeleteAssociation:valueModel]) {
+                [self removeModelFromItsStore:valueModel];
             }
         }
     }
+}
+
+- (BOOL)model:(JModel *)model shouldDeleteAssociation:(JModel *)association {
+    for (Class klass in [model cascadeDeleteClasses]) {
+        if ([association isKindOfClass:klass]) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+- (void)removeModelFromItsStore:(JModel *)model {
+    BLJStore *store = [[BLJStoreManager instance] storeForModel:model.class withUuid:model.uuid];
+    [store remove:model];
 }
 
 - (void)removeAtIndex:(int)index {

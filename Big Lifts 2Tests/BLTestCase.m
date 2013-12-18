@@ -2,6 +2,7 @@
 #import "IAPAdapter.h"
 #import "SKProductStore.h"
 #import "BLJStoreManager.h"
+#import "DataLoaded.h"
 
 @implementation BLTestCase
 
@@ -9,6 +10,12 @@
     [[SKProductStore instance] removePurchases];
     [[IAPAdapter instance] resetPurchases];
     [[BLJStoreManager instance] resetAllStores];
+}
+
+- (void)waitForDataLoaded {
+    while (![[DataLoaded instance] loaded]) {
+        [NSThread sleepForTimeInterval:0.1f];
+    }
 }
 
 @end
