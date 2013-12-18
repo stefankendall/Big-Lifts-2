@@ -11,7 +11,7 @@
 }
 
 - (void)waitForTimeout {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 15 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 30 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         if (![[DataLoaded instance] viewLoaded]) {
             [self timeout];
         }

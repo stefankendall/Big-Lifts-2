@@ -8,6 +8,8 @@
 
 - (void)syncStores;
 
+- (void)writeStores;
+
 - (void)resetAllStores;
 
 - (void)resetAllStoresExceptLog;

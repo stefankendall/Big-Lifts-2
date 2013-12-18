@@ -39,7 +39,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self beginBackgroundUpdateTask];
         @try {
-            [[BLJStoreManager instance] syncStores];
+            [[BLJStoreManager instance] writeStores];
         }
         @catch (NSException *e) {
             NSLog(@"Couldn't sync?");
