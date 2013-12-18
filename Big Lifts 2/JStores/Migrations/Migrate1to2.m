@@ -4,6 +4,10 @@
 @implementation Migrate1to2
 
 - (void)run {
+    [self addScreenAlwaysOnToSettings];
+}
+
+- (void)addScreenAlwaysOnToSettings {
     NSString *storeKey = [[JSettingsStore instance] keyNameForStore];
     NSArray *settingsData = [[NSUbiquitousKeyValueStore defaultStore] arrayForKey:storeKey];
     if([settingsData count] == 0){
