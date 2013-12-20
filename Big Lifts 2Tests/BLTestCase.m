@@ -9,6 +9,7 @@
 - (void)setUp {
     [[SKProductStore instance] removePurchases];
     [[IAPAdapter instance] resetPurchases];
+    [self waitForDataLoaded];
     [[BLJStoreManager instance] resetAllStores];
 }
 
