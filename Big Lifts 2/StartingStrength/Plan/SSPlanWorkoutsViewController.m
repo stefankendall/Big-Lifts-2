@@ -34,11 +34,17 @@
     int section = [indexPath section];
     JSSWorkout *workout = [[JSSWorkoutStore instance] atIndex:section];
     JWorkout *firstWorkout = workout.workouts[(NSUInteger) [indexPath row]];
-    JSet *firstSet = firstWorkout.orderedSets[0];
-    JSSLift *lift = (JSSLift *) firstSet.lift;
+    if ([firstWorkout.orderedSets count] > 0) {
+        JSet *firstSet = firstWorkout.orderedSets[0];
+        JSSLift *lift = (JSSLift *) firstSet.lift;
+        [[cell textLabel] setText:lift.name];
+    }
+    else {
+        [[cell textLabel] setText:@"No sets"];
+    }
 
-    [[cell textLabel] setText:lift.name];
     [cell setBackgroundColor:[UIColor whiteColor]];
+
 
     return cell;
 }
