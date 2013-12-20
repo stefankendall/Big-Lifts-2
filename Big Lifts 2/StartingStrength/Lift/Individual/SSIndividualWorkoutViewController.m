@@ -18,7 +18,6 @@
 @implementation SSIndividualWorkoutViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     self.workoutIndex = 0;
 }
 
@@ -78,7 +77,7 @@
 }
 
 - (JWorkout *)getCurrentWorkout {
-    return [[self.ssWorkout workouts] objectAtIndex:(NSUInteger) self.workoutIndex];
+    return [self.ssWorkout.workouts count] > 0 ? self.ssWorkout.workouts[(NSUInteger) self.workoutIndex] : nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
