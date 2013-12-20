@@ -5,6 +5,7 @@
 #import "WeightRounder.h"
 #import "JSet.h"
 #import "JLift.h"
+#import "DecimalNumberHandlers.h"
 
 @implementation SJSetCell
 
@@ -21,8 +22,8 @@
                                                                   enteredWeight,
                                                                   units]];
     } else if ([sjWorkout.minWeightAdd compare:N(0)] == NSOrderedDescending) {
-        NSDecimalNumber *minWeight = [effectiveWeight decimalNumberByAdding:sjWorkout.minWeightAdd];
-        NSDecimalNumber *maxWeight = [effectiveWeight decimalNumberByAdding:sjWorkout.maxWeightAdd];
+        NSDecimalNumber *minWeight = [effectiveWeight decimalNumberByAdding:sjWorkout.minWeightAdd withBehavior:DecimalNumberHandlers.noRaise];
+        NSDecimalNumber *maxWeight = [effectiveWeight decimalNumberByAdding:sjWorkout.maxWeightAdd withBehavior:DecimalNumberHandlers.noRaise];
         [self.weightRangeLabel setText:[NSString stringWithFormat:@"%@-%@ %@",
                                                                   [[WeightRounder new] round:minWeight],
                                                                   [[WeightRounder new] round:maxWeight],
