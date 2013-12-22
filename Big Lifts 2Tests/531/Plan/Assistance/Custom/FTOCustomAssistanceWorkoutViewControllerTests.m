@@ -27,8 +27,8 @@
 
     FTOCustomAssistanceWorkoutSetCell *cell = (FTOCustomAssistanceWorkoutSetCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
     STAssertEqualObjects([cell.liftName text], @"LiftName", @"");
-    STAssertEqualObjects([cell.reps text], @"5", @"");
-    STAssertEqualObjects([cell.weight text], @"200", @"");
+    STAssertEqualObjects([cell.reps text], @"5x", @"");
+    STAssertEqualObjects([cell.weight text], @"200lbs", @"");
 }
 
 @end

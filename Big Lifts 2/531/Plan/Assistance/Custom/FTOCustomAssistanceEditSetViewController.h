@@ -1,7 +1,7 @@
 @class JSet;
 @class PaddingTextField;
 
-@interface FTOCustomAssistanceEditSetViewController : UITableViewController <UITextFieldDelegate> {
+@interface FTOCustomAssistanceEditSetViewController : UITableViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
 }
 @property(weak, nonatomic) IBOutlet UIButton *addLiftButton;
 
@@ -11,4 +11,5 @@
 
 @property(nonatomic, strong) JSet *set;
 
+@property(nonatomic, strong) UIPickerView *liftsPicker;
 @end

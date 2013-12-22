@@ -3,10 +3,13 @@
 #import "FTOCustomAssistanceEditSetViewController.h"
 #import "JFTOCustomAssistanceLift.h"
 #import "JFTOCustomAssistanceLiftStore.h"
+#import "JSetStore.h"
+#import "JSet.h"
+#import "PaddingTextField.h"
 
 @implementation FTOCustomAssistanceEditSetViewControllerTests
 
--(void) testShowsHidesAddButton {
+- (void)testShowsHidesAddButton {
     FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
     STAssertFalse([controller.addLiftButton isHidden], @"");
 
@@ -14,6 +17,21 @@
 
     [controller viewWillAppear:NO];
     STAssertTrue([controller.addLiftButton isHidden], @"");
+}
+
+- (void)testSetsDataOnAppear {
+    FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
+    controller.set = [[JSetStore instance] create];
+    controller.set.reps = @5;
+    controller.set.percentage = N(75);
+    controller.set.lift = [[JFTOCustomAssistanceLiftStore instance] create];
+    controller.set.lift.name = @"MyLift";
+    [controller viewWillAppear:NO];
+
+    STAssertEqualObjects([controller.liftTextField text], @"MyLift", @"");
+    STAssertEquals([controller.liftsPicker selectedRowInComponent:0], 0, @"");
+    STAssertEqualObjects([controller.repsTextField text], @"5", @"");
+    STAssertEqualObjects([controller.percentageTextField text], @"75", @"");
 }
 
 @end

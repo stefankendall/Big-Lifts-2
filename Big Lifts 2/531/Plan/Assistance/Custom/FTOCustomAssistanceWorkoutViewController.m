@@ -7,6 +7,8 @@
 #import "JLift.h"
 #import "JSetStore.h"
 #import "FTOCustomAssistanceEditSetViewController.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation FTOCustomAssistanceWorkoutViewController
 
@@ -46,8 +48,8 @@ static const int ADD_SECTION = 1;
         }
         JSet *set = self.customAssistanceWorkout.workout.sets[(NSUInteger) indexPath.row];
         [cell.liftName setText:set.lift.name];
-        [cell.reps setText:[set.reps stringValue]];
-        [cell.weight setText:[[set effectiveWeight] stringValue]];
+        [cell.reps setText:[NSString stringWithFormat:@"%dx", [set.reps intValue]]];
+        [cell.weight setText:[NSString stringWithFormat:@"%@%@", [set effectiveWeight], [[[JSettingsStore instance] first] units]]];
         return cell;
     }
 }
@@ -59,7 +61,7 @@ static const int ADD_SECTION = 1;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"ftoCustomAsstEditSet"]){
+    if ([segue.identifier isEqualToString:@"ftoCustomAsstEditSet"]) {
         JSet *set = [[JSetStore instance] create];
         [self.customAssistanceWorkout.workout addSet:set];
         FTOCustomAssistanceEditSetViewController *controller = [segue destinationViewController];
