@@ -25,6 +25,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     BOOL hasLifts = [[JFTOCustomAssistanceLiftStore instance] count] > 0;
     [self.addLiftButton setHidden:hasLifts];
+    [self.liftTextField setHidden:!hasLifts];
 
     if (self.set.lift) {
         [self.liftTextField setText:self.set.lift.name];

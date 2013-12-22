@@ -2,6 +2,8 @@
 #import "JWorkout.h"
 #import "JLift.h"
 #import "JSet.h"
+#import "BLJStoreManager.h"
+#import "BLJStore.h"
 
 @implementation JWorkout
 
@@ -41,6 +43,7 @@
 
 - (void)removeSet:(JSet *)set {
     [self.sets removeObject:set];
+    [[[BLJStoreManager instance] storeForModel:set.class withUuid:set.uuid] remove:set];
     [self fixSetOrdering];
 }
 

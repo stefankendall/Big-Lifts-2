@@ -79,4 +79,31 @@ static const int ADD_SECTION = 1;
     }
 }
 
+- (IBAction)deleteTapped:(id)sender {
+    if ([self.tableView isEditing]) {
+        [self.tableView setEditing:NO animated:YES];
+        [self.deleteButton setTitle:@"Delete"];
+    }
+    else {
+        [self.tableView setEditing:YES animated:YES];
+        [self.deleteButton setTitle:@"Done"];
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == ADD_SECTION) {
+        return UITableViewCellEditingStyleNone;
+    }
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        JSet *set = self.customAssistanceWorkout.workout.sets[(NSUInteger) indexPath.row];
+        [self.customAssistanceWorkout.workout removeSet:set];
+        [self.tableView reloadData];
+    }
+}
+
+
 @end

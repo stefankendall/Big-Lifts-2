@@ -65,5 +65,29 @@ const int ADD_SECTION = 1;
     controller.lift = self.segueLift;
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == ADD_SECTION) {
+        return UITableViewCellEditingStyleNone;
+    }
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[JFTOCustomAssistanceLiftStore instance] removeAtIndex:indexPath.row];
+        [self.tableView reloadData];
+    }
+}
+
+- (IBAction)deleteTapped:(id)sender {
+    if ([self.tableView isEditing]) {
+        [self.tableView setEditing:NO animated:YES];
+        [self.deleteButton setTitle:@"Delete"];
+    }
+    else {
+        [self.tableView setEditing:YES animated:YES];
+        [self.deleteButton setTitle:@"Done"];
+    }
+}
 
 @end

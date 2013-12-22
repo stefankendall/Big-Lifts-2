@@ -13,4 +13,11 @@
     STAssertEquals(rows, 2, @"");
 }
 
+- (void)testCanDeleteLifts {
+    [[JFTOCustomAssistanceLiftStore instance] create];
+    FTOCustomAssistanceLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAsstLifts"];
+    [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:NSIP(0, 0)];
+    STAssertEquals([[JFTOCustomAssistanceLiftStore instance] count], 0, @"");
+}
+
 @end
