@@ -8,6 +8,7 @@
 #import "JSJWorkoutStore.h"
 #import "JSSWorkoutStore.h"
 #import "JSSWorkout.h"
+#import "JFTOCustomAssistanceWorkoutStore.h"
 
 @implementation Migrate2to3
 
@@ -33,7 +34,8 @@
             [JFTOCustomWorkoutStore instance],
             [JFTOTriumvirateStore instance],
             [JFTOWorkoutStore instance],
-            [JSJWorkoutStore instance]
+            [JSJWorkoutStore instance],
+            [JFTOCustomAssistanceWorkoutStore instance]
     ];
 
     for( BLJStore *store in storesThatUseWorkouts){
