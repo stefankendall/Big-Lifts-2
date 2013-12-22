@@ -26,6 +26,7 @@
 		545900183FD40AED3DBEAC73 /* JFTOSSTLiftStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459021D5AE2CC9EB10583A5 /* JFTOSSTLiftStore.m */; };
 		5459001E5B4F96C22B3EB944 /* LogCellWithSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BCA3EBC09DC87A23DD6 /* LogCellWithSets.m */; };
 		54590024193238FC9F6A95C3 /* SSLiftToolbarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905F37B8FFFFD1D265FE0 /* SSLiftToolbarCell.m */; };
+		5459003251ED1AFE90033535 /* DecimalNumberHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904BE2981F9A5B7D4F1B8 /* DecimalNumberHelper.m */; };
 		54590043B79D5D6AB6C2F6BE /* JBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B1626B5C544C5C28E83 /* JBar.m */; };
 		54590054FB06C248CF09AEB3 /* SSPlanWorkoutsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459061D50029E17B4D7F178 /* SSPlanWorkoutsViewControllerTests.m */; };
 		54590058C5DABE4593322576 /* SSLiftSummaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459012DADE179F1BF2867BF /* SSLiftSummaryCell.m */; };
@@ -696,6 +697,7 @@
 		545904B6CB4BEC4F99ABA1EA /* FTOSSTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSSTViewController.m; sourceTree = "<group>"; };
 		545904BA1A31DF16CFEC8835 /* FTOLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftViewControllerTests.h; sourceTree = "<group>"; };
 		545904BD767D12F938AB67DB /* JWorkoutLogTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWorkoutLogTests.m; sourceTree = "<group>"; };
+		545904BE2981F9A5B7D4F1B8 /* DecimalNumberHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecimalNumberHelper.m; sourceTree = "<group>"; };
 		545904C027E327E95E7901F1 /* twitter-bird-light-bgs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter-bird-light-bgs.png"; sourceTree = "<group>"; };
 		545904C7123BC998F7282F7A /* SSIndividualWorkoutViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIndividualWorkoutViewControllerTests.h; sourceTree = "<group>"; };
 		545904CA458008759C6514EA /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
@@ -873,6 +875,7 @@
 		545908D98098163F8E98589C /* JSJLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSJLift.h; sourceTree = "<group>"; };
 		545908DC5D9BA608D8EC1B34 /* SetHelperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetHelperTests.h; sourceTree = "<group>"; };
 		545908E0120D96962DFF2B9A /* graph.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = graph.html; sourceTree = "<group>"; };
+		545908E80BFAF39BCB4B02EF /* DecimalNumberHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecimalNumberHelper.h; sourceTree = "<group>"; };
 		545908EA9ACB906702FE0F2B /* FTOLiftWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftWorkoutViewController.h; sourceTree = "<group>"; };
 		545908EC908F5C83F54E4FFC /* JWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWorkout.h; sourceTree = "<group>"; };
 		545908F4162A8FE623105F0D /* WhatNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhatNextViewController.h; sourceTree = "<group>"; };
@@ -1412,6 +1415,8 @@
 				54590958257FFFC7FE54EF19 /* TimerObserver.h */,
 				545903F6F5181EFE8588CCB9 /* DecimalNumberHandlers.m */,
 				5459034DAC9DB2FF14D7F186 /* DecimalNumberHandlers.h */,
+				545904BE2981F9A5B7D4F1B8 /* DecimalNumberHelper.m */,
+				545908E80BFAF39BCB4B02EF /* DecimalNumberHelper.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -3451,6 +3456,7 @@
 				545900693DEEB74C78B0F07F /* FTOCustomAssistanceWorkoutViewController.m in Sources */,
 				5459062C4CB4D5C348F28067 /* FTOCustomAssistanceWorkoutSetCell.m in Sources */,
 				54590B92A7155111DFC0BEA7 /* FTOCustomAssistanceEditSetViewController.m in Sources */,
+				5459003251ED1AFE90033535 /* DecimalNumberHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

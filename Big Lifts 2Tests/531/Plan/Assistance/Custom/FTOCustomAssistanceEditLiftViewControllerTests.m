@@ -23,4 +23,13 @@
     STAssertEqualObjects([controller.increment text], @"2", @"");
 }
 
+- (void) testDoesNotSetIncrementToNan {
+    FTOCustomAssistanceEditLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAsstEditLift"];
+    JFTOCustomAssistanceLift *lift = [[JFTOCustomAssistanceLiftStore instance] create];
+    controller.lift = lift;
+    [controller.increment setText:@""];
+    [controller updateLift];
+    STAssertEqualObjects(lift.increment, N(0), @"");
+}
+
 @end

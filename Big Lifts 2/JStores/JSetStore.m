@@ -13,7 +13,6 @@
     set.percentage = N(100);
 }
 
-
 - (JSet *)createWithLift:(JLift *)lift percentage:(NSDecimalNumber *)percentage {
     JSet *set = [self create];
     set.lift = lift;

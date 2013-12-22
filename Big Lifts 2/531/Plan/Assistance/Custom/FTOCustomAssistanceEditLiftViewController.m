@@ -2,6 +2,7 @@
 #import "JFTOCustomAssistanceLift.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "PaddingTextField.h"
+#import "DecimalNumberHelper.h"
 
 @implementation FTOCustomAssistanceEditLiftViewController
 
@@ -33,8 +34,8 @@
 
 - (void)updateLift {
     self.lift.name = [self.name text];
-    self.lift.weight = self.weight.text ? [NSDecimalNumber decimalNumberWithString:[self.weight text]] : N(0);
-    self.lift.increment = [NSDecimalNumber decimalNumberWithString:[self.increment text]];
+    self.lift.weight = [DecimalNumberHelper nanTo0: [NSDecimalNumber decimalNumberWithString:[self.weight text]]];
+    self.lift.increment = [DecimalNumberHelper nanTo0:[NSDecimalNumber decimalNumberWithString:[self.increment text]]];
     self.lift.usesBar = [self.usesBar isOn];
 }
 

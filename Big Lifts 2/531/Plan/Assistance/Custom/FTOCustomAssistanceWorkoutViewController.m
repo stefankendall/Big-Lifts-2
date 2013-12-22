@@ -56,16 +56,26 @@ static const int ADD_SECTION = 1;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == ADD_SECTION) {
-        [self performSegueWithIdentifier:@"ftoCustomAsstEditSet" sender:self];
+        self.tappedSet = nil;
     }
+    else {
+        self.tappedSet = self.customAssistanceWorkout.workout.sets[(NSUInteger) indexPath.row];
+    }
+
+    [self performSegueWithIdentifier:@"ftoCustomAsstEditSet" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ftoCustomAsstEditSet"]) {
-        JSet *set = [[JSetStore instance] create];
-        [self.customAssistanceWorkout.workout addSet:set];
         FTOCustomAssistanceEditSetViewController *controller = [segue destinationViewController];
-        controller.set = set;
+        if (self.tappedSet) {
+            controller.set = self.tappedSet;
+        }
+        else {
+            JSet *set = [[JSetStore instance] create];
+            [self.customAssistanceWorkout.workout addSet:set];
+            controller.set = set;
+        }
     }
 }
 

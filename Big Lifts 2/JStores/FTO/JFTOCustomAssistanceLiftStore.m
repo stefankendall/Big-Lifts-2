@@ -13,6 +13,7 @@
 
     NSNumber *order = [self max:@"order"];
     lift.order = order ? [NSNumber numberWithInt:[order intValue] + 1] : @0;
+    lift.increment = N(0);
 }
 
 @end

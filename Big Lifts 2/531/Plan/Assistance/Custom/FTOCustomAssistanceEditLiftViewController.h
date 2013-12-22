@@ -9,4 +9,6 @@
 @property(weak, nonatomic) IBOutlet UISwitch *usesBar;
 
 @property(nonatomic, strong) JFTOCustomAssistanceLift *lift;
+
+- (void)updateLift;
 @end
