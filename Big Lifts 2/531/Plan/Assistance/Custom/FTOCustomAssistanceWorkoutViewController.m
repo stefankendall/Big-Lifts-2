@@ -3,6 +3,8 @@
 #import "AddCell.h"
 #import "JWorkout.h"
 #import "FTOCustomAssistanceWorkoutSetCell.h"
+#import "JSet.h"
+#import "JLift.h"
 
 @implementation FTOCustomAssistanceWorkoutViewController
 
@@ -40,6 +42,10 @@ static const int ADD_SECTION = 1;
         if (!cell) {
             cell = [FTOCustomAssistanceWorkoutSetCell create];
         }
+        JSet *set = self.customAssistanceWorkout.workout.sets[(NSUInteger) indexPath.row];
+        [cell.liftName setText:set.lift.name];
+        [cell.reps setText:[set.reps stringValue]];
+        [cell.weight setText:[[set effectiveWeight] stringValue]];
         return cell;
     }
 }

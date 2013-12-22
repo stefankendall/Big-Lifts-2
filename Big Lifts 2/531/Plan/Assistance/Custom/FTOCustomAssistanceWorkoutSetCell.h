@@ -1,4 +1,4 @@
-#import <CTCustomTableViewCell/CTCustomTableViewCell.h>
+#import "CTCustomTableViewCell/CTCustomTableViewCell.h"
 
 @interface FTOCustomAssistanceWorkoutSetCell : CTCustomTableViewCell {}
 @property (weak, nonatomic) IBOutlet UILabel *liftName;
