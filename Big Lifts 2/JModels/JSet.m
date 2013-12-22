@@ -8,6 +8,10 @@
 @implementation JSet
 
 - (NSDecimalNumber *)effectiveWeight {
+    if( !self.percentage ){
+        return N(0);
+    }
+
     NSDecimalNumber *effectiveWeight;
     effectiveWeight = [[self.lift.weight decimalNumberByMultiplyingBy:self.percentage withBehavior:DecimalNumberHandlers.noRaise]
             decimalNumberByDividingBy:[NSDecimalNumber decimalNumberWithString:@"100" locale:NSLocale.currentLocale] withBehavior:DecimalNumberHandlers.noRaise];

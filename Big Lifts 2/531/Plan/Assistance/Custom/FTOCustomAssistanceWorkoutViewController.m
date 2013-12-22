@@ -5,6 +5,8 @@
 #import "FTOCustomAssistanceWorkoutSetCell.h"
 #import "JSet.h"
 #import "JLift.h"
+#import "JSetStore.h"
+#import "FTOCustomAssistanceEditSetViewController.h"
 
 @implementation FTOCustomAssistanceWorkoutViewController
 
@@ -47,6 +49,21 @@ static const int ADD_SECTION = 1;
         [cell.reps setText:[set.reps stringValue]];
         [cell.weight setText:[[set effectiveWeight] stringValue]];
         return cell;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == ADD_SECTION) {
+        [self performSegueWithIdentifier:@"ftoCustomAsstEditSet" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"ftoCustomAsstEditSet"]){
+        JSet *set = [[JSetStore instance] create];
+        [self.customAssistanceWorkout.workout addSet:set];
+        FTOCustomAssistanceEditSetViewController *controller = [segue destinationViewController];
+        controller.set = set;
     }
 }
 

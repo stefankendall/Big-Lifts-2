@@ -8,6 +8,12 @@
     return JSet.class;
 }
 
+- (void)setDefaultsForObject:(id)object {
+    JSet *set = object;
+    set.percentage = N(100);
+}
+
+
 - (JSet *)createWithLift:(JLift *)lift percentage:(NSDecimalNumber *)percentage {
     JSet *set = [self create];
     set.lift = lift;

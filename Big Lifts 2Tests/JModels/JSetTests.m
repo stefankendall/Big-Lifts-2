@@ -30,4 +30,13 @@
     STAssertEquals(deserializedSet.lift, lift, @"");
 }
 
+- (void)testHandlesNilPercentages {
+    JSet *set = [[JSetStore instance] create];
+    set.percentage = nil;
+    set.lift = [[JLiftStore instance] create];
+    set.lift.weight = N(100);
+
+    STAssertEqualObjects([set effectiveWeight], N(0), @"");
+}
+
 @end
