@@ -47,7 +47,13 @@ static const int ADD_SECTION = 1;
             cell = [FTOCustomAssistanceWorkoutSetCell create];
         }
         JSet *set = self.customAssistanceWorkout.workout.sets[(NSUInteger) indexPath.row];
-        [cell.liftName setText:set.lift.name];
+        if (set.lift) {
+            [cell.liftName setText:set.lift.name];
+        }
+        else {
+            [cell.liftName setText:@"No lift"];
+        }
+
         [cell.reps setText:[NSString stringWithFormat:@"%dx", [set.reps intValue]]];
         [cell.weight setText:[NSString stringWithFormat:@"%@%@", [set effectiveWeight], [[[JSettingsStore instance] first] units]]];
         return cell;

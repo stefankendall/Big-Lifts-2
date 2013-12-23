@@ -4,6 +4,8 @@
 #import "JFTOCustomAssistanceWorkout.h"
 #import "FTOCustomAssistanceWorkoutViewController.h"
 #import "JFTOCustomAssistanceWorkoutStore.h"
+#import "JFTOAssistanceStore.h"
+#import "JFTOAssistance.h"
 
 @implementation FTOCustomAssistanceViewController
 
@@ -38,6 +40,10 @@
         FTOCustomAssistanceWorkoutViewController *controller = [segue destinationViewController];
         controller.customAssistanceWorkout = self.customAssistanceToSegue;
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_CUSTOM];
 }
 
 @end

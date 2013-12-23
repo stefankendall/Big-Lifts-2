@@ -147,6 +147,7 @@
 		5459057C163F964632F9533E /* JFTOTriumvirate.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909E419463E503E18EEA4 /* JFTOTriumvirate.m */; };
 		5459057F5BD34E93F10BAA63 /* JPlate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590AF5493FE6E2F9858AB4 /* JPlate.m */; };
 		545905887766D673CDFB69B3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590B18C50119F99FB04420 /* Default@2x.png */; };
+		5459059C06A8635041E3B6BA /* JFTOCustomAssistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BC626DBDCF0CDC7B4A0 /* JFTOCustomAssistance.m */; };
 		5459059F71A59524747627C1 /* UIViewController+PurchaseOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901853F6360FAC8267ECE /* UIViewController+PurchaseOverlay.m */; };
 		545905AB8FAE00D0A5947324 /* JWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D5EEE4D25FB271F2F04 /* JWorkout.m */; };
 		545905B21C36BB9C6CD764C8 /* SetLogContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B27F31075B95C905A1A /* SetLogContainer.m */; };
@@ -655,6 +656,7 @@
 		545903FF9FE198ADA91F749A /* FTOEditViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOEditViewControllerTests.m; sourceTree = "<group>"; };
 		54590404B60CF77514E341E5 /* SSNavTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSNavTableViewController.m; sourceTree = "<group>"; };
 		54590405F88634EB786EE587 /* FTOTriumvirateSetupViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTriumvirateSetupViewControllerTests.h; sourceTree = "<group>"; };
+		5459040613B982B035D62D1B /* JFTOCustomAssistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomAssistance.h; sourceTree = "<group>"; };
 		5459040EF638F25CFBE88FCD /* WorkoutLogTableDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutLogTableDataSourceTests.m; sourceTree = "<group>"; };
 		5459040F407B43FC5F9EB1D2 /* JFTOAdvancedPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOAdvancedPlan.h; sourceTree = "<group>"; };
 		5459040F479643433C2416D9 /* RowUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowUIButton.h; sourceTree = "<group>"; };
@@ -1008,6 +1010,7 @@
 		54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonMenu@2x.png"; sourceTree = "<group>"; };
 		54590BB5F836221D0DB6A202 /* JSJWorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSJWorkoutStore.h; sourceTree = "<group>"; };
 		54590BB96D3D919954CC6C67 /* FTOEditLiftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOEditLiftCell.m; sourceTree = "<group>"; };
+		54590BC626DBDCF0CDC7B4A0 /* JFTOCustomAssistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomAssistance.m; sourceTree = "<group>"; };
 		54590BCA3EBC09DC87A23DD6 /* LogCellWithSets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogCellWithSets.m; sourceTree = "<group>"; };
 		54590BD55A19D2FF2149AADE /* FTOCustomAssistanceEditSetViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomAssistanceEditSetViewControllerTests.m; sourceTree = "<group>"; };
 		54590BE0B2FB1054B5F3129D /* JFTOBoringButBig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOBoringButBig.m; sourceTree = "<group>"; };
@@ -1809,6 +1812,8 @@
 				54590A341E172B6C8479E923 /* JFTOSimplestStrengthTemplateAssistance.h */,
 				545902CF4FA484E3019B47BE /* JFTONoneAssistance.m */,
 				545909E9330FDBBE31EFD988 /* JFTONoneAssistance.h */,
+				54590BC626DBDCF0CDC7B4A0 /* JFTOCustomAssistance.m */,
+				5459040613B982B035D62D1B /* JFTOCustomAssistance.h */,
 			);
 			path = Assistance;
 			sourceTree = "<group>";
@@ -3457,6 +3462,7 @@
 				5459062C4CB4D5C348F28067 /* FTOCustomAssistanceWorkoutSetCell.m in Sources */,
 				54590B92A7155111DFC0BEA7 /* FTOCustomAssistanceEditSetViewController.m in Sources */,
 				5459003251ED1AFE90033535 /* DecimalNumberHelper.m in Sources */,
+				5459059C06A8635041E3B6BA /* JFTOCustomAssistance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

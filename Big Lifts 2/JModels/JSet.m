@@ -8,7 +8,7 @@
 @implementation JSet
 
 - (NSDecimalNumber *)effectiveWeight {
-    if( !self.percentage ){
+    if (!self.percentage || !self.lift) {
         return N(0);
     }
 
