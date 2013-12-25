@@ -206,11 +206,11 @@
     NSMutableArray *serialized = [@[] mutableCopy];
     for (JSONModel *model in self.data) {
         NSString *serialModel = [model toJSONString];
-        if (serialModel != nil ) {
+        if (serialModel != nil) {
             [serialized addObject:serialModel];
         }
         else {
-            //TODO: Log with crashlytics when possible
+            NSLog(@"Could not serialize model: %@", model);
         }
     }
     return serialized;
@@ -223,6 +223,7 @@
 - (void)load {
     NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
     NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
+    NSLog(@"%@ %@", [self class], serializedData);
     if (serializedData) {
         self.data = [self deserialize:serializedData];
     }
