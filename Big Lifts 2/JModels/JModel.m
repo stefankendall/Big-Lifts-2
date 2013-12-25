@@ -70,7 +70,7 @@
     }
 }
 
-- (NSArray *)cascadeDeleteClasses {
+- (NSArray *)cascadeDeleteProperties {
     return @[];
 }
 

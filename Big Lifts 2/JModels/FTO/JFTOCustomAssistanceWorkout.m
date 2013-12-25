@@ -3,8 +3,8 @@
 
 @implementation JFTOCustomAssistanceWorkout
 
-- (NSArray *)cascadeDeleteClasses {
-    return @[JWorkout.class];
+- (NSArray *)cascadeDeleteProperties {
+    return @[@"workout"];
 }
 
 @end

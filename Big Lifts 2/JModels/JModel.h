@@ -4,6 +4,6 @@
 
 @property(nonatomic, copy) NSString *uuid;
 
--(NSArray *) cascadeDeleteClasses;
+-(NSArray *)cascadeDeleteProperties;
 
 @end

@@ -7,8 +7,8 @@
 
 @implementation JWorkout
 
-- (NSArray *)cascadeDeleteClasses {
-    return @[JSet.class];
+- (NSArray *)cascadeDeleteProperties {
+    return @[@"sets"];
 }
 
 - (NSArray *)workSets {

@@ -46,7 +46,7 @@
         if ([value isKindOfClass:[NSArray class]]) {
             NSArray *array = (NSArray *) value;
             for (JModel *association in array) {
-                if (![self model:model shouldDeleteAssociation:association]) {
+                if (![self model:model shouldDeleteAssociation:p]) {
                     break;
                 }
                 [self removeModelFromItsStore:association];
@@ -54,21 +54,15 @@
         }
         else if ([value isKindOfClass:JModel.class]) {
             JModel *valueModel = value;
-            if ([self model:model shouldDeleteAssociation:valueModel]) {
+            if ([self model:model shouldDeleteAssociation:p]) {
                 [self removeModelFromItsStore:valueModel];
             }
         }
     }
 }
 
-- (BOOL)model:(JModel *)model shouldDeleteAssociation:(JModel *)association {
-    for (Class klass in [model cascadeDeleteClasses]) {
-        if ([association isKindOfClass:klass]) {
-            return true;
-        }
-    }
-
-    return false;
+- (BOOL)model:(JModel *)model shouldDeleteAssociation:(JSONModelClassProperty *)p {
+    return [[model cascadeDeleteProperties] containsObject:p.name];
 }
 
 - (void)removeModelFromItsStore:(JModel *)model {

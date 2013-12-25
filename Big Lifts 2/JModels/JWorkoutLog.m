@@ -5,8 +5,8 @@
 
 @implementation JWorkoutLog
 
-- (NSArray *)cascadeDeleteClasses {
-    return @[JSetLog.class];
+- (NSArray *)cascadeDeleteProperties {
+    return @[@"sets"];
 }
 
 - (NSArray *)orderedSets {
