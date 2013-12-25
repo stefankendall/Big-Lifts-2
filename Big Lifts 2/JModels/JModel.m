@@ -59,7 +59,14 @@
         return [store find:@"uuid" value:possibleUuid];
     }
     else {
-        return [super initWithDictionary:possibleUuid error:err];
+        id jsonValue = nil;
+        @try {
+            jsonValue = [super initWithDictionary:possibleUuid error:err];
+        }
+        @catch (NSException *e) {
+            NSLog(@"Could not deserialize: %@", possibleUuid);
+        }
+        return jsonValue;
     }
 }
 
