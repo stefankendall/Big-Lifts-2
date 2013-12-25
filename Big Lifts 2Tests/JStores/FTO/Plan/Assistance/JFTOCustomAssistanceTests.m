@@ -37,8 +37,16 @@
     JSet *lastSet = [squatWorkout1.workout.sets lastObject];
     STAssertEquals(lastSet.assistance, YES, @"");
     STAssertEquals(lastSet.lift, customLift, @"");
+}
 
+- (void)testIncrementsLiftsOnCycleChange {
+    [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_CUSTOM];
 
+    JFTOCustomAssistanceLift *lift = [[JFTOCustomAssistanceLiftStore instance] create];
+    lift.increment = N(5);
+    lift.weight = N(100);
+    [[JFTOAssistanceStore instance] cycleChange];
+    STAssertEqualObjects(lift.weight, N(105), @"");
 }
 
 @end

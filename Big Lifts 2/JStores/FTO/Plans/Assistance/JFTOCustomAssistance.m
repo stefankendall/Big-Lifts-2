@@ -7,6 +7,10 @@
 #import "FTOCustomAssistanceEditLiftViewController.h"
 #import "JSetStore.h"
 #import "JSet.h"
+#import "JFTOCustomAssistanceLiftStore.h"
+#import "JLift.h"
+#import "JFTOCustomAssistanceLift.h"
+#import "DecimalNumberHandlers.h"
 
 @implementation JFTOCustomAssistance
 
@@ -32,6 +36,9 @@
 }
 
 - (void)cycleChange {
+    for (JFTOCustomAssistanceLift *lift in [[JFTOCustomAssistanceLiftStore instance] findAll]) {
+        lift.weight = [lift.weight decimalNumberByAdding:lift.increment withBehavior:DecimalNumberHandlers.noRaise];
+    }
 }
 
 @end
