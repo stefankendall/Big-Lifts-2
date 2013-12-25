@@ -8,8 +8,15 @@
 #import "NSArray+Enumerable.h"
 #import "JSSStateStore.h"
 #import "JSSState.h"
+#import "JWorkoutStore.h"
 
 @implementation JSSWorkoutStoreTests
+
+- (void)testDoesNotLeakWorkouts {
+    int workoutCount = [[JWorkoutStore instance] count];
+    [[JSSWorkoutStore instance] setupVariant:@"Standard"];
+    STAssertEquals(workoutCount, [[JWorkoutStore instance] count], @"");
+}
 
 - (void)testSetsUpDefaultLifts {
     STAssertEquals([[JSSWorkoutStore instance] count], 2, @"");

@@ -33,7 +33,7 @@
 
 - (void)restoreTemplate {
     NSDictionary *doneLiftsByWeek = [self getDoneLiftsByWeek];
-    [self empty];
+    [self removeAll];
     [self createWorkoutsForEachLift];
     [self markDeloadWorkouts];
     [self markWeekIncrements];

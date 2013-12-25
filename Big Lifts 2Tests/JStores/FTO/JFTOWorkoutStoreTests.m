@@ -20,4 +20,10 @@
     STAssertEquals(setCount - 1, [[JFTOSetStore instance] count], @"");
 }
 
+- (void)testDoesNotLeakWorkouts {
+    int workoutCount = [[JWorkoutStore instance] count];
+    [[JFTOWorkoutStore instance] restoreTemplate];
+    STAssertEquals(workoutCount, [[JWorkoutStore instance] count], @"");
+}
+
 @end

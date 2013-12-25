@@ -33,7 +33,7 @@
     JSSVariant *variantObj = [[JSSVariantStore instance] first];
     variantObj.name = variant;
 
-    [self empty];
+    [self removeAll];
 
     JSSWorkout *workoutA = [[JSSWorkoutStore instance] createWithName:@"A" withOrder:0 withAlternation:0];
     JSSWorkout *workoutB = [[JSSWorkoutStore instance] createWithName:@"B" withOrder:1 withAlternation:0];

@@ -2,4 +2,8 @@
 
 @implementation JSSWorkout
 
+- (NSArray *)cascadeDeleteProperties {
+    return @[@"workouts"];
+}
+
 @end
