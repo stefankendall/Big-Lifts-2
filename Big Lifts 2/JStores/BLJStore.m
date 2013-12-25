@@ -31,6 +31,13 @@
     self.data = [@[] mutableCopy];
 }
 
+- (void)removeAll {
+    while ([self.data count] > 0) {
+        id object = self.data[0];
+        [self remove:object];
+    }
+}
+
 - (void)remove:(id)object {
     [self.data removeObject:object];
     [self removeCascadeAssociations:object];

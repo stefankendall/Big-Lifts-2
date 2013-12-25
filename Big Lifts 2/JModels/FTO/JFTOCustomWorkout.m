@@ -2,4 +2,8 @@
 
 @implementation JFTOCustomWorkout
 
+- (NSArray *)cascadeDeleteProperties {
+    return @[@"workout"];
+}
+
 @end

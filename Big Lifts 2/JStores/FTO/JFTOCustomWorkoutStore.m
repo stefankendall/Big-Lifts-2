@@ -58,7 +58,7 @@
 }
 
 - (void)setupVariant:(NSString *)variant {
-    [self empty];
+    [self removeAll];
     [self createWorkoutsForVariant:variant];
 }
 

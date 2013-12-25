@@ -38,6 +38,8 @@
 
 - (void)removeAtIndex:(int)index;
 
+- (void)removeAll;
+
 - (int)count;
 
 - (NSOrderedSet *)unique:(NSString *)string;

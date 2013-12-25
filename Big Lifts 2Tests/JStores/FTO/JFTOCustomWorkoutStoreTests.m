@@ -3,6 +3,7 @@
 #import "JFTOCustomWorkoutStore.h"
 #import "JFTOCustomWorkout.h"
 #import "JFTOVariant.h"
+#import "JWorkoutStore.h"
 
 @implementation JFTOCustomWorkoutStoreTests
 
@@ -44,6 +45,13 @@
 
     STAssertTrue(week7Workout.deload, @"");
     STAssertTrue(week7Workout.incrementAfterWeek, @"");
+}
+
+- (void) testDoesNotLeakWorkouts {
+    [[JFTOCustomWorkoutStore instance] setupVariant:FTO_VARIANT_STANDARD];
+    int workoutCount = [[JWorkoutStore instance] count];
+    [[JFTOCustomWorkoutStore instance] setupVariant:FTO_VARIANT_STANDARD];
+    STAssertEquals(workoutCount, [[JWorkoutStore instance] count], @"");
 }
 
 @end

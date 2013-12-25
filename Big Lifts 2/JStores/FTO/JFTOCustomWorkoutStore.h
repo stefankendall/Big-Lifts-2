@@ -4,4 +4,5 @@
 - (void)reorderWeeks;
 
 - (void)setupVariant:(NSString *)variant;
+
 @end
