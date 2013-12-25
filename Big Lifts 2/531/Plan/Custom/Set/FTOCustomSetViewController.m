@@ -1,6 +1,7 @@
 #import "FTOCustomSetViewController.h"
 #import "JSet.h"
 #import "TextViewInputAccessoryBuilder.h"
+#import "DecimalNumberHelper.h"
 
 @implementation FTOCustomSetViewController
 
@@ -24,7 +25,7 @@
     int reps = [[self.repsLabel text] intValue];
     NSDecimalNumber *percentage = [NSDecimalNumber decimalNumberWithString:[self.percentageLabel text] locale:NSLocale.currentLocale];
     [self.set setReps:[NSNumber numberWithInt:reps]];
-    [self.set setPercentage:percentage];
+    [self.set setPercentage:[DecimalNumberHelper nanTo0:percentage]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

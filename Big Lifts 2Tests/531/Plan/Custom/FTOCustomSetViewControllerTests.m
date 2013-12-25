@@ -42,4 +42,16 @@
     STAssertEqualObjects(set.reps, @8, @"");
 }
 
+- (void)testDoesNotSetPercentageToNan {
+    FTOCustomSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomSet"];
+    JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] first];
+    JSet *set = [customWorkout.workout.orderedSets firstObject];
+    set.percentage = N(100);
+    [controller setSet:set];
+    [controller.percentageLabel setText:@""];
+    [controller textFieldDidEndEditing:controller.percentageLabel];
+
+    STAssertEqualObjects(set.percentage, N(0), @"");
+}
+
 @end
