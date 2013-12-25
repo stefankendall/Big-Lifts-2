@@ -223,7 +223,7 @@
 - (void)load {
     NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
     NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
-    NSLog(@"%@ %@", [self class], serializedData);
+//    NSLog(@"%@ %@", [self class], serializedData);
     if (serializedData) {
         self.data = [self deserialize:serializedData];
     }
