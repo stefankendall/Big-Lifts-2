@@ -15,6 +15,7 @@
 #import "JSetLog.h"
 #import "JSetLogStore.h"
 #import "JWorkout.h"
+#import "DecimalNumberHandlers.h"
 
 @interface SJIndividualLiftViewController ()
 @property(nonatomic, strong) NSDecimalNumber *liftedWeight;
@@ -89,7 +90,7 @@
 - (NSDecimalNumber *)minimumOrLiftedWeight {
     if (!self.liftedWeight) {
         NSDecimalNumber *effectiveWeight = [self.sjWorkout.workout.orderedSets[0] effectiveWeight];
-        return [[WeightRounder new] round:[effectiveWeight decimalNumberByAdding:self.sjWorkout.minWeightAdd]];
+        return [[WeightRounder new] round:[effectiveWeight decimalNumberByAdding:self.sjWorkout.minWeightAdd withBehavior:DecimalNumberHandlers.noRaise]];
     }
     else {
         return self.liftedWeight;
