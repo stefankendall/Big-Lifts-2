@@ -26,6 +26,7 @@
     cell.workoutLogTableDataSource = [[CombinedSetWorkoutLogTableDataSource alloc] initWithWorkoutLog:workoutLog];
     [cell.setTable setDataSource:cell.workoutLogTableDataSource];
     [cell.setTable setDelegate:cell.workoutLogTableDataSource];
+    [cell.setTable reloadData];
     return cell;
 }
 

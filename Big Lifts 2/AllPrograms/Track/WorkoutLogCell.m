@@ -15,6 +15,7 @@
     self.workoutLogTableDataSource = [[WorkoutLogTableDataSource alloc] initWithWorkoutLog:self.workoutLog];
     [self.setTable setDataSource:self.workoutLogTableDataSource];
     [self.setTable setDelegate:self.workoutLogTableDataSource];
+    [self.setTable reloadData];
 }
 
 @end
