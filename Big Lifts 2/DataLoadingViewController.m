@@ -35,9 +35,11 @@
 - (void)segueToApp {
     JCurrentProgram *program = [[JCurrentProgramStore instance] first];
     if (program.name) {
+        [[DataLoaded instance] setFirstTimeInApp:NO];
         [self performSegueWithIdentifier:@"dataLoadedSegueToProgram" sender:self];
     }
     else {
+        [[DataLoaded instance] setFirstTimeInApp:YES];
         [self performSegueWithIdentifier:@"dataLoadedSegue" sender:self];
     }
     [[DataLoaded instance] setViewLoaded:YES];

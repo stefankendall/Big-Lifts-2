@@ -5,5 +5,7 @@
 
 @property(nonatomic) BOOL timedOut;
 
+@property(nonatomic) BOOL firstTimeInApp;
+
 + (DataLoaded *)instance;
 @end

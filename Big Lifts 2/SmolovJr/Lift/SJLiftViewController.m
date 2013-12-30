@@ -3,6 +3,7 @@
 #import "SJIndividualLiftViewController.h"
 #import "JSJWorkout.h"
 #import "JSJWorkoutStore.h"
+#import "RateDialog.h"
 
 @interface SJLiftViewController()
 
@@ -10,6 +11,11 @@
 @end
 
 @implementation SJLiftViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.rateDialog = [RateDialog new];
+    [self.rateDialog show];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return [[[JSJWorkoutStore instance] unique:@"week"] count];

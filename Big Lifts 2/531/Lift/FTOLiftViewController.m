@@ -3,6 +3,7 @@
 #import "JFTOLiftStore.h"
 #import "JFTOWorkoutStore.h"
 #import "JWorkout.h"
+#import "RateDialog.h"
 #import "JSet.h"
 #import "JLift.h"
 #import "JFTOVariant.h"
@@ -19,6 +20,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
+    self.rateDialog = [RateDialog new];
+    [self.rateDialog show];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
