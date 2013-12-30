@@ -57,5 +57,6 @@
 - (NSString *)keyNameForStore;
 
 @property(nonatomic, strong) NSMutableArray *data;
+@property(nonatomic, strong) NSMutableDictionary *uuidCache;
 
 @end

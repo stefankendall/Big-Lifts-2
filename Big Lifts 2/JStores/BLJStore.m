@@ -11,7 +11,7 @@
 }
 
 - (id)create {
-    NSObject *object = [[self modelClass] new];
+    JModel *object = [[self modelClass] new];
     [self addUuid:object];
     [self.data addObject:object];
     [self setDefaultsForObject:object];
@@ -29,6 +29,7 @@
 
 - (void)empty {
     self.data = [@[] mutableCopy];
+    self.uuidCache = [@{} mutableCopy];
 }
 
 - (void)removeAll {
@@ -40,6 +41,7 @@
 
 - (void)remove:(id)object {
     [self.data removeObject:object];
+    [self.uuidCache removeObjectForKey:[object uuid]];
     [self removeCascadeAssociations:object];
 }
 
@@ -95,6 +97,12 @@
 }
 
 - (id)find:(NSString *)name value:(id)value {
+    if ([name isEqualToString:@"uuid"]) {
+        JModel *cachedModel = [self.uuidCache objectForKey:value];
+        if (cachedModel) {
+            return cachedModel;
+        }
+    }
     return [self findBy:[NSPredicate predicateWithFormat:@"%K == %@", name, value]];
 }
 
@@ -235,7 +243,15 @@
     if ([self.data count] == 0) {
         [self setupDefaults];
     }
+    [self buildUuidCache];
     [self onLoad];
+}
+
+- (void)buildUuidCache {
+    self.uuidCache = [@{} mutableCopy];
+    for (JModel *model in self.data) {
+        self.uuidCache[model.uuid] = model;
+    }
 }
 
 - (NSMutableArray *)deserialize:(NSArray *)serialized {

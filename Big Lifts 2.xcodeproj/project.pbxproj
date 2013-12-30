@@ -235,6 +235,7 @@
 		545908CB3D8151BBB8AA5E16 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545901F56B3627441C838476 /* SetCell.xib */; };
 		545908CC458BE7C8A7966A6D /* SetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459044AC302A12820103972 /* SetHelper.m */; };
 		545908D0E4EDD41E615E1F19 /* FTOSSTChangeLiftsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590879F12D9A9FF3B919AB /* FTOSSTChangeLiftsViewController.m */; };
+		545908D58F3C92F6095E312B /* Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906DE5600289711E6BC69 /* Debug.m */; };
 		545908E4FA8FCD66A973F47F /* FTOCustomAssistanceLiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CAA2D8F49C67D02F4C2 /* FTOCustomAssistanceLiftViewController.m */; };
 		545908E5DD3445683392F509 /* BrzyckiEstimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903266E73ED6F8DA21853 /* BrzyckiEstimator.m */; };
 		545908E850533D993D0C50AA /* FTOTriumvirateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F02F7A29BFAA8D57175 /* FTOTriumvirateViewController.m */; };
@@ -790,6 +791,7 @@
 		545906C0B00B7D1FCC367D93 /* BLViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLViewDeckController.h; sourceTree = "<group>"; };
 		545906C4391AB6F268FA79CF /* FTOLogExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogExporter.m; sourceTree = "<group>"; };
 		545906D7DB4FB94D9BFDDDDC /* SJSetCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSetCellTests.m; sourceTree = "<group>"; };
+		545906DE5600289711E6BC69 /* Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debug.m; sourceTree = "<group>"; };
 		545906DE5AA181F4CC92FF1A /* FTOLogGraphTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLogGraphTransformer.h; sourceTree = "<group>"; };
 		545906E5C2AB37198F670387 /* FTORepsToBeatCalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTORepsToBeatCalculatorTests.m; sourceTree = "<group>"; };
 		545906E6B8E782E67F624D1F /* 95-equalizer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "95-equalizer.png"; sourceTree = "<group>"; };
@@ -932,6 +934,7 @@
 		545909ED6408523020A30928 /* JFTOCustomAssistanceLiftStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomAssistanceLiftStore.m; sourceTree = "<group>"; };
 		545909F0B1B10C70CC08EEB7 /* 379-barbell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "379-barbell@2x.png"; sourceTree = "<group>"; };
 		545909F4953ACD0F24446E77 /* JFTOVariantStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOVariantStore.m; sourceTree = "<group>"; };
+		545909F5884E23272B0CBFC6 /* Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debug.h; sourceTree = "<group>"; };
 		545909F818FDE010AAB3B423 /* JTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTimer.h; sourceTree = "<group>"; };
 		545909F86F3FEE2FD6348E82 /* JFTOCustomAssistanceWorkoutStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomAssistanceWorkoutStore.m; sourceTree = "<group>"; };
 		545909FA0D72CB707A110351 /* Mailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mailer.h; sourceTree = "<group>"; };
@@ -1423,6 +1426,8 @@
 				5459034DAC9DB2FF14D7F186 /* DecimalNumberHandlers.h */,
 				545904BE2981F9A5B7D4F1B8 /* DecimalNumberHelper.m */,
 				545908E80BFAF39BCB4B02EF /* DecimalNumberHelper.h */,
+				545906DE5600289711E6BC69 /* Debug.m */,
+				545909F5884E23272B0CBFC6 /* Debug.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -3469,6 +3474,7 @@
 				54590B92A7155111DFC0BEA7 /* FTOCustomAssistanceEditSetViewController.m in Sources */,
 				5459003251ED1AFE90033535 /* DecimalNumberHelper.m in Sources */,
 				5459059C06A8635041E3B6BA /* JFTOCustomAssistance.m in Sources */,
+				545908D58F3C92F6095E312B /* Debug.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
