@@ -19,6 +19,7 @@
     [self stopTimer];
     self.secondsRemaining = seconds;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
+    [self scheduleBackgroundNotification];
     [self.observer timerTick];
 }
 
@@ -36,6 +37,21 @@
         [[NSUbiquitousKeyValueStore defaultStore] setObject:[NSDate new] forKey:@"timerSuspendDate"];
         [self.timer invalidate];
     }
+}
+
+- (void)scheduleBackgroundNotification {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    [[UIApplication sharedApplication] scheduleLocalNotification:[self getNotification]];
+}
+
+- (UILocalNotification *)getNotification {
+    UILocalNotification *notification = [UILocalNotification new];
+    notification.fireDate = [[NSDate new] dateByAddingTimeInterval:self.secondsRemaining];
+    notification.timeZone = [NSTimeZone defaultTimeZone];
+    notification.alertBody = @"Rest over";
+    notification.alertAction = @"go to workout";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    return notification;
 }
 
 - (void)resume {
