@@ -11,6 +11,7 @@
     self.textToVariant = @{
             @"Standard" : FTO_VARIANT_STANDARD,
             @"Heavier" : FTO_VARIANT_HEAVIER,
+            @"Powerlifting" : FTO_VARIANT_POWERLIFTING,
             @"Pyramid" : FTO_VARIANT_PYRAMID,
             @"Six Week" : FTO_VARIANT_SIX_WEEK,
             @"5/3/1 with Joker" : FTO_VARIANT_JOKER,
@@ -20,6 +21,7 @@
     self.orderedVariants = @[
             @"Standard",
             @"Heavier",
+            @"Powerlifting",
             @"Pyramid",
             @"Six Week",
             @"5/3/1 with Joker",

@@ -12,6 +12,7 @@
 #import "JFTOFivesProgression.h"
 #import "JFTOCustomPlan.h"
 #import "JFTOWorkoutSetsGenerator.h"
+#import "JFTOPowerliftingPlan.h"
 
 @implementation JFTOWorkoutSetsGenerator
 
@@ -40,6 +41,7 @@
     NSDictionary *templatePlans = @{
             FTO_VARIANT_STANDARD : [JFTOStandardPlan new],
             FTO_VARIANT_HEAVIER : [JFTOHeavierPlan new],
+            FTO_VARIANT_POWERLIFTING : [JFTOPowerliftingPlan new],
             FTO_VARIANT_PYRAMID : [JFTOPyramidPlan new],
             FTO_VARIANT_JOKER : [JFTOJokerPlan new],
             FTO_VARIANT_SIX_WEEK : [JFTOSixWeekPlan new],

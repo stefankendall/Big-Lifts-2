@@ -2,6 +2,7 @@
 
 extern NSString * const FTO_VARIANT_STANDARD;
 extern NSString * const FTO_VARIANT_HEAVIER;
+extern NSString * const FTO_VARIANT_POWERLIFTING;
 extern NSString * const FTO_VARIANT_SIX_WEEK;
 extern NSString * const FTO_VARIANT_PYRAMID;
 extern NSString * const FTO_VARIANT_JOKER;

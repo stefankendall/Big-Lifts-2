@@ -8,6 +8,8 @@
 
 @property(weak, nonatomic) IBOutlet UITableViewCell *standardVariant;
 @property(weak, nonatomic) IBOutlet UITableViewCell *heavierVariant;
+@property (weak, nonatomic) IBOutlet UITableViewCell *powerliftingVariant;
+
 @property(weak, nonatomic) IBOutlet UITableViewCell *pyramidVariant;
 @property(weak, nonatomic) IBOutlet UITableViewCell *jokerVariant;
 @property(weak, nonatomic) IBOutlet UITableViewCell *sixWeekVariant;
