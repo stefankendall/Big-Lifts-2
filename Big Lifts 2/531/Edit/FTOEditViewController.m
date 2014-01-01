@@ -1,7 +1,6 @@
 #import "FTOEditViewController.h"
 #import "JFTOLiftStore.h"
 #import "JFTOLift.h"
-#import "LiftFormCell.h"
 #import "FTOEditLiftCell.h"
 #import "RowTextField.h"
 #import "TextViewInputAccessoryBuilder.h"

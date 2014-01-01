@@ -17,7 +17,11 @@
             },
             @"Smolov Jr" : @{
                     @"nav" : @"sjNavViewController",
-                    @"main": @"sjLiftNav"
+                    @"main" : @"sjLiftNav"
+            },
+            @"Smolov" : @{
+                    @"nav" : @"svNavViewController",
+                    @"main" : @"svEditNav"
             }
     };
 
@@ -39,7 +43,8 @@
     NSDictionary *firstTimeControllers = @{
             @"5/3/1" : @"ftoEditNavController",
             @"Starting Strength" : @"ssEditViewController",
-            @"Smolov Jr" : @"sjEditNav"
+            @"Smolov Jr" : @"sjEditNav",
+            @"Smolov" : @"svEditNav"
     };
 
     NSString *program = [[[JCurrentProgramStore instance] first] name];

@@ -1,10 +1,9 @@
 #import "SSEditViewController.h"
 #import "JSSLiftStore.h"
-#import "TextFieldWithCell.h"
-#import "TextFieldCell.h"
 #import "LiftFormCell.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "JSSLift.h"
+#import "PaddingRowTextField.h"
 
 @implementation SSEditViewController
 
@@ -35,7 +34,7 @@
     JSSLift *lift = ([[JSSLiftStore instance] findAll])[(NSUInteger) indexPath.row];
     [[cell liftLabel] setText:lift.name];
 
-    [cell setIndexPath:indexPath];
+    [[cell textField] setIndexPath:indexPath];
     [[cell textField] setDelegate:self];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:[cell textField]];
 
@@ -60,8 +59,8 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    TextFieldWithCell *textViewWithCell = (TextFieldWithCell *) textField;
-    NSIndexPath *indexPath = [[textViewWithCell cell] indexPath];
+    PaddingRowTextField *rowTextField = (PaddingRowTextField *) textField;
+    NSIndexPath *indexPath = [rowTextField indexPath];
 
     NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[textField text] locale:NSLocale.currentLocale];
     JSSLift *lift = [[JSSLiftStore instance] findAll][(NSUInteger) [indexPath row]];

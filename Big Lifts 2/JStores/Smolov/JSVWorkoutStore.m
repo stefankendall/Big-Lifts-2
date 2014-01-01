@@ -9,6 +9,10 @@
 
 @implementation JSVWorkoutStore
 
+- (Class)modelClass {
+    return JSVWorkout.class;
+}
+
 - (void)setDefaultsForObject:(id)object {
     JSVWorkout *svWorkout = object;
     svWorkout.workout = [[JWorkoutStore instance] create];
