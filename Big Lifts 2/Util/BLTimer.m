@@ -56,7 +56,7 @@
 
 - (void)resume {
     NSNumber *secondsRemaining = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"timerSecondsRemaining"];
-    if (secondsRemaining) {
+    if (secondsRemaining != nil) {
         NSDate *suspendDate = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"timerSuspendDate"];
         NSDate *now = [NSDate new];
         int secondsElapsed = (int) (now.timeIntervalSince1970 - suspendDate.timeIntervalSince1970);
