@@ -1,4 +1,4 @@
 #import "UIViewController+ViewDeckAdditions.h"
 
-@interface SVEditViewController : UITableViewController
+@interface SVEditViewController : UITableViewController <UITextFieldDelegate>
 @end
