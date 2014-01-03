@@ -64,6 +64,7 @@
 		545901AF99B46C5EA6F6BCBA /* SSWorkoutVariantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C1CBA4EC0F7CD1C8C14 /* SSWorkoutVariantController.m */; };
 		545901B718749FF8F883B47A /* JSVWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BCE1889011E95D5FFBD /* JSVWorkout.m */; };
 		545901C0928BAB804E8FDE08 /* LogCellWithSets.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545902FB0C01913A5494B509 /* LogCellWithSets.xib */; };
+		545901CDEF7A29AB1E466C59 /* SVLiftSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C3A6EE8FB182D0A6EC7 /* SVLiftSelectorViewController.m */; };
 		545901CE12C9F9C3C09BFEAE /* BarWeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C64320B2FCA3001738B /* BarWeightCell.m */; };
 		545901D97C2AC4E4B591897C /* JFTOCustomAssistanceWorkoutStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907FD826D8F9913853035 /* JFTOCustomAssistanceWorkoutStoreTests.m */; };
 		545901E1F00851566E10BA05 /* FTOCustomSetViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590286E4F5F72055AE1E41 /* FTOCustomSetViewControllerTests.m */; };
@@ -1050,6 +1051,7 @@
 		54590C2BB773BFEFABD1B842 /* JFTOVariant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOVariant.h; sourceTree = "<group>"; };
 		54590C2FA5A481AB22BAB723 /* Migrate2to3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate2to3.m; sourceTree = "<group>"; };
 		54590C3167FE558175904B59 /* WorkoutLogStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutLogStore.m; sourceTree = "<group>"; };
+		54590C3A6EE8FB182D0A6EC7 /* SVLiftSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVLiftSelectorViewController.m; sourceTree = "<group>"; };
 		54590C4271B0629FB3FB1939 /* JTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTimer.m; sourceTree = "<group>"; };
 		54590C46C7D98FAB10F4C933 /* SSWorkoutVariantControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWorkoutVariantControllerTests.m; sourceTree = "<group>"; };
 		54590C47418D15328A3E25BB /* Purchaser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Purchaser.m; sourceTree = "<group>"; };
@@ -1173,6 +1175,7 @@
 		54590F02F7A29BFAA8D57175 /* FTOTriumvirateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTriumvirateViewController.m; sourceTree = "<group>"; };
 		54590F093C8BF25F5C70DEA4 /* JSJWorkoutStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSJWorkoutStoreTests.h; sourceTree = "<group>"; };
 		54590F12990854CA5E58951B /* JFTOCustomPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomPlan.m; sourceTree = "<group>"; };
+		54590F14A9FEAEBEB5A3F274 /* SVLiftSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVLiftSelectorViewController.h; sourceTree = "<group>"; };
 		54590F244D270A202FEEA6FF /* FTOWorkoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOWorkoutCell.xib; sourceTree = "<group>"; };
 		54590F2503303E5DB5D3AFBB /* SVEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVEditViewController.h; sourceTree = "<group>"; };
 		54590F2534A0C6BBEFF41D74 /* JBarStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBarStoreTests.h; sourceTree = "<group>"; };
@@ -1794,6 +1797,15 @@
 			path = "Big Lifts 2Tests";
 			sourceTree = "<group>";
 		};
+		5459054267527A928C2911CF /* Lift */ = {
+			isa = PBXGroup;
+			children = (
+				54590C3A6EE8FB182D0A6EC7 /* SVLiftSelectorViewController.m */,
+				54590F14A9FEAEBEB5A3F274 /* SVLiftSelectorViewController.h */,
+			);
+			path = Lift;
+			sourceTree = "<group>";
+		};
 		5459056B46E877BBA713B865 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
@@ -1908,6 +1920,7 @@
 				54590FD7A56DBE6ED553E22F /* SVNavController.m */,
 				54590BAC055C90785C4622C8 /* SVNavController.h */,
 				54590199E5536FD2A402A9B9 /* Edit */,
+				5459054267527A928C2911CF /* Lift */,
 			);
 			path = Smolov;
 			sourceTree = "<group>";
@@ -3585,6 +3598,7 @@
 				545901A25907B01F9921D701 /* JSVLift.m in Sources */,
 				5459015812F18E639687EBB2 /* SVNavController.m in Sources */,
 				54590D2268AEAEC4940410B1 /* SVEditViewController.m in Sources */,
+				545901CDEF7A29AB1E466C59 /* SVLiftSelectorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

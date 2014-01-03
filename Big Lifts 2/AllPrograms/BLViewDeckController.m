@@ -21,7 +21,7 @@
             },
             @"Smolov" : @{
                     @"nav" : @"svNavViewController",
-                    @"main" : @"svEditNav"
+                    @"main" : @"svLiftSelectorNav"
             }
     };
 
