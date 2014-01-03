@@ -8,9 +8,7 @@
 
 @property(nonatomic) NSNumber *day;
 @property(nonatomic) NSNumber *week;
-
 @property(nonatomic) NSNumber *cycle;
-@property(nonatomic) NSNumber *order;
 
 @property(nonatomic) BOOL testMax;
 @property(nonatomic) NSDecimalNumber *weightAdd;
