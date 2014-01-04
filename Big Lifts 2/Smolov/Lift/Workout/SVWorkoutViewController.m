@@ -56,7 +56,6 @@
 
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"Smolov" date:[NSDate new]];
     if (self.svWorkout.testMax) {
-        NSLog(@"Max day");
         NSDecimalNumber *newMax = [NSDecimalNumber decimalNumberWithString:[self.oneRepField text] locale:[NSLocale currentLocale]];
         [[[JSVLiftStore instance] first] setWeight:newMax];
 
@@ -65,7 +64,6 @@
         [workoutLog addSet:setLog];
     }
     else {
-        NSLog(@"Looping");
         for (JSet *set in self.svWorkout.workout.sets) {
             [workoutLog addSet:[[JSetLogStore instance] createFromSet:set]];
         }
