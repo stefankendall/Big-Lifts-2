@@ -5558,7 +5558,13 @@
                             <outlet property="delegate" destination="aPv-PE-zMO" id="o7t-1P-2AG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Workout" id="Oig-55-lz0"/>
+                    <navigationItem key="navigationItem" title="Workout" id="Oig-55-lz0">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="jeX-3A-ms8">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="aPv-PE-zMO" id="jhg-SU-SJ0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbp-g5-Zww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

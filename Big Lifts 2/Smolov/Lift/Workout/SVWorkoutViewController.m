@@ -2,6 +2,18 @@
 #import "JSVWorkout.h"
 #import "JWorkout.h"
 #import "SetCell.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
+#import "SetCellWithPlates.h"
+#import "SVOneRepTestCell.h"
+#import "PaddingTextField.h"
+#import "JSVLiftStore.h"
+#import "JSVLift.h"
+#import "TextViewInputAccessoryBuilder.h"
+#import "JWorkoutLogStore.h"
+#import "JWorkoutLog.h"
+#import "JSetLog.h"
+#import "JSetLogStore.h"
 
 @implementation SVWorkoutViewController
 
@@ -16,17 +28,40 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.svWorkout.testMax) {
+        SVOneRepTestCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SVOneRepTestCell.class)];
+        if (!cell) {
+            cell = [SVOneRepTestCell create];
+        }
+        JSVLift *mainLift = [[JSVLiftStore instance] first];
+        [cell.oneRepField setText:[mainLift.weight stringValue]];
 
+        self.oneRepField = cell.oneRepField;
+        [[TextViewInputAccessoryBuilder new] doneButtonAccessory:cell.oneRepField];
+        return cell;
     }
     else {
-        SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SetCell.class)];
+        Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
+        SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
         if (!cell) {
-            cell = [SetCell create];
+            cell = [setClass create];
         }
 
         [cell setSet:self.svWorkout.workout.sets[(NSUInteger) indexPath.row]];
         return cell;
     }
+}
+
+- (IBAction)doneButtonTapped:(id)sender {
+    if (self.svWorkout.testMax) {
+        NSDecimalNumber *newMax = [NSDecimalNumber decimalNumberWithString:[self.oneRepField text] locale:[NSLocale currentLocale]];
+        [[[JSVLiftStore instance] first] setWeight:newMax];
+
+        JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"Smolov" date:[NSDate new]];
+        JSVLift *mainLift = [[JSVLiftStore instance] first];
+        JSetLog *setLog = [[JSetLogStore instance] createWithName:mainLift.name weight:newMax reps:1 warmup:NO assistance:NO amrap:NO];
+        [workoutLog addSet:setLog];
+    }
+    [self.svWorkout setDone:YES];
 }
 
 @end

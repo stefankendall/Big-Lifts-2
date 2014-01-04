@@ -30,6 +30,12 @@
     JSVWorkout *workout = [self workoutForIndexPath:indexPath];
     [cell.week setText:[workout.week stringValue]];
     [cell.day setText:[workout.day stringValue]];
+    if (workout.done) {
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
+    else {
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+    }
 
     return cell;
 }
