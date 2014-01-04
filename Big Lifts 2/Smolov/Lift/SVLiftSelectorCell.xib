@@ -13,46 +13,48 @@
                 <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8Z-Vm-cbZ">
-                        <rect key="frame" x="20" y="11" width="43" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8Z-Vm-cbZ">
+                        <rect key="frame" x="214" y="11" width="43" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="739-Tf-rHB">
-                        <rect key="frame" x="71" y="11" width="22" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="739-Tf-rHB">
+                        <rect key="frame" x="265" y="11" width="22" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="22" id="rdI-k8-2Bq"/>
+                            <constraint firstAttribute="width" constant="22" id="GnH-5Z-LzW"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXY-E7-t8o">
-                        <rect key="frame" x="275" y="11" width="12" height="21"/>
+                        <rect key="frame" x="58" y="11" width="12" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="12" id="1re-bf-hhH"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkV-Od-z4S">
-                        <rect key="frame" x="237" y="11" width="30" height="21"/>
+                        <rect key="frame" x="20" y="11" width="30" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Z8Z-Vm-cbZ" firstAttribute="leading" secondItem="vY9-PN-Cih" secondAttribute="leading" constant="20" symbolic="YES" id="9iT-yu-kKQ"/>
-                    <constraint firstItem="739-Tf-rHB" firstAttribute="baseline" secondItem="PkV-Od-z4S" secondAttribute="baseline" id="Bk2-VW-24E"/>
-                    <constraint firstItem="sXY-E7-t8o" firstAttribute="leading" secondItem="PkV-Od-z4S" secondAttribute="trailing" constant="8" symbolic="YES" id="Boz-bP-4jn"/>
-                    <constraint firstAttribute="trailing" secondItem="PkV-Od-z4S" secondAttribute="trailing" constant="20" symbolic="YES" id="YZ0-0U-XUe"/>
-                    <constraint firstAttribute="trailing" secondItem="sXY-E7-t8o" secondAttribute="trailing" id="Zh0-Ac-mcA"/>
-                    <constraint firstItem="739-Tf-rHB" firstAttribute="leading" secondItem="Z8Z-Vm-cbZ" secondAttribute="trailing" constant="8" symbolic="YES" id="hha-7c-Ufh"/>
-                    <constraint firstItem="Z8Z-Vm-cbZ" firstAttribute="baseline" secondItem="739-Tf-rHB" secondAttribute="baseline" id="kJs-GB-noF"/>
-                    <constraint firstItem="PkV-Od-z4S" firstAttribute="baseline" secondItem="sXY-E7-t8o" secondAttribute="baseline" id="kxR-2i-yoM"/>
-                    <constraint firstItem="PkV-Od-z4S" firstAttribute="centerY" secondItem="vY9-PN-Cih" secondAttribute="centerY" id="wQS-74-AzN"/>
+                    <constraint firstItem="PkV-Od-z4S" firstAttribute="baseline" secondItem="sXY-E7-t8o" secondAttribute="baseline" id="0Hq-Z8-tG4"/>
+                    <constraint firstItem="739-Tf-rHB" firstAttribute="baseline" secondItem="Z8Z-Vm-cbZ" secondAttribute="baseline" id="DtF-8l-GbQ"/>
+                    <constraint firstAttribute="trailing" secondItem="739-Tf-rHB" secondAttribute="trailing" id="G4O-PH-RTH"/>
+                    <constraint firstItem="sXY-E7-t8o" firstAttribute="centerY" secondItem="vY9-PN-Cih" secondAttribute="centerY" id="MIw-cJ-MG8"/>
+                    <constraint firstItem="sXY-E7-t8o" firstAttribute="baseline" secondItem="Z8Z-Vm-cbZ" secondAttribute="baseline" id="eTW-rv-F9B"/>
+                    <constraint firstItem="PkV-Od-z4S" firstAttribute="leading" secondItem="vY9-PN-Cih" secondAttribute="leading" constant="20" symbolic="YES" id="h7y-aN-whx"/>
+                    <constraint firstItem="sXY-E7-t8o" firstAttribute="leading" secondItem="PkV-Od-z4S" secondAttribute="trailing" constant="8" symbolic="YES" id="jAT-F7-pSg"/>
+                    <constraint firstItem="739-Tf-rHB" firstAttribute="leading" secondItem="Z8Z-Vm-cbZ" secondAttribute="trailing" constant="8" symbolic="YES" id="koD-1b-uMK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
