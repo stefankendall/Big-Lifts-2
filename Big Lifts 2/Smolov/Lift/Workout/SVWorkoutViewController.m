@@ -52,16 +52,24 @@
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
+    [self.svWorkout setDone:YES];
+
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"Smolov" date:[NSDate new]];
     if (self.svWorkout.testMax) {
+        NSLog(@"Max day");
         NSDecimalNumber *newMax = [NSDecimalNumber decimalNumberWithString:[self.oneRepField text] locale:[NSLocale currentLocale]];
         [[[JSVLiftStore instance] first] setWeight:newMax];
 
-        JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"Smolov" date:[NSDate new]];
         JSVLift *mainLift = [[JSVLiftStore instance] first];
         JSetLog *setLog = [[JSetLogStore instance] createWithName:mainLift.name weight:newMax reps:1 warmup:NO assistance:NO amrap:NO];
         [workoutLog addSet:setLog];
     }
-    [self.svWorkout setDone:YES];
+    else {
+        NSLog(@"Looping");
+        for (JSet *set in self.svWorkout.workout.sets) {
+            [workoutLog addSet:[[JSetLogStore instance] createFromSet:set]];
+        }
+    }
 }
 
 @end

@@ -39,7 +39,7 @@
     STAssertTrue(week4MaxTest.testMax, @"");
     SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
     controller.svWorkout = week4MaxTest;
-    [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0,0)];
+    [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
     [controller.oneRepField setText:@"300"];
     [controller doneButtonTapped:nil];
     JSVLift *svLift = [[JSVLiftStore instance] first];
@@ -54,7 +54,7 @@
     SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
     controller.svWorkout = week4MaxTest;
 
-    [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0,0)];
+    [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
     [controller.oneRepField setText:@"300"];
     [controller doneButtonTapped:nil];
 
@@ -68,6 +68,18 @@
     JSetLog *setLog = workoutLog.sets[0];
     STAssertEqualObjects(setLog.reps, @1, @"");
     STAssertEqualObjects(setLog.weight, N(300), @"");
+}
+
+- (void)testLogsLiftsOnNormalLiftDay {
+    JSVWorkout *firstWorkout = [[JSVWorkoutStore instance] first];
+    SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
+    controller.svWorkout = firstWorkout;
+
+    [controller doneButtonTapped:nil];
+    NSArray *smolovLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov"];
+    STAssertEquals([smolovLogs count], 1U, @"");
+    JWorkoutLog *workoutLog = smolovLogs[0];
+    STAssertEquals([workoutLog.sets count], 7U, @"");
 }
 
 @end
