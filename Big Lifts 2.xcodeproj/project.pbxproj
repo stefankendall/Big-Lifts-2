@@ -326,6 +326,7 @@
 		54590B9EAABAF3B9D7365406 /* FTORepsToBeatCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906E5C2AB37198F670387 /* FTORepsToBeatCalculatorTests.m */; };
 		54590BB38A953F48192FAD8C /* 89-dumbells@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5459079C026C3E3D04E0A8DF /* 89-dumbells@2x.png */; };
 		54590BB56950CD6B9888FFDF /* RowTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FB7664105B2ECDCBC48 /* RowTextField.m */; };
+		54590BBBBE7FD6468BDA0B51 /* JSVWorkoutStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906C58FCD0F78A3DE72D4 /* JSVWorkoutStoreTests.m */; };
 		54590BD23B8B8A55DAE52C93 /* SJSetCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906D7DB4FB94D9BFDDDDC /* SJSetCellTests.m */; };
 		54590BD4AA44B42AD2260D39 /* ProgramSelectorViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907BCC2F2400246302060 /* ProgramSelectorViewControllerTests.m */; };
 		54590BEBC514A9B2D4075C60 /* FTOCustomCopyTemplateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907FCF46ECB325E229200 /* FTOCustomCopyTemplateViewController.m */; };
@@ -702,6 +703,7 @@
 		5459044A9A11131A0C5AD182 /* 16-line-chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-line-chart@2x.png"; sourceTree = "<group>"; };
 		5459044AC302A12820103972 /* SetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetHelper.m; sourceTree = "<group>"; };
 		5459044F98C12E57116423F7 /* JSettingsStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSettingsStoreTests.m; sourceTree = "<group>"; };
+		545904578A4D93CB09CC7E79 /* JSVWorkoutStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSVWorkoutStoreTests.h; sourceTree = "<group>"; };
 		5459046243304D95CDA51B4E /* SJTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJTrackViewController.m; sourceTree = "<group>"; };
 		5459046391D7F79DDC8FC2B0 /* JSSLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSLiftStoreTests.m; sourceTree = "<group>"; };
 		5459046717BB03E9F0393B41 /* SSLiftViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftViewControllerTests.m; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 		545906AF05C7725DAEB8ADBF /* JSSState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSState.h; sourceTree = "<group>"; };
 		545906C0B00B7D1FCC367D93 /* BLViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLViewDeckController.h; sourceTree = "<group>"; };
 		545906C4391AB6F268FA79CF /* FTOLogExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogExporter.m; sourceTree = "<group>"; };
+		545906C58FCD0F78A3DE72D4 /* JSVWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSVWorkoutStoreTests.m; sourceTree = "<group>"; };
 		545906D7DB4FB94D9BFDDDDC /* SJSetCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSetCellTests.m; sourceTree = "<group>"; };
 		545906DE5600289711E6BC69 /* Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debug.m; sourceTree = "<group>"; };
 		545906DE5AA181F4CC92FF1A /* FTOLogGraphTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLogGraphTransformer.h; sourceTree = "<group>"; };
@@ -1550,6 +1553,7 @@
 				54590270DF6B88BCB9B8D7C4 /* BLJStoreManagerTests.m */,
 				54590D09454049E0534A5AD6 /* BLJStoreManagerTests.h */,
 				545903B209A634CE5C337278 /* Migrations */,
+				54590581B806195C00FA2D2C /* Smolov */,
 			);
 			path = JStores;
 			sourceTree = "<group>";
@@ -1853,6 +1857,15 @@
 				54590A2308367AC97692CDE7 /* BrzyckiEstimator.h */,
 			);
 			path = Estimators;
+			sourceTree = "<group>";
+		};
+		54590581B806195C00FA2D2C /* Smolov */ = {
+			isa = PBXGroup;
+			children = (
+				545906C58FCD0F78A3DE72D4 /* JSVWorkoutStoreTests.m */,
+				545904578A4D93CB09CC7E79 /* JSVWorkoutStoreTests.h */,
+			);
+			path = Smolov;
 			sourceTree = "<group>";
 		};
 		5459059F4883F1883AE01967 /* Change */ = {
@@ -3412,6 +3425,7 @@
 				545900EF42B7644B22B8CA4A /* SVEditViewControllerTests.m in Sources */,
 				5459074936C2E81F2EF8DC50 /* SVLiftSelectorViewControllerTests.m in Sources */,
 				54590AEBCC8AFCAC9F3618AF /* SVWorkoutViewControllerTests.m in Sources */,
+				54590BBBBE7FD6468BDA0B51 /* JSVWorkoutStoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

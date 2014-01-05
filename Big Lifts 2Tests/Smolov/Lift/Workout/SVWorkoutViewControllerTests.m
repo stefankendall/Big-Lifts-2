@@ -10,6 +10,7 @@
 #import "JWorkoutLogStore.h"
 #import "JWorkoutLog.h"
 #import "JSetLog.h"
+#import "SetCell.h"
 
 @implementation SVWorkoutViewControllerTests
 
@@ -80,6 +81,21 @@
     STAssertEquals([smolovLogs count], 1U, @"");
     JWorkoutLog *workoutLog = smolovLogs[0];
     STAssertEquals([workoutLog.sets count], 7U, @"");
+}
+
+- (void)testAddsWeightAdd {
+    JSVWorkout *cycle2week2day1 = [[JSVWorkoutStore instance] findAllWhere:@"cycle" value:@2][4];
+    SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
+    controller.svWorkout = cycle2week2day1;
+
+    [[[JSVLiftStore instance] first] setWeight:N(100)];
+
+    SetCell *cell = (SetCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0,0)];
+    STAssertEqualObjects([cell.weightLabel text], @"90", @"");
+}
+
+- (void)testLogsWeightAddWeight {
+    STFail(@"FAIL");
 }
 
 @end

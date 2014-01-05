@@ -6,6 +6,8 @@
 #import "JSet.h"
 #import "JLift.h"
 #import "JSVLiftStore.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation JSVWorkoutStore
 
@@ -91,38 +93,54 @@
 
     JSVWorkout *day1week2 = [self createWithDay:1 week:2 cycle:2];
     [self addSets:4 withReps:9 atPercentage:N(70) forWorkout:day1week2 withLift:primaryLift];
-    day1week2.weightAdd = N(20);
+    day1week2.weightAdd = [self incrementInLbsOrKg:N(20)];
 
     JSVWorkout *day2week2 = [self createWithDay:2 week:2 cycle:2];
     [self addSets:5 withReps:7 atPercentage:N(75) forWorkout:day2week2 withLift:primaryLift];
-    day2week2.weightAdd = N(20);
+    day2week2.weightAdd = [self incrementInLbsOrKg:N(20)];
 
     JSVWorkout *day3week2 = [self createWithDay:3 week:2 cycle:2];
     [self addSets:7 withReps:5 atPercentage:N(80) forWorkout:day3week2 withLift:primaryLift];
-    day3week2.weightAdd = N(20);
+    day3week2.weightAdd = [self incrementInLbsOrKg:N(20)];
 
     JSVWorkout *day4week2 = [self createWithDay:4 week:2 cycle:2];
     [self addSets:10 withReps:3 atPercentage:N(85) forWorkout:day4week2 withLift:primaryLift];
-    day4week2.weightAdd = N(20);
+    day4week2.weightAdd = [self incrementInLbsOrKg:N(20)];
 
     JSVWorkout *day1week3 = [self createWithDay:1 week:3 cycle:2];
     [self addSets:4 withReps:9 atPercentage:N(70) forWorkout:day1week3 withLift:primaryLift];
-    day1week2.weightAdd = N(30);
+    day1week3.weightAdd = [self incrementInLbsOrKg:N(30)];
 
     JSVWorkout *day2week3 = [self createWithDay:2 week:3 cycle:2];
     [self addSets:5 withReps:7 atPercentage:N(75) forWorkout:day2week3 withLift:primaryLift];
-    day2week2.weightAdd = N(30);
+    day2week3.weightAdd = [self incrementInLbsOrKg:N(30)];
 
     JSVWorkout *day3week3 = [self createWithDay:3 week:3 cycle:2];
     [self addSets:7 withReps:5 atPercentage:N(80) forWorkout:day3week3 withLift:primaryLift];
-    day3week2.weightAdd = N(30);
+    day3week3.weightAdd = [self incrementInLbsOrKg:N(30)];
 
     JSVWorkout *day4week3 = [self createWithDay:4 week:3 cycle:2];
     [self addSets:10 withReps:3 atPercentage:N(85) forWorkout:day4week3 withLift:primaryLift];
-    day4week2.weightAdd = N(30);
+    day4week3.weightAdd = [self incrementInLbsOrKg:N(30)];
 
     JSVWorkout *week4 = [self createWithDay:1 week:4 cycle:2];
     week4.testMax = YES;
+}
+
+- (NSDecimalNumber *)incrementInLbsOrKg:(NSDecimalNumber *)number {
+    if ([[[[JSettingsStore instance] first] units] isEqualToString:@"lbs"]) {
+        return number;
+    }
+    else {
+        return [number decimalNumberByDividingBy:N(2.2) withBehavior:
+                [NSDecimalNumberHandler
+                        decimalNumberHandlerWithRoundingMode:NSRoundPlain
+                                                       scale:0
+                                            raiseOnExactness:NO
+                                             raiseOnOverflow:NO
+                                            raiseOnUnderflow:NO
+                                         raiseOnDivideByZero:NO]];
+    }
 }
 
 - (void)createSwitchingCycle {
@@ -132,7 +150,7 @@
 
     JSVWorkout *day1week1 = [self createWithDay:1 week:1 cycle:3];
     [self addSets:1 withReps:1 atPercentage:N(100) forWorkout:day1week1 withLift:negativeSquat];
-    day1week1.weightAdd = N(10);
+    day1week1.weightAdd = [self incrementInLbsOrKg:N(10)];
 
     JSVWorkout *day2week1 = [self createWithDay:2 week:1 cycle:3];
     [self addSets:8 withReps:3 atPercentage:N(60) forWorkout:day2week1 withLift:powerClean];
@@ -142,7 +160,7 @@
 
     JSVWorkout *day1week2 = [self createWithDay:1 week:2 cycle:3];
     [self addSets:1 withReps:1 atPercentage:N(100) forWorkout:day1week2 withLift:negativeSquat];
-    day1week2.weightAdd = N(20);
+    day1week2.weightAdd = [self incrementInLbsOrKg:N(20)];
 
     JSVWorkout *day2week2 = [self createWithDay:2 week:2 cycle:3];
     [self addSets:8 withReps:3 atPercentage:N(60) forWorkout:day2week2 withLift:powerClean];
@@ -244,6 +262,11 @@
         set.lift = lift;
         [workout.workout addSet:set];
     }
+}
+
+- (void)adjustForKg {
+    [self removeAll];
+    [self setupDefaults];
 }
 
 @end
