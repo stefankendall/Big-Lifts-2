@@ -8,6 +8,7 @@
 #import "JSVLiftStore.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
+#import "JSVLift.h"
 
 @implementation JSVWorkoutStore
 
@@ -37,9 +38,9 @@
 }
 
 - (void)createIntro {
-    JLift *primaryLift = [[JSVLiftStore instance] find:@"name" value:@"Squat"];
-    JLift *lunges = [[JSVLiftStore instance] find:@"name" value:@"Lunges"];
-    JLift *bulgarianLunges = [[JSVLiftStore instance] find:@"name" value:@"Bulgarian Lunges"];
+    JSVLift *primaryLift = [[JSVLiftStore instance] find:@"name" value:@"Squat"];
+    JSVLift *lunges = [[JSVLiftStore instance] find:@"name" value:@"Lunges"];
+    JSVLift *bulgarianLunges = [[JSVLiftStore instance] find:@"name" value:@"Bulgarian Lunges"];
     JSVWorkout *day1 = [self createWithDay:1 week:1 cycle:1];
     [self addSets:3 withReps:8 atPercentage:N(65) forWorkout:day1 withLift:primaryLift];
     [self addSets:1 withReps:5 atPercentage:N(70) forWorkout:day1 withLift:primaryLift];
@@ -265,8 +266,10 @@
 }
 
 - (void)adjustForKg {
-    [self removeAll];
-    [self setupDefaults];
+    if ([self count] > 0) {
+        [self removeAll];
+        [self setupDefaults];
+    }
 }
 
 @end

@@ -27,9 +27,8 @@
 }
 
 - (void)testAssociatesLiftsToSets {
-    JSVWorkout *cycle2week2day1 = [[JSVWorkoutStore instance] findAllWhere:@"cycle" value:@2][4];
-    STAssertEquals([cycle2week2day1.workout.sets count], 4U, @"");
-    JSet *set = cycle2week2day1.workout.sets[0];
+    JSVWorkout *cycle1week1day1 = [[JSVWorkoutStore instance] findAllWhere:@"cycle" value:@1][0];
+    JSet *set = cycle1week1day1.workout.sets[0];
     STAssertNotNil(set, @"");
     STAssertNotNil(set.lift, @"");
 }

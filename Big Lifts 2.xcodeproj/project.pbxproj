@@ -379,6 +379,7 @@
 		54590D8600F8453E0AA237F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54590A51214D862DCADA96E5 /* InfoPlist.strings */; };
 		54590D8A1ECD755A23B4F30B /* FTOAssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BFD33012D25554C8898 /* FTOAssistanceViewController.m */; };
 		54590D902A18B27E12EF9CCF /* SVWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459064BA6DACE55B825CFC5 /* SVWorkoutViewController.m */; };
+		54590DA6EE8D8BEB12E8F283 /* JSVLiftStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BB3E883BEB35115238A /* JSVLiftStoreTests.m */; };
 		54590DA896343EBA06F271CF /* SetLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590204795771CA8E509235 /* SetLog.m */; };
 		54590DAF6F0C74F94258503A /* 379-barbell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545909F0B1B10C70CC08EEB7 /* 379-barbell@2x.png */; };
 		54590DB754B042E2CD46EC4D /* BLJStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459084FA68173D3A9EDD2C0 /* BLJStore.m */; };
@@ -955,6 +956,7 @@
 		545909DAD39D1876F9EB656F /* SetCellWithPlatesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCellWithPlatesTests.m; sourceTree = "<group>"; };
 		545909DC3F80282A04B44F91 /* FTOAddLiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOAddLiftViewController.m; sourceTree = "<group>"; };
 		545909DDF05CB3A959B0A669 /* AddPlateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateViewController.m; sourceTree = "<group>"; };
+		545909E163E3629C30088B4B /* JSVLiftStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSVLiftStoreTests.h; sourceTree = "<group>"; };
 		545909E259BF9874F11A3EEA /* AppTimedOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTimedOutViewController.h; sourceTree = "<group>"; };
 		545909E2AD3ADBCACEDEABF4 /* FTOSSTViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSSTViewControllerTests.h; sourceTree = "<group>"; };
 		545909E419463E503E18EEA4 /* JFTOTriumvirate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOTriumvirate.m; sourceTree = "<group>"; };
@@ -1043,6 +1045,7 @@
 		54590BA7554FB2938E5055E7 /* JFTOSSTLift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOSSTLift.m; sourceTree = "<group>"; };
 		54590BAC055C90785C4622C8 /* SVNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVNavController.h; sourceTree = "<group>"; };
 		54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		54590BB3E883BEB35115238A /* JSVLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSVLiftStoreTests.m; sourceTree = "<group>"; };
 		54590BB428508356CB039BFE /* FTOCustomAssistanceEditSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomAssistanceEditSetViewController.m; sourceTree = "<group>"; };
 		54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonMenu@2x.png"; sourceTree = "<group>"; };
 		54590BB5F836221D0DB6A202 /* JSJWorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSJWorkoutStore.h; sourceTree = "<group>"; };
@@ -1864,6 +1867,8 @@
 			children = (
 				545906C58FCD0F78A3DE72D4 /* JSVWorkoutStoreTests.m */,
 				545904578A4D93CB09CC7E79 /* JSVWorkoutStoreTests.h */,
+				54590BB3E883BEB35115238A /* JSVLiftStoreTests.m */,
+				545909E163E3629C30088B4B /* JSVLiftStoreTests.h */,
 			);
 			path = Smolov;
 			sourceTree = "<group>";
@@ -3426,6 +3431,7 @@
 				5459074936C2E81F2EF8DC50 /* SVLiftSelectorViewControllerTests.m in Sources */,
 				54590AEBCC8AFCAC9F3618AF /* SVWorkoutViewControllerTests.m in Sources */,
 				54590BBBBE7FD6468BDA0B51 /* JSVWorkoutStoreTests.m in Sources */,
+				54590DA6EE8D8BEB12E8F283 /* JSVLiftStoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
