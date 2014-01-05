@@ -90,12 +90,23 @@
 
     [[[JSVLiftStore instance] first] setWeight:N(100)];
 
-    SetCell *cell = (SetCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0,0)];
+    SetCell *cell = (SetCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
     STAssertEqualObjects([cell.weightLabel text], @"90", @"");
 }
 
 - (void)testLogsWeightAddWeight {
-    STFail(@"FAIL");
+    JSVWorkout *cycle2week2day1 = [[JSVWorkoutStore instance] findAllWhere:@"cycle" value:@2][4];
+    SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
+    controller.svWorkout = cycle2week2day1;
+
+    [[[JSVLiftStore instance] first] setWeight:N(100)];
+    [[[JSVLiftStore instance] first] setName:@"Squat"];
+    [controller doneButtonTapped:nil];
+
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov"][0];
+    JSetLog *setLog = workoutLog.sets[0];
+    STAssertEqualObjects(setLog.reps, @9, @"");
+    STAssertEqualObjects(setLog.weight, N(90), @"");
 }
 
 @end

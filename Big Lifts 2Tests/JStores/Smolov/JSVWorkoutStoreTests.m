@@ -3,6 +3,8 @@
 #import "JSettingsStore.h"
 #import "JSettings.h"
 #import "JSVWorkout.h"
+#import "JWorkout.h"
+#import "JSet.h"
 
 @implementation JSVWorkoutStoreTests
 
@@ -22,6 +24,14 @@
 
     JSVWorkout *cycle2week2day1 = [[JSVWorkoutStore instance] findAllWhere:@"cycle" value:@2][4];
     STAssertEqualObjects(cycle2week2day1.weightAdd, N(9), @"");
+}
+
+- (void)testAssociatesLiftsToSets {
+    JSVWorkout *cycle2week2day1 = [[JSVWorkoutStore instance] findAllWhere:@"cycle" value:@2][4];
+    STAssertEquals([cycle2week2day1.workout.sets count], 4U, @"");
+    JSet *set = cycle2week2day1.workout.sets[0];
+    STAssertNotNil(set, @"");
+    STAssertNotNil(set.lift, @"");
 }
 
 @end

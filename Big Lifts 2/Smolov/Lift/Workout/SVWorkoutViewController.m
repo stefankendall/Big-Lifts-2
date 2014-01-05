@@ -71,7 +71,8 @@
     }
     else {
         for (JSet *set in self.svWorkout.workout.sets) {
-            [workoutLog addSet:[[JSetLogStore instance] createFromSet:set]];
+            JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
+            [workoutLog addSet:setLog];
         }
     }
 }
