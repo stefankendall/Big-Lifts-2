@@ -72,6 +72,9 @@
     else {
         for (JSet *set in self.svWorkout.workout.sets) {
             JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
+            if (self.svWorkout.weightAdd) {
+                setLog.weight = [[set roundedEffectiveWeight] decimalNumberByAdding:self.svWorkout.weightAdd];
+            }
             [workoutLog addSet:setLog];
         }
     }
