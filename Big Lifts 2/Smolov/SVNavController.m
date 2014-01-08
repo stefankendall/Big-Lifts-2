@@ -5,7 +5,8 @@
 - (NSDictionary *)specificTagMapping {
     return @{
             @0 : @"svLiftSelectorNav",
-            @1 : @"svEditNav"
+            @1 : @"svEditNav",
+            @3 : @"svTrackNav"
     };
 }
 

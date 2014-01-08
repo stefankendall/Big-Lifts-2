@@ -1,5 +1,4 @@
 #import "JSVWorkout.h"
-#import "JWorkout.h"
 
 @implementation JSVWorkout
 

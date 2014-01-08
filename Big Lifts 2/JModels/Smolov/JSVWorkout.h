@@ -12,6 +12,6 @@
 
 @property(nonatomic) BOOL testMax;
 @property(nonatomic) BOOL done;
-@property(nonatomic) NSDecimalNumber *weightAdd;
+@property(nonatomic) NSDecimalNumber<Optional> *weightAdd;
 
 @end

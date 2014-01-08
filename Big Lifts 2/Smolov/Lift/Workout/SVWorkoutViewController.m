@@ -1,3 +1,4 @@
+#import <ViewDeck/IIViewDeckController.h>
 #import "SVWorkoutViewController.h"
 #import "JSVWorkout.h"
 #import "JWorkout.h"
@@ -59,7 +60,13 @@
 
 - (IBAction)doneButtonTapped:(id)sender {
     [self.svWorkout setDone:YES];
+    [self logWorkout];
 
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"svTrackNav"]];
+}
+
+- (void)logWorkout {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"Smolov" date:[NSDate new]];
     if (self.svWorkout.testMax) {
         NSDecimalNumber *newMax = [NSDecimalNumber decimalNumberWithString:[self.oneRepField text] locale:[NSLocale currentLocale]];

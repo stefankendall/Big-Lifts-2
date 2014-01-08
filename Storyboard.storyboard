@@ -5489,7 +5489,7 @@
                     <navigationItem key="navigationItem" title="Edit" id="NiH-U7-jax">
                         <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="SKO-S3-15R">
                             <connections>
-                                <action selector="revealSidebar:" destination="rho-ho-WE1" id="OcR-Rh-Le7"/>
+                                <action selector="revealSidebar:" destination="rho-ho-WE1" id="HTH-JX-z6t"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -5534,6 +5534,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVk-4q-VdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2417" y="4775"/>
+        </scene>
+        <!--Track Controller - Track-->
+        <scene sceneID="tiV-l6-YBp">
+            <objects>
+                <tableViewController storyboardIdentifier="svTrack" id="rGd-Eh-eoX" customClass="SVTrackController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YfJ-AN-3hJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JB4-2c-T4w">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JB4-2c-T4w" id="h9f-Ic-V4v">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Track" id="B9V-2Q-sHF">
+                        <barButtonItem key="leftBarButtonItem" image="ButtonMenu.png" id="WEa-mw-7pg">
+                            <connections>
+                                <action selector="revealSidebar:" destination="rGd-Eh-eoX" id="lB3-8d-hq4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nt1-Z9-dnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3166" y="4191"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8wc-TV-7dK">
+            <objects>
+                <navigationController storyboardIdentifier="svTrackNav" definesPresentationContext="YES" id="wg2-vA-cVb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z21-ca-ypE">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rGd-Eh-eoX" kind="relationship" relationship="rootViewController" id="WbO-tS-Udw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhK-o0-QiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2788" y="4191"/>
         </scene>
         <!--Workout View Controller - Workout-->
         <scene sceneID="PpV-Pm-uw7">

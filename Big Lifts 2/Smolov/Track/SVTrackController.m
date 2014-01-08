@@ -1,14 +1,14 @@
-#import "SJTrackViewController.h"
+#import "SVTrackController.h"
 #import "JWorkoutLogStore.h"
 #import "CombinedSetWorkoutLogTableDataSource.h"
-#import "SetLogCombiner.h"
-#import "JWorkoutLog.h"
 #import "WorkoutLogCell.h"
+#import "JWorkoutLog.h"
+#import "SetLogCombiner.h"
 
-@implementation SJTrackViewController
+@implementation SVTrackController
 
 - (NSArray *)getLog {
-    return [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov Jr"];
+    return [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov"];
 }
 
 - (int)getRowCount:(NSIndexPath *)path {
