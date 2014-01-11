@@ -4,11 +4,17 @@
 #import "JBarStore.h"
 #import "JBar.h"
 #import "JPlateStore.h"
+#import "JLift.h"
 
 @implementation SetCellWithPlates
 
 - (void)setSet:(JSet *)set {
     [super setSet:set];
+
+    if (!set.lift.usesBar) {
+        [self.platesLabel setText:@""];
+        return;
+    }
 
     JBar *bar = [[JBarStore instance] first];
     BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll]

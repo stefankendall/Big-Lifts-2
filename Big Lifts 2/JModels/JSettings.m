@@ -5,6 +5,7 @@
 #import "JSJWorkoutStore.h"
 #import "JPlateStore.h"
 #import "JBarStore.h"
+#import "JSVWorkoutStore.h"
 
 const NSString *ROUNDING_FORMULA_EPLEY = @"Epley";
 const NSString *ROUNDING_FORMULA_BRZYCKI = @"Brzycki";
@@ -21,6 +22,7 @@ NSString *NEAREST_5_ROUNDING = @"5.5";
     [[JFTOLiftStore instance] adjustForKg];
     [[JSSLiftStore instance] adjustForKg];
     [[JSJWorkoutStore instance] adjustForKg];
+    [[JSVWorkoutStore instance] adjustForKg];
 }
 
 - (void)setScreenAlwaysOn:(BOOL)screenAlwaysOn {

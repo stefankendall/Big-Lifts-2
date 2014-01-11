@@ -16,6 +16,7 @@
     return @{
             @"ssSegue" : @"Starting Strength",
             @"531segue" : @"5/3/1",
+            @"smolovSegue" : @"Smolov",
             @"smolovJrSegue" : @"Smolov Jr"
     };
 }

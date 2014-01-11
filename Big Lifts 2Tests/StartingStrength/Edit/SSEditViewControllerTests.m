@@ -1,11 +1,12 @@
 #import "SSEditViewControllerTests.h"
-#import "TextFieldCell.h"
+#import "LiftFormCell.h"
 #import "TextFieldWithCell.h"
 #import "JSSLiftStore.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "SSEditViewController.h"
 #import "LiftFormCellHelper.h"
 #import "JSSLift.h"
+#import "PaddingRowTextField.h"
 
 @interface SSEditViewControllerTests ()
 
@@ -47,10 +48,8 @@
 }
 
 - (void)testTextViewsCanGetIndexWithCellReference {
-    TextFieldCell *cell = (TextFieldCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    STAssertNotNil([[cell textField] cell], @"");
-    STAssertEquals([[cell indexPath] row], 1, @"");
-    STAssertEquals([[[[cell textField] cell] indexPath] row], 1, @"");
+    LiftFormCell *cell = (LiftFormCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    STAssertEquals([[[cell textField] indexPath] row], 1, @"");
 }
 
 - (void)testHasAnIncrementSection {

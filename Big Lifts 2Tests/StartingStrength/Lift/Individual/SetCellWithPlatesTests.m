@@ -34,4 +34,18 @@
     STAssertEqualObjects([[cell platesLabel] text], @"", @"");
 }
 
+- (void)testDoesNotSetPlatesIfLiftDoesNotUseBar {
+    SetCellWithPlates *cell = [SetCellWithPlates create];
+
+    JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
+    JWorkout *workout = [ssWorkout workouts][0];
+    JSet *set = workout.orderedSets[0];
+    set.percentage = N(100);
+    set.lift.weight = N(200);
+    set.lift.usesBar = NO;
+    [cell setSet:set];
+
+    STAssertEqualObjects([[cell platesLabel] text], @"", @"");
+}
+
 @end
