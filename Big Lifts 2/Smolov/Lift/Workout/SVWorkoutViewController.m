@@ -19,6 +19,16 @@
 
 @implementation SVWorkoutViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.svWorkout.done) {
+        [self.doneButton setTitle:@"Not Done"];
+    }
+    else {
+        [self.doneButton setTitle:@"Done"];
+    }
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.svWorkout.testMax) {
         return 1;
@@ -59,11 +69,17 @@
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
-    [self.svWorkout setDone:YES];
-    [self logWorkout];
+    if (self.svWorkout.done) {
+        self.svWorkout.done = NO;
+        [self.doneButton setTitle:@"Done"];
+    }
+    else {
+        [self.svWorkout setDone:YES];
+        [self logWorkout];
 
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"svTrackNav"]];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"svTrackNav"]];
+    }
 }
 
 - (void)logWorkout {
@@ -85,6 +101,10 @@
             [workoutLog addSet:setLog];
         }
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self tableView:tableView cellForRowAtIndexPath:indexPath].bounds.size.height;
 }
 
 @end
