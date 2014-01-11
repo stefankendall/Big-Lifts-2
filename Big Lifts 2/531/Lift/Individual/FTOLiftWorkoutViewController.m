@@ -116,7 +116,7 @@
     if (!cell) {
         cell = [FTOLiftWorkoutToolbar create];
     }
-    if([self shouldShowRepsToBeat]){
+    if ([self shouldShowRepsToBeat]) {
         [cell.repsToBeat setHidden:NO];
         JSet *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
         int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:(id) heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
@@ -127,9 +127,11 @@
         [cell.repsToBeat setHidden:YES];
     }
 
-    self.timerButton = cell.timerButton;
     if ([[BLTimer instance] isRunning]) {
-        [self.timerButton setTitle:[[BLTimer instance] formattedTimeRemaining] forState:UIControlStateNormal];
+        [cell.timerButton setTitle:[[BLTimer instance] formattedTimeRemaining] forState:UIControlStateNormal];
+    }
+    else {
+        [cell.timerButton setTitle:@"Timer" forState:UIControlStateNormal];
     }
 
     [cell.timerButton addTarget:self action:@selector(goToTimer) forControlEvents:UIControlEventTouchUpInside];
@@ -141,14 +143,7 @@
 }
 
 - (void)timerTick {
-    [UIView setAnimationsEnabled:NO];
-    if([[BLTimer instance] isRunning]){
-        [self.timerButton setTitle:[[BLTimer instance] formattedTimeRemaining] forState:UIControlStateNormal];
-    }
-    else {
-        [self.timerButton setTitle:@"Timer" forState:UIControlStateNormal];
-    }
-    [UIView setAnimationsEnabled:YES];
+    [self.tableView reloadRowsAtIndexPaths:@[NSIP(0, 0)] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (void)showRepsToBeatBreakdown:(id)showRepsToBeatBreakdown {

@@ -14,8 +14,6 @@
 @property(nonatomic) NSMutableDictionary *variableReps;
 @property(nonatomic) NSMutableDictionary *variableWeight;
 
-@property(nonatomic, strong) UIButton *timerButton;
-
 - (IBAction)doneButtonTapped:(id)sender;
 
 - (void)setWorkout:(JFTOWorkout *)ftoWorkout1;
