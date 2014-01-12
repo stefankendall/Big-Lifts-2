@@ -6,6 +6,7 @@
 #import "JSetStore.h"
 #import "JSet.h"
 #import "PaddingTextField.h"
+#import "JFTOLiftStore.h"
 
 @implementation FTOCustomAssistanceEditSetViewControllerTests
 
@@ -32,6 +33,23 @@
     STAssertEquals([controller.liftsPicker selectedRowInComponent:0], 0, @"");
     STAssertEqualObjects([controller.repsTextField text], @"5", @"");
     STAssertEqualObjects([controller.percentageTextField text], @"75", @"");
+}
+
+- (void)testUseBigLiftToggleDefaultsOnIfLiftIsFtoLift {
+    FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
+    controller.set = [[JSetStore instance] create];
+    controller.set.lift = [[JFTOLiftStore instance] create];
+    [controller viewWillAppear:NO];
+    STAssertTrue(controller.usingBigLift, @"");
+    STAssertTrue([controller.useBigLiftSwitch isOn], @"");
+}
+
+- (void)testDefaultsToNotBigLifts {
+    FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
+    controller.set = [[JSetStore instance] create];
+    [controller viewWillAppear:NO];
+    STAssertFalse(controller.usingBigLift, @"");
+    STAssertFalse([controller.useBigLiftSwitch isOn], @"");
 }
 
 @end
