@@ -78,4 +78,9 @@
     STAssertNil(p, @"");
 }
 
+- (void)testHandlesNilBarWeight {
+    self.calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll] barWeight:nil];
+    STAssertNotNil([self.calculator platesToMakeWeight:N(60)], @"");
+}
+
 @end

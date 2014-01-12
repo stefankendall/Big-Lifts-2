@@ -138,4 +138,14 @@
     STAssertEqualObjects([[cell weightLabel] text], @"1.25", @"");
 }
 
+- (void) testDoesNotMakeBarWeightNil {
+    BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
+    UITextField *textField = [UITextField new];
+    [textField setText:@""];
+    [controller textFieldDidEndEditing:textField];
+
+    JBar *bar = [[JBarStore instance] first];
+    STAssertEqualObjects(bar.weight, N(0), @"");
+}
+
 @end

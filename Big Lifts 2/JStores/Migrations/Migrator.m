@@ -3,6 +3,7 @@
 #import "JVersion.h"
 #import "Migrate1to2.h"
 #import "Migrate2to3.h"
+#import "Migrate3to4.h"
 
 @implementation Migrator
 
@@ -19,6 +20,10 @@
         else if ([version.version intValue] < 3) {
             [[Migrate2to3 new] run];
             version.version = @3;
+        }
+        else if ([version.version intValue] < 4) {
+            [[Migrate3to4 new] run];
+            version.version = @4;
         }
     }
     @catch (NSException *e) {

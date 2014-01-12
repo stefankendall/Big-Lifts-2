@@ -16,7 +16,7 @@
 #import "JPlateStore.h"
 #import "JPlate.h"
 
-@interface BarLoadingViewController()
+@interface BarLoadingViewController ()
 
 @property(nonatomic, strong) UITextField *barWeightTextField;
 @end
@@ -196,6 +196,7 @@
     NSString *newWeight = [textField text];
     JBar *bar = [[JBarStore instance] first];
     bar.weight = [NSDecimalNumber decimalNumberWithString:newWeight locale:NSLocale.currentLocale];
+    bar.weight = [bar.weight isEqual:[NSDecimalNumber notANumber]] ? N(0) : bar.weight;
 }
 
 

@@ -1,7 +1,6 @@
 #import "Migrate2to3.h"
 #import "JWorkout.h"
 #import "JWorkoutStore.h"
-#import "JFTOCustomWorkout.h"
 #import "JFTOTriumvirateStore.h"
 #import "JFTOCustomWorkoutStore.h"
 #import "JFTOWorkoutStore.h"
@@ -38,14 +37,14 @@
             [JFTOCustomAssistanceWorkoutStore instance]
     ];
 
-    for( BLJStore *store in storesThatUseWorkouts){
-        if( [store find:@"workout" value:workout] ){
+    for (BLJStore *store in storesThatUseWorkouts) {
+        if ([store find:@"workout" value:workout]) {
             return NO;
         }
     }
 
-    for(JSSWorkout *jssWorkout in [[JSSWorkoutStore instance] findAll]){
-        if([jssWorkout.workouts containsObject:workout]){
+    for (JSSWorkout *jssWorkout in [[JSSWorkoutStore instance] findAll]) {
+        if ([jssWorkout.workouts containsObject:workout]) {
             return NO;
         }
     }

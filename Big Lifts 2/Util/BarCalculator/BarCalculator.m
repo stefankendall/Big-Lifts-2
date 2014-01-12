@@ -2,6 +2,7 @@
 #import "PlateRemaining.h"
 #import "MRCEnumerable.h"
 #import "JPlate.h"
+#import "DecimalNumberHandlers.h"
 
 @interface BarCalculator ()
 @property(nonatomic, strong) NSArray *plates;
@@ -13,13 +14,13 @@
 - (BarCalculator *)initWithPlates:(NSArray *)plates barWeight:(NSDecimalNumber *)barWeight {
     if (self = [super init]) {
         self.plates = plates;
-        self.barWeight = barWeight;
+        self.barWeight = barWeight ? barWeight : N(0);
     }
     return self;
 }
 
 - (NSArray *)platesToMakeWeight:(NSDecimalNumber *)weight {
-    NSDecimalNumber *targetWeight = [weight decimalNumberBySubtracting:self.barWeight];
+    NSDecimalNumber *targetWeight = [weight decimalNumberBySubtracting:self.barWeight withBehavior:[DecimalNumberHandlers noRaise]];
     NSArray *remainingPlates = [self copyPlates:self.plates];
     NSMutableArray *plateWeights = [@[] mutableCopy];
 
