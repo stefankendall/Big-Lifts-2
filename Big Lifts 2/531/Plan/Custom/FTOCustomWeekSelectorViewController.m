@@ -153,6 +153,10 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     RowTextField *rowTextField = (RowTextField *) textField;
+    if(rowTextField.indexPath.row >= [[JFTOCustomWorkoutStore instance] count]){
+        return;
+    }
+
     JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] atIndex:[rowTextField.indexPath row]];
     customWorkout.name = [rowTextField text];
 }
