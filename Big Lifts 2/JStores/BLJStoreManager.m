@@ -1,3 +1,4 @@
+#import <Crashlytics/Crashlytics.h>
 #import "BLJStoreManager.h"
 #import "BLJStore.h"
 #import "JBarStore.h"
@@ -46,10 +47,10 @@
 
         if (store != [JVersionStore instance]) {
             @try {
+                CLS_LOG(@"Loading %@", NSStringFromClass([store modelClass]));
                 [store load];
             }
             @catch (NSException *e) {
-                //TODO: log with crashlytics when they update the library.
                 [store empty];
                 [store sync];
                 [store setupDefaults];
