@@ -10,6 +10,7 @@
 #import "IAPAdapter.h"
 #import "JFTOWorkoutStore.h"
 #import "JFTOSettings.h"
+#import "DecimalNumberHelper.h"
 
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;
@@ -26,7 +27,7 @@
     self.variantCells = @{
             FTO_VARIANT_STANDARD : self.standardVariant,
             FTO_VARIANT_HEAVIER : self.heavierVariant,
-            FTO_VARIANT_POWERLIFTING: self.powerliftingVariant,
+            FTO_VARIANT_POWERLIFTING : self.powerliftingVariant,
             FTO_VARIANT_PYRAMID : self.pyramidVariant,
             FTO_VARIANT_JOKER : self.jokerVariant,
             FTO_VARIANT_SIX_WEEK : self.sixWeekVariant,
@@ -64,7 +65,7 @@
             [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
             self.iapIndexPath = nil;
 
-            if([[[[JFTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_CUSTOM]){
+            if ([[[[JFTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_CUSTOM]) {
                 [self performSegueWithIdentifier:@"ftoCustomSegue" sender:self];
             }
         }
@@ -90,6 +91,7 @@
     if (self.trainingMaxField == textField) {
         JFTOSettings *settings = [[JFTOSettingsStore instance] first];
         settings.trainingMax = [NSDecimalNumber decimalNumberWithString:[textField text] locale:NSLocale.currentLocale];
+        settings.trainingMax = [DecimalNumberHelper nan:settings.trainingMax to:N(100)];
     }
 }
 

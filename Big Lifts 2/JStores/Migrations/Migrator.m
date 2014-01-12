@@ -4,6 +4,7 @@
 #import "Migrate1to2.h"
 #import "Migrate2to3.h"
 #import "Migrate3to4.h"
+#import "Migrate4to5.h"
 
 @implementation Migrator
 
@@ -25,10 +26,13 @@
             [[Migrate3to4 new] run];
             version.version = @4;
         }
+        else if ([version.version intValue] < 5) {
+            [[Migrate4to5 new] run];
+            version.version = @5;
+        }
     }
     @catch (NSException *e) {
         //TODO: log with crashlytics
-        //Trying to fix startup issue
     }
 }
 

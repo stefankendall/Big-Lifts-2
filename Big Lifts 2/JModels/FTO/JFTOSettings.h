@@ -18,7 +18,7 @@ typedef enum {
 
 @interface JFTOSettings : JModel
 
-@property(nonatomic) NSDecimalNumber *trainingMax;
+@property(nonatomic) NSDecimalNumber<Optional> *trainingMax;
 @property(nonatomic) BOOL warmupEnabled;
 @property(nonatomic) NSNumber *logState;
 @property(nonatomic) NSNumber *repsToBeatConfig;

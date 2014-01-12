@@ -38,4 +38,11 @@
     STAssertFalse([controller.warmupToggle isOn], @"");
 }
 
+- (void)testCannotSetTrainingMaxToNil {
+    FTOPlanViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoPlan"];
+    [controller.trainingMaxField setText:@""];
+    [controller textFieldDidEndEditing:controller.trainingMaxField];
+    STAssertEqualObjects([[[JFTOSettingsStore instance] first] trainingMax], N(100), @"");
+}
+
 @end
