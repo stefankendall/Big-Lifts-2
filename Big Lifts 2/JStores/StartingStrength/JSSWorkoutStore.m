@@ -197,10 +197,12 @@
 
 - (void)incrementWeights:(JSSWorkout *)ssWorkout {
     for (JWorkout *workout in ssWorkout.workouts) {
-        JSet *firstSet = workout.orderedSets[0];
-        JSSLift *lift = (JSSLift *) firstSet.lift;
-        if (lift.increment) {
-            lift.weight = [lift.weight decimalNumberByAdding:lift.increment withBehavior:DecimalNumberHandlers.noRaise];
+        if ([workout.sets count] > 0) {
+            JSet *firstSet = workout.orderedSets[0];
+            JSSLift *lift = (JSSLift *) firstSet.lift;
+            if (lift.increment) {
+                lift.weight = [lift.weight decimalNumberByAdding:lift.increment withBehavior:DecimalNumberHandlers.noRaise];
+            }
         }
     }
 }

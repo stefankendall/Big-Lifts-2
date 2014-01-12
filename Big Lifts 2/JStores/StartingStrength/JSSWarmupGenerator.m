@@ -8,6 +8,9 @@
 @implementation JSSWarmupGenerator
 
 - (void)addWarmup:(JWorkout *)workout {
+    if ([workout.sets count] == 0) {
+        return;
+    }
     JSet *set = workout.orderedSets[0];
     NSDictionary *warmups = @{
             @"Squat" : @[
