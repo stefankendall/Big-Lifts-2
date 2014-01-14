@@ -5,8 +5,8 @@
 @implementation TestSaveViewControllerTests
 
 -(void) testPrintSerializedData {
-    TestSaveViewController *controller = [self getControllerByStoryboardIdentifier:@"testSave"];
-    [controller naiveSerializeAllData];
+//    TestSaveViewController *controller = [self getControllerByStoryboardIdentifier:@"testSave"];
+//    [controller naiveSerializeAllData];
 }
 
 @end
