@@ -5,8 +5,8 @@
 @class JWorkout;
 
 @interface JFTOTriumvirate : JModel
-@property(nonatomic) JWorkout *workout;
-@property(nonatomic) JLift *mainLift;
+@property(nonatomic) JWorkout <Optional> *workout;
+@property(nonatomic) JLift <Optional> *mainLift;
 
 - (int)countMatchingSets:(JSet *)set;
 

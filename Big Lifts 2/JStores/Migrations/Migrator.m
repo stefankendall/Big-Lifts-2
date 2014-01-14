@@ -5,6 +5,7 @@
 #import "Migrate2to3.h"
 #import "Migrate3to4.h"
 #import "Migrate4to5.h"
+#import "Migrate5to6.h"
 
 @implementation Migrator
 
@@ -29,6 +30,10 @@
         else if ([version.version intValue] < 5) {
             [[Migrate4to5 new] run];
             version.version = @5;
+        }
+        else if ([version.version intValue] < 6) {
+            [[Migrate5to6 new] run];
+            version.version = @6;
         }
     }
     @catch (NSException *e) {

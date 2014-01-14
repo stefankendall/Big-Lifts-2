@@ -192,6 +192,7 @@
 		545906485E9278FDAB2E0C57 /* 101-gameplan.png in Resources */ = {isa = PBXBuildFile; fileRef = 545900BC7437BC4F0DF65474 /* 101-gameplan.png */; };
 		5459064E1789D446C5076957 /* JFTOAssistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904881EED0C63E3F42A6F /* JFTOAssistance.m */; };
 		54590665473EF7456048BBC7 /* testdata.js in Resources */ = {isa = PBXBuildFile; fileRef = 5459029E6253CF82B110C733 /* testdata.js */; };
+		54590672D5891E8A3EDE8539 /* Migrate5to6.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590ECB0417796E4D2F33B2 /* Migrate5to6.m */; };
 		545906947379404BFFC0AD1E /* AddPlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909DDF05CB3A959B0A669 /* AddPlateViewController.m */; };
 		545906AD8FC3912351D7EC9B /* Migrate1to2.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459070161A5C3FA24FCA72E /* Migrate1to2.m */; };
 		545906B72FA3FFA2AAA510A7 /* JVersionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590017020683E35FC42DEE /* JVersionStore.m */; };
@@ -815,6 +816,7 @@
 		545906518F77CC8A6E793E81 /* UIViewController+HandleReturn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HandleReturn.m"; sourceTree = "<group>"; };
 		54590654195094218811D62B /* JFTOTriumvirateAssistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOTriumvirateAssistance.h; sourceTree = "<group>"; };
 		54590659C88134015D9ADD06 /* SJSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SJSetCell.xib; sourceTree = "<group>"; };
+		5459065C80B2069235E170D6 /* Migrate5to6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate5to6.h; sourceTree = "<group>"; };
 		545906610651643795AFF698 /* BLStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLStoreManager.h; sourceTree = "<group>"; };
 		54590669A22E51A18675BE8D /* FTOLiftWorkoutViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftWorkoutViewControllerTests.m; sourceTree = "<group>"; };
 		5459066B17EC7FBFB209971B /* ProgramSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramSelectorViewController.m; sourceTree = "<group>"; };
@@ -1213,6 +1215,7 @@
 		54590EBAE1369564AFA69601 /* JWorkoutLogStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWorkoutLogStore.h; sourceTree = "<group>"; };
 		54590EC196BC63BE61A1F180 /* 213-reply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "213-reply.png"; sourceTree = "<group>"; };
 		54590EC4AC8D219C8FCB86FF /* FTOPlanViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOPlanViewControllerTests.h; sourceTree = "<group>"; };
+		54590ECB0417796E4D2F33B2 /* Migrate5to6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate5to6.m; sourceTree = "<group>"; };
 		54590ED5715A57A04E97E76B /* PriceFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceFormatter.h; sourceTree = "<group>"; };
 		54590ED8E0AE59C19D12372D /* WeightRounderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightRounderTests.h; sourceTree = "<group>"; };
 		54590EE28305DFA6E7AA564E /* JFTOAdvancedPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOAdvancedPlan.m; sourceTree = "<group>"; };
@@ -2519,6 +2522,8 @@
 				5459076CF05460309FC95145 /* Migrate3to4.h */,
 				54590290555DFBD63A0B4031 /* Migrate4to5.m */,
 				54590CC7451B01E905F2177D /* Migrate4to5.h */,
+				54590ECB0417796E4D2F33B2 /* Migrate5to6.m */,
+				5459065C80B2069235E170D6 /* Migrate5to6.h */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -3743,6 +3748,7 @@
 				5459060252D008703D40992A /* Migrate4to5.m in Sources */,
 				545909AC866AE270E53C4E94 /* TestSaveViewController.m in Sources */,
 				54590E5C9858D4D913158736 /* BLKeyValueStore.m in Sources */,
+				54590672D5891E8A3EDE8539 /* Migrate5to6.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
