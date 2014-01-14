@@ -1,5 +1,6 @@
 #import "Migrate1to2.h"
 #import "JSettingsStore.h"
+#import "BLKeyValueStore.h"
 
 @implementation Migrate1to2
 
@@ -9,7 +10,7 @@
 
 - (void)addScreenAlwaysOnToSettings {
     NSString *storeKey = [[JSettingsStore instance] keyNameForStore];
-    NSArray *settingsData = [[NSUbiquitousKeyValueStore defaultStore] arrayForKey:storeKey];
+    NSArray *settingsData = [[BLKeyValueStore store] arrayForKey:storeKey];
     if([settingsData count] == 0){
         return;
     }
@@ -25,7 +26,7 @@
     NSString *jsonString = [[NSString alloc]                                    initWithData:
             [NSJSONSerialization dataWithJSONObject:settings options:nil error:nil] encoding:NSUTF8StringEncoding];
 
-    [[NSUbiquitousKeyValueStore defaultStore] setArray:@[jsonString] forKey:storeKey];
+    [[BLKeyValueStore store] setArray:@[jsonString] forKey:storeKey];
 }
 
 @end

@@ -5,6 +5,9 @@
 #import "BLStoreManager.h"
 #import "IAPAdapter.h"
 #import "BLJStoreManager.h"
+#import "BLKeyValueStore.h"
+
+static BOOL SAVE_DATA_TEST_ENABLED = YES;
 
 @interface SettingsViewController ()
 @property(nonatomic, strong) NSArray *roundingOptions;
@@ -16,6 +19,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self reloadData];
+    [self.testDataSavingCell setHidden:!SAVE_DATA_TEST_ENABLED];
+    [self.iCloudEnabledLabel setText:[BLKeyValueStore iCloudEnabled] ? @"on" : @"off"];
 }
 
 - (void)viewDidLoad {

@@ -4,6 +4,7 @@
 #import "BLJStoreManager.h"
 #import "Migrator.h"
 #import "BLTimer.h"
+#import "BLKeyValueStore.h"
 
 @implementation BLAppDelegate
 
@@ -17,7 +18,7 @@
                                              selector:@selector(keyValueStoreChanged:)
                                                  name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
                                                object:nil];
-    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+    [[BLKeyValueStore store] synchronize];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         [[Migrator new] migrateStores];
         [[BLJStoreManager instance] loadStores];
@@ -36,27 +37,12 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self beginBackgroundUpdateTask];
-        @try {
-            [[BLJStoreManager instance] syncStores];
-        }
-        @catch (NSException *e) {
-            NSLog(@"Couldn't sync?");
-        }
-        [self endBackgroundUpdateTask];
-    });
-}
-
-- (void)beginBackgroundUpdateTask {
-    self.backgroundUpdateTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-        [self endBackgroundUpdateTask];
-    }];
-}
-
-- (void)endBackgroundUpdateTask {
-    [[UIApplication sharedApplication] endBackgroundTask:self.backgroundUpdateTask];
-    self.backgroundUpdateTask = UIBackgroundTaskInvalid;
+    @try {
+        [[BLJStoreManager instance] syncStores];
+    }
+    @catch (NSException *e) {
+        NSLog(@"Couldn't sync?");
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

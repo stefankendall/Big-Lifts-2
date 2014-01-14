@@ -1,5 +1,6 @@
 #import "RateDialog.h"
 #import "DataLoaded.h"
+#import "BLKeyValueStore.h"
 
 @implementation RateDialog
 
@@ -18,7 +19,7 @@
 }
 
 - (BOOL)hasSeenDialog {
-    return [[NSUbiquitousKeyValueStore defaultStore] boolForKey:@"rate1"];
+    return [[BLKeyValueStore store] boolForKey:@"rate1"];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -26,7 +27,7 @@
         NSString *rateUrl = @"itms-apps://itunes.apple.com/app/id661503150";
         [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:rateUrl]];
     }
-    [[NSUbiquitousKeyValueStore defaultStore] setBool:YES forKey:@"rate1"];
+    [[BLKeyValueStore store] setBool:YES forKey:@"rate1"];
 }
 
 @end
