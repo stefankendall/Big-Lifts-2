@@ -229,7 +229,9 @@ static JSONKeyMapper* globalKeyMapper = nil;
             NSString* msg = [NSString stringWithFormat:@"Value of required model key %@ is null", property.name];
             JSONModelError* dataErr = [JSONModelError errorInvalidDataWithMessage:msg];
             @try {
-                *err = [dataErr errorByPrependingKeyPathComponent:property.name];
+                if (dataErr != nil && property != nil ) {
+                    *err = [dataErr errorByPrependingKeyPathComponent:[property name]];
+                }
             }
             @catch(NSException *e){
             }

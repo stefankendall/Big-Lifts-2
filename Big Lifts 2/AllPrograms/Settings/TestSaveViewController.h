@@ -1,3 +1,4 @@
+#import <MessageUI/MFMailComposeViewController.h>
 @interface TestSaveViewController : UITableViewController <MFMailComposeViewControllerDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UIButton *startButton;

@@ -1,3 +1,4 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "JFTOTriumvirateStore.h"
 #import "JFTOTriumvirate.h"
 #import "JLift.h"
@@ -8,11 +9,17 @@
 #import "JFTOTriumvirateLift.h"
 #import "JSetStore.h"
 #import "JSet.h"
+#import "JFTOLift.h"
 
 @implementation JFTOTriumvirateStore
 
 - (Class)modelClass {
     return JFTOTriumvirate.class;
+}
+
+- (void)setDefaultsForObject:(id)object {
+    JFTOTriumvirate *triumvirate = object;
+    triumvirate.workout = [[JWorkoutStore instance] create];
 }
 
 - (NSArray *)findAll {
@@ -71,6 +78,44 @@
         [sets addObject:set];
     }
     return sets;
+}
+
+- (void)adjustToMainLifts {
+    [self removeMissing];
+    [self addRequired];
+}
+
+- (void)addRequired {
+    NSArray *mainLifts = [[[JFTOTriumvirateStore instance] findAll] collect:^id(JFTOTriumvirate *triumvirate) {
+        return triumvirate.mainLift;
+    }];
+
+    NSMutableArray *missingMainLifts = [@[] mutableCopy];
+    for (JFTOLift *ftoLift in [[JFTOLiftStore instance] findAll]) {
+        if (![mainLifts containsObject:ftoLift]) {
+            [missingMainLifts addObject:ftoLift];
+        }
+    }
+
+    for (JFTOLift *ftoLift in missingMainLifts) {
+        JFTOTriumvirate *triumvirateLifts = [[JFTOTriumvirateStore instance] create];
+        triumvirateLifts.mainLift = ftoLift;
+        triumvirateLifts.workout = [[JWorkoutStore instance] create];
+        [triumvirateLifts.workout addSets:[self setsForLift:@"Unknown1" withReps:@5]];
+        [triumvirateLifts.workout addSets:[self setsForLift:@"Unknown2" withReps:@5]];
+    }
+}
+
+- (void)removeMissing {
+    NSMutableArray *triumvirateToRemove = [@[] mutableCopy];
+    for (JFTOTriumvirate *triumvirate in [[JFTOTriumvirateStore instance] findAll]) {
+        if (![[[JFTOLiftStore instance] findAll] containsObject:triumvirate.mainLift]) {
+            [triumvirateToRemove addObject:triumvirate];
+        }
+    }
+    for (JFTOTriumvirate *t in triumvirateToRemove) {
+        [self remove:t];
+    }
 }
 
 @end
