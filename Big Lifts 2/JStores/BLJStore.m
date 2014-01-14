@@ -3,6 +3,7 @@
 #import "BLJStore.h"
 #import "JSONModelClassProperty.h"
 #import "BLJStoreManager.h"
+#import "BLKeyValueStore.h"
 
 @implementation BLJStore
 
@@ -208,7 +209,7 @@
     NSString *storeKey = [self keyNameForStore];
 //    NSLog(@"Store key: %@", storeKey);
 //    NSLog(@"Serialized: %@", serialized);
-    [[NSUbiquitousKeyValueStore defaultStore] setObject:serialized forKey:storeKey];
+    [[BLKeyValueStore store] setObject:serialized forKey:storeKey];
 }
 
 - (NSArray *)serialize {
@@ -230,7 +231,7 @@
 }
 
 - (void)load {
-    NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
+    NSUbiquitousKeyValueStore *keyValueStore = [BLKeyValueStore store];
     NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
 //    NSLog(@"%@ %@", [self class], serializedData);
     if (serializedData) {

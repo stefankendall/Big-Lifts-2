@@ -36,6 +36,7 @@
 #import "JFTOCustomAssistanceWorkoutStore.h"
 #import "JSVWorkoutStore.h"
 #import "JSVLiftStore.h"
+#import "BLKeyValueStore.h"
 
 @implementation BLJStoreManager
 
@@ -62,7 +63,7 @@
 
 - (void)syncStores {
     [self writeStores];
-    [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+    [[BLKeyValueStore store] synchronize];
 }
 
 - (void)writeStores {
