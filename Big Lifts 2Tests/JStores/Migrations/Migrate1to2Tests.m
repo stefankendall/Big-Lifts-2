@@ -4,6 +4,7 @@
 #import "JSettings.h"
 #import "JVersionStore.h"
 #import "JVersion.h"
+#import "BLKeyValueStore.h"
 
 @implementation Migrate1to2Tests
 
@@ -50,7 +51,7 @@
 - (void)writeSettings:(NSDictionary *)settings {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:settings options:nil error:nil];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    [[NSUbiquitousKeyValueStore defaultStore] setObject:@[jsonString] forKey:[[JSettingsStore instance] keyNameForStore]];
+    [[BLKeyValueStore store] setObject:@[jsonString] forKey:[[JSettingsStore instance] keyNameForStore]];
 }
 
 @end

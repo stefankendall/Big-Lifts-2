@@ -26,7 +26,7 @@
     NSString *jsonString = [[NSString alloc]                                    initWithData:
             [NSJSONSerialization dataWithJSONObject:settings options:nil error:nil] encoding:NSUTF8StringEncoding];
 
-    [[BLKeyValueStore store] setArray:@[jsonString] forKey:storeKey];
+    [[BLKeyValueStore store] setObject:@[jsonString] forKey:storeKey];
 }
 
 @end
