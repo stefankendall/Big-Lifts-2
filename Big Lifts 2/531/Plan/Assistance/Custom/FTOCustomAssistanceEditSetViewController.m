@@ -53,7 +53,10 @@
 
     if (self.set.lift) {
         [self.liftTextField setText:self.set.lift.name];
-        [self.liftsPicker selectRow:[[[self liftStore] findAll] indexOfObject:self.set.lift] inComponent:0 animated:NO];
+        NSUInteger row = [[[self liftStore] findAll] indexOfObject:self.set.lift];
+        if (row != NSNotFound) {
+            [self.liftsPicker selectRow:row inComponent:0 animated:NO];
+        }
     }
 
     [self.liftsPicker reloadAllComponents];

@@ -52,4 +52,13 @@
     STAssertFalse([controller.useBigLiftSwitch isOn], @"");
 }
 
+- (void)testDoesNotCrashWhenAssistanceLiftHasBeenDeleted {
+    FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
+    controller.set = [[JSetStore instance] create];
+    controller.set.lift = [[JFTOCustomAssistanceLiftStore instance] create];
+    [[JFTOCustomAssistanceLiftStore instance] remove:controller.set.lift];
+    [controller viewWillAppear:NO];
+    //pass
+}
+
 @end
