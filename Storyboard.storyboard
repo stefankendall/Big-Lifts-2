@@ -5214,6 +5214,9 @@
                                                     <state key="normal" title="Add Lift...">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="FZV-HC-3ez" kind="push" identifier="ftoCustomAsstEditSetAddLift" id="0oa-Th-D6G"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -5728,5 +5731,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="sGG-95-AJN"/>
+        <segue reference="0oa-Th-D6G"/>
     </inferredMetricsTieBreakers>
 </document>
