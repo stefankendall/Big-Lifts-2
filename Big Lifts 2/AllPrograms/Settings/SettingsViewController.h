@@ -10,7 +10,8 @@
 @property (weak, nonatomic) IBOutlet UISwitch *keepScreenOnSwitch;
 @property(strong, nonatomic) UIPickerView *roundToPicker;
 @property (weak, nonatomic) IBOutlet UITableViewCell *testDataSavingCell;
-@property (weak, nonatomic) IBOutlet UILabel *iCloudEnabledLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *iCloudEnabled;
+
 
 @property(nonatomic, strong) NSArray *roundingText;
 @end

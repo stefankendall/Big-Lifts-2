@@ -4,4 +4,5 @@
 
 + (BOOL)iCloudEnabled;
 
++ (void)forceICloud:(BOOL)on;
 @end

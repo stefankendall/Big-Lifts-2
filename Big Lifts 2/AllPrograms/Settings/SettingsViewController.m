@@ -20,7 +20,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 - (void)viewWillAppear:(BOOL)animated {
     [self reloadData];
     [self.testDataSavingCell setHidden:!SAVE_DATA_TEST_ENABLED];
-    [self.iCloudEnabledLabel setText:[BLKeyValueStore iCloudEnabled] ? @"on" : @"off"];
+    [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
 }
 
 - (void)viewDidLoad {
@@ -45,7 +45,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 }
 
 - (IBAction)keepScreenOnChanged:(id)sender {
-    [[[JSettingsStore instance] first] setScreenAlwaysOn: self.keepScreenOnSwitch.isOn];
+    [[[JSettingsStore instance] first] setScreenAlwaysOn:self.keepScreenOnSwitch.isOn];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -113,6 +113,26 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     JSettings *settings = [[JSettingsStore instance] first];
     settings.roundTo = self.roundingOptions[(NSUInteger) row];
     [self reloadData];
+}
+
+- (IBAction)iCloudValueChanged:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                        message:@"Data will not transfer between local and iCloud"
+                                                       delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles:@"Cancel", nil];
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        BOOL iCloudEnabled = [self.iCloudEnabled isOn];
+        [[BLJStoreManager instance] syncStores];
+        [BLKeyValueStore forceICloud: iCloudEnabled];
+        [[BLJStoreManager instance] loadStores];
+    }
+    else {
+        [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
+    }
 }
 
 @end
