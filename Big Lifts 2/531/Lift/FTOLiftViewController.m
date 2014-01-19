@@ -8,8 +8,9 @@
 #import "JLift.h"
 #import "JFTOVariant.h"
 #import "JFTOVariantStore.h"
-#import "JFTOCustomWorkoutStore.h"
 #import "JFTOWorkout.h"
+#import "JFTOWorkoutSetsGenerator.h"
+#import "JFTOPlan.h"
 
 @interface FTOLiftViewController ()
 
@@ -71,36 +72,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     JFTOVariant *variant = [[JFTOVariantStore instance] first];
-    NSDictionary *mapping = @{
-            @0 : @"5/5/5",
-            @1 : @"3/3/3",
-            @2 : @"5/3/1",
-            @3 : @"Deload"
-    };
-    if ([variant.name isEqualToString:FTO_VARIANT_SIX_WEEK]) {
-        mapping = @{
-                @0 : @"5/5/5",
-                @1 : @"3/3/3",
-                @2 : @"5/3/1",
-                @3 : @"5/5/5",
-                @4 : @"3/3/3",
-                @5 : @"5/3/1",
-                @6 : @"Deload"
-        };
-    }
-    else if ([variant.name isEqualToString:FTO_VARIANT_ADVANCED]) {
-        mapping = @{
-                @0 : @"Week 1",
-                @1 : @"Week 2",
-                @2 : @"Week 3",
-                @3 : @"Deload (opt.)",
-        };
-    }
-    else if ([variant.name isEqualToString:FTO_VARIANT_CUSTOM]) {
-        return [[[JFTOCustomWorkoutStore instance] find:@"week" value:[NSNumber numberWithInteger:section + 1]] name];
-    }
-
-    return mapping[[NSNumber numberWithInteger:section]];
+    NSObject <JFTOPlan> *ftoPlan = [[JFTOWorkoutSetsGenerator new] planForVariant:variant.name];
+    return [ftoPlan weekNames][(NSUInteger) section];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

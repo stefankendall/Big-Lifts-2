@@ -48,7 +48,15 @@
 }
 
 - (NSArray *)weekNames {
-    return [[JFTOStandardPlan new] weekNames];
+    if ([[JFTOCustomWorkoutStore instance] count] > 0) {
+        NSArray *customWorkouts = [[[[[JFTOCustomWorkoutStore instance] findAll] sortedArrayUsingSelector:@selector(week)] reverseObjectEnumerator] allObjects];
+        return [customWorkouts collect:^id(JFTOCustomWorkout *customWorkout) {
+            return customWorkout.name;
+        }];
+    }
+    else {
+        return [[JFTOStandardPlan new] weekNames];
+    }
 }
 
 @end

@@ -29,4 +29,11 @@
     STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:6], @"Deload", @"");
 }
 
+- (void)testUsesPlanWeekNames {
+    FTOLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLift"];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_POWERLIFTING];
+    [[JFTOWorkoutStore instance] switchTemplate];
+    STAssertEqualObjects([controller tableView:controller.tableView titleForHeaderInSection:0], @"3/3/3", @"");
+}
+
 @end
