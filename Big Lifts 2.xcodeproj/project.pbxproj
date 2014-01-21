@@ -371,6 +371,7 @@
 		54590CDCB7F5BE9F92F0A717 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590185EABBE78D7F766644 /* TextFieldCell.m */; };
 		54590CE65648666BD4564F50 /* FTOEditIncrementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590795A7D76CCCBB8FFFCF /* FTOEditIncrementCell.m */; };
 		54590CECC6011A8E8B9E47B3 /* WorkoutLogTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E7020B9E6CC0DBBE234 /* WorkoutLogTableDataSource.m */; };
+		54590D051843EBC07D1EEA9D /* JSetLogStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FC3C4C25595694F9A54 /* JSetLogStoreTests.m */; };
 		54590D185F497D371E52F23D /* JSVWorkoutStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459046B54B33F0074649B95 /* JSVWorkoutStore.m */; };
 		54590D2098C027A703361FCC /* JFTOWorkoutStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904D6B7F81F75B639A689 /* JFTOWorkoutStore.m */; };
 		54590D21D480A4C977A011C8 /* DataLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E797B6AD9965D21989A /* DataLoadingViewController.m */; };
@@ -776,6 +777,7 @@
 		5459057F34D5AE30A6DC7DFD /* JFTOWorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOWorkoutStore.h; sourceTree = "<group>"; };
 		545905802EFCB1F3F9CBFAAA /* JFTOCustomAssistanceLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomAssistanceLiftStore.h; sourceTree = "<group>"; };
 		54590583FEEDF2C8108B5B17 /* Migrate1to2Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate1to2Tests.m; sourceTree = "<group>"; };
+		5459058781432839D6D20526 /* JSetLogStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSetLogStoreTests.h; sourceTree = "<group>"; };
 		545905965867B2B4DF5259FE /* FTOChangeLiftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOChangeLiftCell.m; sourceTree = "<group>"; };
 		54590596695E1ABD9958237D /* SSEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSEditViewController.m; sourceTree = "<group>"; };
 		545905A051ACF295C6F8DD44 /* FTOCustomWeekSelectorViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomWeekSelectorViewControllerTests.m; sourceTree = "<group>"; };
@@ -1263,6 +1265,7 @@
 		54590FC1E36E2FC55B6FF5D5 /* BLStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLStoreManager.m; sourceTree = "<group>"; };
 		54590FC3056DFC192F79D0AE /* FTOCustomAssistanceEditLiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomAssistanceEditLiftViewController.m; sourceTree = "<group>"; };
 		54590FC3BE2DB9E8C76B0B9C /* JFTODeload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTODeload.h; sourceTree = "<group>"; };
+		54590FC3C4C25595694F9A54 /* JSetLogStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSetLogStoreTests.m; sourceTree = "<group>"; };
 		54590FC9F82DD0294BD67A88 /* JFTOCustomWorkoutStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomWorkoutStore.m; sourceTree = "<group>"; };
 		54590FCA85C725757C5716BC /* UITableViewController+NoEmptyRows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+NoEmptyRows.h"; sourceTree = "<group>"; };
 		54590FD1FF26D06CA4A5A833 /* OneRepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneRepViewController.m; sourceTree = "<group>"; };
@@ -1589,6 +1592,8 @@
 				54590D09454049E0534A5AD6 /* BLJStoreManagerTests.h */,
 				545903B209A634CE5C337278 /* Migrations */,
 				54590581B806195C00FA2D2C /* Smolov */,
+				54590FC3C4C25595694F9A54 /* JSetLogStoreTests.m */,
+				5459058781432839D6D20526 /* JSetLogStoreTests.h */,
 			);
 			path = JStores;
 			sourceTree = "<group>";
@@ -3494,6 +3499,7 @@
 				5459005FA75B1D9C23920B6A /* Migrate4to5Tests.m in Sources */,
 				54590BB6811AD64AD235071E /* TestSaveViewControllerTests.m in Sources */,
 				545903EE495098366C898F0F /* JFTOTriumvirateStoreTests.m in Sources */,
+				54590D051843EBC07D1EEA9D /* JSetLogStoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3802,7 +3808,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/../\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -3857,7 +3863,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/../\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

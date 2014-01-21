@@ -2,9 +2,9 @@
 
 @interface JSetLog : JModel
 
-@property(nonatomic) NSNumber *reps;
-@property(nonatomic) NSDecimalNumber *weight;
-@property(nonatomic) NSString *name;
+@property(nonatomic) NSNumber<Optional> *reps;
+@property(nonatomic) NSDecimalNumber<Optional> *weight;
+@property(nonatomic) NSString<Optional> *name;
 @property(nonatomic) BOOL warmup;
 @property(nonatomic) BOOL assistance;
 @property(nonatomic) BOOL amrap;
