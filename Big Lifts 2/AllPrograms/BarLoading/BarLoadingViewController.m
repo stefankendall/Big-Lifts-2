@@ -29,7 +29,10 @@
     [self.view addGestureRecognizer:singleFingerTap];
 
     if (!([[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING])) {
-        [self disable:IAP_BAR_LOADING view:self.view];
+        [self disable:IAP_BAR_LOADING view:self.view withDescription:
+                @"In a workout, plates will show below weights.\n"
+                "Bench 235lbs\n"
+                "[45,45,5]"];
     }
 
     [[NSNotificationCenter defaultCenter] addObserver:self

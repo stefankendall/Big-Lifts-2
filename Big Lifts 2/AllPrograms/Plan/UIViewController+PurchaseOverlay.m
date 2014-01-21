@@ -12,10 +12,11 @@
     PurchaseOverlay *overlay = (PurchaseOverlay *) [view viewWithTag:kPurchaseOverlayTag];
     if (!overlay) {
         PurchaseOverlay *overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
+        overlay.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:.65];
         CGRect frame = CGRectMake(0, 0, [view frame].size.width, [view frame].size.height);
         [overlay setFrame:frame];
         SKProduct *product = [[SKProductStore instance] productById:purchaseId];
-        if( product ){
+        if (product) {
             [overlay.price setText:[[PriceFormatter new] priceOf:product]];
         }
         else {
@@ -33,7 +34,14 @@
     }
 }
 
-- (void)enable :(UIView *)view {
+- (void)disable:(NSString *)purchaseId view:(UIView *)view withDescription:(NSString *)description {
+    [self disable:purchaseId view:view];
+    PurchaseOverlay *overlay = (PurchaseOverlay *) [view viewWithTag:kPurchaseOverlayTag];
+    [overlay.description setHidden:NO];
+    [overlay.description setText:description];
+}
+
+- (void)enable:(UIView *)view {
     if ([view viewWithTag:kPurchaseOverlayTag]) {
         UIView *overlay = [view viewWithTag:kPurchaseOverlayTag];
         [overlay removeFromSuperview];
@@ -55,7 +63,7 @@
     }];
 }
 
-- (NSDictionary *) iapCells {
+- (NSDictionary *)iapCells {
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)];
 }

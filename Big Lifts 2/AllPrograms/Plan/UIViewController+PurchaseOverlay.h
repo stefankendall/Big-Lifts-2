@@ -3,6 +3,8 @@
 @interface UIViewController (PurchaseOverlay)
 - (void)disable:(NSString *)purchaseId view:(UIView *)view;
 
+- (void)disable:(NSString *)purchaseId view:(UIView *)view withDescription:(NSString *)description;
+
 - (void)enable :(UIView *)view;
 
 - (void)enableDisableIapCells;

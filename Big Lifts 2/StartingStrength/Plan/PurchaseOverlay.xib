@@ -1,63 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view opaque="NO" alpha="0.59999999999999964" tag="10" contentMode="scaleToFill" id="1" customClass="PurchaseOverlay">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+        <view opaque="NO" tag="10" contentMode="scaleToFill" id="1" customClass="PurchaseOverlay">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="356"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$x.xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6d-g9-fko">
-                    <rect key="frame" x="139" y="39" width="42" height="21"/>
+                <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$x.xx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6d-g9-fko">
+                    <rect key="frame" x="20" y="167" width="280" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyu-zj-CW7">
-                    <rect key="frame" x="189" y="37" width="32" height="26"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="32" id="b6P-EW-waw"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" image="172-pricetag.png">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Oei-ez-WoF">
-                    <rect key="frame" x="150" y="40" width="20" height="20"/>
+                    <rect key="frame" x="150" y="168" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="V3G-Wk-Tbv">
+                    <rect key="frame" x="20" y="254" width="280" height="82"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <string key="text">In a workout, plates will show below weights. Ex: 
+235lbs
+[45,45,5]</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="p6d-g9-fko" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="1bx-Cu-1K9"/>
-                <constraint firstItem="Oei-ez-WoF" firstAttribute="centerX" secondItem="p6d-g9-fko" secondAttribute="centerX" id="60Z-PQ-Kte"/>
-                <constraint firstItem="uyu-zj-CW7" firstAttribute="leading" secondItem="p6d-g9-fko" secondAttribute="trailing" constant="8" symbolic="YES" id="OO1-ZY-q7J"/>
-                <constraint firstAttribute="centerY" secondItem="p6d-g9-fko" secondAttribute="centerY" constant="0.5" id="dLu-4c-DhH"/>
-                <constraint firstAttribute="centerY" secondItem="Oei-ez-WoF" secondAttribute="centerY" id="nLL-u8-6an"/>
-                <constraint firstAttribute="centerY" secondItem="uyu-zj-CW7" secondAttribute="centerY" id="vOd-vq-3FP"/>
+                <constraint firstItem="V3G-Wk-Tbv" firstAttribute="leading" secondItem="p6d-g9-fko" secondAttribute="leading" id="3Wu-2z-TWw"/>
+                <constraint firstAttribute="bottom" secondItem="V3G-Wk-Tbv" secondAttribute="bottom" constant="20" symbolic="YES" id="AEO-uv-3Pz"/>
+                <constraint firstItem="p6d-g9-fko" firstAttribute="trailing" secondItem="V3G-Wk-Tbv" secondAttribute="trailing" id="CMi-dt-JaX"/>
+                <constraint firstItem="p6d-g9-fko" firstAttribute="centerX" secondItem="Oei-ez-WoF" secondAttribute="centerX" id="QG9-5W-ldj"/>
+                <constraint firstItem="V3G-Wk-Tbv" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="TeL-ty-GMS"/>
+                <constraint firstItem="p6d-g9-fko" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="diu-G3-pFo"/>
+                <constraint firstItem="Oei-ez-WoF" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="fOW-nt-lyJ"/>
+                <constraint firstAttribute="centerX" secondItem="Oei-ez-WoF" secondAttribute="centerX" id="gfS-oP-Ssd"/>
+                <constraint firstItem="p6d-g9-fko" firstAttribute="bottom" secondItem="Oei-ez-WoF" secondAttribute="bottom" id="keY-hV-zXB"/>
+                <constraint firstAttribute="centerX" secondItem="p6d-g9-fko" secondAttribute="centerX" id="lAo-F0-KQK"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="buyImage" destination="uyu-zj-CW7" id="Ovv-oV-oQB"/>
+                <outlet property="description" destination="V3G-Wk-Tbv" id="55m-IW-sm7"/>
                 <outlet property="loadingIndicator" destination="Oei-ez-WoF" id="ilC-D6-iLn"/>
                 <outlet property="price" destination="p6d-g9-fko" id="zvB-LF-tXb"/>
             </connections>
         </view>
     </objects>
-    <resources>
-        <image name="172-pricetag.png" width="32" height="26"/>
-    </resources>
 </document>
