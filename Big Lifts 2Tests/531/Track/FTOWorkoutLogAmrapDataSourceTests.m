@@ -48,4 +48,15 @@
     STAssertEqualObjects([cell.maxEstimate text], @"175 lbs", @"");
 }
 
+- (void)testDoesNotShowAssistance {
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
+    JSetLog *warmup = [[JSetLogStore instance] createWithName:@"Squat" weight:N(100) reps:1 warmup:YES assistance:NO amrap:NO];
+    JSetLog *work1 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(150) reps:1 warmup:NO assistance:NO amrap:NO];
+    JSetLog *asst1 = [[JSetLogStore instance] createWithName:@"Squat" weight:N(170) reps:10 warmup:NO assistance:YES amrap:NO];
+    [workoutLog.sets addObjectsFromArray:@[warmup, work1, asst1]];
+    FTOWorkoutLogAmrapDataSource *dataSource = [[FTOWorkoutLogAmrapDataSource alloc] initWithWorkoutLog:workoutLog];
+    SetLogCell *cell = (LogMaxEstimateCell *) [dataSource tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:SETS_SECTION]];
+    STAssertEqualObjects([cell.weightLabel text], @"150 lbs", @"");
+}
+
 @end

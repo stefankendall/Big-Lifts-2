@@ -18,7 +18,7 @@
         }
         JSetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
         if (!logToShow) {
-            logToShow = [self.workoutLog.orderedSets lastObject];
+            logToShow = [[self.workoutLog workSets] lastObject];
         }
         [cell setSetLog:logToShow];
         return cell;
