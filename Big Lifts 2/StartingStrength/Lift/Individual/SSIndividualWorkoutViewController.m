@@ -15,11 +15,16 @@
 #import "JWorkout.h"
 #import "JSet.h"
 #import "RestToolbar.h"
+#import "BLTimer.h"
 
 @implementation SSIndividualWorkoutViewController
 
 - (void)viewDidLoad {
     self.workoutIndex = 0;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [[BLTimer instance] setObserver:self];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -98,6 +103,9 @@
             toolbar = [RestToolbar create];
         }
 
+        [toolbar updateTime];
+        [toolbar.timerButton addTarget:self action:@selector(goToTimer) forControlEvents:UIControlEventTouchUpInside];
+
         return toolbar;
     }
     else {
@@ -118,6 +126,14 @@
         }
         return cell;
     }
+}
+
+- (void)goToTimer {
+    [self performSegueWithIdentifier:@"ssGoToTimer" sender:self];
+}
+
+- (void)timerTick {
+    [self.tableView reloadRowsAtIndexPaths:@[NSIP(0, 0)] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 @end

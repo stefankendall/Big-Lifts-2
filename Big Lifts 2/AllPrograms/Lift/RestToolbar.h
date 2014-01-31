@@ -3,4 +3,5 @@
 @interface RestToolbar : CTCustomTableViewCell {}
 @property (weak, nonatomic) IBOutlet UIButton *timerButton;
 
+- (void)updateTime;
 @end

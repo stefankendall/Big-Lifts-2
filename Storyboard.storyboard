@@ -2854,7 +2854,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9E-YR-ShV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5767" y="1467"/>
+            <point key="canvasLocation" x="4275" y="951"/>
         </scene>
         <!--One Rep View Controller - Estimate One Rep Max-->
         <scene sceneID="9l0-KH-Npc">
@@ -3667,6 +3667,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="XFo-eT-NSP" kind="push" identifier="ssGoToTimer" id="8uc-8g-w4c"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRa-cT-eJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5730,7 +5733,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sGG-95-AJN"/>
         <segue reference="0oa-Th-D6G"/>
+        <segue reference="8uc-8g-w4c"/>
+        <segue reference="sGG-95-AJN"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1,6 +1,8 @@
+#import "TimerObserver.h"
+
 @class JSSWorkout;
 
-@interface SSIndividualWorkoutViewController : UITableViewController <UITableViewDelegate> {
+@interface SSIndividualWorkoutViewController : UITableViewController <UITableViewDelegate, TimerObserver> {
 }
 @property(nonatomic, strong) JSSWorkout * ssWorkout;
 @property(nonatomic) int workoutIndex;
