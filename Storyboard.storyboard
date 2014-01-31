@@ -5061,6 +5061,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="XFo-eT-NSP" kind="push" identifier="sjGoToTimer" id="gjo-1q-JYK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQ5-3c-kDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5734,7 +5737,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="0oa-Th-D6G"/>
-        <segue reference="8uc-8g-w4c"/>
         <segue reference="sGG-95-AJN"/>
+        <segue reference="gjo-1q-JYK"/>
     </inferredMetricsTieBreakers>
 </document>

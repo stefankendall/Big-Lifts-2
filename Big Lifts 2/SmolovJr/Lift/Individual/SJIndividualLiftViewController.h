@@ -1,8 +1,9 @@
 #import "SetWeightDelegate.h"
+#import "IndividualLiftViewController.h"
 
 @class JSJWorkout;
 
-@interface SJIndividualLiftViewController : UITableViewController <SetWeightDelegate>
+@interface SJIndividualLiftViewController : IndividualLiftViewController
 
 @property(nonatomic, strong) JSJWorkout *sjWorkout;
 

@@ -13,6 +13,7 @@
 @implementation SJLiftViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     self.rateDialog = [RateDialog new];
     [self.rateDialog show];
 }
@@ -51,6 +52,10 @@
     SJIndividualLiftViewController *controller = [segue destinationViewController];
     controller.sjWorkout = self.tappedWorkout;
     [super prepareForSegue:segue sender:sender];
+}
+
+- (void)goToTimer {
+    [self performSegueWithIdentifier:@"sjGoToTimer" sender:self];
 }
 
 @end

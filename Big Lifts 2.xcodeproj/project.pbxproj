@@ -299,6 +299,7 @@
 		54590A463458FA5E49B0F60F /* JPlateStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900BA3954F093FD37C0FE /* JPlateStoreTests.m */; };
 		54590A4BC4BB75B3797DF3B5 /* JFTODeload.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908A68DE6410022793675 /* JFTODeload.m */; };
 		54590A56C7BB74FAE0AF22DA /* TextViewInputAccessoryBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590439B6DBCDFB82F1DADC /* TextViewInputAccessoryBuilder.m */; };
+		54590A5DE66663687E752864 /* IndividualLiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909184C2902745AA20E74 /* IndividualLiftViewController.m */; };
 		54590A717E23FC12468E558C /* 379-barbell.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590060552A0C888496833E /* 379-barbell.png */; };
 		54590A76FBB0E7DBC04ED38A /* WeightTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590013A92D2E981EB34652 /* WeightTableCell.m */; };
 		54590A80C21844247A6993FA /* JTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C4271B0629FB3FB1939 /* JTimer.m */; };
@@ -509,6 +510,7 @@
 		54590023C9E9C35071F9E93B /* JFTOStandardPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOStandardPlan.h; sourceTree = "<group>"; };
 		54590024529C42EF92558EC1 /* JFTOJokerPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOJokerPlan.h; sourceTree = "<group>"; };
 		5459002515A242B6C9771BF8 /* SJLiftViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJLiftViewControllerTests.m; sourceTree = "<group>"; };
+		54590025A52D323A4F31DC5F /* IndividualLiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndividualLiftViewController.h; sourceTree = "<group>"; };
 		5459002AED3C909F20B87AAC /* SVOneRepTestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVOneRepTestCell.m; sourceTree = "<group>"; };
 		5459003E94ED2161C6E26856 /* WorkoutLogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutLogCell.m; sourceTree = "<group>"; };
 		5459003F9061BC913E024D9E /* JFTOFirstSetLastMultipleSetsPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOFirstSetLastMultipleSetsPlan.m; sourceTree = "<group>"; };
@@ -947,6 +949,7 @@
 		54590907914C22C7ABBDD5D3 /* RateDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateDialog.m; sourceTree = "<group>"; };
 		5459090824C25E2117395C47 /* SSLiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftViewController.m; sourceTree = "<group>"; };
 		5459091400F3CD93B3CD3F17 /* BarLoadingViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarLoadingViewControllerTests.m; sourceTree = "<group>"; };
+		545909184C2902745AA20E74 /* IndividualLiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndividualLiftViewController.m; sourceTree = "<group>"; };
 		5459091B1216B36F25DA668D /* FTOCustomAssistanceEditLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomAssistanceEditLiftViewControllerTests.h; sourceTree = "<group>"; };
 		5459091F80F325888C60EB26 /* CombinedSetWorkoutLogTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinedSetWorkoutLogTableDataSource.m; sourceTree = "<group>"; };
 		54590927CEE3296B9E67DF45 /* AddPlateViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateViewControllerTests.m; sourceTree = "<group>"; };
@@ -2486,6 +2489,8 @@
 				5459044898A9C488BEA0E66A /* RestToolbar.m */,
 				54590CB819AB10B6B146CE41 /* RestToolbar.h */,
 				545901311F4CED86E6B11617 /* RestToolbar.xib */,
+				545909184C2902745AA20E74 /* IndividualLiftViewController.m */,
+				54590025A52D323A4F31DC5F /* IndividualLiftViewController.h */,
 			);
 			path = Lift;
 			sourceTree = "<group>";
@@ -3765,6 +3770,7 @@
 				54590E5C9858D4D913158736 /* BLKeyValueStore.m in Sources */,
 				54590672D5891E8A3EDE8539 /* Migrate5to6.m in Sources */,
 				54590624A763F2636EF2CDE5 /* RestToolbar.m in Sources */,
+				54590A5DE66663687E752864 /* IndividualLiftViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

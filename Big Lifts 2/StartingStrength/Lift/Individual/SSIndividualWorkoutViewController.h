@@ -1,8 +1,9 @@
 #import "TimerObserver.h"
+#import "IndividualLiftViewController.h"
 
 @class JSSWorkout;
 
-@interface SSIndividualWorkoutViewController : UITableViewController <UITableViewDelegate, TimerObserver> {
+@interface SSIndividualWorkoutViewController : IndividualLiftViewController {
 }
 @property(nonatomic, strong) JSSWorkout * ssWorkout;
 @property(nonatomic) int workoutIndex;

@@ -23,10 +23,6 @@
     self.workoutIndex = 0;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [[BLTimer instance] setObserver:self];
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     return [cell bounds].size.height;
@@ -97,16 +93,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        RestToolbar *toolbar = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(RestToolbar.class)];
-
-        if (!toolbar) {
-            toolbar = [RestToolbar create];
-        }
-
-        [toolbar updateTime];
-        [toolbar.timerButton addTarget:self action:@selector(goToTimer) forControlEvents:UIControlEventTouchUpInside];
-
-        return toolbar;
+        return [self restToolbar: tableView];
     }
     else {
         Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
@@ -130,10 +117,6 @@
 
 - (void)goToTimer {
     [self performSegueWithIdentifier:@"ssGoToTimer" sender:self];
-}
-
-- (void)timerTick {
-    [self.tableView reloadRowsAtIndexPaths:@[NSIP(0, 0)] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 @end

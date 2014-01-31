@@ -23,6 +23,22 @@
 
 @implementation SJIndividualLiftViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
+    return [self.sjWorkout.workout.orderedSets count];
+}
+
 - (IBAction)doneButtonTapped:(id)sender {
     [self logWorkout];
     self.sjWorkout.done = YES;
@@ -53,22 +69,19 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self.tableView reloadData];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.sjWorkout.workout.orderedSets count];
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Class class = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SJSetCellWithPlates.class : SJSetCell.class;
-    SJSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(class)];
-    if (!cell) {
-        cell = [class create];
+    if (indexPath.section == 0) {
+        return [self restToolbar:tableView];
     }
-    [cell setSjWorkout:self.sjWorkout withSet:self.sjWorkout.workout.orderedSets[(NSUInteger) [indexPath row]] withEnteredWeight:self.liftedWeight];
-    return cell;
+    else {
+        Class class = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SJSetCellWithPlates.class : SJSetCell.class;
+        SJSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(class)];
+        if (!cell) {
+            cell = [class create];
+        }
+        [cell setSjWorkout:self.sjWorkout withSet:self.sjWorkout.workout.orderedSets[(NSUInteger) [indexPath row]] withEnteredWeight:self.liftedWeight];
+        return cell;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,13 +89,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"sjSetWeightSegue" sender:self];
+    if (indexPath.section == 1) {
+        [self performSegueWithIdentifier:@"sjSetWeightSegue" sender:self];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SJSetWeightViewController *controller = [segue destinationViewController];
-    controller.delegate = self;
-    controller.weight = [self minimumOrLiftedWeight];
+    if ([segue.identifier isEqualToString:@"sjSetWeightSegue"]) {
+        SJSetWeightViewController *controller = [segue destinationViewController];
+        controller.delegate = self;
+        controller.weight = [self minimumOrLiftedWeight];
+    }
 
     [super prepareForSegue:segue sender:sender];
 }
@@ -99,6 +116,10 @@
 
 - (void)weightChanged:(NSDecimalNumber *)weight {
     self.liftedWeight = weight;
+}
+
+- (void)goToTimer {
+    [self performSegueWithIdentifier:@"sjGoToTimer" sender:self];
 }
 
 @end
