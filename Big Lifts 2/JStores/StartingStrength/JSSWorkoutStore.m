@@ -48,8 +48,8 @@
         [self setupStandardA:workoutA];
         [self setupNoviceB:workoutB];
     } else if ([variant isEqualToString:@"Onus-Wunsler"]) {
-        [self restrictLiftsTo:@[@"Press", @"Bench", @"Power Clean", @"Deadlift", @"Squat", @"Back Extension"]];
-        [self removeBar:@[@"Back Extension"]];
+        [self restrictLiftsTo:@[@"Press", @"Bench", @"Power Clean", @"Deadlift", @"Squat", @"Back Extension", @"Chin-ups"]];
+        [self removeBar:@[@"Back Extension", @"Chin-ups"]];
         [self setupNoviceB:workoutA];
         JSSWorkout *workoutA2 = [[JSSWorkoutStore instance] createWithName:@"A" withOrder:0.5 withAlternation:1];
         [self setupStandardB:workoutA2];
@@ -144,6 +144,8 @@
             [[JSSLiftStore instance] find:@"name" value:@"Bench"] withSets:3 withReps:5]];
     [w.workouts addObject:[self createWorkout:[[JSSLiftStore instance] find:@"name" value:@"Back Extension"]
                                      withSets:3 withReps:10]];
+    [w.workouts addObject:[self                                 createWorkout:
+            [[JSSLiftStore instance] find:@"name" value:@"Chin-ups"] withSets:3 withReps:-1 amrap:YES]];
 }
 
 - (void)setupNoviceB:(JSSWorkout *)w {
