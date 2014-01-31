@@ -14,6 +14,7 @@
 #import "JSSState.h"
 #import "JWorkout.h"
 #import "JSet.h"
+#import "RestToolbar.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -72,8 +73,17 @@
     }
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[self getCurrentWorkout] sets] count];
+    if (section == 0) {
+        return 1;
+    }
+    else {
+        return [[[self getCurrentWorkout] sets] count];
+    }
 }
 
 - (JWorkout *)getCurrentWorkout {
@@ -81,22 +91,33 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
-    SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
+    if (indexPath.section == 0) {
+        RestToolbar *toolbar = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(RestToolbar.class)];
 
-    if (cell == nil) {
-        cell = [setClass create];
-    }
-    JWorkout *workout = [self getCurrentWorkout];
-    JSet *set = [workout.orderedSets objectAtIndex:(NSUInteger) [indexPath row]];
-    [cell setSet:set];
-    if ([set.percentage isEqual:N(100)]) {
-        [cell.percentageLabel setHidden:YES];
+        if (!toolbar) {
+            toolbar = [RestToolbar create];
+        }
+
+        return toolbar;
     }
     else {
-        [cell.percentageLabel setHidden:NO];
+        Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
+        SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
+
+        if (cell == nil) {
+            cell = [setClass create];
+        }
+        JWorkout *workout = [self getCurrentWorkout];
+        JSet *set = [workout.orderedSets objectAtIndex:(NSUInteger) [indexPath row]];
+        [cell setSet:set];
+        if ([set.percentage isEqual:N(100)]) {
+            [cell.percentageLabel setHidden:YES];
+        }
+        else {
+            [cell.percentageLabel setHidden:NO];
+        }
+        return cell;
     }
-    return cell;
 }
 
 @end
