@@ -67,7 +67,9 @@
 }
 
 - (void)updateSet {
-    self.set.lift = [[self liftStore] atIndex:[self.liftsPicker selectedRowInComponent:0]];
+    if ([[self liftStore] count] > 0) {
+        self.set.lift = [[self liftStore] atIndex:[self.liftsPicker selectedRowInComponent:0]];
+    }
     self.set.percentage = [NSDecimalNumber decimalNumberWithString:[self.percentageTextField text]];
     self.set.reps = [NSNumber numberWithInt:[[self.repsTextField text] intValue]];
     [self.liftTextField setText:self.set.lift.name];
