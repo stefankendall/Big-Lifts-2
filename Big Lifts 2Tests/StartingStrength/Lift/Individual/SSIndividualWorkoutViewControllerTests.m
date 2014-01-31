@@ -105,8 +105,8 @@
 
 - (void)testDoesNotShow100OnLastSet {
     self.controller.ssWorkout = [[JSSWorkoutStore instance] first];
-    int rows = [self.controller tableView:self.controller.tableView numberOfRowsInSection:0];
-    SetCell *cell = (SetCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:rows - 1 inSection:0]];
+    int rows = [self.controller tableView:self.controller.tableView numberOfRowsInSection:1];
+    SetCell *cell = (SetCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:NSIP(rows - 1, 1)];
     STAssertEqualObjects([cell.percentageLabel text], @"100%", @"");
     STAssertTrue([cell.percentageLabel isHidden], @"");
 }
@@ -116,22 +116,22 @@
     JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
     JWorkout *workout = ssWorkout.workouts[0];
     self.controller.ssWorkout = ssWorkout;
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], (int) [workout.orderedSets count], @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], (int) [workout.orderedSets count], @"");
 }
 
 - (void)testReturnsCorrectNumberOfRowsWithoutWarmup {
     self.controller.ssWorkout = [[JSSWorkoutStore instance] first];
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 3, @"");
+    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], 3, @"");
 }
 
 - (void)testReturnsPlatesWhenBarLoadingPurchased {
     [[IAPAdapter instance] addPurchase:IAP_BAR_LOADING];
-    UITableViewCell *cell = [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    UITableViewCell *cell = [self.controller tableView:nil cellForRowAtIndexPath:NSIP(0, 1)];
     STAssertTrue([cell isKindOfClass:SetCellWithPlates.class], @"");
 }
 
 - (void)testNoPlatesWhenBarLoadingUnpurchased {
-    UITableViewCell *cell = [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    UITableViewCell *cell = [self.controller tableView:nil cellForRowAtIndexPath:NSIP(0, 1)];
     STAssertFalse([cell isKindOfClass:SetCellWithPlates.class], @"");
 }
 
