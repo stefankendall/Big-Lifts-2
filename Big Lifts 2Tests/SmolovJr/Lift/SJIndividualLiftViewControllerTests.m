@@ -25,7 +25,7 @@
     [[IAPAdapter instance] addPurchase:IAP_BAR_LOADING];
     SJIndividualLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"sjIndividualLift"];
     controller.sjWorkout = [[JSJWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    UITableViewCell *cell = [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    UITableViewCell *cell = [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0,1)];
     STAssertTrue([cell isKindOfClass:SJSetCellWithPlates.class], @"");
 }
 

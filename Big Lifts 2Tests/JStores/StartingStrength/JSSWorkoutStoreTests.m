@@ -61,12 +61,12 @@
     STAssertEquals([[JSSWorkoutStore instance] count], 3, @"");
 }
 
-- (void)testCreatesBackExtensionForOnusWunsler {
+- (void)testCreatesLiftsForOnusWunsler {
     [[JSSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
     [[JSSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
-    JSSLift *lift = [[JSSLiftStore instance] find:@"name" value:@"Back Extension"];
-    STAssertNotNil(lift, @"");
-    STAssertEquals([[JSSLiftStore instance] count], 6, @"");
+    STAssertNotNil([[JSSLiftStore instance] find:@"name" value:@"Back Extension"], @"");
+    STAssertNotNil([[JSSLiftStore instance] find:@"name" value:@"Chin-ups"], @"");
+    STAssertEquals([[JSSLiftStore instance] count], 7, @"");
 }
 
 - (void)testRemovesBackExtensionWhenNotOnusWunsler {

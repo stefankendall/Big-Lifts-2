@@ -21,7 +21,7 @@
     SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
     [controller setSvWorkout:svWorkout];
 
-    STAssertEquals([controller tableView:controller.tableView numberOfRowsInSection:0], 1, @"");
+    STAssertEquals([controller tableView:controller.tableView numberOfRowsInSection:1], 1, @"");
 }
 
 - (void)testMarksWorkoutsComplete {
@@ -40,7 +40,7 @@
     STAssertTrue(week4MaxTest.testMax, @"");
     SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
     controller.svWorkout = week4MaxTest;
-    [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
+    [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 1)];
     [controller.oneRepField setText:@"300"];
     [controller doneButtonTapped:nil];
     JSVLift *svLift = [[JSVLiftStore instance] first];
@@ -55,7 +55,7 @@
     SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
     controller.svWorkout = week4MaxTest;
 
-    [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
+    [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 1)];
     [controller.oneRepField setText:@"300"];
     [controller doneButtonTapped:nil];
 
@@ -90,7 +90,7 @@
 
     [[[JSVLiftStore instance] first] setWeight:N(100)];
 
-    SetCell *cell = (SetCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
+    SetCell *cell = (SetCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 1)];
     STAssertEqualObjects([cell.weightLabel text], @"90", @"");
 }
 

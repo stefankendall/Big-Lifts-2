@@ -1,7 +1,9 @@
+#import "IndividualLiftViewController.h"
+
 @class JSVWorkout;
 @class PaddingTextField;
 
-@interface SVWorkoutViewController : UITableViewController <UITextFieldDelegate> {}
+@interface SVWorkoutViewController : IndividualLiftViewController <UITextFieldDelegate> {}
 
 @property(nonatomic, strong) JSVWorkout *svWorkout;
 @property(nonatomic, strong) PaddingTextField *oneRepField;

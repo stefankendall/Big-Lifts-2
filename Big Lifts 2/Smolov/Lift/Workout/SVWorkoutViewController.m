@@ -20,6 +20,7 @@
 @implementation SVWorkoutViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     if (self.svWorkout.done) {
         [self.doneButton setTitle:@"Not Done"];
     }
@@ -28,17 +29,29 @@
     }
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.svWorkout.testMax) {
+    if (section == 0) {
         return 1;
     }
     else {
-        return [self.svWorkout.workout.sets count];
+        if (self.svWorkout.testMax) {
+            return 1;
+        }
+        else {
+            return [self.svWorkout.workout.sets count];
+        }
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if( indexPath.section == 0 ){
+        return [self restToolbar:tableView];
+    }
+
     if (self.svWorkout.testMax) {
         SVOneRepTestCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SVOneRepTestCell.class)];
         if (!cell) {
@@ -105,6 +118,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self tableView:tableView cellForRowAtIndexPath:indexPath].bounds.size.height;
+}
+
+- (void)goToTimer {
+    [self performSegueWithIdentifier:@"svGoToTimer" sender:self];
 }
 
 @end
