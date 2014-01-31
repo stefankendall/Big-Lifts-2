@@ -14,4 +14,6 @@
 
 @property(nonatomic, strong) UIPickerView *liftsPicker;
 @property(nonatomic) BOOL usingBigLift;
+
+- (void)updateSet;
 @end

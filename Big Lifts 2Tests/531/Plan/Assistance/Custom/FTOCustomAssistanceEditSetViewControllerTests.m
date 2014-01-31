@@ -20,6 +20,12 @@
     STAssertTrue([controller.addLiftButton isHidden], @"");
 }
 
+- (void)testDoesNotCrashWhenUpdatedWithoutLift {
+    FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
+    controller.set = [[JSetStore instance] create];
+    [controller updateSet];
+}
+
 - (void)testSetsDataOnAppear {
     FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
     controller.set = [[JSetStore instance] create];
