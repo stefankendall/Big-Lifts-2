@@ -1,4 +1,5 @@
 #import "BLJStore.h"
+#import "JSetStore.h"
 
-@interface JFTOSetStore : BLJStore
+@interface JFTOSetStore : JSetStore
 @end

@@ -12,6 +12,8 @@
 #import "JFTOAssistance.h"
 #import "JFTOWorkout.h"
 #import "JFTOWorkoutStore.h"
+#import "JFTOSetStore.h"
+#import "JFTOSet.h"
 
 @implementation JFTOCustomAssistanceTests
 
@@ -47,6 +49,21 @@
     lift.weight = N(100);
     [[JFTOAssistanceStore instance] cycleChange];
     STAssertEqualObjects(lift.weight, N(105), @"");
+}
+
+- (void)testCreatesFtoSetOrSetBasedOnSetup {
+    JFTOCustomAssistanceWorkout *customWorkout = [[JFTOCustomAssistanceWorkoutStore instance] create];
+    customWorkout.mainLift = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
+    [customWorkout.workout addSet:[[JFTOSetStore instance] create]];
+    [customWorkout.workout addSet:[[JSetStore instance] create]];
+
+    [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_CUSTOM];
+
+    JFTOWorkout *squat = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][1];
+    STAssertEquals([[squat.workout assistanceSets] count], 2U, @"");
+    STAssertTrue([squat.workout.assistanceSets[0] isKindOfClass:JFTOSet.class], @"");
+    STAssertFalse([squat.workout.assistanceSets[1] isKindOfClass:JFTOSet.class], @"");
+
 }
 
 @end

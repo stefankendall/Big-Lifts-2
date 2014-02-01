@@ -11,6 +11,7 @@
 #import "JLift.h"
 #import "JFTOCustomAssistanceLift.h"
 #import "DecimalNumberHandlers.h"
+#import "BLJStoreManager.h"
 
 @implementation JFTOCustomAssistance
 
@@ -29,7 +30,8 @@
 
 - (void)addAssistanceToWorkout:(JFTOWorkout *)ftoWorkout withAssistance:(JFTOCustomAssistanceWorkout *)assistance {
     for (JSet *set in assistance.workout.sets) {
-        JSet *assistanceSet = [[JSetStore instance] createFromSet:set];
+        JSetStore *store = [[BLJStoreManager instance] storeForModel:set.class withUuid:set.uuid];
+        JSet *assistanceSet = [store createFromSet:set];
         assistanceSet.assistance = YES;
         [ftoWorkout.workout addSet:assistanceSet];
     }
