@@ -75,11 +75,13 @@ static const int ADD_SECTION = 1;
     if ([segue.identifier isEqualToString:@"ftoCustomAsstEditSet"]) {
         FTOCustomAssistanceEditSetViewController *controller = [segue destinationViewController];
         if (self.tappedSet) {
+            controller.workout = self.customAssistanceWorkout.workout;
             controller.set = self.tappedSet;
         }
         else {
             JSet *set = [[JSetStore instance] create];
             [self.customAssistanceWorkout.workout addSet:set];
+            controller.workout = self.customAssistanceWorkout.workout;
             controller.set = set;
         }
     }

@@ -6,6 +6,11 @@
 #import "PaddingTextField.h"
 #import "JFTOCustomAssistanceLift.h"
 #import "JFTOLiftStore.h"
+#import "JFTOSet.h"
+#import "JFTOSetStore.h"
+#import "JSetStore.h"
+#import "BLJStoreManager.h"
+#import "JWorkout.h"
 
 @implementation FTOCustomAssistanceEditSetViewController
 
@@ -24,10 +29,15 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self determineIfUsingFtoSet];
     [self determineIfUsingBigLift];
     [self setupLiftSelector];
     [self.percentageTextField setText:[self.set.percentage stringValue]];
     [self.repsTextField setText:[self.set.reps stringValue]];
+}
+
+- (void)determineIfUsingFtoSet {
+    [self.useTrainingMaxSwitch setOn:[self.set isKindOfClass:JFTOSet.class]];
 }
 
 - (void)determineIfUsingBigLift {
@@ -109,6 +119,32 @@
     [self.liftTextField setText:@"No lift"];
     self.usingBigLift = [sender isOn];
     [self setupLiftSelector];
+}
+
+- (IBAction)useTrainingMaxChanged:(id)sender {
+    JSet *newSet = nil;
+    if([sender isOn]){
+        newSet = [[JFTOSetStore instance] create];
+    }
+    else {
+        newSet = [[JSetStore instance] create];
+    }
+
+    int setIndex = [self.workout.sets indexOfObject: self.set];
+    self.workout.sets[(NSUInteger) setIndex] = newSet;
+
+    BLJStore *store = [[BLJStoreManager instance] storeForModel:[JSet class] withUuid:self.set.uuid];
+    [store remove:self.set];
+
+    [self copy: self.set into: newSet];
+    self.set = newSet;
+}
+
+- (void)copy:(JSet *)src into:(JSet *)dest {
+    dest.lift = src.lift;
+    dest.reps = src.reps;
+    dest.percentage = src.percentage;
+    dest.amrap = src.amrap;
 }
 
 @end

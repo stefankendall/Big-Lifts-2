@@ -7,6 +7,8 @@
 #import "JSet.h"
 #import "PaddingTextField.h"
 #import "JFTOLiftStore.h"
+#import "JFTOSetStore.h"
+#import "JFTOSet.h"
 
 @implementation FTOCustomAssistanceEditSetViewControllerTests
 
@@ -18,6 +20,35 @@
 
     [controller viewWillAppear:NO];
     STAssertTrue([controller.addLiftButton isHidden], @"");
+}
+
+- (void)testSetsTrainingMaxToggle {
+    FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
+    controller.set = [[JFTOSetStore instance] create];
+    [controller viewWillAppear:YES];
+
+    STAssertTrue([controller.useTrainingMaxSwitch isOn], @"");
+}
+
+- (void)testTogglingTrainingMaxChangesSetTypes {
+    FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
+
+    controller.set = [[JFTOSetStore instance] create];
+    controller.set.lift = [[JFTOLiftStore instance] first];
+    controller.set.reps = @5;
+    controller.set.percentage = N(50);
+    controller.set.amrap = YES;
+    int ftoCount = [[JFTOSetStore instance] count];
+    [controller.useTrainingMaxSwitch setOn:NO];
+    [controller useTrainingMaxChanged:controller.useTrainingMaxSwitch];
+
+    STAssertFalse([controller.set isKindOfClass:JFTOSet.class], @"");
+    STAssertEquals(ftoCount - 1, [[JFTOSetStore instance] count], @"");
+
+    STAssertNotNil(controller.set.lift, @"");
+    STAssertEqualObjects(controller.set.reps, @5, @"");
+    STAssertEqualObjects(controller.set.percentage, N(50), @"");
+    STAssertTrue(controller.set.amrap, @"");
 }
 
 - (void)testDoesNotCrashWhenUpdatedWithoutLift {
@@ -47,6 +78,7 @@
     controller.set.lift = [[JFTOLiftStore instance] create];
     [controller viewWillAppear:NO];
     STAssertTrue(controller.usingBigLift, @"");
+    STAssertNotNil(controller.useBigLiftSwitch, @"");
     STAssertTrue([controller.useBigLiftSwitch isOn], @"");
 }
 
