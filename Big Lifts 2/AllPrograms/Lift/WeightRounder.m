@@ -1,3 +1,4 @@
+#import <Crashlytics/Crashlytics.h>
 #import "WeightRounder.h"
 #import "JSettings.h"
 #import "JSettingsStore.h"
@@ -6,7 +7,8 @@
 @implementation WeightRounder
 
 - (NSDecimalNumber *)round:(NSDecimalNumber *)number {
-    if (number == nil ) {
+    CLS_LOG(@"Round: %@", number);
+    if (number == nil) {
         return N(0);
     }
 
@@ -73,7 +75,7 @@
 
 - (NSDecimalNumber *)roundTo2p5:(NSDecimalNumber *)number {
     NSDecimalNumber *lastDigitAndDecimals = [self getLastPartsOf:number];
-    NSDecimalNumber *numberWithoutLastDigits = [number decimalNumberBySubtracting:lastDigitAndDecimals];
+    NSDecimalNumber *numberWithoutLastDigits = [number decimalNumberBySubtracting:lastDigitAndDecimals withBehavior:[DecimalNumberHandlers noRaise]];
 
     if ([lastDigitAndDecimals compare:N(1.25)] == NSOrderedAscending) {
         return numberWithoutLastDigits;
@@ -95,7 +97,7 @@
 - (NSDecimalNumber *)getLastPartsOf:(NSDecimalNumber *)number {
     NSDecimalNumberHandler *behavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:0 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
     NSDecimalNumber *wholeNumbers = [number decimalNumberByRoundingAccordingToBehavior:behavior];
-    NSDecimalNumber *decimals = [number decimalNumberBySubtracting:wholeNumbers];
+    NSDecimalNumber *decimals = [number decimalNumberBySubtracting:wholeNumbers withBehavior:DecimalNumberHandlers.noRaise];
     int lastDigit = [wholeNumbers intValue] % 10;
     NSDecimalNumber *lastDigitDecimal = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInteger:lastDigit] decimalValue]];
     return [lastDigitDecimal decimalNumberByAdding:decimals withBehavior:DecimalNumberHandlers.noRaise];
