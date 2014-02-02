@@ -5144,7 +5144,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Workout" id="4GJ-gC-Oa6">
-                        <barButtonItem key="rightBarButtonItem" title="Delete" id="8qN-u9-qaz">
+                        <barButtonItem key="rightBarButtonItem" title="Edit Sets" id="8qN-u9-qaz">
                             <connections>
                                 <action selector="deleteTapped:" destination="rP5-93-DJx" id="2qe-PZ-2Pf"/>
                             </connections>
@@ -5762,8 +5762,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="OKP-gO-9OD"/>
         <segue reference="sGG-95-AJN"/>
-        <segue reference="0oa-Th-D6G"/>
         <segue reference="4r0-pl-zvN"/>
     </inferredMetricsTieBreakers>
 </document>

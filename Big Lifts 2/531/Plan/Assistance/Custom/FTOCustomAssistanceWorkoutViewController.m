@@ -113,5 +113,17 @@ static const int ADD_SECTION = 1;
     }
 }
 
+- (void) tableView:(UITableView *)tableView
+moveRowAtIndexPath:(NSIndexPath *)from
+       toIndexPath:(NSIndexPath *)to {
+    JSet *sourceSet = self.customAssistanceWorkout.workout.sets[(NSUInteger) from.row];
+    [self.customAssistanceWorkout.workout.sets removeObjectAtIndex:(NSUInteger) from.row];
+    [self.customAssistanceWorkout.workout.sets insertObject:sourceSet atIndex:(NSUInteger) to.row];
+    [self.tableView reloadData];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.section != ADD_SECTION;
+}
 
 @end
