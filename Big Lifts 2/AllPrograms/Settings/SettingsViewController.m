@@ -42,6 +42,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     UISegmentedControl *unitsControl = sender;
     NSArray *unitsMapping = @[@"lbs", @"kg"];
     [[[JSettingsStore instance] first] setUnits:unitsMapping[(NSUInteger) [unitsControl selectedSegmentIndex]]];
+    [self reloadData];
 }
 
 - (IBAction)keepScreenOnChanged:(id)sender {
