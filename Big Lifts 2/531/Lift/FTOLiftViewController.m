@@ -73,7 +73,10 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     JFTOVariant *variant = [[JFTOVariantStore instance] first];
     NSObject <JFTOPlan> *ftoPlan = [[JFTOWorkoutSetsGenerator new] planForVariant:variant.name];
-    return [ftoPlan weekNames][(NSUInteger) section];
+    if (section < [[ftoPlan weekNames] count]) {
+        return [ftoPlan weekNames][(NSUInteger) section];
+    }
+    return @"";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
