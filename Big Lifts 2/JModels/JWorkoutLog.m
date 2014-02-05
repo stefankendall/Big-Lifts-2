@@ -20,8 +20,8 @@
 }
 
 - (JSetLog *)bestSet {
-    __block JSetLog *bestSet = [self.orderedSets firstObject];
-    [self.orderedSets each:^(JSetLog *set) {
+    __block JSetLog *bestSet = [self.workSets firstObject];
+    [self.workSets each:^(JSetLog *set) {
         NSDecimalNumber *bestMaxEstimate = [[OneRepEstimator new] estimate:bestSet.weight withReps:[bestSet.reps intValue]];
         NSDecimalNumber *maxEstimateForSet = [[OneRepEstimator new] estimate:set.weight withReps:[set.reps intValue]];
         if ([maxEstimateForSet compare:bestMaxEstimate] == NSOrderedDescending) {
