@@ -3,6 +3,9 @@
 #import "BLKeyValueStore.h"
 #import <AudioToolbox/AudioToolbox.h>
 
+const NSString * TIMER_SECONDS_REMAINING_KEY = @"timerSecondsRemaining";
+const NSString * TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
+
 @implementation BLTimer
 
 + (instancetype)instance {
@@ -33,9 +36,9 @@
 - (void)suspend {
     if (self.timer) {
         [[BLKeyValueStore store]                            setObject:
-                [NSNumber numberWithInt:self.secondsRemaining] forKey:@"timerSecondsRemaining"];
+                [NSNumber numberWithInt:self.secondsRemaining] forKey:TIMER_SECONDS_REMAINING_KEY];
 
-        [[BLKeyValueStore store] setObject:[NSDate new] forKey:@"timerSuspendDate"];
+        [[BLKeyValueStore store] setObject:[NSDate new] forKey:TIMER_SUSPEND_DATE_KEY];
         [self.timer invalidate];
     }
 }
@@ -56,15 +59,17 @@
 }
 
 - (void)resume {
-    NSNumber *secondsRemaining = [[BLKeyValueStore store] objectForKey:@"timerSecondsRemaining"];
+    NSNumber *secondsRemaining = [[BLKeyValueStore store] objectForKey:TIMER_SECONDS_REMAINING_KEY];
     if (secondsRemaining != nil) {
-        NSDate *suspendDate = [[BLKeyValueStore store] objectForKey:@"timerSuspendDate"];
+        NSDate *suspendDate = [[BLKeyValueStore store] objectForKey:TIMER_SUSPEND_DATE_KEY];
         NSDate *now = [NSDate new];
         int secondsElapsed = (int) (now.timeIntervalSince1970 - suspendDate.timeIntervalSince1970);
         [self start:[secondsRemaining intValue] - secondsElapsed];
 
-        [[BLKeyValueStore store] removeObjectForKey:@"timerSuspendDate"];
-        [[BLKeyValueStore store] removeObjectForKey:@"timerSecondsRemaining"];
+        [[BLKeyValueStore store] removeObjectForKey:TIMER_SUSPEND_DATE_KEY];
+        [[BLKeyValueStore store] setObject: nil forKey: TIMER_SUSPEND_DATE_KEY];
+        [[BLKeyValueStore store] removeObjectForKey:TIMER_SECONDS_REMAINING_KEY];
+        [[BLKeyValueStore store] setObject: nil forKey: TIMER_SECONDS_REMAINING_KEY];
     }
 }
 
