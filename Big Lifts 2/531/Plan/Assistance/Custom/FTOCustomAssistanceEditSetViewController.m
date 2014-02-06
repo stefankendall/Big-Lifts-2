@@ -130,8 +130,8 @@
         newSet = [[JSetStore instance] create];
     }
 
-    int setIndex = [self.workout.sets indexOfObject: self.set];
-    self.workout.sets[(NSUInteger) setIndex] = newSet;
+    NSUInteger setIndex = [self.workout.sets indexOfObject: self.set];
+    self.workout.sets[setIndex] = newSet;
 
     BLJStore *store = [[BLJStoreManager instance] storeForModel:[JSet class] withUuid:self.set.uuid];
     [store remove:self.set];

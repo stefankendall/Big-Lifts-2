@@ -23,9 +23,9 @@
     JFTOBoringButBig *bbb = [[JFTOBoringButBigStore instance] first];
     if ([bbb threeMonthChallenge]) {
         NSArray *percentages = @[N(50), N(60), N(70)];
-        int index = [percentages indexOfObject:bbb.percentage];
+        NSUInteger index = [percentages indexOfObject:bbb.percentage];
         if (index != NSNotFound) {
-            [bbb setPercentage:percentages[(NSUInteger) ((index + 1) % percentages.count)]];
+            [bbb setPercentage:percentages[((index + 1) % percentages.count)]];
         }
     }
 

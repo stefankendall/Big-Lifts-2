@@ -75,7 +75,6 @@
     [bbb setPercentage:N(65)];
     [bbb setThreeMonthChallenge:YES];
     [[JFTOBoringButBigAssistance new] cycleChange];
-    [[JFTOBoringButBigAssistance new] setup];
 
     STAssertEqualObjects(bbb.percentage, N(65), @"");
 }

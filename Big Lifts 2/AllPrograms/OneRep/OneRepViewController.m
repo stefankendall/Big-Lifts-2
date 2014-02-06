@@ -28,7 +28,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSString *roundingFormula = [[[JSettingsStore instance] first] roundingFormula];
-    int row = [self.formulaNames indexOfObject:roundingFormula];
+    NSUInteger row = [self.formulaNames indexOfObject:roundingFormula];
     [self.formulaPicker selectRow:row inComponent:0 animated:NO];
     [self updatePickerDisplayForRow:row];
     [self handleIapChange];
