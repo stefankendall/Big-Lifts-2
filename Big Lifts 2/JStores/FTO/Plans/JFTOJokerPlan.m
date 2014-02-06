@@ -8,12 +8,12 @@
             @1 : @[
                     [JSetData dataWithReps:5 percentage:N(95) lift:lift],
                     [JSetData dataWithReps:5 percentage:N(105) lift:lift],
-                    [JSetData dataWithReps:2 percentage:N(110) lift:lift]
+                    [JSetData dataWithReps:5 percentage:N(110) lift:lift]
             ],
             @2 : @[
                     [JSetData dataWithReps:3 percentage:N(100) lift:lift],
                     [JSetData dataWithReps:3 percentage:N(105) lift:lift],
-                    [JSetData dataWithReps:1 percentage:N(115) lift:lift]
+                    [JSetData dataWithReps:3 percentage:N(115) lift:lift]
             ],
             @3 : @[
                     [JSetData dataWithReps:1 percentage:N(105) lift:lift],
