@@ -12,11 +12,11 @@
     JSJWorkout *firstWorkout = [week1Workouts firstObject];
     JSJWorkout *lastWorkout = [week1Workouts lastObject];
 
-    STAssertEquals([firstWorkout.workout.orderedSets count], 6U, @"");
+    STAssertEquals((int)[firstWorkout.workout.orderedSets count], 6, @"");
     JSet *firstWorkoutSet = [firstWorkout.workout.orderedSets firstObject];
     STAssertEquals([[firstWorkoutSet reps] intValue], 6, @"");
 
-    STAssertEquals([lastWorkout.workout.orderedSets count], 10U, @"");
+    STAssertEquals((int)[lastWorkout.workout.orderedSets count], 10, @"");
     JSet *lastWorkoutSet = [lastWorkout.workout.orderedSets firstObject];
     STAssertEquals([[lastWorkoutSet reps] intValue], 3, @"");
 }

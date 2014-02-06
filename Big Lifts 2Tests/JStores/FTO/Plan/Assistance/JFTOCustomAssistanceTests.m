@@ -32,9 +32,9 @@
     JFTOWorkout *benchWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
     JFTOWorkout *squatWorkout2 = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@2][1];
 
-    STAssertEquals([squatWorkout1.workout.sets count], 7U, @"");
-    STAssertEquals([squatWorkout2.workout.sets count], 7U, @"");
-    STAssertEquals([benchWorkout.workout.sets count], 6U, @"");
+    STAssertEquals((int)[squatWorkout1.workout.sets count], 7, @"");
+    STAssertEquals((int)[squatWorkout2.workout.sets count], 7, @"");
+    STAssertEquals((int)[benchWorkout.workout.sets count], 6, @"");
 
     JSet *lastSet = [squatWorkout1.workout.sets lastObject];
     STAssertEquals(lastSet.assistance, YES, @"");
@@ -60,7 +60,7 @@
     [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_CUSTOM];
 
     JFTOWorkout *squat = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][1];
-    STAssertEquals([[squat.workout assistanceSets] count], 2U, @"");
+    STAssertEquals((int) [[squat.workout assistanceSets] count], 2, @"");
     STAssertTrue([squat.workout.assistanceSets[0] isKindOfClass:JFTOSet.class], @"");
     STAssertFalse([squat.workout.assistanceSets[1] isKindOfClass:JFTOSet.class], @"");
 

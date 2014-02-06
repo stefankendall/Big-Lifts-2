@@ -10,7 +10,7 @@
 
 - (void)testSetsUpRowsForEachWeek {
     FTOCustomWeekSelectorViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomWeekSelector"];
-    STAssertEquals([controller tableView:nil numberOfRowsInSection:1], 4, @"");
+    STAssertEquals((int) [controller tableView:nil numberOfRowsInSection:1], 4, @"");
 
     UITableViewCell *cell = [controller tableView:controller.tableView cellForRowAtIndexPath:
             [NSIndexPath indexPathForRow:0 inSection:1]];

@@ -20,7 +20,7 @@
     squatSet.lift = [[JSSLiftStore instance] find:@"name" value:@"Squat"];
     [squatWorkout addSet:squatSet];
     [[JSSWarmupGenerator new] addWarmup:squatWorkout];
-    STAssertEquals([squatWorkout.orderedSets count], 6U, @"");
+    STAssertEquals((int)[squatWorkout.orderedSets count], 6, @"");
     JSet *firstSet = [squatWorkout.orderedSets firstObject];
     JSet *lastSet = [squatWorkout.orderedSets lastObject];
     STAssertTrue(firstSet.warmup, @"");
@@ -33,9 +33,9 @@
     JSSWorkout *workoutA = [[JSSWorkoutStore instance] find:@"name" value:@"A"];
     JWorkout *squatWorkout = [self findWorkout:workoutA name:@"Squat"];
     [[JSSWarmupGenerator new] addWarmup:squatWorkout];
-    STAssertEquals([squatWorkout.orderedSets count], 8U, @"");
+    STAssertEquals((int)[squatWorkout.orderedSets count], 8, @"");
     [[JSSWarmupGenerator new] removeWarmup:squatWorkout];
-    STAssertEquals([squatWorkout.orderedSets count], 3U, @"");
+    STAssertEquals((int)[squatWorkout.orderedSets count], 3, @"");
 }
 
 - (JWorkout *)findWorkout:(JSSWorkout *)workoutA name:(NSString *)name {

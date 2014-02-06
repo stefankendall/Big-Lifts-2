@@ -84,7 +84,7 @@
         return [set.lift.name isEqualToString:@"Squat"];
     }];
 
-    STAssertEquals([squatWorkout.orderedSets count], 8U, @"");
+    STAssertEquals((int)[squatWorkout.orderedSets count], 8, @"");
 }
 
 - (void)testActiveWorkoutForPracticalProgramming {

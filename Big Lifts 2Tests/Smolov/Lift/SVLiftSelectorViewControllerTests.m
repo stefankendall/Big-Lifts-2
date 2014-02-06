@@ -6,11 +6,11 @@
 
 - (void)testHasCellsForEachWorkout {
     SVLiftSelectorViewController *controller = [self getControllerByStoryboardIdentifier:@"svLiftSelector"];
-    STAssertEquals([controller tableView:controller.tableView numberOfRowsInSection:0], 9, @"");
-    STAssertEquals([controller tableView:controller.tableView numberOfRowsInSection:1], 13, @"");
-    STAssertEquals([controller tableView:controller.tableView numberOfRowsInSection:2], 6, @"");
-    STAssertEquals([controller tableView:controller.tableView numberOfRowsInSection:3], 12, @"");
-    STAssertEquals([controller tableView:controller.tableView numberOfRowsInSection:4], 2, @"");
+    STAssertEquals((int)[controller tableView:controller.tableView numberOfRowsInSection:0], 9, @"");
+    STAssertEquals((int)[controller tableView:controller.tableView numberOfRowsInSection:1], 13, @"");
+    STAssertEquals((int)[controller tableView:controller.tableView numberOfRowsInSection:2], 6, @"");
+    STAssertEquals((int)[controller tableView:controller.tableView numberOfRowsInSection:3], 12, @"");
+    STAssertEquals((int)[controller tableView:controller.tableView numberOfRowsInSection:4], 2, @"");
 }
 
 @end

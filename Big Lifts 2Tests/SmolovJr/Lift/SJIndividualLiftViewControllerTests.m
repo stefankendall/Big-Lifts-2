@@ -16,9 +16,9 @@
     [controller doneButtonTapped:nil];
 
     NSArray *smolovLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov Jr"];
-    STAssertEquals([smolovLogs count], 1U, @"");
+    STAssertEquals((int) [smolovLogs count], 1, @"");
     JWorkoutLog *workoutLog = smolovLogs[0];
-    STAssertEquals([workoutLog.orderedSets count], 6U, @"");
+    STAssertEquals((int) [workoutLog.orderedSets count], 6, @"");
 }
 
 - (void)testShowsPlates {

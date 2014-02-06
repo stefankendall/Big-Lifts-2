@@ -29,7 +29,7 @@
 }
 
 - (void)testNumberOfRowsInSection {
-    STAssertEquals(3, [self.controller tableView:nil numberOfRowsInSection:0], @"");
+    STAssertEquals(3, (int)[self.controller tableView:nil numberOfRowsInSection:0], @"");
 }
 
 - (void)testMoveRowAtIndexPathSwapsLiftOrder {

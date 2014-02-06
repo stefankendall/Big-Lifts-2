@@ -35,13 +35,13 @@
 }
 
 - (void)testHasWorkoutRows {
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], 3, @"");
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:2], 3, @"");
+    STAssertEquals((int) [self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
+    STAssertEquals((int) [self.controller tableView:nil numberOfRowsInSection:1], 3, @"");
+    STAssertEquals((int) [self.controller tableView:nil numberOfRowsInSection:2], 3, @"");
 
     [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_BORING_BUT_BIG];
     self.controller.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:3], 5, @"");
+    STAssertEquals((int) [self.controller tableView:nil numberOfRowsInSection:3], 5, @"");
 }
 
 - (void)testHasSectionTitles {
@@ -56,7 +56,7 @@
 - (void)testTappingDoneButtonSavesLog {
     [self.controller doneButtonTapped:nil];
 
-    STAssertEquals([[[JWorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] count], 1U, @"");
+    STAssertEquals((int) [[[JWorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"] count], 1, @"");
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] find:@"name" value:@"5/3/1"];
     STAssertNotNil(workoutLog.date, @"");
     STAssertTrue(self.ftoWorkout.done, @"");
@@ -67,14 +67,14 @@
     [self.controller repsChanged:@0];
     [self.controller doneButtonTapped:nil];
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] find:@"name" value:@"5/3/1"];
-    STAssertEquals([workoutLog.orderedSets count], 5U, @"");
+    STAssertEquals((int) [workoutLog.orderedSets count], 5, @"");
 }
 
 - (void)testTappingAmrapCellCausesSegue {
     UINavigationController *nav = [UINavigationController new];
     [nav addChildViewController:self.controller];
     [self.controller tableView:nil didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:1]];
-    STAssertEquals([self.controller.navigationController.viewControllers count], 2U, @"");
+    STAssertEquals((int) [self.controller.navigationController.viewControllers count], 2, @"");
 }
 
 - (void)testAmrapRepsCanBeChanged {
@@ -109,7 +109,7 @@
     [[JFTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     JSet *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
-    STAssertEquals([self.ftoWorkout.workout.orderedSets indexOfObject:heaviestAmrapSet], 5U, @"");
+    STAssertEquals((int) [self.ftoWorkout.workout.orderedSets indexOfObject:heaviestAmrapSet], 5, @"");
 }
 
 - (void)testDeterminesIfMissedReps {
@@ -141,8 +141,8 @@
     }];
     [self.ftoWorkout.workout removeSets:warmupSets];
     int sections = [self.controller numberOfSectionsInTableView:self.controller.tableView];
-    STAssertEquals([self.controller tableView:self.controller.tableView numberOfRowsInSection:0], 1, @"");
-    STAssertEquals([self.controller tableView:self.controller.tableView numberOfRowsInSection:1], 3, @"");
+    STAssertEquals((int) [self.controller tableView:self.controller.tableView numberOfRowsInSection:0], 1, @"");
+    STAssertEquals((int) [self.controller tableView:self.controller.tableView numberOfRowsInSection:1], 3, @"");
     STAssertEquals(sections, 2, @"");
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:0], @"", @"");
     STAssertEqualObjects([self.controller tableView:self.controller.tableView titleForHeaderInSection:1], @"Workout", @"");

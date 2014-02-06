@@ -19,7 +19,7 @@
     log.name = @"5/3/1";
 
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
-    STAssertEquals([controller tableView:nil numberOfRowsInSection:0], 1, @"");
+    STAssertEquals((int) [controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
 
 - (void)testReturnsCorrectRows {
@@ -28,7 +28,7 @@
     log.name = @"5/3/1";
     [log addSet:[[JSetLogStore instance] create]];
     FTOTrackViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoTrack"];
-    STAssertEquals([controller tableView:nil numberOfRowsInSection:0], 1, @"");
+    STAssertEquals((int) [controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
 
 - (void)testViewButtonTappedTogglesText {

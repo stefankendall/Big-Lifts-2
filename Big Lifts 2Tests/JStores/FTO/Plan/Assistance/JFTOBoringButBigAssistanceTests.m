@@ -26,19 +26,19 @@
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] first];
     ftoWorkout.workout.sets = [@[] mutableCopy];
     [[JFTOBoringButBigAssistance new] setup];
-    STAssertEquals([ftoWorkout.workout.sets count], 0U, @"");
+    STAssertEquals((int) [ftoWorkout.workout.sets count], 0, @"");
 }
 
 - (void)testAddsBoringButBigSets {
     [[JFTOBoringButBigAssistance new] setup];
     JFTOWorkout *workoutInWeek1 = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals([workoutInWeek1.workout.orderedSets count], 11U, @"");
+    STAssertEquals((int) [workoutInWeek1.workout.orderedSets count], 11, @"");
     JSet *boringSet = workoutInWeek1.workout.orderedSets[6];
     STAssertEqualObjects(boringSet.percentage, N(50), @"");
     STAssertEqualObjects(boringSet.reps, @10, @"");
 
     JFTOWorkout *workoutInWeek4 = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@4][0];
-    STAssertEquals([workoutInWeek4.workout.orderedSets count], 6U, @"");
+    STAssertEquals((int) [workoutInWeek4.workout.orderedSets count], 6, @"");
 }
 
 - (void)testCanUseDifferentLifts {

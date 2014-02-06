@@ -19,7 +19,7 @@
     [workoutLog addSet:set2];
 
     WorkoutLogTableDataSource *dataSource = [[WorkoutLogTableDataSource alloc] initWithWorkoutLog:workoutLog];
-    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
+    STAssertEquals((int)[dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
 }
 
 - (void)testDoesNotCombinesIdenticalSets {
@@ -33,7 +33,7 @@
     [workoutLog addSet:set2];
 
     WorkoutLogTableDataSource *dataSource = [[WorkoutLogTableDataSource alloc] initWithWorkoutLog:workoutLog];
-    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
+    STAssertEquals((int)[dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
 }
 
 @end

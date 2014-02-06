@@ -41,13 +41,13 @@
 
 - (void)testReturnsCorrectNumberOfRows {
     [self createWorkoutLog];
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:1], 1, @"");
+    STAssertEquals((int)[self.controller tableView:nil numberOfRowsInSection:1], 1, @"");
 }
 
 - (void)testFiltersByLogName {
     JWorkoutLog *log = [[JWorkoutLogStore instance] create];
     log.name = @"5/3/1";
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
+    STAssertEquals((int)[self.controller tableView:nil numberOfRowsInSection:0], 1, @"");
 }
 
 - (void)testDeletesWorkoutLogs {

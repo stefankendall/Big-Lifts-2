@@ -12,7 +12,7 @@
 
 - (void)testHasRowsForAllLifts {
     FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
-    STAssertEquals([controller tableView:nil numberOfRowsInSection:0], 4, @"");
+    STAssertEquals((int) [controller tableView:nil numberOfRowsInSection:0], 4, @"");
 }
 
 - (void)testCanChangeLiftNames {

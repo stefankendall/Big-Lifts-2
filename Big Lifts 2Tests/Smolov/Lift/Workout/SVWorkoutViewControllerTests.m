@@ -21,7 +21,7 @@
     SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
     [controller setSvWorkout:svWorkout];
 
-    STAssertEquals([controller tableView:controller.tableView numberOfRowsInSection:1], 1, @"");
+    STAssertEquals((int)[controller tableView:controller.tableView numberOfRowsInSection:1], 1, @"");
 }
 
 - (void)testMarksWorkoutsComplete {
@@ -60,11 +60,11 @@
     [controller doneButtonTapped:nil];
 
     NSArray *smolovLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov"];
-    STAssertEquals([smolovLogs count], 1U, @"");
+    STAssertEquals((int)[smolovLogs count], 1, @"");
 
     JWorkoutLog *workoutLog = smolovLogs[0];
     STAssertNotNil(workoutLog.date, @"");
-    STAssertEquals([workoutLog.sets count], 1U, @"");
+    STAssertEquals((int)[workoutLog.sets count], 1, @"");
 
     JSetLog *setLog = workoutLog.sets[0];
     STAssertEqualObjects(setLog.reps, @1, @"");
@@ -78,9 +78,9 @@
 
     [controller doneButtonTapped:nil];
     NSArray *smolovLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov"];
-    STAssertEquals([smolovLogs count], 1U, @"");
+    STAssertEquals((int)[smolovLogs count], 1, @"");
     JWorkoutLog *workoutLog = smolovLogs[0];
-    STAssertEquals([workoutLog.sets count], 7U, @"");
+    STAssertEquals((int)[workoutLog.sets count], 7, @"");
 }
 
 - (void)testAddsWeightAdd {

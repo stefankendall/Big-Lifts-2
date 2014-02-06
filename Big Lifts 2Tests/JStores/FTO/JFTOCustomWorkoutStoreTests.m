@@ -9,10 +9,10 @@
 
 - (void)testSetsUpDefaultData {
     NSArray *customWorkouts = [[JFTOCustomWorkoutStore instance] findAll];
-    STAssertEquals([customWorkouts count], 4U, @"");
+    STAssertEquals((int)[customWorkouts count], 4, @"");
 
     JFTOCustomWorkout *customWorkout = customWorkouts[0];
-    STAssertEquals([customWorkout.workout.orderedSets count], 6U, @"");
+    STAssertEquals((int)[customWorkout.workout.orderedSets count], 6, @"");
 }
 
 - (void)testMarksDeloadAndIncrementWeeksFromVariant {

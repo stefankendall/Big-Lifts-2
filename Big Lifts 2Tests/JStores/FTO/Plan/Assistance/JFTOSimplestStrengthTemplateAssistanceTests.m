@@ -15,7 +15,7 @@
 - (void)testSetsUpWeekPercentages {
     [[JFTOSimplestStrengthTemplateAssistance new] setup];
     JFTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Squat"];
-    STAssertEquals([week1Workout.workout.orderedSets count], 9U, @"");
+    STAssertEquals((int)[week1Workout.workout.orderedSets count], 9, @"");
     JSet *lastSet = week1Workout.workout.orderedSets[8];
     STAssertEquals([lastSet.reps intValue], 10, @"");
     STAssertEqualObjects(lastSet.percentage, N(70), @"");
@@ -36,7 +36,7 @@
     [[JFTOSimplestStrengthTemplateAssistance new] setup];
 
     JFTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Front Squat"];
-    STAssertEquals([week1Workout.workout.orderedSets count], 9U, @"");
+    STAssertEquals((int)[week1Workout.workout.orderedSets count], 9, @"");
     STAssertEquals([[JFTOSSTLiftStore instance] count], 4, @"");
 }
 

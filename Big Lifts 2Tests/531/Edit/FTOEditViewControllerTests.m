@@ -21,7 +21,7 @@
 }
 
 - (void)testHasCorrectRows {
-    STAssertEquals([self.controller tableView:nil numberOfRowsInSection:0], 4, @"");
+    STAssertEquals((int) [self.controller tableView:nil numberOfRowsInSection:0], 4, @"");
 }
 
 - (void)testUpdatesTrainingMaxWhenWeightChanges {

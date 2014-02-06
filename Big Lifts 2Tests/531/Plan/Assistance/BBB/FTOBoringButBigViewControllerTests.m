@@ -20,7 +20,7 @@
     [[JFTOAssistanceStore instance] restore];
 
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals([ftoWorkout.workout.orderedSets count], 11U, @"");
+    STAssertEquals([ftoWorkout.workout.orderedSets count], (NSUInteger) 11, @"");
     JSet *set = [ftoWorkout.workout.orderedSets lastObject];
     STAssertEqualObjects([set percentage], N(60), @"");
 }

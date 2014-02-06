@@ -49,11 +49,11 @@
 
 - (void)testTextViewsCanGetIndexWithCellReference {
     LiftFormCell *cell = (LiftFormCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-    STAssertEquals([[[cell textField] indexPath] row], 1, @"");
+    STAssertEquals((int)[[[cell textField] indexPath] row], 1, @"");
 }
 
 - (void)testHasAnIncrementSection {
-    STAssertEquals([self.controller numberOfSectionsInTableView:nil], 2, @"");
+    STAssertEquals((int)[self.controller numberOfSectionsInTableView:nil], 2, @"");
     STAssertEqualObjects([self.controller tableView:nil titleForHeaderInSection:1], @"Increment", @"");
 }
 

@@ -45,7 +45,7 @@
     JFTOSettings *ftoSettings = [[JFTOSettingsStore instance] first];
     [ftoSettings setRepsToBeatConfig:[NSNumber numberWithInt:kRepsToBeatLogOnly]];
     FTORepsToBeatBreakdown *breakdown = [self getControllerByStoryboardIdentifier:@"ftoRepsToBeat"];
-    STAssertEquals([[breakdown configPicker] selectedRowInComponent:0], 1, @"");
+    STAssertEquals((int)[[breakdown configPicker] selectedRowInComponent:0], 1, @"");
     STAssertEqualObjects([[breakdown configTextField] text], @"Log Only", @"");
 }
 

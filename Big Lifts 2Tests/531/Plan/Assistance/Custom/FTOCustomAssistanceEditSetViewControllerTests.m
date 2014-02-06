@@ -67,7 +67,7 @@
     [controller viewWillAppear:NO];
 
     STAssertEqualObjects([controller.liftTextField text], @"MyLift", @"");
-    STAssertEquals([controller.liftsPicker selectedRowInComponent:0], 0, @"");
+    STAssertEquals((int) [controller.liftsPicker selectedRowInComponent:0], 0, @"");
     STAssertEqualObjects([controller.repsTextField text], @"5", @"");
     STAssertEqualObjects([controller.percentageTextField text], @"75", @"");
 }

@@ -34,11 +34,11 @@
             @{@"name" : @"Press", @"data" : @[@{}]}
     ] mutableCopy];
     NSMutableArray *deadLiftData = [[FTOLogGraphTransformer new] logEntriesFromChart:chartData forName:@"Deadlift"];
-    STAssertEquals([chartData count], 2U, @"");
+    STAssertEquals((int)[chartData count], 2, @"");
     STAssertNotNil(deadLiftData, @"");
 
     NSMutableArray *pressData = [[FTOLogGraphTransformer new] logEntriesFromChart:chartData forName:@"Press"];
-    STAssertEquals([pressData count], 1U, @"");
+    STAssertEquals((int)[pressData count], 1, @"");
 }
 
 - (void)testGeneratesOneLogPerWorkout {

@@ -25,7 +25,7 @@
     [workoutLog.sets addObjectsFromArray:@[warmup, work1, work2]];
 
     FTOWorkoutLogWorkSetsDataSource *dataSource = [[FTOWorkoutLogWorkSetsDataSource alloc] initWithWorkoutLog:workoutLog];
-    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
+    STAssertEquals((int)[dataSource tableView:nil numberOfRowsInSection:0], 2, @"");
 }
 
 - (void) testDoesNotCombinesWorkSets {
@@ -45,7 +45,7 @@
     [workoutLog.sets addObjectsFromArray:@[work1, work2, work3]];
 
     FTOWorkoutLogWorkSetsDataSource *dataSource = [[FTOWorkoutLogWorkSetsDataSource alloc] initWithWorkoutLog:workoutLog];
-    STAssertEquals([dataSource tableView:nil numberOfRowsInSection:0], 3, @"");
+    STAssertEquals((int)[dataSource tableView:nil numberOfRowsInSection:0], 3, @"");
 }
 
 @end

@@ -14,8 +14,8 @@
 
 - (void)testReturnsCorrectNumberOfRows {
     SSLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ssWorkoutSummaryViewController"];
-    STAssertEquals(1, [controller tableView:nil numberOfRowsInSection:0], @"");
-    STAssertEquals(3, [controller tableView:nil numberOfRowsInSection:1], @"");
+    STAssertEquals(1, (int)[controller tableView:nil numberOfRowsInSection:0], @"");
+    STAssertEquals(3, (int)[controller tableView:nil numberOfRowsInSection:1], @"");
 }
 
 - (void)testReturnsLiftSummaryCells {

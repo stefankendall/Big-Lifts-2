@@ -46,7 +46,7 @@
     NSString *workoutLogJson = serialized[0];
 
     JWorkoutLog *deserializedWorkoutLog = (JWorkoutLog *) [[JWorkoutLogStore instance] deserializeObject:workoutLogJson];
-    STAssertEquals([deserializedWorkoutLog.sets count], 1U, @"");
+    STAssertEquals((int) [deserializedWorkoutLog.sets count], 1, @"");
     STAssertEquals(deserializedWorkoutLog.sets[0], setLog1, @"");
 }
 
@@ -61,7 +61,7 @@
     [[JWorkoutLogStore instance] load];
 
     JWorkoutLog *syncedLog = [[JWorkoutLogStore instance] first];
-    STAssertEquals([syncedLog.sets count], 2U, @"");
+    STAssertEquals((int) [syncedLog.sets count], 2, @"");
 
     JSetLog *syncedLog1 = syncedLog.orderedSets[0];
     STAssertEqualObjects(syncedLog1.name, @"Bench", @"");
@@ -79,7 +79,7 @@
     JSetLog *workout = [[JSetLogStore instance] create];
     workout.warmup = NO;
     [workoutLog.sets addObjectsFromArray:@[warmup, workout]];
-    STAssertEquals([[workoutLog workSets] count], 1U, @"");
+    STAssertEquals((int) [[workoutLog workSets] count], 1, @"");
 }
 
 - (void)testFindsBestSetFromWorkoutLog {
