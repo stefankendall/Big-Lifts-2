@@ -32,6 +32,7 @@
             FTO_VARIANT_JOKER : self.jokerVariant,
             FTO_VARIANT_SIX_WEEK : self.sixWeekVariant,
             FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS : self.firstSetLastMultipleSetsVariant,
+            FTO_VARIANT_FIRST_SET_LAST : self.firstSetLastVariant,
             FTO_VARIANT_ADVANCED : self.advancedVariant,
             FTO_VARIANT_CUSTOM : self.customVariant,
             FTO_VARIANT_FIVES_PROGRESSION : self.fivesProgressionVariant
