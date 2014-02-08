@@ -1,4 +1,5 @@
 #import "BrzyckiEstimator.h"
+#import "DecimalNumberHandlers.h"
 
 @implementation BrzyckiEstimator
 
@@ -7,8 +8,8 @@
         return N(0);
     }
 
-    NSDecimalNumber *numerator = [weight decimalNumberByMultiplyingBy:N(36)];
-    NSDecimalNumber *denominator = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:(37 - reps)] decimalValue]];
+    NSDecimalNumber *numerator = [weight decimalNumberByMultiplyingBy:N(36) withBehavior:DecimalNumberHandlers.noRaise];
+    NSDecimalNumber *denominator = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:(37 - reps)] decimalValue] ];
     return [numerator decimalNumberByDividingBy:denominator];
 }
 

@@ -28,4 +28,9 @@
     STAssertEqualObjects([[OneRepEstimator new] estimate:N(100) withReps:5], N(112.5), @"");
 }
 
+- (void)testHandlesNilWeightWithBrzyki {
+    [[[JSettingsStore instance] first] setRoundingFormula:(NSString *) ROUNDING_FORMULA_BRZYCKI];
+    STAssertEqualObjects([[OneRepEstimator new] estimate:nil withReps:5], N(0), @"");
+}
+
 @end

@@ -10,7 +10,7 @@
     if (reps == 1) {
         return weight;
     }
-    else if (reps == 0) {
+    else if (reps == 0 || weight == nil) {
         return N(0);
     }
 
