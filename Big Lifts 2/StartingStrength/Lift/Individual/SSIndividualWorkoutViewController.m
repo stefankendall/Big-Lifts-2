@@ -21,13 +21,17 @@
 @interface SSIndividualWorkoutViewController ()
 @property(nonatomic, strong) NSMutableArray *loggedWorkouts;
 @property(nonatomic, strong) NSMutableDictionary *loggedSets;
-@property(nonatomic) NSIndexPath *tappedIndexPath;
 @end
 
 @implementation SSIndividualWorkoutViewController
 
 - (void)viewDidLoad {
     self.workoutIndex = 0;
+    [self resetLoggedSets];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (void)resetLoggedSets {
@@ -129,7 +133,11 @@
             cell = [setClass create];
         }
         JSet *set = [self setForIndexPath:indexPath];
-        [cell setSet:set];
+        SetChange *data = self.loggedSets[[NSNumber numberWithInt:indexPath.row]];
+        NSNumber *enteredReps = data ? data.reps : nil;
+        NSDecimalNumber *enteredWeight = data ? data.weight : nil;
+        [cell setSet:set withEnteredReps:enteredReps withEnteredWeight:enteredWeight];
+
         if ([set.percentage isEqual:N(100)]) {
             [cell.percentageLabel setHidden:YES];
         }

@@ -177,4 +177,17 @@
     STAssertEqualObjects(firstSet.weight, N(200), @"");
 }
 
+- (void)testWeightChangesAppearInWorkout {
+    JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
+    self.controller.ssWorkout = ssWorkout;
+    self.controller.tappedSet = [ssWorkout.workouts[0] sets][0];
+    self.controller.tappedIndexPath = NSIP(0,1);
+    [self.controller repsChanged:N(1)];
+    SetCell *changedCell = [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:NSIP(0,1)];
+    SetCell *notChangedCell = [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:NSIP(1,1)];
+
+    STAssertEqualObjects([changedCell.repsLabel text], @"1x", @"");
+    STAssertEqualObjects([notChangedCell.repsLabel text], @"5x", @"");
+}
+
 @end

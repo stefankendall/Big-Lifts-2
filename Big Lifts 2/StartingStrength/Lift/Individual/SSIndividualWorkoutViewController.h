@@ -11,6 +11,7 @@
 @property(nonatomic) int workoutIndex;
 
 @property(nonatomic, strong) JSet *tappedSet;
+@property(nonatomic) NSIndexPath *tappedIndexPath;
 
 - (void)resetLoggedSets;
 
