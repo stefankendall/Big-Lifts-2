@@ -16,11 +16,23 @@
 #import "JWorkout.h"
 #import "RestToolbar.h"
 #import "SSEditSetForm.h"
+#import "SetChange.h"
+
+@interface SSIndividualWorkoutViewController ()
+@property(nonatomic, strong) NSMutableArray *loggedWorkouts;
+@property(nonatomic, strong) NSMutableDictionary *loggedSets;
+@property(nonatomic) NSIndexPath *tappedIndexPath;
+@end
 
 @implementation SSIndividualWorkoutViewController
 
 - (void)viewDidLoad {
     self.workoutIndex = 0;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.loggedSets = [@{} mutableCopy];
+    self.loggedWorkouts = [@[] mutableCopy];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -29,6 +41,9 @@
 }
 
 - (IBAction)nextButtonTapped:(id)sender {
+    [self.loggedWorkouts addObject:self.loggedSets];
+    self.loggedSets = [@{} mutableCopy];
+
     self.workoutIndex++;
     [self.tableView reloadData];
 
@@ -39,6 +54,8 @@
 }
 
 - (void)doneButtonTapped:(id)o {
+    [self.loggedWorkouts addObject:self.loggedSets];
+
     [self logWorkout];
     [self saveState];
     [[JSSWorkoutStore instance] incrementWeights:self.ssWorkout];
@@ -66,9 +83,18 @@
     log.name = @"Starting Strength";
     log.date = [NSDate date];
 
-    for (JWorkout *workout in self.ssWorkout.workouts) {
-        for (JSet *set in [workout workSets]) {
+    for (int workoutIndex = 0; workoutIndex < [self.ssWorkout.workouts count]; workoutIndex++) {
+        NSDictionary *loggedSets = self.loggedWorkouts[(NSUInteger) workoutIndex];
+        JWorkout *workout = self.ssWorkout.workouts[(NSUInteger) workoutIndex];
+
+        for (int setIndex = 0; setIndex < [[workout workSets] count]; setIndex++) {
+            JSet *set = workout.sets[(NSUInteger) setIndex];
             JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
+            SetChange *change = loggedSets[[NSNumber numberWithInt:setIndex]];
+            if (change) {
+                setLog.weight = change.weight;
+                setLog.reps = change.reps;
+            }
             [log addSet:setLog];
         }
     }
@@ -123,6 +149,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 1) {
         self.tappedSet = [self setForIndexPath:indexPath];
+        self.tappedIndexPath = indexPath;
         [self performSegueWithIdentifier:@"ssEditSet" sender:self];
     }
 }
@@ -138,11 +165,23 @@
 }
 
 - (void)repsChanged:(NSNumber *)reps {
-
+    SetChange *data = self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]];
+    if (!data) {
+        data = [SetChange new];
+        data.weight = [[self setForIndexPath:self.tappedIndexPath] roundedEffectiveWeight];
+        self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]] = data;
+    }
+    data.reps = reps;
 }
 
 - (void)weightChanged:(NSDecimalNumber *)weight {
-
+    SetChange *data = self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]];
+    if (!data) {
+        data = [SetChange new];
+        data.reps = [[self setForIndexPath:self.tappedIndexPath] reps];
+        self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]] = data;
+    }
+    data.weight = weight;
 }
 
 

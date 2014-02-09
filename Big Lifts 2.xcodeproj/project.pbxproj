@@ -121,6 +121,7 @@
 		545903F158096D74D403313F /* NSDictionaryMutatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907E71F8984ED1461524D /* NSDictionaryMutatorTests.m */; };
 		545903F15F5B28AD3229F46C /* SetLogStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907058EAACE974495803C /* SetLogStore.m */; };
 		545903F49E7794B3DB87F9C0 /* JFTOCustomWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FF712BC468C374EFAB0 /* JFTOCustomWorkout.m */; };
+		545904142EFFA62433802DB1 /* SetChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E2761923E886682DE01 /* SetChange.m */; };
 		545904196EF0A55F9F30CAD4 /* JFTOJokerPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590AFD374D5FA0E23D18E4 /* JFTOJokerPlan.m */; };
 		5459042526DE7EE392F35200 /* JFTOBoringButBigAssistanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CE30F3DBB4381892BC8 /* JFTOBoringButBigAssistanceTests.m */; };
 		5459042A41162C0C2FC8D9BE /* JLift.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459043A96172C1857719464 /* JLift.m */; };
@@ -1195,6 +1196,7 @@
 		54590DEED1DC5A9D332A01AC /* FTOTriumvirateSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTriumvirateSetupViewController.m; sourceTree = "<group>"; };
 		54590DFF31A7711498C0CECC /* JSVWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSVWorkout.h; sourceTree = "<group>"; };
 		54590E1638159FD4F8D503E1 /* AddPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPurchaseViewController.h; sourceTree = "<group>"; };
+		54590E2761923E886682DE01 /* SetChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetChange.m; sourceTree = "<group>"; };
 		54590E2837055971410C643F /* SVOneRepTestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SVOneRepTestCell.xib; sourceTree = "<group>"; };
 		54590E294389B52D0E46F2BE /* JSSVariantStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSVariantStore.m; sourceTree = "<group>"; };
 		54590E2B9027CEBA1FBD08FE /* FTOCustomSetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomSetCell.m; sourceTree = "<group>"; };
@@ -1253,6 +1255,7 @@
 		54590F2503303E5DB5D3AFBB /* SVEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVEditViewController.h; sourceTree = "<group>"; };
 		54590F2534A0C6BBEFF41D74 /* JBarStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBarStoreTests.h; sourceTree = "<group>"; };
 		54590F2D764E435EA309B3BC /* SetLogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLogCell.h; sourceTree = "<group>"; };
+		54590F321DCA48FEA587125E /* SetChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetChange.h; sourceTree = "<group>"; };
 		54590F3795D9AC9767D67976 /* FTOWorkoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutCell.m; sourceTree = "<group>"; };
 		54590F427FA3B34739AEC54E /* LogRecoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogRecoveryViewController.m; sourceTree = "<group>"; };
 		54590F5179F0F172261028FA /* FTOLogGraphTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogGraphTransformerTests.m; sourceTree = "<group>"; };
@@ -2100,6 +2103,8 @@
 				545902C2400FE38DCD263113 /* SetChangeDelegate.h */,
 				5459073D2967FB25AB3F4D7E /* TimerViewController.m */,
 				54590198A6A210ED1FA41BC1 /* TimerViewController.h */,
+				54590E2761923E886682DE01 /* SetChange.m */,
+				54590F321DCA48FEA587125E /* SetChange.h */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -3797,6 +3802,7 @@
 				54590A5DE66663687E752864 /* IndividualLiftViewController.m in Sources */,
 				54590FA0E00384511C486717 /* JFTOFirstSetLast.m in Sources */,
 				5459050B4112A89250747087 /* SSEditSetForm.m in Sources */,
+				545904142EFFA62433802DB1 /* SetChange.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

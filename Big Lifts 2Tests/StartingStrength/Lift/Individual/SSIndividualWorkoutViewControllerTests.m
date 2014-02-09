@@ -44,6 +44,8 @@
 - (void)testTappingDoneButtonLogsWorkout {
     [[IAPAdapter instance] addPurchase:IAP_SS_WARMUP];
     self.controller.ssWorkout = [[JSSWorkoutStore instance] first];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
     [self.controller doneButtonTapped:nil];
 
     JWorkoutLogStore *logStore = [JWorkoutLogStore instance];
@@ -65,6 +67,8 @@
 
 - (void)testTappingDoneButtonWithoutWarmup {
     self.controller.ssWorkout = [[JSSWorkoutStore instance] first];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
     [self.controller doneButtonTapped:nil];
 
     JWorkoutLogStore *logStore = [JWorkoutLogStore instance];
@@ -77,12 +81,16 @@
 
     JSSLift *squat = [[JSSLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = [NSDecimalNumber decimalNumberWithString:@"200"];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
     [self.controller doneButtonTapped:nil];
     STAssertEquals([squat.weight intValue], 210, @"");
 }
 
 - (void)testTappingDoneButtonSetsState {
     self.controller.ssWorkout = [[JSSWorkoutStore instance] first];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
     [self.controller doneButtonTapped:nil];
     JSSState *state = [[JSSStateStore instance] first];
     STAssertEquals(state.lastWorkout, self.controller.ssWorkout, @"");
@@ -91,6 +99,8 @@
 - (void)testChangesWorkoutAAlternationOnAWeeksForOnus {
     [[JSSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
     self.controller.ssWorkout = [[JSSWorkoutStore instance] first];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
     [self.controller doneButtonTapped:nil];
     JSSState *state = [[JSSStateStore instance] first];
     STAssertEqualObjects(state.workoutAAlternation, @1, @"");
@@ -99,6 +109,9 @@
 - (void)testDoesNotChangeWorkoutAAlternationOnBWeeksForOnus {
     [[JSSWorkoutStore instance] setupVariant:@"Onus-Wunsler"];
     self.controller.ssWorkout = [[JSSWorkoutStore instance] find:@"name" value:@"B"];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
     [self.controller doneButtonTapped:nil];
     JSSState *state = [[JSSStateStore instance] first];
     STAssertEqualObjects(state.workoutAAlternation, @0, @"");
@@ -141,7 +154,9 @@
     self.controller.ssWorkout = ssWorkout;
     self.controller.tappedSet = [ssWorkout.workouts[0] sets][0];
     [self.controller repsChanged:@7];
-    [self.controller logWorkout];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
+    [self.controller doneButtonTapped:nil];
 
     JWorkoutLog *log = [[JWorkoutLogStore instance] first];
     JSetLog *firstSet = log.sets[0];
@@ -153,7 +168,9 @@
     self.controller.ssWorkout = ssWorkout;
     self.controller.tappedSet = [ssWorkout.workouts[0] sets][0];
     [self.controller weightChanged:N(200)];
-    [self.controller logWorkout];
+    [self.controller nextButtonTapped:nil];
+    [self.controller nextButtonTapped:nil];
+    [self.controller doneButtonTapped:nil];
 
     JWorkoutLog *log = [[JWorkoutLogStore instance] first];
     JSetLog *firstSet = log.sets[0];
