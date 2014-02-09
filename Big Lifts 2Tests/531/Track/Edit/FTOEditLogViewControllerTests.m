@@ -1,0 +1,21 @@
+#import "FTOEditLogViewControllerTests.h"
+#import "FTOEditLogViewController.h"
+#import "SenTestCase+ControllerTestAdditions.h"
+#import "JWorkoutLog.h"
+#import "JWorkoutLogStore.h"
+
+@implementation FTOEditLogViewControllerTests
+
+- (void)testHandlesDatesOfDifferentFormatsAndDoesntCrash {
+    FTOEditLogViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoEditLog"];
+    JWorkoutLog *log = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
+    controller.workoutLog = log;
+    [controller viewDidLoad];
+
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"HH:mm"];
+    log.date = [dateFormat dateFromString:@"03:03"];
+    [controller viewDidLoad];
+}
+
+@end

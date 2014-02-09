@@ -12,7 +12,7 @@
 }
 
 - (void)testHandlesNilWeight {
-    STAssertEqualObjects([[OneRepEstimator new] estimate:nil withReps:5], nil, @"");
+    STAssertEqualObjects([[OneRepEstimator new] estimate:nil withReps:5], N(0), @"");
 }
 
 - (void)testReturns0ForOverflowAndDoesNotCrash {

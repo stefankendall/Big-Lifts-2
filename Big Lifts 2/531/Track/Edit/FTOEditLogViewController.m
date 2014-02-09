@@ -6,7 +6,12 @@
 
 - (void)viewDidLoad {
     UIDatePicker *datePicker = [UIDatePicker new];
-    [datePicker setDate:self.workoutLog.date];
+    if (self.workoutLog.date == nil ) {
+        [datePicker setDate:[NSDate new]];
+    }
+    else {
+        [datePicker setDate:self.workoutLog.date];
+    }
     [self.dateField setInputView:datePicker];
     [datePicker addTarget:self action:@selector(updateWorkoutLog:) forControlEvents:UIControlEventValueChanged];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.dateField];
