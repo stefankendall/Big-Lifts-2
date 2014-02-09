@@ -30,7 +30,7 @@
     self.workoutIndex = 0;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)resetLoggedSets {
     self.loggedSets = [@{} mutableCopy];
     self.loggedWorkouts = [@[] mutableCopy];
 }
@@ -158,6 +158,10 @@
     SSEditSetForm *form = [segue destinationViewController];
     [form setDelegate:self];
     [form setSet:self.tappedSet];
+    SetChange *change = self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]];
+    if (change) {
+        [form setPreviousChange:change];
+    }
 }
 
 - (void)goToTimer {

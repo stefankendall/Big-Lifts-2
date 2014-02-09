@@ -34,6 +34,7 @@
     if ([segue.identifier isEqualToString:@"ssSummaryNextSegue"]) {
         SSIndividualWorkoutViewController *controller = (SSIndividualWorkoutViewController *) segue.destinationViewController;
         controller.ssWorkout = self.ssWorkout;
+        [controller resetLoggedSets];
     }
 }
 

@@ -12,6 +12,8 @@
 
 @property(nonatomic, strong) JSet *tappedSet;
 
+- (void)resetLoggedSets;
+
 - (IBAction)nextButtonTapped:(id)sender;
 - (void)doneButtonTapped:(id)o;
 - (void)saveState;
