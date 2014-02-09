@@ -10,12 +10,12 @@
 #import "SetCellWithPlates.h"
 #import "JSetLogStore.h"
 #import "JSetLog.h"
+#import "JSet.h"
 #import "JSSWorkout.h"
 #import "JSSState.h"
 #import "JWorkout.h"
-#import "JSet.h"
 #import "RestToolbar.h"
-#import "BLTimer.h"
+#import "SSEditSetForm.h"
 
 @implementation SSIndividualWorkoutViewController
 
@@ -93,7 +93,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return [self restToolbar: tableView];
+        return [self restToolbar:tableView];
     }
     else {
         Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
@@ -102,8 +102,7 @@
         if (cell == nil) {
             cell = [setClass create];
         }
-        JWorkout *workout = [self getCurrentWorkout];
-        JSet *set = [workout.orderedSets objectAtIndex:(NSUInteger) [indexPath row]];
+        JSet *set = [self setForIndexPath:indexPath];
         [cell setSet:set];
         if ([set.percentage isEqual:N(100)]) {
             [cell.percentageLabel setHidden:YES];
@@ -115,8 +114,36 @@
     }
 }
 
+- (JSet *)setForIndexPath:(NSIndexPath *)indexPath {
+    JWorkout *workout = [self getCurrentWorkout];
+    JSet *set = [workout.orderedSets objectAtIndex:(NSUInteger) [indexPath row]];
+    return set;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([indexPath section] == 1) {
+        self.tappedSet = [self setForIndexPath:indexPath];
+        [self performSegueWithIdentifier:@"ssEditSet" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SSEditSetForm *form = [segue destinationViewController];
+    [form setDelegate:self];
+    [form setSet:self.tappedSet];
+}
+
 - (void)goToTimer {
     [self performSegueWithIdentifier:@"ssGoToTimer" sender:self];
 }
+
+- (void)repsChanged:(NSNumber *)reps {
+
+}
+
+- (void)weightChanged:(NSDecimalNumber *)weight {
+
+}
+
 
 @end

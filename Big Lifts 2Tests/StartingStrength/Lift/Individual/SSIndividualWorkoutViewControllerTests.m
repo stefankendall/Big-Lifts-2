@@ -1,3 +1,4 @@
+#import "JSet.h"
 #import "SSIndividualWorkoutViewControllerTests.h"
 #import "SSIndividualWorkoutViewController.h"
 #import "JSSWorkoutStore.h"
@@ -133,6 +134,30 @@
 - (void)testNoPlatesWhenBarLoadingUnpurchased {
     UITableViewCell *cell = [self.controller tableView:nil cellForRowAtIndexPath:NSIP(0, 1)];
     STAssertFalse([cell isKindOfClass:SetCellWithPlates.class], @"");
+}
+
+- (void)testCanChangeLoggedReps {
+    JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
+    self.controller.ssWorkout = ssWorkout;
+    self.controller.tappedSet = [ssWorkout.workouts[0] sets][0];
+    [self.controller repsChanged:@7];
+    [self.controller logWorkout];
+
+    JWorkoutLog *log = [[JWorkoutLogStore instance] first];
+    JSetLog *firstSet = log.sets[0];
+    STAssertEqualObjects(firstSet.reps, @7, @"");
+}
+
+- (void)testCanChangeLoggedWeight {
+    JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
+    self.controller.ssWorkout = ssWorkout;
+    self.controller.tappedSet = [ssWorkout.workouts[0] sets][0];
+    [self.controller weightChanged:N(200)];
+    [self.controller logWorkout];
+
+    JWorkoutLog *log = [[JWorkoutLogStore instance] first];
+    JSetLog *firstSet = log.sets[0];
+    STAssertEqualObjects(firstSet.weight, N(200), @"");
 }
 
 @end

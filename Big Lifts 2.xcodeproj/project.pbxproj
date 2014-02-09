@@ -145,6 +145,7 @@
 		545904EC40DB5C6504DF0B84 /* JSSState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459025D58A6CFB64A1C4447 /* JSSState.m */; };
 		545904F64E14890A8756E075 /* FTOEditLiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BB96D3D919954CC6C67 /* FTOEditLiftCell.m */; };
 		545904F8B663D07DED29C252 /* SetLogCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908C7A65FE9DB3EC7EC73 /* SetLogCellTests.m */; };
+		5459050B4112A89250747087 /* SSEditSetForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D37C9CE9C97FB9F2CC5 /* SSEditSetForm.m */; };
 		5459051B98394707AC1F89F6 /* BLViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A246ED0F76535710297 /* BLViewDeckController.m */; };
 		5459053036A0F33822943C43 /* FTOTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900FE54752F2F2F387961 /* FTOTrackViewController.m */; };
 		54590532C033933E6CE23657 /* LogMaxEstimateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5459022954EDA9D3B234BFA6 /* LogMaxEstimateCell.xib */; };
@@ -1012,6 +1013,7 @@
 		54590A09E8FB1C924CC7E33E /* JFTOBoringButBigLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOBoringButBigLiftStoreTests.m; sourceTree = "<group>"; };
 		54590A09F835E09940645C2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		54590A0FBA4FC909C10A350A /* JFTOSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOSet.h; sourceTree = "<group>"; };
+		54590A1359E96FD6D75D0E3F /* SSEditSetForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSEditSetForm.h; sourceTree = "<group>"; };
 		54590A1689E39BB375CB41F5 /* JFTOCustomAssistanceWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomAssistanceWorkout.m; sourceTree = "<group>"; };
 		54590A1A296486D52B84D1F2 /* AddPlateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlateViewController.h; sourceTree = "<group>"; };
 		54590A1F78D423967B1E743B /* JFTOBoringButBigLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBigLift.h; sourceTree = "<group>"; };
@@ -1163,6 +1165,7 @@
 		54590D27FAE6681D40454696 /* SJSetWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSetWeightViewController.h; sourceTree = "<group>"; };
 		54590D2B3A8272EFAAC9EB16 /* JSSVariant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSVariant.h; sourceTree = "<group>"; };
 		54590D366A61D4017C533725 /* LikeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeViewController.h; sourceTree = "<group>"; };
+		54590D37C9CE9C97FB9F2CC5 /* SSEditSetForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSEditSetForm.m; sourceTree = "<group>"; };
 		54590D3856ECFEA396F57ECA /* JVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVersion.m; sourceTree = "<group>"; };
 		54590D444F2CDCBF70B25BCD /* BarCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCalculator.m; sourceTree = "<group>"; };
 		54590D4C1B1AFD2A3B891C07 /* JFTOCustomWorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomWorkoutStore.h; sourceTree = "<group>"; };
@@ -2422,6 +2425,8 @@
 				54590E62F108288D8D3EC1C7 /* SetCellWithPlates.h */,
 				54590796DF59FFF43855D491 /* SetCellWithPlates.xib */,
 				54590519FE4D5AC9A03C72DC /* SSLiftToolbarCell.xib */,
+				54590D37C9CE9C97FB9F2CC5 /* SSEditSetForm.m */,
+				54590A1359E96FD6D75D0E3F /* SSEditSetForm.h */,
 			);
 			path = Individual;
 			sourceTree = "<group>";
@@ -3791,6 +3796,7 @@
 				54590624A763F2636EF2CDE5 /* RestToolbar.m in Sources */,
 				54590A5DE66663687E752864 /* IndividualLiftViewController.m in Sources */,
 				54590FA0E00384511C486717 /* JFTOFirstSetLast.m in Sources */,
+				5459050B4112A89250747087 /* SSEditSetForm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
