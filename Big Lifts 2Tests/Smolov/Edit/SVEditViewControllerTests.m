@@ -4,19 +4,21 @@
 #import "SVEditViewController.h"
 #import "PaddingRowTextField.h"
 #import "JSVLiftStore.h"
+#import "LiftFormCell.h"
 
 @implementation SVEditViewControllerTests
 
 - (void)testCanEditSvLifts {
     SVEditViewController *controller = [self getControllerByStoryboardIdentifier:@"svEdit"];
-    PaddingRowTextField *squatTextField = [PaddingRowTextField new];
+    LiftFormCell *squatCell = (LiftFormCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 0)];
+    PaddingRowTextField *squatTextField = squatCell.textField;
     [squatTextField setText:@"200.5"];
-    squatTextField.indexPath = NSIP(0,0);
     [controller textFieldDidEndEditing:squatTextField];
+    STAssertEqualObjects([[[JSVLiftStore instance] atIndex:0] weight], N(200.5), @"");
 
-    PaddingRowTextField *otherTextField = [PaddingRowTextField new];
+    LiftFormCell *otherCell = (LiftFormCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 1)];
+    PaddingRowTextField *otherTextField = otherCell.textField;
     [otherTextField setText:@"10.5"];
-    otherTextField .indexPath = NSIP(0,1);
     [controller textFieldDidEndEditing:otherTextField];
 
     STAssertEqualObjects([[[JSVLiftStore instance] atIndex:1] weight], N(10.5), @"");
