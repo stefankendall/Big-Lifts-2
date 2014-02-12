@@ -20,13 +20,14 @@
 }
 
 - (void)testHasSectionsForSixWeek {
-    FTOLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLift"];
-    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
-    [[JFTOWorkoutStore instance] switchTemplate];
-
-    STAssertEquals((int) [controller numberOfSectionsInTableView:nil], 7, @"");
-    STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:3], @"5/5/5", @"");
-    STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:6], @"Deload", @"");
+    STFail(@"Fix this for toggle");
+//    FTOLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLift"];
+//    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
+//    [[JFTOWorkoutStore instance] switchTemplate];
+//
+//    STAssertEquals((int) [controller numberOfSectionsInTableView:nil], 7, @"");
+//    STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:3], @"5/5/5", @"");
+//    STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:6], @"Deload", @"");
 }
 
 - (void)testUsesPlanWeekNames {

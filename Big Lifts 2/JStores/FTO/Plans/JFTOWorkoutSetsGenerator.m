@@ -6,7 +6,6 @@
 #import "JFTOPyramidPlan.h"
 #import "JFTOHeavierPlan.h"
 #import "JFTOStandardPlan.h"
-#import "JFTOSixWeekPlan.h"
 #import "JFTOFirstSetLastMultipleSetsPlan.h"
 #import "JFTOAdvancedPlan.h"
 #import "JFTOFivesProgression.h"
@@ -14,6 +13,7 @@
 #import "JFTOWorkoutSetsGenerator.h"
 #import "JFTOPowerliftingPlan.h"
 #import "JFTOFirstSetLast.h"
+#import "JFTOSixWeekPlan.h"
 
 @implementation JFTOWorkoutSetsGenerator
 

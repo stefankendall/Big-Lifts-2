@@ -13,7 +13,7 @@
             @"Heavier" : FTO_VARIANT_HEAVIER,
             @"Powerlifting" : FTO_VARIANT_POWERLIFTING,
             @"Pyramid" : FTO_VARIANT_PYRAMID,
-            @"Six Week" : FTO_VARIANT_SIX_WEEK,
+            @"First Set Last" : FTO_VARIANT_FIRST_SET_LAST,
             @"5/3/1 with Joker" : FTO_VARIANT_JOKER,
             @"Advanced 5/3/1" : FTO_VARIANT_ADVANCED
     };
@@ -23,7 +23,7 @@
             @"Heavier",
             @"Powerlifting",
             @"Pyramid",
-            @"Six Week",
+            @"First Set Last",
             @"5/3/1 with Joker",
             @"Advanced 5/3/1"
     ];
