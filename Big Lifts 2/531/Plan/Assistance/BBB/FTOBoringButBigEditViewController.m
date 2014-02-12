@@ -9,6 +9,10 @@
 
 @implementation FTOBoringButBigEditViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[JFTOBoringButBigLiftStore instance] count];
 }

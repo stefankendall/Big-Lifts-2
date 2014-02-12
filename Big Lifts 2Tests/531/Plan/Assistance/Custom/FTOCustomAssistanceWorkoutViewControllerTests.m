@@ -31,4 +31,14 @@
     STAssertEqualObjects([cell.weight text], @"200lbs", @"");
 }
 
+- (void)testDoesNotCrashWhenArrangingOneItem {
+    FTOCustomAssistanceWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAsstWorkout"];
+
+    JSet *set = [[JSetStore instance] create];
+    controller.customAssistanceWorkout = [[JFTOCustomAssistanceWorkoutStore instance] create];
+    [controller.customAssistanceWorkout.workout addSet:set];
+
+    [controller tableView:controller.tableView moveRowAtIndexPath:NSIP(0, 0) toIndexPath:NSIP(1, 0)];
+}
+
 @end
