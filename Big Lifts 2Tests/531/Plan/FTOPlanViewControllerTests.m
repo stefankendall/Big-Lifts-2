@@ -65,12 +65,13 @@
     [[JFTOVariantStore instance] changeTo:FTO_VARIANT_CUSTOM];
     FTOPlanViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoPlan"];
     STAssertFalse([controller.sixWeekToggle isEnabled], @"");
+    STAssertFalse([[[JFTOSettingsStore instance] first] sixWeekEnabled], @"");
 }
 
 - (void)testSelectingAVariantReEnablesSixWeekToggle {
     [[JFTOVariantStore instance] changeTo:FTO_VARIANT_CUSTOM];
     FTOPlanViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoPlan"];
-    [controller tableView:controller.tableView didSelectRowAtIndexPath:NSIP(3,1)];
+    [controller tableView:controller.tableView didSelectRowAtIndexPath:NSIP(3, 1)];
     STAssertTrue([controller.sixWeekToggle isEnabled], @"");
 }
 

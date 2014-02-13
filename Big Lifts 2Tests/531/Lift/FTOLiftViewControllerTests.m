@@ -4,6 +4,8 @@
 #import "JFTOVariantStore.h"
 #import "JFTOWorkoutStore.h"
 #import "JFTOVariant.h"
+#import "JFTOSettingsStore.h"
+#import "JFTOSettings.h"
 
 @implementation FTOLiftViewControllerTests
 
@@ -20,14 +22,14 @@
 }
 
 - (void)testHasSectionsForSixWeek {
-    STFail(@"Fix this for toggle");
-//    FTOLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLift"];
-//    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
-//    [[JFTOWorkoutStore instance] switchTemplate];
-//
-//    STAssertEquals((int) [controller numberOfSectionsInTableView:nil], 7, @"");
-//    STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:3], @"5/5/5", @"");
-//    STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:6], @"Deload", @"");
+    FTOLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLift"];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_STANDARD];
+    [[[JFTOSettingsStore instance] first] setSixWeekEnabled:YES];
+    [[JFTOWorkoutStore instance] switchTemplate];
+
+    STAssertEquals((int) [controller numberOfSectionsInTableView:nil], 7, @"");
+    STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:3], @"5/5/5", @"");
+    STAssertEqualObjects([controller tableView:nil titleForHeaderInSection:6], @"Deload", @"");
 }
 
 - (void)testUsesPlanWeekNames {

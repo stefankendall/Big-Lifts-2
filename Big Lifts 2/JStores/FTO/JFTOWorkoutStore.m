@@ -101,8 +101,35 @@
 - (void)createWorkoutsForEachLift {
     JFTOVariant *variant = [[JFTOVariantStore instance] first];
     NSObject <JFTOPlan> *ftoPlan = [[JFTOWorkoutSetsGenerator new] planForVariant:variant.name];
-    int weeks = [[[ftoPlan generate:nil] allKeys] count];
 
+    if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
+        [self createSixWeekWorkouts:ftoPlan];
+    }
+    else {
+        [self createNormalWorkouts:ftoPlan];
+    }
+}
+
+- (void)createSixWeekWorkouts:(NSObject <JFTOPlan> *)ftoPlan {
+    int weeks = [[[ftoPlan generate:nil] allKeys] count];
+    NSArray *lifts = [[JFTOLiftStore instance] findAll];
+    for (int week = 1; week <= 3; week++) {
+        for (int i = 0; i < [lifts count]; i++) {
+            JFTOLift *lift = lifts[(NSUInteger) i];
+            [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
+        }
+    }
+
+    for (int week = 1; week <= weeks; week++) {
+        for (int i = 0; i < [lifts count]; i++) {
+            JFTOLift *lift = lifts[(NSUInteger) i];
+            [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
+        }
+    }
+}
+
+- (void)createNormalWorkouts:(NSObject <JFTOPlan> *)ftoPlan {
+    int weeks = [[[ftoPlan generate:nil] allKeys] count];
     NSArray *lifts = [[JFTOLiftStore instance] findAll];
     for (int week = 1; week <= weeks; week++) {
         for (int i = 0; i < [lifts count]; i++) {

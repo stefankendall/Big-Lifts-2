@@ -11,6 +11,8 @@
 #import "JFTOWorkout.h"
 #import "JFTOWorkoutSetsGenerator.h"
 #import "JFTOPlan.h"
+#import "JFTOSettings.h"
+#import "JFTOSettingsStore.h"
 
 @interface FTOLiftViewController ()
 
@@ -32,7 +34,8 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[[JFTOWorkoutStore instance] unique:@"week"] count];
+    NSUInteger weekCount = [[[JFTOWorkoutStore instance] unique:@"week"] count];
+    return [[[JFTOSettingsStore instance] first] sixWeekEnabled] ? weekCount + 3 : weekCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -73,10 +76,22 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     JFTOVariant *variant = [[JFTOVariantStore instance] first];
     NSObject <JFTOPlan> *ftoPlan = [[JFTOWorkoutSetsGenerator new] planForVariant:variant.name];
-    if (section < [[ftoPlan weekNames] count]) {
+
+    if (section >= [self numberOfSectionsInTableView:self.tableView]) {
+        return @"";
+    }
+
+    if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
+        if (section < 3) {
+            return [ftoPlan weekNames][(NSUInteger) section];
+        }
+        else {
+            return [ftoPlan weekNames][(NSUInteger) section - 3];
+        }
+    }
+    else {
         return [ftoPlan weekNames][(NSUInteger) section];
     }
-    return @"";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

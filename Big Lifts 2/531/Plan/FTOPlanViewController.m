@@ -63,6 +63,9 @@
 - (void)enableDisableSixWeekToggle {
     BOOL isCustom = [[[[JFTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_CUSTOM];
     [self.sixWeekToggle setEnabled:!isCustom];
+    if (isCustom) {
+        [[[JFTOSettingsStore instance] first] setSixWeekEnabled:NO];
+    }
 }
 
 - (void)somethingPurchased {
@@ -120,6 +123,7 @@
 
 - (IBAction)toggleSixWeek:(id)sender {
     [[[JFTOSettingsStore instance] first] setSixWeekEnabled:[self.sixWeekToggle isOn]];
+    [[JFTOWorkoutStore instance] switchTemplate];
 }
 
 - (IBAction)toggleWarmup:(id)sender {
