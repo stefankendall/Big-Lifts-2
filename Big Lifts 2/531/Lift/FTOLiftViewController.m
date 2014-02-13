@@ -11,6 +11,8 @@
 #import "JFTOWorkout.h"
 #import "JFTOWorkoutSetsGenerator.h"
 #import "JFTOPlan.h"
+#import "JFTOSettings.h"
+#import "JFTOSettingsStore.h"
 
 @interface FTOLiftViewController ()
 
@@ -73,10 +75,23 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     JFTOVariant *variant = [[JFTOVariantStore instance] first];
     NSObject <JFTOPlan> *ftoPlan = [[JFTOWorkoutSetsGenerator new] planForVariant:variant.name];
-    if (section < [[ftoPlan weekNames] count]) {
-        return [ftoPlan weekNames][(NSUInteger) section];
+
+    if (section >= [self numberOfSectionsInTableView:self.tableView]) {
+        return @"";
     }
-    return @"";
+
+    NSArray *weekNames = [ftoPlan weekNames];
+    if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
+        if (section < 3) {
+            return weekNames[(NSUInteger) section];
+        }
+        else {
+            return weekNames[(NSUInteger) (section - 3)];
+        }
+    }
+    else {
+        return weekNames[(NSUInteger) section];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

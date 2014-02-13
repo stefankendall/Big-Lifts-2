@@ -4,6 +4,8 @@
 #import "JWorkoutStore.h"
 #import "JWorkout.h"
 #import "JFTOSetStore.h"
+#import "JFTOSettingsStore.h"
+#import "JFTOSettings.h"
 
 @implementation JFTOWorkoutStoreTests
 
@@ -24,6 +26,15 @@
     int workoutCount = [[JWorkoutStore instance] count];
     [[JFTOWorkoutStore instance] restoreTemplate];
     STAssertEquals(workoutCount, [[JWorkoutStore instance] count], @"");
+}
+
+- (void)testCreatesSixWeekDataProperly {
+    [[[JFTOSettingsStore instance] first] setSixWeekEnabled:YES];
+    [[JFTOWorkoutStore instance] switchTemplate];
+    STAssertEquals([[JFTOWorkoutStore instance] count], 28, @"");
+    NSArray *week6Workouts = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@6];
+    STAssertEquals((int)[week6Workouts count], 4, @"");
+    STAssertEquals((int) [[[JFTOWorkoutStore instance] unique:@"week"] count], 7, @"");
 }
 
 @end

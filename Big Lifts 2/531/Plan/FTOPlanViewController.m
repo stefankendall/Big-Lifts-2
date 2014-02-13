@@ -30,7 +30,6 @@
             FTO_VARIANT_POWERLIFTING : self.powerliftingVariant,
             FTO_VARIANT_PYRAMID : self.pyramidVariant,
             FTO_VARIANT_JOKER : self.jokerVariant,
-            FTO_VARIANT_SIX_WEEK : self.sixWeekVariant,
             FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS : self.firstSetLastMultipleSetsVariant,
             FTO_VARIANT_FIRST_SET_LAST : self.firstSetLastVariant,
             FTO_VARIANT_ADVANCED : self.advancedVariant,
@@ -55,8 +54,18 @@
     JFTOSettings *settings = [[JFTOSettingsStore instance] first];
     [self.trainingMaxField setText:[settings.trainingMax stringValue]];
     [self.warmupToggle setOn:settings.warmupEnabled];
+    [self.sixWeekToggle setOn:settings.sixWeekEnabled];
+    [self enableDisableSixWeekToggle];
     [self enableDisableIapCells];
     [self checkCurrentVariant];
+}
+
+- (void)enableDisableSixWeekToggle {
+    BOOL isCustom = [[[[JFTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_CUSTOM];
+    [self.sixWeekToggle setEnabled:!isCustom];
+    if (isCustom) {
+        [[[JFTOSettingsStore instance] first] setSixWeekEnabled:NO];
+    }
 }
 
 - (void)somethingPurchased {
@@ -108,7 +117,13 @@
         }];
         [[JFTOVariantStore instance] changeTo:newVariantName];
         [self checkCurrentVariant];
+        [self enableDisableSixWeekToggle];
     }
+}
+
+- (IBAction)toggleSixWeek:(id)sender {
+    [[[JFTOSettingsStore instance] first] setSixWeekEnabled:[self.sixWeekToggle isOn]];
+    [[JFTOWorkoutStore instance] switchTemplate];
 }
 
 - (IBAction)toggleWarmup:(id)sender {

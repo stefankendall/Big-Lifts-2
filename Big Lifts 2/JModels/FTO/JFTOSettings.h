@@ -20,6 +20,7 @@ typedef enum {
 
 @property(nonatomic) NSDecimalNumber<Optional> *trainingMax;
 @property(nonatomic) BOOL warmupEnabled;
+@property(nonatomic) BOOL sixWeekEnabled;
 @property(nonatomic) NSNumber *logState;
 @property(nonatomic) NSNumber *repsToBeatConfig;
 

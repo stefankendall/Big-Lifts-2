@@ -4,6 +4,8 @@
 #import "JFTOVariantStore.h"
 #import "JFTOWorkoutStore.h"
 #import "JFTOVariant.h"
+#import "JFTOSettingsStore.h"
+#import "JFTOSettings.h"
 
 @implementation FTOLiftViewControllerTests
 
@@ -21,7 +23,8 @@
 
 - (void)testHasSectionsForSixWeek {
     FTOLiftViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoLift"];
-    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_SIX_WEEK];
+    [[[JFTOVariantStore instance] first] setName:FTO_VARIANT_STANDARD];
+    [[[JFTOSettingsStore instance] first] setSixWeekEnabled:YES];
     [[JFTOWorkoutStore instance] switchTemplate];
 
     STAssertEquals((int) [controller numberOfSectionsInTableView:nil], 7, @"");

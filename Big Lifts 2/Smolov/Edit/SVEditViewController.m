@@ -31,7 +31,7 @@
     else {
         lift = [[JSVLiftStore instance] atIndex:indexPath.row + 1];
     }
-    NSLog(@"%@", lift);
+
     [cell.liftLabel setText:lift.name];
     [cell.textField setText:[NSString stringWithFormat:@"%@", lift.weight]];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:cell.textField];
@@ -62,8 +62,6 @@
     }
     NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[textField text] locale:[NSLocale currentLocale]];
     svLift.weight = weight;
-
-    NSLog(@"%@", svLift);
 }
 
 @end
