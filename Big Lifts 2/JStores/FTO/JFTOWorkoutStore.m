@@ -123,7 +123,7 @@
     for (int week = 1; week <= weeks; week++) {
         for (int i = 0; i < [lifts count]; i++) {
             JFTOLift *lift = lifts[(NSUInteger) i];
-            [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:week order:[lift.order intValue]];
+            [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:(week+3) order:[lift.order intValue]];
         }
     }
 }

@@ -34,8 +34,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSUInteger weekCount = [[[JFTOWorkoutStore instance] unique:@"week"] count];
-    return [[[JFTOSettingsStore instance] first] sixWeekEnabled] ? weekCount + 3 : weekCount;
+    return [[[JFTOWorkoutStore instance] unique:@"week"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,16 +80,17 @@
         return @"";
     }
 
+    NSArray *weekNames = [ftoPlan weekNames];
     if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
         if (section < 3) {
-            return [ftoPlan weekNames][(NSUInteger) section];
+            return weekNames[(NSUInteger) section];
         }
         else {
-            return [ftoPlan weekNames][(NSUInteger) section - 3];
+            return weekNames[(NSUInteger) (section - 3)];
         }
     }
     else {
-        return [ftoPlan weekNames][(NSUInteger) section];
+        return weekNames[(NSUInteger) section];
     }
 }
 
