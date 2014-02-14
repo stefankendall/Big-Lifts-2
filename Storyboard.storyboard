@@ -2688,15 +2688,18 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1RM estimate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWl-dS-lcD">
                                                     <rect key="frame" x="20" y="11" width="130" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="Zt4-O7-nJ1"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkM-HS-5kQ">
-                                                    <rect key="frame" x="209" y="11" width="91" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkM-HS-5kQ">
+                                                    <rect key="frame" x="144" y="0.0" width="156" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="91" id="eYf-Su-wgD"/>
+                                                        <constraint firstAttribute="width" constant="156" id="XCo-VA-7nM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2704,12 +2707,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="top" secondItem="gkM-HS-5kQ" secondAttribute="top" id="MU2-m2-BTO"/>
-                                                <constraint firstAttribute="trailing" secondItem="gkM-HS-5kQ" secondAttribute="trailing" constant="20" symbolic="YES" id="OUZ-lQ-beZ"/>
-                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="leading" secondItem="eux-VP-JEf" secondAttribute="leading" constant="20" symbolic="YES" id="OUt-Jo-vdg"/>
-                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="centerY" secondItem="eux-VP-JEf" secondAttribute="centerY" id="dPe-o7-Fzn"/>
-                                                <constraint firstItem="gkM-HS-5kQ" firstAttribute="leading" secondItem="XWl-dS-lcD" secondAttribute="trailing" constant="59" id="dhK-g1-oTQ"/>
-                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="baseline" secondItem="gkM-HS-5kQ" secondAttribute="baseline" id="pxF-bf-oX1"/>
+                                                <constraint firstAttribute="bottom" secondItem="gkM-HS-5kQ" secondAttribute="bottom" id="ABo-kj-KkW"/>
+                                                <constraint firstItem="gkM-HS-5kQ" firstAttribute="centerY" secondItem="XWl-dS-lcD" secondAttribute="centerY" id="DeK-Be-rba"/>
+                                                <constraint firstAttribute="trailing" secondItem="gkM-HS-5kQ" secondAttribute="trailing" constant="20" symbolic="YES" id="Jl1-5o-bMq"/>
+                                                <constraint firstItem="gkM-HS-5kQ" firstAttribute="top" secondItem="eux-VP-JEf" secondAttribute="top" id="Xr9-q4-Ysn"/>
+                                                <constraint firstItem="XWl-dS-lcD" firstAttribute="leading" secondItem="eux-VP-JEf" secondAttribute="leading" constant="20" symbolic="YES" id="z0A-zC-ZWT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2730,7 +2732,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="oneRepField" destination="gkM-HS-5kQ" id="IR3-5f-yt4"/>
+                        <outlet property="oneRepField" destination="gkM-HS-5kQ" id="v1s-d7-12Q"/>
                         <outlet property="repsField" destination="fJ8-Zc-qbV" id="KBl-Ob-1Yh"/>
                         <outlet property="weightField" destination="Kq3-q9-Bkg" id="ADp-pt-6Xi"/>
                     </connections>

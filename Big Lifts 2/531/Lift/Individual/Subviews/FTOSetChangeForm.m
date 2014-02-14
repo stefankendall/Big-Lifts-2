@@ -22,24 +22,21 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSNumber *reps = [NSNumber numberWithInt:[self currentReps]];
-    [self updateMaxForReps:[reps intValue]];
+    [self updateMax];
     [self.delegate repsChanged:reps];
     [self.delegate weightChanged:self.currentWeight];
 }
 
 - (void)setupFields {
     [self.weightField setPlaceholder:[[self.set roundedEffectiveWeight] stringValue]];
-
-    int repsForMax = [self.set.reps intValue];
     [self.repsField setPlaceholder:[self.set.reps stringValue]];
     if (self.previouslyEnteredReps > 0) {
         [self.repsField setText:[NSString stringWithFormat:@"%d", self.previouslyEnteredReps]];
-        repsForMax = self.previouslyEnteredReps;
     }
     if (self.previouslyEnteredWeight) {
         [self.weightField setText:[self.previouslyEnteredWeight stringValue]];
     }
-    [self updateMaxForReps:repsForMax];
+    [self updateMax];
 }
 
 - (int)currentReps {
@@ -62,8 +59,9 @@
     }
 }
 
-- (void)updateMaxForReps:(int)reps {
-    [self.oneRepField setText:[[[OneRepEstimator new] estimate:self.currentWeight withReps:self.currentReps] stringValue]];
+- (void)updateMax {
+    NSString *estimate = [[[OneRepEstimator new] estimate:self.currentWeight withReps:self.currentReps] stringValue];
+    [self.oneRepField setText:estimate];
 }
 
 - (IBAction)liftIncomplete:(id)sender {
