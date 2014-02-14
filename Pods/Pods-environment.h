@@ -24,12 +24,6 @@
 #define COCOAPODS_VERSION_MINOR_IAPManager 2
 #define COCOAPODS_VERSION_PATCH_IAPManager 2
 
-// JRSwizzle
-#define COCOAPODS_POD_AVAILABLE_JRSwizzle
-#define COCOAPODS_VERSION_MAJOR_JRSwizzle 1
-#define COCOAPODS_VERSION_MINOR_JRSwizzle 0
-#define COCOAPODS_VERSION_PATCH_JRSwizzle 0
-
 // JSONModel
 #define COCOAPODS_POD_AVAILABLE_JSONModel
 #define COCOAPODS_VERSION_MAJOR_JSONModel 0
@@ -47,12 +41,6 @@
 #define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 1
 #define COCOAPODS_VERSION_MINOR_TPKeyboardAvoiding 1
 #define COCOAPODS_VERSION_PATCH_TPKeyboardAvoiding 0
-
-// UbiquityStoreManager
-#define COCOAPODS_POD_AVAILABLE_UbiquityStoreManager
-#define COCOAPODS_VERSION_MAJOR_UbiquityStoreManager 0
-#define COCOAPODS_VERSION_MINOR_UbiquityStoreManager 1
-#define COCOAPODS_VERSION_PATCH_UbiquityStoreManager 0
 
 // ViewDeck
 #define COCOAPODS_POD_AVAILABLE_ViewDeck

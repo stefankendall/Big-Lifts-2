@@ -6,4 +6,4 @@ pod 'IAPManager', :git => 'https://github.com/mruegenberg/IAPManager', :commit =
 pod 'WebViewJavascriptBridge', '4.0.1'
 pod 'TPKeyboardAvoiding', '1.1'
 pod 'Facebook-iOS-SDK', '3.7.1'
-#pod 'JSONModel'
+pod 'JSONModel', '0.10.0' #Local changes to jsonmodel. Never update.
