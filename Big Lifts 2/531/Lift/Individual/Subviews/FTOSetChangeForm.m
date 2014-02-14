@@ -17,7 +17,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self setupFields];
-    [self.oneRepField setHidden:![[IAPAdapter instance] hasPurchased:IAP_1RM]];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -60,8 +59,12 @@
 }
 
 - (void)updateMax {
-    NSString *estimate = [[[OneRepEstimator new] estimate:self.currentWeight withReps:self.currentReps] stringValue];
-    [self.oneRepField setText:estimate];
+    if ([[IAPAdapter instance] hasPurchased:IAP_1RM]) {
+        [self.oneRepField setText:[[[OneRepEstimator new] estimate:self.currentWeight withReps:self.currentReps] stringValue]];
+    }
+    else {
+        [self.oneRepField setText:@"Unlock from Estimate 1RM"];
+    }
 }
 
 - (IBAction)liftIncomplete:(id)sender {

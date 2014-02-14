@@ -3,10 +3,10 @@
 
 @interface FTOSetChangeForm : UITableViewController <UITextFieldDelegate> {
 }
+
 @property(weak, nonatomic) IBOutlet UITextField *repsField;
 @property (weak, nonatomic) IBOutlet UITextField *weightField;
 @property (weak, nonatomic) IBOutlet UILabel *oneRepField;
-
 
 @property(nonatomic, strong) NSObject <SetChangeDelegate> *delegate;
 
