@@ -1,6 +1,5 @@
 #import "AddPlateViewControllerTests.h"
 #import "AddPlateViewController.h"
-#import "BLStore.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "JPlateStore.h"
 #import "JPlate.h"

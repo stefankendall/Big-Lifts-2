@@ -1,6 +1,5 @@
 #import "WorkoutLogCellTests.h"
 #import "WorkoutLogCell.h"
-#import "BLStoreManager.h"
 #import "JWorkoutLogStore.h"
 #import "JWorkoutLog.h"
 

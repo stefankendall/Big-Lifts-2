@@ -12,6 +12,5 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *testDataSavingCell;
 @property (weak, nonatomic) IBOutlet UISwitch *iCloudEnabled;
 
-
 @property(nonatomic, strong) NSArray *roundingText;
 @end

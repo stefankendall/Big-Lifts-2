@@ -2,7 +2,6 @@
 #import "JWorkoutLogStore.h"
 #import "JWorkoutLog.h"
 #import "WorkoutLogTableDataSource.h"
-#import "BLStoreManager.h"
 #import "JSetLog.h"
 #import "JSetLogStore.h"
 

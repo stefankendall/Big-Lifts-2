@@ -2,7 +2,6 @@
 #import "JSettingsStore.h"
 #import "JSettings.h"
 #import "TextViewInputAccessoryBuilder.h"
-#import "BLStoreManager.h"
 #import "IAPAdapter.h"
 #import "BLJStoreManager.h"
 #import "BLKeyValueStore.h"
@@ -105,7 +104,6 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == actionSheet.destructiveButtonIndex) {
-        [[BLStoreManager instance] resetAllStores];
         [[BLJStoreManager instance] resetAllStores];
     }
 }
