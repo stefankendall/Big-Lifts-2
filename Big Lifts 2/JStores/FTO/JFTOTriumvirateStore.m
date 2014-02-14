@@ -24,6 +24,13 @@
 
 - (NSArray *)findAll {
     return [self.data sortedArrayUsingComparator:^NSComparisonResult(JFTOTriumvirate *t1, JFTOTriumvirate *t2) {
+        if (t1.mainLift.order == nil ) {
+            return NSOrderedAscending;
+        }
+        else if (t2.mainLift.order == nil ) {
+            return NSOrderedDescending;
+        }
+
         return [t1.mainLift.order compare:t2.mainLift.order];
     }];
 }
