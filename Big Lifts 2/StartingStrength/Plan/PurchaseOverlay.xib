@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5051" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -23,7 +23,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="V3G-Wk-Tbv">
-                    <rect key="frame" x="20" y="254" width="280" height="82"/>
+                    <rect key="frame" x="20" y="208" width="280" height="82"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <string key="text">In a workout, plates will show below weights. Ex: 
 235lbs
@@ -35,16 +35,13 @@
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="V3G-Wk-Tbv" firstAttribute="leading" secondItem="p6d-g9-fko" secondAttribute="leading" id="3Wu-2z-TWw"/>
-                <constraint firstAttribute="bottom" secondItem="V3G-Wk-Tbv" secondAttribute="bottom" constant="20" symbolic="YES" id="AEO-uv-3Pz"/>
-                <constraint firstItem="p6d-g9-fko" firstAttribute="trailing" secondItem="V3G-Wk-Tbv" secondAttribute="trailing" id="CMi-dt-JaX"/>
-                <constraint firstItem="p6d-g9-fko" firstAttribute="centerX" secondItem="Oei-ez-WoF" secondAttribute="centerX" id="QG9-5W-ldj"/>
-                <constraint firstItem="V3G-Wk-Tbv" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="TeL-ty-GMS"/>
-                <constraint firstItem="p6d-g9-fko" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="diu-G3-pFo"/>
-                <constraint firstItem="Oei-ez-WoF" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="fOW-nt-lyJ"/>
-                <constraint firstAttribute="centerX" secondItem="Oei-ez-WoF" secondAttribute="centerX" id="gfS-oP-Ssd"/>
-                <constraint firstItem="p6d-g9-fko" firstAttribute="bottom" secondItem="Oei-ez-WoF" secondAttribute="bottom" id="keY-hV-zXB"/>
-                <constraint firstAttribute="centerX" secondItem="p6d-g9-fko" secondAttribute="centerX" id="lAo-F0-KQK"/>
+                <constraint firstItem="p6d-g9-fko" firstAttribute="bottom" secondItem="Oei-ez-WoF" secondAttribute="bottom" id="Fv5-PU-6Ve"/>
+                <constraint firstItem="Oei-ez-WoF" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="THQ-y6-gGA"/>
+                <constraint firstItem="p6d-g9-fko" firstAttribute="trailing" secondItem="V3G-Wk-Tbv" secondAttribute="trailing" id="e0D-JX-9zr"/>
+                <constraint firstItem="V3G-Wk-Tbv" firstAttribute="leading" secondItem="p6d-g9-fko" secondAttribute="leading" id="eBp-fy-lUa"/>
+                <constraint firstItem="Oei-ez-WoF" firstAttribute="centerX" secondItem="p6d-g9-fko" secondAttribute="centerX" id="sRm-iq-5NZ"/>
+                <constraint firstItem="V3G-Wk-Tbv" firstAttribute="top" secondItem="p6d-g9-fko" secondAttribute="bottom" constant="20" id="tp5-6p-3vp"/>
+                <constraint firstItem="p6d-g9-fko" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="xOn-G9-gX3"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -10,4 +10,6 @@ extern NSString *NEAREST_5_ROUNDING;
 @property(nonatomic) NSDecimalNumber *roundTo;
 @property(nonatomic) NSString *roundingFormula;
 @property(nonatomic) BOOL screenAlwaysOn;
+@property(nonatomic) BOOL isMale;
+@property(nonatomic) NSDecimalNumber <Optional> *bodyweight;
 @end

@@ -7,6 +7,8 @@
 #import "Purchaser.h"
 #import "UIViewController+PurchaseOverlay.h"
 #import "PurchaseOverlay.h"
+#import "PaddingTextField.h"
+#import "WilksCoefficientCalculator.h"
 
 @interface OneRepViewController ()
 @property(nonatomic, strong) NSArray *formulaNames;
@@ -27,10 +29,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSString *roundingFormula = [[[JSettingsStore instance] first] roundingFormula];
+    JSettings *settings = [[JSettingsStore instance] first];
+    NSString *roundingFormula = [settings roundingFormula];
     NSUInteger row = [self.formulaNames indexOfObject:roundingFormula];
     [self.formulaPicker selectRow:row inComponent:0 animated:NO];
     [self updatePickerDisplayForRow:row];
+    [self.maleFemaleSegment setSelectedSegmentIndex:[settings isMale] ? 0 : 1];
+    [self.bodyweightField setText:[[settings bodyweight] stringValue]];
     [self handleIapChange];
 }
 
@@ -38,7 +43,6 @@
     if (([[IAPAdapter instance] hasPurchased:IAP_1RM])) {
         [self.view removeGestureRecognizer:[self.view.gestureRecognizers lastObject]];
         [[self.tableView viewWithTag:kPurchaseOverlayTag] removeFromSuperview];
-        [self.marketingTextCell setHidden:YES];
     }
 }
 
@@ -46,6 +50,7 @@
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.weightField];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.repsField];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.formulaSelector];
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.bodyweightField];
     [self.weightField setDelegate:self];
     [self.repsField setDelegate:self];
     [self.formulaSelector setDelegate:self];
@@ -57,7 +62,7 @@
     [self.formulaSelector setText:[self pickerView:nil titleForRow:0 forComponent:0]];
 
     if (!([[IAPAdapter instance] hasPurchased:IAP_1RM])) {
-        [self disable:IAP_1RM view:self.view];
+        [self disable:IAP_1RM view:self.view withDescription:@"Get max estimates any time\nyou log a set during a workout"];
     }
 
     UITapGestureRecognizer *singleFingerTap =
@@ -110,15 +115,44 @@
 }
 
 - (void)updateMaxEstimate {
-    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text] locale:NSLocale.currentLocale];
-    int reps = [[self.repsField text] intValue];
-    NSDecimalNumber *estimate = [[OneRepEstimator new] estimate:weight withReps:reps];
+    NSDecimalNumber *estimate = [self getMaxEstimate];
     if ([estimate compare:N(0)] == NSOrderedDescending) {
         [self.maxLabel setText:[estimate stringValue]];
     }
     else {
         [self.maxLabel setText:@""];
     }
+    [self updateWilksCoefficient];
+}
+
+- (NSDecimalNumber *)getMaxEstimate {
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text] locale:NSLocale.currentLocale];
+    int reps = [[self.repsField text] intValue];
+    NSDecimalNumber *estimate = [[OneRepEstimator new] estimate:weight withReps:reps];
+    return estimate;
+}
+
+- (IBAction)maleFemaleSegmentChanged:(id)sender {
+    BOOL isMale = [self.maleFemaleSegment selectedSegmentIndex] == 0;
+    [[[JSettingsStore instance] first] setIsMale:isMale];
+    [self updateWilksCoefficient];
+}
+
+- (IBAction)bodyweightChanged:(id)sender {
+    NSDecimalNumber *bodyweight = [NSDecimalNumber decimalNumberWithString:[self.bodyweightField text] locale:[NSLocale currentLocale]];
+    [[[JSettingsStore instance] first] setBodyweight:bodyweight];
+    [self updateWilksCoefficient];
+}
+
+- (void)updateWilksCoefficient {
+    JSettings *settings = [[JSettingsStore instance] first];
+    NSDecimalNumber *wilks =
+            [WilksCoefficientCalculator calculate:[self getMaxEstimate]
+                                   withBodyweight:settings.bodyweight
+                                           isMale:settings.isMale
+                                        withUnits:[settings units]];
+
+    [self.wilksCoefficient setText:[wilks stringValue]];
 }
 
 @end
