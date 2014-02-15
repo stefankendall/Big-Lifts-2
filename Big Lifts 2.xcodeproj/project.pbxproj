@@ -354,6 +354,7 @@
 		54590C00FFB8D2B35F7D8336 /* SSTrackViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900AA0F099B4203A5C4E5 /* SSTrackViewControllerTests.m */; };
 		54590C043756606ECADA0385 /* SSWorkoutVariantControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C46C7D98FAB10F4C933 /* SSWorkoutVariantControllerTests.m */; };
 		54590C06BEEEC50D57D5EF0C /* JSSStateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590826D734A8373C6ECD76 /* JSSStateStore.m */; };
+		54590C13A49C66EB0606D6D5 /* Migrate7to8Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909544F817D9F11565C7C /* Migrate7to8Tests.m */; };
 		54590C13D0A5A69D62AAF195 /* JSSWarmupGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903A2F9BA0FA1709467D4 /* JSSWarmupGenerator.m */; };
 		54590C153CB6C4C5FA161BA0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545904168FB3BA47ECC7F750 /* AudioToolbox.framework */; };
 		54590C2B1D4A795A210A44B4 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590192C4EC8D647914DD49 /* TrackViewController.m */; };
@@ -756,6 +757,7 @@
 		545904963E59864C7F4A99B6 /* JFTOLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOLift.h; sourceTree = "<group>"; };
 		545904A432A5E8C6002F0EA3 /* JFTOAssistanceStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOAssistanceStore.m; sourceTree = "<group>"; };
 		545904A686DDE48574C64B1F /* TextViewInputAccessoryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewInputAccessoryBuilder.h; sourceTree = "<group>"; };
+		545904B1D4D99BD5C96D1266 /* Migrate7to8Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate7to8Tests.h; sourceTree = "<group>"; };
 		545904B1D686869820AE0A10 /* JFTOCustomPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomPlan.h; sourceTree = "<group>"; };
 		545904B33246CD5696F88F19 /* SSWorkoutVariantControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkoutVariantControllerTests.h; sourceTree = "<group>"; };
 		545904B6CB4BEC4F99ABA1EA /* FTOSSTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSSTViewController.m; sourceTree = "<group>"; };
@@ -975,6 +977,7 @@
 		54590946B5EBF08CC35CB9DE /* FTORepsToBeatBreakdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTORepsToBeatBreakdown.h; sourceTree = "<group>"; };
 		5459094860FD40BF2AC39701 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		545909499CEC4B9BC55FAD18 /* Migrate6to7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate6to7.h; sourceTree = "<group>"; };
+		545909544F817D9F11565C7C /* Migrate7to8Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate7to8Tests.m; sourceTree = "<group>"; };
 		54590958257FFFC7FE54EF19 /* TimerObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerObserver.h; sourceTree = "<group>"; };
 		545909599F497F96E8B24BDC /* FTOCustomWorkoutToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomWorkoutToolbar.h; sourceTree = "<group>"; };
 		545909637D2B39D377462163 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
@@ -1786,6 +1789,8 @@
 				545909A40FED95354DB58AB6 /* Migrate4to5Tests.h */,
 				54590337A442EB634054A39B /* Migrate6to7Tests.m */,
 				545908AB9A064CE2941D1FBB /* Migrate6to7Tests.h */,
+				545909544F817D9F11565C7C /* Migrate7to8Tests.m */,
+				545904B1D4D99BD5C96D1266 /* Migrate7to8Tests.h */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -3557,6 +3562,7 @@
 				5459088C999ED43B3EFF5AFD /* WilksCoefficientCalculatorTests.m in Sources */,
 				54590803951544BF1FEDE254 /* WeightUnitsTests.m in Sources */,
 				54590925ADB63571162088F4 /* Migrate6to7Tests.m in Sources */,
+				54590C13A49C66EB0606D6D5 /* Migrate7to8Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
