@@ -1,4 +1,6 @@
 #import "IAPAdapter.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation IAPAdapter
 
@@ -17,6 +19,10 @@
 }
 
 - (BOOL)hasPurchased:(NSString *)productId {
+    if ([[[JSettingsStore instance] first] adsEnabled]) {
+        return YES;
+    }
+
     if ([[NSUserDefaults standardUserDefaults] boolForKey:productId]) {
         return YES;
     }
