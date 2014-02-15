@@ -18,6 +18,7 @@
     [settings setRoundTo:N(5)];
     settings.screenAlwaysOn = NO;
     settings.roundingFormula = (NSString *) ROUNDING_FORMULA_EPLEY;
+    settings.isMale = YES;
 }
 
 - (void)adjustForKg {
