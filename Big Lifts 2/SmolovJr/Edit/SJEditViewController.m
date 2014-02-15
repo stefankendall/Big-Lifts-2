@@ -6,6 +6,7 @@
 @implementation SJEditViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.liftField];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.maxField];
 

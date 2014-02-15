@@ -1,8 +1,9 @@
 #import "TimerObserver.h"
+#import "BLTableViewController.h"
 
 @class RestToolbar;
 
-@interface IndividualLiftViewController : UITableViewController <UITableViewDelegate, TimerObserver> {
+@interface IndividualLiftViewController : BLTableViewController <UITableViewDelegate, TimerObserver> {
 }
 - (RestToolbar *)restToolbar:(UITableView *)tableView;
 @end

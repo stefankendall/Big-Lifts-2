@@ -5,6 +5,7 @@
 @implementation SJSetWeightViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [self.weightField setDelegate:self];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.weightField];
 }

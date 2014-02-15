@@ -1,4 +1,5 @@
 #import "UIViewController+ViewDeckAdditions.h"
+#import "BLTableViewController.h"
 
-@interface SVEditViewController : UITableViewController <UITextFieldDelegate>
+@interface SVEditViewController : BLTableViewController <UITextFieldDelegate>
 @end

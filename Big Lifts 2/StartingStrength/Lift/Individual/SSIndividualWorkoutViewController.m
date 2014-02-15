@@ -26,6 +26,7 @@
 @implementation SSIndividualWorkoutViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     self.workoutIndex = 0;
     [self resetLoggedSets];
 }

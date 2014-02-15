@@ -1,10 +1,8 @@
 #import "UIViewController+ViewDeckAdditions.h"
 #import "UITableViewController+NoEmptyRows.h"
+#import "BLTableViewController.h"
 
-@class SSLiftFormDataSource;
-
-@interface SSEditViewController : UITableViewController <UITextFieldDelegate> {
-    SSLiftFormDataSource *ssLiftFormDataSource;
+@interface SSEditViewController : BLTableViewController <UITextFieldDelegate> {
 }
 
 @end

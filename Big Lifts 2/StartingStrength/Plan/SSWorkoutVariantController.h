@@ -1,9 +1,10 @@
 #import "UITableViewController+NoEmptyRows.h"
 #import "UIViewController+PurchaseOverlay.h"
+#import "BLTableViewController.h"
 
 extern int const SS_WORKOUT_VARIANT_SECTION;
 
-@interface SSWorkoutVariantController : UITableViewController {
+@interface SSWorkoutVariantController : BLTableViewController {
 }
 @property (weak, nonatomic) IBOutlet UISwitch *warmupToggle;
 @property (weak, nonatomic) IBOutlet UITableViewCell *warmupCell;

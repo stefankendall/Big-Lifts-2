@@ -8,6 +8,7 @@
 @implementation SSEditViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     UITapGestureRecognizer *singleFingerTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
     [self.view addGestureRecognizer:singleFingerTap];

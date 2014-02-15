@@ -1,7 +1,8 @@
 #import "UIViewController+ViewDeckAdditions.h"
+#import "BLTableViewController.h"
 
 @class JSVWorkout;
 
-@interface SVLiftSelectorViewController : UITableViewController
+@interface SVLiftSelectorViewController : BLTableViewController
 @property(nonatomic, strong) JSVWorkout *selectedWorkout;
 @end

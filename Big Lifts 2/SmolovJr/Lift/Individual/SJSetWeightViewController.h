@@ -1,6 +1,8 @@
+#import "BLTableViewController.h"
+
 @protocol SetWeightDelegate;
 
-@interface SJSetWeightViewController : UITableViewController <UITextFieldDelegate> {
+@interface SJSetWeightViewController : BLTableViewController <UITextFieldDelegate> {
 }
 
 @property(weak, nonatomic) IBOutlet UITextField *weightField;
