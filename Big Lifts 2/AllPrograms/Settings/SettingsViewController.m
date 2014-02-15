@@ -23,6 +23,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [self setupRoundTo];
 }
 

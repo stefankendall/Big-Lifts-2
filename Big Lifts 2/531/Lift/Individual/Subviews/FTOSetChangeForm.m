@@ -9,6 +9,7 @@
 @implementation FTOSetChangeForm
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.repsField];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.weightField];
     [self.repsField setDelegate:self];

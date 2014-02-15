@@ -17,6 +17,7 @@
 @implementation FTOAssistanceViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     self.cellMapping = @{
             FTO_ASSISTANCE_NONE : self.noneCell,
             FTO_ASSISTANCE_BORING_BUT_BIG : self.bbbCell,

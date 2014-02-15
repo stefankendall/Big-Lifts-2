@@ -1,6 +1,8 @@
-@interface FTONextCycleViewController : UITableViewController
-{}
+#import "BLTableViewController.h"
 
-- (IBAction) doneButtonTapped: (id) selector;
+@interface FTONextCycleViewController : BLTableViewController {
+}
+
+- (IBAction)doneButtonTapped:(id)selector;
 
 @end

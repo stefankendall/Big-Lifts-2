@@ -1,6 +1,8 @@
+#import "BLTableViewController.h"
+
 @class JFTOCustomWorkout;
 
-@interface FTOCustomWorkoutViewController : UITableViewController
+@interface FTOCustomWorkoutViewController : BLTableViewController
 
 @property(nonatomic, strong) JFTOCustomWorkout *customWorkout;
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *deleteSetsButton;

@@ -1,7 +1,9 @@
+#import "BLTableViewController.h"
+
 @class JSet;
 @class PaddingTextField;
 
-@interface FTORepsToBeatBreakdown : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate> {
+@interface FTORepsToBeatBreakdown : BLTableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UILabel *enteredOneRepMax;
 @property(weak, nonatomic) IBOutlet UILabel *maxFromLog;

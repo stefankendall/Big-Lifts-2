@@ -1,7 +1,8 @@
 #import "UIViewController+ViewDeckAdditions.h"
+#import "BLTableViewController.h"
 
 @class RateDialog;
 
-@interface FTOLiftViewController : UITableViewController
+@interface FTOLiftViewController : BLTableViewController
 @property(nonatomic, strong) RateDialog *rateDialog;
 @end

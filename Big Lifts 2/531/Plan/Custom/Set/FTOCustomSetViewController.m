@@ -6,6 +6,7 @@
 @implementation FTOCustomSetViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [self.repsLabel setDelegate:self];
     [self.percentageLabel setDelegate:self];
 

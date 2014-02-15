@@ -8,6 +8,7 @@
 @implementation FTOAddLiftViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [self.nameField setDelegate:self];
     [self.weightField setDelegate:self];
     [self.increaseField setDelegate:self];

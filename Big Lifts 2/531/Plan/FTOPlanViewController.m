@@ -21,6 +21,7 @@
 @implementation FTOPlanViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.trainingMaxField];
     [self.trainingMaxField setDelegate:self];
 

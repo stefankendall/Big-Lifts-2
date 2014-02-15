@@ -1,6 +1,7 @@
 #import "UIViewController+ViewDeckAdditions.h"
+#import "BLTableViewController.h"
 
-@interface SettingsViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
+@interface SettingsViewController : BLTableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
 
 - (IBAction)unitsChanged:(id)sender;
 

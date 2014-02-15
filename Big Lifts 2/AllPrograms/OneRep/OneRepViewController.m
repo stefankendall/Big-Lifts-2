@@ -47,6 +47,8 @@
 }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.weightField];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.repsField];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.formulaSelector];

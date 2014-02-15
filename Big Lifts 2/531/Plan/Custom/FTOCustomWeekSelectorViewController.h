@@ -1,4 +1,6 @@
-@interface FTOCustomWeekSelectorViewController : UITableViewController <UITextFieldDelegate> {}
+#import "BLTableViewController.h"
+
+@interface FTOCustomWeekSelectorViewController : BLTableViewController <UITextFieldDelegate> {}
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editWeekButton;
 
 - (void)copyTemplate;

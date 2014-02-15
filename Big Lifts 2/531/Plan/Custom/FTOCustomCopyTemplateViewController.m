@@ -8,6 +8,7 @@
 @implementation FTOCustomCopyTemplateViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     self.textToVariant = @{
             @"Standard" : FTO_VARIANT_STANDARD,
             @"Heavier" : FTO_VARIANT_HEAVIER,

@@ -1,7 +1,9 @@
+#import "BLTableViewController.h"
+
 @class JSet;
 @protocol SetChangeDelegate;
 
-@interface FTOSetChangeForm : UITableViewController <UITextFieldDelegate> {
+@interface FTOSetChangeForm : BLTableViewController <UITextFieldDelegate> {
 }
 
 @property(weak, nonatomic) IBOutlet UITextField *repsField;

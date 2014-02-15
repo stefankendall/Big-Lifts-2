@@ -1,7 +1,8 @@
 #import "UIViewController+ViewDeckAdditions.h"
 #import "UIViewController+PurchaseOverlay.h"
+#import "BLTableViewController.h"
 
-@interface FTOPlanViewController : UITableViewController <UITextFieldDelegate> {
+@interface FTOPlanViewController : BLTableViewController <UITextFieldDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UITextField *trainingMaxField;
 @property(weak, nonatomic) IBOutlet UISwitch *warmupToggle;

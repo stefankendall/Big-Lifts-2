@@ -1,6 +1,7 @@
 #import "UIViewController+PurchaseOverlay.h"
+#import "BLTableViewController.h"
 
-@interface FTOAssistanceViewController : UITableViewController {}
+@interface FTOAssistanceViewController : BLTableViewController {}
 @property (weak, nonatomic) IBOutlet UITableViewCell *noneCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *bbbCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *triumvirateCell;

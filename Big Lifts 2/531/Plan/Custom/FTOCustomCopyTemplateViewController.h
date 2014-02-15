@@ -1,4 +1,6 @@
-@interface FTOCustomCopyTemplateViewController : UITableViewController {
+#import "BLTableViewController.h"
+
+@interface FTOCustomCopyTemplateViewController : BLTableViewController {
 }
 @property(nonatomic, strong) NSDictionary *textToVariant;
 @property(nonatomic, strong) NSDictionary *iapVariants;

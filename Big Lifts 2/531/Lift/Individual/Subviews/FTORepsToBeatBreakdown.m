@@ -11,6 +11,7 @@
 @implementation FTORepsToBeatBreakdown
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     self.configOptions = @{
             [NSNumber numberWithInt:kRepsToBeatEverything] : @"Use Everything",
             [NSNumber numberWithInt:kRepsToBeatLogOnly] : @"Log Only"

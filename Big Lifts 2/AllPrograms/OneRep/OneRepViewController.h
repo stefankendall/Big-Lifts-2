@@ -1,8 +1,9 @@
 #import "UIViewController+ViewDeckAdditions.h"
+#import "BLTableViewController.h"
 
 @class PaddingTextField;
 
-@interface OneRepViewController : UITableViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
+@interface OneRepViewController : BLTableViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UITextField *weightField;
 @property(weak, nonatomic) IBOutlet UITextField *repsField;

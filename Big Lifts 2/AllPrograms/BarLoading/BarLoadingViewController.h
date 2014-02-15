@@ -1,10 +1,11 @@
 #import "UIViewController+ViewDeckAdditions.h"
 #import "UITableViewController+NoEmptyRows.h"
+#import "BLTableViewController.h"
 
 @class PurchaseOverlay;
 @class WeightTableCell;
 
-@interface BarLoadingViewController : UITableViewController <UIGestureRecognizerDelegate, UITableViewDelegate, UITextFieldDelegate> {
+@interface BarLoadingViewController : BLTableViewController <UIGestureRecognizerDelegate, UITableViewDelegate, UITextFieldDelegate> {
 }
 - (void)deleteButtonTapped:(id)deleteButton;
 

@@ -1,7 +1,8 @@
 #import "UIViewController+ViewDeckAdditions.h"
 #import "UITableViewController+NoEmptyRows.h"
+#import "BLTableViewController.h"
 
-@interface TrackViewController : UITableViewController
+@interface TrackViewController : BLTableViewController
 - (int)getRowCount:(NSIndexPath *)path;
 
 - (void)setupDeleteButton:(UIButton *)deleteButton;

@@ -7,6 +7,12 @@
 
 @implementation TimerViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.restMinutes];
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.restSeconds];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     JTimer *timer = [[JTimerStore instance] first];
     int minutes = [timer.seconds intValue] / 60;
@@ -20,11 +26,6 @@
     int minutes = [[self.restMinutes text] intValue];
     int seconds = [[self.restSeconds text] intValue];
     [[[JTimerStore instance] first] setSeconds:[NSNumber numberWithInt:(minutes * 60 + seconds)]];
-}
-
-- (void)viewDidLoad {
-    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.restMinutes];
-    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.restSeconds];
 }
 
 - (IBAction)timerTapped:(id)sender {
