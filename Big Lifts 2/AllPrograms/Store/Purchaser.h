@@ -19,4 +19,6 @@ extern NSString * const IAP_PURCHASED_NOTIFICATION;
 - (void)purchase:(NSString *)purchaseId;
 
 - (void)savePurchase:(NSString *)purchaseId;
+
+- (BOOL)hasPurchasedAnything;
 @end

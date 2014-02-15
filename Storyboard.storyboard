@@ -4045,6 +4045,9 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable ads, and unlock all in app purchases?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="212" translatesAutoresizingMaskIntoConstraints="NO" id="gc8-HI-vAy">
                                                     <rect key="frame" x="20" y="0.0" width="212" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="212" id="tUN-b1-tOX"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -4059,7 +4062,7 @@
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kCS-Aj-aR4">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kCS-Aj-aR4">
                                                     <rect key="frame" x="251" y="15" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
@@ -4068,13 +4071,14 @@
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="gc8-HI-vAy" secondAttribute="bottom" constant="20" symbolic="YES" id="73A-wF-4wt"/>
-                                                <constraint firstItem="Mxy-eb-n8v" firstAttribute="top" secondItem="geU-UN-xhK" secondAttribute="top" constant="45" id="ORB-aR-eDB"/>
-                                                <constraint firstItem="gc8-HI-vAy" firstAttribute="leading" secondItem="Mxy-eb-n8v" secondAttribute="leading" id="QXJ-np-y1r"/>
-                                                <constraint firstItem="gc8-HI-vAy" firstAttribute="top" secondItem="geU-UN-xhK" secondAttribute="top" id="SIy-o3-fCt"/>
-                                                <constraint firstItem="gc8-HI-vAy" firstAttribute="leading" secondItem="geU-UN-xhK" secondAttribute="leading" constant="20" symbolic="YES" id="Wc7-Zv-T1m"/>
-                                                <constraint firstAttribute="trailing" secondItem="gc8-HI-vAy" secondAttribute="trailing" constant="88" id="ovq-lz-NK0"/>
-                                                <constraint firstAttribute="bottom" secondItem="Mxy-eb-n8v" secondAttribute="bottom" id="qiV-FC-v4J"/>
+                                                <constraint firstAttribute="bottom" secondItem="gc8-HI-vAy" secondAttribute="bottom" constant="20" symbolic="YES" id="1h1-kt-nl3"/>
+                                                <constraint firstItem="Mxy-eb-n8v" firstAttribute="leading" secondItem="geU-UN-xhK" secondAttribute="leading" constant="20" symbolic="YES" id="2lA-11-A8G"/>
+                                                <constraint firstAttribute="bottom" secondItem="Mxy-eb-n8v" secondAttribute="bottom" id="Ar4-GY-OVZ"/>
+                                                <constraint firstItem="kCS-Aj-aR4" firstAttribute="leading" secondItem="gc8-HI-vAy" secondAttribute="trailing" constant="19" id="Etm-1q-Epe"/>
+                                                <constraint firstItem="Mxy-eb-n8v" firstAttribute="leading" secondItem="gc8-HI-vAy" secondAttribute="leading" id="Ni4-Hd-vh2"/>
+                                                <constraint firstItem="gc8-HI-vAy" firstAttribute="top" secondItem="geU-UN-xhK" secondAttribute="top" id="SPe-mp-Pfl"/>
+                                                <constraint firstItem="Mxy-eb-n8v" firstAttribute="top" secondItem="geU-UN-xhK" secondAttribute="top" constant="45" id="Sfn-j5-vP4"/>
+                                                <constraint firstItem="gc8-HI-vAy" firstAttribute="bottom" secondItem="kCS-Aj-aR4" secondAttribute="bottom" id="Wtq-cv-8pN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -4151,6 +4155,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="adsCell" destination="asT-Vp-mcZ" id="9j6-Cv-gTk"/>
                         <outlet property="adsSwitch" destination="kCS-Aj-aR4" id="WqX-JF-f9j"/>
                         <outlet property="iCloudEnabled" destination="NUt-cJ-Smq" id="dep-aR-khD"/>
                         <outlet property="keepScreenOnSwitch" destination="rRl-Py-unG" id="1IW-0g-WUr"/>

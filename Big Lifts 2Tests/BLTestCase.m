@@ -7,6 +7,9 @@
 @implementation BLTestCase
 
 - (void)setUp {
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+
     [[SKProductStore instance] removePurchases];
     [[IAPAdapter instance] resetPurchases];
     [self waitForDataLoaded];

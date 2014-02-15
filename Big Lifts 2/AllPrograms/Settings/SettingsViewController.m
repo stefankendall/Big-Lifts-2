@@ -5,6 +5,7 @@
 #import "IAPAdapter.h"
 #import "BLJStoreManager.h"
 #import "BLKeyValueStore.h"
+#import "AdsExperiment.h"
 
 static BOOL SAVE_DATA_TEST_ENABLED = YES;
 
@@ -16,16 +17,17 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     __weak IBOutlet UISegmentedControl *unitsSegmentedControl;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setupRoundTo];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [self reloadData];
     [self.testDataSavingCell setHidden:!SAVE_DATA_TEST_ENABLED];
     [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
     [self.adsSwitch setOn:[[[JSettingsStore instance] first] adsEnabled]];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setupRoundTo];
+    [self.adsCell setHidden:![AdsExperiment isInExperiment]];
 }
 
 - (void)reloadData {
@@ -132,7 +134,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     if (buttonIndex == 0) {
         BOOL iCloudEnabled = [self.iCloudEnabled isOn];
         [[BLJStoreManager instance] syncStores];
-        [BLKeyValueStore forceICloud: iCloudEnabled];
+        [BLKeyValueStore forceICloud:iCloudEnabled];
         [[BLJStoreManager instance] loadStores];
     }
     else {

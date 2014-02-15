@@ -1,5 +1,6 @@
 #import "Purchaser.h"
 #import "IAPAdapter.h"
+#import "NSArray+Enumerable.h"
 
 NSString *const IAP_BAR_LOADING = @"barLoading";
 NSString *const IAP_GRAPHING = @"graphing";
@@ -75,6 +76,29 @@ NSString *const IAP_FTO_CUSTOM = @"ftoCustom";
 - (void)savePurchase:(NSString *)purchaseId {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:purchaseId];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (BOOL)hasPurchasedAnything {
+    NSArray *allIap = @[
+            IAP_BAR_LOADING,
+            IAP_GRAPHING,
+            IAP_1RM,
+
+            IAP_SS_WARMUP,
+            IAP_SS_ONUS_WUNSLER,
+            IAP_SS_PRACTICAL_PROGRAMMING,
+
+            IAP_FTO_JOKER,
+            IAP_FTO_ADVANCED,
+            IAP_FTO_TRIUMVIRATE,
+            IAP_FTO_SST,
+            IAP_FTO_FIVES_PROGRESSION,
+            IAP_FTO_CUSTOM
+    ];
+
+    return [allIap detect:^BOOL(NSString *purchaseId) {
+        return [[IAPAdapter instance] hasPurchased:purchaseId];
+    }] != nil;
 }
 
 @end

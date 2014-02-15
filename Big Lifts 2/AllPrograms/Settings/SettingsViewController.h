@@ -14,6 +14,7 @@
 @property(strong, nonatomic) UIPickerView *roundToPicker;
 @property (weak, nonatomic) IBOutlet UITableViewCell *testDataSavingCell;
 @property (weak, nonatomic) IBOutlet UISwitch *iCloudEnabled;
+@property (weak, nonatomic) IBOutlet UITableViewCell *adsCell;
 @property (weak, nonatomic) IBOutlet UISwitch *adsSwitch;
 
 @property(nonatomic, strong) NSArray *roundingText;
