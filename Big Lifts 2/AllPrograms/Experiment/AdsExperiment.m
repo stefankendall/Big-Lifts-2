@@ -2,6 +2,7 @@
 #import "Purchaser.h"
 
 const NSString *kExperimentKey = @"adsExperiment";
+const NSString *kOptInKey = @"adsOptInSeen";
 
 @implementation AdsExperiment
 
@@ -15,6 +16,14 @@ const NSString *kExperimentKey = @"adsExperiment";
 
 + (BOOL)shouldBeInExperiment {
     return ![[Purchaser new] hasPurchasedAnything];
+}
+
++ (BOOL)hasSeenOptIn {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:(NSString *) kOptInKey];
+}
+
++ (void)setHasSeenOptIn:(BOOL)seen {
+    [[NSUserDefaults standardUserDefaults] setBool:seen forKey:(NSString *) kOptInKey];
 }
 
 @end
