@@ -23,13 +23,11 @@
     }];
 
     [[Migrate1to2 new] run];
-    [[JSettingsStore instance] load];
-    JSettings *settings = [[JSettingsStore instance] first];
-
-    STAssertEqualObjects(settings.units, @"kg", @"");
-    STAssertEqualObjects(settings.roundTo, N(2.5), @"");
-    STAssertEqualObjects(settings.roundingFormula, ROUNDING_FORMULA_EPLEY, @"");
-    STAssertEquals(settings.screenAlwaysOn, NO, @"");
+    NSString *settingsJson = [[BLKeyValueStore store] objectForKey:[[JSettingsStore instance] keyNameForStore]][0];
+    NSMutableDictionary *settings = [NSJSONSerialization JSONObjectWithData:[settingsJson dataUsingEncoding:NSUTF8StringEncoding]
+                                                                    options:NSJSONReadingMutableContainers
+                                                                      error:nil];
+    STAssertEquals([settings[@"screenAlwaysOn"] intValue], 0, @"");
 }
 
 - (void)testDoesNotOverwriteScreenOnSettingIfExists {
@@ -42,10 +40,13 @@
     }];
 
     [[Migrate1to2 new] run];
-    [[JSettingsStore instance] load];
-    JSettings *settings = [[JSettingsStore instance] first];
 
-    STAssertEquals(settings.screenAlwaysOn, YES, @"");
+    NSString *settingsJson = [[BLKeyValueStore store] objectForKey:[[JSettingsStore instance] keyNameForStore]][0];
+    NSMutableDictionary *settings = [NSJSONSerialization JSONObjectWithData:[settingsJson dataUsingEncoding:NSUTF8StringEncoding]
+                                                                    options:NSJSONReadingMutableContainers
+                                                                      error:nil];
+
+    STAssertEquals([settings[@"screenAlwaysOn"] intValue], 1, @"");
 }
 
 - (void)writeSettings:(NSDictionary *)settings {
