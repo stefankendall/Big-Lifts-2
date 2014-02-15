@@ -66,6 +66,7 @@
 		5459019740BEDD94B676EC5C /* BLJStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900BAF9F2BA61B404E2C0 /* BLJStoreTests.m */; };
 		545901A25907B01F9921D701 /* JSVLift.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D52691DBB532AF10356 /* JSVLift.m */; };
 		545901A747A04C98E1814122 /* Big_Lifts_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54590275EBE03377D340BF57 /* Big_Lifts_2.xcdatamodeld */; };
+		545901AA4AA23DF99A60ABDA /* Migrate7to8.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904D3B842B134D9E18B4C /* Migrate7to8.m */; };
 		545901AF99B46C5EA6F6BCBA /* SSWorkoutVariantController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C1CBA4EC0F7CD1C8C14 /* SSWorkoutVariantController.m */; };
 		545901B718749FF8F883B47A /* JSVWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BCE1889011E95D5FFBD /* JSVWorkout.m */; };
 		545901C0928BAB804E8FDE08 /* LogCellWithSets.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545902FB0C01913A5494B509 /* LogCellWithSets.xib */; };
@@ -537,6 +538,7 @@
 		5459007D9BED142AD4B5CB6A /* JFTOCustomAssistanceWorkoutStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomAssistanceWorkoutStoreTests.h; sourceTree = "<group>"; };
 		54590085F19C3AEF8312104F /* BLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLTimer.m; sourceTree = "<group>"; };
 		545900871BB391AD40324521 /* FTOLiftWorkoutViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftWorkoutViewControllerTests.h; sourceTree = "<group>"; };
+		54590097840AE9CD1407A2C5 /* Migrate7to8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate7to8.h; sourceTree = "<group>"; };
 		5459009D708C85D73598095F /* AddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCell.m; sourceTree = "<group>"; };
 		545900A0750D9AC94319536C /* FTOBoringButBigEditViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOBoringButBigEditViewControllerTests.h; sourceTree = "<group>"; };
 		545900A08C2C00EB4457CF7E /* BLTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLTestCase.m; sourceTree = "<group>"; };
@@ -764,6 +766,7 @@
 		545904C7123BC998F7282F7A /* SSIndividualWorkoutViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSIndividualWorkoutViewControllerTests.h; sourceTree = "<group>"; };
 		545904CA458008759C6514EA /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
 		545904D3571129012EA634C1 /* JSSWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSWorkout.m; sourceTree = "<group>"; };
+		545904D3B842B134D9E18B4C /* Migrate7to8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate7to8.m; sourceTree = "<group>"; };
 		545904D62CC1AA8EA991E2A4 /* JSJWorkoutStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSJWorkoutStore.m; sourceTree = "<group>"; };
 		545904D6B7F81F75B639A689 /* JFTOWorkoutStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOWorkoutStore.m; sourceTree = "<group>"; };
 		545904DC5057EDC75C21A989 /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench.png"; sourceTree = "<group>"; };
@@ -2562,6 +2565,8 @@
 				545909499CEC4B9BC55FAD18 /* Migrate6to7.h */,
 				54590AF98C311F10FCD54111 /* JSettingsHelper.m */,
 				54590ED197BECB938E360BD7 /* JSettingsHelper.h */,
+				545904D3B842B134D9E18B4C /* Migrate7to8.m */,
+				54590097840AE9CD1407A2C5 /* Migrate7to8.h */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -3811,6 +3816,7 @@
 				545900A90C5F730E4B892FD9 /* Migrate6to7.m in Sources */,
 				5459016BCBBFDB081B6CFB6D /* BLTableViewController.m in Sources */,
 				545901F1052F3441F164CF90 /* JSettingsHelper.m in Sources */,
+				545901AA4AA23DF99A60ABDA /* Migrate7to8.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
