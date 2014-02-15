@@ -3,10 +3,10 @@
 #import "FTOSetChangeForm.h"
 #import "JFTOSetStore.h"
 #import "JFTOLiftStore.h"
-#import "IAPAdapter.h"
-#import "Purchaser.h"
 #import "JFTOSet.h"
 #import "JLift.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
 
 @implementation FTOSetChangeFormTests
 
@@ -24,20 +24,8 @@
     STAssertEqualObjects([[controller repsField] placeholder], @"3", @"");
 }
 
-- (void)testHidesOneRepEstimateWithoutIAP {
-    FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
-    [controller viewWillAppear:YES];
-    STAssertTrue( [controller.oneRepField isHidden], @"");
-}
-
-- (void)testShowsOneRepEstimateWithIAP {
-    [[IAPAdapter instance] addPurchase:IAP_1RM];
-    FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
-    [controller viewWillAppear:YES];
-    STAssertFalse( [controller.oneRepField isHidden], @"");
-}
-
 - (void)testSetsOneRepMaxWhenViewAppears {
+    [[IAPAdapter instance] addPurchase:IAP_1RM];
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     JFTOSet *set = [[JFTOSetStore instance] create];
     set.percentage = N(100);
@@ -51,6 +39,7 @@
 }
 
 - (void)testUsesPreviousEnteredRepsForOneRepMax {
+    [[IAPAdapter instance] addPurchase:IAP_1RM];
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     JFTOSet *set = [[JFTOSetStore instance] create];
     set.percentage = N(100);
@@ -65,6 +54,7 @@
 }
 
 - (void)testUsesPreviouslyEnteredWeightForOneRepMax {
+    [[IAPAdapter instance] addPurchase:IAP_1RM];
     FTOSetChangeForm *controller = [self getControllerByStoryboardIdentifier:@"ftoSetReps"];
     JFTOSet *set = [[JFTOSetStore instance] create];
     set.percentage = N(100);
