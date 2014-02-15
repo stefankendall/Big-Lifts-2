@@ -140,6 +140,10 @@
 
 - (IBAction)bodyweightChanged:(id)sender {
     NSDecimalNumber *bodyweight = [NSDecimalNumber decimalNumberWithString:[self.bodyweightField text] locale:[NSLocale currentLocale]];
+    if([bodyweight isEqual:[NSDecimalNumber notANumber]]){
+        bodyweight = N(0);
+    }
+
     [[[JSettingsStore instance] first] setBodyweight:bodyweight];
     [self updateWilksCoefficient];
 }

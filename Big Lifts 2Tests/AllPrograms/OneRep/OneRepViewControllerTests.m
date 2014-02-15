@@ -69,4 +69,11 @@
     STAssertEqualObjects([controller.bodyweightField text], @"200.5", @"");
 }
 
+- (void) testHandlesEmptyBodyweight {
+    STAssertEqualObjects([NSDecimalNumber decimalNumberWithString:@""], [NSDecimalNumber notANumber], @"");
+    OneRepViewController *controller = [self getControllerByStoryboardIdentifier:@"oneRep"];
+    [controller.bodyweightField setText:@""];
+    [controller bodyweightChanged:controller.bodyweightField];
+}
+
 @end
