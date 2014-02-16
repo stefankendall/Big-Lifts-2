@@ -122,4 +122,8 @@
     [self performSegueWithIdentifier:@"sjGoToTimer" sender:self];
 }
 
+- (JWorkout *)getSharedWorkout {
+    return self.sjWorkout.workout;
+}
+
 @end

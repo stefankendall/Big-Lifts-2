@@ -1,6 +1,7 @@
 #import "IndividualLiftViewController.h"
 #import "RestToolbar.h"
 #import "BLTimer.h"
+#import "JWorkout.h"
 
 @implementation IndividualLiftViewController
 
@@ -21,8 +22,13 @@
 
     [toolbar updateTime];
     [toolbar.timerButton addTarget:self action:@selector(goToTimer) forControlEvents:UIControlEventTouchUpInside];
-
+    [toolbar setShareDelegate:self];
     return toolbar;
 }
+
+- (JWorkout *)getSharedWorkout {
+    [NSException raise:@"Must implement" format:@""];
+}
+
 
 @end

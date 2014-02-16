@@ -197,5 +197,9 @@
     data.weight = weight;
 }
 
+- (JWorkout *)getSharedWorkout {
+    return nil;
+}
+
 
 @end

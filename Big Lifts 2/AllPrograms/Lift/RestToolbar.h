@@ -1,7 +1,13 @@
 #import <CTCustomTableViewCell/CTCustomTableViewCell.h>
 
-@interface RestToolbar : CTCustomTableViewCell {}
-@property (weak, nonatomic) IBOutlet UIButton *timerButton;
+@protocol ShareDelegate;
+
+@interface RestToolbar : CTCustomTableViewCell <UIActionSheetDelegate> {
+}
+@property(weak, nonatomic) IBOutlet UIButton *timerButton;
+
+@property(weak, nonatomic) IBOutlet UIButton *shareButton;
+@property(nonatomic, strong) UIViewController <ShareDelegate> *shareDelegate;
 
 - (void)updateTime;
 @end

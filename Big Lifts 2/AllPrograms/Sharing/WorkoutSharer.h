@@ -2,9 +2,9 @@
 @class FTOLiftWorkoutViewController;
 
 @interface WorkoutSharer : NSObject
-- (void)shareOnTwitter:(JWorkout *)workout withController:(FTOLiftWorkoutViewController *)controller;
+- (void)shareOnTwitter:(JWorkout *)workout withController:(UIViewController *)controller;
 
-- (void)shareOnFacebook:(JWorkout *)workout withController:(FTOLiftWorkoutViewController *)controller;
+- (void)shareOnFacebook:(JWorkout *)workout withController:(UIViewController *)controller;
 
 - (NSString *)workoutSummary:(JWorkout *)workout;
 @end

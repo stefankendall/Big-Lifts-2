@@ -1,7 +1,6 @@
 #import <Social/Social.h>
 #import "WorkoutSharer.h"
 #import "JWorkout.h"
-#import "FTOLiftWorkoutViewController.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
 #import "JSet.h"
@@ -9,14 +8,14 @@
 
 @implementation WorkoutSharer
 
-- (void)shareOnTwitter:(JWorkout *)workout withController:(FTOLiftWorkoutViewController *)controller {
+- (void)shareOnTwitter:(JWorkout *)workout withController:(UIViewController *)controller {
     SLComposeViewController *sheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     [sheet setInitialText:[self workoutSummary:workout]];
     [sheet addURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/big-lifts-2/id661503150?mt=8"]];
     [controller presentViewController:sheet animated:YES completion:nil];
 }
 
-- (void)shareOnFacebook:(JWorkout *)workout withController:(FTOLiftWorkoutViewController *)controller {
+- (void)shareOnFacebook:(JWorkout *)workout withController:(UIViewController *)controller {
     SLComposeViewController *sheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     NSString *summary = [self workoutSummary:workout];
     [sheet setInitialText:summary];
