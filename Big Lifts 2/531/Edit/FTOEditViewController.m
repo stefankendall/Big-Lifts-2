@@ -8,6 +8,7 @@
 #import "JFTOSettingsStore.h"
 #import "FTOEditIncrementCell.h"
 #import "JFTOSettings.h"
+#import "DecimalNumberHandlers.h"
 
 @implementation FTOEditViewController
 
@@ -70,12 +71,10 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     RowTextField *rowTextField = (RowTextField *) textField;
     NSIndexPath *indexPath = [rowTextField indexPath];
-    NSString *weightText = [textField text];
     JLift *lift = [self liftAtIndex:[indexPath row]];
-    if ([weightText isEqualToString:@""]) {
-        weightText = @"0";
-    }
-    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:weightText locale:NSLocale.currentLocale];
+
+    NSDecimalNumber *weight = [NSDecimalNumber decimalNumberWithString:[textField text] locale:NSLocale.currentLocale];
+    weight = [weight isEqual:[NSDecimalNumber notANumber]] ? N(0) : weight;
 
     if ([indexPath section] == 1) {
         [lift setIncrement:weight];
@@ -83,8 +82,9 @@
     else {
         if ([textField isKindOfClass:TrainingMaxRowTextField.class]) {
             JFTOSettings *ftoSettings = [[JFTOSettingsStore instance] first];
+            NSDecimalNumber *trainingMaxFraction = [N(100) decimalNumberByDividingBy:[ftoSettings trainingMax] withBehavior:DecimalNumberHandlers.noRaise];
             NSDecimalNumber *max =
-                    [[N(100) decimalNumberByDividingBy:[ftoSettings trainingMax]] decimalNumberByMultiplyingBy:weight];
+                    [trainingMaxFraction decimalNumberByMultiplyingBy:weight withBehavior:DecimalNumberHandlers.noRaise];
             NSNumberFormatter *nf = [NSNumberFormatter new];
             [nf setMaximumFractionDigits:1];
             NSString *oneDecimalMax = [nf stringFromNumber:max];
