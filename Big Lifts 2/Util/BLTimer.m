@@ -84,14 +84,6 @@ const NSString *TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
 
 - (void)timerDone {
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-    UIAlertView *alert = [[UIAlertView alloc]
-            initWithTitle:@"Debug - Timer Done"
-                  message:
-                          [NSString stringWithFormat:@"Seconds remaining: %d", self.secondsRemaining]
-                 delegate:self
-        cancelButtonTitle:@"OK"
-        otherButtonTitles:nil];
-    [alert show];
 }
 
 - (NSString *)formattedTimeRemaining {
