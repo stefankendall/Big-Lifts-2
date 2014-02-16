@@ -3,8 +3,8 @@
 #import "BLKeyValueStore.h"
 #import <AudioToolbox/AudioToolbox.h>
 
-const NSString * TIMER_SECONDS_REMAINING_KEY = @"timerSecondsRemaining";
-const NSString * TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
+const NSString *TIMER_SECONDS_REMAINING_KEY = @"timerSecondsRemaining";
+const NSString *TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
 
 @implementation BLTimer
 
@@ -34,13 +34,13 @@ const NSString * TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
 }
 
 - (void)suspend {
-    if (self.timer) {
+    if (self.secondsRemaining > 0) {
         [[BLKeyValueStore store]                            setObject:
                 [NSNumber numberWithInt:self.secondsRemaining] forKey:TIMER_SECONDS_REMAINING_KEY];
 
         [[BLKeyValueStore store] setObject:[NSDate new] forKey:TIMER_SUSPEND_DATE_KEY];
-        [self.timer invalidate];
     }
+    [self stopTimer];
 }
 
 - (void)scheduleBackgroundNotification {
@@ -67,9 +67,9 @@ const NSString * TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
         [self start:[secondsRemaining intValue] - secondsElapsed];
 
         [[BLKeyValueStore store] removeObjectForKey:TIMER_SUSPEND_DATE_KEY];
-        [[BLKeyValueStore store] setObject: nil forKey: TIMER_SUSPEND_DATE_KEY];
+        [[BLKeyValueStore store] setObject:nil forKey:TIMER_SUSPEND_DATE_KEY];
         [[BLKeyValueStore store] removeObjectForKey:TIMER_SECONDS_REMAINING_KEY];
-        [[BLKeyValueStore store] setObject: nil forKey: TIMER_SECONDS_REMAINING_KEY];
+        [[BLKeyValueStore store] setObject:nil forKey:TIMER_SECONDS_REMAINING_KEY];
     }
 }
 
@@ -84,6 +84,14 @@ const NSString * TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
 
 - (void)timerDone {
     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+    UIAlertView *alert = [[UIAlertView alloc]
+            initWithTitle:@"Debug - Timer Done"
+                  message:
+                          [NSString stringWithFormat:@"Seconds remaining: %d", self.secondsRemaining]
+                 delegate:self
+        cancelButtonTitle:@"OK"
+        otherButtonTitles:nil];
+    [alert show];
 }
 
 - (NSString *)formattedTimeRemaining {
