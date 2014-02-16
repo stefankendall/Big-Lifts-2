@@ -193,7 +193,7 @@
 		5459061761C987E09AF13E56 /* 09-chat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5459069DC08F5B3D6F305F87 /* 09-chat-2.png */; };
 		54590619546F870F9597BE9B /* TimerViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590122431C2786FCE6B002 /* TimerViewControllerTests.m */; };
 		54590623020A90CC7C2FBA88 /* SJSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C9EBB4C2F7634C09E94 /* SJSetCell.m */; };
-		54590624A763F2636EF2CDE5 /* RestToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459044898A9C488BEA0E66A /* RestToolbar.m */; };
+		54590624A763F2636EF2CDE5 /* RestShareToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459044898A9C488BEA0E66A /* RestShareToolbar.m */; };
 		5459062A78F1477B8D967838 /* FTOTriumvirateSetupViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459023C68F1A651E78B91C3 /* FTOTriumvirateSetupViewControllerTests.m */; };
 		5459062C4CB4D5C348F28067 /* FTOCustomAssistanceWorkoutSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FA06BC59FD032D94338 /* FTOCustomAssistanceWorkoutSetCell.m */; };
 		5459062C5EC1B83AAEB32121 /* IAPAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 545902DBAFF98090455072CB /* IAPAdapter.m */; };
@@ -427,7 +427,7 @@
 		54590E4C541558DBBC300B05 /* FTOSSTEditLiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459066D6076801C8C5C4DB1 /* FTOSSTEditLiftCell.m */; };
 		54590E5335BF7D7B0D1F3DDA /* SetLogCombiner.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590798FA8B084A2A8A2DCF /* SetLogCombiner.m */; };
 		54590E599859CCB43FCAFBCD /* FTORepsToBeatBreakdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901D2678F1FE916C879B4 /* FTORepsToBeatBreakdown.m */; };
-		54590E5A4AEC1DFB49269C72 /* RestToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545901311F4CED86E6B11617 /* RestToolbar.xib */; };
+		54590E5A4AEC1DFB49269C72 /* RestShareToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545901311F4CED86E6B11617 /* RestShareToolbar.xib */; };
 		54590E5C9858D4D913158736 /* BLKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590550C2F65279ACE9B016 /* BLKeyValueStore.m */; };
 		54590E5D7DC5E026A7CF5E9A /* BarLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907DF784D8AA2EF4F504C /* BarLoadingViewController.m */; };
 		54590E62315277E368DEA98E /* FTOGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903FB0D04B83859F16238 /* FTOGraphViewController.m */; };
@@ -578,7 +578,7 @@
 		545901288DAAC7C161DA9DC9 /* Big Lifts 2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big Lifts 2Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54590129FA355272C0213491 /* SetWeightDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetWeightDelegate.h; sourceTree = "<group>"; };
 		5459012DADE179F1BF2867BF /* SSLiftSummaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLiftSummaryCell.m; sourceTree = "<group>"; };
-		545901311F4CED86E6B11617 /* RestToolbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestToolbar.xib; sourceTree = "<group>"; };
+		545901311F4CED86E6B11617 /* RestShareToolbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestShareToolbar.xib; sourceTree = "<group>"; };
 		5459013A5AE81939C41850BD /* FTOCustomAssistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomAssistanceViewController.m; sourceTree = "<group>"; };
 		5459013AD6E89B4010EB02F3 /* JFTOWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOWorkout.h; sourceTree = "<group>"; };
 		5459013B0F862FEFB73991DD /* SSWorkoutVariantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWorkoutVariantController.h; sourceTree = "<group>"; };
@@ -746,7 +746,7 @@
 		54590440CE0288A2891DEC15 /* Migrate3to4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate3to4.m; sourceTree = "<group>"; };
 		54590446836EECC4002CEEFB /* JFTOBoringButBigAssistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBigAssistance.h; sourceTree = "<group>"; };
 		54590447FEA8FD6A1105A5B0 /* Migrator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrator.m; sourceTree = "<group>"; };
-		5459044898A9C488BEA0E66A /* RestToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestToolbar.m; sourceTree = "<group>"; };
+		5459044898A9C488BEA0E66A /* RestShareToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestShareToolbar.m; sourceTree = "<group>"; };
 		54590448E145989D76D94170 /* JFTOWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOWorkout.m; sourceTree = "<group>"; };
 		5459044A9A11131A0C5AD182 /* 16-line-chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-line-chart@2x.png"; sourceTree = "<group>"; };
 		5459044AC302A12820103972 /* SetHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetHelper.m; sourceTree = "<group>"; };
@@ -1175,7 +1175,7 @@
 		54590CA6F4BCD8026D948694 /* JWorkoutLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWorkoutLog.m; sourceTree = "<group>"; };
 		54590CA84515BDC8B6BA7FCF /* AppTimedOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTimedOutViewController.m; sourceTree = "<group>"; };
 		54590CAA2D8F49C67D02F4C2 /* FTOCustomAssistanceLiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomAssistanceLiftViewController.m; sourceTree = "<group>"; };
-		54590CB819AB10B6B146CE41 /* RestToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestToolbar.h; sourceTree = "<group>"; };
+		54590CB819AB10B6B146CE41 /* RestShareToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestShareToolbar.h; sourceTree = "<group>"; };
 		54590CB81D8DBECEF0729166 /* FTOWorkoutLogAmrapDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutLogAmrapDataSource.m; sourceTree = "<group>"; };
 		54590CC3FE703B3884C52DD6 /* FTOCycleAdjustorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCycleAdjustorTests.h; sourceTree = "<group>"; };
 		54590CC7451B01E905F2177D /* Migrate4to5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate4to5.h; sourceTree = "<group>"; };
@@ -2578,9 +2578,9 @@
 			children = (
 				545903FE6588DF2DDD91B832 /* WeightRounder.m */,
 				54590C7688769A16B1F149ED /* WeightRounder.h */,
-				5459044898A9C488BEA0E66A /* RestToolbar.m */,
-				54590CB819AB10B6B146CE41 /* RestToolbar.h */,
-				545901311F4CED86E6B11617 /* RestToolbar.xib */,
+				5459044898A9C488BEA0E66A /* RestShareToolbar.m */,
+				54590CB819AB10B6B146CE41 /* RestShareToolbar.h */,
+				545901311F4CED86E6B11617 /* RestShareToolbar.xib */,
 				545909184C2902745AA20E74 /* IndividualLiftViewController.m */,
 				54590025A52D323A4F31DC5F /* IndividualLiftViewController.h */,
 				5459095D50E1B1F0F730750D /* ShareDelegate.h */,
@@ -3465,7 +3465,7 @@
 				54590469ED5236A7897CF570 /* FTOCustomAssistanceWorkoutSetCell.xib in Resources */,
 				5459055A058B579223DE6B38 /* SVLiftSelectorCell.xib in Resources */,
 				5459096D24B295FA0C6B0755 /* SVOneRepTestCell.xib in Resources */,
-				54590E5A4AEC1DFB49269C72 /* RestToolbar.xib in Resources */,
+				54590E5A4AEC1DFB49269C72 /* RestShareToolbar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3892,7 +3892,7 @@
 				545909AC866AE270E53C4E94 /* TestSaveViewController.m in Sources */,
 				54590E5C9858D4D913158736 /* BLKeyValueStore.m in Sources */,
 				54590672D5891E8A3EDE8539 /* Migrate5to6.m in Sources */,
-				54590624A763F2636EF2CDE5 /* RestToolbar.m in Sources */,
+				54590624A763F2636EF2CDE5 /* RestShareToolbar.m in Sources */,
 				54590A5DE66663687E752864 /* IndividualLiftViewController.m in Sources */,
 				54590FA0E00384511C486717 /* JFTOFirstSetLast.m in Sources */,
 				5459050B4112A89250747087 /* SSEditSetForm.m in Sources */,

@@ -1,9 +1,9 @@
-#import "RestToolbar.h"
+#import "RestShareToolbar.h"
 #import "BLTimer.h"
 #import "WorkoutSharer.h"
 #import "ShareDelegate.h"
 
-@implementation RestToolbar
+@implementation RestShareToolbar
 
 - (void)awakeFromNib {
     [self.shareButton addTarget:self action:@selector(showShareSheet) forControlEvents:UIControlEventTouchUpInside];

@@ -14,7 +14,6 @@
 #import "JSSWorkout.h"
 #import "JSSState.h"
 #import "JWorkout.h"
-#import "RestToolbar.h"
 #import "SSEditSetForm.h"
 #import "SetChange.h"
 

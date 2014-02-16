@@ -2,7 +2,7 @@
 
 @protocol ShareDelegate;
 
-@interface RestToolbar : CTCustomTableViewCell <UIActionSheetDelegate> {
+@interface RestShareToolbar : CTCustomTableViewCell <UIActionSheetDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UIButton *timerButton;
 

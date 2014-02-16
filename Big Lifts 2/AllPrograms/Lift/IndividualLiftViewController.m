@@ -1,5 +1,5 @@
 #import "IndividualLiftViewController.h"
-#import "RestToolbar.h"
+#import "RestShareToolbar.h"
 #import "BLTimer.h"
 #import "JWorkout.h"
 
@@ -13,11 +13,11 @@
     [self.tableView reloadRowsAtIndexPaths:@[NSIP(0, 0)] withRowAnimation:UITableViewRowAnimationNone];
 }
 
-- (RestToolbar *)restToolbar:(UITableView *)tableView {
-    RestToolbar *toolbar = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(RestToolbar.class)];
+- (RestShareToolbar *)restToolbar:(UITableView *)tableView {
+    RestShareToolbar *toolbar = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(RestShareToolbar.class)];
 
     if (!toolbar) {
-        toolbar = [RestToolbar create];
+        toolbar = [RestShareToolbar create];
     }
 
     [toolbar updateTime];

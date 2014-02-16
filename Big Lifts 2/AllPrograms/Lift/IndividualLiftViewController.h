@@ -2,9 +2,9 @@
 #import "BLTableViewController.h"
 #import "ShareDelegate.h"
 
-@class RestToolbar;
+@class RestShareToolbar;
 
 @interface IndividualLiftViewController : BLTableViewController <UITableViewDelegate, TimerObserver, ShareDelegate> {
 }
-- (RestToolbar *)restToolbar:(UITableView *)tableView;
+- (RestShareToolbar *)restToolbar:(UITableView *)tableView;
 @end
