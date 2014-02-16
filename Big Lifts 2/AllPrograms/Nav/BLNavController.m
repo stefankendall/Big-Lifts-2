@@ -33,7 +33,6 @@
     NSMutableDictionary *tagViewMapping = [[self specificTagMapping] mutableCopy];
     tagViewMapping[@2] = @"barLoadingNav";
     tagViewMapping[@4] = @"settingsViewController";
-    tagViewMapping[@9] = @"likeNav";
     tagViewMapping[@10] = @"oneRepNav";
 
     if ([cell tag] == 6) {
@@ -41,6 +40,9 @@
         [[self.viewDeckController navigationController] popViewControllerAnimated:YES];
     } else if ([cell tag] == 8) {
         [self presentFeedbackEmail];
+    } else if ([cell tag] == 9) {
+        NSString *rateUrl = @"itms-apps://itunes.apple.com/app/id661503150";
+        [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:rateUrl]];
     } else {
         NSString *storyBoardId = [tagViewMapping objectForKey:[NSNumber numberWithInteger:[cell tag]]];
         [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:storyBoardId]];
