@@ -3,7 +3,6 @@
 #import "SJIndividualLiftViewController.h"
 #import "JSJWorkout.h"
 #import "JSJWorkoutStore.h"
-#import "RateDialog.h"
 
 @interface SJLiftViewController()
 
@@ -14,8 +13,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.rateDialog = [RateDialog new];
-    [self.rateDialog show];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
