@@ -17,7 +17,6 @@
 #import "JSetLog.h"
 #import "JWorkout.h"
 #import "BLTimer.h"
-#import "WorkoutSharer.h"
 
 @implementation FTOLiftWorkoutViewController
 
@@ -136,26 +135,8 @@
     }
 
     [cell.timerButton addTarget:self action:@selector(goToTimer) forControlEvents:UIControlEventTouchUpInside];
-    [cell.shareButton addTarget:self action:@selector(showShareSheet) forControlEvents:UIControlEventTouchUpInside];
+    [cell setShareDelegate:self];
     return cell;
-}
-
-- (void)showShareSheet {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                         destructiveButtonTitle:nil
-                                              otherButtonTitles:@"Twitter", @"Facebook", nil];
-    [sheet showInView:self.view];
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == actionSheet.firstOtherButtonIndex) {
-        [[WorkoutSharer new] shareOnTwitter:@[self.ftoWorkout.workout] withController:self];
-    }
-    else if (buttonIndex == (actionSheet.firstOtherButtonIndex + 1)){
-        [[WorkoutSharer new] shareOnFacebook:@[self.ftoWorkout.workout] withController:self];
-    }
 }
 
 - (void)goToTimer {
@@ -357,6 +338,10 @@
         assistanceSection = -1;
     }
     return assistanceSection;
+}
+
+- (NSArray *)getSharedWorkout {
+    return @[self.ftoWorkout.workout];
 }
 
 @end

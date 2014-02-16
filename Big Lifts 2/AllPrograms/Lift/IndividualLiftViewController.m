@@ -26,9 +26,8 @@
     return toolbar;
 }
 
-- (JWorkout *)getSharedWorkout {
+- (NSArray *)getSharedWorkout {
     [NSException raise:@"Must implement" format:@""];
 }
-
 
 @end

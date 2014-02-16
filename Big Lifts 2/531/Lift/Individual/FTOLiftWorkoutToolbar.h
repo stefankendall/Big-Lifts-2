@@ -1,9 +1,7 @@
 #import "CTCustomTableViewCell.h"
+#import "RestShareToolbar.h"
 
-@interface FTOLiftWorkoutToolbar : CTCustomTableViewCell
+@interface FTOLiftWorkoutToolbar : RestShareToolbar
 {}
-@property (weak, nonatomic) IBOutlet UIButton *timerButton;
-@property (weak, nonatomic) IBOutlet UIButton *shareButton;
-
 @property (weak, nonatomic) IBOutlet UIButton *repsToBeat;
 @end
