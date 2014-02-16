@@ -6,7 +6,6 @@
 #import "JSSWorkout.h"
 #import "SSLiftToolbarCell.h"
 #import "JSSState.h"
-#import "RateDialog.h"
 
 @implementation SSLiftViewController
 
@@ -20,9 +19,6 @@
     }
 
     [self switchWorkout];
-
-    self.rateDialog = [RateDialog new];
-    [self.rateDialog show];
 }
 
 - (void)switchWorkout {
