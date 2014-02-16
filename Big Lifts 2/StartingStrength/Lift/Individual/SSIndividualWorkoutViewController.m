@@ -196,8 +196,8 @@
     data.weight = weight;
 }
 
-- (JWorkout *)getSharedWorkout {
-    return nil;
+- (NSArray *)getSharedWorkout {
+    return self.ssWorkout.workouts;
 }
 
 

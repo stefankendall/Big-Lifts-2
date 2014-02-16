@@ -122,8 +122,8 @@
     [self performSegueWithIdentifier:@"sjGoToTimer" sender:self];
 }
 
-- (JWorkout *)getSharedWorkout {
-    return self.sjWorkout.workout;
+- (NSArray *)getSharedWorkout {
+    return @[self.sjWorkout.workout];
 }
 
 @end

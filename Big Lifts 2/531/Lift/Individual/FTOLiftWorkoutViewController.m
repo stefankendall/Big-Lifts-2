@@ -151,10 +151,10 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == actionSheet.firstOtherButtonIndex) {
-        [[WorkoutSharer new] shareOnTwitter:self.ftoWorkout.workout withController:self];
+        [[WorkoutSharer new] shareOnTwitter:@[self.ftoWorkout.workout] withController:self];
     }
     else if (buttonIndex == (actionSheet.firstOtherButtonIndex + 1)){
-        [[WorkoutSharer new] shareOnFacebook:self.ftoWorkout.workout withController:self];
+        [[WorkoutSharer new] shareOnFacebook:@[self.ftoWorkout.workout] withController:self];
     }
 }
 

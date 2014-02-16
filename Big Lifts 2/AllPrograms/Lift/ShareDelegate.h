@@ -3,5 +3,5 @@
 @class JWorkout;
 
 @protocol ShareDelegate <NSObject>
-- (JWorkout *)getSharedWorkout;
+- (NSArray *)getSharedWorkout;
 @end

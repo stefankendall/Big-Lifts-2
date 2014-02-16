@@ -17,7 +17,8 @@
             "5x 115lbs\n"
             "5x 135lbs\n"
             "5+ 155lbs\n";
-    NSString *summary = [[WorkoutSharer new] workoutSummary:ftoWorkout.workout];STAssertEqualObjects(summary, expected, @"");
+    NSString *summary = [[WorkoutSharer new] workoutSummary:@[ftoWorkout.workout]];
+    STAssertEqualObjects(summary, expected, @"");
     STAssertTrue((int) summary.length < 140, @"");
 }
 
