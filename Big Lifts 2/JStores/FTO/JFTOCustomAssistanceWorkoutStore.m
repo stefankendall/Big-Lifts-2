@@ -46,4 +46,8 @@
     }
 }
 
+- (void)copyTemplate:(NSString *)variant {
+
+}
+
 @end

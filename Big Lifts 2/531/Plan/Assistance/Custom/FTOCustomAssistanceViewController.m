@@ -6,27 +6,56 @@
 #import "JFTOCustomAssistanceWorkoutStore.h"
 #import "JFTOAssistanceStore.h"
 #import "JFTOAssistance.h"
+#import "FTOCustomToolbar.h"
 
 @implementation FTOCustomAssistanceViewController
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Assistance for lift";
+    if (section == 0) {
+        return @"";
+    }
+    else {
+        return @"Assistance for lift";
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[JFTOLiftStore instance] count];
+    if (section == 0) {
+        return 1;
+    }
+    else {
+        return [[JFTOLiftStore instance] count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomAssistanceLiftGroupCell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CustomAssistanceLiftGroupCell"];
+    if (indexPath.section == 0) {
+        FTOCustomToolbar *toolbar = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomToolbar.class)];
+        if (!toolbar) {
+            toolbar = [FTOCustomToolbar create];
+        }
+        [toolbar.templateButton addTarget:self action:@selector(copyTemplate) forControlEvents:UIControlEventTouchUpInside];
+        return toolbar;
     }
-    JFTOLift *lift = [[JFTOLiftStore instance] atIndex:indexPath.row];
-    [cell.textLabel setText:lift.name];
-    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CustomAssistanceLiftGroupCell"];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CustomAssistanceLiftGroupCell"];
+        }
+        JFTOLift *lift = [[JFTOLiftStore instance] atIndex:indexPath.row];
+        [cell.textLabel setText:lift.name];
+        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 
-    return cell;
+        return cell;
+    }
+}
+
+- (void)copyTemplate {
+    [self performSegueWithIdentifier:@"ftoCustomAssistanceCopyTemplate" sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
