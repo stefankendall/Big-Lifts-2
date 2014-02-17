@@ -854,7 +854,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="35"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Build your own." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7VP-8g-rCP">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build your own." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7VP-8g-rCP">
                                                     <rect key="frame" x="171" y="9" width="116" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -864,16 +864,20 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4h-Ll-cDS">
                                                     <rect key="frame" x="20" y="7" width="62" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="62" id="zy5-NE-MM5"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="w4h-Ll-cDS" firstAttribute="leading" secondItem="Jn1-WB-mDC" secondAttribute="leading" constant="20" symbolic="YES" id="Gui-Ji-SJC"/>
-                                                <constraint firstAttribute="centerY" secondItem="w4h-Ll-cDS" secondAttribute="centerY" id="P5y-XX-ouV"/>
-                                                <constraint firstItem="7VP-8g-rCP" firstAttribute="centerY" secondItem="Jn1-WB-mDC" secondAttribute="centerY" id="Z7x-OB-y1e"/>
-                                                <constraint firstItem="7VP-8g-rCP" firstAttribute="leading" secondItem="w4h-Ll-cDS" secondAttribute="trailing" constant="89" id="a09-XK-oNm"/>
+                                                <constraint firstItem="w4h-Ll-cDS" firstAttribute="centerY" secondItem="Jn1-WB-mDC" secondAttribute="centerY" id="12q-ic-nNg"/>
+                                                <constraint firstItem="7VP-8g-rCP" firstAttribute="leading" secondItem="w4h-Ll-cDS" secondAttribute="trailing" constant="89" id="Hff-er-5FL"/>
+                                                <constraint firstItem="w4h-Ll-cDS" firstAttribute="centerY" secondItem="7VP-8g-rCP" secondAttribute="centerY" id="VZ7-Yu-qvk"/>
+                                                <constraint firstAttribute="trailing" secondItem="7VP-8g-rCP" secondAttribute="trailing" id="nSI-AY-c2u"/>
+                                                <constraint firstItem="w4h-Ll-cDS" firstAttribute="leading" secondItem="Jn1-WB-mDC" secondAttribute="leading" constant="20" symbolic="YES" id="opK-2D-yEP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
