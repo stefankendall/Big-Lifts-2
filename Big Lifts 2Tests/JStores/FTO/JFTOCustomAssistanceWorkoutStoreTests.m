@@ -6,6 +6,7 @@
 #import "JWorkout.h"
 #import "JSetStore.h"
 #import "JFTOAssistance.h"
+#import "JFTOSet.h"
 
 @implementation JFTOCustomAssistanceWorkoutStoreTests
 
@@ -35,7 +36,13 @@
 }
 
 - (void)testCanCopyBbb {
-    STFail(@"Write test");
+    [[JFTOCustomAssistanceWorkoutStore instance] copyTemplate:FTO_ASSISTANCE_BORING_BUT_BIG];
+    JFTOCustomAssistanceWorkout *customAssistanceWorkout = [[JFTOCustomAssistanceWorkoutStore instance] first];
+    STAssertEquals((int) [[customAssistanceWorkout.workout sets] count], 5, @"");
+    JSet *firstSet = customAssistanceWorkout.workout.sets[0];
+    STAssertTrue([firstSet isKindOfClass:JFTOSet.class], @"");
+    STAssertEquals([firstSet.reps intValue], 10, @"");
+    STAssertEqualObjects(firstSet.percentage, N(50), @"");
 }
 
 @end

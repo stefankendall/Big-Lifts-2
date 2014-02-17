@@ -4,6 +4,7 @@
 #import "JFTOBoringButBigStore.h"
 #import "JFTOWorkout.h"
 #import "JFTOWorkoutStore.h"
+#import "JFTOLift.h"
 #import "JSet.h"
 #import "JWorkout.h"
 #import "JFTOSetStore.h"

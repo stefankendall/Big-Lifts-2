@@ -241,6 +241,7 @@
 		545907C7E0A9E01D7AEF7867 /* RowUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A7477987ACB6EA4DEFD /* RowUIButton.m */; };
 		545907D250AA43D0A1CE65B1 /* FTOPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F5DDE3F5D77E7CFB815 /* FTOPlanViewController.m */; };
 		545907D47BDD6CCE6873AD23 /* JFTOBoringButBigLiftStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A09E8FB1C924CC7E33E /* JFTOBoringButBigLiftStoreTests.m */; };
+		545907DED5AB022FCFC8F5CC /* JFTOBoringButBigAssistanceCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E0A2DBC18E538A72103 /* JFTOBoringButBigAssistanceCopy.m */; };
 		545907EAE524014C6180987B /* SSIndividualWorkoutViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909043AECDB6143C79453 /* SSIndividualWorkoutViewControllerTests.m */; };
 		545907F07682520BB284470D /* WorkoutLogTableDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459040EF638F25CFBE88FCD /* WorkoutLogTableDataSourceTests.m */; };
 		545907FCCC39ABD37C39CD42 /* CombinedSetWorkoutLogTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459091F80F325888C60EB26 /* CombinedSetWorkoutLogTableDataSource.m */; };
@@ -1083,6 +1084,7 @@
 		54590AC609E6A7AC874C1842 /* FTOAssistanceCopyTemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOAssistanceCopyTemplateViewController.h; sourceTree = "<group>"; };
 		54590AD2FF1FE2DF679FAC30 /* JFTOSSTLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOSSTLiftStore.h; sourceTree = "<group>"; };
 		54590AD308D74EB22A0FBDD6 /* SJWorkoutSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SJWorkoutSummaryCell.xib; sourceTree = "<group>"; };
+		54590AD40B21E626458E948C /* JFTOBoringButBigAssistanceCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBigAssistanceCopy.h; sourceTree = "<group>"; };
 		54590AD76F38B071DF00DB17 /* JSSWarmupGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSWarmupGenerator.h; sourceTree = "<group>"; };
 		54590ADCD5DF2BB23A9B011E /* JFTOLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOLiftStore.h; sourceTree = "<group>"; };
 		54590AE47814E9E2F97B0E63 /* BLJStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLJStoreManager.m; sourceTree = "<group>"; };
@@ -1241,6 +1243,7 @@
 		54590DEE3D053C7D0F0C3E6E /* JFTOBoringButBig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBig.h; sourceTree = "<group>"; };
 		54590DEED1DC5A9D332A01AC /* FTOTriumvirateSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTriumvirateSetupViewController.m; sourceTree = "<group>"; };
 		54590DFF31A7711498C0CECC /* JSVWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSVWorkout.h; sourceTree = "<group>"; };
+		54590E0A2DBC18E538A72103 /* JFTOBoringButBigAssistanceCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOBoringButBigAssistanceCopy.m; sourceTree = "<group>"; };
 		54590E1638159FD4F8D503E1 /* AddPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPurchaseViewController.h; sourceTree = "<group>"; };
 		54590E2761923E886682DE01 /* SetChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetChange.m; sourceTree = "<group>"; };
 		54590E2837055971410C643F /* SVOneRepTestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SVOneRepTestCell.xib; sourceTree = "<group>"; };
@@ -3199,6 +3202,8 @@
 				54590DD02EEC2DE622EB39D3 /* JFTONoneAssistanceCopy.m */,
 				545907383358FFA44DA1CD0F /* JFTONoneAssistanceCopy.h */,
 				5459023B7E445DC697F22DE3 /* AssistanceCopy.h */,
+				54590E0A2DBC18E538A72103 /* JFTOBoringButBigAssistanceCopy.m */,
+				54590AD40B21E626458E948C /* JFTOBoringButBigAssistanceCopy.h */,
 			);
 			path = Copy;
 			sourceTree = "<group>";
@@ -3937,6 +3942,7 @@
 				545902C369EE86633D89DCDF /* StringHelper.m in Sources */,
 				54590EFD27ECDFF02E8AE5D1 /* FTOAssistanceCopyTemplateViewController.m in Sources */,
 				545908FC3BA95D310D11FAF8 /* JFTONoneAssistanceCopy.m in Sources */,
+				545907DED5AB022FCFC8F5CC /* JFTOBoringButBigAssistanceCopy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
