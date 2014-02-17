@@ -9,7 +9,7 @@
 - (void)testAddsTriumvirateSets {
     [[JFTOTriumvirateAssistance new] setup];
     JFTOWorkout *workout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals((int) [workout.workout.orderedSets count], 16, @"");
+    STAssertEquals((int) [workout.workout.sets count], 16, @"");
 }
 
 @end

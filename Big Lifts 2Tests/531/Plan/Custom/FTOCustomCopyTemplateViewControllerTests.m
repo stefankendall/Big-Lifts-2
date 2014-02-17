@@ -15,7 +15,7 @@
     int pyramidRow = [[controller purchasedOrderedVariants] indexOfObject:FTO_VARIANT_PYRAMID];
     [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:pyramidRow inSection:0]];
     JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals((int) customWorkout.workout.orderedSets.count, 8, @"");
+    STAssertEquals((int) customWorkout.workout.sets.count, 8, @"");
 }
 
 - (void)testDoesNotShowAdvancedWithoutIap {

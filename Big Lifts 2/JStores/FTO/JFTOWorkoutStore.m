@@ -45,7 +45,7 @@
 
 - (void)removeWarmup {
     [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *ftoWorkout) {
-        NSArray *warmups = [ftoWorkout.workout.orderedSets select:^BOOL(JSet *set) {
+        NSArray *warmups = [ftoWorkout.workout.sets select:^BOOL(JSet *set) {
             return set.warmup;
         }];
         [ftoWorkout.workout removeSets:warmups];
@@ -57,7 +57,7 @@
         NSArray *weekWorkouts = [self findAllWhere:@"week" value:week];
         [lifts each:^(JLift *lift) {
             JFTOWorkout *matchingWorkout = [weekWorkouts detect:^BOOL(JFTOWorkout *ftoWorkout) {
-                return [[ftoWorkout.workout.orderedSets firstObject] lift] == lift;
+                return [[ftoWorkout.workout.sets firstObject] lift] == lift;
             }];
             if (matchingWorkout) {
                 matchingWorkout.done = YES;
@@ -73,7 +73,7 @@
             if (!doneLiftsByWeek[ftoWorkout.week]) {
                 doneLiftsByWeek[ftoWorkout.week] = [@[] mutableCopy];
             }
-            JLift *lift = [[ftoWorkout.workout.orderedSets firstObject] lift];
+            JLift *lift = [[ftoWorkout.workout.sets firstObject] lift];
             if (lift) {
                 [doneLiftsByWeek[ftoWorkout.week] addObject:lift];
             }
@@ -160,8 +160,8 @@
 - (void)reorderWorkoutsToLifts {
     NSArray *workouts = [self findAll];
     for (JFTOWorkout *workout in workouts) {
-        if ([workout.workout.orderedSets count] > 0) {
-            JLift *lift = [workout.workout.orderedSets[0] lift];
+        if ([workout.workout.sets count] > 0) {
+            JLift *lift = [workout.workout.sets[0] lift];
             workout.order = lift.order;
         }
     }

@@ -11,7 +11,7 @@
     if ([workout.sets count] == 0) {
         return;
     }
-    JSet *set = workout.orderedSets[0];
+    JSet *set = workout.sets[0];
     NSDictionary *warmups = @{
             @"Squat" : @[
                     [[JSetStore instance] createWarmupWithLift:set.lift percentage:N(0)  reps:5],
@@ -56,7 +56,7 @@
 }
 
 - (void)removeWarmup:(JWorkout *)workout {
-    NSArray *warmupSets = [workout.orderedSets select:(BOOL (^)(id)) ^(JSet *set) {
+    NSArray *warmupSets = [workout.sets select:(BOOL (^)(id)) ^(JSet *set) {
         return set.warmup;
     }];
     [workout removeSets:warmupSets];

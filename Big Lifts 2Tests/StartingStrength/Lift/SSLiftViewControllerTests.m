@@ -51,7 +51,7 @@
     [controller switchWorkout];
     STAssertEqualObjects(controller.ssWorkout.name, @"A", @"");
     JWorkout *lastWorkout = controller.ssWorkout.workouts[2];
-    JSet *set = lastWorkout.orderedSets[0];
+    JSet *set = lastWorkout.sets[0];
     STAssertEqualObjects(set.lift.name, @"Power Clean", @"");
 }
 

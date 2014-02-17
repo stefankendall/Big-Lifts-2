@@ -16,7 +16,7 @@
         if (cell == nil) {
             cell = [SetLogCell create];
         }
-        JSetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
+        JSetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.sets];
         if (!logToShow) {
             logToShow = [[self.workoutLog workSets] lastObject];
         }

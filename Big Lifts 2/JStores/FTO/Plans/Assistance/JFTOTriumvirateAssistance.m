@@ -12,14 +12,14 @@
 
 - (void)setup {
     for (JFTOWorkout *workout in [[JFTOWorkoutStore instance] findAll]) {
-        if ([workout.workout.orderedSets count] == 0) {
+        if ([workout.workout.sets count] == 0) {
             continue;
         }
 
-        JFTOLift *mainLift = [workout.workout.orderedSets[0] lift];
+        JFTOLift *mainLift = [workout.workout.sets[0] lift];
         JFTOTriumvirate *assistance = [[JFTOTriumvirateStore instance] find:@"mainLift" value:mainLift];
         if (assistance) {
-            for (JSet *set in assistance.workout.orderedSets) {
+            for (JSet *set in assistance.workout.sets) {
                 [workout.workout addSet:[[JSetStore instance] createFromSet:set]];
             }
         }

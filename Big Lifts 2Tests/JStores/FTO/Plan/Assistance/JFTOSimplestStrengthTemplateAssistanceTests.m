@@ -15,8 +15,8 @@
 - (void)testSetsUpWeekPercentages {
     [[JFTOSimplestStrengthTemplateAssistance new] setup];
     JFTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Squat"];
-    STAssertEquals((int)[week1Workout.workout.orderedSets count], 9, @"");
-    JSet *lastSet = week1Workout.workout.orderedSets[8];
+    STAssertEquals((int)[week1Workout.workout.sets count], 9, @"");
+    JSet *lastSet = week1Workout.workout.sets[8];
     STAssertEquals([lastSet.reps intValue], 10, @"");
     STAssertEqualObjects(lastSet.percentage, N(70), @"");
 }
@@ -36,13 +36,13 @@
     [[JFTOSimplestStrengthTemplateAssistance new] setup];
 
     JFTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Front Squat"];
-    STAssertEquals((int)[week1Workout.workout.orderedSets count], 9, @"");
+    STAssertEquals((int)[week1Workout.workout.sets count], 9, @"");
     STAssertEquals([[JFTOSSTLiftStore instance] count], 4, @"");
 }
 
 - (JFTOWorkout *)findWorkout:(int)week withLift:(NSString *)liftName {
     return [[[JFTOWorkoutStore instance] findAll] detect:^BOOL(JFTOWorkout *workout) {
-        return [workout.week intValue] == week && [[workout.workout.orderedSets[0] lift].name isEqualToString:liftName];
+        return [workout.week intValue] == week && [[workout.workout.sets[0] lift].name isEqualToString:liftName];
     }];
 }
 

@@ -16,7 +16,7 @@
     NSMutableDictionary *template = [@{} mutableCopy];
     for (JFTOCustomWorkout *customWorkout in customWorkouts) {
         NSMutableArray *weekLifts = [@[] mutableCopy];
-        [customWorkout.workout.orderedSets each:^(JSet *set) {
+        [customWorkout.workout.sets each:^(JSet *set) {
             [weekLifts addObject:
                     [JSetData dataWithReps:[set.reps intValue] percentage:set.percentage lift:lift amrap:set.amrap warmup:set.warmup]];
         }];

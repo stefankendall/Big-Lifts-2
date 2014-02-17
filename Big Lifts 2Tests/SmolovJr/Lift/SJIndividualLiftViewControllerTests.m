@@ -18,7 +18,7 @@
     NSArray *smolovLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov Jr"];
     STAssertEquals((int) [smolovLogs count], 1, @"");
     JWorkoutLog *workoutLog = smolovLogs[0];
-    STAssertEquals((int) [workoutLog.orderedSets count], 6, @"");
+    STAssertEquals((int) [workoutLog.sets count], 6, @"");
 }
 
 - (void)testShowsPlates {

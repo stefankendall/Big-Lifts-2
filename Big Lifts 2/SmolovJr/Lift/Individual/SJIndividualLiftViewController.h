@@ -3,7 +3,7 @@
 
 @class JSJWorkout;
 
-@interface SJIndividualLiftViewController : IndividualLiftViewController
+@interface SJIndividualLiftViewController : IndividualLiftViewController <SetWeightDelegate>
 
 @property(nonatomic, strong) JSJWorkout *sjWorkout;
 

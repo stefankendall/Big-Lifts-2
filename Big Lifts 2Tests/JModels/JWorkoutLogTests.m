@@ -63,11 +63,11 @@
     JWorkoutLog *syncedLog = [[JWorkoutLogStore instance] first];
     STAssertEquals((int) [syncedLog.sets count], 2, @"");
 
-    JSetLog *syncedLog1 = syncedLog.orderedSets[0];
+    JSetLog *syncedLog1 = syncedLog.sets[0];
     STAssertEqualObjects(syncedLog1.name, @"Bench", @"");
     STAssertEqualObjects(syncedLog1.weight, N(100), @"");
 
-    JSetLog *syncedLog2 = syncedLog.orderedSets[1];
+    JSetLog *syncedLog2 = syncedLog.sets[1];
     STAssertEqualObjects(syncedLog2.name, @"Bench", @"");
     STAssertEqualObjects(syncedLog2.weight, N(120), @"");
 }

@@ -9,12 +9,8 @@
     return @[@"sets"];
 }
 
-- (NSArray *)orderedSets {
-    return self.sets;
-}
-
 - (NSArray *)workSets {
-    return [self.orderedSets select:^BOOL(JSetLog *setLog) {
+    return [self.sets select:^BOOL(JSetLog *setLog) {
         return !setLog.warmup && !setLog.assistance;
     }];
 }

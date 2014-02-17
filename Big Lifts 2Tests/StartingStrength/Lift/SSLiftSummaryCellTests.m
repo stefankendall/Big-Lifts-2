@@ -18,7 +18,7 @@
     JSettings *settings = [[JSettingsStore instance] first];
     settings.units = @"kg";
 
-    JSet *set = [((JWorkout *) workoutA.workouts[0]).orderedSets lastObject];
+    JSet *set = [((JWorkout *) workoutA.workouts[0]).sets lastObject];
     set.percentage = N(100);
     set.lift.weight = N(200.5);
     [cell setWorkout:workoutA.workouts[0]];
@@ -32,7 +32,7 @@
     SSLiftSummaryCell *cell = [SSLiftSummaryCell create];
     JSSWorkout *workoutA = [[JSSWorkoutStore instance] first];
     JWorkout *workout = workoutA.workouts[0];
-    JSet *set = [workout.orderedSets lastObject];
+    JSet *set = [workout.sets lastObject];
     set.reps = @-1;
     [cell setWorkout:workout];
 

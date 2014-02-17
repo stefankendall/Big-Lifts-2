@@ -27,7 +27,7 @@
 
 - (int)getRowCount:(NSIndexPath *)path {
     JWorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
-    return [workoutLog.orderedSets count];
+    return [workoutLog.sets count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

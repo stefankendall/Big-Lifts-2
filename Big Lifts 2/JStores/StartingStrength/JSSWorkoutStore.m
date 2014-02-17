@@ -191,7 +191,7 @@
 
 - (JWorkout *)createWorkout:(JSSLift *)lift withSets:(int)sets withReps:(int)reps amrap:(BOOL)amrap {
     JWorkout *workout = [self createWorkout:lift withSets:sets withReps:reps];
-    [workout.orderedSets each:^(JSet *set) {
+    [workout.sets each:^(JSet *set) {
         set.amrap = amrap;
     }];
     return workout;
@@ -200,7 +200,7 @@
 - (void)incrementWeights:(JSSWorkout *)ssWorkout {
     for (JWorkout *workout in ssWorkout.workouts) {
         if ([workout.sets count] > 0) {
-            JSet *firstSet = workout.orderedSets[0];
+            JSet *firstSet = workout.sets[0];
             JSSLift *lift = (JSSLift *) firstSet.lift;
             if (lift.increment) {
                 lift.weight = [lift.weight decimalNumberByAdding:lift.increment withBehavior:DecimalNumberHandlers.noRaise];
@@ -243,16 +243,16 @@
 - (NSArray *)filterToAlternateBenchOrPress:(NSArray *)ssWorkouts {
     JSSState *state = [[JSSStateStore instance] first];
     JWorkout *workout = [state.lastWorkout.workouts detect:^BOOL(JWorkout *workout1) {
-        JSet *lastSet = [workout1.orderedSets lastObject];
+        JSet *lastSet = [workout1.sets lastObject];
         return [lastSet.lift.name isEqualToString:@"Bench"] ||
                 [lastSet.lift.name isEqualToString:@"Press"];
     }];
-    JSet *set = [workout.orderedSets lastObject];
+    JSet *set = [workout.sets lastObject];
     NSString *nextLift = [set.lift.name isEqualToString:@"Bench"] ? @"Press" : @"Bench";
 
     return [ssWorkouts select:^BOOL(JSSWorkout *ssWorkout) {
         return [ssWorkout.workouts detect:^BOOL(JWorkout *workout1) {
-            JSet *set1 = [workout1.orderedSets lastObject];
+            JSet *set1 = [workout1.sets lastObject];
             return [set1.lift.name isEqualToString:nextLift];
         }] != nil;
     }];

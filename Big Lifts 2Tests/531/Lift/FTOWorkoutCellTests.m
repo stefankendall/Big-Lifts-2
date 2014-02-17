@@ -11,7 +11,7 @@
 - (void)testSetSetSetsLabels {
     FTOWorkoutCell *cell = [FTOWorkoutCell create];
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] first];
-    JSet *set = ftoWorkout.workout.orderedSets[0];
+    JSet *set = ftoWorkout.workout.sets[0];
     set.lift.weight = [NSDecimalNumber decimalNumberWithString:@"200"];
     set.percentage = [NSDecimalNumber decimalNumberWithString:@"60"];
     [cell setSet:set];
@@ -23,7 +23,7 @@
 - (void)testAdjustForAmrap {
     FTOWorkoutCell *cell = [FTOWorkoutCell create];
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] first];
-    JFTOSet *set = ftoWorkout.workout.orderedSets[0];
+    JFTOSet *set = ftoWorkout.workout.sets[0];
     set.amrap = YES;
     [cell setSet:set];
     STAssertEqualObjects([[cell.setCell repsLabel] text], @"5+", @"");

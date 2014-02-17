@@ -25,14 +25,14 @@
     FTOCustomWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomWorkoutViewController"];
     controller.customWorkout = [[JFTOCustomWorkoutStore instance] findAllWhere:@"week" value:@2][0];
     [controller addSet];
-    STAssertEquals((int) [controller.customWorkout.workout.orderedSets count], 7, @"");
+    STAssertEquals((int) [controller.customWorkout.workout.sets count], 7, @"");
 }
 
 - (void)testCanDeleteSets {
     FTOCustomWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomWorkoutViewController"];
     controller.customWorkout = [[JFTOCustomWorkoutStore instance] findAllWhere:@"week" value:@2][0];
     [controller tableView:controller.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:NSIP(0, 1)];
-    STAssertEquals((int) [controller.customWorkout.workout.orderedSets count], 5, @"");
+    STAssertEquals((int) [controller.customWorkout.workout.sets count], 5, @"");
 }
 
 - (void)testSetsIncrementSwitch {

@@ -18,8 +18,6 @@
 
 - (void)addSets:(NSArray *)newSets;
 
-- (NSArray *) orderedSets;
-
 - (JLift *)firstLift;
 
 - (void)removeSet:(JSet *)set;

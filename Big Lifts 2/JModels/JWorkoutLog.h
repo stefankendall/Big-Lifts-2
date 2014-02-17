@@ -12,8 +12,6 @@
 
 - (NSArray *)workSets;
 
-- (NSArray *)orderedSets;
-
 - (JSetLog *)bestSet;
 
 - (void)addSet:(JSetLog *)log;

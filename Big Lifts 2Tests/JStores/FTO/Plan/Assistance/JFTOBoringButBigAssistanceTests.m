@@ -18,7 +18,7 @@
     [[JFTOBoringButBigAssistance new] setup];
 
     [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *workout) {
-        STAssertFalse([[workout.workout.orderedSets lastObject] amrap], @"");
+        STAssertFalse([[workout.workout.sets lastObject] amrap], @"");
     }];
 }
 
@@ -32,13 +32,13 @@
 - (void)testAddsBoringButBigSets {
     [[JFTOBoringButBigAssistance new] setup];
     JFTOWorkout *workoutInWeek1 = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals((int) [workoutInWeek1.workout.orderedSets count], 11, @"");
-    JSet *boringSet = workoutInWeek1.workout.orderedSets[6];
+    STAssertEquals((int) [workoutInWeek1.workout.sets count], 11, @"");
+    JSet *boringSet = workoutInWeek1.workout.sets[6];
     STAssertEqualObjects(boringSet.percentage, N(50), @"");
     STAssertEqualObjects(boringSet.reps, @10, @"");
 
     JFTOWorkout *workoutInWeek4 = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@4][0];
-    STAssertEquals((int) [workoutInWeek4.workout.orderedSets count], 6, @"");
+    STAssertEquals((int) [workoutInWeek4.workout.sets count], 6, @"");
 }
 
 - (void)testCanUseDifferentLifts {
@@ -48,7 +48,7 @@
     [[JFTOBoringButBigAssistance new] setup];
 
     JFTOWorkout *workoutInWeek1 = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    JSet *boringSet = workoutInWeek1.workout.orderedSets[6];
+    JSet *boringSet = workoutInWeek1.workout.sets[6];
     STAssertEqualObjects(boringSet.lift, deadlift, @"");
 }
 
@@ -56,7 +56,7 @@
     [[[JFTOBoringButBigStore instance] first] setPercentage:N(60)];
     [[JFTOBoringButBigAssistance new] setup];
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEqualObjects([[ftoWorkout.workout.orderedSets lastObject] percentage], N(60), @"");
+    STAssertEqualObjects([[ftoWorkout.workout.sets lastObject] percentage], N(60), @"");
 }
 
 - (void)testIncrementsBbbPercentageIfChallengeOn {

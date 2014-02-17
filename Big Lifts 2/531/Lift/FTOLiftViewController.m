@@ -45,8 +45,8 @@
     NSUInteger index = (NSUInteger) [indexPath row];
     JFTOWorkout *ftoWorkout = [self getWorkout:week row:index];
 
-    if ([ftoWorkout.workout.orderedSets count] > 0) {
-        JSet *set = ftoWorkout.workout.orderedSets[0];
+    if ([ftoWorkout.workout.sets count] > 0) {
+        JSet *set = ftoWorkout.workout.sets[0];
         [cell.textLabel setText:set.lift.name];
     }
     else {

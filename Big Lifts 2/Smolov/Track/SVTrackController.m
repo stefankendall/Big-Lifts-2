@@ -13,7 +13,7 @@
 
 - (int)getRowCount:(NSIndexPath *)path {
     JWorkoutLog *workoutLog = [self getLog][(NSUInteger) [path row]];
-    return [[[SetLogCombiner new] combineSetLogs:workoutLog.orderedSets] count];
+    return [[[SetLogCombiner new] combineSetLogs:workoutLog.sets] count];
 }
 
 - (UITableViewCell *)getWorkoutLogCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {

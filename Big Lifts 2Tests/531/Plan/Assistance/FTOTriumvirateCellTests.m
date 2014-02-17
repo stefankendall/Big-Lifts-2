@@ -12,7 +12,7 @@
     FTOTriumvirateCell *cell = [FTOTriumvirateCell create];
     JFTOTriumvirate *triumvirateMovement = [[JFTOTriumvirateStore instance] first];
 
-    JSet *set = triumvirateMovement.workout.orderedSets[0];
+    JSet *set = triumvirateMovement.workout.sets[0];
     set.lift.name = @"Dumbbell Bench";
     set.reps = @12;
 

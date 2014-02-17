@@ -20,8 +20,8 @@
     [[JFTOAssistanceStore instance] restore];
 
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][0];
-    STAssertEquals([ftoWorkout.workout.orderedSets count], (NSUInteger) 11, @"");
-    JSet *set = [ftoWorkout.workout.orderedSets lastObject];
+    STAssertEquals([ftoWorkout.workout.sets count], (NSUInteger) 11, @"");
+    JSet *set = [ftoWorkout.workout.sets lastObject];
     STAssertEqualObjects([set percentage], N(60), @"");
 }
 
@@ -30,7 +30,7 @@
     [[FTOCycleAdjustor new] nextCycle];
 
     JFTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    STAssertEqualObjects([ftoWorkout.workout.orderedSets.lastObject percentage], N(50), @"");
+    STAssertEqualObjects([ftoWorkout.workout.sets.lastObject percentage], N(50), @"");
 }
 
 - (void)testThreeMonthChallengeToggled {
@@ -42,7 +42,7 @@
     [[FTOCycleAdjustor new] nextCycle];
 
     JFTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    STAssertEqualObjects([ftoWorkout.workout.orderedSets.lastObject percentage], N(60), @"");
+    STAssertEqualObjects([ftoWorkout.workout.sets.lastObject percentage], N(60), @"");
 }
 
 @end

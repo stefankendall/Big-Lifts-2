@@ -130,7 +130,7 @@
     JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
     JWorkout *workout = ssWorkout.workouts[0];
     self.controller.ssWorkout = ssWorkout;
-    STAssertEquals((int) [self.controller tableView:nil numberOfRowsInSection:1], (int) [workout.orderedSets count], @"");
+    STAssertEquals((int) [self.controller tableView:nil numberOfRowsInSection:1], (int) [workout.sets count], @"");
 }
 
 - (void)testReturnsCorrectNumberOfRowsWithoutWarmup {

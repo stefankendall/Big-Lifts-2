@@ -26,7 +26,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     JFTOTriumvirate *triumvirate = [[JFTOTriumvirateStore instance] atIndex:section];
     NSMutableArray *uniqueLifts = [@[] mutableCopy];
-    [triumvirate.workout.orderedSets each:^(JSet *set) {
+    [triumvirate.workout.sets each:^(JSet *set) {
         if (![uniqueLifts containsObject:set.lift]) {
             [uniqueLifts addObject:set.lift];
         }
@@ -67,7 +67,7 @@
 
 - (NSArray *)uniqueSetsFor:(JWorkout *)workout {
     NSMutableArray *uniques = [@[] mutableCopy];
-    [workout.orderedSets each:^(JSet *set) {
+    [workout.sets each:^(JSet *set) {
         if (![uniques detect:^BOOL(JSet *unique) {
             return unique.lift == set.lift;
         }]) {

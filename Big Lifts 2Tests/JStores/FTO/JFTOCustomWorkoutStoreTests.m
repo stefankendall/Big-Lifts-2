@@ -12,7 +12,7 @@
     STAssertEquals((int)[customWorkouts count], 4, @"");
 
     JFTOCustomWorkout *customWorkout = customWorkouts[0];
-    STAssertEquals((int)[customWorkout.workout.orderedSets count], 6, @"");
+    STAssertEquals((int)[customWorkout.workout.sets count], 6, @"");
 }
 
 - (void)testMarksDeloadAndIncrementWeeksFromVariant {

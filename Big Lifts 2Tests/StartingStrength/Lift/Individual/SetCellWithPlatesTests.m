@@ -13,7 +13,7 @@
 
     JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
     JWorkout *workout = [ssWorkout workouts][0];
-    JSet *set = workout.orderedSets[0];
+    JSet *set = workout.sets[0];
     set.percentage = N(100);
     set.lift.weight = N(300);
     [cell setSet:set];
@@ -26,7 +26,7 @@
 
     JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
     JWorkout *workout = [ssWorkout workouts][0];
-    JSet *set = workout.orderedSets[0];
+    JSet *set = workout.sets[0];
     set.percentage = N(100);
     set.lift.weight = N(45);
     [cell setSet:set];
@@ -39,7 +39,7 @@
 
     JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
     JWorkout *workout = [ssWorkout workouts][0];
-    JSet *set = workout.orderedSets[0];
+    JSet *set = workout.sets[0];
     set.percentage = N(100);
     set.lift.weight = N(200);
     set.lift.usesBar = NO;

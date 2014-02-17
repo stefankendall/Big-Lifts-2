@@ -46,10 +46,10 @@
 
     NSArray *weekData = weeksToData[[NSNumber numberWithInt:week]];
     JFTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAll] detect:^BOOL(JFTOWorkout *workout) {
-        if([workout.workout.orderedSets count] == 0){
+        if([workout.workout.sets count] == 0){
             return false;
         }
-        return [workout.week intValue] == week && [workout.workout.orderedSets[0] lift] == lift;
+        return [workout.week intValue] == week && [workout.workout.sets[0] lift] == lift;
     }];
 
     JFTOSSTLift *sstLift = [[JFTOSSTLiftStore instance] find:@"associatedLift" value:lift];

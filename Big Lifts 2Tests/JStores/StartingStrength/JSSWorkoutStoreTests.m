@@ -36,7 +36,7 @@
 
     JSSWorkout *savedWorkout = [[JSSWorkoutStore instance] atIndex:0];
     JWorkout *workout = savedWorkout.workouts[0];
-    JSSLift *lift = (JSSLift *) ((JSet *) workout.orderedSets[0]).lift;
+    JSSLift *lift = (JSSLift *) ((JSet *) workout.sets[0]).lift;
     STAssertTrue([lift.name isEqualToString:@"Bench"], @"");
 }
 
@@ -52,7 +52,7 @@
     [[JSSWorkoutStore instance] setupVariant:@"Novice"];
     JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] last];
     JWorkout *workout = ssWorkout.workouts[2];
-    JSet *firstSet = workout.orderedSets[0];
+    JSet *firstSet = workout.sets[0];
     STAssertEqualObjects(firstSet.lift.name, @"Deadlift", @"");
 }
 
@@ -80,11 +80,11 @@
     [[JSSWorkoutStore instance] addWarmup];
     JSSWorkout *workoutA = [[JSSWorkoutStore instance] find:@"name" value:@"A"];
     JWorkout *squatWorkout = [workoutA.workouts detect:^BOOL(JWorkout *workout) {
-        JSet *set = workout.orderedSets[0];
+        JSet *set = workout.sets[0];
         return [set.lift.name isEqualToString:@"Squat"];
     }];
 
-    STAssertEquals((int)[squatWorkout.orderedSets count], 8, @"");
+    STAssertEquals((int)[squatWorkout.sets count], 8, @"");
 }
 
 - (void)testActiveWorkoutForPracticalProgramming {

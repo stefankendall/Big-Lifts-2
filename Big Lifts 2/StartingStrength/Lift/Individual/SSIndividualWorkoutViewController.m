@@ -150,7 +150,7 @@
 
 - (JSet *)setForIndexPath:(NSIndexPath *)indexPath {
     JWorkout *workout = [self getCurrentWorkout];
-    JSet *set = [workout.orderedSets objectAtIndex:(NSUInteger) [indexPath row]];
+    JSet *set = [workout.sets objectAtIndex:(NSUInteger) [indexPath row]];
     return set;
 }
 

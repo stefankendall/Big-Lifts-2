@@ -34,8 +34,8 @@
     int section = [indexPath section];
     JSSWorkout *workout = [[JSSWorkoutStore instance] atIndex:section];
     JWorkout *firstWorkout = workout.workouts[(NSUInteger) [indexPath row]];
-    if ([firstWorkout.orderedSets count] > 0) {
-        JSet *firstSet = firstWorkout.orderedSets[0];
+    if ([firstWorkout.sets count] > 0) {
+        JSet *firstSet = firstWorkout.sets[0];
         JSSLift *lift = (JSSLift *) firstSet.lift;
         [[cell textLabel] setText:lift.name];
     }

@@ -22,7 +22,7 @@ const int SS_WORKOUT_VARIANT_SECTION = 1;
 
     JSSWorkout *workoutB = [[JSSWorkoutStore instance] last];
     JWorkout *lastWorkout = workoutB.workouts[2];
-    JSet *firstSet = lastWorkout.orderedSets[0];
+    JSet *firstSet = lastWorkout.sets[0];
     STAssertEqualObjects(firstSet.lift.name, @"Deadlift", @"");
 }
 

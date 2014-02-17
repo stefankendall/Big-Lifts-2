@@ -67,7 +67,7 @@
     [self.controller repsChanged:@0];
     [self.controller doneButtonTapped:nil];
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] find:@"name" value:@"5/3/1"];
-    STAssertEquals((int) [workoutLog.orderedSets count], 5, @"");
+    STAssertEquals((int) [workoutLog.sets count], 5, @"");
 }
 
 - (void)testTappingAmrapCellCausesSegue {
@@ -108,8 +108,8 @@
 - (void)testChoosesHeaviestAmrapSetForRepsToBeat {
     [[JFTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    JSet *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.orderedSets];
-    STAssertEquals((int) [self.ftoWorkout.workout.orderedSets indexOfObject:heaviestAmrapSet], 5, @"");
+    JSet *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.sets];
+    STAssertEquals((int) [self.ftoWorkout.workout.sets indexOfObject:heaviestAmrapSet], 5, @"");
 }
 
 - (void)testDeterminesIfMissedReps {
@@ -136,7 +136,7 @@
 }
 
 - (void)testHidesWarmupSectionIfNoWarmup {
-    NSArray *warmupSets = [self.ftoWorkout.workout.orderedSets select:^BOOL(JSet *set) {
+    NSArray *warmupSets = [self.ftoWorkout.workout.sets select:^BOOL(JSet *set) {
         return set.warmup;
     }];
     [self.ftoWorkout.workout removeSets:warmupSets];

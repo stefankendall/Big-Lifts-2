@@ -11,7 +11,7 @@
 }
 
 - (NSArray *)matchingSets:(JSet *)set {
-    NSArray *matchingSets = [self.workout.orderedSets select:^(JSet *testSet) {
+    NSArray *matchingSets = [self.workout.sets select:^(JSet *testSet) {
         BOOL matches = set.lift == testSet.lift;
         return matches;
     }];

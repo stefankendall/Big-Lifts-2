@@ -41,8 +41,8 @@
     }
     else {
         return [log sortedArrayUsingComparator:^NSComparisonResult(JWorkoutLog *log1, JWorkoutLog *log2) {
-            JSetLog *setLog1 = [log1.orderedSets firstObject];
-            JSetLog *setLog2 = [log2.orderedSets firstObject];
+            JSetLog *setLog1 = [log1.sets firstObject];
+            JSetLog *setLog2 = [log2.sets firstObject];
             if ([setLog1.name isEqualToString:setLog2.name]) {
                 return [log2.date compare:log1.date];
             }
@@ -59,7 +59,7 @@
     }
     else if (self.showState == kShowWorkSets) {
         JWorkoutLog *log = [self getLog][((NSUInteger) [path row])];
-        return [[[SetLogCombiner new] combineSetLogs:[[NSOrderedSet alloc] initWithArray:[log workSets]]] count];
+        return [[[SetLogCombiner new] combineSetLogs:[log workSets]] count];
     } else {
         return 1;
     }

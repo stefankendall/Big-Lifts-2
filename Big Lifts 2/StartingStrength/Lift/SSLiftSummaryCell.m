@@ -9,9 +9,9 @@
 @implementation SSLiftSummaryCell
 
 - (void)setWorkout:(JWorkout *)workout {
-    JSet *lastSet = [workout.orderedSets lastObject];
+    JSet *lastSet = [workout.sets lastObject];
     [self.liftLabel setText:lastSet.lift.name];
-    int worksetCount = [[workout.orderedSets select:^BOOL(JSet *set) {
+    int worksetCount = [[workout.sets select:^BOOL(JSet *set) {
         return !set.warmup;
     }] count];
 

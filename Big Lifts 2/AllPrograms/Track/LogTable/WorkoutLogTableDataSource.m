@@ -28,7 +28,7 @@ const int ESTIMATED_MAX_SECTION = 1;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == SETS_SECTION) {
-        return [[self.workoutLog orderedSets] count];
+        return [[self.workoutLog sets] count];
     }
     else {
         return ESTIMATED_MAX_SECTION;
@@ -41,7 +41,7 @@ const int ESTIMATED_MAX_SECTION = 1;
         if (cell == nil) {
             cell = [SetLogCell create];
         }
-        [cell setSetLog:[[self.workoutLog orderedSets] objectAtIndex:(NSUInteger) [indexPath row]]];
+        [cell setSetLog:[[self.workoutLog sets] objectAtIndex:(NSUInteger) [indexPath row]]];
         return cell;
     }
     else {
@@ -54,7 +54,7 @@ const int ESTIMATED_MAX_SECTION = 1;
     if (!cell) {
         cell = [LogMaxEstimateCell create];
     }
-    JSetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.orderedSets];
+    JSetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.sets];
     if (!logToShow) {
         logToShow = [self.workoutLog.workSets lastObject];
     }

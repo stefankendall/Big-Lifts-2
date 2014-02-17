@@ -12,26 +12,24 @@
 }
 
 - (NSArray *)workSets {
-    return [self.orderedSets select:^BOOL(JSet *set) {
+    return [self.sets select:^BOOL(JSet *set) {
         return !set.warmup && !set.assistance;
     }];
 }
 
 - (NSArray *)warmupSets {
-    return [self.orderedSets select:^BOOL(JSet *set) {
+    return [self.sets select:^BOOL(JSet *set) {
         return set.warmup && !set.assistance;
     }];
 }
 
 - (NSArray *)assistanceSets {
-    return [self.orderedSets select:^BOOL(JSet *set) {
+    return [self.sets select:^BOOL(JSet *set) {
         return set.assistance;
     }];
 }
 
 - (void)addSet:(JSet *)set {
-    int order = [self.sets count];
-    set.order = [NSNumber numberWithInt:order];
     [self.sets addObject:set];
 }
 
@@ -44,29 +42,25 @@
 - (void)removeSet:(JSet *)set {
     [self.sets removeObject:set];
     [[[BLJStoreManager instance] storeForModel:set.class withUuid:set.uuid] remove:set];
-    [self fixSetOrdering];
 }
 
-- (void)removeSets:(NSArray *)sets {
-    for (JSet *set in sets) {
-        [self removeSet:set];
+- (void)removeSets:(NSArray *)setsToRemove {
+    if (setsToRemove == self.sets) {
+        for (JSet *set in setsToRemove) {
+            [[[BLJStoreManager instance] storeForModel:set.class withUuid:set.uuid] remove:set];
+        }
+        self.sets = (NSMutableArray <JSet> *) [@[] mutableCopy];
+    }
+    else {
+        for (JSet *set in setsToRemove) {
+            [self removeSet:set];
+        }
     }
 }
 
-- (void)fixSetOrdering {
-    [[self orderedSets] eachWithIndex:^(JSet *set, NSUInteger index) {
-        set.order = [NSNumber numberWithInt:index];
-    }];
-}
-
-- (NSArray *)orderedSets {
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
-    return [self.sets sortedArrayUsingDescriptors:@[descriptor]];
-}
-
 - (JLift *)firstLift {
-    if ([self.orderedSets count] > 0) {
-        return [self.orderedSets[0] lift];
+    if ([self.sets count] > 0) {
+        return [self.sets[0] lift];
     }
     return nil;
 }
@@ -78,11 +72,6 @@
     }
     NSMutableIndexSet *indexes = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [sets count])];
     [self.sets insertObjects:sets atIndexes:indexes];
-    int order = -1;
-    for (JSet *set in [sets reverseObjectEnumerator]) {
-        set.order = [NSNumber numberWithInt:order--];
-    }
-    [self fixSetOrdering];
 }
 
 @end

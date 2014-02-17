@@ -35,7 +35,7 @@
 
 - (void)removeAmrapFromWorkouts {
     [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *ftoWorkout) {
-        [ftoWorkout.workout.orderedSets each:^(JSet *set) {
+        [ftoWorkout.workout.sets each:^(JSet *set) {
             set.amrap = NO;
         }];
     }];
@@ -43,12 +43,12 @@
 
 - (void)addBoringSets {
     for(JFTOWorkout *ftoWorkout in [[JFTOWorkoutStore instance] findAll]) {
-        if([ftoWorkout.workout.orderedSets count] == 0){
+        if([ftoWorkout.workout.sets count] == 0){
             continue;
         }
 
         int sets = ftoWorkout.deload ? 3 : 5;
-        JFTOSet *set = ftoWorkout.workout.orderedSets[0];
+        JFTOSet *set = ftoWorkout.workout.sets[0];
         [ftoWorkout.workout addSets:[self createBoringSets:sets forLift:(JFTOLift *) set.lift]];
     };
 }

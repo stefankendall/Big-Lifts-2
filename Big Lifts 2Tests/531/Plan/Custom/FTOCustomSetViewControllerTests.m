@@ -11,7 +11,7 @@
 - (void)testSetsLabelsForSet {
     FTOCustomSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomSet"];
     JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] first];
-    JSet *set = [customWorkout.workout.orderedSets firstObject];
+    JSet *set = [customWorkout.workout.sets firstObject];
     set.amrap = YES;
     set.reps = @7;
     set.percentage = N(45);
@@ -28,7 +28,7 @@
 - (void)testSetsReps {
     FTOCustomSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomSet"];
     JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] first];
-    JSet *set = [customWorkout.workout.orderedSets firstObject];
+    JSet *set = [customWorkout.workout.sets firstObject];
     set.reps = @7;
     [controller setSet:set];
     [controller viewWillAppear:YES];
@@ -45,7 +45,7 @@
 - (void)testDoesNotSetPercentageToNan {
     FTOCustomSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomSet"];
     JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] first];
-    JSet *set = [customWorkout.workout.orderedSets firstObject];
+    JSet *set = [customWorkout.workout.sets firstObject];
     set.percentage = N(100);
     [controller setSet:set];
     [controller.percentageLabel setText:@""];

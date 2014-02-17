@@ -24,7 +24,7 @@
         return 1;
     }
     else if (section == 1) {
-        return [[self.customWorkout.workout orderedSets] count];
+        return [[self.customWorkout.workout sets] count];
     }
     else {
         return 1;
@@ -52,7 +52,7 @@
             cell = [FTOCustomSetCell create];
         }
 
-        JSet *set = self.customWorkout.workout.orderedSets[(NSUInteger) [indexPath row]];
+        JSet *set = self.customWorkout.workout.sets[(NSUInteger) [indexPath row]];
         [cell setSet:set];
         return cell;
     }
@@ -72,7 +72,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 1) {
-        self.tappedSet = self.customWorkout.workout.orderedSets[(NSUInteger) [indexPath row]];
+        self.tappedSet = self.customWorkout.workout.sets[(NSUInteger) [indexPath row]];
         [self performSegueWithIdentifier:@"ftoCustomSetSelectedSegue" sender:self];
     }
     else {
@@ -103,7 +103,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        JSet *set = self.customWorkout.workout.orderedSets[(NSUInteger) ([indexPath row])];
+        JSet *set = self.customWorkout.workout.sets[(NSUInteger) ([indexPath row])];
         [self.customWorkout.workout removeSet:set];
         [self.tableView reloadData];
     }

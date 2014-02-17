@@ -36,7 +36,7 @@
     if (section == 0) {
         return 1;
     }
-    return [self.sjWorkout.workout.orderedSets count];
+    return [self.sjWorkout.workout.sets count];
 }
 
 - (IBAction)doneButtonTapped:(id)sender {
@@ -62,7 +62,7 @@
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"Smolov Jr";
     workoutLog.date = [NSDate new];
-    [self.sjWorkout.workout.orderedSets each:^(JSet *set) {
+    [self.sjWorkout.workout.sets each:^(JSet *set) {
         JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
         setLog.weight = [self minimumOrLiftedWeight];
         [workoutLog addSet:setLog];
@@ -79,7 +79,7 @@
         if (!cell) {
             cell = [class create];
         }
-        [cell setSjWorkout:self.sjWorkout withSet:self.sjWorkout.workout.orderedSets[(NSUInteger) [indexPath row]] withEnteredWeight:self.liftedWeight];
+        [cell setSjWorkout:self.sjWorkout withSet:self.sjWorkout.workout.sets[(NSUInteger) [indexPath row]] withEnteredWeight:self.liftedWeight];
         return cell;
     }
 }
@@ -106,7 +106,7 @@
 
 - (NSDecimalNumber *)minimumOrLiftedWeight {
     if (!self.liftedWeight) {
-        NSDecimalNumber *effectiveWeight = [self.sjWorkout.workout.orderedSets[0] effectiveWeight];
+        NSDecimalNumber *effectiveWeight = [self.sjWorkout.workout.sets[0] effectiveWeight];
         return [[WeightRounder new] round:[effectiveWeight decimalNumberByAdding:self.sjWorkout.minWeightAdd withBehavior:DecimalNumberHandlers.noRaise]];
     }
     else {
