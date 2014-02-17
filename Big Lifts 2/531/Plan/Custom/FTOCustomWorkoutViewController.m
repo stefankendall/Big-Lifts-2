@@ -15,15 +15,19 @@
 
 @implementation FTOCustomWorkoutViewController
 
+static const int kTOOLBAR_SECTION = 0;
+static const int kSETS_SECTION = 1;
+static const int kADD_SECTION = 2;
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == kTOOLBAR_SECTION) {
         return 1;
     }
-    else if (section == 1) {
+    else if (section == kSETS_SECTION) {
         return [[self.customWorkout.workout sets] count];
     }
     else {
@@ -37,7 +41,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
+    if (indexPath.section == kTOOLBAR_SECTION) {
         FTOCustomWorkoutToolbar *toolbar = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomWorkoutToolbar.class)];
         if (!toolbar) {
             toolbar = [FTOCustomWorkoutToolbar create];
@@ -46,7 +50,7 @@
         [toolbar.incrementAfterWeekSwitch addTarget:self action:@selector(incrementAfterWeeksChange:) forControlEvents:UIControlEventValueChanged];
         return toolbar;
     }
-    else if ([indexPath section] == 1) {
+    else if ([indexPath section] == kSETS_SECTION) {
         FTOCustomSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomSetCell.class)];
         if (!cell) {
             cell = [FTOCustomSetCell create];
@@ -109,8 +113,24 @@
     }
 }
 
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.section == kSETS_SECTION;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)from toIndexPath:(NSIndexPath *)to {
+    if (from.section == to.section) {
+        if ([self.customWorkout.workout.sets count] > 1) {
+            JSet *sourceSet = self.customWorkout.workout.sets[(NSUInteger) from.row];
+            [self.customWorkout.workout.sets removeObjectAtIndex:(NSUInteger) from.row];
+            [self.customWorkout.workout.sets insertObject:sourceSet atIndex:(NSUInteger) to.row];
+        }
+    }
+
+    [self.tableView reloadData];
+}
+
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 1) {
+    if ([indexPath section] == kSETS_SECTION) {
         return UITableViewCellEditingStyleDelete;
     }
     else {
