@@ -5,7 +5,6 @@
 @interface JSet : JModel
 @property(nonatomic) NSNumber<Optional> *reps;
 @property(nonatomic) NSNumber<Optional> *maxReps;
-@property(nonatomic) NSNumber<Optional> *order;
 @property(nonatomic) NSDecimalNumber<Optional> *percentage;
 @property(nonatomic) JLift<Optional> *lift;
 @property(nonatomic) BOOL warmup;
