@@ -97,6 +97,7 @@
 		5459027E4E9357B41E66560A /* FTOCustomAssistanceLiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5459047A456D7A2832F087ED /* FTOCustomAssistanceLiftCell.xib */; };
 		545902805A73FAB9ED001DC6 /* PurchaseOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545907A08979AD35C9572060 /* PurchaseOverlay.xib */; };
 		545902908DAA096D3EB81701 /* FTOTrackToolbarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5459014893A2978E375E2EEE /* FTOTrackToolbarCell.xib */; };
+		545902C369EE86633D89DCDF /* StringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DD01EC32D35B941499C /* StringHelper.m */; };
 		545902C57A8A3546F04B3FA5 /* JFTOBoringButBigStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459063790A7AE53A8476D30 /* JFTOBoringButBigStore.m */; };
 		545902EFCD9F9F1EBA65EAD0 /* ButtonMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */; };
 		545902F0BC58AB172DD6BC5E /* SJSetCellWithPlates.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900CAE6D409CA1EF180D2 /* SJSetCellWithPlates.m */; };
@@ -939,6 +940,7 @@
 		545907FF1F9BCC831E6D9802 /* SJTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJTrackViewController.h; sourceTree = "<group>"; };
 		54590800E5B24DBCA658AB94 /* SSTrackViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTrackViewControllerTests.h; sourceTree = "<group>"; };
 		54590808C4B2033C54EE6785 /* FTOTriumvirateSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTriumvirateSetupViewController.h; sourceTree = "<group>"; };
+		54590811B2F97810BE5E7162 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
 		54590812E0B6658ADC81809A /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
 		5459081462470A6C8BC273D6 /* TimerViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewControllerTests.h; sourceTree = "<group>"; };
 		54590816E6687E43CCEF1382 /* JFTOBoringButBigLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBigLiftStore.h; sourceTree = "<group>"; };
@@ -1226,6 +1228,7 @@
 		54590DC468D48E6708C0AF1F /* FTOSetChangeFormTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSetChangeFormTests.m; sourceTree = "<group>"; };
 		54590DC9399BA5CC88033E1B /* JFTOCustomAssistanceWorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomAssistanceWorkoutStore.h; sourceTree = "<group>"; };
 		54590DCBE0DB560BE5D00743 /* JFTOCustomAssistanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomAssistanceTests.m; sourceTree = "<group>"; };
+		54590DD01EC32D35B941499C /* StringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHelper.m; sourceTree = "<group>"; };
 		54590DD7BFB0890B209F16EF /* FTOEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOEditViewController.m; sourceTree = "<group>"; };
 		54590DDBC1A2CF5C15C51941 /* FTOTriumvirateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTriumvirateCell.h; sourceTree = "<group>"; };
 		54590DEE3D053C7D0F0C3E6E /* JFTOBoringButBig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBig.h; sourceTree = "<group>"; };
@@ -1638,6 +1641,8 @@
 				545908E80BFAF39BCB4B02EF /* DecimalNumberHelper.h */,
 				545906DE5600289711E6BC69 /* Debug.m */,
 				545909F5884E23272B0CBFC6 /* Debug.h */,
+				54590DD01EC32D35B941499C /* StringHelper.m */,
+				54590811B2F97810BE5E7162 /* StringHelper.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -3909,6 +3914,7 @@
 				54590F5DF89AA9E3CC998529 /* Migrate8to9.m in Sources */,
 				54590BF23C56F1A4FC5ED104 /* JFTOSettingsHelper.m in Sources */,
 				5459063D191B23A48C9D5658 /* WorkoutSharer.m in Sources */,
+				545902C369EE86633D89DCDF /* StringHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

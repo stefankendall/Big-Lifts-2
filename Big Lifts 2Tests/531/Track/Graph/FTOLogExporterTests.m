@@ -41,6 +41,13 @@
     STAssertEqualObjects(csv, expected, @"");
 }
 
+- (void)testDoesNotCrashForNilLiftName {
+    JWorkoutLog *workoutLog1 = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
+    JSetLog *setLog1 = [[JSetLogStore instance] create];
+    [workoutLog1 addSet:setLog1];
+    [[FTOLogExporter new] csv];
+}
+
 - (NSDate *)dateFor:(NSString *)dateString {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd"];
