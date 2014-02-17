@@ -15,4 +15,10 @@
     STAssertEqualObjects([[JFTOCustomPlan new] incrementMaxesWeeks], expected, @"");
 }
 
+- (void)testHasCorrectWeekNames {
+    JFTOCustomPlan *plan = [JFTOCustomPlan new];
+    STAssertEqualObjects([plan weekNames][0], @"5/5/5", @"");
+    STAssertEqualObjects([plan weekNames][3], @"Deload", @"");
+}
+
 @end
