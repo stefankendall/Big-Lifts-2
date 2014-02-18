@@ -13,5 +13,5 @@ extern NSString * const FTO_VARIANT_FIVES_PROGRESSION;
 extern NSString * const FTO_VARIANT_CUSTOM;
 
 @interface JFTOVariant : JModel
-@property(nonatomic) NSString *name;
+@property(nonatomic) NSString<Optional> *name;
 @end
