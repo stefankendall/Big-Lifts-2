@@ -6,6 +6,7 @@
 #import "BLJStoreManager.h"
 #import "BLKeyValueStore.h"
 #import "AdsExperiment.h"
+#import "Migrator.h"
 
 static BOOL SAVE_DATA_TEST_ENABLED = YES;
 
@@ -135,6 +136,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
         BOOL iCloudEnabled = [self.iCloudEnabled isOn];
         [[BLJStoreManager instance] syncStores];
         [BLKeyValueStore forceICloud:iCloudEnabled];
+        [[Migrator new] migrateStores];
         [[BLJStoreManager instance] loadStores];
     }
     else {
