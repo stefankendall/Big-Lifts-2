@@ -10,8 +10,8 @@
 
 - (void)shareOnTwitter:(NSArray *)workouts withController:(UIViewController *)controller {
     SLComposeViewController *sheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [sheet setInitialText:[self workoutSummary:workouts]];
-    [sheet addURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/big-lifts-2/id661503150?mt=8"]];
+    NSString *summary = [self workoutSummary:workouts];
+    [sheet setInitialText:[@"@BigLiftsApp\n" stringByAppendingString:summary]];
     [controller presentViewController:sheet animated:YES completion:nil];
 }
 
