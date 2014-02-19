@@ -163,12 +163,14 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SSEditSetForm *form = [segue destinationViewController];
-    [form setDelegate:self];
-    [form setSet:self.tappedSet];
-    SetChange *change = self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]];
-    if (change) {
-        [form setPreviousChange:change];
+    if ([segue.identifier isEqualToString:@"ssEditSet"]) {
+        SSEditSetForm *form = [segue destinationViewController];
+        [form setDelegate:self];
+        [form setSet:self.tappedSet];
+        SetChange *change = self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]];
+        if (change) {
+            [form setPreviousChange:change];
+        }
     }
 }
 
