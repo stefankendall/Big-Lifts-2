@@ -3,7 +3,7 @@
 @implementation WeightUnits
 
 + (NSDecimalNumber *)lbsToKg:(NSDecimalNumber *)lbs {
-    if( lbs == nil ){
+    if (lbs == nil || [lbs isEqual:[NSDecimalNumber notANumber]]) {
         return N(0);
     }
 

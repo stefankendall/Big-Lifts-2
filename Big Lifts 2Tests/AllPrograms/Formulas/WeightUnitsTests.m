@@ -5,6 +5,7 @@
 
 - (void)testConvertsLbsToKg {
     STAssertEqualObjects([WeightUnits lbsToKg: nil], N(0), @"");
+    STAssertEqualObjects([WeightUnits lbsToKg: [NSDecimalNumber notANumber]], N(0), @"");
     STAssertEqualObjects([WeightUnits lbsToKg: N(0)], N(0), @"");
     STAssertEqualObjects([WeightUnits lbsToKg: N(10)], N(4.53592), @"");
 }
