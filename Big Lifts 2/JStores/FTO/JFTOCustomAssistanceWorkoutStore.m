@@ -5,6 +5,7 @@
 #import "JFTONoneAssistanceCopy.h"
 #import "JFTOAssistance.h"
 #import "JFTOBoringButBigAssistanceCopy.h"
+#import "JFTOTriumvirateAssistanceCopy.h"
 
 @implementation JFTOCustomAssistanceWorkoutStore
 
@@ -53,6 +54,7 @@
     NSDictionary *copiers = @{
             FTO_ASSISTANCE_NONE : [JFTONoneAssistanceCopy new],
             FTO_ASSISTANCE_BORING_BUT_BIG : [JFTOBoringButBigAssistanceCopy new],
+            FTO_ASSISTANCE_TRIUMVIRATE : [JFTOTriumvirateAssistanceCopy new],
     };
     NSObject <AssistanceCopy> *copier = copiers[variant];
     [copier copyTemplate];

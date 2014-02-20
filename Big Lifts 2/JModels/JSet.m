@@ -23,7 +23,7 @@
         }
     }
 
-    return effectiveWeight;
+    return effectiveWeight == nil ? N(0) : effectiveWeight;
 }
 
 - (NSDecimalNumber *)roundedEffectiveWeight {

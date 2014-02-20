@@ -3,8 +3,6 @@
 #import "JFTOAssistanceStore.h"
 #import "JFTOCustomAssistanceWorkoutStore.h"
 #import "JFTOAssistance.h"
-#import "JFTONoneAssistanceCopy.h"
-#import "JFTOBoringButBigAssistanceCopy.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
 
@@ -18,9 +16,9 @@
     [super viewDidLoad];
 
     self.variantToText = @{
-            FTO_ASSISTANCE_NONE : [JFTONoneAssistanceCopy new],
-            FTO_ASSISTANCE_BORING_BUT_BIG : [JFTOBoringButBigAssistanceCopy new],
-            FTO_ASSISTANCE_TRIUMVIRATE : [JFTOBoringButBigAssistanceCopy new],
+            FTO_ASSISTANCE_NONE : @"None",
+            FTO_ASSISTANCE_BORING_BUT_BIG : @"Boring But Big",
+            FTO_ASSISTANCE_TRIUMVIRATE : @"Triumvirate"
     };
 
     self.orderedVariants = @[
@@ -35,7 +33,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [[JFTOCustomAssistanceWorkoutStore instance] copyTemplate:self.orderedVariants[(NSUInteger) indexPath.row]];
+    [[JFTOCustomAssistanceWorkoutStore instance] copyTemplate:self.purchasedOrderedVariants[(NSUInteger) indexPath.row]];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -59,7 +57,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOAssistanceCustomCopyTemplateCell"];
     }
-    [cell.textLabel setText:self.purchasedOrderedVariants[(NSUInteger) [indexPath row]]];
+    NSString *variant = self.purchasedOrderedVariants[(NSUInteger) [indexPath row]];
+    [cell.textLabel setText:self.variantToText[variant]];
     return cell;
 }
 
