@@ -9,6 +9,7 @@
 #import "Migrate6to7.h"
 #import "Migrate7to8.h"
 #import "Migrate8to9.h"
+#import "Migrate9to10.h"
 
 @implementation Migrator
 
@@ -24,7 +25,8 @@
                 @6 : [Migrate5to6 new],
                 @7 : [Migrate6to7 new],
                 @8 : [Migrate7to8 new],
-                @9 : [Migrate8to9 new]
+                @9 : [Migrate8to9 new],
+                @10 : [Migrate9to10 new]
         };
         //first migration must run every time, since I was missing the version property on existing installs
         if ([version.version intValue] <= 2) {
