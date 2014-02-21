@@ -4202,11 +4202,45 @@
                                 <action selector="revealSidebar:" destination="F8T-Ds-HfI" id="fjp-fl-jHT"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Change Lifts" id="I9G-9B-Q79">
+                            <connections>
+                                <segue destination="gkI-Yj-c29" kind="push" id="YgG-qu-6mt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmw-k5-8Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1674" y="-1374"/>
+        </scene>
+        <!--Change Lifts View Controller - Change Lifts-->
+        <scene sceneID="xVd-gv-jFs">
+            <objects>
+                <tableViewController id="gkI-Yj-c29" customClass="SSChangeLiftsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dvQ-O9-vWv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jgX-Vz-AYG">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jgX-Vz-AYG" id="p8X-0P-lcc">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gkI-Yj-c29" id="MrQ-B7-Kwq"/>
+                            <outlet property="delegate" destination="gkI-Yj-c29" id="TTI-uH-D3j"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Change Lifts" id="lt6-EZ-HG0"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Um-Vk-hr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040" y="-1374"/>
         </scene>
         <!--Track View Controller - Track-->
         <scene sceneID="Ndm-0q-eNg">

@@ -4,4 +4,5 @@
 
 @property(nonatomic, strong) NSString<Optional> *customName;
 
+- (NSString *)effectiveName;
 @end
