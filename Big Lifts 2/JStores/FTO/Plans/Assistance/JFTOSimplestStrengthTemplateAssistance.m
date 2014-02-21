@@ -9,19 +9,38 @@
 #import "JFTOSSTLiftStore.h"
 #import "JSet.h"
 #import "JSetStore.h"
+#import "JFTOSettings.h"
+#import "JFTOSettingsStore.h"
 
 @implementation JFTOSimplestStrengthTemplateAssistance
 
 - (void)setup {
-    for (int week = 1; week <= 4; week++) {
+    NSArray *weeks = [[[JFTOWorkoutStore instance] unique:@"week"] array];
+    for (NSNumber *week in weeks) {
         [[[JFTOLiftStore instance] findAll] each:^(JFTOLift *lift) {
-            [self createAssistanceFor:lift withWeek:week];
+            [self createAssistanceFor:lift withWeek:[week intValue]];
         }];
     }
 }
 
 - (void)createAssistanceFor:(JFTOLift *)lift withWeek:(int)week {
-    NSDictionary *weeksToData = @{
+    NSDictionary *weeksToData = [self getWeeksData];
+    NSArray *weekData = weeksToData[[NSNumber numberWithInt:week]];
+    JFTOWorkout *ftoWorkout = [self findWorkoutWithLift:lift week:week];
+    JFTOSSTLift *sstLift = [[JFTOSSTLiftStore instance] find:@"associatedLift" value:lift];
+    NSLog(@"Added assistance for lift: %@ in week: %d", lift.name, week);
+    [weekData each:^(NSDictionary *data) {
+        JSet *set = [[JSetStore instance] create];
+        set.reps = data[@"reps"];
+        set.percentage = data[@"percentage"];
+        set.lift = sstLift;
+        set.assistance = YES;
+        [ftoWorkout.workout addSet:set];
+    }];
+}
+
+- (NSDictionary *)getWeeksData {
+    NSMutableDictionary *weeksToData = [@{
             @1 : @[
                     @{@"percentage" : N(50), @"reps" : @10},
                     @{@"percentage" : N(60), @"reps" : @10},
@@ -42,24 +61,25 @@
                     @{@"percentage" : N(50), @"reps" : @5},
                     @{@"percentage" : N(60), @"reps" : @5}
             ]
-    };
+    } mutableCopy];
 
-    NSArray *weekData = weeksToData[[NSNumber numberWithInt:week]];
-    JFTOWorkout *ftoWorkout = [[[JFTOWorkoutStore instance] findAll] detect:^BOOL(JFTOWorkout *workout) {
-        if([workout.workout.sets count] == 0){
+    if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
+        NSArray *deload = weeksToData[@4];
+        for (int week = 1; week <= 3; week++) {
+            weeksToData[[NSNumber numberWithInt:(week + 3)]] = weeksToData[[NSNumber numberWithInt:week]];
+        }
+        weeksToData[@7] = deload;
+    }
+
+    return weeksToData;
+}
+
+- (JFTOWorkout *)findWorkoutWithLift:(JFTOLift *)lift week:(int)week {
+    return [[[JFTOWorkoutStore instance] findAll] detect:^BOOL(JFTOWorkout *workout) {
+        if ([workout.workout.sets count] == 0) {
             return false;
         }
         return [workout.week intValue] == week && [workout.workout.sets[0] lift] == lift;
-    }];
-
-    JFTOSSTLift *sstLift = [[JFTOSSTLiftStore instance] find:@"associatedLift" value:lift];
-    [weekData each:^(NSDictionary *data) {
-        JSet *set = [[JSetStore instance] create];
-        set.reps = data[@"reps"];
-        set.percentage = data[@"percentage"];
-        set.lift = sstLift;
-        set.assistance = YES;
-        [ftoWorkout.workout addSet:set];
     }];
 }
 

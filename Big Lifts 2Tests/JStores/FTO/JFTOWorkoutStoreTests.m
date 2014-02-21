@@ -34,6 +34,7 @@
     STAssertEquals([[JFTOWorkoutStore instance] count], 28, @"");
     NSArray *week6Workouts = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@6];
     STAssertEquals((int)[week6Workouts count], 4, @"");
+    STAssertTrue([[[JFTOWorkoutStore instance] unique:@"week"] containsObject:@6], @"");
     STAssertEquals((int) [[[JFTOWorkoutStore instance] unique:@"week"] count], 7, @"");
 }
 
