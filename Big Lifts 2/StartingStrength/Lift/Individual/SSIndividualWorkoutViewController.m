@@ -96,6 +96,7 @@
         for (int setIndex = 0; setIndex < [[workout workSets] count]; setIndex++) {
             JSet *set = workout.sets[(NSUInteger) setIndex];
             JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
+            setLog.name = [(JSSLift *) set.lift effectiveName];
             SetChange *change = loggedSets[[NSNumber numberWithInt:setIndex]];
             if (change) {
                 setLog.weight = change.weight;
@@ -204,6 +205,5 @@
 - (NSArray *)getSharedWorkout {
     return self.ssWorkout.workouts;
 }
-
 
 @end

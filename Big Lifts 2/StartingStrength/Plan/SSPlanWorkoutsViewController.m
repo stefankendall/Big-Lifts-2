@@ -37,7 +37,7 @@
     if ([firstWorkout.sets count] > 0) {
         JSet *firstSet = firstWorkout.sets[0];
         JSSLift *lift = (JSSLift *) firstSet.lift;
-        [[cell textLabel] setText:lift.name];
+        [[cell textLabel] setText:[lift effectiveName]];
     }
     else {
         [[cell textLabel] setText:@"No sets"];
