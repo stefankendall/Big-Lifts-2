@@ -138,7 +138,11 @@
 }
 
 - (id)atIndex:(int)index {
-    return [self findAll][(NSUInteger) index];
+    NSArray *all = [self findAll];
+    if (index < 0 || index >= [all count]) {
+        return nil;
+    }
+    return all[(NSUInteger) index];
 }
 
 - (NSNumber *)max:(NSString *)property {

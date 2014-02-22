@@ -69,7 +69,9 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     RowTextField *rowTextField = (RowTextField *) textField;
     JLift *lift = [self liftAtIndex:[rowTextField.indexPath row]];
-    [lift setName:[textField text]];
+    if (lift) {
+        [lift setName:[textField text]];
+    }
 }
 
 - (JLift *)liftAtIndex:(int)index {
