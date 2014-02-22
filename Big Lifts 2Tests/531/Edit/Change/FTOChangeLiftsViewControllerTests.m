@@ -56,4 +56,11 @@
     STAssertEquals([[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1][1], firstWorkout, @"");
 }
 
+- (void)testDeletingARowYouAreEditingDoesNotCrashApp {
+    FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
+    RowTextField *textField = [RowTextField new];
+    textField.indexPath = NSIP(5,0);
+    [controller textFieldDidEndEditing:textField];
+}
+
 @end
