@@ -16,6 +16,8 @@
 #import "JWorkout.h"
 #import "SSEditSetForm.h"
 #import "SetChange.h"
+#import "JLift.h"
+#import "JSSLift.h"
 
 @interface SSIndividualWorkoutViewController ()
 @property(nonatomic, strong) NSMutableArray *loggedWorkouts;
@@ -137,6 +139,7 @@
         NSNumber *enteredReps = data ? data.reps : nil;
         NSDecimalNumber *enteredWeight = data ? data.weight : nil;
         [cell setSet:set withEnteredReps:enteredReps withEnteredWeight:enteredWeight];
+        [cell.liftLabel setText:[(JSSLift *) set.lift effectiveName]];
 
         if ([set.percentage isEqual:N(100)]) {
             [cell.percentageLabel setHidden:YES];

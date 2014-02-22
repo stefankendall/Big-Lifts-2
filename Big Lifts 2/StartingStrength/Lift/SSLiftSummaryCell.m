@@ -5,12 +5,13 @@
 #import "JSettings.h"
 #import "JLift.h"
 #import "JWorkout.h"
+#import "JSSLift.h"
 
 @implementation SSLiftSummaryCell
 
 - (void)setWorkout:(JWorkout *)workout {
     JSet *lastSet = [workout.sets lastObject];
-    [self.liftLabel setText:lastSet.lift.name];
+    [self.liftLabel setText:[(JSSLift *) lastSet.lift effectiveName]];
     int worksetCount = [[workout.sets select:^BOOL(JSet *set) {
         return !set.warmup;
     }] count];

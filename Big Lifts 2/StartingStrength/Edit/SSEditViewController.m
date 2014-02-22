@@ -7,19 +7,8 @@
 
 @implementation SSEditViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    UITapGestureRecognizer *singleFingerTap =
-            [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    [self.view addGestureRecognizer:singleFingerTap];
-}
-
-- (void)handleSingleTap:(id)handleSingleTap {
-    [self.view endEditing:YES];
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self emptyView];
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -33,7 +22,7 @@
     }
 
     JSSLift *lift = ([[JSSLiftStore instance] findAll])[(NSUInteger) indexPath.row];
-    [[cell liftLabel] setText:lift.name];
+    [[cell liftLabel] setText:[lift effectiveName]];
 
     [[cell textField] setIndexPath:indexPath];
     [[cell textField] setDelegate:self];
