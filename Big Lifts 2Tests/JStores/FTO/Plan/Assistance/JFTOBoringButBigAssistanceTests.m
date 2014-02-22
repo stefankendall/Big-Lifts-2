@@ -11,6 +11,8 @@
 #import "JFTOLiftStore.h"
 #import "JFTOBoringButBigLift.h"
 #import "JFTOBoringButBigLiftStore.h"
+#import "JFTOVariantStore.h"
+#import "JFTOVariant.h"
 
 @implementation JFTOBoringButBigAssistanceTests
 
@@ -22,7 +24,7 @@
     }];
 }
 
-- (void) testDoesNotCrashWhenAWorkoutIsEmpty {
+- (void)testDoesNotCrashWhenAWorkoutIsEmpty {
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] first];
     ftoWorkout.workout.sets = [@[] mutableCopy];
     [[JFTOBoringButBigAssistance new] setup];
@@ -43,7 +45,7 @@
 
 - (void)testCanUseDifferentLifts {
     JFTOBoringButBigLift *bbbLift = [[JFTOBoringButBigLiftStore instance] first];
-    JFTOLift *deadlift = [[JFTOLiftStore instance] find:@"name" value: @"Deadlift"];
+    JFTOLift *deadlift = [[JFTOLiftStore instance] find:@"name" value:@"Deadlift"];
     bbbLift.boringLift = deadlift;
     [[JFTOBoringButBigAssistance new] setup];
 
@@ -77,6 +79,26 @@
     [[JFTOBoringButBigAssistance new] cycleChange];
 
     STAssertEqualObjects(bbb.percentage, N(65), @"");
+}
+
+- (void)testDoesNotRemoveAmrapFromCustom {
+    [[JFTOVariantStore instance] changeTo:FTO_VARIANT_CUSTOM];
+    NSArray *workoutsWithAmrap = [self findWorkoutsWithAmrap];
+    STAssertEquals((int) [workoutsWithAmrap count], 12, @"");
+
+    [[JFTOBoringButBigAssistance new] setup];
+
+    workoutsWithAmrap = [self findWorkoutsWithAmrap];
+    STAssertEquals((int) [workoutsWithAmrap count], 12, @"");
+}
+
+- (NSArray *)findWorkoutsWithAmrap {
+    NSArray *workoutsWithAmrap = [[[JFTOWorkoutStore instance] findAll] select:^BOOL(JFTOWorkout *jftoWorkout) {
+        return [jftoWorkout.workout.sets detect:^BOOL(JSet *set) {
+            return set.amrap;
+        }] != nil;
+    }];
+    return workoutsWithAmrap;
 }
 
 @end
