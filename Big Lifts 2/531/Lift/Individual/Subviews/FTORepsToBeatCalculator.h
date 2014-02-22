@@ -2,7 +2,7 @@
 
 @interface FTORepsToBeatCalculator : NSObject
 
--(int) repsToBeat: (JFTOLift *) lift atWeight: (NSDecimalNumber *) weight;
+- (int)repsToBeat:(JFTOLift *)lift atWeight:(NSDecimalNumber *)weight;
 
 - (NSDecimalNumber *)findLogMax:(JFTOLift *)lift;
 

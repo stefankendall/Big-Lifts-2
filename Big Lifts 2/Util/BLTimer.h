@@ -4,7 +4,7 @@
 
 @property(nonatomic) int secondsRemaining;
 
-@property(nonatomic, strong) NSTimer *timer;
+@property(nonatomic) NSTimer *timer;
 
 @property(nonatomic, weak) UIViewController <TimerObserver> *observer;
 

@@ -9,6 +9,10 @@
     [[BLTimer instance] setObserver:self];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [[BLTimer instance] setObserver:nil];
+}
+
 - (void)timerTick {
     [self.tableView reloadRowsAtIndexPaths:@[NSIP(0, 0)] withRowAnimation:UITableViewRowAnimationNone];
 }

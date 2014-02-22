@@ -108,7 +108,7 @@
 - (void)testChoosesHeaviestAmrapSetForRepsToBeat {
     [[JFTOVariantStore instance] changeTo:FTO_VARIANT_PYRAMID];
     self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
-    JSet *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.sets];
+    JSet *heaviestAmrapSet = [SetHelper heaviestAmrapSet:self.ftoWorkout.workout.sets];
     STAssertEquals((int) [self.ftoWorkout.workout.sets indexOfObject:heaviestAmrapSet], 5, @"");
 }
 

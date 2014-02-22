@@ -4,7 +4,7 @@
 #import "JSetLog.h"
 
 @implementation SetHelper
-- (JSet *)heaviestAmrapSet:(NSArray *)sets {
++ (JSet *)heaviestAmrapSet:(NSArray *)sets {
     __block JSet *heaviestAmrap = nil;
     [sets each:^(JSet *testSet) {
         if ([testSet amrap]) {
@@ -20,7 +20,7 @@
     return heaviestAmrap;
 }
 
-- (JSetLog *)heaviestAmrapSetLog:(NSArray *)sets {
++ (JSetLog *)heaviestAmrapSetLog:(NSArray *)sets {
     __block JSetLog *heaviestAmrap = nil;
     [sets each:^(JSetLog *testSet) {
         if ([testSet amrap]) {

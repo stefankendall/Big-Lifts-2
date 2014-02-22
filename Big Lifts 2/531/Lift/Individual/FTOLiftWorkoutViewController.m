@@ -32,6 +32,10 @@
     [[BLTimer instance] setObserver:self];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [[BLTimer instance] setObserver:nil];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == [self toolbarSection]) {
         return 1;
@@ -118,7 +122,7 @@
     }
     if ([self shouldShowRepsToBeat]) {
         [cell.repsToBeat setHidden:NO];
-        JSet *heaviestAmrap = [[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.sets];
+        JSet *heaviestAmrap = [SetHelper heaviestAmrapSet:self.ftoWorkout.workout.sets];
         int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:(id) heaviestAmrap.lift atWeight:[heaviestAmrap roundedEffectiveWeight]];
         [cell.repsToBeat setTitle:[NSString stringWithFormat:@"To Beat: %d", repsToBeat] forState:UIControlStateNormal];
         [cell.repsToBeat addTarget:self action:@selector(showRepsToBeatBreakdown:) forControlEvents:UIControlEventTouchUpInside];
@@ -154,7 +158,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ftoRepsToBeat"]) {
         FTORepsToBeatBreakdown *breakdown = [segue destinationViewController];
-        [breakdown setLastSet:[[SetHelper new] heaviestAmrapSet:self.ftoWorkout.workout.sets]];
+        [breakdown setLastSet:[SetHelper heaviestAmrapSet:self.ftoWorkout.workout.sets]];
     }
     else if ([[segue identifier] isEqualToString:@"ftoSetRepsForm"]) {
         FTOSetChangeForm *form = [segue destinationViewController];
@@ -218,7 +222,7 @@
 
 - (BOOL)missedAmrapReps {
     NSArray *sets = self.ftoWorkout.workout.sets;
-    JSet *heaviestAmrapSet = [[SetHelper new] heaviestAmrapSet:sets];
+    JSet *heaviestAmrapSet = [SetHelper heaviestAmrapSet:sets];
     for (int i = 0; i < [sets count]; i++) {
         JSet *set = sets[(NSUInteger) i];
         NSNumber *loggedReps = self.variableReps[[NSNumber numberWithInt:i]];

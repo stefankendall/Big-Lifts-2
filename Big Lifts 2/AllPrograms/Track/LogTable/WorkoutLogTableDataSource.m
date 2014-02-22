@@ -54,7 +54,7 @@ const int ESTIMATED_MAX_SECTION = 1;
     if (!cell) {
         cell = [LogMaxEstimateCell create];
     }
-    JSetLog *logToShow = [[SetHelper new] heaviestAmrapSetLog:self.workoutLog.sets];
+    JSetLog *logToShow = [SetHelper heaviestAmrapSetLog:self.workoutLog.sets];
     if (!logToShow) {
         logToShow = [self.workoutLog.workSets lastObject];
     }

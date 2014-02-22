@@ -11,7 +11,7 @@
     JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"name" weight:N(100) reps:4 warmup:NO assistance:NO amrap:YES];
     JSetLog *setLog2 = [[JSetLogStore instance] createWithName:@"name" weight:N(100) reps:4 warmup:NO assistance:YES amrap:NO];
     [workoutLog.sets addObjectsFromArray: @[setLog1, setLog2]];
-    JSetLog *heaviestAmrapSetLog = [[SetHelper new] heaviestAmrapSetLog:workoutLog.sets];
+    JSetLog *heaviestAmrapSetLog = [SetHelper heaviestAmrapSetLog:workoutLog.sets];
     STAssertEquals(heaviestAmrapSetLog, setLog1, @"");
 }
 

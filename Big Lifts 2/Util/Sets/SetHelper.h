@@ -2,7 +2,7 @@
 
 @interface SetHelper : NSObject
 
-- (id)heaviestAmrapSet:(NSArray *)sets;
++ (id)heaviestAmrapSet:(NSArray *)sets;
 
-- (JSetLog *)heaviestAmrapSetLog:(NSArray *)sets;
++ (JSetLog *)heaviestAmrapSetLog:(NSArray *)sets;
 @end
