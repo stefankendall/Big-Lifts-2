@@ -25,6 +25,7 @@
     [WilksCoefficientCalculator calculate:nil withBodyweight:nil isMale:NO withUnits:@"kg"];
     [WilksCoefficientCalculator calculate:nil withBodyweight:nil isMale:NO withUnits:@"lbs"];
     [WilksCoefficientCalculator calculate:nil withBodyweight:nil isMale:YES withUnits:@"lbs"];
+    [WilksCoefficientCalculator calculate:nil withBodyweight:[NSDecimalNumber notANumber] isMale:YES withUnits:@"lbs"];
     [WilksCoefficientCalculator calculate:N(0) withBodyweight:N(0) isMale:YES withUnits:@"lbs"];
 }
 

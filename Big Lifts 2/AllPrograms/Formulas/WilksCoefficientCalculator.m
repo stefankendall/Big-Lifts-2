@@ -1,10 +1,11 @@
 #import "WilksCoefficientCalculator.h"
 #import "WeightUnits.h"
+#import "DecimalNumberHelper.h"
 
 @implementation WilksCoefficientCalculator
 
 + (NSDecimalNumber *)calculate:(NSDecimalNumber *)weight withBodyweight:(NSDecimalNumber *)bodyweight isMale:(BOOL)isMale withUnits:(NSString *)units {
-    if (weight == nil || bodyweight == nil ) {
+    if ([DecimalNumberHelper nanOrNil:weight] || [DecimalNumberHelper nanOrNil:bodyweight]) {
         return N(0);
     }
 
