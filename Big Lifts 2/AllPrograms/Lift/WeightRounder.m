@@ -121,21 +121,36 @@
     NSDecimalNumber *lastDigitAndDecimals = [self getLastPartsOf:number];
     NSDecimalNumber *numberWithoutLastDigits = [number decimalNumberBySubtracting:lastDigitAndDecimals withBehavior:[DecimalNumberHandlers noRaise]];
 
+    if ([lastDigitAndDecimals isEqual:N(2.5)] || [lastDigitAndDecimals isEqual:N(5.0)] || [lastDigitAndDecimals isEqual:N(7.5)]
+            || [lastDigitAndDecimals isEqual:N(0)]) {
+        return number;
+    }
+
+    NSDecimalNumber *roundedNumber = nil;
     if ([lastDigitAndDecimals compare:N(1.25)] == NSOrderedAscending) {
-        return numberWithoutLastDigits;
+        roundedNumber = numberWithoutLastDigits;
+    } else if ([lastDigitAndDecimals compare:N(3.75)] == NSOrderedAscending) {
+        roundedNumber = [numberWithoutLastDigits decimalNumberByAdding:N(2.5)];
+    } else if ([lastDigitAndDecimals compare:N(6.25)] == NSOrderedAscending) {
+        roundedNumber = [numberWithoutLastDigits decimalNumberByAdding:N(5)];
+    } else if ([lastDigitAndDecimals compare:N(8.75)] == NSOrderedAscending) {
+        roundedNumber = [numberWithoutLastDigits decimalNumberByAdding:N(7.5)];
+    } else {
+        roundedNumber = [numberWithoutLastDigits decimalNumberByAdding:N(10)];
     }
-    else if ([lastDigitAndDecimals compare:N(3.75)] == NSOrderedAscending) {
-        return [numberWithoutLastDigits decimalNumberByAdding:N(2.5)];
+
+    if ([direction isEqualToString:(NSString *) ROUNDING_TYPE_UP]) {
+        if ([roundedNumber compare:number] == NSOrderedAscending) {
+            return [roundedNumber decimalNumberByAdding:N(2.5)];
+        }
+
+    } else if ([direction isEqualToString:(NSString *) ROUNDING_TYPE_DOWN]) {
+        if ([roundedNumber compare:number] == NSOrderedDescending) {
+            return [roundedNumber decimalNumberBySubtracting:N(2.5)];
+        }
     }
-    else if ([lastDigitAndDecimals compare:N(6.25)] == NSOrderedAscending) {
-        return [numberWithoutLastDigits decimalNumberByAdding:N(5)];
-    }
-    else if ([lastDigitAndDecimals compare:N(8.75)] == NSOrderedAscending) {
-        return [numberWithoutLastDigits decimalNumberByAdding:N(7.5)];
-    }
-    else {
-        return [numberWithoutLastDigits decimalNumberByAdding:N(10)];
-    }
+
+    return roundedNumber;
 }
 
 - (NSDecimalNumber *)roundTo5:(NSDecimalNumber *)number withDirection:(const NSString *)direction {
