@@ -15,4 +15,5 @@
     [[Migrate8to9 new] run];
     STAssertEqualObjects([JFTOSettingsHelper readSettings][@"sixWeekEnabled"], @0, @"");
 }
+
 @end
