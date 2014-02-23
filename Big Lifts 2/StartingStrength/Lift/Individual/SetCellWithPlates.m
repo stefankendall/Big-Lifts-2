@@ -5,6 +5,7 @@
 #import "JBar.h"
 #import "JPlateStore.h"
 #import "JLift.h"
+#import "DecimalNumberHelper.h"
 
 @implementation SetCellWithPlates
 
@@ -20,7 +21,9 @@
     BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll]
                                                             barWeight:bar.weight];
 
-    NSArray *plates = [calculator platesToMakeWeight:[set roundedEffectiveWeight]];
+    NSDecimalNumber *weightToMake = [set roundedEffectiveWeight];
+    weightToMake = [DecimalNumberHelper nanOrNil:self.enteredWeight] ? weightToMake : self.enteredWeight;
+    NSArray *plates = [calculator platesToMakeWeight:weightToMake];
     NSString *platesText = @"";
     if ([plates count] != 0) {
         platesText = [NSString stringWithFormat:@"[%@]", [plates componentsJoinedByString:@", "]];

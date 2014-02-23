@@ -21,6 +21,17 @@
     STAssertEqualObjects([[cell platesLabel] text], @"[45, 45, 35, 2.5]", @"");
 }
 
+- (void)testUsesEnteredWeightToMakePlates {
+    SetCellWithPlates *cell = [SetCellWithPlates create];
+
+    JSSWorkout *ssWorkout = [[JSSWorkoutStore instance] first];
+    JWorkout *workout = [ssWorkout workouts][0];
+    JSet *set = workout.sets[0];
+    [cell setSet:set withEnteredReps:@3 withEnteredWeight:N(400)];
+
+    STAssertEqualObjects([[cell platesLabel] text], @"[45, 45, 45, 35, 5, 2.5]", @"");
+}
+
 - (void)testSetCellWithoutPlates {
     SetCellWithPlates *cell = [SetCellWithPlates create];
 
