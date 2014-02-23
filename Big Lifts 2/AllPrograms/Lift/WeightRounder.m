@@ -37,7 +37,7 @@
             return [[number decimalNumberBySubtracting:lastPart] decimalNumberByAdding:N(15)];
         }
     }
-    else {
+    else if ([direction isEqualToString:(NSString *) ROUNDING_TYPE_DOWN]) {
         if ([lastPart compare:N(5)] == NSOrderedAscending) {
             return [[number decimalNumberBySubtracting:lastPart] decimalNumberBySubtracting:N(5)];
         } else {
