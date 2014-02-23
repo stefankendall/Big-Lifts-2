@@ -39,9 +39,15 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     NSDictionary *unitsSegments = @{@"lbs" : @0, @"kg" : @1};
     [unitsSegmentedControl setSelectedSegmentIndex:[[unitsSegments objectForKey:settings.units] integerValue]];
 
-    NSUInteger roundingRow = [self.roundingOptions indexOfObject:settings.roundTo];
-    [self.roundToField setText:self.roundingText[roundingRow]];
-    [self.roundToPicker selectRow:roundingRow inComponent:0 animated:NO];
+    NSUInteger roundToRow = [self.roundingOptions indexOfObject:settings.roundTo];
+    [self.roundToField setText:self.roundingText[roundToRow]];
+    [self.roundToPicker selectRow:roundToRow inComponent:0 animated:NO];
+
+    NSUInteger roundingTypeRow = [self.roundingTypeOptions indexOfObject:settings.roundingType];
+    [self.roundingTypeField setText:self.roundingTypeOptions[roundingTypeRow]];
+    [self.roundingTypePicker selectRow:roundingTypeRow inComponent:0 animated:NO];
+
+
     [self.keepScreenOnSwitch setOn:[[[JSettingsStore instance] first] screenAlwaysOn]];
 }
 
@@ -80,7 +86,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 
 
 - (void)setupRoundingType {
-    self.roundingTypeOptions = @[ROUNDING_TYPE_NORMAL];
+    self.roundingTypeOptions = @[ROUNDING_TYPE_DOWN, ROUNDING_TYPE_NORMAL, ROUNDING_TYPE_UP];
     self.roundingTypePicker = [UIPickerView new];
     [self.roundingTypePicker setDataSource:self];
     [self.roundingTypePicker setDelegate:self];
@@ -143,7 +149,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
         settings.roundTo = self.roundingOptions[(NSUInteger) row];
     }
     else {
-
+        settings.roundingType = self.roundingTypeOptions[(NSUInteger) row];
     }
 
     [self reloadData];

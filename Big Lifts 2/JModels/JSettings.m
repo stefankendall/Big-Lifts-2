@@ -11,6 +11,8 @@ const NSString *ROUNDING_FORMULA_EPLEY = @"Epley";
 const NSString *ROUNDING_FORMULA_BRZYCKI = @"Brzycki";
 
 const NSString *ROUNDING_TYPE_NORMAL = @"Normal";
+const NSString *ROUNDING_TYPE_UP = @"Up";
+const NSString *ROUNDING_TYPE_DOWN = @"Down";
 
 NSString *NEAREST_5_ROUNDING = @"5.5";
 

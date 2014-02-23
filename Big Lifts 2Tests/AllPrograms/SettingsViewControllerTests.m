@@ -15,6 +15,7 @@
 - (void)testSetsRoundingTypeValueOnAppear {
     SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
     STAssertFalse([[controller.roundingTypeField text] isEqualToString:@""], @"");
+    STAssertEquals((int) [controller.roundingTypePicker selectedRowInComponent:0], 1, @"");
 }
 
 - (void)testChangesRoundToOnPickerChange {
@@ -26,7 +27,9 @@
 }
 
 - (void)testChangesRoundingTypeOnPickerChange {
-    STFail(@"write test yo!");
+    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
+    [controller pickerView:controller.roundingTypePicker didSelectRow:0 inComponent:0];
+    STAssertEqualObjects([[[JSettingsStore instance] first] roundingType], ROUNDING_TYPE_DOWN, @"");
 }
 
 - (void)testSetsNearest5RoundTo {
