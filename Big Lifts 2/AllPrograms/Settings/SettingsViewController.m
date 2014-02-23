@@ -71,7 +71,12 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return [self.roundingOptions count];
+    if (pickerView == self.roundToPicker) {
+        return [self.roundingOptions count];
+    }
+    else {
+        return [self.roundingTypeOptions count];
+    }
 }
 
 - (void)setupRoundTo {

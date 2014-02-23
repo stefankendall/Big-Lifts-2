@@ -11,7 +11,7 @@
 
 - (IBAction)adsOnChanged:(id)sender;
 
-@property(weak, nonatomic) IBOutlet UITextField *roundToField;
+@property(weak, nonatomic) IBOutlet PaddingTextField *roundToField;
 @property(weak, nonatomic) IBOutlet PaddingTextField *roundingTypeField;
 @property(weak, nonatomic) IBOutlet UISwitch *keepScreenOnSwitch;
 

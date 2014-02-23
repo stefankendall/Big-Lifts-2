@@ -3949,20 +3949,20 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VV1-r5-omc">
-                                                    <rect key="frame" x="138" y="0.0" width="162" height="44"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VV1-r5-omc" customClass="PaddingTextField">
+                                                    <rect key="frame" x="138" y="0.0" width="182" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="VV1-r5-omc" firstAttribute="leading" secondItem="jEF-Ja-NhE" secondAttribute="trailing" constant="30" id="12Q-F7-6hI"/>
-                                                <constraint firstAttribute="bottom" secondItem="VV1-r5-omc" secondAttribute="bottom" id="BWd-3j-AQd"/>
-                                                <constraint firstItem="VV1-r5-omc" firstAttribute="top" secondItem="JsS-6U-SDp" secondAttribute="top" id="IFg-2D-gz1"/>
+                                                <constraint firstItem="VV1-r5-omc" firstAttribute="leading" secondItem="jEF-Ja-NhE" secondAttribute="trailing" constant="30" id="Ctb-HC-3jW"/>
+                                                <constraint firstAttribute="bottom" secondItem="VV1-r5-omc" secondAttribute="bottom" id="HlJ-wT-oV5"/>
                                                 <constraint firstItem="jEF-Ja-NhE" firstAttribute="leading" secondItem="JsS-6U-SDp" secondAttribute="leading" constant="20" symbolic="YES" id="KLy-WD-cND"/>
+                                                <constraint firstAttribute="trailing" secondItem="VV1-r5-omc" secondAttribute="trailing" id="kqM-gc-2il"/>
                                                 <constraint firstItem="jEF-Ja-NhE" firstAttribute="top" secondItem="JsS-6U-SDp" secondAttribute="top" constant="11" id="s1D-zu-ORQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="VV1-r5-omc" secondAttribute="trailing" constant="20" symbolic="YES" id="vJo-gD-Nu6"/>
+                                                <constraint firstItem="VV1-r5-omc" firstAttribute="top" secondItem="JsS-6U-SDp" secondAttribute="top" id="spu-dy-keZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -3980,7 +3980,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ae6-12-msw" customClass="PaddingTextField">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ae6-12-msw" customClass="PaddingTextField">
                                                     <rect key="frame" x="143" y="0.0" width="177" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
