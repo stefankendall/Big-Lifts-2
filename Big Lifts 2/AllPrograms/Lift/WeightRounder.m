@@ -61,18 +61,39 @@
 }
 
 - (NSDecimalNumber *)roundTo2:(NSDecimalNumber *)number withDirection:(const NSString *)direction {
-    NSDecimalNumber *roundedTo1 = [self roundTo1:number withDirection:ROUNDING_TYPE_NORMAL];
+    int lastDigitAndDecimalTimes10 = [[number decimalNumberByMultiplyingBy:N(10) withBehavior:DecimalNumberHandlers.noRaise] intValue] % 100;
+    while (lastDigitAndDecimalTimes10 >= 20) {
+        lastDigitAndDecimalTimes10 -= 20;
+    }
 
-    if ([roundedTo1 intValue] % 2 == 0) {
+    NSDecimalNumber *roundedTo1 = [self roundTo1:number withDirection:ROUNDING_TYPE_NORMAL];
+    if (lastDigitAndDecimalTimes10 == 0) {
         return roundedTo1;
     }
-    else {
-        if ([roundedTo1 compare:number] == NSOrderedDescending) {
-            return [roundedTo1 decimalNumberBySubtracting:N(1)];
+
+    NSDecimalNumber *decimals = [self getDecimalPart:number];
+    NSDecimalNumber *numberWithoutDecimals = [number decimalNumberBySubtracting:decimals withBehavior:[DecimalNumberHandlers noRaise]];
+    if ([direction isEqualToString:(NSString *) ROUNDING_TYPE_UP]) {
+        if ([numberWithoutDecimals intValue] % 2 == 0) {
+            return [numberWithoutDecimals decimalNumberByAdding:N(2)];
         }
         else {
-            return [roundedTo1 decimalNumberByAdding:N(1)];
+            return [numberWithoutDecimals decimalNumberByAdding:N(1)];
         }
+    } else if ([direction isEqualToString:(NSString *) ROUNDING_TYPE_DOWN]) {
+        if ([numberWithoutDecimals intValue] % 2 == 0) {
+            return numberWithoutDecimals;
+        }
+        else {
+            return [numberWithoutDecimals decimalNumberBySubtracting:N(1)];
+        }
+    }
+
+    if ([roundedTo1 compare:number] == NSOrderedDescending) {
+        return [roundedTo1 decimalNumberBySubtracting:N(1)];
+    }
+    else {
+        return [roundedTo1 decimalNumberByAdding:N(1)];
     }
 }
 
@@ -136,6 +157,12 @@
     int lastDigit = [wholeNumbers intValue] % 10;
     NSDecimalNumber *lastDigitDecimal = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInteger:lastDigit] decimalValue]];
     return [lastDigitDecimal decimalNumberByAdding:decimals withBehavior:DecimalNumberHandlers.noRaise];
+}
+
+- (NSDecimalNumber *)getDecimalPart:(NSDecimalNumber *)number {
+    NSDecimalNumberHandler *behavior = [NSDecimalNumberHandler decimalNumberHandlerWithRoundingMode:NSRoundDown scale:0 raiseOnExactness:NO raiseOnOverflow:NO raiseOnUnderflow:NO raiseOnDivideByZero:NO];
+    NSDecimalNumber *wholeNumbers = [number decimalNumberByRoundingAccordingToBehavior:behavior];
+    return [number decimalNumberBySubtracting:wholeNumbers withBehavior:DecimalNumberHandlers.noRaise];
 }
 
 @end
