@@ -99,15 +99,29 @@
 
 - (NSDecimalNumber *)roundTo5:(NSDecimalNumber *)number withDirection:(const NSString *)direction {
     int base5Round = [[number decimalNumberByDividingBy:N(5) withBehavior:DecimalNumberHandlers.noRaise] intValue] * 5;
-    int lastTwoDigits = [[number decimalNumberByMultiplyingBy:N(10) withBehavior:DecimalNumberHandlers.noRaise] intValue] % 100;
-    if (lastTwoDigits >= 50) {
-        lastTwoDigits -= 50;
+
+    if ([direction isEqualToString:(NSString *) ROUNDING_TYPE_DOWN]) {
+        return [[NSDecimalNumber alloc] initWithInt:base5Round];
+    }
+    else if ([direction isEqualToString:(NSString *) ROUNDING_TYPE_UP]) {
+        NSDecimalNumber *base5 = [[NSDecimalNumber alloc] initWithInt:base5Round];
+        if ([base5 isEqualToNumber:number]) {
+            return base5;
+        }
+        else {
+            return [base5 decimalNumberByAdding:N(5)];
+        }
     }
 
-    if (lastTwoDigits == 0) {
+    int lastDigitAndDecimalTimes10 = [[number decimalNumberByMultiplyingBy:N(10) withBehavior:DecimalNumberHandlers.noRaise] intValue] % 100;
+    if (lastDigitAndDecimalTimes10 >= 50) {
+        lastDigitAndDecimalTimes10 -= 50;
+    }
+
+    if (lastDigitAndDecimalTimes10 == 0) {
         return [self roundTo1:number withDirection:nil ];
     }
-    else if (lastTwoDigits < 25) {
+    else if (lastDigitAndDecimalTimes10 < 25) {
         return [[NSDecimalNumber alloc] initWithInt:base5Round];
     }
     else {
