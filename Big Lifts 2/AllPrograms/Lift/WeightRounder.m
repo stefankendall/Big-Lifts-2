@@ -25,12 +25,12 @@
 }
 
 - (NSDecimalNumber *)roundToNearest5:(NSDecimalNumber *)number withDirection:(const NSString *)direction {
-    NSDecimalNumber *roundedTo5 = [self roundTo5:number withDirection:nil ];
+    NSDecimalNumber *roundedTo5 = [self roundTo5:number withDirection:ROUNDING_TYPE_NORMAL];
     if ([roundedTo5 intValue] % 10 == 0) {
         NSDecimalNumber *up = [roundedTo5 decimalNumberByAdding:N(3)];
         NSDecimalNumber *down = [roundedTo5 decimalNumberBySubtracting:N(3)];
-        NSDecimalNumber *up5 = [self roundTo5:up withDirection:nil ];
-        NSDecimalNumber *down5 = [self roundTo5:down withDirection:nil ];
+        NSDecimalNumber *up5 = [self roundTo5:up withDirection:ROUNDING_TYPE_NORMAL];
+        NSDecimalNumber *down5 = [self roundTo5:down withDirection:ROUNDING_TYPE_NORMAL];
 
         NSDecimalNumber *upDistance = [up5 decimalNumberBySubtracting:number];
         NSDecimalNumber *downDistance = [number decimalNumberBySubtracting:down5];
@@ -61,7 +61,7 @@
 }
 
 - (NSDecimalNumber *)roundTo2:(NSDecimalNumber *)number withDirection:(const NSString *)direction {
-    NSDecimalNumber *roundedTo1 = [self roundTo1:number withDirection:nil ];
+    NSDecimalNumber *roundedTo1 = [self roundTo1:number withDirection:ROUNDING_TYPE_NORMAL];
 
     if ([roundedTo1 intValue] % 2 == 0) {
         return roundedTo1;
@@ -119,7 +119,7 @@
     }
 
     if (lastDigitAndDecimalTimes10 == 0) {
-        return [self roundTo1:number withDirection:nil ];
+        return [self roundTo1:number withDirection:ROUNDING_TYPE_NORMAL];
     }
     else if (lastDigitAndDecimalTimes10 < 25) {
         return [[NSDecimalNumber alloc] initWithInt:base5Round];
