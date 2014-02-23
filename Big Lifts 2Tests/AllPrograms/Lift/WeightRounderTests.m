@@ -39,9 +39,23 @@
     STAssertEqualObjects([[WeightRounder new] round:N(90)], @90, @"");
 }
 
+- (void)testRoundsTo2p5WithDirection {
+    [[[JSettingsStore instance] first] setRoundTo:N(2.5)];
+    [[[JSettingsStore instance] first] setRoundingType:(NSString *) ROUNDING_TYPE_UP];
+    STAssertEqualObjects([[WeightRounder new] round:N(80.1)], @82.5, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(82.5)], @82.5, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(85.0)], @85, @"");
+
+    [[[JSettingsStore instance] first] setRoundingType:(NSString *) ROUNDING_TYPE_DOWN];
+    STAssertEqualObjects([[WeightRounder new] round:N(82.4)], @80, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(89.9)], @87.5, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(85.0)], @85, @"");
+}
+
 - (void)testDoesNotCrashOnBoundaryInputs {
     STAssertEqualObjects([[WeightRounder new] round:N(0)], @0, @"");
     STAssertEqualObjects([[WeightRounder new] round:nil], @0, @"");
+    STAssertEqualObjects([[WeightRounder new] round:[NSDecimalNumber notANumber]], @0, @"");
 }
 
 - (void)testRoundsTo1 {
@@ -67,6 +81,17 @@
     STAssertEqualObjects([[WeightRounder new] round:N(166)], @165, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(160)], @165, @"");
     STAssertEqualObjects([[WeightRounder new] round:N(159)], @155, @"");
+}
+
+- (void)testRoundToNearest5WithDirection {
+    [[[JSettingsStore instance] first] setRoundTo:[NSDecimalNumber decimalNumberWithString:NEAREST_5_ROUNDING]];
+    [[[JSettingsStore instance] first] setRoundingType:(NSString *) ROUNDING_TYPE_UP];
+    STAssertEqualObjects([[WeightRounder new] round:N(165)], @165, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(165.1)], @170, @"");
+
+    [[[JSettingsStore instance] first] setRoundingType:(NSString *) ROUNDING_TYPE_DOWN];
+    STAssertEqualObjects([[WeightRounder new] round:N(165)], @165, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(164.9)], @160, @"");
 }
 
 - (void)testRoundsTo2 {
