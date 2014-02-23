@@ -87,11 +87,11 @@
     [[[JSettingsStore instance] first] setRoundTo:[NSDecimalNumber decimalNumberWithString:NEAREST_5_ROUNDING]];
     [[[JSettingsStore instance] first] setRoundingType:(NSString *) ROUNDING_TYPE_UP];
     STAssertEqualObjects([[WeightRounder new] round:N(165)], @165, @"");
-    STAssertEqualObjects([[WeightRounder new] round:N(165.1)], @170, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(165.1)], @175, @"");
 
     [[[JSettingsStore instance] first] setRoundingType:(NSString *) ROUNDING_TYPE_DOWN];
     STAssertEqualObjects([[WeightRounder new] round:N(165)], @165, @"");
-    STAssertEqualObjects([[WeightRounder new] round:N(164.9)], @160, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(164.9)], @155, @"");
 }
 
 - (void)testRoundsTo2 {

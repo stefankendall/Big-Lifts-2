@@ -25,6 +25,26 @@
 }
 
 - (NSDecimalNumber *)roundToNearest5:(NSDecimalNumber *)number withDirection:(const NSString *)direction {
+    NSDecimalNumber *lastPart = [self getLastPartsOf:number];
+    if ([lastPart isEqual:N(5)]) {
+        return number;
+    }
+
+    if ([direction isEqualToString:(NSString *) ROUNDING_TYPE_UP]) {
+        if ([lastPart compare:N(5)] == NSOrderedAscending) {
+            return [[number decimalNumberBySubtracting:lastPart] decimalNumberByAdding:N(5)];
+        } else {
+            return [[number decimalNumberBySubtracting:lastPart] decimalNumberByAdding:N(15)];
+        }
+    }
+    else {
+        if ([lastPart compare:N(5)] == NSOrderedAscending) {
+            return [[number decimalNumberBySubtracting:lastPart] decimalNumberBySubtracting:N(5)];
+        } else {
+            return [[number decimalNumberBySubtracting:lastPart] decimalNumberByAdding:N(5)];
+        }
+    }
+
     NSDecimalNumber *roundedTo5 = [self roundTo5:number withDirection:ROUNDING_TYPE_NORMAL];
     if ([roundedTo5 intValue] % 10 == 0) {
         NSDecimalNumber *up = [roundedTo5 decimalNumberByAdding:N(3)];
