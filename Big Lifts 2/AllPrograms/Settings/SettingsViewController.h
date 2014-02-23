@@ -1,6 +1,8 @@
 #import "UIViewController+ViewDeckAdditions.h"
 #import "BLTableViewController.h"
 
+@class PaddingTextField;
+
 @interface SettingsViewController : BLTableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
 
 - (IBAction)unitsChanged:(id)sender;
@@ -10,12 +12,15 @@
 - (IBAction)adsOnChanged:(id)sender;
 
 @property(weak, nonatomic) IBOutlet UITextField *roundToField;
-@property (weak, nonatomic) IBOutlet UISwitch *keepScreenOnSwitch;
+@property(weak, nonatomic) IBOutlet PaddingTextField *roundingTypeField;
+@property(weak, nonatomic) IBOutlet UISwitch *keepScreenOnSwitch;
+
 @property(strong, nonatomic) UIPickerView *roundToPicker;
-@property (weak, nonatomic) IBOutlet UITableViewCell *testDataSavingCell;
-@property (weak, nonatomic) IBOutlet UISwitch *iCloudEnabled;
-@property (weak, nonatomic) IBOutlet UITableViewCell *adsCell;
-@property (weak, nonatomic) IBOutlet UISwitch *adsSwitch;
+@property(strong, nonatomic) UIPickerView *roundingTypePicker;
+
+@property(weak, nonatomic) IBOutlet UISwitch *iCloudEnabled;
+@property(weak, nonatomic) IBOutlet UITableViewCell *adsCell;
+@property(weak, nonatomic) IBOutlet UISwitch *adsSwitch;
 
 @property(nonatomic, strong) NSArray *roundingText;
 @end

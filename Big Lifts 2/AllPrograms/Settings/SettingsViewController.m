@@ -7,11 +7,13 @@
 #import "BLKeyValueStore.h"
 #import "AdsExperiment.h"
 #import "Migrator.h"
+#import "PaddingTextField.h"
 
 static BOOL SAVE_DATA_TEST_ENABLED = YES;
 
 @interface SettingsViewController ()
 @property(nonatomic, strong) NSArray *roundingOptions;
+@property(nonatomic, strong) NSArray *roundingTypeOptions;
 @end
 
 @implementation SettingsViewController {
@@ -21,11 +23,12 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupRoundTo];
+    [self setupRoundingType];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self reloadData];
-    [self.testDataSavingCell setHidden:!SAVE_DATA_TEST_ENABLED];
+
     [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
     [self.adsSwitch setOn:[[[JSettingsStore instance] first] adsEnabled]];
     [self.adsCell setHidden:![AdsExperiment isInExperiment]];
@@ -75,9 +78,26 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.roundToField];
 }
 
+
+- (void)setupRoundingType {
+    self.roundingTypeOptions = @[ROUNDING_TYPE_NORMAL];
+    self.roundingTypePicker = [UIPickerView new];
+    [self.roundingTypePicker setDataSource:self];
+    [self.roundingTypePicker setDelegate:self];
+    self.roundingTypeField.inputView = self.roundingTypePicker;
+
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.roundingTypeField];
+}
+
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
     UILabel *label = [UILabel new];
-    [label setText:self.roundingText[(NSUInteger) row]];
+    if (pickerView == self.roundToPicker) {
+        [label setText:self.roundingText[(NSUInteger) row]];
+    }
+    else {
+        [label setText:self.roundingTypeOptions[(NSUInteger) row]];
+    }
+
     return label;
 }
 
@@ -119,7 +139,13 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     JSettings *settings = [[JSettingsStore instance] first];
-    settings.roundTo = self.roundingOptions[(NSUInteger) row];
+    if (pickerView == self.roundToPicker) {
+        settings.roundTo = self.roundingOptions[(NSUInteger) row];
+    }
+    else {
+
+    }
+
     [self reloadData];
 }
 
