@@ -1,6 +1,7 @@
 #import "Migrate10to11.h"
 #import "JFTOSettingsHelper.h"
 #import "JSettings.h"
+#import "JSettingsHelper.h"
 
 @implementation Migrate10to11
 
@@ -9,10 +10,10 @@
 }
 
 - (void)addRoundingTypeToSettings {
-    NSMutableDictionary *settings = [JFTOSettingsHelper readSettings];
+    NSMutableDictionary *settings = [JSettingsHelper readSettings];
     if (settings) {
         settings[@"roundingType"] = ROUNDING_TYPE_NORMAL;
-        [JFTOSettingsHelper writeSettings:settings];
+        [JSettingsHelper writeSettings:settings];
     }
 }
 

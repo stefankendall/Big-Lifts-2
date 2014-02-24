@@ -12,7 +12,7 @@ extern NSString *NEAREST_5_ROUNDING;
 @interface JSettings : JModel
 @property(nonatomic) NSString *units;
 @property(nonatomic) NSDecimalNumber *roundTo;
-@property(nonatomic) NSString *roundingType;
+@property(nonatomic) NSString<Optional> *roundingType;
 @property(nonatomic) NSString *roundingFormula;
 @property(nonatomic) BOOL screenAlwaysOn;
 @property(nonatomic) BOOL isMale;
