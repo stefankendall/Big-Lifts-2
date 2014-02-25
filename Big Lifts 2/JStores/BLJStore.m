@@ -178,7 +178,7 @@
 - (NSOrderedSet *)unique:(NSString *)keyName {
     NSArray *allValues = [[self findAll] collect:^id(id obj) {
         id value = [obj valueForKeyPath:keyName];
-        if (value == nil ) {
+        if (value == nil) {
             value = [NSNull null];
         }
         return value;
