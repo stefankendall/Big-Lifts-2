@@ -1,4 +1,5 @@
 #import "RowTextField.h"
+#import "PaddingRowTextField.h"
 
-@interface TrainingMaxRowTextField : RowTextField
+@interface TrainingMaxRowTextField : PaddingRowTextField
 @end

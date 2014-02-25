@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5051" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -30,10 +30,10 @@
                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                     </textField>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lvA-1Y-Ihh" customClass="TrainingMaxRowTextField">
-                        <rect key="frame" x="221" y="0.0" width="79" height="43"/>
+                        <rect key="frame" x="221" y="0.0" width="99" height="43"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="79" id="AAf-LZ-9bb"/>
+                            <constraint firstAttribute="width" constant="99" id="gZM-aX-BSF"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -41,14 +41,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="XlF-br-zRn" firstAttribute="leading" secondItem="GAr-jH-0xT" secondAttribute="leading" constant="20" symbolic="YES" id="2vc-36-lcr"/>
-                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="baseline" secondItem="qS2-zX-TuI" secondAttribute="baseline" id="AVc-1i-ULg"/>
                     <constraint firstItem="qS2-zX-TuI" firstAttribute="leading" secondItem="XlF-br-zRn" secondAttribute="trailing" constant="8" symbolic="YES" id="Bzs-Hn-djz"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="top" secondItem="GAr-jH-0xT" secondAttribute="top" id="Gf0-cd-wux"/>
+                    <constraint firstAttribute="bottom" secondItem="lvA-1Y-Ihh" secondAttribute="bottom" id="QHZ-Ga-Fgs"/>
                     <constraint firstItem="qS2-zX-TuI" firstAttribute="centerY" secondItem="XlF-br-zRn" secondAttribute="centerY" id="Rj7-1x-rpj"/>
-                    <constraint firstAttribute="bottom" secondItem="lvA-1Y-Ihh" secondAttribute="bottom" id="cxV-1Q-ag9"/>
-                    <constraint firstAttribute="trailing" secondItem="lvA-1Y-Ihh" secondAttribute="trailing" constant="20" symbolic="YES" id="f5o-Bo-nTB"/>
-                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="leading" secondItem="qS2-zX-TuI" secondAttribute="trailing" constant="8" symbolic="YES" id="fS8-2y-WnN"/>
-                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="bottom" secondItem="qS2-zX-TuI" secondAttribute="bottom" id="yJM-hF-4B8"/>
-                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="top" secondItem="GAr-jH-0xT" secondAttribute="top" id="ymA-VX-thA"/>
+                    <constraint firstAttribute="trailing" secondItem="lvA-1Y-Ihh" secondAttribute="trailing" id="ewa-kE-Apd"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="bottom" secondItem="qS2-zX-TuI" secondAttribute="bottom" id="fGa-hM-yGn"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="leading" secondItem="qS2-zX-TuI" secondAttribute="trailing" constant="8" symbolic="YES" id="keV-QT-e2U"/>
+                    <constraint firstItem="lvA-1Y-Ihh" firstAttribute="baseline" secondItem="qS2-zX-TuI" secondAttribute="baseline" id="qZI-TC-cK4"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

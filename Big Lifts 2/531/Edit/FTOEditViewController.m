@@ -16,10 +16,6 @@
     [self.tableView reloadData];
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [self emptyView];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[JFTOLiftStore instance] count];
 }
