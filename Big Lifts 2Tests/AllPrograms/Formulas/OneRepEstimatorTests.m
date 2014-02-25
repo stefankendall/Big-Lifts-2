@@ -16,7 +16,7 @@
 }
 
 - (void)testReturns0ForOverflowAndDoesNotCrash {
-    STAssertEqualObjects([[OneRepEstimator new] estimate:N(NSIntegerMax) withReps:NSIntegerMax], [NSDecimalNumber notANumber], @"");
+    STAssertEqualObjects([[OneRepEstimator new] estimate:N(NSIntegerMax) withReps:NSIntegerMax], N(0), @"");
 }
 
 - (void)testCutsNumbersToOneDecimalPlace {

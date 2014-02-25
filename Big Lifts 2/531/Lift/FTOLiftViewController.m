@@ -73,22 +73,24 @@
     JFTOVariant *variant = [[JFTOVariantStore instance] first];
     NSObject <JFTOPlan> *ftoPlan = [[JFTOWorkoutSetsGenerator new] planForVariant:variant.name];
 
-    NSArray *weekNames = [ftoPlan weekNames];
-    if (section >= [weekNames count]) {
-        return @"";
-    }
-
+    int titleSection = 0;
     if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
         if (section < 3) {
-            return weekNames[(NSUInteger) section];
+            titleSection = section;
         }
         else {
-            return weekNames[(NSUInteger) (section - 3)];
+            titleSection = section - 3;
         }
     }
     else {
-        return weekNames[(NSUInteger) section];
+        titleSection = section;
     }
+
+    NSArray *weekNames = [ftoPlan weekNames];
+    if (titleSection >= [weekNames count]) {
+        return @"";
+    }
+    return weekNames[(NSUInteger) titleSection];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
