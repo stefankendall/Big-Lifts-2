@@ -5,13 +5,17 @@
 #import "Migrator.h"
 #import "BLTimer.h"
 #import "BLKeyValueStore.h"
+#import "Flurry.h"
 
 @implementation BLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Flurry setCrashReportingEnabled:NO];
+    [Flurry startSession:@"FW43KTWNCSNYJRDR39WY"];
 #if (!TARGET_IPHONE_SIMULATOR)
     [Crashlytics startWithAPIKey:@"f1f936528fec614b3f5e265a22c4bef0a92d8dc4"];
 #endif
+
     [[SKProductStore instance] loadProducts:^{
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self

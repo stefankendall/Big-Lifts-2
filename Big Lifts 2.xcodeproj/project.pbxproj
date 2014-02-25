@@ -113,6 +113,8 @@
 		54590337262291E6376E5EC2 /* Migrate1to2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590583FEEDF2C8108B5B17 /* Migrate1to2Tests.m */; };
 		5459033FB79955FAAF5CB5C5 /* NavTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909FA25809BC449AB24BC /* NavTableViewCell.m */; };
 		5459034104050CCA10D03CF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545909344AEA6A82F1DB578A /* UIKit.framework */; };
+		5459034542C001F13CEE869F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590666F2847873F7A0DC8E /* SystemConfiguration.framework */; };
+		54590357D3B68414D7CA4AFC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B5E51917F3BAEC0018A856 /* Security.framework */; };
 		545903669155D105CD9B6494 /* BLTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B2626B2BA3F46507E90 /* BLTimerTests.m */; };
 		545903831C91BD3A2A6B2443 /* FTOLogExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906C4391AB6F268FA79CF /* FTOLogExporter.m */; };
 		545903B3117C0B807EE61FAD /* SSLiftSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590F79951F97DD25AF5FF0 /* SSLiftSummaryCell.xib */; };
@@ -860,6 +862,7 @@
 		54590654195094218811D62B /* JFTOTriumvirateAssistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOTriumvirateAssistance.h; sourceTree = "<group>"; };
 		54590659C88134015D9ADD06 /* SJSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SJSetCell.xib; sourceTree = "<group>"; };
 		5459065C80B2069235E170D6 /* Migrate5to6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate5to6.h; sourceTree = "<group>"; };
+		54590666F2847873F7A0DC8E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		54590669A22E51A18675BE8D /* FTOLiftWorkoutViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftWorkoutViewControllerTests.m; sourceTree = "<group>"; };
 		5459066B17EC7FBFB209971B /* ProgramSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramSelectorViewController.m; sourceTree = "<group>"; };
 		5459066CCE8B77DB1839F29A /* BLNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLNavController.m; sourceTree = "<group>"; };
@@ -1393,6 +1396,8 @@
 				54590C153CB6C4C5FA161BA0 /* AudioToolbox.framework in Frameworks */,
 				54590EF34211D1E1CD79C58F /* iAd.framework in Frameworks */,
 				545900E136E33162A76D5260 /* Social.framework in Frameworks */,
+				54590357D3B68414D7CA4AFC /* Security.framework in Frameworks */,
+				5459034542C001F13CEE869F /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2866,6 +2871,7 @@
 				545904168FB3BA47ECC7F750 /* AudioToolbox.framework */,
 				5459093FD6B00B7019B51230 /* iAd.framework */,
 				54590B6922760F2E5D9AC64B /* Social.framework */,
+				54590666F2847873F7A0DC8E /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
