@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "TimerViewController.h"
 #import "PaddingTextField.h"
 #import "BLTimer.h"
@@ -29,6 +30,7 @@
 }
 
 - (IBAction)timerTapped:(id)sender {
+    [Flurry logEvent:@"Rest_Start"];
     [self startTimer];
     [self.navigationController popViewControllerAnimated:YES];
 }

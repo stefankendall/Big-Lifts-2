@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "RestShareToolbar.h"
 #import "BLTimer.h"
 #import "WorkoutSharer.h"
@@ -10,6 +11,7 @@
 }
 
 - (void)showShareSheet {
+    [Flurry logEvent:@"Share_Sheet"];
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
                                                        delegate:self
                                               cancelButtonTitle:@"Cancel"

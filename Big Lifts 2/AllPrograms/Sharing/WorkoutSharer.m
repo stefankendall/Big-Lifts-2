@@ -1,4 +1,5 @@
 #import <Social/Social.h>
+#import <FlurrySDK/Flurry.h>
 #import "WorkoutSharer.h"
 #import "JWorkout.h"
 #import "JSettingsStore.h"
@@ -9,6 +10,8 @@
 @implementation WorkoutSharer
 
 - (void)shareOnTwitter:(NSArray *)workouts withController:(UIViewController *)controller {
+    [Flurry logEvent:@"Share_Twitter"];
+
     SLComposeViewController *sheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     NSString *summary = [self workoutSummary:workouts];
     [sheet setInitialText:[@"@BigLiftsApp\n" stringByAppendingString:summary]];
@@ -16,6 +19,8 @@
 }
 
 - (void)shareOnFacebook:(NSArray *)workouts withController:(UIViewController *)controller {
+    [Flurry logEvent:@"Share_Facebook"];
+
     SLComposeViewController *sheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     NSString *summary = [self workoutSummary:workouts];
     [sheet setInitialText:summary];

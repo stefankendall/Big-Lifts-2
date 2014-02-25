@@ -1,4 +1,5 @@
 #import <IAPManager/IAPManager.h>
+#import <FlurrySDK/Flurry.h>
 #import "SSIndividualWorkoutViewController.h"
 #import "IIViewDeckController.h"
 #import "JWorkoutLogStore.h"
@@ -33,6 +34,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"Workout" withParameters:@{@"Name" : @"Starting Strength"}];
     [self.tableView reloadData];
 }
 

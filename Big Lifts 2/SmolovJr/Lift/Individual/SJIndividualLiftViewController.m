@@ -1,4 +1,5 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
+#import <FlurrySDK/Flurry.h>
 #import "SJIndividualLiftViewController.h"
 #import "JSJWorkout.h"
 #import "SJSetCell.h"
@@ -25,6 +26,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [Flurry logEvent:@"Workout" withParameters:@{@"Name" : @"Smolov Jr"}];
     [self.tableView reloadData];
 }
 

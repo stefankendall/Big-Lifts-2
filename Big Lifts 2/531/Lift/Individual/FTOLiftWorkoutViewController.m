@@ -1,5 +1,6 @@
 #import <ViewDeck/IIViewDeckController.h>
 #import <MRCEnumerable/NSArray+Enumerable.h>
+#import <FlurrySDK/Flurry.h>
 #import "FTOLiftWorkoutViewController.h"
 #import "FTOWorkoutCell.h"
 #import "JSet.h"
@@ -21,6 +22,7 @@
 @implementation FTOLiftWorkoutViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"Workout" withParameters:@{@"Name" : @"5/3/1"}];
     [self.tableView reloadData];
     if (self.ftoWorkout.done) {
         [self.doneButton setTitle:@"Not Done"];

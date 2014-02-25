@@ -1,4 +1,5 @@
 #import <ViewDeck/IIViewDeckController.h>
+#import <FlurrySDK/Flurry.h>
 #import "SVWorkoutViewController.h"
 #import "JSVWorkout.h"
 #import "JWorkout.h"
@@ -21,6 +22,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    [Flurry logEvent:@"Workout" withParameters:@{@"Name" : @"Smolov"}];
+
     if (self.svWorkout.done) {
         [self.doneButton setTitle:@"Not Done"];
     }
