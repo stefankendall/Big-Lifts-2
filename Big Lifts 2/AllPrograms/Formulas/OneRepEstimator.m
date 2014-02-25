@@ -10,7 +10,7 @@
     if (reps == 1) {
         return weight;
     }
-    else if (reps == 0 || weight == nil) {
+    else if (reps == 0 || weight == nil || [weight isEqual:[NSDecimalNumber notANumber]]) {
         return N(0);
     }
 
