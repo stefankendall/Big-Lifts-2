@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "BarLoadingViewController.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
@@ -43,6 +44,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"BarLoading"];
     [self.tableView reloadData];
     [self removeOverlayIfNecessary];
 }

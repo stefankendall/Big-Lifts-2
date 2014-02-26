@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SSEditSetForm.h"
 #import "JSet.h"
 #import "PaddingTextField.h"
@@ -15,6 +16,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"StartingStrength_EditSet"];
+
     NSNumber *reps = self.previousChange ? self.previousChange.reps : self.set.reps;
     NSNumber *weight = self.previousChange ? self.previousChange.weight : [self.set roundedEffectiveWeight];
     [self.repsField setText:[NSString stringWithFormat:@"%@", reps]];

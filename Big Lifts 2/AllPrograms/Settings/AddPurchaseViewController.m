@@ -1,8 +1,14 @@
+#import <FlurrySDK/Flurry.h>
 #import "AddPurchaseViewController.h"
 #import "Purchaser.h"
 #import "SKProductStore.h"
 
 @implementation AddPurchaseViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [Flurry logEvent:@"AddPurchaseDebug"];
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];

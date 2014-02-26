@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SJLiftViewController.h"
 #import "SJWorkoutSummaryCell.h"
 #import "SJIndividualLiftViewController.h"
@@ -13,6 +14,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [Flurry logEvent:@"SmolovJr_WorkoutSummary"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

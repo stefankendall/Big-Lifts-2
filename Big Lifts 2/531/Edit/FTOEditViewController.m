@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "FTOEditViewController.h"
 #import "JFTOLiftStore.h"
 #import "JFTOLift.h"
@@ -13,6 +14,7 @@
 @implementation FTOEditViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_Edit"];
     [self.tableView reloadData];
 }
 

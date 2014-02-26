@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SVLiftSelectorViewController.h"
 #import "JSVWorkoutStore.h"
 #import "SVLiftSelectorCell.h"
@@ -7,6 +8,7 @@
 @implementation SVLiftSelectorViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"Smolov_WorkoutSummary"];
     [self.tableView reloadData];
 }
 

@@ -1,5 +1,6 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import <MRCEnumerable/NSDictionary+Enumerable.h>
+#import <FlurrySDK/Flurry.h>
 #import "FTOAssistanceViewController.h"
 #import "Purchaser.h"
 #import "PurchaseOverlay.h"
@@ -43,6 +44,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_Assistance"];
     [self enableDisableIapCells];
     [self checkCurrentAssistance];
 }

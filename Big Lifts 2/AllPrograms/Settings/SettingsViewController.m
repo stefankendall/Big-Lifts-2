@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SettingsViewController.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
@@ -27,6 +28,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"Settings"];
     [self reloadData];
 
     [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];

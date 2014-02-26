@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "FTOTrackViewController.h"
 #import "WorkoutLogCell.h"
 #import "JWorkoutLog.h"
@@ -21,6 +22,12 @@
     self.showState = (ShowState) [[[[JFTOSettingsStore instance] first] logState] intValue];
     self.trackSort = (TrackSort) 0;
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [Flurry logEvent:@"5/3/1_Track"];
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {

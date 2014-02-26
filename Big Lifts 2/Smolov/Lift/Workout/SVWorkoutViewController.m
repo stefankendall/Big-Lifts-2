@@ -22,7 +22,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
     [Flurry logEvent:@"Workout" withParameters:@{@"Name" : @"Smolov"}];
 
     if (self.svWorkout.done) {

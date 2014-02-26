@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SSEditViewController.h"
 #import "JSSLiftStore.h"
 #import "LiftFormCell.h"
@@ -8,6 +9,7 @@
 @implementation SSEditViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"StartingStrength_Edit"];
     [self.tableView reloadData];
 }
 

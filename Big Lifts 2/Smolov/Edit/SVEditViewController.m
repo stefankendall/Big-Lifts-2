@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SVEditViewController.h"
 #import "JSVLiftStore.h"
 #import "LiftFormCell.h"
@@ -6,6 +7,11 @@
 #import "TextViewInputAccessoryBuilder.h"
 
 @implementation SVEditViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [Flurry logEvent:@"Smolov_Edit"];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;

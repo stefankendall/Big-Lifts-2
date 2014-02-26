@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SJEditViewController.h"
 #import "JSJLiftStore.h"
 #import "JSJLift.h"
@@ -15,6 +16,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"SmolovJr_Edit"];
+
     JSJLift *lift = [[JSJLiftStore instance] first];
     [self.liftField setText:lift.name];
     if ([lift.weight intValue] > 0) {

@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SJSetWeightViewController.h"
 #import "SetWeightDelegate.h"
 #import "TextViewInputAccessoryBuilder.h"
@@ -11,6 +12,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"SmolovJr_SetWeight"];
+
     [self.weightField setText:[self.weight stringValue]];
 }
 

@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "FTOChangeLiftsViewController.h"
 #import "JFTOLiftStore.h"
 #import "FTOChangeLiftCell.h"
@@ -10,6 +11,7 @@
 @implementation FTOChangeLiftsViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_ChangeLifts"];
     [self.tableView reloadData];
 }
 

@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "OneRepViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "OneRepEstimator.h"
@@ -29,6 +30,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"OneRepEstimation"];
     JSettings *settings = [[JSettingsStore instance] first];
     NSString *roundingFormula = [settings roundingFormula];
     NSUInteger row = [self.formulaNames indexOfObject:roundingFormula];

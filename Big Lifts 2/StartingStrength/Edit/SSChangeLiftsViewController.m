@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SSChangeLiftsViewController.h"
 #import "JSSLiftStore.h"
 #import "SSChangeLiftCell.h"
@@ -6,6 +7,11 @@
 #import "RowTextField.h"
 
 @implementation SSChangeLiftsViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [Flurry logEvent:@"StartingStrength_ChangeLifts"];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[JSSLiftStore instance] count];

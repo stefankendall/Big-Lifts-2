@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "SSLiftViewController.h"
 #import "JSSWorkoutSTore.h"
 #import "SSIndividualWorkoutViewController.h"
@@ -10,6 +11,8 @@
 @implementation SSLiftViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"StartingStrength_WorkoutSummary"];
+
     JSSState *state = [[JSSStateStore instance] first];
     if (state.lastWorkout) {
         self.aWorkout = [state.lastWorkout.name isEqualToString:@"B"];

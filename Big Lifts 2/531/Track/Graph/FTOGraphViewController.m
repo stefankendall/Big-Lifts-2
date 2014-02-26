@@ -1,4 +1,5 @@
 #import <MessageUI/MessageUI.h>
+#import <FlurrySDK/Flurry.h>
 #import "FTOGraphViewController.h"
 #import "WebViewJavascriptBridge.h"
 #import "FTOLogGraphTransformer.h"
@@ -25,6 +26,12 @@
                                              selector:@selector(enableDisableIap)
                                                  name:IAP_PURCHASED_NOTIFICATION
                                                object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_Graph"];
+    [self enableDisableIap];
+    [self.webView reload];
 }
 
 - (IBAction)export:(id)sender {
@@ -63,11 +70,6 @@
 
 - (void)tapOverlay:(id)tapOverlay {
     [[Purchaser new] purchase:IAP_GRAPHING];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self enableDisableIap];
-    [self.webView reload];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {

@@ -1,4 +1,5 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
+#import <FlurrySDK/Flurry.h>
 #import "FTOTriumvirateViewController.h"
 #import "JFTOTriumvirate.h"
 #import "JWorkout.h"
@@ -16,6 +17,7 @@
 @implementation FTOTriumvirateViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_Triumvirate"];
     [self.tableView reloadData];
 }
 

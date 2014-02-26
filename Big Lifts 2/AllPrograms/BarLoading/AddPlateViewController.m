@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "AddPlateViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "JPlateStore.h"
@@ -11,6 +12,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [Flurry logEvent:@"BarLoading_AddPlate"];
     [self resetForm];
 }
 

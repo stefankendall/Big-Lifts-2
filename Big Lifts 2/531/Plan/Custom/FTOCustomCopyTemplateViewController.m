@@ -1,4 +1,5 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
+#import <FlurrySDK/Flurry.h>
 #import "FTOCustomCopyTemplateViewController.h"
 #import "JFTOVariant.h"
 #import "JFTOCustomWorkoutStore.h"
@@ -36,6 +37,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_Custom_Copy_Template"];
     [self.tableView reloadData];
 }
 

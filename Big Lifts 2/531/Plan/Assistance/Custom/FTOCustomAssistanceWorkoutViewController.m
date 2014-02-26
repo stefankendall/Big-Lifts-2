@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "FTOCustomAssistanceWorkoutViewController.h"
 #import "JFTOCustomAssistanceWorkout.h"
 #import "AddCell.h"
@@ -16,6 +17,7 @@ static const int SETS_SECTION = 0;
 static const int ADD_SECTION = 1;
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_CustomAssistance"];
     [self.tableView reloadData];
 }
 

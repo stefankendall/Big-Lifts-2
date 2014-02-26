@@ -1,4 +1,5 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
+#import <FlurrySDK/Flurry.h>
 #import "FTOAddLiftViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "JFTOLiftStore.h"
@@ -19,6 +20,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_AddLift"];
+
     [self.doneButton setEnabled:NO];
     [self.nameField setText:@""];
     [self.weightField setText:@""];
