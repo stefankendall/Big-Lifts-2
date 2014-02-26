@@ -91,7 +91,7 @@
         else {
             [lift setWeight:weight];
         }
-        [self.tableView reloadData];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
 }
 
