@@ -85,6 +85,7 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
 
 - (IBAction)toggleWarmup:(id)sender {
     BOOL warmupOn = [self.warmupToggle isOn];
+    [Flurry logEvent:@"StartingStrength_ToggleWarmup" withParameters:@{@"Warmup" : [NSString stringWithFormat:@"%@", [NSNumber numberWithBool:warmupOn]]}];
     [[[JSSVariantStore instance] first] setWarmupEnabled:warmupOn];
 
     [[JSSWorkoutStore instance] removeWarmup];
