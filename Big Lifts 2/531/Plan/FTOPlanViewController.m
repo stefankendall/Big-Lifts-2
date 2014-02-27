@@ -119,6 +119,7 @@
             return cell == selectedCell;
         }];
         [[JFTOVariantStore instance] changeTo:newVariantName];
+        [Flurry logEvent:@"5/3/1_Plan_Change" withParameters:@{@"Variant" : newVariantName}];
         [self checkCurrentVariant];
         [self enableDisableSixWeekToggle];
     }
