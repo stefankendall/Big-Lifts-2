@@ -1,5 +1,6 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import <MRCEnumerable/NSDictionary+Enumerable.h>
+#import <FlurrySDK/Flurry.h>
 #import "SSWorkoutVariantController.h"
 #import "JSSWorkoutStore.h"
 #import "NSDictionaryMutator.h"
@@ -60,6 +61,7 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
         if ([indexPath section] == 1) {
             NSString *variantName = [self.variantMapping objectForKey:[NSNumber numberWithInteger:[indexPath row]]];
             [[JSSWorkoutStore instance] setupVariant:variantName];
+            [Flurry logEvent:@"StartingStrength_Plan_Change" withParameters:@{@"Variant" : variantName}];
             [self checkSelectedVariant];
         }
     }
