@@ -1,4 +1,5 @@
 #import <ViewDeck/IIViewDeckController.h>
+#import <FlurrySDK/Flurry.h>
 #import "ProgramSelectorViewController.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
@@ -28,6 +29,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"ChooseProgram"];
     [self reloadData];
 }
 
@@ -61,6 +63,7 @@
     }
 
     program.name = [self segueToProgramNames][segueName];
+    [Flurry logEvent:@"ChooseProgram" withParameters:@{@"Program" : program.name}];
 }
 
 @end
