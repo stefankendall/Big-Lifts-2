@@ -1,5 +1,4 @@
 #import "JFTOCustomAssistanceWorkout.h"
-#import "JWorkout.h"
 
 @implementation JFTOCustomAssistanceWorkout
 
