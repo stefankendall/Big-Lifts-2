@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5051" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ckh-VZ-HqJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5051" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ckh-VZ-HqJ">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -1361,6 +1361,42 @@
                                             <segue destination="QDC-yR-d2u" kind="push" id="TGx-xJ-3S2"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell tag="1" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="0Vt-ZZ-FP9">
+                                        <rect key="frame" x="0.0" y="368" width="320" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Vt-ZZ-FP9" id="BGK-um-flY">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Custom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZ9-31-u7A">
+                                                    <rect key="frame" x="20" y="9" width="240" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Assistance for lift and week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hR-aX-4cX">
+                                                    <rect key="frame" x="20" y="33" width="260" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YZ9-31-u7A" firstAttribute="top" secondItem="BGK-um-flY" secondAttribute="top" constant="9" id="Khv-8j-tUY"/>
+                                                <constraint firstAttribute="trailing" secondItem="YZ9-31-u7A" secondAttribute="trailing" constant="27" id="KiT-4P-YPF"/>
+                                                <constraint firstItem="2hR-aX-4cX" firstAttribute="top" secondItem="YZ9-31-u7A" secondAttribute="bottom" constant="3" id="RQ4-uQ-FaJ"/>
+                                                <constraint firstItem="YZ9-31-u7A" firstAttribute="leading" secondItem="2hR-aX-4cX" secondAttribute="leading" id="aU5-Qd-IsD"/>
+                                                <constraint firstItem="YZ9-31-u7A" firstAttribute="leading" secondItem="BGK-um-flY" secondAttribute="leading" constant="20" symbolic="YES" id="dsO-XR-SRA"/>
+                                                <constraint firstAttribute="bottom" secondItem="2hR-aX-4cX" secondAttribute="bottom" constant="10" id="rrs-sL-Hxb"/>
+                                                <constraint firstAttribute="trailing" secondItem="2hR-aX-4cX" secondAttribute="trailing" constant="7" id="y1d-u6-crW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="FdN-Me-FB0" kind="push" id="29Q-bV-fdh"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1373,6 +1409,7 @@
                     <connections>
                         <outlet property="bbbCell" destination="BMs-Gv-0gY" id="UjU-xw-uxP"/>
                         <outlet property="customCell" destination="7ea-L1-a07" id="2R6-jm-5yh"/>
+                        <outlet property="fullCustom" destination="0Vt-ZZ-FP9" id="a5f-st-w8T"/>
                         <outlet property="noneCell" destination="Y2q-WT-KhJ" id="oFd-XR-dma"/>
                         <outlet property="sstCell" destination="WHs-JH-Cj3" id="NtT-BD-umd"/>
                         <outlet property="triumvirateCell" destination="0vf-Mu-7W6" id="XLO-ni-4px"/>
@@ -1708,7 +1745,7 @@
             </objects>
             <point key="canvasLocation" x="3569" y="2201"/>
         </scene>
-        <!--Custom Assistance View Controller - Custom-->
+        <!--Custom Assistance View Controller - Simple Custom-->
         <scene sceneID="hCc-Oa-Eea">
             <objects>
                 <tableViewController storyboardIdentifier="ftoCustomAsst" id="QDC-yR-d2u" customClass="FTOCustomAssistanceViewController" sceneMemberID="viewController">
@@ -1731,7 +1768,7 @@
                             <outlet property="delegate" destination="QDC-yR-d2u" id="UQU-rk-fr4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Custom" id="sga-y0-FUr">
+                    <navigationItem key="navigationItem" title="Simple Custom" id="sga-y0-FUr">
                         <barButtonItem key="rightBarButtonItem" title="Edit Lifts" id="3di-u3-6do">
                             <connections>
                                 <segue destination="YIO-La-DgX" kind="push" id="Vsr-95-AYW"/>
@@ -1745,7 +1782,45 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9q-d2-ZyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3970" y="2201"/>
+            <point key="canvasLocation" x="4826" y="2301"/>
+        </scene>
+        <!--Full Custom Assistance View Controller - Full Custom-->
+        <scene sceneID="Sb7-7D-juF">
+            <objects>
+                <tableViewController storyboardIdentifier="ftoFullCustomAsst" id="FdN-Me-FB0" customClass="FTOFullCustomAssistanceViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="t9F-uk-k3l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0tj-fG-5cv">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0tj-fG-5cv" id="Dqc-zx-Vcw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FdN-Me-FB0" id="vqn-yn-7G4"/>
+                            <outlet property="delegate" destination="FdN-Me-FB0" id="Xia-Ou-zru"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Full Custom" id="jZW-yv-otF">
+                        <barButtonItem key="rightBarButtonItem" title="Edit Lifts" id="Le3-1M-Mpp">
+                            <connections>
+                                <segue destination="YIO-La-DgX" kind="push" id="dlv-y7-nZV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="rP5-93-DJx" kind="push" identifier="ftoSetupCustomAsstWorkout" id="VgC-Ub-KaO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDS-80-7xB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4826" y="2879"/>
         </scene>
         <!--Custom Assistance Lift View Controller - Edit Lifts-->
         <scene sceneID="EvZ-i0-Bad">
@@ -1784,7 +1859,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2s-U9-rKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4339" y="2201"/>
+            <point key="canvasLocation" x="5195" y="2301"/>
         </scene>
         <!--Custom Assistance Edit Lift View Controller - Edit Lift-->
         <scene sceneID="hPY-XJ-F69">
@@ -1902,7 +1977,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ge8-cX-GHO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4712" y="2201"/>
+            <point key="canvasLocation" x="5568" y="2301"/>
         </scene>
         <!--Change Lifts View Controller - Edit Lifts-->
         <scene sceneID="6Zd-KW-yE9">
@@ -5159,7 +5234,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cf-5b-BR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4712" y="2879"/>
+            <point key="canvasLocation" x="5568" y="2867"/>
         </scene>
         <!--Assistance Copy Template View Controller - Copy Assistance-->
         <scene sceneID="b3E-dY-A0y">
@@ -5215,13 +5290,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHV-Pz-05N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4712" y="3499"/>
+            <point key="canvasLocation" x="5568" y="3419"/>
         </scene>
         <!--Custom Assistance Edit Set View Controller - Edit Set-->
         <scene sceneID="xG3-e8-BKl">
             <objects>
                 <tableViewController storyboardIdentifier="ftoCustomAssistanceEditSetViewController" id="tcc-5J-gET" customClass="FTOCustomAssistanceEditSetViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JlX-Eu-Gdp">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JlX-Eu-Gdp" customClass="TPKeyboardAvoidingTableView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -5373,7 +5448,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMg-KY-0aI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5102" y="2879"/>
+            <point key="canvasLocation" x="5958" y="2867"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aie-NF-dGf">
@@ -5818,7 +5893,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="OKP-gO-9OD"/>
+        <segue reference="dlv-y7-nZV"/>
+        <segue reference="VgC-Ub-KaO"/>
+        <segue reference="0oa-Th-D6G"/>
         <segue reference="sGG-95-AJN"/>
         <segue reference="8uc-8g-w4c"/>
     </inferredMetricsTieBreakers>

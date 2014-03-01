@@ -7,6 +7,7 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *triumvirateCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *sstCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *customCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *fullCustom;
 
 @property(nonatomic, copy) NSString *selectedAssitanceType;
 @end

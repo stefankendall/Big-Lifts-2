@@ -16,8 +16,9 @@
     FTOCustomAssistanceWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAsstWorkout"];
 
     JSet *set = [[JSetStore instance] create];
-    controller.customAssistanceWorkout = [[JFTOCustomAssistanceWorkoutStore instance] create];
-    [controller.customAssistanceWorkout.workout addSet:set];
+    JFTOCustomAssistanceWorkout *customAssistanceWorkout = [[JFTOCustomAssistanceWorkoutStore instance] create];
+    controller.workout = customAssistanceWorkout.workout;
+    [controller.workout addSet:set];
     set.reps = @5;
     set.percentage = N(100);
     JLift *lift = [[JLiftStore instance] create];
@@ -35,8 +36,9 @@
     FTOCustomAssistanceWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAsstWorkout"];
 
     JSet *set = [[JSetStore instance] create];
-    controller.customAssistanceWorkout = [[JFTOCustomAssistanceWorkoutStore instance] create];
-    [controller.customAssistanceWorkout.workout addSet:set];
+    JFTOCustomAssistanceWorkout *customAssistanceWorkout = [[JFTOCustomAssistanceWorkoutStore instance] create];
+    controller.workout = customAssistanceWorkout.workout;
+    [controller.workout addSet:set];
 
     [controller tableView:controller.tableView moveRowAtIndexPath:NSIP(0, 0) toIndexPath:NSIP(1, 0)];
 }

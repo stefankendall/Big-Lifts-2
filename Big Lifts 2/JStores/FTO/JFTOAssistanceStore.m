@@ -11,6 +11,7 @@
 #import "JFTONoneAssistance.h"
 #import "JFTOSimplestStrengthTemplateAssistance.h"
 #import "JFTOCustomAssistance.h"
+#import "JFTOFullCustomAssistance.h"
 
 @implementation JFTOAssistanceStore
 
@@ -58,7 +59,8 @@
             FTO_ASSISTANCE_BORING_BUT_BIG : [JFTOBoringButBigAssistance new],
             FTO_ASSISTANCE_TRIUMVIRATE : [JFTOTriumvirateAssistance new],
             FTO_ASSISTANCE_SST : [JFTOSimplestStrengthTemplateAssistance new],
-            FTO_ASSISTANCE_CUSTOM : [JFTOCustomAssistance new]
+            FTO_ASSISTANCE_CUSTOM : [JFTOCustomAssistance new],
+            FTO_ASSISTANCE_FULL_CUSTOM : [JFTOFullCustomAssistance new]
     };
     return assistanceGenerators[name];
 }

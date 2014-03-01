@@ -24,7 +24,8 @@
             FTO_ASSISTANCE_BORING_BUT_BIG : self.bbbCell,
             FTO_ASSISTANCE_TRIUMVIRATE : self.triumvirateCell,
             FTO_ASSISTANCE_SST : self.sstCell,
-            FTO_ASSISTANCE_CUSTOM : self.customCell
+            FTO_ASSISTANCE_CUSTOM : self.customCell,
+            FTO_ASSISTANCE_FULL_CUSTOM : self.fullCustom
     };
 
     self.iapCells = @{

@@ -67,7 +67,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ftoSetupCustomAsstWorkout"]) {
         FTOCustomAssistanceWorkoutViewController *controller = [segue destinationViewController];
-        controller.customAssistanceWorkout = self.customAssistanceToSegue;
+        controller.workout = self.customAssistanceToSegue.workout;
     }
 }
 

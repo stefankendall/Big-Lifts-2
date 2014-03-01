@@ -1,5 +1,7 @@
+#import "BLTableViewController.h"
+
 @class JFTOCustomAssistanceWorkout;
 
-@interface FTOCustomAssistanceViewController : UITableViewController
+@interface FTOCustomAssistanceViewController : BLTableViewController
 @property(nonatomic, strong) JFTOCustomAssistanceWorkout *customAssistanceToSegue;
 @end

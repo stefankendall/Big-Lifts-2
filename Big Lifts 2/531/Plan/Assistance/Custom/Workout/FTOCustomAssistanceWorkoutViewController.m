@@ -30,7 +30,7 @@ static const int ADD_SECTION = 1;
         return 1;
     }
     else {
-        return [self.customAssistanceWorkout.workout.sets count];
+        return [self.workout.sets count];
     }
 }
 
@@ -48,7 +48,7 @@ static const int ADD_SECTION = 1;
         if (!cell) {
             cell = [FTOCustomAssistanceWorkoutSetCell create];
         }
-        JSet *set = self.customAssistanceWorkout.workout.sets[(NSUInteger) indexPath.row];
+        JSet *set = self.workout.sets[(NSUInteger) indexPath.row];
         if (set.lift) {
             [cell.liftName setText:set.lift.name];
         }
@@ -67,7 +67,7 @@ static const int ADD_SECTION = 1;
         self.tappedSet = nil;
     }
     else {
-        self.tappedSet = self.customAssistanceWorkout.workout.sets[(NSUInteger) indexPath.row];
+        self.tappedSet = self.workout.sets[(NSUInteger) indexPath.row];
     }
 
     [self performSegueWithIdentifier:@"ftoCustomAsstEditSet" sender:self];
@@ -77,13 +77,13 @@ static const int ADD_SECTION = 1;
     if ([segue.identifier isEqualToString:@"ftoCustomAsstEditSet"]) {
         FTOCustomAssistanceEditSetViewController *controller = [segue destinationViewController];
         if (self.tappedSet) {
-            controller.workout = self.customAssistanceWorkout.workout;
+            controller.workout = self.workout;
             controller.set = self.tappedSet;
         }
         else {
             JSet *set = [[JSetStore instance] create];
-            [self.customAssistanceWorkout.workout addSet:set];
-            controller.workout = self.customAssistanceWorkout.workout;
+            [self.workout addSet:set];
+            controller.workout = self.workout;
             controller.set = set;
         }
     }
@@ -109,8 +109,8 @@ static const int ADD_SECTION = 1;
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        JSet *set = self.customAssistanceWorkout.workout.sets[(NSUInteger) indexPath.row];
-        [self.customAssistanceWorkout.workout removeSet:set];
+        JSet *set = self.workout.sets[(NSUInteger) indexPath.row];
+        [self.workout removeSet:set];
         [self.tableView reloadData];
     }
 }
@@ -118,10 +118,10 @@ static const int ADD_SECTION = 1;
 - (void) tableView:(UITableView *)tableView
 moveRowAtIndexPath:(NSIndexPath *)from
        toIndexPath:(NSIndexPath *)to {
-    if ([self.customAssistanceWorkout.workout.sets count] > 1) {
-        JSet *sourceSet = self.customAssistanceWorkout.workout.sets[(NSUInteger) from.row];
-        [self.customAssistanceWorkout.workout.sets removeObjectAtIndex:(NSUInteger) from.row];
-        [self.customAssistanceWorkout.workout.sets insertObject:sourceSet atIndex:(NSUInteger) to.row];
+    if ([self.workout.sets count] > 1) {
+        JSet *sourceSet = self.workout.sets[(NSUInteger) from.row];
+        [self.workout.sets removeObjectAtIndex:(NSUInteger) from.row];
+        [self.workout.sets insertObject:sourceSet atIndex:(NSUInteger) to.row];
     }
     [self.tableView reloadData];
 }

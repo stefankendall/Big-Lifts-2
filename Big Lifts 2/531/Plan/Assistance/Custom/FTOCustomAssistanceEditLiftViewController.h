@@ -1,7 +1,9 @@
+#import "BLTableViewController.h"
+
 @class PaddingTextField;
 @class JFTOCustomAssistanceLift;
 
-@interface FTOCustomAssistanceEditLiftViewController : UITableViewController <UITextFieldDelegate> {
+@interface FTOCustomAssistanceEditLiftViewController : BLTableViewController <UITextFieldDelegate> {
 }
 @property(weak, nonatomic) IBOutlet PaddingTextField *name;
 @property(weak, nonatomic) IBOutlet PaddingTextField *weight;
