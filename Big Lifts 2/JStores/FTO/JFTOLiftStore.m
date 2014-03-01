@@ -6,7 +6,7 @@
 #import "JFTOBoringButBigLiftStore.h"
 #import "JFTOCustomAssistanceWorkoutStore.h"
 #import "JFTOTriumvirateStore.h"
-#import "JFTOCustomComplexAssistanceWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
 
 @implementation JFTOLiftStore
 
@@ -69,8 +69,8 @@
     [[JFTOSSTLiftStore instance] adjustSstLiftsToMainLifts];
     [[JFTOBoringButBigLiftStore instance] adjustToMainLifts];
     [[JFTOCustomAssistanceWorkoutStore instance] adjustToMainLifts];
-    [[JFTOCustomComplexAssistanceWorkoutStore instance] adjustToMainLifts];
     [[JFTOTriumvirateStore instance] adjustToMainLifts];
+    [[JFTOWorkoutStore instance] switchTemplate];
 }
 
 - (id)create {

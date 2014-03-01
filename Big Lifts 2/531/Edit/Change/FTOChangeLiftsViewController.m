@@ -56,7 +56,6 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [[JFTOLiftStore instance] removeAtIndex:[indexPath row]];
-        [[JFTOWorkoutStore instance] switchTemplate];
         [self.tableView reloadData];
     }
 }

@@ -1,5 +1,5 @@
 #import "BLJStore.h"
 
 @interface JFTOCustomComplexAssistanceWorkoutStore : BLJStore
-- (void)adjustToMainLifts;
+- (void)adjustToFtoWorkouts;
 @end

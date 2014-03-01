@@ -15,6 +15,7 @@
 #import "JFTOWorkoutSetsGenerator.h"
 #import "JFTOPlan.h"
 #import "JFTOSettings.h"
+#import "JFTOCustomComplexAssistanceWorkoutStore.h"
 
 @implementation JFTOWorkoutStore
 
@@ -41,6 +42,7 @@
     if (![[[JFTOSettingsStore instance] first] warmupEnabled]) {
         [self removeWarmup];
     }
+    [[JFTOCustomComplexAssistanceWorkoutStore instance] adjustToFtoWorkouts];
 }
 
 - (void)removeWarmup {

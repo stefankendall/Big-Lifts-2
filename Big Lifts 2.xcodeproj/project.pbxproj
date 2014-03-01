@@ -369,6 +369,7 @@
 		5459099AD744905E7B4B191F /* JWorkoutLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CA6F4BCD8026D948694 /* JWorkoutLog.m */; };
 		5459099D28F5FBF66EC52F2C /* JSettingsStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459044F98C12E57116423F7 /* JSettingsStoreTests.m */; };
 		5459099FA669850AB13D07E2 /* SKProductStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459035ACC4AC43DEA0D8BEA /* SKProductStore.m */; };
+		545909A0B8D642CC25875574 /* JFTOCustomComplexAssistanceWorkoutStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459031892BA4B8F5BD99475 /* JFTOCustomComplexAssistanceWorkoutStoreTests.m */; };
 		545909AC866AE270E53C4E94 /* TestSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901E30DBAAA70C6215E68 /* TestSaveViewController.m */; };
 		545909AD844798306F753FD4 /* FTOWorkoutLogAmrapDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CB81D8DBECEF0729166 /* FTOWorkoutLogAmrapDataSource.m */; };
 		545909AED63CA01FAA9B6008 /* FTOCustomSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FDE9620264ABFE0CD16 /* FTOCustomSetViewController.m */; };
@@ -856,6 +857,7 @@
 		545903121ABA443DDBB6E3AD /* ObjectFactory.class */ = {isa = PBXFileReference; lastKnownFileType = compiled.javaclass; path = ObjectFactory.class; sourceTree = "<group>"; };
 		54590315A60F9377DF0BF09D /* FTOCustomWeekSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomWeekSelectorViewController.m; sourceTree = "<group>"; };
 		545903181B5BBEBC2BCAB45C /* JSettingsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSettingsTests.h; sourceTree = "<group>"; };
+		5459031892BA4B8F5BD99475 /* JFTOCustomComplexAssistanceWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomComplexAssistanceWorkoutStoreTests.m; sourceTree = "<group>"; };
 		5459031D0EFF5A1C33B2D428 /* Migration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migration.h; sourceTree = "<group>"; };
 		5459031F3D5F53AFAFDF03A7 /* WeightTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeightTableCell.xib; sourceTree = "<group>"; };
 		545903226C5AE50A5F6291CD /* SetLogContainerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLogContainerTests.h; sourceTree = "<group>"; };
@@ -1292,6 +1294,7 @@
 		54590918DF30D1E21D4E6BF5 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		5459091B1216B36F25DA668D /* FTOCustomAssistanceEditLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomAssistanceEditLiftViewControllerTests.h; sourceTree = "<group>"; };
 		5459091B8C9B12B3C5DE3838 /* upload__22c40f21_1438fe14c51__8000_00030842.tmp */ = {isa = PBXFileReference; lastKnownFileType = file.tmp; path = upload__22c40f21_1438fe14c51__8000_00030842.tmp; sourceTree = "<group>"; };
+		5459091C04ADD091588BBDF0 /* JFTOCustomComplexAssistanceWorkoutStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomComplexAssistanceWorkoutStoreTests.h; sourceTree = "<group>"; };
 		5459091F80F325888C60EB26 /* CombinedSetWorkoutLogTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CombinedSetWorkoutLogTableDataSource.m; sourceTree = "<group>"; };
 		54590927CEE3296B9E67DF45 /* AddPlateViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateViewControllerTests.m; sourceTree = "<group>"; };
 		54590928E816FEB9B2B0C6E2 /* closetag.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = closetag.js; sourceTree = "<group>"; };
@@ -1934,6 +1937,8 @@
 				545901C2F3DCB02223B7404E /* JFTOWorkoutStoreTests.h */,
 				545907A06F96977F770021BF /* JFTOTriumvirateStoreTests.m */,
 				545905269286D8EFF1282A9E /* JFTOTriumvirateStoreTests.h */,
+				5459031892BA4B8F5BD99475 /* JFTOCustomComplexAssistanceWorkoutStoreTests.m */,
+				5459091C04ADD091588BBDF0 /* JFTOCustomComplexAssistanceWorkoutStoreTests.h */,
 			);
 			path = FTO;
 			sourceTree = "<group>";
@@ -5740,6 +5745,7 @@
 				54590923D27AD427988ED874 /* JSSLiftTests.m in Sources */,
 				54590AE8E138F03A57C8DFC7 /* SSChangeLiftsViewControllerTests.m in Sources */,
 				5459023F04A61EF47E1A7AE5 /* Migrate10to11Tests.m in Sources */,
+				545909A0B8D642CC25875574 /* JFTOCustomComplexAssistanceWorkoutStoreTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

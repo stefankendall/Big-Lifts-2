@@ -51,8 +51,6 @@
     lift.increment = [NSDecimalNumber decimalNumberWithString:[self.increaseField text] locale:NSLocale.currentLocale];
     lift.usesBar = YES;
 
-    [[JFTOWorkoutStore instance] switchTemplate];
-
     [self.navigationController popViewControllerAnimated:YES];
 }
 
