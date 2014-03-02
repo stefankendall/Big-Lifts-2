@@ -6,7 +6,6 @@
 #import "IAPAdapter.h"
 #import "BLJStoreManager.h"
 #import "BLKeyValueStore.h"
-#import "AdsExperiment.h"
 #import "Migrator.h"
 #import "PaddingTextField.h"
 
@@ -32,8 +31,6 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     [self reloadData];
 
     [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
-    [self.adsSwitch setOn:[[[JSettingsStore instance] first] adsEnabled]];
-    [self.adsCell setHidden:![AdsExperiment isInExperiment]];
 }
 
 - (void)reloadData {
@@ -62,10 +59,6 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
 
 - (IBAction)keepScreenOnChanged:(id)sender {
     [[[JSettingsStore instance] first] setScreenAlwaysOn:self.keepScreenOnSwitch.isOn];
-}
-
-- (IBAction)adsOnChanged:(id)sender {
-    [[[JSettingsStore instance] first] setAdsEnabled:[self.adsSwitch isOn]];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {

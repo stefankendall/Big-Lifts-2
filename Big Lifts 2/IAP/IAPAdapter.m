@@ -19,10 +19,6 @@
 }
 
 - (BOOL)hasPurchased:(NSString *)productId {
-    if ([[[JSettingsStore instance] first] adsEnabled]) {
-        return YES;
-    }
-
     if ([[NSUserDefaults standardUserDefaults] boolForKey:productId]) {
         return YES;
     }
