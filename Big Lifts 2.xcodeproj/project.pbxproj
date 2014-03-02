@@ -259,6 +259,7 @@
 		5459078BFC47A926CC1910F5 /* AppTimedOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CA84515BDC8B6BA7FCF /* AppTimedOutViewController.m */; };
 		545907942CCF5B25403F3DA1 /* FTOCustomSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590DBA152DE96A6B475701 /* FTOCustomSetCell.xib */; };
 		5459079BEF1B4D70AE7E5D37 /* JFTOAssistanceStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904A432A5E8C6002F0EA3 /* JFTOAssistanceStore.m */; };
+		545907AC9F364D0D32FCAC27 /* CustomAssistanceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459005E07C85B4064387AC2 /* CustomAssistanceHelper.m */; };
 		545907ADF6730E1C29DD67C5 /* JSSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904D3571129012EA634C1 /* JSSWorkout.m */; };
 		545907AFA8424802C219648E /* FTOTriumvirateViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590677417C090939FDAC0A /* FTOTriumvirateViewControllerTests.m */; };
 		545907C7BB86E5ADE088023A /* FTOCustomWorkoutToolbar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590719733700F977B5362C /* FTOCustomWorkoutToolbar.xib */; };
@@ -580,6 +581,7 @@
 		5459004AB68FE2918023A258 /* FTOCustomAssistanceLiftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomAssistanceLiftCell.h; sourceTree = "<group>"; };
 		5459004BA62C9E7BE9A4935C /* JFTOCustomAssistanceLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomAssistanceLift.h; sourceTree = "<group>"; };
 		5459005C26CEA325E3524092 /* SetCellWithPlatesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCellWithPlatesTests.h; sourceTree = "<group>"; };
+		5459005E07C85B4064387AC2 /* CustomAssistanceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAssistanceHelper.m; sourceTree = "<group>"; };
 		54590060552A0C888496833E /* 379-barbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "379-barbell.png"; sourceTree = "<group>"; };
 		54590060AC4F759A83A86A6A /* JFTOCustomAssistanceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomAssistanceTests.h; sourceTree = "<group>"; };
 		54590060FDCD41CAE97FC449 /* FTOTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTrackViewController.h; sourceTree = "<group>"; };
@@ -863,6 +865,7 @@
 		54590526735E78D9EF6F22F0 /* 172-pricetag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "172-pricetag.png"; sourceTree = "<group>"; };
 		545905269286D8EFF1282A9E /* JFTOTriumvirateStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOTriumvirateStoreTests.h; sourceTree = "<group>"; };
 		5459053A09D68CF553084654 /* FTORepsToBeatCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTORepsToBeatCalculator.m; sourceTree = "<group>"; };
+		54590546CC817B91F6A1160B /* CustomAssistanceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAssistanceHelper.h; sourceTree = "<group>"; };
 		5459054BF79A83D4D57F9A9E /* FTOLiftWorkoutToolbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOLiftWorkoutToolbar.xib; sourceTree = "<group>"; };
 		5459054EA84E37345EF83F50 /* JFTOTriumvirateAssistanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOTriumvirateAssistanceTests.m; sourceTree = "<group>"; };
 		54590550C2F65279ACE9B016 /* BLKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLKeyValueStore.m; sourceTree = "<group>"; };
@@ -2249,6 +2252,8 @@
 				54590F4B847567119D76761D /* Copy */,
 				54590DB572AD706873E4C0C9 /* JFTOFullCustomAssistance.m */,
 				54590AFFF8D8431F7D41EFC1 /* JFTOFullCustomAssistance.h */,
+				5459005E07C85B4064387AC2 /* CustomAssistanceHelper.m */,
+				54590546CC817B91F6A1160B /* CustomAssistanceHelper.h */,
 			);
 			path = Assistance;
 			sourceTree = "<group>";
@@ -4250,6 +4255,7 @@
 				545908A47320D8E9F3B46B76 /* FTOFullCustomAssistanceViewController.m in Sources */,
 				54590E80BB4F12E876D89131 /* JFTOFullCustomAssistance.m in Sources */,
 				54590B5A6BEC882A544FE0B2 /* FTOSectionTitleHelper.m in Sources */,
+				545907AC9F364D0D32FCAC27 /* CustomAssistanceHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

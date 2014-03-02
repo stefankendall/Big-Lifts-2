@@ -5,13 +5,12 @@
 #import "JFTOWorkout.h"
 #import "JWorkout.h"
 #import "FTOCustomAssistanceEditLiftViewController.h"
-#import "JSetStore.h"
 #import "JSet.h"
 #import "JFTOCustomAssistanceLiftStore.h"
 #import "JLift.h"
 #import "JFTOCustomAssistanceLift.h"
 #import "DecimalNumberHandlers.h"
-#import "BLJStoreManager.h"
+#import "CustomAssistanceHelper.h"
 
 @implementation JFTOCustomAssistance
 
@@ -21,19 +20,10 @@
             if ([ftoWorkout.workout.sets count] > 0) {
                 JFTOLift *lift = [[ftoWorkout.workout.sets firstObject] lift];
                 if (customAssistanceWorkout.mainLift == lift) {
-                    [self addAssistanceToWorkout:ftoWorkout withAssistance:customAssistanceWorkout];
+                    [CustomAssistanceHelper addAssistanceToWorkout:ftoWorkout withAssistance:customAssistanceWorkout.workout];
                 }
             }
         }
-    }
-}
-
-- (void)addAssistanceToWorkout:(JFTOWorkout *)ftoWorkout withAssistance:(JFTOCustomAssistanceWorkout *)assistance {
-    for (JSet *set in assistance.workout.sets) {
-        JSetStore *store = [[BLJStoreManager instance] storeForModel:set.class withUuid:set.uuid];
-        JSet *assistanceSet = [store createFromSet:set];
-        assistanceSet.assistance = YES;
-        [ftoWorkout.workout addSet:assistanceSet];
     }
 }
 
