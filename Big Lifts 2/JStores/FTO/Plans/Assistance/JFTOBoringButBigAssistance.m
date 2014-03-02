@@ -13,6 +13,7 @@
 #import "JFTOBoringButBigLiftStore.h"
 #import "JFTOVariantStore.h"
 #import "JFTOVariant.h"
+#import "BoringButBigHelper.h"
 
 @implementation JFTOBoringButBigAssistance
 
@@ -51,9 +52,8 @@
             continue;
         }
 
-        int sets = ftoWorkout.deload ? 3 : 5;
         JFTOSet *set = ftoWorkout.workout.sets[0];
-        [ftoWorkout.workout addSets:[self createBoringSets:sets forLift:(JFTOLift *) set.lift]];
+        [BoringButBigHelper addSetsToWorkout:ftoWorkout.workout withLift:set.lift deload:ftoWorkout.deload];
     };
 }
 

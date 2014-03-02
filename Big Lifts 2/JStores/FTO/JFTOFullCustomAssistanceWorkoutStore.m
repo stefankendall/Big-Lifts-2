@@ -5,6 +5,8 @@
 #import "JFTOWorkoutStore.h"
 #import "JFTOLift.h"
 #import "AssistanceCopy.h"
+#import "JFTOFullNoneAssistanceCopy.h"
+#import "JFTOAssistance.h"
 
 @implementation JFTOFullCustomAssistanceWorkoutStore
 
@@ -75,6 +77,9 @@
 
 - (void)copyTemplate:(NSString *)variant {
     NSDictionary *copiers = @{
+            FTO_ASSISTANCE_NONE : [JFTOFullNoneAssistanceCopy new],
+            FTO_ASSISTANCE_BORING_BUT_BIG : [JFTOFullNoneAssistanceCopy new],
+            FTO_ASSISTANCE_TRIUMVIRATE : [JFTOFullNoneAssistanceCopy new]
     };
     NSObject <AssistanceCopy> *copier = copiers[variant];
     [copier copyTemplate];
