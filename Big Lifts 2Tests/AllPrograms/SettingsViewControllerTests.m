@@ -59,25 +59,4 @@
     STAssertTrue([[[JSettingsStore instance] first] screenAlwaysOn], @"");
 }
 
-- (void)testCanEnableDisableAds {
-    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
-    [controller.adsSwitch setOn:NO];
-    [controller adsOnChanged:controller.adsSwitch];
-    STAssertFalse([[[JSettingsStore instance] first] adsEnabled], @"");
-
-    [controller.adsSwitch setOn:YES];
-    [controller adsOnChanged:controller.adsSwitch];
-    STAssertTrue([[[JSettingsStore instance] first] adsEnabled], @"");
-}
-
-- (void)testSetsAdsSwitchOnAppear {
-    [[[JSettingsStore instance] first] setAdsEnabled:YES];
-    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
-    STAssertTrue([controller.adsSwitch isOn], @"");
-
-    [[[JSettingsStore instance] first] setAdsEnabled:NO];
-    [controller viewWillAppear:NO];
-    STAssertFalse([controller.adsSwitch isOn], @"");
-}
-
 @end

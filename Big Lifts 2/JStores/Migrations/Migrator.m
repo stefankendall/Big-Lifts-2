@@ -7,7 +7,6 @@
 #import "Migrate4to5.h"
 #import "Migrate5to6.h"
 #import "Migrate6to7.h"
-#import "Migrate7to8.h"
 #import "Migrate8to9.h"
 #import "Migrate9to10.h"
 #import "Migrate10to11.h"
@@ -25,7 +24,6 @@
                 @5 : [Migrate4to5 new],
                 @6 : [Migrate5to6 new],
                 @7 : [Migrate6to7 new],
-                @8 : [Migrate7to8 new],
                 @9 : [Migrate8to9 new],
                 @10 : [Migrate9to10 new],
                 @11 : [Migrate10to11 new],
