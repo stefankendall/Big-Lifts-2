@@ -30,12 +30,14 @@
 
     self.iapCells = @{
             IAP_FTO_TRIUMVIRATE : self.triumvirateCell,
-            IAP_FTO_SST : self.sstCell
+            IAP_FTO_SST : self.sstCell,
+            IAP_FTO_FULL_CUSTOM_ASSISTANCE : self.fullCustom
     };
 
     self.assistanceToSegues = @{
             FTO_ASSISTANCE_TRIUMVIRATE : @"ftoTriumvirate",
-            FTO_ASSISTANCE_SST : @"ftoSst"
+            FTO_ASSISTANCE_SST : @"ftoSst",
+            FTO_ASSISTANCE_FULL_CUSTOM : @"ftoFullCustomAssistance"
     };
 
     [[NSNotificationCenter defaultCenter] addObserver:self

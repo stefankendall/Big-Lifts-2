@@ -17,6 +17,7 @@ NSString *const IAP_FTO_TRIUMVIRATE = @"ftoTriumvirate";
 NSString *const IAP_FTO_SST = @"ftoSst";
 NSString *const IAP_FTO_FIVES_PROGRESSION = @"ftoFivesProgression";
 NSString *const IAP_FTO_CUSTOM = @"ftoCustom";
+NSString *const IAP_FTO_FULL_CUSTOM_ASSISTANCE = @"ftoFullCustomAssistance";
 
 @interface Purchaser ()
 
@@ -93,7 +94,8 @@ NSString *const IAP_FTO_CUSTOM = @"ftoCustom";
             IAP_FTO_TRIUMVIRATE,
             IAP_FTO_SST,
             IAP_FTO_FIVES_PROGRESSION,
-            IAP_FTO_CUSTOM
+            IAP_FTO_CUSTOM,
+            IAP_FTO_FULL_CUSTOM_ASSISTANCE
     ];
 
     return [allIap detect:^BOOL(NSString *purchaseId) {
