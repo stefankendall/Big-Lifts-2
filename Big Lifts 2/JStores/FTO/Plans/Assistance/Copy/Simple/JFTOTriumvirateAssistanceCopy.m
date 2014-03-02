@@ -10,8 +10,7 @@
 #import "JFTOCustomAssistanceWorkoutStore.h"
 #import "JFTOCustomAssistanceWorkout.h"
 #import "JWorkout.h"
-#import "JSetStore.h"
-#import "JSet.h"
+#import "CustomAssistanceCopyHelper.h"
 
 @implementation JFTOTriumvirateAssistanceCopy
 
@@ -23,16 +22,8 @@
 - (void)copyWorkouts {
     [[[JFTOTriumvirateStore instance] findAll] each:^(JFTOTriumvirate *triumvirate) {
         JFTOCustomAssistanceWorkout *customAssistanceWorkout = [[JFTOCustomAssistanceWorkoutStore instance] find:@"mainLift" value:triumvirate.mainLift];
-        [self copy:triumvirate.workout into:customAssistanceWorkout.workout];
+        [CustomAssistanceCopyHelper copy:triumvirate.workout into:customAssistanceWorkout.workout];
     }];
-}
-
-- (void)copy:(JWorkout *)source into:(JWorkout *)dest {
-    for (JSet *triumvirateSet in [source sets]) {
-        JSet *customSet = [[JSetStore instance] createFromSet:triumvirateSet];
-        customSet.lift = [[JFTOCustomAssistanceLiftStore instance] find:@"name" value:customSet.lift.name];
-        [dest addSet:customSet];
-    }
 }
 
 - (void)copyLifts {
