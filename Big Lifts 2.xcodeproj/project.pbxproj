@@ -132,9 +132,9 @@
 		5459034542C001F13CEE869F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590666F2847873F7A0DC8E /* SystemConfiguration.framework */; };
 		54590357D3B68414D7CA4AFC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B5E51917F3BAEC0018A856 /* Security.framework */; };
 		545903669155D105CD9B6494 /* BLTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B2626B2BA3F46507E90 /* BLTimerTests.m */; };
-		5459036CFE83832905A0C6C3 /* BoringButBigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590058FADA8EC2596118A8 /* BoringButBigHelper.m */; };
 		545903831C91BD3A2A6B2443 /* FTOLogExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906C4391AB6F268FA79CF /* FTOLogExporter.m */; };
 		5459038386686340CAF240E2 /* gray.js in Sources */ = {isa = PBXBuildFile; fileRef = 54590A45F6F9EB2570D64F82 /* gray.js */; };
+		5459038C2B7EB5F5AB66CE1D /* BoringButBigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F2A0FD7F43BFB470918 /* BoringButBigHelper.m */; };
 		545903B3117C0B807EE61FAD /* SSLiftSummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590F79951F97DD25AF5FF0 /* SSLiftSummaryCell.xib */; };
 		545903BA6D55FEC865EE0F05 /* FTOEditIncrementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590B7D2707055632AAA1DF /* FTOEditIncrementCell.xib */; };
 		545903C0EE4A153724CFF5AA /* FTOSSTEditLiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590C518D5C8BF4320AE7D0 /* FTOSSTEditLiftCell.xib */; };
@@ -585,7 +585,6 @@
 		545900443A36CA79DE726BED /* WhatNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatNextViewController.m; sourceTree = "<group>"; };
 		5459004AB68FE2918023A258 /* FTOCustomAssistanceLiftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomAssistanceLiftCell.h; sourceTree = "<group>"; };
 		5459004BA62C9E7BE9A4935C /* JFTOCustomAssistanceLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOCustomAssistanceLift.h; sourceTree = "<group>"; };
-		54590058FADA8EC2596118A8 /* BoringButBigHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoringButBigHelper.m; sourceTree = "<group>"; };
 		5459005C26CEA325E3524092 /* SetCellWithPlatesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCellWithPlatesTests.h; sourceTree = "<group>"; };
 		5459005E07C85B4064387AC2 /* CustomAssistanceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAssistanceHelper.m; sourceTree = "<group>"; };
 		54590060552A0C888496833E /* 379-barbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "379-barbell.png"; sourceTree = "<group>"; };
@@ -616,7 +615,6 @@
 		545900BE25421F045F1B5C9E /* EpleyEstimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EpleyEstimator.h; sourceTree = "<group>"; };
 		545900BE651363652832CF17 /* FTONavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTONavController.h; sourceTree = "<group>"; };
 		545900C28C8CF8AE8F409FCA /* FTOTrackToolbarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTrackToolbarCell.m; sourceTree = "<group>"; };
-		545900CA23AA4CC7772B616C /* BoringButBigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoringButBigHelper.h; sourceTree = "<group>"; };
 		545900CAE6D409CA1EF180D2 /* SJSetCellWithPlates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSetCellWithPlates.m; sourceTree = "<group>"; };
 		545900CBC50A4FB2F0F82080 /* FTOCustomAssistanceLiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomAssistanceLiftViewController.h; sourceTree = "<group>"; };
 		545900D1C16966D8EF574499 /* SSChangeLiftsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSChangeLiftsViewControllerTests.m; sourceTree = "<group>"; };
@@ -723,6 +721,7 @@
 		545902911746BDD16B96080A /* JFTOVariant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOVariant.m; sourceTree = "<group>"; };
 		54590298338549E7EBA3D922 /* SJLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLiftViewControllerTests.h; sourceTree = "<group>"; };
 		5459029E6253CF82B110C733 /* testdata.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = testdata.js; sourceTree = "<group>"; };
+		5459029E97B16E00166099C1 /* BoringButBigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoringButBigHelper.h; sourceTree = "<group>"; };
 		545902B3B812C3013349ACEE /* JSSLiftTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSLiftTests.h; sourceTree = "<group>"; };
 		545902B525931183675FCFB6 /* FTOEditIncrementCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOEditIncrementCell.h; sourceTree = "<group>"; };
 		545902C2400FE38DCD263113 /* SetChangeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetChangeDelegate.h; sourceTree = "<group>"; };
@@ -1432,6 +1431,7 @@
 		54590F244D270A202FEEA6FF /* FTOWorkoutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOWorkoutCell.xib; sourceTree = "<group>"; };
 		54590F2503303E5DB5D3AFBB /* SVEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVEditViewController.h; sourceTree = "<group>"; };
 		54590F2534A0C6BBEFF41D74 /* JBarStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBarStoreTests.h; sourceTree = "<group>"; };
+		54590F2A0FD7F43BFB470918 /* BoringButBigHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoringButBigHelper.m; sourceTree = "<group>"; };
 		54590F2D764E435EA309B3BC /* SetLogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLogCell.h; sourceTree = "<group>"; };
 		54590F31074B33928AC476A3 /* dark-blue.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "dark-blue.js"; sourceTree = "<group>"; };
 		54590F321DCA48FEA587125E /* SetChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetChange.h; sourceTree = "<group>"; };
@@ -2290,8 +2290,8 @@
 				54590AFFF8D8431F7D41EFC1 /* JFTOFullCustomAssistance.h */,
 				5459005E07C85B4064387AC2 /* CustomAssistanceHelper.m */,
 				54590546CC817B91F6A1160B /* CustomAssistanceHelper.h */,
-				54590058FADA8EC2596118A8 /* BoringButBigHelper.m */,
-				545900CA23AA4CC7772B616C /* BoringButBigHelper.h */,
+				54590F2A0FD7F43BFB470918 /* BoringButBigHelper.m */,
+				5459029E97B16E00166099C1 /* BoringButBigHelper.h */,
 			);
 			path = Assistance;
 			sourceTree = "<group>";
@@ -4319,7 +4319,7 @@
 				54590E1405FA26FC8AE00A3D /* FTOAssistanceCopyTemplateViewController.m in Sources */,
 				54590C36EDAD44DA2F9586AB /* JFTOFullNoneAssistanceCopy.m in Sources */,
 				54590127A59E7F4C99D79289 /* JFTOFullBoringButBigAssistanceCopy.m in Sources */,
-				5459036CFE83832905A0C6C3 /* BoringButBigHelper.m in Sources */,
+				5459038C2B7EB5F5AB66CE1D /* BoringButBigHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

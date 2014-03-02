@@ -57,20 +57,4 @@
     };
 }
 
-- (NSArray *)createBoringSets:(int)numberOfSets forLift:(JFTOLift *)mainLift {
-    JFTOBoringButBigLift *bbbLift = [[JFTOBoringButBigLiftStore instance] find:@"mainLift" value:mainLift];
-
-    NSMutableArray *sets = [@[] mutableCopy];
-    NSDecimalNumber *percentage = [[[JFTOBoringButBigStore instance] first] percentage];
-    for (int set = 0; set < numberOfSets; set++) {
-        JFTOSet *ftoSet = [[JFTOSetStore instance] create];
-        ftoSet.lift = bbbLift.boringLift;
-        ftoSet.percentage = percentage;
-        ftoSet.reps = @10;
-        ftoSet.assistance = YES;
-        [sets addObject:ftoSet];
-    }
-    return sets;
-}
-
 @end
