@@ -53,7 +53,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [Flurry logEvent:@"Plan_531"];
+    [Flurry logEvent:@"5/3/1_Plan"];
     JFTOSettings *settings = [[JFTOSettingsStore instance] first];
     [self.trainingMaxField setText:[settings.trainingMax stringValue]];
     [self.warmupToggle setOn:settings.warmupEnabled];

@@ -12,6 +12,7 @@
 #import "JFTOPlan.h"
 #import "JFTOSettings.h"
 #import "JFTOSettingsStore.h"
+#import "FTOSectionTitleHelper.h"
 
 @interface FTOLiftViewController ()
 
@@ -70,27 +71,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    JFTOVariant *variant = [[JFTOVariantStore instance] first];
-    NSObject <JFTOPlan> *ftoPlan = [[JFTOWorkoutSetsGenerator new] planForVariant:variant.name];
-
-    int titleSection = 0;
-    if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
-        if (section < 3) {
-            titleSection = section;
-        }
-        else {
-            titleSection = section - 3;
-        }
-    }
-    else {
-        titleSection = section;
-    }
-
-    NSArray *weekNames = [ftoPlan weekNames];
-    if (titleSection >= [weekNames count]) {
-        return @"";
-    }
-    return weekNames[(NSUInteger) titleSection];
+    return [[FTOSectionTitleHelper new] titleForSection: section];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

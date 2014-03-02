@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "FTOCustomAssistanceEditLiftViewController.h"
 #import "JFTOCustomAssistanceLift.h"
 #import "TextViewInputAccessoryBuilder.h"
@@ -18,6 +19,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_Custom_Assistance_Edit_Lifts"];
+
     [self.name setText:self.lift.name];
     [self.weight setText:[self.lift.weight stringValue]];
     [self.increment setText:[self.lift.increment stringValue]];

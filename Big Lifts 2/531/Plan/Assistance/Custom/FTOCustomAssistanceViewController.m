@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "FTOCustomAssistanceViewController.h"
 #import "JFTOLiftStore.h"
 #import "JFTOLift.h"
@@ -9,6 +10,11 @@
 #import "FTOCustomToolbar.h"
 
 @implementation FTOCustomAssistanceViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [Flurry logEvent:@"5/3/1_Custom_Assistance"];
+}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
