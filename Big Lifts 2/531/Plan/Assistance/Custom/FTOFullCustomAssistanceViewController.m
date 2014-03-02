@@ -4,14 +4,14 @@
 #import "JFTOAssistanceStore.h"
 #import "FTOCustomAssistanceWorkoutViewController.h"
 #import "JWorkout.h"
-#import "JFTOCustomComplexAssistanceWorkout.h"
+#import "JFTOFullCustomAssistanceWorkout.h"
 #import "FTOCustomToolbar.h"
 #import "JFTOWorkoutStore.h"
 #import "FTOSectionTitleHelper.h"
 #import "JFTOLiftStore.h"
 #import "JFTOLift.h"
 #import "NSArray+Enumerable.h"
-#import "JFTOCustomComplexAssistanceWorkoutStore.h"
+#import "JFTOFullCustomAssistanceWorkoutStore.h"
 
 @implementation FTOFullCustomAssistanceViewController
 
@@ -68,15 +68,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    JFTOCustomComplexAssistanceWorkout *customAssistanceWorkout = [self customAssistanceWorkoutForIndexPath:indexPath];
+    JFTOFullCustomAssistanceWorkout *customAssistanceWorkout = [self customAssistanceWorkoutForIndexPath:indexPath];
     self.tappedWorkout = customAssistanceWorkout.workout;
     [self performSegueWithIdentifier:@"ftoSetupCustomAsstWorkout" sender:self];
 }
 
-- (JFTOCustomComplexAssistanceWorkout *)customAssistanceWorkoutForIndexPath:(NSIndexPath *)indexPath {
+- (JFTOFullCustomAssistanceWorkout *)customAssistanceWorkoutForIndexPath:(NSIndexPath *)indexPath {
     JFTOLift *lift = [[JFTOLiftStore instance] atIndex:indexPath.row];
     NSNumber *week = [NSNumber numberWithInt:indexPath.section];
-    JFTOCustomComplexAssistanceWorkout *customAssistanceWorkout = [[[JFTOCustomComplexAssistanceWorkoutStore instance] findAll] detect:^BOOL(JFTOCustomComplexAssistanceWorkout *customAssistanceWorkout) {
+    JFTOFullCustomAssistanceWorkout *customAssistanceWorkout = [[[JFTOFullCustomAssistanceWorkoutStore instance] findAll] detect:^BOOL(JFTOFullCustomAssistanceWorkout *customAssistanceWorkout) {
         return customAssistanceWorkout.mainLift == lift && [customAssistanceWorkout.week isEqualToNumber:week];
     }];
     return customAssistanceWorkout;

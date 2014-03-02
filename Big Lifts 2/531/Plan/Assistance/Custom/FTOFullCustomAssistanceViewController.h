@@ -1,10 +1,10 @@
 #import "BLTableViewController.h"
 
 @class JWorkout;
-@class JFTOCustomComplexAssistanceWorkout;
+@class JFTOFullCustomAssistanceWorkout;
 
 @interface FTOFullCustomAssistanceViewController : BLTableViewController
 @property(nonatomic, strong) JWorkout *tappedWorkout;
 
-- (JFTOCustomComplexAssistanceWorkout *)customAssistanceWorkoutForIndexPath:(NSIndexPath *)indexPath;
+- (JFTOFullCustomAssistanceWorkout *)customAssistanceWorkoutForIndexPath:(NSIndexPath *)indexPath;
 @end

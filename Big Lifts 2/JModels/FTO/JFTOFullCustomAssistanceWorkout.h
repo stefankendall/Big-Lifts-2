@@ -3,7 +3,7 @@
 @class JWorkout;
 @class JFTOLift;
 
-@interface JFTOCustomComplexAssistanceWorkout : JModel
+@interface JFTOFullCustomAssistanceWorkout : JModel
 
 @property(nonatomic, strong) JFTOLift *mainLift;
 @property(nonatomic, strong) NSNumber *week;

@@ -1,8 +1,8 @@
-#import "JFTOCustomComplexAssistanceWorkout.h"
+#import "JFTOFullCustomAssistanceWorkout.h"
 #import "JWorkout.h"
 #import "JFTOLift.h"
 
-@implementation JFTOCustomComplexAssistanceWorkout
+@implementation JFTOFullCustomAssistanceWorkout
 
 - (NSArray *)cascadeDeleteProperties {
     return @[@"workout"];

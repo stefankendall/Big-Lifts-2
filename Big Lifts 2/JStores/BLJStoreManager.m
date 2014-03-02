@@ -37,7 +37,7 @@
 #import "JSVWorkoutStore.h"
 #import "JSVLiftStore.h"
 #import "BLKeyValueStore.h"
-#import "JFTOCustomComplexAssistanceWorkoutStore.h"
+#import "JFTOFullCustomAssistanceWorkoutStore.h"
 
 @implementation BLJStoreManager
 
@@ -144,7 +144,7 @@
                 [JFTOCustomWorkoutStore instance],
                 [JFTOTriumvirateStore instance],
                 [JFTOCustomAssistanceWorkoutStore instance],
-                [JFTOCustomComplexAssistanceWorkoutStore instance],
+                [JFTOFullCustomAssistanceWorkoutStore instance],
 
                 [JFTOWorkoutStore instance],
                 [JSSWorkoutStore instance],

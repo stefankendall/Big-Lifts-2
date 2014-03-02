@@ -1,19 +1,19 @@
-#import "JFTOCustomComplexAssistanceWorkoutStore.h"
-#import "JFTOCustomComplexAssistanceWorkout.h"
+#import "JFTOFullCustomAssistanceWorkoutStore.h"
+#import "JFTOFullCustomAssistanceWorkout.h"
 #import "JFTOLiftStore.h"
 #import "JWorkoutStore.h"
 #import "JFTOWorkoutStore.h"
 #import "JFTOLift.h"
 
-@implementation JFTOCustomComplexAssistanceWorkoutStore
+@implementation JFTOFullCustomAssistanceWorkoutStore
 
 - (Class)modelClass {
-    return JFTOCustomComplexAssistanceWorkout.class;
+    return JFTOFullCustomAssistanceWorkout.class;
 }
 
 - (void)setDefaultsForObject:(id)object {
     [super setDefaultsForObject:object];
-    JFTOCustomComplexAssistanceWorkout *customAssistanceWorkout = object;
+    JFTOFullCustomAssistanceWorkout *customAssistanceWorkout = object;
     customAssistanceWorkout.workout = [[JWorkoutStore instance] create];
 }
 
@@ -32,7 +32,7 @@
 
     NSArray *allWorkouts = [self findAll];
     for (int i = 0; i < [allWorkouts count]; i++) {
-        JFTOCustomComplexAssistanceWorkout *customAssistanceWorkout = allWorkouts[(NSUInteger) i];
+        JFTOFullCustomAssistanceWorkout *customAssistanceWorkout = allWorkouts[(NSUInteger) i];
         if (![lifts containsObject:customAssistanceWorkout.mainLift] || ![weeks containsObject:customAssistanceWorkout.week]) {
             [self remove:customAssistanceWorkout];
             i--;
@@ -47,11 +47,11 @@
 
 - (void)addForWeeks {
     NSArray *allWeeks = [[[JFTOWorkoutStore instance] unique:@"week"] array];
-    NSArray *existingWeeks = [[[JFTOCustomComplexAssistanceWorkoutStore instance] unique:@"week"] array];
+    NSArray *existingWeeks = [[[JFTOFullCustomAssistanceWorkoutStore instance] unique:@"week"] array];
     for (NSNumber *week in allWeeks) {
         if (![existingWeeks containsObject:week]) {
             for (JFTOLift *lift in [[JFTOLiftStore instance] findAll]) {
-                JFTOCustomComplexAssistanceWorkout *customAssistanceWorkout = [self create];
+                JFTOFullCustomAssistanceWorkout *customAssistanceWorkout = [self create];
                 customAssistanceWorkout.mainLift = lift;
                 customAssistanceWorkout.week = week;
             }
@@ -64,7 +64,7 @@
     for (JFTOLift *lift in [[JFTOLiftStore instance] findAll]) {
         if (![self find:@"mainLift" value:lift]) {
             for (NSNumber *week in weeks) {
-                JFTOCustomComplexAssistanceWorkout *customAssistanceWorkout = [self create];
+                JFTOFullCustomAssistanceWorkout *customAssistanceWorkout = [self create];
                 customAssistanceWorkout.mainLift = lift;
                 customAssistanceWorkout.week = week;
             }
