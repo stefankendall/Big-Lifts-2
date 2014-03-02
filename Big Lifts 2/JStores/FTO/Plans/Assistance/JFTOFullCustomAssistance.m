@@ -1,4 +1,5 @@
 #import "JFTOFullCustomAssistance.h"
+#import "JFTOCustomAssistance.h"
 
 @implementation JFTOFullCustomAssistance
 
@@ -7,7 +8,7 @@
 }
 
 - (void)cycleChange {
-
+    [[JFTOCustomAssistance new] cycleChange];
 }
 
 @end

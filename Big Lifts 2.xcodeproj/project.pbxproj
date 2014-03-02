@@ -105,6 +105,7 @@
 		545902805A73FAB9ED001DC6 /* PurchaseOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545907A08979AD35C9572060 /* PurchaseOverlay.xib */; };
 		5459028CAD5CD001DC61590A /* highcharts.js in Sources */ = {isa = PBXBuildFile; fileRef = 5459056D5CA6AFBE303F37F1 /* highcharts.js */; };
 		545902908DAA096D3EB81701 /* FTOTrackToolbarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5459014893A2978E375E2EEE /* FTOTrackToolbarCell.xib */; };
+		545902996B929CFA2E560396 /* JFTOFullCustomAssistanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D77CBF0600E63C552D5 /* JFTOFullCustomAssistanceTests.m */; };
 		545902B1E80A3C6DC664A6D0 /* dark-green.js in Sources */ = {isa = PBXBuildFile; fileRef = 545903EAB71A06A6476CA1C4 /* dark-green.js */; };
 		545902C20B5058ADEEE6CCA8 /* prototype-adapter.src.js in Sources */ = {isa = PBXBuildFile; fileRef = 54590D5B871521008975E5C9 /* prototype-adapter.src.js */; };
 		545902C369EE86633D89DCDF /* StringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DD01EC32D35B941499C /* StringHelper.m */; };
@@ -1167,6 +1168,7 @@
 		54590AB53F4B7BA0F83A0EB2 /* Migrate6to7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate6to7.m; sourceTree = "<group>"; };
 		54590AC2D6C978F1D49375B2 /* JFTOSimplestStrengthTemplateAssistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOSimplestStrengthTemplateAssistance.m; sourceTree = "<group>"; };
 		54590AC609E6A7AC874C1842 /* FTOAssistanceCopyTemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOAssistanceCopyTemplateViewController.h; sourceTree = "<group>"; };
+		54590ACACF09891B21AC5414 /* JFTOFullCustomAssistanceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOFullCustomAssistanceTests.h; sourceTree = "<group>"; };
 		54590AD2FF1FE2DF679FAC30 /* JFTOSSTLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOSSTLiftStore.h; sourceTree = "<group>"; };
 		54590AD308D74EB22A0FBDD6 /* SJWorkoutSummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SJWorkoutSummaryCell.xib; sourceTree = "<group>"; };
 		54590AD40B21E626458E948C /* JFTOBoringButBigAssistanceCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBigAssistanceCopy.h; sourceTree = "<group>"; };
@@ -1323,6 +1325,7 @@
 		54590D5EEE4D25FB271F2F04 /* JWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWorkout.m; sourceTree = "<group>"; };
 		54590D6885BA431F92243AD4 /* FTOSSTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSSTViewController.h; sourceTree = "<group>"; };
 		54590D76DBF46AB2E982417D /* SVEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVEditViewController.m; sourceTree = "<group>"; };
+		54590D77CBF0600E63C552D5 /* JFTOFullCustomAssistanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOFullCustomAssistanceTests.m; sourceTree = "<group>"; };
 		54590D7F214728C6518DE7DC /* SVWorkoutViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVWorkoutViewControllerTests.m; sourceTree = "<group>"; };
 		54590D80C388F1878423A72B /* JFTOTriumvirateAssistanceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOTriumvirateAssistanceTests.h; sourceTree = "<group>"; };
 		54590D87FE82CDF0FFAFF019 /* JSVWorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSVWorkoutStore.h; sourceTree = "<group>"; };
@@ -2421,6 +2424,8 @@
 				54590DCBE0DB560BE5D00743 /* JFTOCustomAssistanceTests.m */,
 				54590060AC4F759A83A86A6A /* JFTOCustomAssistanceTests.h */,
 				54590C9CD4544EC529FBA275 /* Copy */,
+				54590D77CBF0600E63C552D5 /* JFTOFullCustomAssistanceTests.m */,
+				54590ACACF09891B21AC5414 /* JFTOFullCustomAssistanceTests.h */,
 			);
 			path = Assistance;
 			sourceTree = "<group>";
@@ -3933,6 +3938,7 @@
 				545909DD9801DD544E99CFBC /* FTOCustomAssistanceEditSetViewControllerTests.m in Sources */,
 				54590C3DBBE91702570A764C /* FTOCustomAssistanceWorkoutViewControllerTests.m in Sources */,
 				54590E7F221B3CA8B18A0A43 /* FTOFullCustomAssistanceViewControllerTests.m in Sources */,
+				545902996B929CFA2E560396 /* JFTOFullCustomAssistanceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
