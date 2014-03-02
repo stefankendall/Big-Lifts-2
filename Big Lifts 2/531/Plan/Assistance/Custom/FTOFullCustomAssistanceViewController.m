@@ -12,6 +12,7 @@
 #import "JFTOLift.h"
 #import "NSArray+Enumerable.h"
 #import "JFTOFullCustomAssistanceWorkoutStore.h"
+#import "FTOAssistanceCopyTemplateViewController.h"
 
 @implementation FTOFullCustomAssistanceViewController
 
@@ -64,7 +65,11 @@
 }
 
 - (void)copyTemplate {
-//    [self performSegueWithIdentifier:@"ftoCustomAssistanceCopyTemplate" sender:self];
+    [self performSegueWithIdentifier:@"ftoCustomAssistanceCopyTemplate" sender:self];
+}
+
+- (void)copyAssistance:(NSString *)variant {
+    [[JFTOFullCustomAssistanceWorkoutStore instance] copyTemplate:variant];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -86,6 +91,10 @@
     if ([[segue identifier] isEqualToString:@"ftoSetupCustomAsstWorkout"]) {
         FTOCustomAssistanceWorkoutViewController *controller = [segue destinationViewController];
         controller.workout = self.tappedWorkout;
+    }
+    else if ([[segue identifier] isEqualToString:@"ftoCustomAssistanceCopyTemplate"]) {
+        FTOAssistanceCopyTemplateViewController *controller = [segue destinationViewController];
+        controller.delegate = self;
     }
 }
 

@@ -7,7 +7,9 @@
 #import "JFTOCustomAssistanceWorkoutStore.h"
 #import "JFTOAssistanceStore.h"
 #import "JFTOAssistance.h"
+#import "JWorkout.h"
 #import "FTOCustomToolbar.h"
+#import "FTOAssistanceCopyTemplateViewController.h"
 
 @implementation FTOCustomAssistanceViewController
 
@@ -60,25 +62,34 @@
     }
 }
 
-- (void)copyTemplate {
-    [self performSegueWithIdentifier:@"ftoCustomAssistanceCopyTemplate" sender:self];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     JFTOLift *lift = [[JFTOLiftStore instance] atIndex:indexPath.row];
-    self.customAssistanceToSegue = [[JFTOCustomAssistanceWorkoutStore instance] find:@"mainLift" value:lift];
+    self.tappedWorkout = [[[JFTOCustomAssistanceWorkoutStore instance] find:@"mainLift" value:lift] workout];
     [self performSegueWithIdentifier:@"ftoSetupCustomAsstWorkout" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ftoSetupCustomAsstWorkout"]) {
         FTOCustomAssistanceWorkoutViewController *controller = [segue destinationViewController];
-        controller.workout = self.customAssistanceToSegue.workout;
+        controller.workout = self.tappedWorkout;
+    }
+    else if ([[segue identifier] isEqualToString:@"ftoCustomAssistanceCopyTemplate"]) {
+        FTOAssistanceCopyTemplateViewController *controller = [segue destinationViewController];
+        controller.delegate = self;
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_CUSTOM];
 }
+
+- (void)copyTemplate {
+    [self performSegueWithIdentifier:@"ftoCustomAssistanceCopyTemplate" sender:self];
+}
+
+- (void)copyAssistance:(NSString *)variant {
+    [[JFTOCustomAssistanceWorkoutStore instance] copyTemplate:variant];
+}
+
 
 @end

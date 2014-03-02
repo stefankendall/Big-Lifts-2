@@ -4,6 +4,7 @@
 #import "JWorkoutStore.h"
 #import "JFTOWorkoutStore.h"
 #import "JFTOLift.h"
+#import "AssistanceCopy.h"
 
 @implementation JFTOFullCustomAssistanceWorkoutStore
 
@@ -70,6 +71,13 @@
             }
         }
     }
+}
+
+- (void)copyTemplate:(NSString *)variant {
+    NSDictionary *copiers = @{
+    };
+    NSObject <AssistanceCopy> *copier = copiers[variant];
+    [copier copyTemplate];
 }
 
 @end

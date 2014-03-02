@@ -1,10 +1,10 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOAssistanceCopyTemplateViewController.h"
 #import "JFTOAssistanceStore.h"
-#import "JFTOCustomAssistanceWorkoutStore.h"
 #import "JFTOAssistance.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"
+#import "AssistanceCopyDelegate.h"
 
 @implementation FTOAssistanceCopyTemplateViewController
 
@@ -33,7 +33,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [[JFTOCustomAssistanceWorkoutStore instance] copyTemplate:self.purchasedOrderedVariants[(NSUInteger) indexPath.row]];
+    NSString *assistance = self.purchasedOrderedVariants[(NSUInteger) indexPath.row];
+    [self.delegate copyAssistance:assistance];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

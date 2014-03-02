@@ -2,4 +2,6 @@
 
 @interface JFTOFullCustomAssistanceWorkoutStore : BLJStore
 - (void)adjustToFtoWorkouts;
+
+- (void)copyTemplate:(NSString *)variant;
 @end
