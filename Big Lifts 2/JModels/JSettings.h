@@ -18,5 +18,4 @@ extern NSString *NEAREST_5_ROUNDING;
 @property(nonatomic) BOOL isMale;
 @property(nonatomic) NSDecimalNumber <Optional> *bodyweight;
 
-@property(nonatomic) BOOL adsEnabled;
 @end
