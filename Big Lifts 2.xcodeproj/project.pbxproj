@@ -107,6 +107,7 @@
 		5459028CAD5CD001DC61590A /* highcharts.js in Sources */ = {isa = PBXBuildFile; fileRef = 5459056D5CA6AFBE303F37F1 /* highcharts.js */; };
 		545902908DAA096D3EB81701 /* FTOTrackToolbarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5459014893A2978E375E2EEE /* FTOTrackToolbarCell.xib */; };
 		545902996B929CFA2E560396 /* JFTOFullCustomAssistanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D77CBF0600E63C552D5 /* JFTOFullCustomAssistanceTests.m */; };
+		5459029B1DE672FCB38E2342 /* Migrate12to13.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906BDF9110FAFEBBD243F /* Migrate12to13.m */; };
 		545902B1E80A3C6DC664A6D0 /* dark-green.js in Sources */ = {isa = PBXBuildFile; fileRef = 545903EAB71A06A6476CA1C4 /* dark-green.js */; };
 		545902C20B5058ADEEE6CCA8 /* prototype-adapter.src.js in Sources */ = {isa = PBXBuildFile; fileRef = 54590D5B871521008975E5C9 /* prototype-adapter.src.js */; };
 		545902C369EE86633D89DCDF /* StringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DD01EC32D35B941499C /* StringHelper.m */; };
@@ -956,6 +957,7 @@
 		5459069DC08F5B3D6F305F87 /* 09-chat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-chat-2.png"; sourceTree = "<group>"; };
 		545906AEA8C49762A4800921 /* FTOCustomToolbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOCustomToolbar.xib; sourceTree = "<group>"; };
 		545906AF05C7725DAEB8ADBF /* JSSState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSState.h; sourceTree = "<group>"; };
+		545906BDF9110FAFEBBD243F /* Migrate12to13.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate12to13.m; sourceTree = "<group>"; };
 		545906C0B00B7D1FCC367D93 /* BLViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLViewDeckController.h; sourceTree = "<group>"; };
 		545906C4391AB6F268FA79CF /* FTOLogExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogExporter.m; sourceTree = "<group>"; };
 		545906C58FCD0F78A3DE72D4 /* JSVWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSVWorkoutStoreTests.m; sourceTree = "<group>"; };
@@ -1436,6 +1438,7 @@
 		54590F31074B33928AC476A3 /* dark-blue.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "dark-blue.js"; sourceTree = "<group>"; };
 		54590F321DCA48FEA587125E /* SetChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetChange.h; sourceTree = "<group>"; };
 		54590F3795D9AC9767D67976 /* FTOWorkoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutCell.m; sourceTree = "<group>"; };
+		54590F3A9F754354B58DE764 /* Migrate12to13.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate12to13.h; sourceTree = "<group>"; };
 		54590F5179F0F172261028FA /* FTOLogGraphTransformerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogGraphTransformerTests.m; sourceTree = "<group>"; };
 		54590F52B551C1696FF8F23C /* SSChangeLiftsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSChangeLiftsViewController.m; sourceTree = "<group>"; };
 		54590F5BD6ECFDDAF2A4972C /* JFTOSSTLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOSSTLiftStoreTests.m; sourceTree = "<group>"; };
@@ -2859,6 +2862,8 @@
 				545905C8445C3A654DBCAB98 /* Migrate10to11.h */,
 				5459034A4E54F677F1229E5A /* Migrate11to12.m */,
 				54590DC598D106E0F16C3559 /* Migrate11to12.h */,
+				545906BDF9110FAFEBBD243F /* Migrate12to13.m */,
+				54590F3A9F754354B58DE764 /* Migrate12to13.h */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -4304,6 +4309,7 @@
 				54590CDA03718008F447B0C1 /* JFTOFullTriumvirateAssistanceCopy.m in Sources */,
 				54590AAA869E200E2A9DB42F /* CustomAssistanceCopyHelper.m in Sources */,
 				545901A659448D67951AFFE9 /* Migrate11to12.m in Sources */,
+				5459029B1DE672FCB38E2342 /* Migrate12to13.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
