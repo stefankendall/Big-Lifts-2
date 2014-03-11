@@ -14,8 +14,8 @@
                 IAP_BAR_LOADING,
                 IAP_GRAPHING,
                 IAP_1RM,
-                IAP_SS_ONUS_WUNSLER,
                 IAP_SS_WARMUP,
+                IAP_SS_ONUS_WUNSLER,
                 IAP_SS_PRACTICAL_PROGRAMMING,
                 IAP_FTO_JOKER,
                 IAP_FTO_ADVANCED,
@@ -23,6 +23,7 @@
                 IAP_FTO_SST,
                 IAP_FTO_FIVES_PROGRESSION,
                 IAP_FTO_CUSTOM,
+                IAP_FTO_FULL_CUSTOM_ASSISTANCE
         ];
     });
 
