@@ -45,9 +45,8 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     NSUInteger roundingTypeRow = [self.roundingTypeOptions indexOfObject:settings.roundingType];
     if (roundingTypeRow != NSNotFound) {
         [self.roundingTypeField setText:self.roundingTypeOptions[roundingTypeRow]];
+        [self.roundingTypePicker selectRow:roundingTypeRow inComponent:0 animated:NO];
     }
-    [self.roundingTypePicker selectRow:roundingTypeRow inComponent:0 animated:NO];
-
 
     [self.keepScreenOnSwitch setOn:[[[JSettingsStore instance] first] screenAlwaysOn]];
 }
