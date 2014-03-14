@@ -6,5 +6,7 @@
 
 - (NSDecimalNumber *)findLogMax:(JFTOLift *)lift;
 
+- (NSArray *)logsForLift:(JFTOLift *)lift;
+
 - (int)findRepsToBeat:(NSDecimalNumber *)number withWeight:(NSDecimalNumber *)weight;
 @end

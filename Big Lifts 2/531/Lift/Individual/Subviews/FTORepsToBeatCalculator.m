@@ -31,11 +31,7 @@
 }
 
 - (NSDecimalNumber *)findLogMax:(JFTOLift *)lift {
-    NSArray *ftoLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
-    NSArray *ftoLogsForLift = [ftoLogs select:^BOOL(JWorkoutLog *workoutLog) {
-        JSetLog *set = [[workoutLog sets] lastObject];
-        return [set.name isEqualToString:lift.name];
-    }];
+    NSArray *ftoLogsForLift = [self logsForLift:lift];
 
     __block NSDecimalNumber *logMax = N(0);
     [ftoLogsForLift each:^(JWorkoutLog *workoutLog) {
@@ -46,6 +42,14 @@
         }
     }];
     return logMax;
+}
+
+- (NSArray *)logsForLift:(JFTOLift *)lift {
+    NSArray *logs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"5/3/1"];
+    return [logs select:^BOOL(JWorkoutLog *workoutLog) {
+        JSetLog *set = [[workoutLog workSets] lastObject];
+        return [set.name isEqualToString:lift.name];
+    }];
 }
 
 - (int)findRepsToBeat:(NSDecimalNumber *)targetWeight withWeight:(NSDecimalNumber *)weight {

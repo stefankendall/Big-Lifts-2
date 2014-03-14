@@ -76,4 +76,18 @@
     STAssertEquals(reps, 4, @"");
 }
 
+- (void)testUsesWorksetsForFindingMatchingLogs {
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
+    workoutLog.name = @"5/3/1";
+    JSetLog *workSetLog = [[JSetLogStore instance] create];
+    workSetLog.name = @"Deadlift";
+    [workoutLog addSet:workSetLog];
+
+    JSetLog *assistance = [[JSetLogStore instance] createWithName:@"Press" weight:N(100) reps:3 warmup:NO assistance:YES amrap:NO];
+    [workoutLog addSet:assistance];
+
+    NSArray *logs = [[FTORepsToBeatCalculator new] logsForLift:[[JFTOLiftStore instance] find:@"name" value:@"Deadlift"]];
+    STAssertEquals((int) [logs count], 1, @"");
+}
+
 @end
