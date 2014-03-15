@@ -7,21 +7,13 @@
 #import "JFTOLift.h"
 #import "JSet.h"
 #import "JWorkout.h"
-#import "JFTOSetStore.h"
 #import "JFTOSet.h"
-#import "JFTOBoringButBigLift.h"
-#import "JFTOBoringButBigLiftStore.h"
-#import "JFTOVariantStore.h"
-#import "JFTOVariant.h"
 #import "BoringButBigHelper.h"
+#import "FTOLiftWorkoutViewController.h"
 
 @implementation JFTOBoringButBigAssistance
 
 - (void)setup {
-    JFTOVariant *variant = [[JFTOVariantStore instance] first];
-    if (![[variant name] isEqualToString:FTO_VARIANT_CUSTOM]) {
-        [self removeAmrapFromWorkouts];
-    }
     [self addBoringSets];
 }
 
@@ -35,14 +27,15 @@
         }
     }
 
+    [self removeExistingAssistance];
     [self setup];
 }
 
-- (void)removeAmrapFromWorkouts {
+- (void)removeExistingAssistance {
     [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *ftoWorkout) {
-        [ftoWorkout.workout.sets each:^(JSet *set) {
-            set.amrap = NO;
-        }];
+        for(JSet *set in ftoWorkout.workout.assistanceSets){
+            [ftoWorkout.workout.sets removeObject:set];
+        }
     }];
 }
 

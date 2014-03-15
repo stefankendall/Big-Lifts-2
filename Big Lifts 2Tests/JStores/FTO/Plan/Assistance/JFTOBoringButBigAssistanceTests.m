@@ -16,14 +16,6 @@
 
 @implementation JFTOBoringButBigAssistanceTests
 
-- (void)testAddingBoringButBigRemovesAmrap {
-    [[JFTOBoringButBigAssistance new] setup];
-
-    [[[JFTOWorkoutStore instance] findAll] each:^(JFTOWorkout *workout) {
-        STAssertFalse([[workout.workout.sets lastObject] amrap], @"");
-    }];
-}
-
 - (void)testDoesNotCrashWhenAWorkoutIsEmpty {
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] first];
     ftoWorkout.workout.sets = [@[] mutableCopy];
@@ -66,7 +58,6 @@
     [bbb setPercentage:N(60)];
     [bbb setThreeMonthChallenge:YES];
     [[JFTOBoringButBigAssistance new] cycleChange];
-    [[JFTOBoringButBigAssistance new] setup];
 
     STAssertEqualObjects([[[JFTOBoringButBigStore instance] first] percentage], N(70), @"");
     STAssertEqualObjects([[[[[[JFTOWorkoutStore instance] first] workout] sets] lastObject] percentage], N(70), @"");
@@ -90,6 +81,13 @@
 
     workoutsWithAmrap = [self findWorkoutsWithAmrap];
     STAssertEquals((int) [workoutsWithAmrap count], 12, @"");
+}
+
+- (void)testDoesNotDuplicateAssistanceOnCycleChange {
+    [[JFTOBoringButBigAssistance new] setup];
+    [[JFTOBoringButBigAssistance new] cycleChange];
+    JWorkout *workout = [[[JFTOWorkoutStore instance] first] workout];
+    STAssertEquals((int) [workout.assistanceSets count], 5, @"");
 }
 
 - (NSArray *)findWorkoutsWithAmrap {
