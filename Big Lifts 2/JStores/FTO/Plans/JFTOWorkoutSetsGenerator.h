@@ -16,4 +16,5 @@
 - (NSObject <JFTOPlan> *)planForVariant:(NSString *)variant;
 
 - (NSArray *)incrementMaxesWeeks;
+
 @end

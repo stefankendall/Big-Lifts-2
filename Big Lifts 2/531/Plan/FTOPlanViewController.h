@@ -19,6 +19,7 @@
 @property(weak, nonatomic) IBOutlet UITableViewCell *advancedVariant;
 @property(weak, nonatomic) IBOutlet UITableViewCell *fivesProgressionVariant;
 @property(weak, nonatomic) IBOutlet UITableViewCell *customVariant;
+@property (weak, nonatomic) IBOutlet UITableViewCell *fullCustomVariant;
 
 - (IBAction)toggleSixWeek:(id)sender;
 
