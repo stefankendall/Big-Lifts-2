@@ -14,6 +14,7 @@
 #import "JFTOPowerliftingPlan.h"
 #import "JFTOFirstSetLast.h"
 #import "JFTOSixWeekPlan.h"
+#import "JFTOFullCustomPlan.h"
 
 @implementation JFTOWorkoutSetsGenerator
 
@@ -50,7 +51,8 @@
             FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS : [JFTOFirstSetLastMultipleSetsPlan new],
             FTO_VARIANT_ADVANCED : [JFTOAdvancedPlan new],
             FTO_VARIANT_FIVES_PROGRESSION : [JFTOFivesProgression new],
-            FTO_VARIANT_CUSTOM : [JFTOCustomPlan new]
+            FTO_VARIANT_CUSTOM : [JFTOCustomPlan new],
+            FTO_VARIANT_FULL_CUSTOM : [JFTOFullCustomPlan new]
     };
     return templatePlans[variant];
 }

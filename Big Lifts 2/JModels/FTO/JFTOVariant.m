@@ -11,6 +11,7 @@ NSString *const FTO_VARIANT_FIRST_SET_LAST = @"First Set Last";
 NSString *const FTO_VARIANT_ADVANCED = @"Advanced";
 NSString *const FTO_VARIANT_FIVES_PROGRESSION = @"Fives Progression";
 NSString *const FTO_VARIANT_CUSTOM = @"Custom";
+NSString *const FTO_VARIANT_FULL_CUSTOM = @"Full Custom";
 
 @implementation JFTOVariant
 
