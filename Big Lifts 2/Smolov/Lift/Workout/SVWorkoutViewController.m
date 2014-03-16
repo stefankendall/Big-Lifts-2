@@ -17,6 +17,7 @@
 #import "JSetLog.h"
 #import "JSetLogStore.h"
 #import "JSet.h"
+#import "WeightRounder.h"
 
 @implementation SVWorkoutViewController
 
@@ -77,7 +78,7 @@
         JSet *set = self.svWorkout.workout.sets[(NSUInteger) indexPath.row];
         [cell setSet:set];
         if (self.svWorkout.weightAdd) {
-            NSDecimalNumber *weight = [[set roundedEffectiveWeight] decimalNumberByAdding:self.svWorkout.weightAdd];
+            NSDecimalNumber *weight = [[WeightRounder new] round:[[set effectiveWeight] decimalNumberByAdding:self.svWorkout.weightAdd]];
             [cell.weightLabel setText:[weight stringValue]];
         }
         return cell;

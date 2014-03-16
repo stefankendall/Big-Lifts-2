@@ -11,6 +11,8 @@
 #import "JWorkoutLog.h"
 #import "JSetLog.h"
 #import "SetCell.h"
+#import "JSettingsStore.h"
+#import "JSettings.h"
 
 @implementation SVWorkoutViewControllerTests
 
@@ -21,7 +23,7 @@
     SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
     [controller setSvWorkout:svWorkout];
 
-    STAssertEquals((int)[controller tableView:controller.tableView numberOfRowsInSection:1], 1, @"");
+    STAssertEquals((int) [controller tableView:controller.tableView numberOfRowsInSection:1], 1, @"");
 }
 
 - (void)testMarksWorkoutsComplete {
@@ -60,11 +62,11 @@
     [controller doneButtonTapped:nil];
 
     NSArray *smolovLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov"];
-    STAssertEquals((int)[smolovLogs count], 1, @"");
+    STAssertEquals((int) [smolovLogs count], 1, @"");
 
     JWorkoutLog *workoutLog = smolovLogs[0];
     STAssertNotNil(workoutLog.date, @"");
-    STAssertEquals((int)[workoutLog.sets count], 1, @"");
+    STAssertEquals((int) [workoutLog.sets count], 1, @"");
 
     JSetLog *setLog = workoutLog.sets[0];
     STAssertEqualObjects(setLog.reps, @1, @"");
@@ -78,9 +80,9 @@
 
     [controller doneButtonTapped:nil];
     NSArray *smolovLogs = [[JWorkoutLogStore instance] findAllWhere:@"name" value:@"Smolov"];
-    STAssertEquals((int)[smolovLogs count], 1, @"");
+    STAssertEquals((int) [smolovLogs count], 1, @"");
     JWorkoutLog *workoutLog = smolovLogs[0];
-    STAssertEquals((int)[workoutLog.sets count], 7, @"");
+    STAssertEquals((int) [workoutLog.sets count], 7, @"");
 }
 
 - (void)testAddsWeightAdd {
@@ -107,6 +109,21 @@
     JSetLog *setLog = workoutLog.sets[0];
     STAssertEqualObjects(setLog.reps, @9, @"");
     STAssertEqualObjects(setLog.weight, N(90), @"");
+}
+
+- (void)testRoundsAfterAddingWeight {
+    JSVWorkout *cycle2week2day1 = [[JSVWorkoutStore instance] findAllWhere:@"cycle" value:@2][4];
+    cycle2week2day1.weightAdd = N(2);
+
+    SVWorkoutViewController *controller = [self getControllerByStoryboardIdentifier:@"svWorkout"];
+    controller.svWorkout = cycle2week2day1;
+
+    [[[JSVLiftStore instance] first] setWeight:N(100)];
+    [[[JSettingsStore instance] first] setRoundTo:N(2.5)];
+
+    SetCell *cell = (SetCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:NSIP(0, 1)];
+    STAssertEqualObjects([cell.weightLabel text], @"72.5", @"");
+
 }
 
 @end
