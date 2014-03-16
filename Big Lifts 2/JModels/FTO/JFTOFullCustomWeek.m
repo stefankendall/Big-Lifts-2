@@ -2,4 +2,8 @@
 
 @implementation JFTOFullCustomWeek
 
+- (NSArray *)cascadeDeleteProperties {
+    return @[@"workouts"];
+}
+
 @end

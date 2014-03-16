@@ -902,10 +902,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="change sets and lifts" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oic-mG-tqI">
-                                                    <rect key="frame" x="151" y="7" width="136" height="21"/>
+                                                    <rect key="frame" x="151" y="6" width="136" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="136" id="l5Y-9D-CCg"/>
+                                                        <constraint firstAttribute="width" constant="136" id="kCK-ew-Aiw"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -914,10 +914,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="h01-sA-jGd" firstAttribute="centerY" secondItem="axD-mk-8Jj" secondAttribute="centerY" id="52c-nr-y0Z"/>
-                                                <constraint firstAttribute="trailing" secondItem="Oic-mG-tqI" secondAttribute="trailing" id="gyv-X2-ee2"/>
-                                                <constraint firstItem="Oic-mG-tqI" firstAttribute="bottom" secondItem="h01-sA-jGd" secondAttribute="bottom" id="sfd-IJ-L4X"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oic-mG-tqI" secondAttribute="trailing" id="700-HA-IdY"/>
+                                                <constraint firstItem="Oic-mG-tqI" firstAttribute="top" secondItem="axD-mk-8Jj" secondAttribute="top" constant="6" id="dQS-DQ-eB4"/>
                                                 <constraint firstItem="h01-sA-jGd" firstAttribute="leading" secondItem="axD-mk-8Jj" secondAttribute="leading" constant="20" symbolic="YES" id="vK1-5h-XhQ"/>
-                                                <constraint firstItem="Oic-mG-tqI" firstAttribute="top" secondItem="h01-sA-jGd" secondAttribute="top" id="xb5-Xz-E3j"/>
+                                                <constraint firstItem="Oic-mG-tqI" firstAttribute="baseline" secondItem="h01-sA-jGd" secondAttribute="baseline" id="zG6-dM-yhy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1559,7 +1559,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Full Custom" id="xL8-NO-VVb">
-                        <barButtonItem key="rightBarButtonItem" title="Edit Weeks" id="zVr-66-8mx"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit Weeks" id="zVr-66-8mx">
+                            <connections>
+                                <segue destination="XOw-XJ-vfJ" kind="push" id="qit-ZF-ZYU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Ail-jV-naL" kind="push" identifier="ftoFullCustomWorkoutSelected" id="D9Q-a0-csO"/>
@@ -1568,6 +1572,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqc-Hm-YcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2437" y="2775"/>
+        </scene>
+        <!--Full Custom Week Editor - Edit Weeks-->
+        <scene sceneID="mWe-4p-KQG">
+            <objects>
+                <tableViewController storyboardIdentifier="ftoFullCustomWeekEditor" id="XOw-XJ-vfJ" customClass="FTOFullCustomWeekEditor" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cVK-yz-dw2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="eQZ-cJ-TF7">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eQZ-cJ-TF7" id="E7K-2O-cWK">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="XOw-XJ-vfJ" id="7gs-f0-kK0"/>
+                            <outlet property="delegate" destination="XOw-XJ-vfJ" id="g3q-dV-DlE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Weeks" id="wqE-zY-B2u">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="pUH-ki-avA">
+                            <connections>
+                                <action selector="addDeleteButtonTapped:" destination="XOw-XJ-vfJ" id="sWR-Lp-G84"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addDeleteButton" destination="pUH-ki-avA" id="hIB-cc-vQt"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oS6-ND-uZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2437" y="3351"/>
         </scene>
         <!--Table View Controller - Week 3, Squat-->
         <scene sceneID="tb9-kB-BuS">

@@ -18,7 +18,6 @@
 
 - (void)setupDefaults {
     [self createWeeks];
-    [self createWorkouts];
 }
 
 - (void)setDefaultsForObject:(id)object {
@@ -34,30 +33,28 @@
         customWeek.name = [plan weekNames][(NSUInteger) (week - 1)];
         customWeek.week = [NSNumber numberWithInt:week];
         customWeek.incrementAfterWeek = [[plan deloadWeeks] containsObject:[NSNumber numberWithInt:week]];
+        [self createWorkoutsForWeek:customWeek];
     }
 }
 
-- (void)createWorkouts {
+- (void)createWorkoutsForWeek:(JFTOFullCustomWeek *)week {
     for (JFTOLift *ftoLift in [[JFTOLiftStore instance] findAll]) {
-        [self createWorkoutsForLift:ftoLift];
+        [self createWorkoutsForLift:ftoLift week:week];
     }
 }
 
-- (void)createWorkoutsForLift:(JFTOLift *)ftoLift {
+- (void)createWorkoutsForLift:(JFTOLift *)ftoLift week:(JFTOFullCustomWeek *)week {
     NSObject <JFTOPlan> *plan = [[JFTOWorkoutSetsGenerator new] planForVariant:FTO_VARIANT_STANDARD];
     NSDictionary *setsByWeek = [plan generate:ftoLift];
-    for (int week = 1; week <= [[setsByWeek allKeys] count]; week++) {
-        NSArray *sets = setsByWeek[[NSNumber numberWithInt:week]];
-        JFTOFullCustomWorkout *customWorkout = [[JFTOFullCustomWorkoutStore instance] create];
-        customWorkout.lift = ftoLift;
-        customWorkout.order = ftoLift.order;
-        for (JSetData *setData in sets) {
-            [customWorkout.workout addSet:[setData createSet]];
-        }
-
-        JFTOFullCustomWeek *customWeek = [self find:@"week" value:[NSNumber numberWithInt:week]];
-        [customWeek.workouts addObject:customWorkout];
+    NSArray *sets = setsByWeek[week.week];
+    JFTOFullCustomWorkout *customWorkout = [[JFTOFullCustomWorkoutStore instance] create];
+    customWorkout.lift = ftoLift;
+    customWorkout.order = ftoLift.order;
+    for (JSetData *setData in sets) {
+        [customWorkout.workout addSet:[setData createSet]];
     }
+
+    [week.workouts addObject:customWorkout];
 }
 
 - (void)adjustToMainLifts {
@@ -68,7 +65,12 @@
 - (void)addMissingWorkouts {
     for (JFTOLift *ftoLift in [[JFTOLiftStore instance] findAll]) {
         if (![[JFTOFullCustomWorkoutStore instance] find:@"lift" value:ftoLift]) {
-            [self createWorkoutsForLift:ftoLift];
+            NSObject <JFTOPlan> *plan = [[JFTOWorkoutSetsGenerator new] planForVariant:FTO_VARIANT_STANDARD];
+            NSDictionary *setsByWeek = [plan generate:nil];
+            for (int week = 1; week <= [[setsByWeek allKeys] count]; week++) {
+                JFTOFullCustomWeek *customWeek = [self find:@"week" value:[NSNumber numberWithInt:week]];
+                [self createWorkoutsForLift:ftoLift week:customWeek];
+            }
         }
     }
 }

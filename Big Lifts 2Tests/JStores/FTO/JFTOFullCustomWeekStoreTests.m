@@ -1,6 +1,7 @@
 #import "JFTOFullCustomWeekStoreTests.h"
 #import "JFTOFullCustomWeekStore.h"
 #import "JFTOFullCustomWeek.h"
+#import "JFTOFullCustomWorkoutStore.h"
 
 @implementation JFTOFullCustomWeekStoreTests
 
@@ -21,6 +22,12 @@
     JFTOFullCustomWeek *customWeek2 = [[JFTOFullCustomWeekStore instance] find:@"week" value:@2];
     STAssertEquals((int) [customWeek1.workouts count], 4, @"");
     STAssertEquals((int) [customWeek2.workouts count], 4, @"");
+}
+
+- (void)testDeletingWorkoutWeekRemovesCustomWorkouts {
+    int count = [[JFTOFullCustomWorkoutStore instance] count];
+    [[JFTOFullCustomWeekStore instance] removeAtIndex:0];
+    STAssertEquals([[JFTOFullCustomWorkoutStore instance] count], count - 4, @"");
 }
 
 @end

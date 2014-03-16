@@ -1,6 +1,7 @@
 #import "FTOFullCustomWeekViewControllerTests.h"
 #import "SenTestCase+ControllerTestAdditions.h"
 #import "FTOFullCustomWeekViewController.h"
+#import "JFTOFullCustomWeekStore.h"
 
 @implementation FTOFullCustomWeekViewControllerTests
 
