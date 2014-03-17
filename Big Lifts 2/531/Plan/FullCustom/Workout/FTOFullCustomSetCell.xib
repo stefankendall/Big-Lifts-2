@@ -12,7 +12,48 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bDH-yS-EF2" id="zhv-l1-1dk">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Power Clean" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M71-Ts-TH4">
+                        <rect key="frame" x="20" y="11" width="140" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="140" id="P3h-tt-yGz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14x" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pa-RQ-TdH">
+                        <rect key="frame" x="217" y="11" width="28" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvP-b1-AfP">
+                        <rect key="frame" x="253" y="11" width="47" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="6N4-0s-6Il"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="zvP-b1-AfP" firstAttribute="baseline" secondItem="M71-Ts-TH4" secondAttribute="baseline" id="H07-Q1-ecy"/>
+                    <constraint firstItem="6pa-RQ-TdH" firstAttribute="baseline" secondItem="zvP-b1-AfP" secondAttribute="baseline" id="PN9-qW-u9I"/>
+                    <constraint firstItem="zvP-b1-AfP" firstAttribute="leading" secondItem="6pa-RQ-TdH" secondAttribute="trailing" constant="8" symbolic="YES" id="Q2H-Yt-Bue"/>
+                    <constraint firstItem="M71-Ts-TH4" firstAttribute="leading" secondItem="zhv-l1-1dk" secondAttribute="leading" constant="20" id="aBN-s6-yAr"/>
+                    <constraint firstItem="zvP-b1-AfP" firstAttribute="centerY" secondItem="zhv-l1-1dk" secondAttribute="centerY" id="cxM-vz-7rD"/>
+                    <constraint firstAttribute="trailing" secondItem="zvP-b1-AfP" secondAttribute="trailing" constant="20" symbolic="YES" id="hVf-La-U5B"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lift" destination="M71-Ts-TH4" id="2JX-GG-xw0"/>
+                <outlet property="percentage" destination="zvP-b1-AfP" id="lUE-s7-HYK"/>
+                <outlet property="reps" destination="6pa-RQ-TdH" id="Iqd-Dp-e3Y"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

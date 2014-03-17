@@ -557,6 +557,7 @@
 		54590FEFD03248680E2504F0 /* JWorkoutLogStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907920C2D4417A9CC4DAC /* JWorkoutLogStore.m */; };
 		54590FF223DB58B77D6177F1 /* JFTOTriumvirateAssistanceCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901A17F098C55055C7131 /* JFTOTriumvirateAssistanceCopy.m */; };
 		54590FF8C484892F4D2488B4 /* 157-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 545904DC5057EDC75C21A989 /* 157-wrench.png */; };
+		54590FFC2684DFEDDBADBE2E /* BLColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904D7FA56857EE9FDB79C /* BLColors.m */; };
 		54590FFCEF059C0F5879B0D9 /* FTOLiftViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590760A1CDDDBBDD32FCFA /* FTOLiftViewControllerTests.m */; };
 		D5CA871EE07A486AA13842C1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B188DC3574B54B28BFA105B5 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -883,6 +884,7 @@
 		545904D3571129012EA634C1 /* JSSWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSWorkout.m; sourceTree = "<group>"; };
 		545904D62CC1AA8EA991E2A4 /* JSJWorkoutStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSJWorkoutStore.m; sourceTree = "<group>"; };
 		545904D6B7F81F75B639A689 /* JFTOWorkoutStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOWorkoutStore.m; sourceTree = "<group>"; };
+		545904D7FA56857EE9FDB79C /* BLColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLColors.m; sourceTree = "<group>"; };
 		545904D887B206029AAE3726 /* JFTOTriumvirateAssistanceCopyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOTriumvirateAssistanceCopyTests.h; sourceTree = "<group>"; };
 		545904DC5057EDC75C21A989 /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench.png"; sourceTree = "<group>"; };
 		545904DC9C09263519D1B515 /* PurchaserTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaserTests.h; sourceTree = "<group>"; };
@@ -941,6 +943,7 @@
 		545905FC727BFFF60B01F2D7 /* FTOChangeLiftsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOChangeLiftsViewController.h; sourceTree = "<group>"; };
 		54590601154A6795C0A9AADC /* FTOCustomWeekEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomWeekEditCell.h; sourceTree = "<group>"; };
 		54590608218798BD8FDD13EA /* JFTOBoringButBigAssistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOBoringButBigAssistance.m; sourceTree = "<group>"; };
+		54590609ADE0CF2EE322E55D /* BLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLColors.h; sourceTree = "<group>"; };
 		54590609DCCDDFE802C1E5C7 /* FTOFullCustomSetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOFullCustomSetCell.m; sourceTree = "<group>"; };
 		5459060D4D99407BD2138CFD /* ProgramSelectorViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgramSelectorViewControllerTests.h; sourceTree = "<group>"; };
 		54590613C2E86FC343274FBB /* JSJLiftStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSJLiftStore.m; sourceTree = "<group>"; };
@@ -1831,6 +1834,8 @@
 				545909F5884E23272B0CBFC6 /* Debug.h */,
 				54590DD01EC32D35B941499C /* StringHelper.m */,
 				54590811B2F97810BE5E7162 /* StringHelper.h */,
+				545904D7FA56857EE9FDB79C /* BLColors.m */,
+				54590609ADE0CF2EE322E55D /* BLColors.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -4446,6 +4451,7 @@
 				5459010A27CFE9C462759F63 /* FTOFullCustomWeekCell.m in Sources */,
 				54590EFD2CE7BA786ACB695D /* FTOFullCustomWorkoutViewController.m in Sources */,
 				54590033650933D1B244BBEC /* FTOFullCustomSetCell.m in Sources */,
+				54590FFC2684DFEDDBADBE2E /* BLColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
