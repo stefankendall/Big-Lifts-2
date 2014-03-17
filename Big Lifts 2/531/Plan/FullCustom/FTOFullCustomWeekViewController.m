@@ -4,6 +4,7 @@
 #import "JFTOFullCustomWorkout.h"
 #import "JLift.h"
 #import "JFTOLift.h"
+#import "FTOFullCustomWorkoutViewController.h"
 
 @implementation FTOFullCustomWeekViewController
 
@@ -38,6 +39,18 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [[[JFTOFullCustomWeekStore instance] atIndex:section] name];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.tappedWorkout = [self workoutForIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"ftoFullCustomWorkoutSelected" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ftoFullCustomWorkoutSelected"]) {
+        FTOFullCustomWorkoutViewController *controller = [segue destinationViewController];
+        controller.customWorkout = self.tappedWorkout;
+    }
 }
 
 @end

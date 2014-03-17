@@ -1,3 +1,4 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "JFTOFullCustomWeekStore.h"
 #import "JFTOFullCustomWeek.h"
 #import "JFTOLift.h"
@@ -94,5 +95,11 @@
     }
 }
 
+
+- (JFTOFullCustomWeek *)weekContaining:(JFTOFullCustomWorkout *)workout {
+    return [[self findAll] detect:^BOOL(JFTOFullCustomWeek *week) {
+        return [week.workouts containsObject:workout];
+    }];
+}
 
 @end
