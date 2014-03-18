@@ -12,7 +12,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    if( cell.selectionStyle == UITableViewCellSelectionStyleNone ){
+    if (cell.selectionStyle == UITableViewCellSelectionStyleNone) {
         return;
     }
     [self.tableView endEditing:YES];
@@ -21,8 +21,17 @@
     if ([[SKProductStore instance].allPurchaseIds containsObject:purchaseId]) {
         [[Purchaser new] savePurchase:purchaseId];
         UIAlertView *msg = [[UIAlertView alloc] initWithTitle:@"Unlocked"
-                                                         message:@"Purchase unlocked"
-                                                        delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                                      message:@"Purchase unlocked"
+                                                     delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [msg performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
+    }
+    else if ([purchaseId isEqualToString:@"allPurchases"]) {
+        for (NSString *productId in [SKProductStore instance].allPurchaseIds) {
+            [[Purchaser new] savePurchase:productId];
+        }
+        UIAlertView *msg = [[UIAlertView alloc] initWithTitle:@"Unlocked"
+                                                      message:@"All current purchases unlocked"
+                                                     delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [msg performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
     }
     else {
