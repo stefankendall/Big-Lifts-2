@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "FTOFullCustomWeekEditor.h"
 #import "JFTOFullCustomWeekStore.h"
 #import "FTOFullCustomWeekCell.h"
@@ -7,6 +8,11 @@
 #import "AddCell.h"
 
 @implementation FTOFullCustomWeekEditor
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [Flurry logEvent:@"5/3/1_FullCustom_WeekEditor"];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;

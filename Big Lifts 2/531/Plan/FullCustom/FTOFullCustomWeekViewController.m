@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "FTOFullCustomWeekViewController.h"
 #import "JFTOFullCustomWeek.h"
 #import "JFTOFullCustomWeekStore.h"
@@ -9,6 +10,7 @@
 @implementation FTOFullCustomWeekViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [Flurry logEvent:@"5/3/1_FullCustom_Week"];
     [self.tableView reloadData];
 }
 

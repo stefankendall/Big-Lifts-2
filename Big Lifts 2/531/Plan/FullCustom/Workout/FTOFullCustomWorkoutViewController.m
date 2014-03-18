@@ -1,3 +1,4 @@
+#import <FlurrySDK/Flurry.h>
 #import "FTOFullCustomWorkoutViewController.h"
 #import "JFTOFullCustomWorkout.h"
 #import "JWorkout.h"
@@ -5,15 +6,19 @@
 #import "FTOFullCustomSetCell.h"
 #import "JLift.h"
 #import "JFTOLift.h"
+#import "JSet.h"
 #import "JFTOFullCustomWeek.h"
 #import "JFTOFullCustomWeekStore.h"
 #import "JFTOSetStore.h"
 #import "JFTOSet.h"
+#import "FTOFullCustomSetEditor.h"
 
 @implementation FTOFullCustomWorkoutViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    JFTOFullCustomWeek *week = [[JFTOFullCustomWeekStore instance] weekContaining: self.customWorkout];
+    [Flurry logEvent:@"5/3/1_FullCustom_Workout"];
+
+    JFTOFullCustomWeek *week = [[JFTOFullCustomWeekStore instance] weekContaining:self.customWorkout];
     NSString *title = [NSString stringWithFormat:@"%@, %@", week.name, self.customWorkout.lift.name];
     [self setTitle:title];
 }
@@ -38,7 +43,7 @@
             cell = [FTOFullCustomSetCell create];
         }
 
-        [cell setSet: self.customWorkout.workout.sets[(NSUInteger) indexPath.row]];
+        [cell setSet:self.customWorkout.workout.sets[(NSUInteger) indexPath.row]];
         return cell;
     }
     else {
@@ -53,7 +58,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        NSLog(@"Transition");
+        self.tappedSet = self.customWorkout.workout.sets[(NSUInteger) indexPath.row];
+        [self performSegueWithIdentifier:@"ftoFullCustomSetSelected" sender:self];
     }
     else {
         JFTOSet *newSet = [[JFTOSetStore instance] create];
@@ -66,5 +72,13 @@
         [self.tableView reloadData];
     }
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ftoFullCustomSetSelected"]) {
+         FTOFullCustomSetEditor *editor = [segue destinationViewController];
+        [editor setSet:self.tappedSet];
+    }
+}
+
 
 @end
