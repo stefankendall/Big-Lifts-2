@@ -21,6 +21,8 @@
     JFTOFullCustomWeek *week = [[JFTOFullCustomWeekStore instance] weekContaining:self.customWorkout];
     NSString *title = [NSString stringWithFormat:@"%@, %@", week.name, self.customWorkout.lift.name];
     [self setTitle:title];
+
+    [self.tableView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
