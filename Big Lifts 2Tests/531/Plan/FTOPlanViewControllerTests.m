@@ -24,7 +24,7 @@
     FTOPlanViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoPlan"];
 
     NSString *oldVariant = [[[JFTOVariantStore instance] first] name];
-    [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:1]];
+    [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:1]];
     NSString *newVariant = [[[JFTOVariantStore instance] first] name];
 
     STAssertFalse([newVariant isEqualToString:oldVariant], @"");
