@@ -77,10 +77,31 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ftoFullCustomSetSelected"]) {
-         FTOFullCustomSetEditor *editor = [segue destinationViewController];
+        FTOFullCustomSetEditor *editor = [segue destinationViewController];
         [editor setSet:self.tappedSet];
     }
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return UITableViewCellEditingStyleDelete;
+    }
+    return UITableViewCellEditingStyleNone;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.customWorkout.workout removeSet:self.customWorkout.workout.sets[(NSUInteger) indexPath.row]];
+    [self.tableView reloadData];
+}
+
+- (IBAction)deleteButtonTapped:(id)sender {
+    [self.tableView setEditing:!self.tableView.editing];
+    if (self.tableView.editing) {
+        [self.deleteButton setTitle:@"Done"];
+    }
+    else {
+        [self.deleteButton setTitle:@"Delete"];
+    }
+}
 
 @end

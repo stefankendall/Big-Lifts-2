@@ -1634,8 +1634,15 @@
                             <outlet property="delegate" destination="Ail-jV-naL" id="IGQ-ya-3Y1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Week 3, Squat" id="ZLG-Tm-tGs"/>
+                    <navigationItem key="navigationItem" title="Week 3, Squat" id="ZLG-Tm-tGs">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="Dcu-We-tfI">
+                            <connections>
+                                <action selector="deleteButtonTapped:" destination="Ail-jV-naL" id="iGJ-ED-swB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="deleteButton" destination="Dcu-We-tfI" id="ARs-8I-t0b"/>
                         <segue destination="0Qd-V3-lIz" kind="push" identifier="ftoFullCustomSetSelected" id="9rT-EL-McN"/>
                     </connections>
                 </tableViewController>
