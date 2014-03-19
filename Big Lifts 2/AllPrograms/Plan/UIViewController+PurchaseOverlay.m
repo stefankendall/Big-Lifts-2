@@ -5,6 +5,7 @@
 #import "SKProductStore.h"
 #import "PurchaseOverlay.h"
 #import "Purchaser.h"
+#import "BLColors.h"
 
 @implementation UIViewController (PurchaseOverlay)
 
@@ -12,7 +13,7 @@
     PurchaseOverlay *overlay = (PurchaseOverlay *) [view viewWithTag:kPurchaseOverlayTag];
     if (!overlay) {
         PurchaseOverlay *overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
-        overlay.backgroundColor = [[UIColor darkGrayColor] colorWithAlphaComponent:.65];
+        overlay.backgroundColor = [[BLColors linkColor] colorWithAlphaComponent:.65];
         CGRect frame = CGRectMake(0, 0, [view frame].size.width, [view frame].size.height);
         [overlay setFrame:frame];
         SKProduct *product = [[SKProductStore instance] productById:purchaseId];

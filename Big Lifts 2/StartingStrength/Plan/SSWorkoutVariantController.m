@@ -23,8 +23,7 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
     [super viewDidLoad];
     self.variantMapping = @{@0 : @"Standard", @1 : @"Novice", @2 : @"Onus-Wunsler", @3 : @"Practical Programming"};
     self.iapCells = @{IAP_SS_ONUS_WUNSLER : self.onusWunslerCell,
-            IAP_SS_PRACTICAL_PROGRAMMING : self.practicalProgrammingCell,
-            IAP_SS_WARMUP : self.warmupCell};
+                      IAP_SS_PRACTICAL_PROGRAMMING : self.practicalProgrammingCell};
     [self checkSelectedVariant];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
