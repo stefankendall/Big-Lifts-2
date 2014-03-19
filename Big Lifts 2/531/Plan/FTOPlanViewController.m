@@ -36,6 +36,7 @@
             FTO_VARIANT_FIRST_SET_LAST : self.firstSetLastVariant,
             FTO_VARIANT_ADVANCED : self.advancedVariant,
             FTO_VARIANT_CUSTOM : self.customVariant,
+            FTO_VARIANT_FULL_CUSTOM : self.fullCustomVariant,
             FTO_VARIANT_FIVES_PROGRESSION : self.fivesProgressionVariant
     };
 
@@ -43,7 +44,8 @@
             IAP_FTO_JOKER : self.jokerVariant,
             IAP_FTO_ADVANCED : self.advancedVariant,
             IAP_FTO_FIVES_PROGRESSION : self.fivesProgressionVariant,
-            IAP_FTO_CUSTOM : self.customVariant
+            IAP_FTO_CUSTOM : self.customVariant,
+            IAP_FTO_FULL_CUSTOM : self.fullCustomVariant
     };
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -64,7 +66,8 @@
 }
 
 - (void)enableDisableSixWeekToggle {
-    BOOL isCustom = [[[[JFTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_CUSTOM];
+    NSString *variantName = [[[JFTOVariantStore instance] first] name];
+    BOOL isCustom = [variantName isEqualToString:FTO_VARIANT_CUSTOM] || [variantName isEqualToString:FTO_VARIANT_FULL_CUSTOM];
     [self.sixWeekToggle setEnabled:!isCustom];
     if (isCustom) {
         [[[JFTOSettingsStore instance] first] setSixWeekEnabled:NO];

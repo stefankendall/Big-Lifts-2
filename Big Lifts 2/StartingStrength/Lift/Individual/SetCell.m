@@ -3,6 +3,7 @@
 #import "JSettingsStore.h"
 #import "JSettings.h"
 #import "JLift.h"
+#import "BLColors.h"
 
 @implementation SetCell
 
@@ -46,7 +47,7 @@
     else {
         [self.repsLabel setText:[self getRepsString:set]];
         if ([set amrap]) {
-            [self.repsLabel setTextColor:[UIColor colorWithRed:0 green:170 / 255.0 blue:0 alpha:1]];
+            [self.repsLabel setTextColor:[BLColors amrapColor]];
         }
     }
 }

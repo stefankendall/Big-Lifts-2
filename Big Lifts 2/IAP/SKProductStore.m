@@ -23,6 +23,7 @@
                 IAP_FTO_SST,
                 IAP_FTO_FIVES_PROGRESSION,
                 IAP_FTO_CUSTOM,
+                IAP_FTO_FULL_CUSTOM,
                 IAP_FTO_FULL_CUSTOM_ASSISTANCE
         ];
     });

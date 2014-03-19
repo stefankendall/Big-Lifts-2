@@ -11,6 +11,7 @@ extern NSString * const FTO_VARIANT_FIRST_SET_LAST;
 extern NSString * const FTO_VARIANT_ADVANCED;
 extern NSString * const FTO_VARIANT_FIVES_PROGRESSION;
 extern NSString * const FTO_VARIANT_CUSTOM;
+extern NSString * const FTO_VARIANT_FULL_CUSTOM;
 
 @interface JFTOVariant : JModel
 @property(nonatomic) NSString<Optional> *name;
