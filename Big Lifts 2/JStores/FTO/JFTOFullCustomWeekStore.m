@@ -17,6 +17,11 @@
     return JFTOFullCustomWeek.class;
 }
 
+- (NSArray *)findAll {
+    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"week" ascending:YES];
+    return [self.data sortedArrayUsingDescriptors:@[sd]];
+}
+
 - (void)setupDefaults {
     [self createWeeks];
 }

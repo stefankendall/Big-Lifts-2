@@ -6,12 +6,19 @@
 #import "JLift.h"
 #import "JFTOLift.h"
 #import "FTOFullCustomWorkoutViewController.h"
+#import "JFTOWorkoutStore.h"
 
 @implementation FTOFullCustomWeekViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [Flurry logEvent:@"5/3/1_FullCustom_Week"];
     [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+        [[JFTOWorkoutStore instance] switchTemplate];
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

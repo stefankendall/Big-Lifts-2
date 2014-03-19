@@ -30,4 +30,15 @@
     STAssertEquals([[JFTOFullCustomWorkoutStore instance] count], count - 4, @"");
 }
 
+- (void)testSortsByWeek {
+    JFTOFullCustomWeek *week1 = [[JFTOFullCustomWeekStore instance] atIndex:0];
+    JFTOFullCustomWeek *week2 = [[JFTOFullCustomWeekStore instance] atIndex:1];
+
+    week1.week = @2;
+    week2.week = @1;
+
+    STAssertEquals([[JFTOFullCustomWeekStore instance] findAll][0], week2, @"");
+    STAssertEquals([[JFTOFullCustomWeekStore instance] findAll][1], week1, @"");
+}
+
 @end
