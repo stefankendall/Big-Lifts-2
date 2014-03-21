@@ -8,8 +8,10 @@
 #import "BLKeyValueStore.h"
 #import "Migrator.h"
 #import "PaddingTextField.h"
-
-static BOOL SAVE_DATA_TEST_ENABLED = YES;
+#import "JBarStore.h"
+#import "FTOCustomAssistanceEditLiftViewController.h"
+#import "DecimalNumberHelper.h"
+#import "JBar.h"
 
 @interface SettingsViewController ()
 @property(nonatomic, strong) NSArray *roundingOptions;
@@ -24,6 +26,8 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     [super viewDidLoad];
     [self setupRoundTo];
     [self setupRoundingType];
+    [self.barWeightField setDelegate:self];
+    [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.barWeightField];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,6 +53,7 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     }
 
     [self.keepScreenOnSwitch setOn:[[[JSettingsStore instance] first] screenAlwaysOn]];
+    [self.barWeightField setText:[NSString stringWithFormat:@"%@", [[[JBarStore instance] first] weight]]];
 }
 
 - (IBAction)unitsChanged:(id)sender {
@@ -175,6 +180,14 @@ static BOOL SAVE_DATA_TEST_ENABLED = YES;
     else {
         [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
     }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSDecimalNumber *barWeight = [DecimalNumberHelper nanTo0:
+            [NSDecimalNumber decimalNumberWithString:[self.barWeightField text]
+                                              locale:[NSLocale currentLocale]]];
+    JBar *bar = [[JBarStore instance] first];
+    [bar setWeight:barWeight];
 }
 
 @end

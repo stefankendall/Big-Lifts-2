@@ -3,12 +3,12 @@
 
 @class PaddingTextField;
 
-@interface SettingsViewController : BLTableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>
+@interface SettingsViewController : BLTableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate, UITextFieldDelegate>
 
 - (IBAction)unitsChanged:(id)sender;
 
 - (IBAction)keepScreenOnChanged:(id)sender;
-
+@property (weak, nonatomic) IBOutlet PaddingTextField *barWeightField;
 @property(weak, nonatomic) IBOutlet PaddingTextField *roundToField;
 @property(weak, nonatomic) IBOutlet PaddingTextField *roundingTypeField;
 @property(weak, nonatomic) IBOutlet UISwitch *keepScreenOnSwitch;

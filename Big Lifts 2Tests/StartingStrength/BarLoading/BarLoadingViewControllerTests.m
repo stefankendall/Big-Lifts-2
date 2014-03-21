@@ -5,7 +5,6 @@
 #import "PurchaseOverlay.h"
 #import "WeightTableCell.h"
 #import "StepperWithCell.h"
-#import "BarWeightCell.h"
 #import "RowUIButton.h"
 #import "TextFieldWithCell.h"
 #import "JBarStore.h"
@@ -87,14 +86,6 @@
     STAssertEquals([cell.stepper minimumValue], -2.0, @"");
 }
 
-- (void)testBarWeightCellIsSetOnLoad {
-    BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
-    BarWeightCell *cell = (BarWeightCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    NSString *barText = [[cell textField] text];
-
-    STAssertFalse([barText isEqualToString:@""], @"");
-}
-
 - (void)testModifyCellForPlateCountHandles0 {
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
     WeightTableCell *cell = (WeightTableCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
@@ -119,16 +110,6 @@
     STAssertEquals( [[JPlateStore instance] count], oldCount - 1, @"");
 }
 
-- (void)testBarWeightCanBeChanged {
-    BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
-    UITextField *textField = [UITextField new];
-    [textField setText:@"33"];
-    [controller textFieldDidEndEditing:textField];
-
-    JBar *bar = [[JBarStore instance] first];
-    STAssertEqualObjects(bar.weight, N(33), @"");
-}
-
 - (void) testShowsFractionalPlates {
     JPlate *fractionalPlate = [[JPlateStore instance] create];
     fractionalPlate.weight = N(1.25);
@@ -136,16 +117,6 @@
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
     WeightTableCell *cell = (WeightTableCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:1]];
     STAssertEqualObjects([[cell weightLabel] text], @"1.25", @"");
-}
-
-- (void) testDoesNotMakeBarWeightNil {
-    BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
-    UITextField *textField = [UITextField new];
-    [textField setText:@""];
-    [controller textFieldDidEndEditing:textField];
-
-    JBar *bar = [[JBarStore instance] first];
-    STAssertEqualObjects(bar.weight, N(0), @"");
 }
 
 @end

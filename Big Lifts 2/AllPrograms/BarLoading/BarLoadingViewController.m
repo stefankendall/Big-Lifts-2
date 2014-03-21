@@ -7,19 +7,13 @@
 #import "WeightTableCell.h"
 #import "JSettings.h"
 #import "JSettingsStore.h"
-#import "BarWeightCell.h"
-#import "JBarStore.h"
-#import "TextFieldWithCell.h"
 #import "RowUIButton.h"
 #import "StepperWithCell.h"
 #import "AddCell.h"
-#import "JBar.h"
 #import "JPlateStore.h"
 #import "JPlate.h"
 
 @interface BarLoadingViewController ()
-
-@property(nonatomic, strong) UITextField *barWeightTextField;
 @end
 
 @implementation BarLoadingViewController
@@ -33,8 +27,8 @@
     if (!([[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING])) {
         [self disable:IAP_BAR_LOADING view:self.view withDescription:
                 @"In a workout, plates will show below weights.\n"
-                "Bench 235lbs\n"
-                "[45,45,5]"];
+                        "Bench 235lbs\n"
+                        "[45,45,5]"];
     }
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -57,7 +51,7 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    return [self isEditing] || [self.tableView viewWithTag:kPurchaseOverlayTag] != nil;
+    return [self.tableView viewWithTag:kPurchaseOverlayTag] != nil;
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
@@ -72,39 +66,16 @@
     }
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
-}
-
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return @"Bar";
-    }
-    else {
-        return @"Plates";
-    }
+    return @"Plates";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 1;
-    }
-    else {
-        int ADD_ROW_COUNT = 1;
-        return [[JPlateStore instance] count] + ADD_ROW_COUNT;
-    }
+    int ADD_ROW_COUNT = 1;
+    return [[JPlateStore instance] count] + ADD_ROW_COUNT;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
-        return [self getBarWeightCell:tableView];
-    }
-    else {
-        return [self getPlateCell:tableView indexPath:indexPath];
-    }
-}
-
-- (UITableViewCell *)getPlateCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
     if (row == [[JPlateStore instance] count]) {
         AddCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
@@ -144,22 +115,6 @@
     [self.tableView reloadData];
 }
 
-- (UITableViewCell *)getBarWeightCell:(UITableView *)tableView {
-    BarWeightCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BarWeightCell"];
-
-    if (cell == nil ) {
-        cell = [BarWeightCell create];
-    }
-
-    JBar *bar = [[JBarStore instance] first];
-    [[cell textField] setText:[bar.weight stringValue]];
-    [[cell textField] setDelegate:self];
-    self.barWeightTextField = [cell textField];
-
-    return cell;
-}
-
-
 - (void)plateCountChanged:(UIStepper *)plateStepper {
     StepperWithCell *stepperWithCell = (StepperWithCell *) plateStepper;
 
@@ -192,18 +147,5 @@
     [[cell countLabel] setHidden:atMinimum];
     [[cell deleteButton] setHidden:!atMinimum];
 }
-
-
-- (BOOL)isEditing {
-    return [self.barWeightTextField isEditing];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSString *newWeight = [textField text];
-    JBar *bar = [[JBarStore instance] first];
-    bar.weight = [NSDecimalNumber decimalNumberWithString:newWeight locale:NSLocale.currentLocale];
-    bar.weight = [bar.weight isEqual:[NSDecimalNumber notANumber]] ? N(0) : bar.weight;
-}
-
 
 @end

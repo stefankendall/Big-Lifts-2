@@ -4,6 +4,8 @@
 #import "JSettingsStore.h"
 #import "JSettings.h"
 #import "PaddingTextField.h"
+#import "JBarStore.h"
+#import "JLift.h"
 
 @implementation SettingsViewControllerTests
 
@@ -57,6 +59,19 @@
     [controller.keepScreenOnSwitch setOn:YES];
     [controller keepScreenOnChanged:controller.keepScreenOnSwitch];
     STAssertTrue([[[JSettingsStore instance] first] screenAlwaysOn], @"");
+}
+
+- (void)testBarWeightSetOnLoad {
+    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
+    [[[JBarStore instance] first] setWeight:N(55)];
+    [controller viewWillAppear:NO];
+    STAssertEqualObjects([controller.barWeightField text], @"55", @"");
+}
+
+- (void)testBarWeightCanBeChanged {
+    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
+    [controller textFieldDidEndEditing: controller.barWeightField];
+
 }
 
 @end
