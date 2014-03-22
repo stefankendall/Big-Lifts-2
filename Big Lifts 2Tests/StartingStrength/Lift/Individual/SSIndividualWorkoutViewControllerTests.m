@@ -15,6 +15,7 @@
 #import "JSSWorkout.h"
 #import "JSSState.h"
 #import "JWorkout.h"
+#import "BLTimer.h"
 
 @interface SSIndividualWorkoutViewControllerTests ()
 @property(nonatomic, strong) SSIndividualWorkoutViewController *controller;
@@ -188,6 +189,10 @@
 
     STAssertEqualObjects([changedCell.repsLabel text], @"1x", @"");
     STAssertEqualObjects([notChangedCell.repsLabel text], @"5x", @"");
+}
+
+- (void)testSetsTimerObserver {
+    STAssertEquals([[BLTimer instance] observer], self.controller, @"");
 }
 
 @end

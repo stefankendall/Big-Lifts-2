@@ -34,6 +34,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [Flurry logEvent:@"Workout" withParameters:@{@"Name" : @"Starting Strength"}];
     [self.tableView reloadData];
 }
