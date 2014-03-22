@@ -11,7 +11,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.section == SETS_SECTION){
+    if (indexPath.section == SETS_SECTION) {
         SetLogCell *cell = (SetLogCell *) [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SetLogCell.class)];
         if (cell == nil) {
             cell = [SetLogCell create];
@@ -24,8 +24,24 @@
         return cell;
     }
     else {
-        return [self maxEstimateCell: tableView];
+        if (self.workoutLog.deload) {
+            return [self deloadCell:tableView];
+        }
+        else {
+            return [self maxEstimateCell:tableView];
+        }
     }
+}
+
+- (UITableViewCell *)deloadCell:(UITableView *)tableView {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOTrackDeloadCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOTrackDeloadCell"];
+    }
+    [[cell textLabel] setText:@"Deload"];
+    [[cell textLabel] setTextAlignment:NSTextAlignmentRight];
+    [[cell textLabel] setTextColor:[UIColor grayColor]];
+    return cell;
 }
 
 @end

@@ -20,6 +20,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self updateDateFieldText];
+    [self.deloadSwitch setOn:self.workoutLog.deload];
 }
 
 - (void)updateWorkoutLog:(id)sender {

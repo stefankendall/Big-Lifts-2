@@ -18,4 +18,14 @@
     [controller viewDidLoad];
 }
 
+- (void)testSetsDeloadOnAppear {
+    FTOEditLogViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoEditLog"];
+    JWorkoutLog *log = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
+    log.deload = YES;
+    controller.workoutLog = log;
+
+    [controller viewWillAppear:NO];
+    STAssertTrue(controller.workoutLog.deload, @"");
+}
+
 @end

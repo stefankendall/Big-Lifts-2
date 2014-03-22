@@ -59,4 +59,12 @@
     STAssertEqualObjects([cell.weightLabel text], @"150 lbs", @"");
 }
 
+- (void)testDoesNotShowMaxForDeload {
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
+    workoutLog.deload = YES;
+    FTOWorkoutLogAmrapDataSource *dataSource = [[FTOWorkoutLogAmrapDataSource alloc] initWithWorkoutLog:workoutLog];
+    UITableViewCell *cell = [dataSource tableView:nil cellForRowAtIndexPath:NSIP(1, 0)];
+    STAssertFalse([cell isKindOfClass:LogMaxEstimateCell.class], @"");
+}
+
 @end
