@@ -12,6 +12,7 @@
 #import "Migrate10to11.h"
 #import "Migrate11to12.h"
 #import "Migrate12to13.h"
+#import "Migrate13to14.h"
 
 @implementation Migrator
 
@@ -30,7 +31,8 @@
                 @10 : [Migrate9to10 new],
                 @11 : [Migrate10to11 new],
                 @12 : [Migrate11to12 new],
-                @13 : [Migrate12to13 new]
+                @13 : [Migrate12to13 new],
+                @14 : [Migrate13to14 new]
         };
         //first migration must run every time, since I was missing the version property on existing installs
         if ([version.version intValue] <= 2) {
