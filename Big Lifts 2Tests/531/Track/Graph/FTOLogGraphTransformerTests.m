@@ -29,6 +29,18 @@
     STAssertEqualObjects(chartEntry, expected, @"");
 }
 
+- (void)testHandlesNilWeightAndReps {
+    JSetLog *set = [[JSetLogStore instance] create];
+    set.weight = nil;
+    set.reps = nil;
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
+    [workoutLog.sets addObjectsFromArray:@[set]];
+    workoutLog.date = [NSDate new];
+
+    NSDictionary *chartEntry = [[FTOLogGraphTransformer new] logToChartEntry:workoutLog withSet:set];
+    STAssertEqualObjects(chartEntry[@"weight"], N(0), @"");
+}
+
 - (void)testLogEntriesFromChartAddsObjectIfMissing {
     NSMutableArray *chartData = [@[
             @{@"name" : @"Press", @"data" : @[@{}]}

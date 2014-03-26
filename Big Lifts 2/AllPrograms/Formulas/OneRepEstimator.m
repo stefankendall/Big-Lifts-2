@@ -3,12 +3,13 @@
 #import "EpleyEstimator.h"
 #import "JSettingsStore.h"
 #import "BrzyckiEstimator.h"
+#import "DecimalNumberHelper.h"
 
 @implementation OneRepEstimator
 
 - (NSDecimalNumber *)estimate:(NSDecimalNumber *)weight withReps:(int)reps {
     if (reps == 1) {
-        return weight;
+        return [DecimalNumberHelper nanOrNil:weight] ? N(0) : weight;
     }
     else if (reps == 0 || weight == nil || [weight isEqual:[NSDecimalNumber notANumber]]) {
         return N(0);
