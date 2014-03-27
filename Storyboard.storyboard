@@ -427,7 +427,14 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Edit Log" id="6B6-zP-5sw"/>
+                    <navigationItem key="navigationItem" title="Edit Log" id="6B6-zP-5sw">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="PA2-K3-O8y">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteButtonTapped:" destination="Dwi-Zs-eSW" id="Kqi-Nl-lz9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateField" destination="Jgi-sp-Z83" id="yg4-vu-I7X"/>
                         <outlet property="deloadSwitch" destination="Ftq-VA-EjT" id="W6R-kZ-1a4"/>

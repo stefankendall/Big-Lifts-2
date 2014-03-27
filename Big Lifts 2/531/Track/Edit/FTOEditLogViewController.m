@@ -1,6 +1,7 @@
 #import "FTOEditLogViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "JWorkoutLog.h"
+#import "JWorkoutLogStore.h"
 
 @implementation FTOEditLogViewController
 
@@ -35,6 +36,11 @@
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [self.dateField setText:[dateFormatter stringFromDate:self.workoutLog.date]];
+}
+
+- (IBAction)deleteButtonTapped:(id)sender {
+    [[JWorkoutLogStore instance] remove:self.workoutLog];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
