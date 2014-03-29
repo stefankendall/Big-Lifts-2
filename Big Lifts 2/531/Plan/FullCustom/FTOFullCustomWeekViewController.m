@@ -36,7 +36,12 @@
     }
 
     JFTOFullCustomWorkout *customWorkout = [self workoutForIndexPath:indexPath];
-    [[cell textLabel] setText:customWorkout.lift.name];
+    if (customWorkout == nil) {
+        [[cell textLabel] setText:@"Bad data"];
+    }
+    else {
+        [[cell textLabel] setText:customWorkout.lift.name];
+    }
 
     return cell;
 }
