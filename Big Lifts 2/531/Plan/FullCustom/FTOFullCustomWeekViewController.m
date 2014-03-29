@@ -30,9 +30,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOFullCustomWeekCell"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOFullCustomWeekLiftNameCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOFullCustomWeekCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOFullCustomWeekLiftNameCell"];
     }
 
     JFTOFullCustomWorkout *customWorkout = [self workoutForIndexPath:indexPath];
