@@ -20,8 +20,11 @@
 
 - (JFTOWorkout *)findFtoWorkoutFor:(JFTOFullCustomAssistanceWorkout *)workout {
     return [[[JFTOWorkoutStore instance] findAll] detect:^BOOL(JFTOWorkout *jftoWorkout) {
-        JFTOLift *firstLift = [jftoWorkout.workout.sets[0] lift];
-        return [workout.week isEqualToNumber:jftoWorkout.week] && workout.mainLift == firstLift;
+        NSMutableArray <JSet> *sets = jftoWorkout.workout.sets;
+        if([sets count] == 0){
+            return false;
+        }
+        return [workout.week isEqualToNumber:jftoWorkout.week] && workout.mainLift == [sets[0] lift];
     }];
 }
 

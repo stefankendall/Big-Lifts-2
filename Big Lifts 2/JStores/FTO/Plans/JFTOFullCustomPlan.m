@@ -27,7 +27,7 @@
 
 - (JFTOFullCustomWorkout *)workoutForLift:(JLift *)lift inWeek:(JFTOFullCustomWeek *)week {
     return [week.workouts detect:^BOOL(JFTOFullCustomWorkout *customWorkout) {
-        return customWorkout.lift == (id) lift;
+        return [customWorkout lift] == (id) lift;
     }];
 }
 
