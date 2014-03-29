@@ -92,6 +92,9 @@
     if ([identifier isEqualToString:@"ftoCustomSegue"]) {
         return [[IAPAdapter instance] hasPurchased:IAP_FTO_CUSTOM];
     }
+    if( [identifier isEqualToString:@"ftoFullCustomSegue"]){
+        return [[IAPAdapter instance] hasPurchased:IAP_FTO_FULL_CUSTOM];
+    }
     return YES;
 }
 
