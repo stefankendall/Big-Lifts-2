@@ -241,6 +241,7 @@
 		54590643A2D011E2B74F0B53 /* FTOCustomAssistanceLiftViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901680445CAEC40A9CD86 /* FTOCustomAssistanceLiftViewControllerTests.m */; };
 		545906485E9278FDAB2E0C57 /* 101-gameplan.png in Resources */ = {isa = PBXBuildFile; fileRef = 545900BC7437BC4F0DF65474 /* 101-gameplan.png */; };
 		5459064E1789D446C5076957 /* JFTOAssistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904881EED0C63E3F42A6F /* JFTOAssistance.m */; };
+		54590661A9A7DA82DB29BF4E /* FTOLiftsIncrementingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459095E6E404397EB4610CD /* FTOLiftsIncrementingViewController.m */; };
 		54590665473EF7456048BBC7 /* testdata.js in Resources */ = {isa = PBXBuildFile; fileRef = 5459029E6253CF82B110C733 /* testdata.js */; };
 		54590672D5891E8A3EDE8539 /* Migrate5to6.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590ECB0417796E4D2F33B2 /* Migrate5to6.m */; };
 		545906947379404BFFC0AD1E /* AddPlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909DDF05CB3A959B0A669 /* AddPlateViewController.m */; };
@@ -1145,6 +1146,7 @@
 		54590958257FFFC7FE54EF19 /* TimerObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerObserver.h; sourceTree = "<group>"; };
 		545909599F497F96E8B24BDC /* FTOCustomWorkoutToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomWorkoutToolbar.h; sourceTree = "<group>"; };
 		5459095D50E1B1F0F730750D /* ShareDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareDelegate.h; sourceTree = "<group>"; };
+		5459095E6E404397EB4610CD /* FTOLiftsIncrementingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftsIncrementingViewController.m; sourceTree = "<group>"; };
 		545909637D2B39D377462163 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		5459096380299CC339CCD3F6 /* FTOSetChangeForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSetChangeForm.m; sourceTree = "<group>"; };
 		5459096A0F7EA0EA850FC334 /* FTOFullCustomWeekViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOFullCustomWeekViewControllerTests.h; sourceTree = "<group>"; };
@@ -1557,6 +1559,7 @@
 		54590FF99090225A5BE32F97 /* FTOWorkoutLogAmrapDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutLogAmrapDataSourceTests.m; sourceTree = "<group>"; };
 		54590FFE014DE1250507FD26 /* JWorkoutStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWorkoutStoreTests.h; sourceTree = "<group>"; };
 		54590FFEF3553772FB79A3BB /* SJNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNavController.m; sourceTree = "<group>"; };
+		54590FFFDB928A4583AF9B36 /* FTOLiftsIncrementingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftsIncrementingViewController.h; sourceTree = "<group>"; };
 		B188DC3574B54B28BFA105B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94407F2C5DB44E5BC25736E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -3141,6 +3144,8 @@
 				5459065264B7CFF79D05AF2F /* Subviews */,
 				54590B9B90136DFDCB61B0AA /* FTOCycleAdjustor.m */,
 				5459036CD649514D14E235FC /* FTOCycleAdjustor.h */,
+				5459095E6E404397EB4610CD /* FTOLiftsIncrementingViewController.m */,
+				54590FFFDB928A4583AF9B36 /* FTOLiftsIncrementingViewController.h */,
 			);
 			path = Individual;
 			sourceTree = "<group>";
@@ -4466,6 +4471,7 @@
 				54590FFC2684DFEDDBADBE2E /* BLColors.m in Sources */,
 				545905D39C9DF2DBD8879383 /* FTOFullCustomSetEditor.m in Sources */,
 				54590D5F298B551C9133BE11 /* Migrate13to14.m in Sources */,
+				54590661A9A7DA82DB29BF4E /* FTOLiftsIncrementingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

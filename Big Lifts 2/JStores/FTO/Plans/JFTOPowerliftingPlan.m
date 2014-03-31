@@ -14,11 +14,11 @@
 }
 
 - (NSArray *)deloadWeeks {
-    return @[@4];
+    return [[JFTOStandardPlan new] deloadWeeks];
 }
 
 - (NSArray *)incrementMaxesWeeks {
-    return @[@4];
+    return [[JFTOStandardPlan new] incrementMaxesWeeks];
 }
 
 - (NSArray *)weekNames {

@@ -211,9 +211,15 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }
-    [[FTOCycleAdjustor new] checkForCycleChange];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
+    FTOCycleAdjustor *cycleAdjustor = [FTOCycleAdjustor new];
+    [cycleAdjustor checkForCycleChange];
+    if ([cycleAdjustor reachedEndOfIncrementWeek]) {
+        [self performSegueWithIdentifier:@"ftoShowLiftIncrements" sender:self];
+    }
+    else {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
+    }
 }
 
 - (void)setWorkout:(JFTOWorkout *)ftoWorkout1 {

@@ -40,7 +40,7 @@
 }
 
 - (NSArray *)incrementMaxesWeeks {
-    return @[@4];
+    return @[@3];
 }
 
 - (NSArray *)weekNames {

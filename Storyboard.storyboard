@@ -2837,11 +2837,47 @@
                         <outlet property="doneButton" destination="I3G-Kn-HUO" id="8v3-Ny-7Ld"/>
                         <segue destination="V2G-uE-Hjc" kind="push" identifier="ftoSetRepsForm" id="5Nu-rs-1u2"/>
                         <segue destination="XFo-eT-NSP" kind="push" identifier="ftoGoToTimer" id="GvG-ww-5z0"/>
+                        <segue destination="Kag-Qr-fdz" kind="push" identifier="ftoShowLiftIncrements" id="Af7-mB-eXa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muZ-Pf-p3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5305" y="135"/>
+        </scene>
+        <!--Lifts Incrementing View Controller - Lifts incrementing-->
+        <scene sceneID="cQF-0U-CMD">
+            <objects>
+                <tableViewController storyboardIdentifier="ftoLiftsIncrementing" id="Kag-Qr-fdz" customClass="FTOLiftsIncrementingViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5ZF-g6-SDs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="16v-tY-Nmo">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="16v-tY-Nmo" id="fgx-na-5f9">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Kag-Qr-fdz" id="YFI-4b-YSY"/>
+                            <outlet property="delegate" destination="Kag-Qr-fdz" id="WW7-nM-jGC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lifts incrementing" id="wVg-KP-jXq">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="s06-Vh-y8l">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="Kag-Qr-fdz" id="LQB-pf-EPs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9M-zp-2NG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5767" y="-421"/>
         </scene>
         <!--Reps To Beat Breakdown - Breakdown-->
         <scene sceneID="xrX-ZO-Qnv">
@@ -3123,7 +3159,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDa-QG-jFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5767" y="797"/>
+            <point key="canvasLocation" x="5767" y="753"/>
         </scene>
         <!--Timer View Controller - Timer-->
         <scene sceneID="htT-Av-a7t">
@@ -6200,7 +6236,7 @@
         <segue reference="dlv-y7-nZV"/>
         <segue reference="qbh-sG-pV5"/>
         <segue reference="0oa-Th-D6G"/>
-        <segue reference="4r0-pl-zvN"/>
+        <segue reference="GvG-ww-5z0"/>
         <segue reference="sGG-95-AJN"/>
     </inferredMetricsTieBreakers>
 </document>
