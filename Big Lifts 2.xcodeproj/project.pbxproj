@@ -70,6 +70,7 @@
 		5459015812F18E639687EBB2 /* SVNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FD7A56DBE6ED553E22F /* SVNavController.m */; };
 		5459015CB391280EA44D0036 /* canvas-tools.js in Sources */ = {isa = PBXBuildFile; fileRef = 5459085ED7E24744E665DE1E /* canvas-tools.js */; };
 		5459015F53AE084D025D70C1 /* standalone-framework.js in Sources */ = {isa = PBXBuildFile; fileRef = 54590B347E0645AD4F5C6790 /* standalone-framework.js */; };
+		54590163FACB3E4D516A9097 /* FTOLiftsIncrementingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459021C8A088EEE8138380A /* FTOLiftsIncrementingCell.m */; };
 		54590167CC416334003BD039 /* JSJLift.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D17E488C00B8C7EFA07 /* JSJLift.m */; };
 		5459016BCBBFDB081B6CFB6D /* BLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590EDA218A5DB5797FDE10 /* BLTableViewController.m */; };
 		5459017AB1E843AE67AB1821 /* Mailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906FD0F008AF14DD4C8AF /* Mailer.m */; };
@@ -91,6 +92,7 @@
 		54590202B12A72A7137F91B0 /* JModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E329344C4F3E0CDA7B5 /* JModel.m */; };
 		5459020478E78CABDB1A4AC2 /* setupgraph.js in Resources */ = {isa = PBXBuildFile; fileRef = 545907D40FFC27789CBC0D68 /* setupgraph.js */; };
 		54590208FB48AA87E668D1E7 /* SVOneRepTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459002AED3C909F20B87AAC /* SVOneRepTestCell.m */; };
+		5459020CC1B6826C534638D4 /* FTOLiftsIncrementingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590536C71E260BB5ED9B56 /* FTOLiftsIncrementingCell.xib */; };
 		5459020E26CB353D4A4AA929 /* JSettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590207C6216D64502805A0 /* JSettingsStore.m */; };
 		5459020E459D35A74FF4225D /* LiftFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DBFD8F2F297F4D3E5FE /* LiftFormCell.m */; };
 		54590219E50333D3AED0D812 /* JFTOSSTLift.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590BA7554FB2938E5055E7 /* JFTOSSTLift.m */; };
@@ -241,7 +243,6 @@
 		54590643A2D011E2B74F0B53 /* FTOCustomAssistanceLiftViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901680445CAEC40A9CD86 /* FTOCustomAssistanceLiftViewControllerTests.m */; };
 		545906485E9278FDAB2E0C57 /* 101-gameplan.png in Resources */ = {isa = PBXBuildFile; fileRef = 545900BC7437BC4F0DF65474 /* 101-gameplan.png */; };
 		5459064E1789D446C5076957 /* JFTOAssistance.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904881EED0C63E3F42A6F /* JFTOAssistance.m */; };
-		54590661A9A7DA82DB29BF4E /* FTOLiftsIncrementingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459095E6E404397EB4610CD /* FTOLiftsIncrementingViewController.m */; };
 		54590665473EF7456048BBC7 /* testdata.js in Resources */ = {isa = PBXBuildFile; fileRef = 5459029E6253CF82B110C733 /* testdata.js */; };
 		54590672D5891E8A3EDE8539 /* Migrate5to6.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590ECB0417796E4D2F33B2 /* Migrate5to6.m */; };
 		545906947379404BFFC0AD1E /* AddPlateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909DDF05CB3A959B0A669 /* AddPlateViewController.m */; };
@@ -330,6 +331,7 @@
 		5459093250EBC222EAB89203 /* TextFieldWithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CA19668BB712D631143 /* TextFieldWithCell.m */; };
 		54590938523CBE923C9E67D1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590F9DD3EAD26B80E1C630 /* Default-568h@2x.png */; };
 		545909490D6EF5542B0134EB /* JTimerStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E76DE35FA4029FF0A48 /* JTimerStore.m */; };
+		54590950CE87C365A4522EAD /* FTOLiftsIncrementingViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590897F7E6DDA912A1F23E /* FTOLiftsIncrementingViewControllerTests.m */; };
 		54590962354A225F0C003AC3 /* PaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459061539809C53BF272957 /* PaddingTextField.m */; };
 		5459096D24B295FA0C6B0755 /* SVOneRepTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590E2837055971410C643F /* SVOneRepTestCell.xib */; };
 		5459097857AFDF9C5428279C /* FTORepsToBeatBreakdownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F8F1C32D48230C5267C /* FTORepsToBeatBreakdownTests.m */; };
@@ -478,6 +480,7 @@
 		54590D4F3DB664775D373FF5 /* FTONavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909D36974ADDFCB980F9E /* FTONavController.m */; };
 		54590D53101E6005B3246B7B /* FTOCustomWeekEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B5E5D0286E78E1BA9B6 /* FTOCustomWeekEditCell.m */; };
 		54590D56912D1BDEB0EA3A7B /* SenTestCase+ControllerTestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C74A8BA79A42D9C5C3B /* SenTestCase+ControllerTestAdditions.m */; };
+		54590D5E7AA0ACB11ADEB9E1 /* FTOLiftsIncrementingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CF92E2811CF8ABD7F46 /* FTOLiftsIncrementingViewController.m */; };
 		54590D5F298B551C9133BE11 /* Migrate13to14.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590370D785BE0E1E53001D /* Migrate13to14.m */; };
 		54590D765D231C8A227A8BF6 /* JFTOSettingsStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459033727DB5FA1023B51C1 /* JFTOSettingsStore.m */; };
 		54590D7FA6905E640B69F986 /* FTOCustomAssistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459013A5AE81939C41850BD /* FTOCustomAssistanceViewController.m */; };
@@ -712,6 +715,7 @@
 		54590207C6216D64502805A0 /* JSettingsStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSettingsStore.m; sourceTree = "<group>"; };
 		54590215ED48E93142E3F494 /* WeightUnits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightUnits.m; sourceTree = "<group>"; };
 		54590219EE84A8D5BAA806B0 /* SJSetCellWithPlates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSetCellWithPlates.h; sourceTree = "<group>"; };
+		5459021C8A088EEE8138380A /* FTOLiftsIncrementingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftsIncrementingCell.m; sourceTree = "<group>"; };
 		5459021D5AE2CC9EB10583A5 /* JFTOSSTLiftStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOSSTLiftStore.m; sourceTree = "<group>"; };
 		5459021F7658EDDD9578FA00 /* TrainingMaxRowTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingMaxRowTextField.m; sourceTree = "<group>"; };
 		5459021F92F2D8F12C2CACF7 /* DataLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoadingViewController.h; sourceTree = "<group>"; };
@@ -746,6 +750,7 @@
 		54590290555DFBD63A0B4031 /* Migrate4to5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate4to5.m; sourceTree = "<group>"; };
 		545902911746BDD16B96080A /* JFTOVariant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOVariant.m; sourceTree = "<group>"; };
 		54590298338549E7EBA3D922 /* SJLiftViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJLiftViewControllerTests.h; sourceTree = "<group>"; };
+		54590298CD7D9C3EF22B7AEA /* FTOLiftsIncrementingViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftsIncrementingViewControllerTests.h; sourceTree = "<group>"; };
 		5459029E6253CF82B110C733 /* testdata.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = testdata.js; sourceTree = "<group>"; };
 		5459029E97B16E00166099C1 /* BoringButBigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoringButBigHelper.h; sourceTree = "<group>"; };
 		545902A7738EF5790D0F9A22 /* FTOFullCustomWeekCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOFullCustomWeekCell.m; sourceTree = "<group>"; };
@@ -759,6 +764,7 @@
 		545902D7321491EEFEDA0A33 /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		545902D88DDE3CFD7EADA190 /* JFTOBoringButBigStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBigStore.h; sourceTree = "<group>"; };
 		545902DBAFF98090455072CB /* IAPAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPAdapter.m; sourceTree = "<group>"; };
+		545902E90130178E9FA0B4D3 /* FTOLiftsIncrementingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftsIncrementingCell.h; sourceTree = "<group>"; };
 		545902EB5C9556D16CAE046B /* JSSLiftStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSLiftStoreTests.h; sourceTree = "<group>"; };
 		545902EE8537115023FA40C5 /* TextFieldWithCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldWithCell.h; sourceTree = "<group>"; };
 		545902FB0C01913A5494B509 /* LogCellWithSets.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCellWithSets.xib; sourceTree = "<group>"; };
@@ -907,6 +913,7 @@
 		5459052139F9B9FC1E42B7DE /* FTOCustomCopyTemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomCopyTemplateViewController.h; sourceTree = "<group>"; };
 		54590526735E78D9EF6F22F0 /* 172-pricetag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "172-pricetag.png"; sourceTree = "<group>"; };
 		545905269286D8EFF1282A9E /* JFTOTriumvirateStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOTriumvirateStoreTests.h; sourceTree = "<group>"; };
+		54590536C71E260BB5ED9B56 /* FTOLiftsIncrementingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOLiftsIncrementingCell.xib; sourceTree = "<group>"; };
 		5459053A09D68CF553084654 /* FTORepsToBeatCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTORepsToBeatCalculator.m; sourceTree = "<group>"; };
 		54590546CC817B91F6A1160B /* CustomAssistanceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAssistanceHelper.h; sourceTree = "<group>"; };
 		5459054BF79A83D4D57F9A9E /* FTOLiftWorkoutToolbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOLiftWorkoutToolbar.xib; sourceTree = "<group>"; };
@@ -1098,6 +1105,7 @@
 		54590879F12D9A9FF3B919AB /* FTOSSTChangeLiftsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSSTChangeLiftsViewController.m; sourceTree = "<group>"; };
 		5459088E695A0D20ECA09464 /* Big Lifts 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Lifts 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54590895392DE88836AA5121 /* FTOBoringButBigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOBoringButBigViewController.m; sourceTree = "<group>"; };
+		54590897F7E6DDA912A1F23E /* FTOLiftsIncrementingViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftsIncrementingViewControllerTests.m; sourceTree = "<group>"; };
 		545908984C16D46C38B39F70 /* FTOFullCustomWeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOFullCustomWeekViewController.m; sourceTree = "<group>"; };
 		5459089A3F0DB4ED4D260342 /* NavTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavTableViewCell.h; sourceTree = "<group>"; };
 		5459089BDA8646D418151866 /* FTOSectionTitleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSectionTitleHelper.m; sourceTree = "<group>"; };
@@ -1146,7 +1154,6 @@
 		54590958257FFFC7FE54EF19 /* TimerObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerObserver.h; sourceTree = "<group>"; };
 		545909599F497F96E8B24BDC /* FTOCustomWorkoutToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomWorkoutToolbar.h; sourceTree = "<group>"; };
 		5459095D50E1B1F0F730750D /* ShareDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareDelegate.h; sourceTree = "<group>"; };
-		5459095E6E404397EB4610CD /* FTOLiftsIncrementingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftsIncrementingViewController.m; sourceTree = "<group>"; };
 		545909637D2B39D377462163 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		5459096380299CC339CCD3F6 /* FTOSetChangeForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOSetChangeForm.m; sourceTree = "<group>"; };
 		5459096A0F7EA0EA850FC334 /* FTOFullCustomWeekViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOFullCustomWeekViewControllerTests.h; sourceTree = "<group>"; };
@@ -1374,6 +1381,7 @@
 		54590CE8DAA3833C0489F84B /* FTOFullCustomWeekCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOFullCustomWeekCell.h; sourceTree = "<group>"; };
 		54590CF05147C01DC9F75923 /* SVEditViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVEditViewControllerTests.m; sourceTree = "<group>"; };
 		54590CF584011FAB2021AEFB /* JFTOFullTriumvirateAssistanceCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOFullTriumvirateAssistanceCopy.m; sourceTree = "<group>"; };
+		54590CF92E2811CF8ABD7F46 /* FTOLiftsIncrementingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLiftsIncrementingViewController.m; sourceTree = "<group>"; };
 		54590D02AE7FE9460C9B044D /* FTOCustomSetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomSetCell.h; sourceTree = "<group>"; };
 		54590D02B7ACD8F80DA89BFC /* FTOWorkoutLogAmrapDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutLogAmrapDataSource.h; sourceTree = "<group>"; };
 		54590D05D7CF3071DDCD4DFF /* JSSLift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSLift.h; sourceTree = "<group>"; };
@@ -1406,6 +1414,7 @@
 		54590D87FE82CDF0FFAFF019 /* JSVWorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSVWorkoutStore.h; sourceTree = "<group>"; };
 		54590D915D43F4CFE6B60852 /* FTOSSTChangeLiftsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSSTChangeLiftsViewController.h; sourceTree = "<group>"; };
 		54590D9870CBFF526DE3A67A /* 16-line-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "16-line-chart.png"; sourceTree = "<group>"; };
+		54590DA00DEF3F50F8EE67FD /* FTOLiftsIncrementingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftsIncrementingViewController.h; sourceTree = "<group>"; };
 		54590DA58854C27403C0F219 /* JSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSet.m; sourceTree = "<group>"; };
 		54590DAB5CEA0641A01F7E34 /* SVOneRepTestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVOneRepTestCell.h; sourceTree = "<group>"; };
 		54590DAF40AFFC7A124457F5 /* PlateRemaining.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlateRemaining.h; sourceTree = "<group>"; };
@@ -1559,7 +1568,6 @@
 		54590FF99090225A5BE32F97 /* FTOWorkoutLogAmrapDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutLogAmrapDataSourceTests.m; sourceTree = "<group>"; };
 		54590FFE014DE1250507FD26 /* JWorkoutStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWorkoutStoreTests.h; sourceTree = "<group>"; };
 		54590FFEF3553772FB79A3BB /* SJNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJNavController.m; sourceTree = "<group>"; };
-		54590FFFDB928A4583AF9B36 /* FTOLiftsIncrementingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLiftsIncrementingViewController.h; sourceTree = "<group>"; };
 		B188DC3574B54B28BFA105B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C94407F2C5DB44E5BC25736E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -1954,6 +1962,15 @@
 				5459089E59183E365E2681D1 /* vml-radial-gradient.png */,
 			);
 			path = gfx;
+			sourceTree = "<group>";
+		};
+		545902BA647F5AEAF9FE980D /* Increment */ = {
+			isa = PBXGroup;
+			children = (
+				54590897F7E6DDA912A1F23E /* FTOLiftsIncrementingViewControllerTests.m */,
+				54590298CD7D9C3EF22B7AEA /* FTOLiftsIncrementingViewControllerTests.h */,
+			);
+			path = Increment;
 			sourceTree = "<group>";
 		};
 		545902BB6934DD80DE1D327A /* Track */ = {
@@ -2701,6 +2718,18 @@
 			path = Track;
 			sourceTree = "<group>";
 		};
+		5459084F4E3B8244EB5DE738 /* Increment */ = {
+			isa = PBXGroup;
+			children = (
+				54590CF92E2811CF8ABD7F46 /* FTOLiftsIncrementingViewController.m */,
+				54590DA00DEF3F50F8EE67FD /* FTOLiftsIncrementingViewController.h */,
+				54590536C71E260BB5ED9B56 /* FTOLiftsIncrementingCell.xib */,
+				5459021C8A088EEE8138380A /* FTOLiftsIncrementingCell.m */,
+				545902E90130178E9FA0B4D3 /* FTOLiftsIncrementingCell.h */,
+			);
+			path = Increment;
+			sourceTree = "<group>";
+		};
 		545908533AEB45380392C8DA /* FullCustom */ = {
 			isa = PBXGroup;
 			children = (
@@ -3144,8 +3173,7 @@
 				5459065264B7CFF79D05AF2F /* Subviews */,
 				54590B9B90136DFDCB61B0AA /* FTOCycleAdjustor.m */,
 				5459036CD649514D14E235FC /* FTOCycleAdjustor.h */,
-				5459095E6E404397EB4610CD /* FTOLiftsIncrementingViewController.m */,
-				54590FFFDB928A4583AF9B36 /* FTOLiftsIncrementingViewController.h */,
+				5459084F4E3B8244EB5DE738 /* Increment */,
 			);
 			path = Individual;
 			sourceTree = "<group>";
@@ -3513,6 +3541,7 @@
 				54590DC468D48E6708C0AF1F /* FTOSetChangeFormTests.m */,
 				54590122431C2786FCE6B002 /* TimerViewControllerTests.m */,
 				5459081462470A6C8BC273D6 /* TimerViewControllerTests.h */,
+				545902BA647F5AEAF9FE980D /* Increment */,
 			);
 			path = Individual;
 			sourceTree = "<group>";
@@ -3946,6 +3975,7 @@
 				54590BAF370681B8BFAEB6A0 /* FTOCustomAssistanceWorkoutSetCell.xib in Resources */,
 				54590D04A58200635E77BF00 /* FTOFullCustomWeekCell.xib in Resources */,
 				545901F99A2C6DE56B249AE9 /* FTOFullCustomSetCell.xib in Resources */,
+				5459020CC1B6826C534638D4 /* FTOLiftsIncrementingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4143,6 +4173,7 @@
 				54590C85E63E195C31E27EB9 /* FTOFullCustomWorkoutViewControllerTests.m in Sources */,
 				54590A6845C9EC7ACBA66FFB /* FTOFullCustomSetEditorTests.m in Sources */,
 				545903C7CC5D991AC3DD2434 /* Migrate13to14Tests.m in Sources */,
+				54590950CE87C365A4522EAD /* FTOLiftsIncrementingViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4471,7 +4502,8 @@
 				54590FFC2684DFEDDBADBE2E /* BLColors.m in Sources */,
 				545905D39C9DF2DBD8879383 /* FTOFullCustomSetEditor.m in Sources */,
 				54590D5F298B551C9133BE11 /* Migrate13to14.m in Sources */,
-				54590661A9A7DA82DB29BF4E /* FTOLiftsIncrementingViewController.m in Sources */,
+				54590D5E7AA0ACB11ADEB9E1 /* FTOLiftsIncrementingViewController.m in Sources */,
+				54590163FACB3E4D516A9097 /* FTOLiftsIncrementingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

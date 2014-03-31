@@ -212,8 +212,9 @@
         [alertView show];
     }
     FTOCycleAdjustor *cycleAdjustor = [FTOCycleAdjustor new];
+    BOOL willIncrement = [cycleAdjustor shouldIncrementLifts];
     [cycleAdjustor checkForCycleChange];
-    if ([cycleAdjustor reachedEndOfIncrementWeek]) {
+    if (willIncrement) {
         [self performSegueWithIdentifier:@"ftoShowLiftIncrements" sender:self];
     }
     else {

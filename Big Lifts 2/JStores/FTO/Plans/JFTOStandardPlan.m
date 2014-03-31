@@ -2,6 +2,9 @@
 #import "JSetData.h"
 #import "JFTOStandardPlan.h"
 #import "JFTODeload.h"
+#import "JSettingsStore.h"
+#import "JFTOSettings.h"
+#import "JFTOSettingsStore.h"
 
 @implementation JFTOStandardPlan
 
@@ -36,11 +39,21 @@
 }
 
 - (NSArray *)deloadWeeks {
-    return @[@4];
+    if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
+        return @[@7];
+    }
+    else {
+        return @[@4];
+    }
 }
 
 - (NSArray *)incrementMaxesWeeks {
-    return @[@3];
+    if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
+        return @[@3, @7];
+    }
+    else {
+        return @[@4];
+    }
 }
 
 - (NSArray *)weekNames {
