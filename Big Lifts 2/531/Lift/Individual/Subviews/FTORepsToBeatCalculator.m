@@ -35,7 +35,7 @@
 
     __block NSDecimalNumber *logMax = N(0);
     [ftoLogsForLift each:^(JWorkoutLog *workoutLog) {
-        JSetLog *setLog = [[workoutLog sets] lastObject];
+        JSetLog *setLog = [[workoutLog workSets] lastObject];
         NSDecimalNumber *logEstimate = [[OneRepEstimator new] estimate:setLog.weight withReps:[setLog.reps intValue]];
         if ([logEstimate compare:logMax] == NSOrderedDescending) {
             logMax = logEstimate;

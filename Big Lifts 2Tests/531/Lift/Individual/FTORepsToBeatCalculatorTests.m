@@ -90,4 +90,20 @@
     STAssertEquals((int) [logs count], 1, @"");
 }
 
+- (void)testFindLogMaxForLiftUsesWorkSets {
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
+    workoutLog.name = @"5/3/1";
+    JSetLog *workSetLog = [[JSetLogStore instance] create];
+    workSetLog.reps = @1;
+    workSetLog.name = @"Deadlift";
+    workSetLog.weight = N(150);
+    [workoutLog addSet:workSetLog];
+
+    JSetLog *assistance = [[JSetLogStore instance] createWithName:@"Deadlift" weight:N(100) reps:3 warmup:NO assistance:YES amrap:NO];
+    [workoutLog addSet:assistance];
+
+    NSDecimalNumber *max = [[FTORepsToBeatCalculator new] findLogMax:[[JFTOLiftStore instance] find: @"name" value: @"Deadlift"]];
+    STAssertEqualObjects(max, N(150), @"");
+}
+
 @end
