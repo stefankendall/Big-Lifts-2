@@ -12,19 +12,10 @@
 - (void)disable:(NSString *)purchaseId view:(UIView *)view {
     PurchaseOverlay *overlay = (PurchaseOverlay *) [view viewWithTag:kPurchaseOverlayTag];
     if (!overlay) {
-        PurchaseOverlay *overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
-        overlay.backgroundColor = [[BLColors linkColor] colorWithAlphaComponent:.65];
         CGRect frame = CGRectMake(0, 0, [view frame].size.width, [view frame].size.height);
-        [overlay setFrame:frame];
-        SKProduct *product = [[SKProductStore instance] productById:purchaseId];
-        if (product) {
-            [overlay.price setText:[[PriceFormatter new] priceOf:product]];
-        }
-        else {
-            [overlay.price setText:@"Can't connect to app store"];
-        }
 
-        [view addSubview:overlay];
+        [self addOverlayInFrame:purchaseId view:view frame:frame];
+
         if ([view respondsToSelector:@selector(setSelectionStyle:)]) {
             UITableViewCell *cell = (UITableViewCell *) view;
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
@@ -35,8 +26,41 @@
     }
 }
 
+- (void)addOverlayInFrame:(NSString *)purchaseId view:(UIView *)view frame:(CGRect)frame {
+    PurchaseOverlay *overlay = [[NSBundle mainBundle] loadNibNamed:@"PurchaseOverlay" owner:self options:nil][0];
+    overlay.backgroundColor = [[BLColors linkColor] colorWithAlphaComponent:.65];
+    [overlay setFrame:frame];
+    SKProduct *product = [[SKProductStore instance] productById:purchaseId];
+    if (product) {
+        [overlay.price setText:[[PriceFormatter new] priceOf:product]];
+    }
+    else {
+        [overlay.price setText:@"Can't connect to app store"];
+    }
+
+    [view addSubview:overlay];
+}
+
+- (void)disableFullScreen:(NSString *)purchaseId view:(UIView *)view {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGRect frame = CGRectMake(0, 0, screenRect.size.width,
+            screenRect.size.height -
+                    self.navigationController.navigationBar.frame.size.height -
+                    [UIApplication sharedApplication].statusBarFrame.size.height);
+    [self addOverlayInFrame:purchaseId view:view frame:frame];
+}
+
+- (void)disableFullScreen:(NSString *)purchaseId view:(UIView *)view withDescription:(NSString *)description {
+    [self disableFullScreen:purchaseId view:view];
+    [self changeOverlayDescription:view description:description];
+}
+
 - (void)disable:(NSString *)purchaseId view:(UIView *)view withDescription:(NSString *)description {
     [self disable:purchaseId view:view];
+    [self changeOverlayDescription:view description:description];
+}
+
+- (void)changeOverlayDescription:(UIView *)view description:(NSString *)description {
     PurchaseOverlay *overlay = (PurchaseOverlay *) [view viewWithTag:kPurchaseOverlayTag];
     [overlay.description setHidden:NO];
     [overlay.description setText:description];

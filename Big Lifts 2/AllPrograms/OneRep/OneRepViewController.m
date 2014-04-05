@@ -66,7 +66,7 @@
     [self.formulaSelector setText:[self pickerView:nil titleForRow:0 forComponent:0]];
 
     if (!([[IAPAdapter instance] hasPurchased:IAP_1RM])) {
-        [self disable:IAP_1RM view:self.view withDescription:@"Get max estimates any time\nyou log a set during a workout"];
+        [self disableFullScreen:IAP_1RM view:self.view withDescription:@"Get max estimates any time\nyou log a set during a workout"];
     }
 
     UITapGestureRecognizer *singleFingerTap =

@@ -5,7 +5,9 @@
 
 - (void)disable:(NSString *)purchaseId view:(UIView *)view withDescription:(NSString *)description;
 
-- (void)enable :(UIView *)view;
+- (void)disableFullScreen:(NSString *)purchaseId view:(UIView *)view withDescription:(NSString *)description;
+
+- (void)enable:(UIView *)view;
 
 - (void)enableDisableIapCells;
 
