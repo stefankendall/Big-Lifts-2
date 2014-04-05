@@ -100,7 +100,7 @@
         cell = [FTOWorkoutCell create];
     }
 
-    SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:[self.tappedSetRow intValue]];
+    SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:effectiveRow];
     [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) effectiveRow] withEnteredReps:setChange.reps withEnteredWeight:setChange.weight];
     return cell;
 }

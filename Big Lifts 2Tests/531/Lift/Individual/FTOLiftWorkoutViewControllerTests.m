@@ -98,13 +98,13 @@
 - (void)testShowsSetVariableRepsWhenAvailable {
     self.controller.tappedSetRow = @5;
     [self.controller repsChanged:@7];
-    [self.controller doneButtonTapped:nil];
     [self.controller viewWillAppear:YES];
 
-    FTOWorkoutCell *cell = (FTOWorkoutCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:
-            [NSIndexPath indexPathForRow:5 inSection:1]];
+    FTOWorkoutCell *cell = (FTOWorkoutCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:NSIP(5,1)];
+    FTOWorkoutCell *firstCell = (FTOWorkoutCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:NSIP(0,1)];
 
     STAssertEqualObjects([[[cell setCell] repsLabel] text], @"7x", @"");
+    STAssertFalse([[[[firstCell setCell] repsLabel] text] isEqualToString:@"7x"], @"");
 }
 
 - (void)testChoosesHeaviestAmrapSetForRepsToBeat {
