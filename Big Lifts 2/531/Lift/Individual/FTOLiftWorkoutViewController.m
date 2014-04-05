@@ -18,6 +18,8 @@
 #import "JSetLog.h"
 #import "JWorkout.h"
 #import "BLTimer.h"
+#import "FTOWorkoutChangeCache.h"
+#import "SetChange.h"
 
 @implementation FTOLiftWorkoutViewController
 
@@ -97,9 +99,9 @@
     if (!cell) {
         cell = [FTOWorkoutCell create];
     }
-    NSNumber *previousReps = [self.variableReps objectForKey:[NSNumber numberWithInteger:effectiveRow]];
-    NSNumber *previousWeight = [self.variableWeight objectForKey:[NSNumber numberWithInteger:effectiveRow]];
-    [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) effectiveRow] withEnteredReps:previousReps withEnteredWeight:previousWeight];
+
+    SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:[self.tappedSetRow intValue]];
+    [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) effectiveRow] withEnteredReps:setChange.reps withEnteredWeight:setChange.weight];
     return cell;
 }
 
@@ -165,13 +167,12 @@
     else if ([[segue identifier] isEqualToString:@"ftoSetRepsForm"]) {
         FTOSetChangeForm *form = [segue destinationViewController];
         JSet *tappedSet = self.ftoWorkout.workout.sets[[self.tappedSetRow unsignedIntegerValue]];
-        NSNumber *previouslyEnteredReps = [self.variableReps objectForKey:self.tappedSetRow];
-        NSDecimalNumber *previouslyEnteredWeight = [self.variableWeight objectForKey:self.tappedSetRow];
-        if (previouslyEnteredReps) {
-            [form setPreviouslyEnteredReps:[previouslyEnteredReps intValue]];
+        SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:[self.tappedSetRow intValue]];
+        if (setChange.reps) {
+            [form setPreviouslyEnteredReps:[setChange.reps intValue]];
         }
-        if (previouslyEnteredWeight) {
-            [form setPreviouslyEnteredWeight:previouslyEnteredWeight];
+        if (setChange.weight) {
+            [form setPreviouslyEnteredWeight:setChange.weight];
         }
         [form setSet:tappedSet];
         [form setDelegate:self];
@@ -225,8 +226,6 @@
 
 - (void)setWorkout:(JFTOWorkout *)ftoWorkout1 {
     self.ftoWorkout = ftoWorkout1;
-    self.variableReps = [@{} mutableCopy];
-    self.variableWeight = [@{} mutableCopy];
 }
 
 - (BOOL)missedAmrapReps {
@@ -234,7 +233,8 @@
     JSet *heaviestAmrapSet = [SetHelper heaviestAmrapSet:sets];
     for (int i = 0; i < [sets count]; i++) {
         JSet *set = sets[(NSUInteger) i];
-        NSNumber *loggedReps = self.variableReps[[NSNumber numberWithInt:i]];
+        SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:i];
+        NSNumber *loggedReps = setChange.reps;
         if (set == heaviestAmrapSet && loggedReps && [loggedReps compare:set.reps] == NSOrderedAscending) {
             return YES;
         }
@@ -251,11 +251,12 @@
     NSArray *sets = self.ftoWorkout.workout.sets;
     for (int i = 0; i < [sets count]; i++) {
         JSet *set = sets[(NSUInteger) i];
-        NSNumber *reps = self.variableReps[[NSNumber numberWithInt:i]];
+        SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:i];
+        NSNumber *reps = setChange.reps;
         if (reps != nil && [reps intValue] == 0) {
             continue;
         }
-        NSDecimalNumber *weight = self.variableWeight[[NSNumber numberWithInt:i]];
+        NSDecimalNumber *weight = setChange.weight;
 
         JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
         if (reps != nil) {
@@ -267,6 +268,7 @@
 
         [workoutLog addSet:setLog];
     }
+    [[FTOWorkoutChangeCache instance] clear];
 }
 
 - (BOOL)shouldShowRepsToBeat {
@@ -277,12 +279,14 @@
 }
 
 - (void)repsChanged:(NSNumber *)reps {
-    self.variableReps[self.tappedSetRow] = reps;
+    SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:[self.tappedSetRow intValue]];
+    setChange.reps = reps;
 }
 
 - (void)weightChanged:(NSDecimalNumber *)weight {
     if (weight) {
-        self.variableWeight[self.tappedSetRow] = weight;
+        SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:[self.tappedSetRow intValue]];
+        setChange.weight = weight;
     }
 }
 

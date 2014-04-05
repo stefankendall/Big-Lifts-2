@@ -18,6 +18,8 @@
 #import "JFTOVariant.h"
 #import "JSet.h"
 #import "JFTOAssistance.h"
+#import "SetChange.h"
+#import "FTOWorkoutChangeCache.h"
 
 @interface FTOLiftWorkoutViewControllerTests ()
 
@@ -115,14 +117,16 @@
 - (void)testDeterminesIfMissedReps {
     self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     [self.controller setWorkout:self.ftoWorkout];
-    [self.controller setVariableReps:[@{@5 : @4} mutableCopy]];
+    SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:5];
+    setChange.reps = @4;
     STAssertTrue([self.controller missedAmrapReps], @"");
 }
 
 - (void)testDeterminesIfMissedRepsNoFailure {
     self.ftoWorkout = [[[JFTOWorkoutStore instance] findAllWhere:@"week" value:@1] firstObject];
     [self.controller setWorkout:self.ftoWorkout];
-    [self.controller setVariableReps:[@{@5 : @5} mutableCopy]];
+    SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:5];
+    setChange.reps = @5;
     STAssertFalse([self.controller missedAmrapReps], @"");
 }
 

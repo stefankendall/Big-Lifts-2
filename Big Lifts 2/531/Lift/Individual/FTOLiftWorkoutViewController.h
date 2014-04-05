@@ -13,9 +13,6 @@
 
 @property(nonatomic) NSNumber *tappedSetRow;
 
-@property(nonatomic) NSMutableDictionary *variableReps;
-@property(nonatomic) NSMutableDictionary *variableWeight;
-
 - (IBAction)doneButtonTapped:(id)sender;
 
 - (void)setWorkout:(JFTOWorkout *)ftoWorkout1;
