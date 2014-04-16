@@ -29,6 +29,7 @@
     setLog.name = @"Squat";
     setLog.reps = @5;
     setLog.weight = N(190);
+    setLog.amrap = YES;
     [workoutLog addSet:setLog];
 
     int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:squat atWeight:N(180)];
@@ -47,6 +48,7 @@
     setLog.name = @"Squat";
     setLog.reps = @1;
     setLog.weight = N(190);
+    setLog.amrap = YES;
     [workoutLog addSet:setLog];
 
     int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:squat atWeight:N(180)];
@@ -90,6 +92,25 @@
     STAssertEquals((int) [logs count], 1, @"");
 }
 
+- (void)testUsesHeaviestAmrapInLog {
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
+    workoutLog.name = @"5/3/1";
+    JSetLog *heaviestAmrap = [[JSetLogStore instance] create];
+    heaviestAmrap.name = @"Deadlift";
+    heaviestAmrap.weight = N(200);
+    heaviestAmrap.reps = @1;
+    heaviestAmrap.amrap = YES;
+    [workoutLog addSet:heaviestAmrap];
+
+    JSetLog *lastSet = [[JSetLogStore instance] create];
+    lastSet.name = @"Deadlift";
+    lastSet.weight = N(100);
+    lastSet.reps = @1;
+    [workoutLog addSet:lastSet];
+    NSDecimalNumber *max = [[FTORepsToBeatCalculator new] findLogMax:[[JFTOLiftStore instance] find:@"name" value:@"Deadlift"]];
+    STAssertEqualObjects(max, N(200), @"");
+}
+
 - (void)testFindLogMaxForLiftUsesWorkSets {
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
@@ -97,6 +118,7 @@
     workSetLog.reps = @1;
     workSetLog.name = @"Deadlift";
     workSetLog.weight = N(150);
+    workSetLog.amrap = YES;
     [workoutLog addSet:workSetLog];
 
     JSetLog *assistance = [[JSetLogStore instance] createWithName:@"Deadlift" weight:N(100) reps:3 warmup:NO assistance:YES amrap:NO];

@@ -27,6 +27,7 @@
     setLog.weight = N(155);
     setLog.name = set.lift.name;
     setLog.reps = @1;
+    setLog.amrap = YES;
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
     [workoutLog addSet:setLog];
