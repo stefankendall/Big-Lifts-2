@@ -6,4 +6,6 @@
 
 - (void)copy:(JLift *)source into:(JLift *)dest;
 
+- (void)incrementLifts;
+
 @end

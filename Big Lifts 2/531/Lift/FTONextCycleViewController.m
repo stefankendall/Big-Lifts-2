@@ -2,6 +2,7 @@
 #import "FTONextCycleViewController.h"
 #import "FTOCycleAdjustor.h"
 #import "JFTOLiftStore.h"
+#import "JFTOSSTLiftStore.h"
 
 @implementation FTONextCycleViewController
 
@@ -14,6 +15,7 @@
     FTOCycleAdjustor *cycleAdjustor = [FTOCycleAdjustor new];
     [cycleAdjustor nextCycle];
     [[JFTOLiftStore instance] incrementLifts];
+    [[JFTOSSTLiftStore instance] incrementLifts];
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

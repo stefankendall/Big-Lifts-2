@@ -30,12 +30,6 @@
     ftoLift.order = maxOrder ? [NSNumber numberWithInt:[maxOrder intValue] + 1] : @0;
 }
 
-- (void)incrementLifts {
-    [[self findAll] each:^(JFTOLift *lift) {
-        [lift setWeight:[lift.weight decimalNumberByAdding:lift.increment]];
-    }];
-}
-
 - (void)createWithName:(NSString *)name increment:(int)increment order:(int)order {
     JFTOLift *lift = [self create];
     lift.name = name;

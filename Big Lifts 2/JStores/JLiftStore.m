@@ -1,3 +1,4 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "JLiftStore.h"
 #import "JLift.h"
 
@@ -18,6 +19,12 @@
     dest.increment = source.increment;
     dest.order = source.order;
     dest.usesBar = source.usesBar;
+}
+
+- (void)incrementLifts {
+    [[self findAll] each:^(JLift *lift) {
+        [lift setWeight:[lift.weight decimalNumberByAdding:lift.increment]];
+    }];
 }
 
 @end

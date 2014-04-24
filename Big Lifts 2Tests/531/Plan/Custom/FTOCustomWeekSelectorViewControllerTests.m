@@ -24,7 +24,7 @@
 
     STAssertEquals([[JFTOCustomWorkoutStore instance] count], 3, @"");
     JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] first];
-    STAssertEquals(customWorkout.week, @1, @"");
+    STAssertEqualObjects(customWorkout.week, @1, @"");
 }
 
 - (void)testCanEditWeekNames {

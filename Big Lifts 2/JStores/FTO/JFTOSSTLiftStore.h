@@ -1,5 +1,6 @@
 #import "BLJStore.h"
+#import "JLiftStore.h"
 
-@interface JFTOSSTLiftStore : BLJStore
+@interface JFTOSSTLiftStore : JLiftStore
 - (void)adjustSstLiftsToMainLifts;
 @end

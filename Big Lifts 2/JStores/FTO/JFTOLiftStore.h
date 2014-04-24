@@ -4,7 +4,5 @@
 @interface JFTOLiftStore : JLiftStore
 @property(nonatomic) BOOL isSettingDefaults;
 
-- (void)incrementLifts;
-
 - (void)adjustForKg;
 @end
