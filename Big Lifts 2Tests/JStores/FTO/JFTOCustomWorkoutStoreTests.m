@@ -54,4 +54,16 @@
     STAssertEquals(workoutCount, [[JWorkoutStore instance] count], @"");
 }
 
+- (void) testReordersWeeksAfterCustomWorkoutIsRemoved {
+    [[JFTOCustomWorkoutStore instance] setupVariant:FTO_VARIANT_STANDARD];
+    [[JFTOCustomWorkoutStore instance] removeAtIndex:1];
+    [[JFTOCustomWorkoutStore instance] reorderWeeks];
+    
+    JFTOCustomWorkout *customWorkout1 = [[JFTOCustomWorkoutStore instance] atIndex:0];
+    JFTOCustomWorkout *customWorkout2 = [[JFTOCustomWorkoutStore instance] atIndex:1];
+
+    STAssertEqualObjects(customWorkout1.week, @1, @"");
+    STAssertEqualObjects(customWorkout2.week, @2, @"");
+}
+
 @end

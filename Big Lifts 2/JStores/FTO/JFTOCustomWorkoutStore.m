@@ -50,10 +50,10 @@
 }
 
 - (void)reorderWeeks {
-    for (int week = 1; week < [[JFTOCustomWorkoutStore instance] count]; week++) {
-        JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] atIndex:week];
-        customWorkout.week = [NSNumber numberWithInt:week];
-        customWorkout.order = [NSNumber numberWithInt:week];
+    for (int weekIndex = 1; weekIndex < [[JFTOCustomWorkoutStore instance] count]; weekIndex++) {
+        JFTOCustomWorkout *customWorkout = [[JFTOCustomWorkoutStore instance] atIndex:weekIndex];
+        customWorkout.week = [NSNumber numberWithInt:(weekIndex + 1)];
+        customWorkout.order = [NSNumber numberWithInt:(weekIndex + 1)];
     }
 }
 
