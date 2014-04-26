@@ -6,12 +6,13 @@
 #import "JFTOPlan.h"
 #import "JFTOWorkoutSetsGenerator.h"
 #import "JFTOWorkout.h"
+#import "FTOLiftIncrementer.h"
 
 @implementation FTOCycleAdjustor
 
 - (void)checkForCycleChange {
     if ([self shouldIncrementLifts]) {
-        [[JFTOLiftStore instance] incrementLifts];
+        [[FTOLiftIncrementer new] incrementLifts];
     }
 
     if ([self cycleNeedsToIncrement]) {

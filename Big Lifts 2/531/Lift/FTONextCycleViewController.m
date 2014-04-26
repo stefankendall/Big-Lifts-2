@@ -1,8 +1,7 @@
 #import <FlurrySDK/Flurry.h>
 #import "FTONextCycleViewController.h"
 #import "FTOCycleAdjustor.h"
-#import "JFTOLiftStore.h"
-#import "JFTOSSTLiftStore.h"
+#import "FTOLiftIncrementer.h"
 
 @implementation FTONextCycleViewController
 
@@ -14,8 +13,7 @@
 - (IBAction)doneButtonTapped:(id)selector {
     FTOCycleAdjustor *cycleAdjustor = [FTOCycleAdjustor new];
     [cycleAdjustor nextCycle];
-    [[JFTOLiftStore instance] incrementLifts];
-    [[JFTOSSTLiftStore instance] incrementLifts];
+    [[FTOLiftIncrementer new] incrementLifts];
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end
