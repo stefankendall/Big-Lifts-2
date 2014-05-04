@@ -23,6 +23,10 @@
 }
 
 - (NSMutableArray *)logEntriesFromChart:(NSMutableArray *)chartData forName:(NSString *)name {
+    if (name == nil ) {
+        return [@[] mutableCopy];
+    }
+
     NSMutableDictionary *existingLiftData = [chartData detect:^BOOL(NSMutableDictionary *liftData) {
         return [liftData[@"name"] isEqualToString:name];
     }];

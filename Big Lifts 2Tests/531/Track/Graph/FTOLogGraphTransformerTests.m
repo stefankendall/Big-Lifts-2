@@ -81,7 +81,7 @@
     STAssertEqualObjects(chartData, expected, [NSString stringWithFormat:@"%@", chartData]);
 }
 
-- (void)testDoesNotInlucdeDeload {
+- (void)testDoesNotIncludeDeload {
     JSetLog *set1 = [[JSetLogStore instance] create];
     set1.name = @"Deadlift";
     set1.weight = N(200);
@@ -89,6 +89,23 @@
 
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.deload = YES;
+    workoutLog.name = @"5/3/1";
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd"];
+    workoutLog.date = [df dateFromString:@"2013-01-12"];
+
+    [workoutLog addSet:set1];
+    NSArray *chartData = [[FTOLogGraphTransformer new] buildDataFromLog];
+    STAssertEqualObjects(chartData, @[], @"");
+}
+
+- (void)testDoesNotLeaveBlankEntriesInTheLog {
+    JSetLog *set1 = [[JSetLogStore instance] create];
+    set1.name = nil;
+    set1.weight = N(200);
+    set1.reps = @1;
+
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
     workoutLog.name = @"5/3/1";
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"yyyy-MM-dd"];
