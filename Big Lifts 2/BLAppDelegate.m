@@ -31,7 +31,22 @@
 }
 
 - (void)keyValueStoreChanged:(NSNotification *)notification {
-    NSLog(@"%@", [notification userInfo]);
+    NSDictionary *userInfo = [notification userInfo];
+    switch ([[userInfo objectForKey:NSUbiquitousKeyValueStoreChangeReasonKey] integerValue]) {
+        case NSUbiquitousKeyValueStoreServerChange:
+            break;
+        case NSUbiquitousKeyValueStoreInitialSyncChange:
+            [Flurry logEvent:@"iCloud_InitialSync"];
+            break;
+        case NSUbiquitousKeyValueStoreQuotaViolationChange:
+            [Flurry logEvent:@"iCloud_QuotaViolation"];
+            break;
+        case NSUbiquitousKeyValueStoreAccountChange:
+            [Flurry logEvent:@"iCloud_AccountChange"];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

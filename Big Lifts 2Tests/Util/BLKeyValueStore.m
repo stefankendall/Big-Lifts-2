@@ -12,8 +12,7 @@
         return enabled;
     }
 
-    NSURL *ubiq = [[NSFileManager defaultManager] URLForUbiquityContainerIdentifier:nil];
-    return ubiq != nil;
+    return [[NSFileManager defaultManager] ubiquityIdentityToken] != nil;
 }
 
 + (void)forceICloud:(BOOL)on {
