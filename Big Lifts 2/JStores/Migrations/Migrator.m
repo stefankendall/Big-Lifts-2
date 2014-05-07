@@ -34,23 +34,15 @@
                 @13 : [Migrate12to13 new],
                 @14 : [Migrate13to14 new]
         };
-        //first migration must run every time, since I was missing the version property on existing installs
-        if ([version.version intValue] <= 2) {
-            [[Migrate1to2 new] run];
-            version.version = @2;
-        }
-        else {
-            for (NSNumber *versionNumber in [[migrations allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
-                if ([version.version intValue] < [versionNumber intValue]) {
-                    NSObject <Migration> *migration = migrations[versionNumber];
-                    [migration run];
-                    version.version = versionNumber;
-                }
+        for (NSNumber *versionNumber in [[migrations allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
+            if ([version.version intValue] < [versionNumber intValue]) {
+                NSObject <Migration> *migration = migrations[versionNumber];
+                [migration run];
+                version.version = versionNumber;
             }
         }
     }
     @catch (NSException *e) {
-        //TODO: log with crashlytics
     }
 }
 

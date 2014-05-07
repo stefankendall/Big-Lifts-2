@@ -1,3 +1,4 @@
+#import <Crashlytics/Crashlytics.h>
 #import "JModel.h"
 #import "NSArray+Enumerable.h"
 #import "BLJStore.h"
@@ -211,8 +212,6 @@
 - (void)sync {
     NSArray *serialized = [self serialize];
     NSString *storeKey = [self keyNameForStore];
-//    NSLog(@"Store key: %@", storeKey);
-//    NSLog(@"Serialized: %@", serialized);
     [[BLKeyValueStore store] setObject:serialized forKey:storeKey];
 }
 
@@ -224,7 +223,8 @@
             [serialized addObject:serialModel];
         }
         else {
-            NSLog(@"Could not serialize model: %@", model);
+            CLS_LOG(@"%@", model);
+            [NSException raise:@"Could not serialize model." format:@""];
         }
     }
     return serialized;
@@ -237,7 +237,6 @@
 - (void)load {
     NSUbiquitousKeyValueStore *keyValueStore = [BLKeyValueStore store];
     NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
-//    NSLog(@"%@ %@", [self class], serializedData);
     if (serializedData) {
         self.data = [self deserialize:serializedData];
     }
