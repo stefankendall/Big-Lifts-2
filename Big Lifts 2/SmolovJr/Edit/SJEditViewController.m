@@ -3,6 +3,7 @@
 #import "JSJLiftStore.h"
 #import "JSJLift.h"
 #import "TextViewInputAccessoryBuilder.h"
+#import "DecimalNumberHelper.h"
 
 @implementation SJEditViewController
 
@@ -31,7 +32,7 @@
 
     JSJLift *lift = [[JSJLiftStore instance] first];
     lift.name = liftName;
-    lift.weight = [NSDecimalNumber decimalNumberWithString:max locale:NSLocale.currentLocale];
+    lift.weight = [DecimalNumberHelper nanTo0: [NSDecimalNumber decimalNumberWithString:max locale:NSLocale.currentLocale]];
 }
 
 @end

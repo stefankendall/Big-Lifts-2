@@ -173,6 +173,7 @@
 		5459046C27D56EF0BCC59AB0 /* JSSWarmupGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A67A69F72969BBE509E /* JSSWarmupGeneratorTests.m */; };
 		5459047B3FE05410438336E0 /* DecimalNumberHandlers.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903F6F5181EFE8588CCB9 /* DecimalNumberHandlers.m */; };
 		5459047C50EB2A7F50A4C83B /* WeightUnits.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590215ED48E93142E3F494 /* WeightUnits.m */; };
+		54590487E361F42E56A206EF /* SJEditViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A7ECEA3292A591CCF22 /* SJEditViewControllerTests.m */; };
 		54590490FA365415771687A3 /* Migrate2to3.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C2FA5A481AB22BAB723 /* Migrate2to3.m */; };
 		545904975C5FB8CB4BCAF5FE /* TrainingMaxRowTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459021F7658EDDD9578FA00 /* TrainingMaxRowTextField.m */; };
 		545904A8CDCF32E59414EE39 /* JSSLiftStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905017F105B5D2EDC2E11 /* JSSLiftStore.m */; };
@@ -1242,6 +1243,7 @@
 		54590A67A69F72969BBE509E /* JSSWarmupGeneratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSSWarmupGeneratorTests.m; sourceTree = "<group>"; };
 		54590A7477987ACB6EA4DEFD /* RowUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowUIButton.m; sourceTree = "<group>"; };
 		54590A7C3D503987DE02CC99 /* FTOFullCustomSetEditorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOFullCustomSetEditorTests.h; sourceTree = "<group>"; };
+		54590A7ECEA3292A591CCF22 /* SJEditViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJEditViewControllerTests.m; sourceTree = "<group>"; };
 		54590A7F8E7BE142CA6FC1B5 /* heatmap.src.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = heatmap.src.js; sourceTree = "<group>"; };
 		54590A805547FE8C7BEB9755 /* JFTOFullCustomWorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOFullCustomWorkoutStore.h; sourceTree = "<group>"; };
 		54590A9410EB728E086BD591 /* Migrate9to10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate9to10.m; sourceTree = "<group>"; };
@@ -1312,6 +1314,7 @@
 		54590BAC055C90785C4622C8 /* SVNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVNavController.h; sourceTree = "<group>"; };
 		54590BAF6FD36E97BB18EB74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		54590BB28ED964522BD31990 /* JFTOFullCustomAssistanceWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOFullCustomAssistanceWorkout.m; sourceTree = "<group>"; };
+		54590BB32640ED031C512895 /* SJEditViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJEditViewControllerTests.h; sourceTree = "<group>"; };
 		54590BB3E883BEB35115238A /* JSVLiftStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSVLiftStoreTests.m; sourceTree = "<group>"; };
 		54590BB4A867FF5CF02CFFDC /* ButtonMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ButtonMenu@2x.png"; sourceTree = "<group>"; };
 		54590BB5F836221D0DB6A202 /* JSJWorkoutStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSJWorkoutStore.h; sourceTree = "<group>"; };
@@ -3455,6 +3458,15 @@
 			path = Assistance;
 			sourceTree = "<group>";
 		};
+		54590D6A74E79F75F6C04A50 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				54590A7ECEA3292A591CCF22 /* SJEditViewControllerTests.m */,
+				54590BB32640ED031C512895 /* SJEditViewControllerTests.h */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
 		54590D6C3B2B528F7E5DAA0B /* Nav */ = {
 			isa = PBXGroup;
 			children = (
@@ -3707,6 +3719,7 @@
 			isa = PBXGroup;
 			children = (
 				5459034D85E8313729477147 /* Lift */,
+				54590D6A74E79F75F6C04A50 /* Edit */,
 			);
 			path = SmolovJr;
 			sourceTree = "<group>";
@@ -4201,6 +4214,7 @@
 				54590950CE87C365A4522EAD /* FTOLiftsIncrementingViewControllerTests.m in Sources */,
 				54590C92CFB973BF2117E8C6 /* FTOWorkoutChangeCacheTests.m in Sources */,
 				54590AB27D42B08D687656B6 /* FTOLiftIncrementerTests.m in Sources */,
+				54590487E361F42E56A206EF /* SJEditViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
