@@ -123,11 +123,6 @@
     return [all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@", name, value]];
 }
 
-- (NSArray *)findAllWithSort:(NSSortDescriptor *)sortDescriptor {
-    NSArray *sortDescriptors = @[sortDescriptor];
-    return [[self findAll] sortedArrayUsingDescriptors:sortDescriptors];
-}
-
 - (id)findBy:(NSPredicate *)predicate {
     NSArray *all = [self findAll];
     NSArray *results = [all filteredArrayUsingPredicate:predicate];

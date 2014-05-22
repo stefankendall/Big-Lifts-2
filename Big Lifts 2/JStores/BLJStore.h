@@ -28,8 +28,6 @@
 
 - (NSArray *)findAllWhere:(NSString *)name value:(id)value;
 
-- (NSArray *)findAllWithSort:(NSSortDescriptor *)sortDescriptor;
-
 - (id)findBy:(NSPredicate *)predicate;
 
 - (id)atIndex:(int)index;
