@@ -50,15 +50,8 @@
         }
 
         if (store != [JVersionStore instance]) {
-            @try {
-                CLS_LOG(@"Loading %@", NSStringFromClass([store modelClass]));
-                [store load];
-            }
-            @catch (NSException *e) {
-                [store empty];
-                [store sync];
-                [store setupDefaults];
-            }
+            CLS_LOG(@"Loading %@", NSStringFromClass([store modelClass]));
+            [store load];
         }
     }
     [[DataLoaded instance] setLoaded:YES];

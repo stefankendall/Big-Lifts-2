@@ -256,6 +256,7 @@
 - (NSMutableArray *)deserialize:(NSArray *)serialized {
     NSMutableArray *deserialized = [@[] mutableCopy];
     for (NSString *string in serialized) {
+        CLS_LOG("Deserialize: %@", string);
         JSONModel *model = [self deserializeObject:string];
         if (model != nil) {
             [deserialized addObject:model];
