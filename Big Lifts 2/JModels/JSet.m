@@ -30,8 +30,4 @@
     return [[WeightRounder new] round:[self effectiveWeight]];
 }
 
-- (BOOL)hasVariableReps {
-    return [self amrap] || [[self maxReps] intValue] > 0;
-}
-
 @end
