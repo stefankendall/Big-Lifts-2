@@ -1,6 +1,8 @@
 #import "JFTOPowerliftingPlan.h"
 #import "JLift.h"
 #import "JFTOStandardPlan.h"
+#import "JWorkout.h"
+#import "JSetData.h"
 
 @implementation JFTOPowerliftingPlan
 
@@ -10,6 +12,10 @@
     NSArray *week2 = workout[@2];
     workout[@2] = week1;
     workout[@1] = week2;
+
+    JSetData *lastSet = [week1 lastObject];
+    lastSet.amrap = NO;
+
     return workout;
 }
 
