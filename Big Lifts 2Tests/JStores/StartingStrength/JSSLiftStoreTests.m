@@ -61,6 +61,12 @@
     STAssertEqualObjects(lift.increment, N(2), @"");
 }
 
+- (void)testSerializesNan {
+    JSSLift *lift = [[JSSLiftStore instance] find:@"name" value:@"Power Clean"];
+    lift.weight = [NSDecimalNumber notANumber];
+    [[JSSLiftStore instance] serialize];
+}
+
 - (void)testRemoveExtraLifts {
     JSSLiftStore *store = [JSSLiftStore instance];
     [store removeExtraLifts:@[@"Power Clean"]];

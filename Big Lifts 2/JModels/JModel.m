@@ -18,6 +18,11 @@
             JModel *model = value;
             [dictionary setValue:model.uuid forKeyPath:keyPath];
         }
+        if([value isKindOfClass:[NSDecimalNumber class]]){
+            if([value isEqual:[NSDecimalNumber notANumber]]){
+                [dictionary setValue:N(0) forKey:keyPath];
+            }
+        }
         else if ([value isKindOfClass:[NSArray class]]) {
             NSArray *array = (NSArray *) value;
             NSMutableArray *newArray = [@[] mutableCopy];
