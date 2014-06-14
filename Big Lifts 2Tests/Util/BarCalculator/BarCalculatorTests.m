@@ -25,22 +25,6 @@
     STAssertEqualObjects([self.calculator platesToMakeWeight:N(260)], expected260, @"");
 }
 
-- (void)testFindsClosestWeightWhenHeavierPlatesWontGetClosest {
-    [[JPlateStore instance] empty];
-    [[JPlateStore instance] createPlateWithWeight: N(25) count:6];
-    [[JPlateStore instance] createPlateWithWeight: N(20) count:6];
-    [[JPlateStore instance] createPlateWithWeight: N(15) count:6];
-    [[JPlateStore instance] createPlateWithWeight: N(10) count:6];
-    [[JPlateStore instance] createPlateWithWeight: N(5) count:6];
-    [[JPlateStore instance] createPlateWithWeight: N(2.5) count:6];
-    [[JPlateStore instance] createPlateWithWeight: N(1.25) count:6];
-    [[JPlateStore instance] createPlateWithWeight: N(1) count:6];
-    [[JPlateStore instance] createPlateWithWeight: N(0.5) count:6];
-
-    NSArray *expected = @[@25.0, @25.0, @2.5, @1, @0.5];
-    STAssertEqualObjects([[[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll] barWeight:N(20)] platesToMakeWeight:N(128)], expected, @"");
-}
-
 - (void)testCopyPlatesReturnsNewPlates {
     NSArray *copy = [self.calculator copyPlates:[[JPlateStore instance] findAll]];
     STAssertEquals((int) [copy count], [[JPlateStore instance] count], @"");
