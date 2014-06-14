@@ -97,7 +97,7 @@
         JWorkout *workout = self.ssWorkout.workouts[(NSUInteger) workoutIndex];
 
         for (int setIndex = 0; setIndex < [[workout workSets] count]; setIndex++) {
-            JSet *set = workout.sets[(NSUInteger) setIndex];
+            JSet *set = workout.workSets[(NSUInteger) setIndex];
             JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
             setLog.name = [(JSSLift *) set.lift effectiveName];
             SetChange *change = loggedSets[[NSNumber numberWithInt:setIndex]];

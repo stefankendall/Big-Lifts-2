@@ -44,6 +44,7 @@
 
 - (void)testTappingDoneButtonLogsWorkout {
     [[IAPAdapter instance] addPurchase:IAP_SS_WARMUP];
+    [[JSSWorkoutStore instance] addWarmup];
     self.controller.ssWorkout = [[JSSWorkoutStore instance] first];
     [self.controller nextButtonTapped:nil];
     [self.controller nextButtonTapped:nil];
@@ -57,7 +58,9 @@
     STAssertEquals([workSets count], (NSUInteger) 7, @"");
     STAssertNotNil(workoutLog.date, @"");
 
-    STAssertTrue([((JSetLog *) workSets[0]).name isEqualToString:@"Squat"], @"");
+    JSetLog *log1 = (JSetLog *) workSets[0];
+    STAssertFalse(log1.warmup, @"");
+    STAssertTrue([log1.name isEqualToString:@"Squat"], @"");
     STAssertTrue([((JSetLog *) workSets[1]).name isEqualToString:@"Squat"], @"");
     STAssertTrue([((JSetLog *) workSets[2]).name isEqualToString:@"Squat"], @"");
     STAssertTrue([((JSetLog *) workSets[3]).name isEqualToString:@"Bench"], @"");
