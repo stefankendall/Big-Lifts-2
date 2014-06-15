@@ -22,6 +22,7 @@
 @implementation SVWorkoutViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [self registerCellNib:SVOneRepTestCell.class];
     [self registerCellNib:SetCell.class];
     [self registerCellNib:SetCellWithPlates.class];

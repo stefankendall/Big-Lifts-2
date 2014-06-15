@@ -25,6 +25,7 @@
 @implementation SJIndividualLiftViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     [self registerCellNib:SJSetCell.class];
 }
 

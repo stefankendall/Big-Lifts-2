@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5051" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -14,15 +14,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-kf-Ly0">
-                        <rect key="frame" x="261" y="7" width="39" height="30"/>
+                        <rect key="frame" x="141" y="7" width="39" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Timer">
                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qye-GE-PV7">
-                        <rect key="frame" x="137" y="7" width="44" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Il9-HV-Isg">
+                        <rect key="frame" x="256" y="7" width="44" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Share!">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,12 +30,14 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="R2o-kf-Ly0" firstAttribute="top" secondItem="GcP-TZ-cPJ" secondAttribute="top" constant="7" id="E7h-jR-Jav"/>
-                    <constraint firstAttribute="trailing" secondItem="R2o-kf-Ly0" secondAttribute="trailing" constant="20" id="UxT-3R-aSc"/>
+                    <constraint firstAttribute="trailing" secondItem="Il9-HV-Isg" secondAttribute="trailing" constant="20" id="43V-1Z-7mT"/>
+                    <constraint firstItem="R2o-kf-Ly0" firstAttribute="centerX" secondItem="GcP-TZ-cPJ" secondAttribute="centerX" id="IrQ-RR-krt"/>
+                    <constraint firstItem="Il9-HV-Isg" firstAttribute="baseline" secondItem="R2o-kf-Ly0" secondAttribute="baseline" id="eZk-nT-F7B"/>
+                    <constraint firstItem="R2o-kf-Ly0" firstAttribute="top" secondItem="GcP-TZ-cPJ" secondAttribute="top" constant="7" id="szo-QX-8bf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="shareButton" destination="qye-GE-PV7" id="BdH-jo-Pq4"/>
+                <outlet property="shareButton" destination="Il9-HV-Isg" id="m1J-W9-YIP"/>
                 <outlet property="timerButton" destination="R2o-kf-Ly0" id="Dms-vP-RFm"/>
             </connections>
         </tableViewCell>
