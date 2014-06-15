@@ -28,8 +28,10 @@ const NSString *TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
 }
 
 - (void)stopTimer {
+    self.secondsRemaining = 0;
     if (self.timer) {
         [self.timer invalidate];
+        self.timer = nil;
     }
 }
 

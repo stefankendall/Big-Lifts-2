@@ -21,6 +21,13 @@
 
     [self.restMinutes setText:[[NSNumber numberWithInt:minutes] stringValue]];
     [self.restSeconds setText:[[NSNumber numberWithInt:seconds] stringValue]];
+
+    if([[BLTimer instance] isRunning]){
+        [self.startStopButton setTitle:@"Stop"];
+    }
+    else {
+        [self.startStopButton setTitle:@"Start"];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -30,9 +37,18 @@
 }
 
 - (IBAction)timerTapped:(id)sender {
-    [Flurry logEvent:@"Rest_Start"];
-    [self startTimer];
-    [self.navigationController popViewControllerAnimated:YES];
+    if([[BLTimer instance] isRunning]){
+        [Flurry logEvent:@"Rest_Stop"];
+        [[BLTimer instance] stopTimer];
+        [self.startStopButton setTitle:@"Start"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else {
+        [Flurry logEvent:@"Rest_Start"];
+        [self startTimer];
+        [self.startStopButton setTitle:@"Stop"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)startTimer {

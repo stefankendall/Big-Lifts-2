@@ -12,6 +12,8 @@
 
 - (void)start:(int)seconds;
 
+- (void)stopTimer;
+
 - (void)suspend;
 
 - (void)resume;
