@@ -14,6 +14,8 @@
 
 - (void)stopTimer;
 
+- (void)endTimer;
+
 - (void)suspend;
 
 - (void)resume;

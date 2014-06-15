@@ -22,7 +22,7 @@
     [self.restMinutes setText:[[NSNumber numberWithInt:minutes] stringValue]];
     [self.restSeconds setText:[[NSNumber numberWithInt:seconds] stringValue]];
 
-    if([[BLTimer instance] isRunning]){
+    if ([[BLTimer instance] isRunning]) {
         [self.startStopButton setTitle:@"Stop"];
     }
     else {
@@ -37,9 +37,9 @@
 }
 
 - (IBAction)timerTapped:(id)sender {
-    if([[BLTimer instance] isRunning]){
+    if ([[BLTimer instance] isRunning]) {
         [Flurry logEvent:@"Rest_Stop"];
-        [[BLTimer instance] stopTimer];
+        [[BLTimer instance] endTimer];
         [self.startStopButton setTitle:@"Start"];
         [self.navigationController popViewControllerAnimated:YES];
     }

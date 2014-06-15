@@ -35,6 +35,11 @@ const NSString *TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
     }
 }
 
+- (void)endTimer {
+    [self stopTimer];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+}
+
 - (void)suspend {
     if (self.secondsRemaining > 0) {
         [[BLKeyValueStore store]                            setObject:
