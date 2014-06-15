@@ -24,6 +24,10 @@
 
 @implementation SJIndividualLiftViewController
 
+- (void)viewDidLoad {
+    [self registerCellNib:SJSetCell.class];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [Flurry logEvent:@"Workout" withParameters:@{@"Name" : @"Smolov Jr"}];

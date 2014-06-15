@@ -19,6 +19,7 @@
 #import "SetChange.h"
 #import "JLift.h"
 #import "JSSLift.h"
+#import "RestShareToolbar.h"
 
 @interface SSIndividualWorkoutViewController ()
 @property(nonatomic, strong) NSMutableArray *loggedWorkouts;
@@ -31,6 +32,9 @@
     [super viewDidLoad];
     self.workoutIndex = 0;
     [self resetLoggedSets];
+
+    [self registerCellNib:SetCellWithPlates.class];
+    [self registerCellNib:SetCell.class];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -134,10 +138,6 @@
     else {
         Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
         SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
-
-        if (cell == nil) {
-            cell = [setClass create];
-        }
         JSet *set = [self setForIndexPath:indexPath];
         SetChange *data = self.loggedSets[[NSNumber numberWithInt:indexPath.row]];
         NSNumber *enteredReps = data ? data.reps : nil;

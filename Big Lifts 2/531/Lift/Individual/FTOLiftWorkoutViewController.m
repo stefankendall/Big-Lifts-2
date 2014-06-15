@@ -23,6 +23,12 @@
 
 @implementation FTOLiftWorkoutViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self registerCellNib: FTOWorkoutCell.class];
+    [self registerCellNib: FTOLiftWorkoutToolbar.class];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [Flurry logEvent:@"Workout" withParameters:@{@"Name" : @"5/3/1"}];
     [self.tableView reloadData];
@@ -96,10 +102,6 @@
 
     int effectiveRow = [self effectiveRowFor:indexPath];
     FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOWorkoutCell.class)];
-    if (!cell) {
-        cell = [FTOWorkoutCell create];
-    }
-
     SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:effectiveRow];
     [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) effectiveRow] withEnteredReps:setChange.reps withEnteredWeight:setChange.weight];
     return cell;
@@ -120,10 +122,7 @@
 }
 
 - (UITableViewCell *)buildWorkoutToolbarCell {
-    FTOLiftWorkoutToolbar *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FTOLiftWorkoutToolbar"];
-    if (!cell) {
-        cell = [FTOLiftWorkoutToolbar create];
-    }
+    FTOLiftWorkoutToolbar *cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOLiftWorkoutToolbar.class)];
     if ([self shouldShowRepsToBeat]) {
         [cell.repsToBeat setHidden:NO];
         JSet *heaviestAmrap = [SetHelper heaviestAmrapSet:self.ftoWorkout.workout.sets];

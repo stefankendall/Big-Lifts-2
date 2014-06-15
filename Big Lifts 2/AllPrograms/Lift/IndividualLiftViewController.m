@@ -5,6 +5,11 @@
 
 @implementation IndividualLiftViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self registerCellNib:RestShareToolbar.class];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [[BLTimer instance] setObserver:self];
 }
@@ -19,11 +24,6 @@
 
 - (RestShareToolbar *)restToolbar:(UITableView *)tableView {
     RestShareToolbar *toolbar = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(RestShareToolbar.class)];
-
-    if (!toolbar) {
-        toolbar = [RestShareToolbar create];
-    }
-
     [toolbar updateTime];
     [toolbar.timerButton addTarget:self action:@selector(goToTimer) forControlEvents:UIControlEventTouchUpInside];
     [toolbar setShareDelegate:self];

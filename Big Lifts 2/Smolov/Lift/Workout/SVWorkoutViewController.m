@@ -21,6 +21,12 @@
 
 @implementation SVWorkoutViewController
 
+- (void)viewDidLoad {
+    [self registerCellNib:SVOneRepTestCell.class];
+    [self registerCellNib:SetCell.class];
+    [self registerCellNib:SetCellWithPlates.class];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [Flurry logEvent:@"Workout" withParameters:@{@"Name" : @"Smolov"}];
@@ -58,9 +64,6 @@
 
     if (self.svWorkout.testMax) {
         SVOneRepTestCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(SVOneRepTestCell.class)];
-        if (!cell) {
-            cell = [SVOneRepTestCell create];
-        }
         JSVLift *mainLift = [[JSVLiftStore instance] first];
         [cell.oneRepField setText:[mainLift.weight stringValue]];
 

@@ -144,7 +144,8 @@
 
 - (void)testReturnsPlatesWhenBarLoadingPurchased {
     [[IAPAdapter instance] addPurchase:IAP_BAR_LOADING];
-    UITableViewCell *cell = [self.controller tableView:nil cellForRowAtIndexPath:NSIP(0, 1)];
+    UITableViewCell *cell = [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:NSIP(0, 1)];
+    STAssertNotNil(cell, @"");
     STAssertTrue([cell isKindOfClass:SetCellWithPlates.class], @"");
 }
 

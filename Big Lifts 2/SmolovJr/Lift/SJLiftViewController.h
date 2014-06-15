@@ -2,6 +2,5 @@
 #import "TimerObserver.h"
 #import "IndividualLiftViewController.h"
 
-@interface SJLiftViewController : IndividualLiftViewController
-@property(nonatomic, strong) id rateDialog;
+@interface SJLiftViewController : BLTableViewController
 @end
