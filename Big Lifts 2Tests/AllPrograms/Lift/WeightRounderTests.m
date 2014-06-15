@@ -115,4 +115,22 @@
     STAssertEqualObjects([[WeightRounder new] round:N(165.9)], @164, @"");
 }
 
+- (void)testRoundsTo0p5 {
+    [[[JSettingsStore instance] first] setRoundTo:N(0.5)];
+    STAssertEqualObjects([[WeightRounder new] round:N(166)], @166, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(166.5)], @166.5, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(166.2)], @166, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(166.25)], @166.5, @"");
+
+    [[[JSettingsStore instance] first] setRoundingType:(NSString *) ROUNDING_TYPE_UP];
+    STAssertEqualObjects([[WeightRounder new] round:N(166)], @166, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(166.5)], @166.5, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(166.2)], @166.5, @"");
+
+    [[[JSettingsStore instance] first] setRoundingType:(NSString *) ROUNDING_TYPE_DOWN];
+    STAssertEqualObjects([[WeightRounder new] round:N(166)], @166, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(166.5)], @166.5, @"");
+    STAssertEqualObjects([[WeightRounder new] round:N(166.4)], @166, @"");
+}
+
 @end

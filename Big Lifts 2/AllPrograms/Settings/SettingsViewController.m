@@ -81,8 +81,8 @@
 }
 
 - (void)setupRoundTo {
-    self.roundingOptions = @[N(1), N(2), N(2.5), N(5), [NSDecimalNumber decimalNumberWithString:(NSString *) NEAREST_5_ROUNDING]];
-    self.roundingText = @[@"1", @"2", @"2.5", @"5", @"Nearest 5"];
+    self.roundingOptions = @[N(0.5), N(1), N(2), N(2.5), N(5), [NSDecimalNumber decimalNumberWithString:(NSString *) NEAREST_5_ROUNDING]];
+    self.roundingText = @[@"0.5", @"1", @"2", @"2.5", @"5", @"Nearest 5"];
     self.roundToPicker = [UIPickerView new];
     [self.roundToPicker setDataSource:self];
     [self.roundToPicker setDelegate:self];

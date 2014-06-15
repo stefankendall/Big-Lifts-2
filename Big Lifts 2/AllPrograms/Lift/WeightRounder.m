@@ -19,8 +19,11 @@
         return [self roundTo2p5:number withDirection:settings.roundingType];
     } else if ([settings.roundTo isEqualToNumber:@2]) {
         return [self roundTo2:number withDirection:settings.roundingType];
-    } else {
+    } else if ([settings.roundTo isEqualToNumber:@1]) {
         return [self roundTo1:number withDirection:settings.roundingType];
+    }
+    else {
+        return [self roundTo0p5:number withDirection:settings.roundingType];
     }
 }
 
@@ -183,6 +186,12 @@
     else {
         return [[NSDecimalNumber alloc] initWithInt:base5Round + 5];
     }
+}
+
+- (NSDecimalNumber *)roundTo0p5:(NSDecimalNumber *)number withDirection:(NSString <Optional> *)direction {
+    NSDecimalNumber *numberTimes10 = [number decimalNumberByMultiplyingBy:N(10) withBehavior:[DecimalNumberHandlers noRaise]];
+    NSDecimalNumber *rounded = [self roundTo5:numberTimes10 withDirection:direction];
+    return [rounded decimalNumberByDividingBy:N(10) withBehavior:[DecimalNumberHandlers noRaise]];
 }
 
 - (NSDecimalNumber *)getLastPartsOf:(NSDecimalNumber *)number {
