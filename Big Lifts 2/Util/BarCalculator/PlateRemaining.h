@@ -1,4 +1,3 @@
-@class Plate;
 @class JPlate;
 
 @interface PlateRemaining : NSObject
