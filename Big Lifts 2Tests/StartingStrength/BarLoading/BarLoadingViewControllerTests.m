@@ -34,12 +34,12 @@
 
 - (void)testReturnsPlateCount {
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
-    STAssertTrue([controller tableView:nil numberOfRowsInSection:1] > 0, @"");
+    STAssertTrue([controller tableView:controller.tableView numberOfRowsInSection:1] > 0, @"");
 }
 
 - (void)testAddsOneRowForAddingPlates {
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
-    UITableViewCell *addCell = [controller tableView:nil cellForRowAtIndexPath:
+    UITableViewCell *addCell = [controller tableView:controller.tableView cellForRowAtIndexPath:
             [NSIndexPath indexPathForRow:[[JPlateStore instance] count] inSection:1]];
     NSString *addText = [[addCell textLabel] text];
     STAssertTrue([addText rangeOfString:@"Add"].location != NSNotFound, @"");
@@ -54,7 +54,7 @@
 
 - (void)testPlateCountChangeAdjustsPlateCount {
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
-    WeightTableCell *cell = (WeightTableCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    WeightTableCell *cell = (WeightTableCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [cell.stepper setValue:1];
     [controller plateCountChanged:cell.stepper];
     JPlate *p = [[JPlateStore instance] atIndex:0];
@@ -63,7 +63,7 @@
 
 - (void)testPlateCountDoesNotGoNegative {
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
-    WeightTableCell *cell = (WeightTableCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    WeightTableCell *cell = (WeightTableCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [cell.stepper setValue:-2];
     JPlate *p = [[JPlateStore instance] atIndex:0];
     p.count = [NSNumber numberWithInt:1];
@@ -73,7 +73,7 @@
 
 - (void)testPlateStepperMinimumReadjustedWhenPlatesAdded {
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
-    WeightTableCell *cell = (WeightTableCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    WeightTableCell *cell = (WeightTableCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [cell.stepper setValue:-2];
     JPlate *p = [[JPlateStore instance] atIndex:0];
     p.count = [NSNumber numberWithInt:1];
@@ -88,7 +88,7 @@
 
 - (void)testModifyCellForPlateCountHandles0 {
     BarLoadingViewController *controller = [self getControllerByStoryboardIdentifier:@"barLoading"];
-    WeightTableCell *cell = (WeightTableCell *) [controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    WeightTableCell *cell = (WeightTableCell *) [controller tableView:controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     [controller modifyCellForPlateCount:cell currentPlateCount:0];
     STAssertTrue([[cell platesLabel] isHidden], @"");
     STAssertTrue([[cell countLabel] isHidden], @"");

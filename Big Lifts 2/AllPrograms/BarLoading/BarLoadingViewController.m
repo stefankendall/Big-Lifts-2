@@ -35,6 +35,8 @@
                                              selector:@selector(removeOverlayIfNecessary)
                                                  name:IAP_PURCHASED_NOTIFICATION
                                                object:nil];
+    [self registerCellNib:AddCell.class];
+    [self registerCellNib:WeightTableCell.class];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -78,18 +80,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = [indexPath row];
     if (row == [[JPlateStore instance] count]) {
-        AddCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
-        if (cell == nil) {
-            cell = [AddCell create];
-        }
-        return cell;
+        return [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
     }
     else {
         WeightTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeightTableCell"];
-
-        if (cell == nil) {
-            cell = [WeightTableCell create];
-        }
 
         JPlate *plate = [[JPlateStore instance] atIndex:row];
         JSettings *settings = [[JSettingsStore instance] first];

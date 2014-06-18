@@ -82,7 +82,7 @@
 }
 
 - (void)removeAtIndex:(int)index {
-    [self remove:[self.data objectAtIndex:(NSUInteger) index]];
+    [self remove:[self.findAll objectAtIndex:(NSUInteger) index]];
 };
 
 - (void)reset {
