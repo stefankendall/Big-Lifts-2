@@ -43,6 +43,10 @@
     [unitsSegmentedControl setSelectedSegmentIndex:[[unitsSegments objectForKey:settings.units] integerValue]];
 
     NSUInteger roundToRow = [self.roundingOptions indexOfObject:settings.roundTo];
+    if (roundToRow == NSNotFound) {
+        roundToRow = 0;
+        settings.roundTo = N(5);
+    }
     [self.roundToField setText:self.roundingText[roundToRow]];
     [self.roundToPicker selectRow:roundToRow inComponent:0 animated:NO];
 

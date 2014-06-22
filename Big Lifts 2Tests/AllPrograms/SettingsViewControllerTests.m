@@ -14,6 +14,14 @@
     STAssertFalse([[controller.roundToField text] isEqualToString:@""], @"");
 }
 
+- (void)testHandlesBadRoundingValuesWhenReloadingData {
+    SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
+    JSettings *settings = [[JSettingsStore instance] first];
+    settings.roundTo = N(3);
+    [controller reloadData];
+    STAssertEqualObjects(settings.roundTo, N(5), @"");
+}
+
 - (void)testSetsRoundingTypeValueOnAppear {
     SettingsViewController *controller = [self getControllerByStoryboardIdentifier:@"settings"];
     STAssertFalse([[controller.roundingTypeField text] isEqualToString:@""], @"");

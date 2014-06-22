@@ -5,6 +5,8 @@
 
 @interface SettingsViewController : BLTableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate, UITextFieldDelegate>
 
+- (void)reloadData;
+
 - (IBAction)unitsChanged:(id)sender;
 
 - (IBAction)keepScreenOnChanged:(id)sender;
