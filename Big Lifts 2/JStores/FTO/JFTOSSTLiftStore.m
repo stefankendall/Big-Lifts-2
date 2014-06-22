@@ -10,6 +10,11 @@
     return JFTOSSTLift.class;
 }
 
+- (void)onLoad {
+    [super onLoad];
+    [self adjustSstLiftsToMainLifts];
+}
+
 - (void)adjustSstLiftsToMainLifts {
     [self removeMissingLifts];
     [self addNeededLifts];

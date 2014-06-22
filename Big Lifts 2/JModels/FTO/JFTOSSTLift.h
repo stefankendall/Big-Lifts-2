@@ -4,5 +4,5 @@
 @class JFTOLift;
 
 @interface JFTOSSTLift : JLift
-@property(nonatomic) JFTOLift *associatedLift;
+@property(nonatomic) JFTOLift<Optional> *associatedLift;
 @end

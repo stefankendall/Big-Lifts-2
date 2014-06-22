@@ -8,6 +8,12 @@
     STAssertEquals([[JFTOSSTLiftStore instance] count], 4, @"");
 }
 
+- (void)testAdjustsToMainLiftsAfterLoad {
+    [[JFTOLiftStore instance] removeAtIndex:0];
+    [[JFTOSSTLiftStore instance] onLoad];
+    STAssertEquals([[JFTOSSTLiftStore instance] count], 3, @"");
+}
+
 - (void)testAdjustsSstLiftsWhenLiftsAreModified {
     STAssertEquals([[JFTOSSTLiftStore instance] count], 4, @"");
 
