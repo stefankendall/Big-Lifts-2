@@ -8,6 +8,7 @@
 @property(weak, nonatomic) IBOutlet UITextField *percentageLabel;
 @property(weak, nonatomic) IBOutlet UISwitch *amrapSwitch;
 @property(weak, nonatomic) IBOutlet UISwitch *warmupSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *optionalSwitch;
 
 @property(nonatomic, strong) JSet *set;
 @end

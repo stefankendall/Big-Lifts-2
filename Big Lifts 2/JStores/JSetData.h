@@ -28,6 +28,8 @@
 
 + (id)dataWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(JLift *)lift optional:(BOOL)optional;
 
++ (id)dataWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(JLift *)lift amrap:(BOOL)amrap warmup:(BOOL)warmup optional:(BOOL)optional;
+
 + (id)dataWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(JLift *)lift amrap:(BOOL)amrap warmup:(BOOL)warmup;
 
 + (id)dataWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(JLift *)lift amrap:(BOOL)amrap;

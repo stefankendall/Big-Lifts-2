@@ -19,6 +19,10 @@
     return self;
 }
 
++ (id)dataWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(JLift *)lift amrap:(BOOL)amrap warmup:(BOOL)warmup optional:(BOOL)optional {
+    return [[self alloc] initWithReps:reps maxReps:0 lift:lift amrap:amrap warmup:warmup optional:optional percentage:percentage];
+}
+
 + (id)dataWithReps:(int)reps percentage:(NSDecimalNumber *)percentage lift:(JLift *)lift amrap:(BOOL)amrap warmup:(BOOL)warmup {
     return [[self alloc] initWithReps:reps maxReps:0 lift:lift amrap:amrap warmup:warmup optional:NO percentage:percentage];
 }

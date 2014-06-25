@@ -18,7 +18,12 @@
         NSMutableArray *weekLifts = [@[] mutableCopy];
         [customWorkout.workout.sets each:^(JSet *set) {
             [weekLifts addObject:
-                    [JSetData dataWithReps:[set.reps intValue] percentage:set.percentage lift:lift amrap:set.amrap warmup:set.warmup]];
+                    [JSetData dataWithReps:[set.reps intValue]
+                                percentage:set.percentage
+                                      lift:lift
+                                     amrap:set.amrap
+                                    warmup:set.warmup
+                                  optional:set.optional]];
         }];
 
         template[customWorkout.week] = weekLifts;
