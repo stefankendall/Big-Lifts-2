@@ -16,6 +16,7 @@
             @"Powerlifting" : FTO_VARIANT_POWERLIFTING,
             @"Pyramid" : FTO_VARIANT_PYRAMID,
             @"First Set Last" : FTO_VARIANT_FIRST_SET_LAST,
+            @"First Set Last Multiple Sets" : FTO_VARIANT_FIRST_SET_LAST_MULTIPLE_SETS,
             @"5/3/1 with Joker" : FTO_VARIANT_JOKER,
             @"Advanced 5/3/1" : FTO_VARIANT_ADVANCED
     };
@@ -26,6 +27,7 @@
             @"Powerlifting",
             @"Pyramid",
             @"First Set Last",
+            @"First Set Last Multiple Sets",
             @"5/3/1 with Joker",
             @"Advanced 5/3/1"
     ];
