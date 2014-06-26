@@ -256,14 +256,7 @@
 - (NSMutableArray *)deserialize:(NSArray *)serialized {
     NSMutableArray *deserialized = [@[] mutableCopy];
     for (NSString *string in serialized) {
-        CLS_LOG("Deserialize: %@", string);
-        JSONModel *model = [self deserializeObject:string];
-        if (model != nil) {
-            [deserialized addObject:model];
-        }
-        else {
-            NSLog(@"Could not deserialize: %@", string);
-        }
+        [deserialized addObject:[self deserializeObject:string]];
     }
     return deserialized;
 }
@@ -273,6 +266,10 @@
                                                                options:NSJSONReadingMutableContainers
                                                                  error:nil];
     JSONModel *model = [[[self modelClass] alloc] initWithDictionary:obj error:nil];
+    if (model == nil) {
+        CLS_LOG(@"%@ %@", [self keyNameForStore], string);
+        [NSException raise:@"Invalid model" format:@""];
+    }
     return model;
 }
 

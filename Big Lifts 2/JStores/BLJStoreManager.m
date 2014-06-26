@@ -132,7 +132,6 @@
 
                 [JFTOVariantStore instance],
                 [JSSVariantStore instance],
-                [JSSStateStore instance],
 
                 [JFTOAssistanceStore instance],
                 [JFTOBoringButBigStore instance],
@@ -148,7 +147,9 @@
                 [JFTOWorkoutStore instance],
                 [JSSWorkoutStore instance],
                 [JSJWorkoutStore instance],
-                [JSVWorkoutStore instance]
+                [JSVWorkoutStore instance],
+
+                [JSSStateStore instance]
         ];
     });
 
