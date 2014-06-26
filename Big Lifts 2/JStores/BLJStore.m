@@ -267,7 +267,7 @@
                                                                  error:nil];
     JSONModel *model = [[[self modelClass] alloc] initWithDictionary:obj error:nil];
     if (model == nil) {
-        CLS_LOG(@"%@ %@", [self keyNameForStore], string);
+        CLS_LOG(@"Could not deserialize %@ %@", [self keyNameForStore], string);
         [NSException raise:@"Invalid model" format:@""];
     }
     return model;
