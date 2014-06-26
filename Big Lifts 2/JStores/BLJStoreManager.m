@@ -103,14 +103,14 @@
         manager = [BLJStoreManager new];
         manager.allStores = @[
                 [JVersionStore instance],
+                [JCurrentProgramStore instance],
+                [JTimerStore instance],
 
                 [JSettingsStore instance],
                 [JFTOSettingsStore instance],
+
                 [JBarStore instance],
                 [JPlateStore instance],
-                [JCurrentProgramStore instance],
-
-                [JTimerStore instance],
 
                 [JLiftStore instance],
                 [JSSLiftStore instance],
@@ -141,14 +141,15 @@
                 [JFTOFullCustomWeekStore instance],
 
                 [JFTOTriumvirateStore instance],
+
+                [JFTOWorkoutStore instance],
                 [JFTOCustomAssistanceWorkoutStore instance],
                 [JFTOFullCustomAssistanceWorkoutStore instance],
 
-                [JFTOWorkoutStore instance],
-                [JSSWorkoutStore instance],
                 [JSJWorkoutStore instance],
                 [JSVWorkoutStore instance],
 
+                [JSSWorkoutStore instance],
                 [JSSStateStore instance]
         ];
     });
