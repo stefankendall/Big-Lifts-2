@@ -555,6 +555,7 @@
 		54590F84DE455E652727E21D /* FTOCustomWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900B7BC22B78ED5B7189E /* FTOCustomWorkoutViewController.m */; };
 		54590F8645C5779DAD073E4D /* 20-gear-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545907580FE81D4530CD48F3 /* 20-gear-2@2x.png */; };
 		54590F8957043B34B3FC5023 /* JFTOTriumvirateLiftStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906224A37A52C32632EAB /* JFTOTriumvirateLiftStore.m */; };
+		54590FA002DE3E68F46F0ACE /* Migrate14to15.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590701FBED7E02D7587568 /* Migrate14to15.m */; };
 		54590FA0E00384511C486717 /* JFTOFirstSetLast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459079A6A993C4CB07170AD /* JFTOFirstSetLast.m */; };
 		54590FA2B538915F35C25C48 /* SSLiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459090824C25E2117395C47 /* SSLiftViewController.m */; };
 		54590FC065732E921B010F8A /* 172-pricetag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590F9C468FB92E382B0383 /* 172-pricetag@2x.png */; };
@@ -1025,6 +1026,7 @@
 		545906F9AA0B2D9744C5CEAA /* FTOFullCustomSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOFullCustomSetCell.xib; sourceTree = "<group>"; };
 		545906FD0F008AF14DD4C8AF /* Mailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mailer.m; sourceTree = "<group>"; };
 		5459070161A5C3FA24FCA72E /* Migrate1to2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate1to2.m; sourceTree = "<group>"; };
+		54590701FBED7E02D7587568 /* Migrate14to15.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate14to15.m; sourceTree = "<group>"; };
 		5459070D04E63E34142F8010 /* highcharts-more.src.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "highcharts-more.src.js"; sourceTree = "<group>"; };
 		5459070F5106DB92898E3FC8 /* FTOBoringButBigEditViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOBoringButBigEditViewControllerTests.m; sourceTree = "<group>"; };
 		54590719733700F977B5362C /* FTOCustomWorkoutToolbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOCustomWorkoutToolbar.xib; sourceTree = "<group>"; };
@@ -1445,6 +1447,7 @@
 		54590DD92EC197609D22B010 /* map.src.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = map.src.js; sourceTree = "<group>"; };
 		54590DDBC1A2CF5C15C51941 /* FTOTriumvirateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTriumvirateCell.h; sourceTree = "<group>"; };
 		54590DDDAA5D84FF0C19425B /* Migrate9to10Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate9to10Tests.m; sourceTree = "<group>"; };
+		54590DDE389F9D1AFE7777F7 /* Migrate14to15.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate14to15.h; sourceTree = "<group>"; };
 		54590DEA1431E9F1D5477DC0 /* FTOAssistanceCopyTemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOAssistanceCopyTemplateViewController.h; sourceTree = "<group>"; };
 		54590DEE3D053C7D0F0C3E6E /* JFTOBoringButBig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBig.h; sourceTree = "<group>"; };
 		54590DEED1DC5A9D332A01AC /* FTOTriumvirateSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTriumvirateSetupViewController.m; sourceTree = "<group>"; };
@@ -3036,6 +3039,8 @@
 				54590F3A9F754354B58DE764 /* Migrate12to13.h */,
 				54590370D785BE0E1E53001D /* Migrate13to14.m */,
 				545905C7B867774F90B883D6 /* Migrate13to14.h */,
+				54590701FBED7E02D7587568 /* Migrate14to15.m */,
+				54590DDE389F9D1AFE7777F7 /* Migrate14to15.h */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -4548,6 +4553,7 @@
 				545908D9A9E553F14C9647DB /* FTOWorkoutChange.m in Sources */,
 				54590D70051A4FC9A6B07AA4 /* FTOLiftIncrementer.m in Sources */,
 				545901ABDE1791E74FFF60AE /* FTOCycleAdjustor.m in Sources */,
+				54590FA002DE3E68F46F0ACE /* Migrate14to15.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
