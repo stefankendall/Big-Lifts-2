@@ -1,3 +1,4 @@
+#import <Crashlytics/Crashlytics.h>
 #import "JModel.h"
 #import "JSONModelClassProperty.h"
 #import "BLJStore.h"
@@ -18,8 +19,8 @@
             JModel *model = value;
             [dictionary setValue:model.uuid forKeyPath:keyPath];
         }
-        if([value isKindOfClass:[NSDecimalNumber class]]){
-            if([value isEqual:[NSDecimalNumber notANumber]]){
+        if ([value isKindOfClass:[NSDecimalNumber class]]) {
+            if ([value isEqual:[NSDecimalNumber notANumber]]) {
                 [dictionary setValue:N(0) forKey:keyPath];
             }
         }
@@ -51,8 +52,9 @@
             [list addObject:associatedObject];
         }
         else {
-            NSLog(@"Loading model: %@, Could not load associated uuid: %@ for store: %@", NSStringFromClass([self class]),
-                    value, NSStringFromClass([store class]));
+            CLS_LOG(@"Loading model: %@, Could not load associated uuid: %@ for store: %@", NSStringFromClass([self class]),
+                            value, NSStringFromClass([store class]));
+            [NSException raise:@"Could not load assocation" format:@""];
         }
     }
     return list;
@@ -64,14 +66,8 @@
         return [store find:@"uuid" value:possibleUuid];
     }
     else {
-        id jsonValue = nil;
-        @try {
-            jsonValue = [super initWithDictionary:possibleUuid error:err];
-        }
-        @catch (NSException *e) {
-            NSLog(@"Could not deserialize: %@", possibleUuid);
-        }
-        return jsonValue;
+        CLS_LOG(@"Deserializing: %@", possibleUuid);
+        return [super initWithDictionary:possibleUuid error:err];
     }
 }
 
