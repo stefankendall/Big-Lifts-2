@@ -173,4 +173,9 @@
     return nil;
 }
 
+- (id)findModelForClass:(Class)klass withUuid:(id)uuid {
+    BLJStore *store = [self storeForModel:klass withUuid:uuid];
+    return [store find:@"uuid" value:uuid];
+}
+
 @end

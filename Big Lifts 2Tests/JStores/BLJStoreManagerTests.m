@@ -16,12 +16,16 @@
     JFTOLift *ftoLift = [[JFTOLiftStore instance] create];
     JSJLift *sjLift = [[JSJLiftStore instance] create];
 
-    STAssertEquals([[BLJStoreManager instance] storeForModel:JLift.class withUuid: lift.uuid], [JLiftStore instance], @"");
-    STAssertEquals([[BLJStoreManager instance] storeForModel:JLift.class withUuid: ftoLift.uuid], [JFTOLiftStore instance], @"");
-    STAssertEquals([[BLJStoreManager instance] storeForModel:JLift.class withUuid: sjLift.uuid], [JSJLiftStore instance], @"");
+    STAssertEquals([[BLJStoreManager instance] storeForModel:JLift.class withUuid:lift.uuid], [JLiftStore instance], @"");
+    STAssertEquals([[BLJStoreManager instance] storeForModel:JLift.class withUuid:ftoLift.uuid], [JFTOLiftStore instance], @"");
+    STAssertEquals([[BLJStoreManager instance] storeForModel:JLift.class withUuid:sjLift.uuid], [JSJLiftStore instance], @"");
 
     JFTOSet *ftoSet = [[JFTOSetStore instance] create];
-    STAssertEquals([[BLJStoreManager instance] storeForModel:JFTOSet.class withUuid: ftoSet.uuid], [JFTOSetStore instance], @"");
+    STAssertEquals([[BLJStoreManager instance] storeForModel:JFTOSet.class withUuid:ftoSet.uuid], [JFTOSetStore instance], @"");
+}
+
+- (void)testFindModelDoesNotCrashForNonExistentLift {
+    STAssertNil([[BLJStoreManager instance] findModelForClass:[JFTOSet class] withUuid:@"1234-5"], @"");
 }
 
 @end

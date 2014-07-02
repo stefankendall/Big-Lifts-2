@@ -62,8 +62,7 @@
 
 - (id)initWithDictionary:(id)possibleUuid error:(NSError **)err {
     if ([possibleUuid isKindOfClass:NSString.class]) {
-        BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class] withUuid:possibleUuid];
-        return [store find:@"uuid" value:possibleUuid];
+        return [[BLJStoreManager instance] findModelForClass: [self class] withUuid: possibleUuid];
     }
     else {
         CLS_LOG(@"Deserializing: %@", possibleUuid);
