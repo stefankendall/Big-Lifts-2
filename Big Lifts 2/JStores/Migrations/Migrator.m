@@ -13,7 +13,6 @@
 #import "Migrate11to12.h"
 #import "Migrate12to13.h"
 #import "Migrate13to14.h"
-#import "Migrate14to15.h"
 
 @implementation Migrator
 
@@ -33,8 +32,7 @@
                 @11 : [Migrate10to11 new],
                 @12 : [Migrate11to12 new],
                 @13 : [Migrate12to13 new],
-                @14 : [Migrate13to14 new],
-                @15 : [Migrate14to15 new]
+                @14 : [Migrate13to14 new]
         };
         for (NSNumber *versionNumber in [[migrations allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
             if ([version.version intValue] < [versionNumber intValue]) {

@@ -4,9 +4,6 @@
 #import "JSetStore.h"
 #import "JLiftStore.h"
 #import "JLift.h"
-#import "JDataHelper.h"
-#import "JFTOSetStore.h"
-#import "Migrate14to15.h"
 
 @implementation JSetTests
 
@@ -31,23 +28,6 @@
     STAssertEqualObjects(deserializedSet.reps, @5, @"");
     STAssertEqualObjects(deserializedSet.percentage, N(90), @"");
     STAssertEquals(deserializedSet.lift, lift, @"");
-}
-
-- (void)testCanDeserializeSetsWithoutMaxRepsAfterMigration {
-    NSDictionary *dictionary = @{
-            @"uuid" : @"1EDE8EA6-EB8F-4341-ABFB-90EA3605D743",
-            @"lift" : [NSNull new],
-            @"warmup" : @0,
-            @"amrap" : @0,
-            @"optional" : @0,
-            @"percentage" : N(50),
-            @"assistance" : @1,
-            @"reps" : @10
-    };
-    [JDataHelper write:[JFTOSetStore instance] values:@[dictionary]];
-    [[Migrate14to15 new] run];
-    [[JFTOSetStore instance] load];
-    STAssertEquals([[JFTOSetStore instance] count], 1, @"");
 }
 
 - (void)testHandlesNilPercentages {
