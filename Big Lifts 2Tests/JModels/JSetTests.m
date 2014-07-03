@@ -30,6 +30,18 @@
     STAssertEquals(deserializedSet.lift, lift, @"");
 }
 
+- (void)testSerializesAssociationAsNullWhenLiftIsDeleted {
+    [[JSetStore instance] empty];
+    JSet *set = [[JSetStore instance] create];
+    JLift *lift = [[JLiftStore instance] create];
+    set.lift = lift;
+    [[JLiftStore instance] remove:lift];
+
+    NSArray *serialized = [[JSetStore instance] serialize];
+    JSet *deserialized = (JSet *) [[JSetStore instance] deserializeObject:serialized[0]];
+    STAssertNil(deserialized.lift, @"");
+}
+
 - (void)testHandlesNilPercentages {
     JSet *set = [[JSetStore instance] create];
     set.percentage = nil;

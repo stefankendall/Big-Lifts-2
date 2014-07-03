@@ -16,8 +16,7 @@
             continue;
         }
         if ([value isKindOfClass:[JModel class]]) {
-            JModel *model = value;
-            [dictionary setValue:model.uuid forKeyPath:keyPath];
+            [dictionary setValue:[self serializeModel: value] forKeyPath:keyPath];
         }
         if ([value isKindOfClass:[NSDecimalNumber class]]) {
             if ([value isEqual:[NSDecimalNumber notANumber]]) {
@@ -29,7 +28,7 @@
             NSMutableArray *newArray = [@[] mutableCopy];
             for (id object in array) {
                 if ([object isKindOfClass:JModel.class]) {
-                    [newArray addObject:[object uuid]];
+                    [newArray addObject:[self serializeModel: value]];
                 }
                 else {
                     [newArray addObject:object];
@@ -40,6 +39,14 @@
     }
 
     return [dictionary copy];
+}
+
+- (id)serializeModel:(id)value {
+    NSString *uuid = [value uuid];
+    if (![[BLJStoreManager instance] findModelForClass:[value class] withUuid:uuid]) {
+        return nil;
+    }
+    return uuid;
 }
 
 + (NSMutableArray *)arrayOfModelsFromDictionaries:(NSArray *)array error:(NSError **)err {
