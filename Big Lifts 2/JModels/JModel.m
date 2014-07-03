@@ -28,7 +28,7 @@
             NSMutableArray *newArray = [@[] mutableCopy];
             for (id object in array) {
                 if ([object isKindOfClass:JModel.class]) {
-                    [newArray addObject:[self serializeModel: value]];
+                    [newArray addObject:[self serializeModel: object]];
                 }
                 else {
                     [newArray addObject:object];
