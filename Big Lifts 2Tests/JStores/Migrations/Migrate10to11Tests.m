@@ -1,5 +1,4 @@
 #import "Migrate10to11Tests.h"
-#import "JFTOSettingsHelper.h"
 #import "Migrate10to11.h"
 #import "JSettings.h"
 #import "JSettingsHelper.h"
