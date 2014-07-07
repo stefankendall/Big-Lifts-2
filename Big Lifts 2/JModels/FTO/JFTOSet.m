@@ -4,13 +4,14 @@
 #import "JBarStore.h"
 #import "JFTOSettings.h"
 #import "JFTOSettingsStore.h"
+#import "DecimalNumberHandlers.h"
 
 @implementation JFTOSet
 
 - (NSDecimalNumber *)effectiveWeight {
     JFTOSettings *settings = [[JFTOSettingsStore instance] first];
     NSDecimalNumber *effectiveWeight = [[[super effectiveWeight] decimalNumberByMultiplyingBy:settings.trainingMax]
-            decimalNumberByDividingBy:N(100)];
+            decimalNumberByDividingBy:N(100) withBehavior:DecimalNumberHandlers.noRaise];
 
     if (self.lift.usesBar) {
         JBar *bar = [[JBarStore instance] first];
