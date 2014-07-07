@@ -294,15 +294,6 @@ static JSONKeyMapper* globalKeyMapper = nil;
                 //initialize the property's model, store it
                 JSONModelError* initErr = nil;
                 id value = [[property.type alloc] initWithDictionary: jsonValue error:&initErr];
-
-                if (!value) {
-					// Propagate the error, including the property name as the key-path component
-					if((err != nil) && (initErr != nil))
-					{
-						*err = [initErr errorByPrependingKeyPathComponent:property.name];
-					}
-                    return nil;
-                }
                 [self setValue:value forKey: property.name];
 
                 //for clarity, does the same without continue
