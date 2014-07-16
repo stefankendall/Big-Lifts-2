@@ -16,12 +16,30 @@
 #import "JFTOPlan.h"
 #import "JFTOSettings.h"
 #import "JFTOFullCustomAssistanceWorkoutStore.h"
+#import "JFTOTriumvirateLiftStore.h"
 
 @implementation JFTOWorkoutStore
 
 - (Class)modelClass {
     return JFTOWorkout.class;
 }
+
+- (void)onLoad {
+    [self fixTriumvirateSets];
+}
+
+//delete after a while. This migration would have been painful
+- (void)fixTriumvirateSets {
+    NSArray *triumvirateLifts = [[JFTOTriumvirateLiftStore instance] findAll];
+    for (JFTOWorkout *jftoWorkout in [[JFTOWorkoutStore instance] findAll]) {
+        for (JSet *set in jftoWorkout.workout.sets) {
+            if ([triumvirateLifts containsObject:set.lift]) {
+                set.assistance = YES;
+            }
+        }
+    }
+}
+
 
 - (void)setupDefaults {
     [self switchTemplate];
@@ -125,7 +143,7 @@
     for (int week = 1; week <= weeks; week++) {
         for (int i = 0; i < [lifts count]; i++) {
             JFTOLift *lift = lifts[(NSUInteger) i];
-            [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:(week+3) order:[lift.order intValue]];
+            [self createWithWorkout:[self createWorkoutForLift:lift week:week] week:(week + 3) order:[lift.order intValue]];
         }
     }
 }
