@@ -9,7 +9,7 @@
 
 - (void)setupDefaults {
     JVersion *version = [self create];
-    version.version = @15;
+    version.version = @16;
 }
 
 @end

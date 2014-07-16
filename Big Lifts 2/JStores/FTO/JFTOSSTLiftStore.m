@@ -10,6 +10,11 @@
     return JFTOSSTLift.class;
 }
 
+- (void)setDefaultsForObject:(id)object {
+    JFTOSSTLift *lift = object;
+    lift.usesBar = YES;
+}
+
 - (void)onLoad {
     [super onLoad];
     [self adjustSstLiftsToMainLifts];
