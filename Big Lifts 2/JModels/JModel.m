@@ -58,11 +58,6 @@
         if (associatedObject) {
             [list addObject:associatedObject];
         }
-        else {
-            CLS_LOG(@"Loading model: %@, Could not load associated uuid: %@ for store: %@", NSStringFromClass([self class]),
-                            value, NSStringFromClass([store class]));
-            [NSException raise:@"Could not load assocation" format:@""];
-        }
     }
     return list;
 }
