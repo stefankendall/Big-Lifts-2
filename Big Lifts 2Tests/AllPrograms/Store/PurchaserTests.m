@@ -6,11 +6,11 @@
 
 - (void)testHasPurchasedAnything {
     [[IAPAdapter instance] addPurchase:IAP_FTO_CUSTOM];
-    STAssertTrue([[Purchaser new] hasPurchasedAnything], @"");
+    STAssertTrue([Purchaser hasPurchasedAnything], @"");
 }
 
 - (void)testHasPurchasedAnythingNoPurchases {
-    STAssertFalse([[Purchaser new] hasPurchasedAnything], @"");
+    STAssertFalse([Purchaser hasPurchasedAnything], @"");
 }
 
 @end
