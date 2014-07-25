@@ -562,6 +562,7 @@
 		54590F8957043B34B3FC5023 /* JFTOTriumvirateLiftStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906224A37A52C32632EAB /* JFTOTriumvirateLiftStore.m */; };
 		54590FA0E00384511C486717 /* JFTOFirstSetLast.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459079A6A993C4CB07170AD /* JFTOFirstSetLast.m */; };
 		54590FA2B538915F35C25C48 /* SSLiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459090824C25E2117395C47 /* SSLiftViewController.m */; };
+		54590FB58EC2D232B77CE9EC /* EverythingDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D2511CD9B575B9CFAC8 /* EverythingDialog.m */; };
 		54590FC065732E921B010F8A /* 172-pricetag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590F9C468FB92E382B0383 /* 172-pricetag@2x.png */; };
 		54590FC1EAF3576C39CF0921 /* SetCellWithPlates.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590563759BB77F8C1A750A /* SetCellWithPlates.m */; };
 		54590FC7C341ACDE25F89F8A /* SJLiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459038B3A5563D5185EFBD2 /* SJLiftViewController.m */; };
@@ -1419,6 +1420,7 @@
 		54590D18421931A8264469EF /* SSLiftSummaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLiftSummaryCell.h; sourceTree = "<group>"; };
 		54590D1CD192A85DC444859F /* JSVLiftStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSVLiftStore.h; sourceTree = "<group>"; };
 		54590D22AFA137222FB1D498 /* FTOAddLiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOAddLiftViewController.h; sourceTree = "<group>"; };
+		54590D2511CD9B575B9CFAC8 /* EverythingDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EverythingDialog.m; sourceTree = "<group>"; };
 		54590D27FAE6681D40454696 /* SJSetWeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJSetWeightViewController.h; sourceTree = "<group>"; };
 		54590D2B3A8272EFAAC9EB16 /* JSSVariant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSVariant.h; sourceTree = "<group>"; };
 		54590D37C9CE9C97FB9F2CC5 /* SSEditSetForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSEditSetForm.m; sourceTree = "<group>"; };
@@ -1458,6 +1460,7 @@
 		54590DD92EC197609D22B010 /* map.src.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = map.src.js; sourceTree = "<group>"; };
 		54590DDBC1A2CF5C15C51941 /* FTOTriumvirateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOTriumvirateCell.h; sourceTree = "<group>"; };
 		54590DDDAA5D84FF0C19425B /* Migrate9to10Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate9to10Tests.m; sourceTree = "<group>"; };
+		54590DE4E7E100E65E7F7417 /* EverythingDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EverythingDialog.h; sourceTree = "<group>"; };
 		54590DEA1431E9F1D5477DC0 /* FTOAssistanceCopyTemplateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOAssistanceCopyTemplateViewController.h; sourceTree = "<group>"; };
 		54590DEE3D053C7D0F0C3E6E /* JFTOBoringButBig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOBoringButBig.h; sourceTree = "<group>"; };
 		54590DEED1DC5A9D332A01AC /* FTOTriumvirateSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOTriumvirateSetupViewController.m; sourceTree = "<group>"; };
@@ -2641,6 +2644,7 @@
 				54590EDA218A5DB5797FDE10 /* BLTableViewController.m */,
 				545901E562D989E4F573CA3F /* BLTableViewController.h */,
 				545901160CBEA46D5BB5615A /* Sharing */,
+				54590E64C194F43E4E81733E /* Dialog */,
 			);
 			path = AllPrograms;
 			sourceTree = "<group>";
@@ -3586,6 +3590,15 @@
 				54590FB2C4116F8F5BA67C7A /* Workout */,
 			);
 			path = Lift;
+			sourceTree = "<group>";
+		};
+		54590E64C194F43E4E81733E /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				54590D2511CD9B575B9CFAC8 /* EverythingDialog.m */,
+				54590DE4E7E100E65E7F7417 /* EverythingDialog.h */,
+			);
+			path = Dialog;
 			sourceTree = "<group>";
 		};
 		54590E8741CFA56782CF9815 /* Individual */ = {
@@ -4578,6 +4591,7 @@
 				545901ABDE1791E74FFF60AE /* FTOCycleAdjustor.m in Sources */,
 				54590C05852ABC9C636D31E6 /* Migrate14to15.m in Sources */,
 				5459040E45E5D70D591F25BD /* Migrate15to16.m in Sources */,
+				54590FB58EC2D232B77CE9EC /* EverythingDialog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

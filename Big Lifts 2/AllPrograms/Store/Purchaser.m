@@ -84,7 +84,7 @@ NSString *const IAP_FTO_FULL_CUSTOM_ASSISTANCE = @"ftoFullCustomAssistance";
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (BOOL)hasPurchasedAnything {
++ (BOOL)hasPurchasedAnything {
     return [[[SKProductStore instance] allPurchaseIds] detect:^BOOL(NSString *purchaseId) {
         return [[IAPAdapter instance] hasPurchased:purchaseId];
     }] != nil;
