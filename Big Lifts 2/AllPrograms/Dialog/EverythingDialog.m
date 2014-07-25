@@ -5,19 +5,12 @@
 - (void)show {
     UIAlertView *alert = [[UIAlertView alloc]
             initWithTitle:@"Unlock Everything!"
-                  message:@"There is now a single purchase available to unlock all features. Forever."
+                  message:@"There is now a single purchase available to unlock all features. Forever. Available in Settings."
                  delegate:self
         cancelButtonTitle:nil
         otherButtonTitles:nil];
-    self.noButtonIndex = [alert addButtonWithTitle:@"No"];
-    self.yesButtonIndex = [alert addButtonWithTitle:@"Yes"];
+    [alert addButtonWithTitle:@"Okay"];
     [alert show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == self.yesButtonIndex) {
-
-    }
 }
 
 @end
