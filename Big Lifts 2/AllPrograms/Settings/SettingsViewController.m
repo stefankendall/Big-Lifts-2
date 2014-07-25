@@ -12,6 +12,8 @@
 #import "FTOCustomAssistanceEditLiftViewController.h"
 #import "DecimalNumberHelper.h"
 #import "JBar.h"
+#import "UIViewController+PurchaseOverlay.h"
+#import "Purchaser.h"
 
 @interface SettingsViewController ()
 @property(nonatomic, strong) NSArray *roundingOptions;
@@ -28,6 +30,10 @@
     [self setupRoundingType];
     [self.barWeightField setDelegate:self];
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.barWeightField];
+
+    self.iapCells = @{
+            IAP_EVERYTHING : self.everythingCell
+    };
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -35,6 +41,20 @@
     [self reloadData];
 
     [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
+    [self enableDisableIap];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(enableDisableIap)
+                                                 name:IAP_PURCHASED_NOTIFICATION
+                                               object:nil];
+}
+
+- (void)enableDisableIap {
+    if ([[IAPAdapter instance] hasPurchased:IAP_EVERYTHING]) {
+        [self enable:self.everythingCell];
+    }
+    else {
+        [self disable:IAP_EVERYTHING view:self.everythingCell];
+    }
 }
 
 - (void)reloadData {
@@ -123,6 +143,8 @@
         [self resetAllData];
     } else if ([cell viewWithTag:2]) {
         [self restorePurchases];
+    } else if ([cell viewWithTag:3]) {
+        [self purchaseFromCell:self.everythingCell];
     }
 }
 

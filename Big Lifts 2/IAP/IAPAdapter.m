@@ -1,6 +1,6 @@
 #import "IAPAdapter.h"
-#import "JSettingsStore.h"
 #import "JSettings.h"
+#import "Purchaser.h"
 
 @implementation IAPAdapter
 
@@ -19,15 +19,17 @@
 }
 
 - (BOOL)hasPurchased:(NSString *)productId {
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:productId]) {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:productId]
+            || [[NSUserDefaults standardUserDefaults] boolForKey:IAP_EVERYTHING]) {
         return YES;
     }
 
+
     if ([self.testPurchases count] == 0) {
-        return [super hasPurchased:productId];
+        return [super hasPurchased:IAP_EVERYTHING] || [super hasPurchased:productId];
     }
     else {
-        return [self.testPurchases containsObject:productId];
+        return [self.testPurchases containsObject:IAP_EVERYTHING] || [self.testPurchases containsObject:productId];
     }
 }
 

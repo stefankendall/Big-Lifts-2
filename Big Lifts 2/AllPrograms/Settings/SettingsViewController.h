@@ -19,6 +19,8 @@
 @property(strong, nonatomic) UIPickerView *roundingTypePicker;
 
 @property(weak, nonatomic) IBOutlet UISwitch *iCloudEnabled;
+@property (weak, nonatomic) IBOutlet UITableViewCell *everythingCell;
 
 @property(nonatomic, strong) NSArray *roundingText;
+@property(nonatomic, strong) NSDictionary *iapCells;
 @end
