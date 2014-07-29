@@ -21,4 +21,8 @@
     STAssertEquals(workout.sets[3], set2, @"");
 }
 
+- (void)testWorkoutsAreRemovedWhenAssociatedLiftsAreRemoved {
+
+}
+
 @end

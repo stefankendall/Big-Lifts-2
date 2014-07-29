@@ -44,7 +44,7 @@
 - (id)serializeModel:(id)value {
     NSString *uuid = [value uuid];
     if (![[BLJStoreManager instance] findModelForClass:[value class] withUuid:uuid]) {
-        return nil;
+        [NSException raise:@"Bad association" format:@""];
     }
     return uuid;
 }
