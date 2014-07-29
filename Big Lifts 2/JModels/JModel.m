@@ -4,7 +4,19 @@
 #import "BLJStore.h"
 #import "BLJStoreManager.h"
 
+int const NOT_DEAD = 1;
+int const DEAD = 0;
+
 @implementation JModel
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.dead = [NSNumber numberWithInt:NOT_DEAD];
+    }
+
+    return self;
+}
 
 - (NSDictionary *)toDictionary {
     NSMutableDictionary *dictionary = [[super toDictionary] mutableCopy];
@@ -16,7 +28,7 @@
             continue;
         }
         if ([value isKindOfClass:[JModel class]]) {
-            [dictionary setValue:[self serializeModel: value] forKeyPath:keyPath];
+            [dictionary setValue:[self serializeModel:value] forKeyPath:keyPath];
         }
         if ([value isKindOfClass:[NSDecimalNumber class]]) {
             if ([value isEqual:[NSDecimalNumber notANumber]]) {
@@ -28,7 +40,7 @@
             NSMutableArray *newArray = [@[] mutableCopy];
             for (id object in array) {
                 if ([object isKindOfClass:JModel.class]) {
-                    [newArray addObject:[self serializeModel: object]];
+                    [newArray addObject:[self serializeModel:object]];
                 }
                 else {
                     [newArray addObject:object];
@@ -64,7 +76,7 @@
 
 - (id)initWithDictionary:(id)possibleUuid error:(NSError **)err {
     if ([possibleUuid isKindOfClass:NSString.class]) {
-        return [[BLJStoreManager instance] findModelForClass: [self class] withUuid: possibleUuid];
+        return [[BLJStoreManager instance] findModelForClass:[self class] withUuid:possibleUuid];
     }
     else {
         CLS_LOG(@"Deserializing: %@", possibleUuid);

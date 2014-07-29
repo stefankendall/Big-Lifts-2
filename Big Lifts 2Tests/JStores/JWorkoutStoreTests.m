@@ -3,6 +3,7 @@
 #import "JWorkoutStore.h"
 #import "JWorkout.h"
 #import "JSetStore.h"
+#import "JLiftStore.h"
 
 @implementation JWorkoutStoreTests
 
@@ -22,7 +23,16 @@
 }
 
 - (void)testWorkoutsAreRemovedWhenAssociatedLiftsAreRemoved {
+    JWorkout *workout = [[JWorkoutStore instance] create];
+    JSet *set = [[JSetStore instance] create];
+    JLift *lift = [[JLiftStore instance] create];
+    set.lift = lift;
+    [workout.sets addObject:set];
+    [[JLiftStore instance] remove:lift];
 
+    STAssertTrue([[[JWorkoutStore instance] findAll] containsObject:workout], @"");
+    STAssertFalse([[[JSetStore instance] findAll] containsObject:set], @"");
+    STAssertEquals([workout.sets count], (NSUInteger)0, @"");
 }
 
 @end
