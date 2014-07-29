@@ -25,7 +25,21 @@
 }
 
 - (void)onLoad {
+    [self removeDeadWorkouts];
     [self fixTriumvirateSets];
+}
+
+//delete after a while.
+- (void)removeDeadWorkouts {
+    NSMutableArray *dead = [@[] mutableCopy];
+    for (JFTOWorkout *jftoWorkout in [[JFTOWorkoutStore instance] findAll]) {
+        if (jftoWorkout.workout == nil) {
+            [dead addObject:jftoWorkout];
+        }
+    }
+    for (int i = 0; i < [dead count]; i++) {
+        [self remove:[dead objectAtIndex:i]];
+    }
 }
 
 //delete after a while. This migration would have been painful
