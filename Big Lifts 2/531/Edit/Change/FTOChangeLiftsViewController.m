@@ -100,7 +100,7 @@
 - (IBAction)arrangeButtonTapped:(id)sender {
     if ([self.tableView isEditing]) {
         [self.tableView setEditing:NO];
-        [self.arrangeButton setTitle:@"Arrange"];
+        [self.arrangeButton setTitle:@"Edit"];
     }
     else {
         [self.tableView setEditing:YES];
