@@ -25,8 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self registerCellNib: FTOWorkoutCell.class];
-    [self registerCellNib: FTOLiftWorkoutToolbar.class];
+    [self registerCellNib:FTOWorkoutCell.class];
+    [self registerCellNib:FTOLiftWorkoutToolbar.class];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -62,15 +62,11 @@
 }
 
 - (BOOL)hasWarmup {
-    return [self.ftoWorkout.workout.sets detect:^BOOL(JSet *set) {
-        return set.warmup;
-    }] != nil;
+    return [[self.ftoWorkout.workout warmupSets] count] > 0;
 }
 
 - (BOOL)hasAssistance {
-    return [self.ftoWorkout.workout.sets detect:^BOOL(JSet *set) {
-        return set.assistance;
-    }] != nil;
+    return [[self.ftoWorkout.workout assistanceSets] count] > 0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -261,7 +257,7 @@
         if (reps != nil) {
             setLog.reps = reps;
         }
-        if (weight != nil ) {
+        if (weight != nil) {
             setLog.weight = weight;
         }
 
