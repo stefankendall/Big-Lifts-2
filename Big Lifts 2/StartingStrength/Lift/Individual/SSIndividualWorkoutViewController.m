@@ -6,8 +6,6 @@
 #import "JWorkoutLog.h"
 #import "JSSWorkoutSTore.h"
 #import "JSSStateStore.h"
-#import "IAPAdapter.h"
-#import "Purchaser.h"
 #import "SetCellWithPlates.h"
 #import "JSetLogStore.h"
 #import "JSetLog.h"
@@ -20,6 +18,7 @@
 #import "JLift.h"
 #import "JSSLift.h"
 #import "RestShareToolbar.h"
+#import "SetClassGenerator.h"
 
 @interface SSIndividualWorkoutViewController ()
 @property(nonatomic, strong) NSMutableArray *loggedWorkouts;
@@ -136,7 +135,7 @@
         return [self restToolbar:tableView];
     }
     else {
-        Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
+        Class setClass = [SetClassGenerator generate];
         SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
         JSet *set = [self setForIndexPath:indexPath];
         SetChange *data = self.loggedSets[[NSNumber numberWithInt:indexPath.row]];

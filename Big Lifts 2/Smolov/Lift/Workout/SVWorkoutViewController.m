@@ -18,6 +18,7 @@
 #import "JSetLogStore.h"
 #import "JSet.h"
 #import "WeightRounder.h"
+#import "SetClassGenerator.h"
 
 @implementation SVWorkoutViewController
 
@@ -73,7 +74,7 @@
         return cell;
     }
     else {
-        Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
+        Class setClass = [SetClassGenerator generate];
         SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
         if (!cell) {
             cell = [setClass create];

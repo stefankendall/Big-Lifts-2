@@ -1,8 +1,6 @@
 #import "FTOWorkoutCell.h"
 #import "JSet.h"
-#import "SetCellWithPlates.h"
-#import "Purchaser.h"
-#import "IAPAdapter.h"
+#import "SetClassGenerator.h"
 
 @implementation FTOWorkoutCell
 
@@ -17,7 +15,7 @@
 }
 
 - (void)addSetCell {
-    Class setClass = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SetCellWithPlates.class : SetCell.class;
+    Class setClass = [SetClassGenerator generate];
     self.setCell = [setClass create];
     UIView *contentView = self.setCell.contentView;
     [self addSubview:contentView];
@@ -28,7 +26,7 @@
 }
 
 - (void)setSet:(JSet *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight {
-    [self.setCell setSet:set withEnteredReps:enteredReps withEnteredWeight: weight];
+    [self.setCell setSet:set withEnteredReps:enteredReps withEnteredWeight:weight];
 }
 
 @end

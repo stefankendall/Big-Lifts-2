@@ -17,6 +17,7 @@
 #import "JSetLogStore.h"
 #import "JWorkout.h"
 #import "DecimalNumberHandlers.h"
+#import "SetClassGenerator.h"
 
 @interface SJIndividualLiftViewController ()
 @property(nonatomic, strong) NSDecimalNumber *liftedWeight;
@@ -81,10 +82,10 @@
         return [self restToolbar:tableView];
     }
     else {
-        Class class = [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING] ? SJSetCellWithPlates.class : SJSetCell.class;
-        SJSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(class)];
+        Class klass = [SetClassGenerator shouldUseBarLoading] ? SJSetCellWithPlates.class : SJSetCell.class;
+        SJSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(klass)];
         if (!cell) {
-            cell = [class create];
+            cell = [klass create];
         }
         [cell setSjWorkout:self.sjWorkout withSet:self.sjWorkout.workout.sets[(NSUInteger) [indexPath row]] withEnteredWeight:self.liftedWeight];
         return cell;

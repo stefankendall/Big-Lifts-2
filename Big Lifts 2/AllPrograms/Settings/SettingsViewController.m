@@ -48,6 +48,15 @@
                                                object:nil];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.barLoadingToggleCell setHidden:![self barLoadingShouldAppear]];
+}
+
+- (BOOL)barLoadingShouldAppear {
+    return [[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING];
+}
+
 - (void)enableDisableIap {
     if ([[IAPAdapter instance] hasPurchased:IAP_EVERYTHING]) {
         [self enable:self.everythingCell];
@@ -212,6 +221,15 @@
         [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
     }
 }
+
+const int BAR_LOADING_TOGGLE_ROW = 2;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == BAR_LOADING_TOGGLE_ROW && ![self barLoadingShouldAppear]) {
+        return 0;
+    }
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+}
+
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSDecimalNumber *barWeight = [DecimalNumberHelper nanTo0:

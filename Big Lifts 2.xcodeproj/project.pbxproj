@@ -446,6 +446,7 @@
 		54590C36EDAD44DA2F9586AB /* JFTOFullNoneAssistanceCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E90FB81FEFD6A598DB8 /* JFTOFullNoneAssistanceCopy.m */; };
 		54590C37B1137766B05BE830 /* FTOBoringButBigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590895392DE88836AA5121 /* FTOBoringButBigViewController.m */; };
 		54590C3DBBE91702570A764C /* FTOCustomAssistanceWorkoutViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459016769AF8ADD51C801A8 /* FTOCustomAssistanceWorkoutViewControllerTests.m */; };
+		54590C405FDBA62F8C0BD74F /* SetClassGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904303D6B20090321EDA6 /* SetClassGenerator.m */; };
 		54590C4201D1955718360309 /* JFTOWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590448E145989D76D94170 /* JFTOWorkout.m */; };
 		54590C4E3EA946D453DC07E5 /* JWorkoutStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590225F80D7D01FFFB1F99 /* JWorkoutStoreTests.m */; };
 		54590C6AB08B0AAA62C858D8 /* JPlateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459072DDD32B43ADF778110 /* JPlateStore.m */; };
@@ -868,6 +869,7 @@
 		5459042CD385F6E5F549221F /* JFTOCustomWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomWorkoutStoreTests.m; sourceTree = "<group>"; };
 		5459042D14A403E22A57E787 /* FTOWorkoutCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutCellTests.m; sourceTree = "<group>"; };
 		5459042D4E11EBFD3C085C07 /* FTOCustomAssistanceEditSetViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomAssistanceEditSetViewControllerTests.h; sourceTree = "<group>"; };
+		545904303D6B20090321EDA6 /* SetClassGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetClassGenerator.m; sourceTree = "<group>"; };
 		54590435454FCAB65FA08F94 /* JSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSettings.m; sourceTree = "<group>"; };
 		54590439B6DBCDFB82F1DADC /* TextViewInputAccessoryBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewInputAccessoryBuilder.m; sourceTree = "<group>"; };
 		5459043A96172C1857719464 /* JLift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLift.m; sourceTree = "<group>"; };
@@ -1029,6 +1031,7 @@
 		545906C0B00B7D1FCC367D93 /* BLViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLViewDeckController.h; sourceTree = "<group>"; };
 		545906C4391AB6F268FA79CF /* FTOLogExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOLogExporter.m; sourceTree = "<group>"; };
 		545906C58FCD0F78A3DE72D4 /* JSVWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSVWorkoutStoreTests.m; sourceTree = "<group>"; };
+		545906D31505A0550B13EC07 /* SetClassGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetClassGenerator.h; sourceTree = "<group>"; };
 		545906D7DB4FB94D9BFDDDDC /* SJSetCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJSetCellTests.m; sourceTree = "<group>"; };
 		545906DE5600289711E6BC69 /* Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debug.m; sourceTree = "<group>"; };
 		545906DE5AA181F4CC92FF1A /* FTOLogGraphTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLogGraphTransformer.h; sourceTree = "<group>"; };
@@ -2653,6 +2656,8 @@
 				545901E562D989E4F573CA3F /* BLTableViewController.h */,
 				545901160CBEA46D5BB5615A /* Sharing */,
 				54590E64C194F43E4E81733E /* Dialog */,
+				545904303D6B20090321EDA6 /* SetClassGenerator.m */,
+				545906D31505A0550B13EC07 /* SetClassGenerator.h */,
 			);
 			path = AllPrograms;
 			sourceTree = "<group>";
@@ -4604,6 +4609,7 @@
 				5459040E45E5D70D591F25BD /* Migrate15to16.m in Sources */,
 				54590FB58EC2D232B77CE9EC /* EverythingDialog.m in Sources */,
 				54590ECB8A4852EA7F6F60EA /* Migrate16to17.m in Sources */,
+				54590C405FDBA62F8C0BD74F /* SetClassGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
