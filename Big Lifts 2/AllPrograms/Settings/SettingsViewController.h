@@ -11,6 +11,7 @@
 
 - (IBAction)keepScreenOnChanged:(id)sender;
 @property (weak, nonatomic) IBOutlet PaddingTextField *barWeightField;
+@property (weak, nonatomic) IBOutlet UISwitch *barLoadingEnabledSwitch;
 @property(weak, nonatomic) IBOutlet PaddingTextField *roundToField;
 @property(weak, nonatomic) IBOutlet PaddingTextField *roundingTypeField;
 @property(weak, nonatomic) IBOutlet UISwitch *keepScreenOnSwitch;
@@ -22,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *everythingCell;
 
 @property(nonatomic, strong) NSArray *roundingText;
+@property (weak, nonatomic) IBOutlet UIView *barLoadingToggleCell;
 @property(nonatomic, strong) NSDictionary *iapCells;
 @end

@@ -20,6 +20,7 @@
     settings.roundingFormula = (NSString *) ROUNDING_FORMULA_EPLEY;
     settings.roundingType = (NSString *) ROUNDING_TYPE_NORMAL;
     settings.isMale = YES;
+    settings.barLoadingEnabled = YES;
 }
 
 - (void)adjustForKg {

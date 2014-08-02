@@ -78,6 +78,7 @@
 
     [self.keepScreenOnSwitch setOn:[[[JSettingsStore instance] first] screenAlwaysOn]];
     [self.barWeightField setText:[NSString stringWithFormat:@"%@", [[[JBarStore instance] first] weight]]];
+    [self.barLoadingEnabledSwitch setOn:[[[JSettingsStore instance] first] barLoadingEnabled]];
 }
 
 - (IBAction)unitsChanged:(id)sender {
@@ -85,6 +86,10 @@
     NSArray *unitsMapping = @[@"lbs", @"kg"];
     [[[JSettingsStore instance] first] setUnits:unitsMapping[(NSUInteger) [unitsControl selectedSegmentIndex]]];
     [self reloadData];
+}
+
+- (IBAction)barLoadingEnabledChanged:(id)sender {
+    [[[JSettingsStore instance] first] setBarLoadingEnabled:[self.barLoadingEnabledSwitch isOn]];
 }
 
 - (IBAction)keepScreenOnChanged:(id)sender {
