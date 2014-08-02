@@ -52,6 +52,8 @@
 
 - (void)load;
 
+- (void)loadDataFromKey:(NSString *)key;
+
 - (NSString *)keyNameForStore;
 
 @property(nonatomic, strong) NSMutableArray *data;

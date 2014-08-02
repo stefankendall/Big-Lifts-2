@@ -232,8 +232,13 @@
 }
 
 - (void)load {
-    NSUbiquitousKeyValueStore *keyValueStore = [BLKeyValueStore store];
-    NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
+    NSString *key = [self keyNameForStore];
+    [self loadDataFromKey: key];
+    [self onLoad];
+}
+
+- (void)loadDataFromKey:(NSString *)key {
+    NSArray *serializedData = [[BLKeyValueStore store] arrayForKey:key];
     if (serializedData) {
         self.data = [self deserialize:serializedData];
     }
@@ -245,7 +250,6 @@
         [self setupDefaults];
     }
     [self buildUuidCache];
-    [self onLoad];
 }
 
 - (void)buildUuidCache {
