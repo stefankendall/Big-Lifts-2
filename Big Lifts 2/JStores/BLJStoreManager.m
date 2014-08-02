@@ -58,8 +58,15 @@
 }
 
 - (void)syncStores {
+    [self testSerializeForErrors];
     [self writeStores];
     [[BLKeyValueStore store] synchronize];
+}
+
+- (void)testSerializeForErrors {
+    for (BLJStore *store in self.allStores) {
+        [store serialize]; //any exceptions will get logged in crashlytics and prevent stores from being saved inconsistently
+    }
 }
 
 - (void)writeStores {
