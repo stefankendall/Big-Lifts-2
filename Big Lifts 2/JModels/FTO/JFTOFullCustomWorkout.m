@@ -1,4 +1,6 @@
 #import "JFTOFullCustomWorkout.h"
+#import "JFTOFullCustomWorkoutStore.h"
+#import "JWorkoutStore.h"
 
 @implementation JFTOFullCustomWorkout
 

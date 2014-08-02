@@ -7,7 +7,7 @@
 @interface JFTOFullCustomWorkout : JModel
 
 @property(nonatomic) JFTOLift *lift;
-@property(nonatomic) JWorkout *workout;
+@property(nonatomic) JWorkout<Optional> *workout;
 @property(nonatomic) NSNumber *order;
 
 @end

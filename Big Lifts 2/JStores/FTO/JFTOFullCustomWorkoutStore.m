@@ -17,4 +17,18 @@
 - (void)setupDefaults {
 }
 
+- (void)onLoad {
+    [self fixNilWorkouts];
+}
+
+//delete after a while.
+- (void)fixNilWorkouts {
+    NSMutableArray *dead = [@[] mutableCopy];
+    for (JFTOFullCustomWorkout *fullCustomWorkout in [[JFTOFullCustomWorkoutStore instance] findAll]) {
+        if (fullCustomWorkout.workout == nil) {
+            fullCustomWorkout.workout = [[JWorkoutStore instance] create];
+        }
+    }
+}
+
 @end
