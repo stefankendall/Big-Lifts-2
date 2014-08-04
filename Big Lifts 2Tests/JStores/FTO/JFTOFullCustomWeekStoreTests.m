@@ -2,6 +2,11 @@
 #import "JFTOFullCustomWeekStore.h"
 #import "JFTOFullCustomWeek.h"
 #import "JFTOFullCustomWorkoutStore.h"
+#import "JFTOWorkoutStore.h"
+#import "JFTOVariantStore.h"
+#import "JFTOVariant.h"
+#import "JFTOWorkout.h"
+#import "JWorkout.h"
 
 @implementation JFTOFullCustomWeekStoreTests
 
@@ -39,6 +44,23 @@
 
     STAssertEquals([[JFTOFullCustomWeekStore instance] findAll][0], week2, @"");
     STAssertEquals([[JFTOFullCustomWeekStore instance] findAll][1], week1, @"");
+}
+
+- (void)testDeleting531WeekDoesNotCreateEmptyDeloadWorkouts {
+    [[JFTOFullCustomWeekStore instance] removeAtIndex:2];
+    [[JFTOVariantStore instance] changeTo:FTO_VARIANT_FULL_CUSTOM];
+
+    STAssertEquals([[JFTOWorkoutStore instance] count], 12, @"");
+
+    NSArray *deloadWeek = [[JFTOWorkoutStore instance] findAllWhere:@"week" value:@3];
+    STAssertEquals((int) [deloadWeek count], 4, @"");
+    JFTOWorkout *firstWorkoutInDeload = [[JFTOWorkoutStore instance] first];
+    STAssertEquals((int) firstWorkoutInDeload.workout.sets.count, 6, @"");
+}
+
+- (void)testRemovingAWeekRestitchesWeekValues {
+    [[JFTOFullCustomWeekStore instance] removeAtIndex:2];
+    STAssertNotNil([[JFTOFullCustomWeekStore instance] find:@"week" value:@3], @"");
 }
 
 @end

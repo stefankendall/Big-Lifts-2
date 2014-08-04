@@ -100,6 +100,17 @@
     }
 }
 
+- (void)remove:(id)object {
+    [super remove:object];
+    [self rebuildWeekValues];
+}
+
+- (void)rebuildWeekValues {
+    int week = 1;
+    for (JFTOFullCustomWeek *customWeek in [[JFTOFullCustomWeekStore instance] findAll]) {
+        customWeek.week = @(week++);
+    }
+}
 
 - (JFTOFullCustomWeek *)weekContaining:(JFTOFullCustomWorkout *)workout {
     return [[self findAll] detect:^BOOL(JFTOFullCustomWeek *week) {
