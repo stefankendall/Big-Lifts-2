@@ -28,7 +28,6 @@
     NSArray *weekData = weeksToData[[NSNumber numberWithInt:week]];
     JFTOWorkout *ftoWorkout = [self findWorkoutWithLift:lift week:week];
     JFTOSSTLift *sstLift = [[JFTOSSTLiftStore instance] find:@"associatedLift" value:lift];
-    NSLog(@"Added assistance for lift: %@ in week: %d", lift.name, week);
     [weekData each:^(NSDictionary *data) {
         JSet *set = [[JSetStore instance] create];
         set.reps = data[@"reps"];
