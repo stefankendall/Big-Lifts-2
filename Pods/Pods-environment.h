@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_FlurrySDK 3
 #define COCOAPODS_VERSION_PATCH_FlurrySDK 2
 
+// FlurrySDK/FlurrySDK
+#define COCOAPODS_POD_AVAILABLE_FlurrySDK_FlurrySDK
+#define COCOAPODS_VERSION_MAJOR_FlurrySDK_FlurrySDK 4
+#define COCOAPODS_VERSION_MINOR_FlurrySDK_FlurrySDK 3
+#define COCOAPODS_VERSION_PATCH_FlurrySDK_FlurrySDK 2
+
 // IAPManager
 #define COCOAPODS_POD_AVAILABLE_IAPManager
 #define COCOAPODS_VERSION_MAJOR_IAPManager 0
@@ -41,6 +47,12 @@
 #define COCOAPODS_VERSION_MAJOR_MRCEnumerable 0
 #define COCOAPODS_VERSION_MINOR_MRCEnumerable 0
 #define COCOAPODS_VERSION_PATCH_MRCEnumerable 1
+
+// RMSwipeTableViewCell
+#define COCOAPODS_POD_AVAILABLE_RMSwipeTableViewCell
+#define COCOAPODS_VERSION_MAJOR_RMSwipeTableViewCell 0
+#define COCOAPODS_VERSION_MINOR_RMSwipeTableViewCell 6
+#define COCOAPODS_VERSION_PATCH_RMSwipeTableViewCell 0
 
 // TPKeyboardAvoiding
 #define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding

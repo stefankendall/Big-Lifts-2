@@ -8,3 +8,4 @@ pod 'TPKeyboardAvoiding', '1.2.3'
 pod 'Facebook-iOS-SDK', '3.7.1'
 pod 'JSONModel', '0.10.0' #Local changes to jsonmodel. Never update.
 pod 'FlurrySDK', '4.3.2'
+pod 'RMSwipeTableViewCell', '0.6'
