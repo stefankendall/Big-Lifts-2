@@ -21,6 +21,7 @@
     self = [super init];
     if (self) {
         self.ftoWorkoutChanges = [@[] mutableCopy];
+        self.completedSets = [@[] mutableCopy];
     }
 
     return self;
@@ -28,6 +29,7 @@
 
 - (void)clear {
     self.ftoWorkoutChanges = [@[] mutableCopy];
+    self.completedSets = [@[] mutableCopy];
 }
 
 - (FTOWorkoutChange *)changeForWorkout:(JFTOWorkout *)workout {
@@ -45,12 +47,24 @@
 - (SetChange *)changeForWorkout:(JFTOWorkout *)workout set:(int)set {
     FTOWorkoutChange *workoutChange = [self changeForWorkout:workout];
     SetChange *setChange = workoutChange.changesBySet[[NSNumber numberWithInt:set]];
-    if(!setChange){
+    if (!setChange) {
         setChange = [SetChange new];
         workoutChange.changesBySet[[NSNumber numberWithInt:set]] = setChange;
     }
 
     return setChange;
+}
+
+- (BOOL)isComplete:(NSIndexPath *)path {
+    return [self.completedSets detect:^BOOL(NSIndexPath *testPath) {
+        return path.section == testPath.section && path.row == testPath.row;
+    }] != nil;
+}
+
+- (void)markComplete:(NSIndexPath *)path {
+    if (![self isComplete:path]) {
+        [self.completedSets addObject:path];
+    }
 }
 
 @end

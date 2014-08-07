@@ -8,9 +8,15 @@
 
 @property(nonatomic, strong) NSMutableArray *ftoWorkoutChanges;
 
+@property(nonatomic, strong) NSMutableArray *completedSets;
+
 - (void)clear;
 
 - (FTOWorkoutChange *)changeForWorkout:(JFTOWorkout *)workout;
 
 - (SetChange *)changeForWorkout:(JFTOWorkout *)workout set:(int)set;
+
+- (BOOL)isComplete:(NSIndexPath *)path;
+
+- (void)markComplete:(NSIndexPath *)path;
 @end
