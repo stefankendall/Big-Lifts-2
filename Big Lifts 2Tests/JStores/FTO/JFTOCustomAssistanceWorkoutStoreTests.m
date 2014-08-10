@@ -7,6 +7,7 @@
 #import "JSetStore.h"
 #import "JFTOAssistance.h"
 #import "JFTOSet.h"
+#import "JFTOCustomAssistanceLiftStore.h"
 
 @implementation JFTOCustomAssistanceWorkoutStoreTests
 
@@ -43,6 +44,21 @@
     STAssertTrue([firstSet isKindOfClass:JFTOSet.class], @"");
     STAssertEquals([firstSet.reps intValue], 10, @"");
     STAssertEqualObjects(firstSet.percentage, N(50), @"");
+}
+
+- (void)testRemovesSetsWhenAssistanceLiftsAreDeleted {
+    JFTOCustomAssistanceWorkout *ftoCustomAssistanceWorkout = [[JFTOCustomAssistanceWorkoutStore instance] first];
+
+    JSet *setWithLift1 = [[JSetStore instance] create];
+    setWithLift1.lift = [[JFTOCustomAssistanceLiftStore instance] create];
+
+    JSet *setWithLift2 = [[JSetStore instance] create];
+    setWithLift2.lift = [[JFTOCustomAssistanceLiftStore instance] create];
+
+    [ftoCustomAssistanceWorkout.workout addSet:setWithLift1];
+    [ftoCustomAssistanceWorkout.workout addSet:setWithLift2];
+    [[JFTOCustomAssistanceLiftStore instance] remove:setWithLift1.lift];
+    STAssertEquals((int) [ftoCustomAssistanceWorkout.workout.sets count], 1, @"");
 }
 
 @end

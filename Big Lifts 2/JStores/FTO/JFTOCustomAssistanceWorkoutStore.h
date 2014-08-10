@@ -4,4 +4,6 @@
 - (void)adjustToMainLifts;
 
 - (void)copyTemplate:(NSString *)variant;
+
+- (void)removeSetsForMissingAssistanceLifts;
 @end

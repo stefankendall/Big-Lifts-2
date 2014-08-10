@@ -1,4 +1,5 @@
 #import "BLJStore.h"
+#import "JLiftStore.h"
 
-@interface JFTOCustomAssistanceLiftStore : BLJStore
+@interface JFTOCustomAssistanceLiftStore : JLiftStore
 @end

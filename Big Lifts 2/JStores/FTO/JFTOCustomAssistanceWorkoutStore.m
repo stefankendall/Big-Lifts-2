@@ -6,6 +6,9 @@
 #import "JFTOAssistance.h"
 #import "JFTOBoringButBigAssistanceCopy.h"
 #import "JFTOTriumvirateAssistanceCopy.h"
+#import "JSet.h"
+#import "JWorkout.h"
+#import "JLift.h"
 
 @implementation JFTOCustomAssistanceWorkoutStore
 
@@ -58,6 +61,18 @@
     };
     NSObject <AssistanceCopy> *copier = copiers[variant];
     [copier copyTemplate];
+}
+
+- (void)removeSetsForMissingAssistanceLifts {
+    for (JFTOCustomAssistanceWorkout *customAssistanceWorkout in [self findAll]) {
+        NSMutableArray *deadSets = [@[] mutableCopy];
+        for (JSet *set in customAssistanceWorkout.workout.sets) {
+            if ([set.lift.dead intValue] == DEAD) {
+                [deadSets addObject:set];
+            }
+        }
+        [customAssistanceWorkout.workout removeSets:deadSets];
+    }
 }
 
 @end
