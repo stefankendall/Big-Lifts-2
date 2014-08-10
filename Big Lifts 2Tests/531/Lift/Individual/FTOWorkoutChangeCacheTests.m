@@ -27,12 +27,19 @@
 }
 
 - (void)testMarksAndDetectsSetsComplete {
-    [[FTOWorkoutChangeCache instance] markComplete:NSIP(0, 0)];
-    [[FTOWorkoutChangeCache instance] markComplete:NSIP(1, 1)];
+    [[FTOWorkoutChangeCache instance] toggleComplete:NSIP(0, 0)];
+    [[FTOWorkoutChangeCache instance] toggleComplete:NSIP(1, 1)];
     STAssertTrue([[FTOWorkoutChangeCache instance] isComplete:NSIP(0, 0)], @"");
     STAssertTrue([[FTOWorkoutChangeCache instance] isComplete:NSIP(1, 1)], @"");
     STAssertFalse([[FTOWorkoutChangeCache instance] isComplete:NSIP(1, 0)], @"");
     STAssertFalse([[FTOWorkoutChangeCache instance] isComplete:NSIP(0, 1)], @"");
+}
+
+- (void)testTogglesCompletedSets {
+    [[FTOWorkoutChangeCache instance] toggleComplete:NSIP(0, 0)];
+    STAssertTrue([[FTOWorkoutChangeCache instance] isComplete:NSIP(0, 0)], @"");
+    [[FTOWorkoutChangeCache instance] toggleComplete:NSIP(0, 0)];
+    STAssertFalse([[FTOWorkoutChangeCache instance] isComplete:NSIP(0, 0)], @"");
 }
 
 @end

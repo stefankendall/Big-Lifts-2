@@ -18,5 +18,5 @@
 
 - (BOOL)isComplete:(NSIndexPath *)path;
 
-- (void)markComplete:(NSIndexPath *)path;
+- (void)toggleComplete:(NSIndexPath *)path;
 @end

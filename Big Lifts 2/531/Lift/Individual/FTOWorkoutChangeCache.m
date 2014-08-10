@@ -56,13 +56,20 @@
 }
 
 - (BOOL)isComplete:(NSIndexPath *)path {
-    return [self.completedSets detect:^BOOL(NSIndexPath *testPath) {
-        return path.section == testPath.section && path.row == testPath.row;
-    }] != nil;
+    return [self matchingPath:path] != nil;
 }
 
-- (void)markComplete:(NSIndexPath *)path {
-    if (![self isComplete:path]) {
+- (NSIndexPath *)matchingPath:(NSIndexPath *)path {
+    return [self.completedSets detect:^BOOL(NSIndexPath *testPath) {
+        return path.section == testPath.section && path.row == testPath.row;
+    }];
+}
+
+- (void)toggleComplete:(NSIndexPath *)path {
+    if ([self isComplete:path]) {
+        [self.completedSets removeObject:[self matchingPath:path]];
+    }
+    else {
         [self.completedSets addObject:path];
     }
 }
