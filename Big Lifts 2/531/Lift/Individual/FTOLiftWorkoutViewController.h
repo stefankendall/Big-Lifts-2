@@ -2,10 +2,11 @@
 #import "TimerObserver.h"
 #import "BLTableViewController.h"
 #import "ShareDelegate.h"
+#import "RMSwipeTableViewCell.h"
 
 @class JFTOWorkout;
 
-@interface FTOLiftWorkoutViewController : BLTableViewController <UITextFieldDelegate, SetChangeDelegate, TimerObserver, UIActionSheetDelegate, ShareDelegate> {
+@interface FTOLiftWorkoutViewController : BLTableViewController <UITextFieldDelegate, SetChangeDelegate, TimerObserver, UIActionSheetDelegate, ShareDelegate, RMSwipeTableViewCellDelegate> {
 }
 @property(weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 

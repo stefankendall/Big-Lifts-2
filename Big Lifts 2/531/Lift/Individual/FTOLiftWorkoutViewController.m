@@ -98,6 +98,11 @@
 
     int effectiveRow = [self effectiveRowFor:indexPath];
     FTOWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOWorkoutCell.class)];
+    cell.indexPath = indexPath;
+    if ([[FTOWorkoutChangeCache instance] isComplete:indexPath]) {
+        [cell.contentView setBackgroundColor:[UIColor colorWithRed:179.0f/255.0f green:255.0f/255.0f blue:178.0f/255.0f alpha:1.0]];
+    }
+    [cell setDelegate:self];
     SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:effectiveRow];
     [cell setSet:self.ftoWorkout.workout.sets[(NSUInteger) effectiveRow] withEnteredReps:setChange.reps withEnteredWeight:setChange.weight];
     return cell;
@@ -283,6 +288,12 @@
         SetChange *setChange = [[FTOWorkoutChangeCache instance] changeForWorkout:self.ftoWorkout set:[self.tappedSetRow intValue]];
         setChange.weight = weight;
     }
+}
+
+- (void)swipeTableViewCellDidResetState:(RMSwipeTableViewCell *)swipeTableViewCell fromPoint:(CGPoint)point animation:(RMSwipeTableViewCellAnimationType)animation velocity:(CGPoint)velocity {
+    FTOWorkoutCell *cell = (FTOWorkoutCell *) swipeTableViewCell;
+    [[FTOWorkoutChangeCache instance] toggleComplete:cell.indexPath];
+    [self.tableView reloadData];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

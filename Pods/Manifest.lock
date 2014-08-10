@@ -1,10 +1,13 @@
 PODS:
   - CTCustomTableViewCell (2)
   - Facebook-iOS-SDK (3.7.1)
-  - FlurrySDK (4.3.2)
+  - FlurrySDK (4.3.2):
+    - FlurrySDK/FlurrySDK
+  - FlurrySDK/FlurrySDK (4.3.2)
   - IAPManager (0.2.2)
   - JSONModel (0.10.0)
   - MRCEnumerable (0.0.1)
+  - RMSwipeTableViewCell (0.6)
   - TPKeyboardAvoiding (1.2.3)
   - ViewDeck (2.2.11)
   - WebViewJavascriptBridge (4.0.1)
@@ -16,6 +19,7 @@ DEPENDENCIES:
   - IAPManager (from `https://github.com/mruegenberg/IAPManager`, commit `250886f`)
   - JSONModel (= 0.10.0)
   - MRCEnumerable
+  - RMSwipeTableViewCell (= 0.6)
   - TPKeyboardAvoiding (= 1.2.3)
   - ViewDeck (= 2.2.11)
   - WebViewJavascriptBridge (= 4.0.1)
@@ -26,14 +30,15 @@ EXTERNAL SOURCES:
     :git: https://github.com/mruegenberg/IAPManager
 
 SPEC CHECKSUMS:
-  CTCustomTableViewCell: d3a141b32843da29aefb2157bbc143dd210b05f3
-  Facebook-iOS-SDK: bf38d403928f6adb652e2e5ae46253e0c6ba9a19
-  FlurrySDK: 508afbd655fe2ff935d3e9543cb1c8aa432794de
+  CTCustomTableViewCell: 0ec546b3a4540ec744dc9b1cd7a5115fac3e1912
+  Facebook-iOS-SDK: 215cb2b4a7c83887bf7ed0409eba71b558f8ac65
+  FlurrySDK: e66cbd5487c7da2c85c6d605fde59f36db4b87e1
   IAPManager: fb36017e64524e2ecb9ae2101daaa83165cc5211
-  JSONModel: cecca3c3a9ee1a248b56f7139e2d64b85ce536ec
-  MRCEnumerable: 19a97c0ce6308525d84116c92f87f380807695d5
-  TPKeyboardAvoiding: 17995aaa6db26ac2a9fa8714a86509c5888f0392
-  ViewDeck: b5eddc8559b0e47259ab7addbf2de6768061f139
-  WebViewJavascriptBridge: f338f16ea0690e03914d8463af4b6372cb21a437
+  JSONModel: 0990e3b9153278e4b3d9466117e77ce02f58a198
+  MRCEnumerable: 1e7636e1e58b0c23d9e9b9d0672384313f8d9f8d
+  RMSwipeTableViewCell: 150021ada2d86b21db04556f08351462bd58919b
+  TPKeyboardAvoiding: ca26afa683d829cb96fe69b887fc8be4178f0b9a
+  ViewDeck: 2f38c054dfe8e69af4877c006785996faa277902
+  WebViewJavascriptBridge: 2b464833619ac73a7b7c0561a669e75ef346db9e
 
-COCOAPODS: 0.28.0
+COCOAPODS: 0.33.1

@@ -1,10 +1,13 @@
 #import "SetCell.h"
+#import "RMSwipeTableViewCell.h"
 
 @class JSet;
 
-@interface FTOWorkoutCell : CTCustomTableViewCell
+@interface FTOWorkoutCell : RMSwipeTableViewCell
 
 @property(nonatomic, strong) SetCell *setCell;
+
+@property(nonatomic, strong) NSIndexPath *indexPath;
 
 - (void)setSet:(JSet *)set;
 
