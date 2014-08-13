@@ -8,6 +8,8 @@ extern const int DEAD;
 @property(nonatomic, copy) NSString *uuid;
 @property(nonatomic) NSNumber<Ignore> *dead;
 
+- (BOOL)isDead;
+
 - (NSArray *)cascadeDeleteProperties;
 
 @end

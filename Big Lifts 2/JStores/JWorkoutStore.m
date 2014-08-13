@@ -18,7 +18,7 @@
     for (JWorkout *workout in [[JWorkoutStore instance] findAll]) {
         NSMutableArray *deadSets = [@[] mutableCopy];
         for (JSet *set in workout.sets) {
-            if ([set.lift dead]) {
+            if ([set.lift isDead]) {
                 [deadSets addObject:set];
             }
         }

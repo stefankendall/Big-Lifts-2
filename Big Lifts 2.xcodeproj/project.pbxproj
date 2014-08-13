@@ -293,6 +293,7 @@
 		54590810A2F07D8716F37E02 /* SJIndividualLiftViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459067C7C724C53C67E62F1 /* SJIndividualLiftViewControllerTests.m */; };
 		5459081C67680E065F01E733 /* no-data-to-display.js in Sources */ = {isa = PBXBuildFile; fileRef = 54590B3DD11D5682E4CFE0B2 /* no-data-to-display.js */; };
 		5459083135F799D31A88ED56 /* JSJWorkoutStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904D62CC1AA8EA991E2A4 /* JSJWorkoutStore.m */; };
+		5459084615F09AAC2C45B75C /* Migrate17to18.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906E5D1AA85674F7F5B39 /* Migrate17to18.m */; };
 		5459084D12C361C3393DCF44 /* SSTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459084B5272E0A8A289018A /* SSTrackViewController.m */; };
 		5459085736DD5F028E0ABE13 /* JFTOSSTLiftStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590F5BD6ECFDDAF2A4972C /* JFTOSSTLiftStoreTests.m */; };
 		5459085A67D774B0247D330A /* JSetLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B9089EF33BFF5198876 /* JSetLog.m */; };
@@ -1036,6 +1037,7 @@
 		545906DE5600289711E6BC69 /* Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debug.m; sourceTree = "<group>"; };
 		545906DE5AA181F4CC92FF1A /* FTOLogGraphTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOLogGraphTransformer.h; sourceTree = "<group>"; };
 		545906E5C2AB37198F670387 /* FTORepsToBeatCalculatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTORepsToBeatCalculatorTests.m; sourceTree = "<group>"; };
+		545906E5D1AA85674F7F5B39 /* Migrate17to18.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate17to18.m; sourceTree = "<group>"; };
 		545906E6B8E782E67F624D1F /* 95-equalizer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "95-equalizer.png"; sourceTree = "<group>"; };
 		545906F530DF8514F5885C60 /* LiftFormCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiftFormCell.xib; sourceTree = "<group>"; };
 		545906F72BF5F239F6CC85EA /* CustomAssistanceCopyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAssistanceCopyHelper.h; sourceTree = "<group>"; };
@@ -1090,6 +1092,7 @@
 		545907B21544FE5BBC99F469 /* JCurrentProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCurrentProgram.m; sourceTree = "<group>"; };
 		545907B8897BFFD7A5FA2350 /* annotations.src.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = annotations.src.js; sourceTree = "<group>"; };
 		545907BCC2F2400246302060 /* ProgramSelectorViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgramSelectorViewControllerTests.m; sourceTree = "<group>"; };
+		545907D0BE5ADA81AF1A1814 /* Migrate17to18.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate17to18.h; sourceTree = "<group>"; };
 		545907D40FFC27789CBC0D68 /* setupgraph.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = setupgraph.js; sourceTree = "<group>"; };
 		545907DF784D8AA2EF4F504C /* BarLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarLoadingViewController.m; sourceTree = "<group>"; };
 		545907E41F6E1ABED1F6CEBE /* BLTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLTestCase.h; sourceTree = "<group>"; };
@@ -3078,6 +3081,8 @@
 				54590211010F17D4F4CFAE50 /* Migrate15to16.h */,
 				54590DCC33AECACC126F0BB3 /* Migrate16to17.m */,
 				54590B3EAADC23698E568B2D /* Migrate16to17.h */,
+				545906E5D1AA85674F7F5B39 /* Migrate17to18.m */,
+				545907D0BE5ADA81AF1A1814 /* Migrate17to18.h */,
 			);
 			path = Migrations;
 			sourceTree = "<group>";
@@ -4610,6 +4615,7 @@
 				54590FB58EC2D232B77CE9EC /* EverythingDialog.m in Sources */,
 				54590ECB8A4852EA7F6F60EA /* Migrate16to17.m in Sources */,
 				54590C405FDBA62F8C0BD74F /* SetClassGenerator.m in Sources */,
+				5459084615F09AAC2C45B75C /* Migrate17to18.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

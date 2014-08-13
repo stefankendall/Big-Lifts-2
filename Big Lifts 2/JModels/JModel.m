@@ -88,5 +88,9 @@ int const DEAD = 0;
     return @[];
 }
 
+- (BOOL)isDead {
+    return [[self dead] intValue] == DEAD;
+}
+
 
 @end

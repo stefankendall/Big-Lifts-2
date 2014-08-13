@@ -5,6 +5,11 @@
 
 @implementation FTOWorkoutChangeCacheTests
 
+- (void)setUp{
+    [super setUp];
+    [[FTOWorkoutChangeCache instance] clear];
+}
+
 - (void)testCreatesNewCacheEntryWhenRequestingCacheItem {
     JFTOWorkout *ftoWorkout = [[JFTOWorkoutStore instance] first];
     FTOWorkoutChange *change = [[FTOWorkoutChangeCache instance] changeForWorkout:ftoWorkout];

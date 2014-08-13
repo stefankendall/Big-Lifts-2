@@ -7,4 +7,7 @@
     return JFTOTriumvirateLift.class;
 }
 
+- (void)liftsChanged {
+}
+
 @end

@@ -10,4 +10,6 @@
 
 - (void)incrementLifts;
 
+- (void)liftsChanged;
+
 @end
