@@ -75,6 +75,9 @@ static const int ADD_SECTION = 1;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ftoCustomAsstEditSet"]) {
+        if([self.tappedSet isDead]){
+            return;
+        }
         FTOCustomAssistanceEditSetViewController *controller = [segue destinationViewController];
         if (self.tappedSet) {
             controller.workout = self.workout;
