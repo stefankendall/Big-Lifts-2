@@ -166,6 +166,7 @@ extern BOOL isNull(id value) {
 #pragma mark - string <-> date
 - (NSDate *)NSDateFromNSString:(NSString *)string {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
     string = [string stringByReplacingOccurrencesOfString:@":" withString:@""]; // this is such an ugly code, is this the only way?
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HHmmssZZZ"];
 
@@ -174,6 +175,7 @@ extern BOOL isNull(id value) {
 
 - (NSString *)JSONObjectFromNSDate:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZ"];
 
     return [dateFormatter stringFromDate:date];
