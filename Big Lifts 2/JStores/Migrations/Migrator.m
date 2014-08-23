@@ -41,13 +41,17 @@
             @17 : [Migrate16to17 new],
             @18 : [Migrate17to18 new]
     };
-    for (NSNumber *versionNumber in [[migrations allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
+    for (NSNumber *versionNumber in [self sortedKeys:migrations]) {
         if ([version.version intValue] < [versionNumber intValue]) {
             NSObject <Migration> *migration = migrations[versionNumber];
             [migration run];
             version.version = versionNumber;
         }
     }
+}
+
+- (NSArray *)sortedKeys:(NSDictionary *)migrations {
+    return [[migrations allKeys] sortedArrayUsingSelector:@selector(compare:)];
 }
 
 @end
