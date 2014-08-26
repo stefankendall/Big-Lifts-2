@@ -1,4 +1,5 @@
 #import <FlurrySDK/Flurry.h>
+#import <Crashlytics/Crashlytics.h>
 #import "FTOCustomAssistanceWorkoutViewController.h"
 #import "JFTOCustomAssistanceWorkout.h"
 #import "AddCell.h"
@@ -74,23 +75,28 @@ static const int ADD_SECTION = 1;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CLS_LOG(@"%@", segue.identifier);
     if ([segue.identifier isEqualToString:@"ftoCustomAsstEditSet"]) {
-        if([self.tappedSet isDead]){
-            return;
-        }
         FTOCustomAssistanceEditSetViewController *controller = [segue destinationViewController];
+        controller.workout = self.workout;
         if (self.tappedSet) {
-            controller.workout = self.workout;
             controller.set = self.tappedSet;
         }
         else {
             JSet *set = [[JSetStore instance] create];
             [self.workout addSet:set];
-            controller.workout = self.workout;
             controller.set = set;
         }
     }
 }
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([identifier isEqualToString:@"ftoCustomAsstEditSet"] && self.tappedSet != nil && [self.tappedSet isDead]){
+        return NO;
+    }
+    return [super shouldPerformSegueWithIdentifier:identifier sender:sender];
+}
+
 
 - (IBAction)deleteTapped:(id)sender {
     if ([self.tableView isEditing]) {
