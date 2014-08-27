@@ -39,7 +39,8 @@
             @15 : [Migrate14to15 new],
             @16 : [Migrate15to16 new],
             @17 : [Migrate16to17 new],
-            @18 : [Migrate17to18 new]
+            @18 : [Migrate17to18 new],
+            @19 : [Migrate16to17 new],
     };
     for (NSNumber *versionNumber in [self sortedKeys:migrations]) {
         if ([version.version intValue] < [versionNumber intValue]) {

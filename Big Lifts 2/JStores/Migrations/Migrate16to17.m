@@ -9,7 +9,7 @@
 }
 
 - (void)addBarLoadingEnabledPropertyToSettings {
-    NSMutableArray *settingsArray = [JDataHelper read:[JSettingsStore instance]];
+    NSArray *settingsArray = [JDataHelper read:[JSettingsStore instance]];
     NSMutableDictionary *settings = settingsArray[0];
     settings[@"barLoadingEnabled"] = @1;
     [JDataHelper write:[JSettingsStore instance] values:settingsArray];
