@@ -22,4 +22,14 @@
     STAssertEquals([[JFTOBoringButBigLiftStore instance] count], 3, @"");
 }
 
+- (void)testAdjustsExistingBoringLiftsWhenFtoLiftsRemoved {
+    JFTOBoringButBigLift *lift = [[JFTOBoringButBigLiftStore instance] first];
+    JFTOLift *mainLift = [[JFTOLiftStore instance] first];
+    JFTOLift *boringLift = [[JFTOLiftStore instance] last];
+    lift.mainLift = mainLift;
+    lift.boringLift = boringLift;
+    [[JFTOLiftStore instance] remove:boringLift];
+    STAssertFalse(lift.boringLift == boringLift, @"");
+}
+
 @end

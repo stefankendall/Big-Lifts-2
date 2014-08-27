@@ -40,6 +40,10 @@
             [self remove:bbbLift];
             i--;
         }
+
+        if (![[JFTOLiftStore instance] find:@"uuid" value:bbbLift.boringLift.uuid]) {
+            bbbLift.boringLift = [[JFTOLiftStore instance] first];
+        }
     }
 }
 
