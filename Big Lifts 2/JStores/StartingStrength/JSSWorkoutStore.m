@@ -225,15 +225,21 @@
     }
 
     JSSState *state = [[JSSStateStore instance] first];
-    JSSWorkout *newSsWorkout = ssWorkouts[0];
-    if ([name isEqualToString:@"A"] && [ssWorkouts count] > 0) {
-        int workoutAAlteration = [state.workoutAAlternation intValue];
-        NSArray *alt1Workouts = [ssWorkouts select:^BOOL(JSSWorkout *ssWorkout) {
-            return [ssWorkout.alternation intValue] == workoutAAlteration;
-        }];
+    JSSWorkout *newSsWorkout = nil;
+    if ([ssWorkouts count] == 0) {
+        newSsWorkout = [self first];
+    }
+    else {
+        newSsWorkout = ssWorkouts[0];
+        if ([name isEqualToString:@"A"]) {
+            int workoutAAlteration = [state.workoutAAlternation intValue];
+            NSArray *alt1Workouts = [ssWorkouts select:^BOOL(JSSWorkout *ssWorkout) {
+                return [ssWorkout.alternation intValue] == workoutAAlteration;
+            }];
 
-        if ([alt1Workouts count] > 0) {
-            newSsWorkout = alt1Workouts[0];
+            if ([alt1Workouts count] > 0) {
+                newSsWorkout = alt1Workouts[0];
+            }
         }
     }
 
