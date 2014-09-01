@@ -3,7 +3,7 @@
 @class JWorkout;
 
 @interface JFTOCustomWorkout : JModel
-@property(nonatomic) JWorkout *workout;
+@property(nonatomic) JWorkout<Optional> *workout;
 @property(nonatomic) NSNumber *week;
 @property(nonatomic) NSString *name;
 @property(nonatomic, strong) NSNumber *order;

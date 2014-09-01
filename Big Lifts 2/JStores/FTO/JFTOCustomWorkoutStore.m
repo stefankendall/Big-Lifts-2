@@ -18,6 +18,15 @@
     [self createWorkoutsForVariant:FTO_VARIANT_STANDARD];
 }
 
+- (void)onLoad {
+    for (JFTOCustomWorkout *workout in [self findAll]) {
+        if (workout.workout == nil) {
+            workout.workout = [[JWorkoutStore instance] create];
+        }
+    }
+}
+
+
 - (void)createWorkoutsForVariant:(NSString *)variant {
     NSDictionary *sets = [[JFTOWorkoutSetsGenerator new] setsFor:nil withTemplate:variant];
     for (int week = 1; week <= [[sets allKeys] count]; week++) {
