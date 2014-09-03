@@ -65,8 +65,8 @@
     [[JFTOBoringButBigLiftStore instance] adjustToMainLifts];
     [[JFTOCustomAssistanceWorkoutStore instance] adjustToMainLifts];
     [[JFTOTriumvirateStore instance] adjustToMainLifts];
-    [[JFTOWorkoutStore instance] switchTemplate];
     [[JFTOFullCustomWeekStore instance] adjustToMainLifts];
+    [[JFTOWorkoutStore instance] switchTemplate];
 }
 
 - (id)create {
