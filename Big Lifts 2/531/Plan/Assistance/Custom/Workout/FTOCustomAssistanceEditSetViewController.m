@@ -8,7 +8,6 @@
 #import "JFTOLiftStore.h"
 #import "JFTOSet.h"
 #import "JFTOSetStore.h"
-#import "JSetStore.h"
 #import "BLJStoreManager.h"
 #import "JWorkout.h"
 
@@ -123,20 +122,28 @@
 
 - (IBAction)useTrainingMaxChanged:(id)sender {
     JSet *newSet = nil;
-    if([sender isOn]){
+    if ([sender isOn]) {
         newSet = [[JFTOSetStore instance] create];
     }
     else {
         newSet = [[JSetStore instance] create];
     }
 
-    NSUInteger setIndex = [self.workout.sets indexOfObject: self.set];
-    self.workout.sets[setIndex] = newSet;
+    NSUInteger setIndex = [self.workout.sets indexOfObject:self.set];
+    if (setIndex == NSNotFound) {
+        if (self.set != nil) {
+            BLJStore *store = [[BLJStoreManager instance] storeForModel:[JSet class] withUuid:self.set.uuid];
+            [store remove:self.set];
+        }
+
+        [self.navigationController popViewControllerAnimated:NO];
+        self.workout.sets[setIndex] = newSet;
+    }
 
     BLJStore *store = [[BLJStoreManager instance] storeForModel:[JSet class] withUuid:self.set.uuid];
     [store remove:self.set];
 
-    [self copy: self.set into: newSet];
+    [self copy:self.set into:newSet];
     self.set = newSet;
 }
 
