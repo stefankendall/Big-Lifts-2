@@ -34,13 +34,15 @@
 - (void)removeUnneededWorkouts {
     NSArray *allLifts = [[JFTOLiftStore instance] findAll];
 
-    NSArray *allWorkouts = [self findAll];
-    for (int i = 0; i < [allWorkouts count]; i++) {
-        JFTOCustomAssistanceWorkout *customAssistanceWorkout = allWorkouts[(NSUInteger) i];
+    NSMutableArray *toRemove = [@[] mutableCopy];
+    for (JFTOCustomAssistanceWorkout *customAssistanceWorkout in [self findAll]) {
         if (![allLifts containsObject:customAssistanceWorkout.mainLift]) {
-            [self remove:customAssistanceWorkout];
-            i--;
+            [toRemove addObject:customAssistanceWorkout];
         }
+    }
+
+    for (JFTOCustomAssistanceWorkout *customAssistanceWorkout in toRemove) {
+        [self remove:customAssistanceWorkout];
     }
 }
 

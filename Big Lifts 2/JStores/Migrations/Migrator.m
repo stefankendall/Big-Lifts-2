@@ -17,6 +17,7 @@
 #import "Migrate15to16.h"
 #import "Migrate16to17.h"
 #import "Migrate17to18.h"
+#import "Migrate18to19.h"
 
 @implementation Migrator
 
@@ -39,8 +40,10 @@
             @15 : [Migrate14to15 new],
             @16 : [Migrate15to16 new],
             @17 : [Migrate16to17 new],
-            @18 : [Migrate17to18 new]
+            @18 : [Migrate17to18 new],
+            @19 : [Migrate18to19 new]
     };
+
     for (NSNumber *versionNumber in [self sortedKeys:migrations]) {
         if ([version.version intValue] < [versionNumber intValue]) {
             NSObject <Migration> *migration = migrations[versionNumber];
