@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBUtility.h
+../../../Facebook-iOS-SDK/src/Core/FBUtility.h

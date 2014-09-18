@@ -48,6 +48,11 @@
 }
 
 -(void)setContentSize:(CGSize)contentSize {
+    if (CGSizeEqualToSize(contentSize, self.contentSize)) {
+        // Prevent triggering contentSize when it's already the same that
+        // cause weird infinte scrolling and locking bug
+        return;
+    }
     [super setContentSize:contentSize];
     [self TPKeyboardAvoiding_updateContentInset];
 }
@@ -61,6 +66,13 @@
 }
 
 #pragma mark - Responders, events
+
+-(void)willMoveToSuperview:(UIView *)newSuperview {
+    [super willMoveToSuperview:newSuperview];
+    if ( !newSuperview ) {
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(TPKeyboardAvoiding_assignTextDelegateForViewsBeneathView:) object:self];
+    }
+}
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [[self TPKeyboardAvoiding_findFirstResponderBeneathView:self] resignFirstResponder];

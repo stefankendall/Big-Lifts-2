@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBCacheIndex.h
+../../../Facebook-iOS-SDK/src/Core/FBCacheIndex.h

@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBFriendPickerViewController+Internal.h
+../../../Facebook-iOS-SDK/src/UI/FBFriendPickerViewController+Internal.h

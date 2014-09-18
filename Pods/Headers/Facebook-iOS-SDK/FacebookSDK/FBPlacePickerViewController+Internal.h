@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBPlacePickerViewController+Internal.h
+../../../Facebook-iOS-SDK/src/UI/FBPlacePickerViewController+Internal.h

@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBSessionManualTokenCachingStrategy.h
+../../../Facebook-iOS-SDK/src/Legacy/FBSessionManualTokenCachingStrategy.h

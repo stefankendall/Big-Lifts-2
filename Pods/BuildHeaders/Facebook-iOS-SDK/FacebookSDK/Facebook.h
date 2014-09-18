@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/Facebook.h
+../../../Facebook-iOS-SDK/src/Legacy/Facebook.h

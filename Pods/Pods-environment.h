@@ -6,6 +6,12 @@
 // project.
 
 
+// Bolts
+#define COCOAPODS_POD_AVAILABLE_Bolts
+#define COCOAPODS_VERSION_MAJOR_Bolts 1
+#define COCOAPODS_VERSION_MINOR_Bolts 1
+#define COCOAPODS_VERSION_PATCH_Bolts 2
+
 // CTCustomTableViewCell
 #define COCOAPODS_POD_AVAILABLE_CTCustomTableViewCell
 #define COCOAPODS_VERSION_MAJOR_CTCustomTableViewCell 2
@@ -15,8 +21,8 @@
 // Facebook-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 3
-#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 7
-#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 1
+#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 18
+#define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 0
 
 // FlurrySDK
 #define COCOAPODS_POD_AVAILABLE_FlurrySDK
@@ -34,7 +40,7 @@
 #define COCOAPODS_POD_AVAILABLE_IAPManager
 #define COCOAPODS_VERSION_MAJOR_IAPManager 0
 #define COCOAPODS_VERSION_MINOR_IAPManager 2
-#define COCOAPODS_VERSION_PATCH_IAPManager 2
+#define COCOAPODS_VERSION_PATCH_IAPManager 3
 
 // JSONModel
 #define COCOAPODS_POD_AVAILABLE_JSONModel
@@ -58,7 +64,7 @@
 #define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding
 #define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 1
 #define COCOAPODS_VERSION_MINOR_TPKeyboardAvoiding 2
-#define COCOAPODS_VERSION_PATCH_TPKeyboardAvoiding 3
+#define COCOAPODS_VERSION_PATCH_TPKeyboardAvoiding 4
 
 // ViewDeck
 #define COCOAPODS_POD_AVAILABLE_ViewDeck

@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBAccessTokenData+Internal.h
+../../../Facebook-iOS-SDK/src/Login/FBAccessTokenData+Internal.h

@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBConnect.h
+../../../Facebook-iOS-SDK/src/Legacy/FBConnect.h

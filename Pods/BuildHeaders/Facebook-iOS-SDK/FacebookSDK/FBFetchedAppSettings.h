@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBFetchedAppSettings.h
+../../../Facebook-iOS-SDK/src/Core/FBFetchedAppSettings.h

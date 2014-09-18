@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBAppCall+Internal.h
+../../../Facebook-iOS-SDK/src/DeviceAPI/FBAppCall+Internal.h

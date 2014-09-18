@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBFrictionlessDialogSupportDelegate.h
+../../../Facebook-iOS-SDK/src/UI/FBFrictionlessDialogSupportDelegate.h

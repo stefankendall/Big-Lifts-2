@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBImageResourceLoader.h
+../../../Facebook-iOS-SDK/src/Core/FBImageResourceLoader.h

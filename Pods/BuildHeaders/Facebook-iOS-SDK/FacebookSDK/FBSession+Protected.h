@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBSession+Protected.h
+../../../Facebook-iOS-SDK/src/Login/FBSession+Protected.h

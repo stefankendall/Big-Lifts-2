@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBDialog.h
+../../../Facebook-iOS-SDK/src/Legacy/FBDialog.h

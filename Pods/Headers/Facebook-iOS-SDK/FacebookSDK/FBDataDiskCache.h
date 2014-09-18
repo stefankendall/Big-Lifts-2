@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBDataDiskCache.h
+../../../Facebook-iOS-SDK/src/Core/FBDataDiskCache.h

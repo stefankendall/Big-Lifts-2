@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBAppLinkData+Internal.h
+../../../Facebook-iOS-SDK/src/Core/FBAppLinkData+Internal.h

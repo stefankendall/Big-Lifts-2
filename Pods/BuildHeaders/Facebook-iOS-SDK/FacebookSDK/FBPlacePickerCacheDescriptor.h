@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBPlacePickerCacheDescriptor.h
+../../../Facebook-iOS-SDK/src/UI/FBPlacePickerCacheDescriptor.h

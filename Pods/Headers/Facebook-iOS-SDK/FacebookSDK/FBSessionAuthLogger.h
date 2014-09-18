@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBSessionAuthLogger.h
+../../../Facebook-iOS-SDK/src/Login/FBSessionAuthLogger.h

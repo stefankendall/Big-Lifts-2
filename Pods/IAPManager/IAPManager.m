@@ -7,6 +7,7 @@
 //
 
 #import "IAPManager.h"
+#include <netdb.h> // needed for reachability test
 
 @interface IAPManager () <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 @property (strong) NSMutableArray *purchasedItems;
@@ -19,12 +20,26 @@
 @property (strong) NSMutableArray *purchasesChangedCallbacks;
 
 @property (copy) RestorePurchasesCompletionBlock restoreCompletionBlock;
+@property (copy) ErrorBlock restoreErrorBlock;
 
 @end
 
 NSURL *purchasesURL() {
     NSURL *appDocDir = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     return [appDocDir URLByAppendingPathComponent:@".purchases.plist"];
+}
+
+// simple reachability. Could also use one of the various Reachability Cocoapods, but why bother when it's so simple?
+BOOL checkAppStoreAvailable() {
+    const char *hostname = "appstore.com";
+    struct hostent *hostinfo = gethostbyname(hostname);
+    if (hostinfo == NULL) {
+#ifdef DEBUG
+        NSLog(@"-> no connection to App Store!\n");
+#endif
+        return NO;
+    }
+    return YES;
 }
 
 @implementation IAPManager
@@ -116,6 +131,11 @@ NSURL *purchasesURL() {
     return [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
 }
 
+- (void)restorePurchasesWithCompletion:(RestorePurchasesCompletionBlock)completionBlock error:(ErrorBlock)err {
+    self.restoreErrorBlock = err;
+    [self restorePurchasesWithCompletion:completionBlock];
+}
+
 - (void)purchaseProduct:(SKProduct *)product completion:(PurchaseCompletionBlock)completionBlock error:(ErrorBlock)err {
 #ifdef SIMULATE_PURCHASES
     [self.purchasedItems addObject:product.productIdentifier];
@@ -126,7 +146,7 @@ NSURL *purchasesURL() {
     }
     completionBlock(NULL);
 #else
-    if(! [SKPaymentQueue canMakePayments])
+    if(! [self canPurchase])
         err([NSError errorWithDomain:@"IAPManager" code:0 userInfo:[NSDictionary dictionaryWithObject:@"Can't make payments" forKey:NSLocalizedDescriptionKey]]);
     else {
         SKPayment *payment = [SKPayment paymentWithProduct:product];
@@ -221,7 +241,7 @@ NSURL *purchasesURL() {
 }
 
 - (BOOL)canPurchase {
-    return [SKPaymentQueue canMakePayments];
+    return [SKPaymentQueue canMakePayments] && checkAppStoreAvailable();
 }
 
 #pragma mark - Observation
@@ -232,7 +252,7 @@ NSURL *purchasesURL() {
 
 - (void)removePurchasesChangedCallbackWithContext:(id)context {
     NSUInteger c = [self.purchasesChangedCallbacks count];
-    for(int i = c - 1; i >= 0; --i) {
+    for(NSInteger i = c - 1; i >= 0; --i) {
         NSArray *t = self.purchasesChangedCallbacks[i];
         if(t[1] == context) {
             [self.purchasesChangedCallbacks removeObjectAtIndex:i];
@@ -240,11 +260,20 @@ NSURL *purchasesURL() {
     }
 }
 
+-(void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error {
+    if(self.restoreErrorBlock) {
+        self.restoreErrorBlock(error);
+    }
+    self.restoreCompletionBlock = nil;
+    self.restoreErrorBlock = nil;
+}
+
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue {
     if (self.restoreCompletionBlock) {
         self.restoreCompletionBlock();
     }
     self.restoreCompletionBlock = nil;
+    self.restoreErrorBlock = nil;
 }
 
 @end

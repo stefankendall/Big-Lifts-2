@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBErrorUtility+Internal.h
+../../../Facebook-iOS-SDK/src/Core/FBErrorUtility+Internal.h

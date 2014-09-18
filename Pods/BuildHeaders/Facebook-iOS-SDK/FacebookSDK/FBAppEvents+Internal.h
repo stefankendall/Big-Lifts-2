@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBAppEvents+Internal.h
+../../../Facebook-iOS-SDK/src/Insights/FBAppEvents+Internal.h

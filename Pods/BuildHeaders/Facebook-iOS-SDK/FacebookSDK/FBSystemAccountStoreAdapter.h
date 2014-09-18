@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBSystemAccountStoreAdapter.h
+../../../Facebook-iOS-SDK/src/Login/FBSystemAccountStoreAdapter.h

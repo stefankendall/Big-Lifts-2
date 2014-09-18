@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBSettings+Internal.h
+../../../Facebook-iOS-SDK/src/Core/FBSettings+Internal.h

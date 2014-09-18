@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBSession+Internal.h
+../../../Facebook-iOS-SDK/src/Login/FBSession+Internal.h

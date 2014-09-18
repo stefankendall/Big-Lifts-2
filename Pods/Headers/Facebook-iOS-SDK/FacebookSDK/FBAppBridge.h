@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBAppBridge.h
+../../../Facebook-iOS-SDK/src/DeviceAPI/FBAppBridge.h

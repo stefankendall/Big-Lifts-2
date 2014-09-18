@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBDynamicFrameworkLoader.h
+../../../Facebook-iOS-SDK/src/Core/FBDynamicFrameworkLoader.h

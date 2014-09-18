@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBViewController+Internal.h
+../../../Facebook-iOS-SDK/src/UI/FBViewController+Internal.h

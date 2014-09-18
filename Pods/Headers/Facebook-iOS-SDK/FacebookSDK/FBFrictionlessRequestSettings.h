@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBFrictionlessRequestSettings.h
+../../../Facebook-iOS-SDK/src/Legacy/FBFrictionlessRequestSettings.h

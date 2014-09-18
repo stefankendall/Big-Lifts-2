@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBLogger.h
+../../../Facebook-iOS-SDK/src/Core/FBLogger.h

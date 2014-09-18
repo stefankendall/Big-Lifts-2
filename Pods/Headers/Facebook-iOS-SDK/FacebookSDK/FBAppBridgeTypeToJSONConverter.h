@@ -1,1 +1,1 @@
-../../../Facebook-iOS-SDK/src/FBAppBridgeTypeToJSONConverter.h
+../../../Facebook-iOS-SDK/src/DeviceAPI/FBAppBridgeTypeToJSONConverter.h
