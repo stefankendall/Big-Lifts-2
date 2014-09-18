@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,30 +15,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12">
-                        <rect key="frame" x="20" y="11" width="146" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </label>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19" customClass="PaddingRowTextField">
                         <rect key="frame" x="199" y="7" width="121" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="121" id="9Am-G4-rwe"/>
+                            <constraint firstAttribute="height" constant="30" id="i2m-VZ-UpA"/>
+                            <constraint firstAttribute="width" constant="121" id="x2Z-s2-lHn"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12">
+                        <rect key="frame" x="8" y="11.5" width="25" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="19" secondAttribute="bottom" constant="6" id="1y2-Dh-7Uw"/>
-                    <constraint firstItem="19" firstAttribute="top" secondItem="0L8-8M-qf6" secondAttribute="top" constant="7" id="6Jg-cB-iI3"/>
-                    <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" id="LCi-0k-g1P"/>
-                    <constraint firstItem="12" firstAttribute="leading" secondItem="0L8-8M-qf6" secondAttribute="leading" constant="20" symbolic="YES" id="lJl-G9-EYz"/>
-                    <constraint firstItem="12" firstAttribute="centerY" secondItem="0L8-8M-qf6" secondAttribute="centerY" id="ouq-GG-eDw"/>
-                    <constraint firstItem="19" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="33" id="xZF-Cl-GJt"/>
+                    <constraint firstAttribute="centerY" secondItem="12" secondAttribute="centerY" constant="0.25" id="9Tu-3f-huk"/>
+                    <constraint firstItem="12" firstAttribute="leading" secondItem="0L8-8M-qf6" secondAttribute="leadingMargin" id="D6c-Nq-ZqE"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="19" secondAttribute="trailing" constant="-8" id="STL-Ii-Yk6"/>
+                    <constraint firstAttribute="centerY" secondItem="19" secondAttribute="centerY" constant="-0.25" id="by4-6d-UJi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -45,4 +44,9 @@
             </connections>
         </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
