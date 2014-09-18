@@ -3,7 +3,13 @@
 @implementation BLKeyValueStore
 
 + (NSUbiquitousKeyValueStore *)store {
-    return [self iCloudEnabled] ? [NSUbiquitousKeyValueStore defaultStore] : [NSUserDefaults standardUserDefaults];
+    static NSUbiquitousKeyValueStore *instance = nil;
+    static dispatch_once_t onceToken = 0;
+    dispatch_once(&onceToken, ^{
+        instance = [self iCloudEnabled] ? [NSUbiquitousKeyValueStore defaultStore] : [NSUserDefaults standardUserDefaults];
+    });
+
+    return instance;
 }
 
 + (BOOL)iCloudEnabled {

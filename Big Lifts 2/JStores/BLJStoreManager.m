@@ -58,9 +58,11 @@
 }
 
 - (void)syncStores {
-    [self testSerializeForErrors];
-    [self writeStores];
-    [[BLKeyValueStore store] synchronize];
+    if ([[DataLoaded instance] loaded]) {
+        [self testSerializeForErrors];
+        [self writeStores];
+        [[BLKeyValueStore store] synchronize];
+    }
 }
 
 - (void)testSerializeForErrors {
