@@ -62,8 +62,8 @@
 
 - (void)changeOverlayDescription:(UIView *)view description:(NSString *)description {
     PurchaseOverlay *overlay = (PurchaseOverlay *) [view viewWithTag:kPurchaseOverlayTag];
-    [overlay.description setHidden:NO];
-    [overlay.description setText:description];
+    [overlay.descriptionLabel setHidden:NO];
+    [overlay.descriptionLabel setText:description];
 }
 
 - (void)enable:(UIView *)view {

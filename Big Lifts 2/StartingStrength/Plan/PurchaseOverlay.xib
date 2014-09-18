@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,8 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$x.xx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6d-g9-fko">
-                    <rect key="frame" x="20" y="167" width="280" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <rect key="frame" x="139" y="167.5" width="42" height="20.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -20,11 +20,12 @@
                 </label>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Oei-ez-WoF">
                     <rect key="frame" x="150" y="168" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="V3G-Wk-Tbv">
                     <rect key="frame" x="20" y="254" width="280" height="82"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="82" id="rIE-8Q-Xc2"/>
+                    </constraints>
                     <string key="text">In a workout, plates will show below weights. Ex: 
 235lbs
 [45,45,5]</string>
@@ -35,21 +36,24 @@
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="p6d-g9-fko" firstAttribute="bottom" secondItem="Oei-ez-WoF" secondAttribute="bottom" id="Fv5-PU-6Ve"/>
-                <constraint firstItem="Oei-ez-WoF" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" id="THQ-y6-gGA"/>
-                <constraint firstAttribute="centerX" secondItem="p6d-g9-fko" secondAttribute="centerX" id="WNe-Mo-pWC"/>
-                <constraint firstItem="V3G-Wk-Tbv" firstAttribute="leading" secondItem="p6d-g9-fko" secondAttribute="leading" id="fij-au-60v"/>
-                <constraint firstAttribute="bottom" secondItem="V3G-Wk-Tbv" secondAttribute="bottom" constant="20" symbolic="YES" id="kjq-EW-KKc"/>
-                <constraint firstItem="Oei-ez-WoF" firstAttribute="centerX" secondItem="p6d-g9-fko" secondAttribute="centerX" id="sRm-iq-5NZ"/>
-                <constraint firstItem="p6d-g9-fko" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="xOn-G9-gX3"/>
+                <constraint firstAttribute="centerX" secondItem="p6d-g9-fko" secondAttribute="centerX" id="Blx-sF-OSw"/>
+                <constraint firstAttribute="centerX" secondItem="V3G-Wk-Tbv" secondAttribute="centerX" id="I21-wX-wjp"/>
+                <constraint firstAttribute="bottom" secondItem="V3G-Wk-Tbv" secondAttribute="bottom" constant="20" id="RpX-0d-51c"/>
+                <constraint firstAttribute="centerY" secondItem="Oei-ez-WoF" secondAttribute="centerY" id="WGS-8P-ehp"/>
+                <constraint firstAttribute="centerX" secondItem="Oei-ez-WoF" secondAttribute="centerX" id="ZE4-OP-nVL"/>
+                <constraint firstAttribute="centerY" secondItem="p6d-g9-fko" secondAttribute="centerY" constant="0.5" id="y6A-7i-ime"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="description" destination="V3G-Wk-Tbv" id="55m-IW-sm7"/>
+                <outlet property="descriptionLabel" destination="V3G-Wk-Tbv" id="a7W-Lj-dnq"/>
                 <outlet property="loadingIndicator" destination="Oei-ez-WoF" id="ilC-D6-iLn"/>
                 <outlet property="price" destination="p6d-g9-fko" id="zvB-LF-tXb"/>
             </connections>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
