@@ -23,15 +23,6 @@
     STAssertEqualObjects([[[JFTOLiftStore instance] first] name], @"Power Clean", @"");
 }
 
-- (void)testTappingAddRowCausesSegue {
-    FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
-    UINavigationController *nav = [UINavigationController new];
-    [nav pushViewController:controller animated:NO];
-    int viewCount = [controller.navigationController.viewControllers count];
-    [controller tableView:controller.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
-    STAssertEquals([controller.navigationController.viewControllers count], (NSUInteger) viewCount + 1, @"");
-}
-
 - (void)testArrangeHidesAddButton {
     FTOChangeLiftsViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoChangeLifts"];
     [controller arrangeButtonTapped:controller.arrangeButton];
