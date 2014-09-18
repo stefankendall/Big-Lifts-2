@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,30 +15,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12">
-                        <rect key="frame" x="20" y="11" width="146" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19" customClass="RowTextField">
-                        <rect key="frame" x="199" y="0.0" width="101" height="43"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19" customClass="PaddingRowTextField">
+                        <rect key="frame" x="199" y="0.0" width="121" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="101" id="w81-sM-ZcC"/>
+                            <constraint firstAttribute="width" constant="121" id="orY-DY-JOG"/>
+                            <constraint firstAttribute="height" constant="44" id="zmX-Kd-XZf"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                     </textField>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lift" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12">
+                        <rect key="frame" x="8" y="11" width="146" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="146" id="chl-E7-Ugw"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="12" firstAttribute="leading" secondItem="0L8-8M-qf6" secondAttribute="leading" constant="20" symbolic="YES" id="6UO-Zp-GmF"/>
-                    <constraint firstAttribute="bottom" secondItem="19" secondAttribute="bottom" id="VTA-Zx-Vck"/>
-                    <constraint firstItem="19" firstAttribute="top" secondItem="0L8-8M-qf6" secondAttribute="top" id="aiW-up-qKm"/>
-                    <constraint firstItem="19" firstAttribute="centerY" secondItem="12" secondAttribute="centerY" id="kcO-rr-IQU"/>
-                    <constraint firstItem="19" firstAttribute="leading" secondItem="12" secondAttribute="trailing" constant="33" id="nGV-Zu-65w"/>
-                    <constraint firstAttribute="trailing" secondItem="19" secondAttribute="trailing" constant="20" symbolic="YES" id="t5o-9R-YeP"/>
+                    <constraint firstItem="12" firstAttribute="leading" secondItem="0L8-8M-qf6" secondAttribute="leadingMargin" id="91O-vn-RwT"/>
+                    <constraint firstAttribute="centerY" secondItem="12" secondAttribute="centerY" constant="0.25" id="Ikr-Xc-9q7"/>
+                    <constraint firstAttribute="centerY" secondItem="19" secondAttribute="centerY" id="PXj-NM-LRt"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="19" secondAttribute="trailing" constant="-8" id="pGr-6v-xqm"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -45,4 +47,9 @@
             </connections>
         </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
