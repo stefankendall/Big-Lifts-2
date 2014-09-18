@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,22 +15,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kf-W2-Dzj">
-                        <rect key="frame" x="245" y="-1" width="55" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="756-xb-kGg">
+                        <rect key="frame" x="0.0" y="0.0" width="96" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="55" id="TMc-DG-Fk1"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                        <state key="normal" title="All">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="756-xb-kGg">
-                        <rect key="frame" x="20" y="0.0" width="76" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="76" id="F72-Ya-HsM"/>
+                            <constraint firstAttribute="width" constant="96" id="Prf-jj-trI"/>
+                            <constraint firstAttribute="height" constant="44" id="etF-Bk-fyK"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <state key="normal" title="Delete">
@@ -37,22 +28,29 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdC-3v-Dp7">
                         <rect key="frame" x="134" y="7" width="52" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Newest">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kf-W2-Dzj">
+                        <rect key="frame" x="245" y="-1" width="75" height="44.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="Igv-1r-Q94"/>
+                            <constraint firstAttribute="height" constant="44" id="l7Y-am-pHU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <state key="normal" title="All">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="756-xb-kGg" firstAttribute="top" secondItem="rlk-qU-jif" secondAttribute="top" id="502-Hj-5nb"/>
-                    <constraint firstAttribute="centerY" secondItem="756-xb-kGg" secondAttribute="centerY" constant="-0.5" id="5ga-NG-k6V"/>
-                    <constraint firstAttribute="bottom" secondItem="8kf-W2-Dzj" secondAttribute="bottom" id="6Ok-qW-a9Q"/>
-                    <constraint firstItem="fdC-3v-Dp7" firstAttribute="centerX" secondItem="rlk-qU-jif" secondAttribute="centerX" id="A6R-AY-Zw1"/>
-                    <constraint firstItem="756-xb-kGg" firstAttribute="leading" secondItem="rlk-qU-jif" secondAttribute="leading" constant="20" symbolic="YES" id="GpZ-nq-e1C"/>
-                    <constraint firstItem="8kf-W2-Dzj" firstAttribute="centerY" secondItem="rlk-qU-jif" secondAttribute="centerY" id="HGZ-p5-tUJ"/>
-                    <constraint firstAttribute="centerY" secondItem="fdC-3v-Dp7" secondAttribute="centerY" constant="-0.5" id="KnK-2e-fiG"/>
-                    <constraint firstAttribute="bottom" secondItem="756-xb-kGg" secondAttribute="bottom" constant="-1" id="crm-yn-TkC"/>
-                    <constraint firstAttribute="trailing" secondItem="8kf-W2-Dzj" secondAttribute="trailing" constant="20" symbolic="YES" id="iPI-WT-eJd"/>
+                    <constraint firstAttribute="centerY" secondItem="fdC-3v-Dp7" secondAttribute="centerY" id="2aI-Cn-otj"/>
+                    <constraint firstAttribute="centerX" secondItem="fdC-3v-Dp7" secondAttribute="centerX" id="8Rn-Px-0NJ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8kf-W2-Dzj" secondAttribute="trailing" constant="-8" id="TM7-g8-Wvb"/>
+                    <constraint firstAttribute="centerY" secondItem="756-xb-kGg" secondAttribute="centerY" id="bht-hb-7QH"/>
+                    <constraint firstAttribute="centerY" secondItem="8kf-W2-Dzj" secondAttribute="centerY" constant="0.75" id="n4t-UD-tf3"/>
+                    <constraint firstItem="756-xb-kGg" firstAttribute="leading" secondItem="rlk-qU-jif" secondAttribute="leadingMargin" constant="-8" id="skc-zG-aYU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -60,6 +58,12 @@
                 <outlet property="sortButton" destination="fdC-3v-Dp7" id="gci-DN-TuP"/>
                 <outlet property="viewButton" destination="8kf-W2-Dzj" id="E4V-Dn-vyJ"/>
             </connections>
+            <point key="canvasLocation" x="348" y="175.75"/>
         </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
