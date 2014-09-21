@@ -3,5 +3,7 @@
 
 + (NSDecimalNumber *)nan:(NSDecimalNumber *)number to:(NSDecimalNumber *)to;
 
++ (NSDecimalNumber *)nanOrNil:(NSDecimalNumber *)number to:(NSDecimalNumber *)to;
+
 + (BOOL)nanOrNil:(NSDecimalNumber *)number;
 @end

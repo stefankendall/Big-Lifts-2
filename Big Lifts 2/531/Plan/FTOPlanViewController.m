@@ -110,7 +110,7 @@
     if (self.trainingMaxField == textField) {
         JFTOSettings *settings = [[JFTOSettingsStore instance] first];
         settings.trainingMax = [NSDecimalNumber decimalNumberWithString:[textField text] locale:NSLocale.currentLocale];
-        settings.trainingMax = [DecimalNumberHelper nan:settings.trainingMax to:N(100)];
+        settings.trainingMax = [DecimalNumberHelper nanOrNil:settings.trainingMax to:N(100)];
     }
 }
 

@@ -10,6 +10,10 @@
     return [number isEqual:[NSDecimalNumber notANumber]] ? to : number;
 }
 
++ (NSDecimalNumber *)nanOrNil:(NSDecimalNumber *)number to:(NSDecimalNumber *)to {
+    return number == nil || [number isEqual:[NSDecimalNumber notANumber]] ? to : number;
+}
+
 + (BOOL)nanOrNil:(NSDecimalNumber *)number {
     return number == nil || [number isEqual:[NSDecimalNumber notANumber]];
 }

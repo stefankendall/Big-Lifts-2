@@ -10,7 +10,9 @@
 
 - (NSDecimalNumber *)effectiveWeight {
     JFTOSettings *settings = [[JFTOSettingsStore instance] first];
-    NSDecimalNumber *effectiveWeight = [[[super effectiveWeight] decimalNumberByMultiplyingBy:settings.trainingMax]
+    NSDecimalNumber *setEffectiveWeight = [super effectiveWeight];
+    NSDecimalNumber *effectiveWeight = [
+            [setEffectiveWeight decimalNumberByMultiplyingBy:settings.trainingMax withBehavior:DecimalNumberHandlers.noRaise]
             decimalNumberByDividingBy:N(100) withBehavior:DecimalNumberHandlers.noRaise];
 
     if (self.lift.usesBar) {

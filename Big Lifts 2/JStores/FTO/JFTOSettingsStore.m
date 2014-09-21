@@ -1,10 +1,16 @@
 #import "JFTOSettingsStore.h"
 #import "JFTOSettings.h"
+#import "DecimalNumberHelper.h"
 
 @implementation JFTOSettingsStore
 
 - (Class)modelClass {
     return JFTOSettings.class;
+}
+
+- (void)onLoad {
+    JFTOSettings *settings = [self first];
+    settings.trainingMax = [DecimalNumberHelper nanOrNil:settings.trainingMax to:N(90)];
 }
 
 - (void)setupDefaults {
