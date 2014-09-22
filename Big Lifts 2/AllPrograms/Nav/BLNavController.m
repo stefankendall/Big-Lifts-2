@@ -4,6 +4,7 @@
 #import "Mailer.h"
 #import "JCurrentProgramStore.h"
 #import "Purchaser.h"
+#import "IAPAdapter.h"
 
 @implementation BLNavController
 
@@ -16,6 +17,10 @@
             [(NavTableViewCell *) cell setRightMargin:(int) [self.viewDeckController leftSize]];
         }
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (void)presentFeedbackEmail {
@@ -51,6 +56,24 @@
         NSString *storyBoardId = [tagViewMapping objectForKey:[NSNumber numberWithInteger:[cell tag]]];
         [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:storyBoardId]];
     }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self shouldHide:tableView forPath:indexPath]) {
+        [cell setHidden:YES];
+    }
+}
+
+- (BOOL)shouldHide:(UITableView *)tableView forPath:(NSIndexPath *)path {
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:path];
+    return [[IAPAdapter instance] hasPurchased:IAP_EVERYTHING] && cell == self.unlockEverythingCell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self shouldHide:tableView forPath:indexPath]) {
+        return 0;
+    }
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
 - (NSDictionary *)specificTagMapping {
