@@ -3,6 +3,7 @@
 #import "NavTableViewCell.h"
 #import "Mailer.h"
 #import "JCurrentProgramStore.h"
+#import "Purchaser.h"
 
 @implementation BLNavController
 
@@ -43,7 +44,10 @@
     } else if ([cell tag] == 9) {
         NSString *rateUrl = @"itms-apps://itunes.apple.com/app/id661503150";
         [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:rateUrl]];
-    } else {
+    } else if ([cell tag] == 10) {
+        [[Purchaser new] purchase:IAP_EVERYTHING];
+    }
+    else {
         NSString *storyBoardId = [tagViewMapping objectForKey:[NSNumber numberWithInteger:[cell tag]]];
         [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:storyBoardId]];
     }
