@@ -1,5 +1,4 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
-#import <MRCEnumerable/NSDictionary+Enumerable.h>
 #import <FlurrySDK/Flurry.h>
 #import "SSWorkoutVariantController.h"
 #import "JSSWorkoutStore.h"
@@ -23,7 +22,7 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
     [super viewDidLoad];
     self.variantMapping = @{@0 : @"Standard", @1 : @"Novice", @2 : @"Onus-Wunsler", @3 : @"Practical Programming"};
     self.iapCells = @{IAP_SS_ONUS_WUNSLER : self.onusWunslerCell,
-                      IAP_SS_PRACTICAL_PROGRAMMING : self.practicalProgrammingCell};
+            IAP_SS_PRACTICAL_PROGRAMMING : self.practicalProgrammingCell};
     [self checkSelectedVariant];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -40,7 +39,7 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
 - (void)enableOrDisableIapCells {
     [[self.iapCells allKeys] each:^(NSString *purchaseId) {
         if (!([[IAPAdapter instance] hasPurchased:purchaseId])) {
-            [self disable:purchaseId view:self.iapCells[purchaseId]];
+            [self disableView:self.iapCells[purchaseId]];
         }
         else {
             [self enable:self.iapCells[purchaseId]];
@@ -51,10 +50,6 @@ int const SS_WORKOUT_VARIANT_SECTION = 1;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     if ([cell viewWithTag:kPurchaseOverlayTag]) {
-        NSString *purchaseId = [self.iapCells detect:^BOOL(id key, id obj) {
-            return cell == obj;
-        }];
-        [[Purchaser new] purchase:purchaseId];
     }
     else {
         if ([indexPath section] == 1) {

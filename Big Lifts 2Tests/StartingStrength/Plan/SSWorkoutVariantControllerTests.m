@@ -6,9 +6,7 @@
 #import "JSSWorkoutStore.h"
 #import "JWorkout.h"
 #import "JSSVariantStore.h"
-#import "IAPAdapter.h"
 #import "PurchaseOverlay.h"
-#import "Purchaser.h"
 #import "JSSWorkout.h"
 #import "JSSVariant.h"
 
@@ -53,7 +51,7 @@ const int SS_WORKOUT_VARIANT_SECTION = 1;
 
 - (void)testEnableOnusWunsler {
     SSWorkoutVariantController *controller = [self getControllerByStoryboardIdentifier:@"ssPlanWorkoutVariant"];
-    [controller disable:IAP_SS_ONUS_WUNSLER view:controller.onusWunslerCell];
+    [controller disableView:controller.onusWunslerCell];
     [controller enable:controller.onusWunslerCell];
 
     STAssertNil([controller.onusWunslerCell viewWithTag:kPurchaseOverlayTag], @"");

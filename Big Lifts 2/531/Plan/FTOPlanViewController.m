@@ -16,7 +16,6 @@
 @interface FTOPlanViewController ()
 @property(nonatomic) NSDictionary *variantCells;
 @property(nonatomic) NSDictionary *iapCells;
-@property(nonatomic) NSIndexPath *iapIndexPath;
 @end
 
 @implementation FTOPlanViewController
@@ -77,14 +76,6 @@
 - (void)somethingPurchased {
     if (self.isViewLoaded && self.view.window) {
         [self enableDisableIapCells];
-        if (self.iapIndexPath) {
-            [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
-            self.iapIndexPath = nil;
-
-            if ([[[[JFTOVariantStore instance] first] name] isEqualToString:FTO_VARIANT_CUSTOM]) {
-                [self performSegueWithIdentifier:@"ftoCustomSegue" sender:self];
-            }
-        }
     }
 }
 
@@ -92,7 +83,7 @@
     if ([identifier isEqualToString:@"ftoCustomSegue"]) {
         return [[IAPAdapter instance] hasPurchased:IAP_FTO_CUSTOM];
     }
-    if( [identifier isEqualToString:@"ftoFullCustomSegue"]){
+    if ([identifier isEqualToString:@"ftoFullCustomSegue"]) {
         return [[IAPAdapter instance] hasPurchased:IAP_FTO_FULL_CUSTOM];
     }
     return YES;
@@ -117,8 +108,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *selectedCell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
-        self.iapIndexPath = indexPath;
-        [self purchaseFromCell:selectedCell];
     }
     else if ([indexPath section] == 1) {
         NSString *newVariantName = [self.variantCells detect:^BOOL(id key, UITableViewCell *cell) {

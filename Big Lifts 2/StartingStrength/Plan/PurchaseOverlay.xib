@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -11,16 +11,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="356"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$x.xx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6d-g9-fko">
-                    <rect key="frame" x="139" y="167.5" width="42" height="20.5"/>
+                <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock in the menu!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6d-g9-fko">
+                    <rect key="frame" x="81" y="167" width="157" height="20.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Oei-ez-WoF">
-                    <rect key="frame" x="150" y="168" width="20" height="20"/>
-                </activityIndicatorView>
                 <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="V3G-Wk-Tbv">
                     <rect key="frame" x="20" y="254" width="280" height="82"/>
                     <constraints>
@@ -39,15 +36,11 @@
                 <constraint firstAttribute="centerX" secondItem="p6d-g9-fko" secondAttribute="centerX" id="Blx-sF-OSw"/>
                 <constraint firstAttribute="centerX" secondItem="V3G-Wk-Tbv" secondAttribute="centerX" id="I21-wX-wjp"/>
                 <constraint firstAttribute="bottom" secondItem="V3G-Wk-Tbv" secondAttribute="bottom" constant="20" id="RpX-0d-51c"/>
-                <constraint firstAttribute="centerY" secondItem="Oei-ez-WoF" secondAttribute="centerY" id="WGS-8P-ehp"/>
-                <constraint firstAttribute="centerX" secondItem="Oei-ez-WoF" secondAttribute="centerX" id="ZE4-OP-nVL"/>
-                <constraint firstAttribute="centerY" secondItem="p6d-g9-fko" secondAttribute="centerY" constant="0.5" id="y6A-7i-ime"/>
+                <constraint firstAttribute="centerY" secondItem="p6d-g9-fko" secondAttribute="centerY" id="y6A-7i-ime"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="descriptionLabel" destination="V3G-Wk-Tbv" id="a7W-Lj-dnq"/>
-                <outlet property="loadingIndicator" destination="Oei-ez-WoF" id="ilC-D6-iLn"/>
-                <outlet property="price" destination="p6d-g9-fko" id="zvB-LF-tXb"/>
             </connections>
         </view>
     </objects>

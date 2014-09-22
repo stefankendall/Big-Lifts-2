@@ -20,15 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UITapGestureRecognizer *singleFingerTap =
-            [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    [self.view addGestureRecognizer:singleFingerTap];
-
     if (!([[IAPAdapter instance] hasPurchased:IAP_BAR_LOADING])) {
-        [self disable:IAP_BAR_LOADING view:self.view withDescription:
-                @"In a workout, plates will show below weights.\n"
-                        "Bench 235lbs\n"
-                        "[45,45,5]"];
+        [self disableView:self.view withDescription:@"In a workout, plates will show below weights.\n"
+                "Bench 235lbs\n"
+                "[45,45,5]"];
     }
 
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -54,12 +49,6 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     return [self.tableView viewWithTag:kPurchaseOverlayTag] != nil;
-}
-
-- (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
-    if ([self.tableView viewWithTag:kPurchaseOverlayTag]) {
-        [[Purchaser new] purchase:IAP_BAR_LOADING];
-    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

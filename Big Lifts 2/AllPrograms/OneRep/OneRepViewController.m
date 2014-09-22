@@ -69,20 +69,10 @@
         [self disableFullScreen:IAP_1RM view:self.view withDescription:@"Get max estimates any time\nyou log a set during a workout"];
     }
 
-    UITapGestureRecognizer *singleFingerTap =
-            [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
-    [self.view addGestureRecognizer:singleFingerTap];
-
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleIapChange)
                                                  name:IAP_PURCHASED_NOTIFICATION
                                                object:nil];
-}
-
-- (void)handleSingleTap:(UITapGestureRecognizer *)tgr {
-    if ([self.tableView viewWithTag:kPurchaseOverlayTag]) {
-        [[Purchaser new] purchase:IAP_1RM];
-    }
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {

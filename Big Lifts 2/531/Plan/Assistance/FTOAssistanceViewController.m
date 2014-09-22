@@ -12,7 +12,6 @@
 @property(nonatomic, strong) NSDictionary *cellMapping;
 @property(nonatomic, strong) NSDictionary *iapCells;
 @property(nonatomic, strong) NSDictionary *assistanceToSegues;
-@property(nonatomic, strong) NSIndexPath *iapIndexPath;
 @end
 
 @implementation FTOAssistanceViewController
@@ -55,17 +54,6 @@
 - (void)somethingPurchased {
     if (self.isViewLoaded && self.view.window) {
         [self enableDisableIapCells];
-        if (self.iapIndexPath) {
-            UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:self.iapIndexPath];
-            if (![self cellStillHasPurchaseOverlay:cell]) {
-                [self tableView:self.tableView didSelectRowAtIndexPath:self.iapIndexPath];
-                self.iapIndexPath = nil;
-                NSString *segue = self.assistanceToSegues[self.selectedAssitanceType];
-                if (segue) {
-                    [self performSegueWithIdentifier:segue sender:self];
-                }
-            }
-        }
     }
 }
 
@@ -87,9 +75,7 @@
         return selectedCell == cell;
     }];
     if ([selectedCell viewWithTag:kPurchaseOverlayTag]) {
-        self.iapIndexPath = indexPath;
         self.selectedAssitanceType = assistanceType;
-        [self purchaseFromCell:selectedCell];
     }
     else {
         [[JFTOAssistanceStore instance] changeTo:assistanceType];

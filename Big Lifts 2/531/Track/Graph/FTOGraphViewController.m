@@ -54,9 +54,7 @@
 
 - (void)enableDisableIap {
     if (![[IAPAdapter instance] hasPurchased:IAP_GRAPHING]) {
-        [self disable:IAP_GRAPHING view:self.webView];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOverlay:)];
-        [[self.webView viewWithTag:kPurchaseOverlayTag] addGestureRecognizer:tap];
+        [self disableView:self.webView];
         [self.exportButton setEnabled:NO];
     }
     else {
@@ -66,10 +64,6 @@
             [self.exportButton setEnabled:YES];
         }
     }
-}
-
-- (void)tapOverlay:(id)tapOverlay {
-    [[Purchaser new] purchase:IAP_GRAPHING];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {

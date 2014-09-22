@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 
 @interface UIViewController (PurchaseOverlay)
-- (void)disable:(NSString *)purchaseId view:(UIView *)view;
+- (void)disableView:(UIView *)view;
 
-- (void)disable:(NSString *)purchaseId view:(UIView *)view withDescription:(NSString *)description;
+- (void)disableView:(UIView *)view withDescription:(NSString *)description;
 
 - (void)disableFullScreen:(NSString *)purchaseId view:(UIView *)view withDescription:(NSString *)description;
 
@@ -11,5 +11,4 @@
 
 - (void)enableDisableIapCells;
 
-- (void)purchaseFromCell:(UITableViewCell *)selectedCell;
 @end
