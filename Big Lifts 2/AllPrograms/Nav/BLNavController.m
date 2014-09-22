@@ -5,6 +5,8 @@
 #import "JCurrentProgramStore.h"
 #import "Purchaser.h"
 #import "IAPAdapter.h"
+#import "SKProductStore.h"
+#import "PriceFormatter.h"
 
 @implementation BLNavController
 
@@ -21,6 +23,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
+
+    SKProduct *product = [[SKProductStore instance] productById:IAP_EVERYTHING];
+    if (product) {
+        [self.unlockEverythingLabel setText:[NSString stringWithFormat:@"Unlock Everything! (%@)", [[PriceFormatter new] priceOf:product]]];
+    }
 }
 
 - (void)presentFeedbackEmail {
