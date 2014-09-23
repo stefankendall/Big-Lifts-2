@@ -19,6 +19,15 @@
             [(NavTableViewCell *) cell setRightMargin:(int) [self.viewDeckController leftSize]];
         }
     }
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(somethingPurchased)
+                                                 name:IAP_PURCHASED_NOTIFICATION
+                                               object:nil];
+}
+
+- (void)somethingPurchased {
+    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
