@@ -1,4 +1,5 @@
 extern NSString * const IAP_EVERYTHING;
+extern NSString * const IAP_EVERYTHING_DISCOUNT;
 
 extern NSString * const IAP_BAR_LOADING;
 extern NSString * const IAP_GRAPHING;

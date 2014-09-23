@@ -12,6 +12,7 @@
         store = [SKProductStore new];
         store.allPurchaseIds = @[
                 IAP_EVERYTHING,
+                IAP_EVERYTHING_DISCOUNT,
                 IAP_BAR_LOADING,
                 IAP_GRAPHING,
                 IAP_1RM,

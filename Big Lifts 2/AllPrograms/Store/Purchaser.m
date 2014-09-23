@@ -4,6 +4,7 @@
 #import "SKProductStore.h"
 
 NSString *const IAP_EVERYTHING = @"everything";
+NSString *const IAP_EVERYTHING_DISCOUNTED = @"everything_discounted";
 
 NSString *const IAP_BAR_LOADING = @"barLoading";
 NSString *const IAP_GRAPHING = @"graphing";
@@ -35,6 +36,7 @@ NSString *const IAP_FTO_FULL_CUSTOM_ASSISTANCE = @"ftoFullCustomAssistance";
     if (self) {
         self.buyMessages = @{
                 IAP_EVERYTHING : @"All purchases are now unlocked.",
+                IAP_EVERYTHING_DISCOUNTED : @"All purchases are now unlocked.",
                 IAP_BAR_LOADING : @"Bar loading is now available throughout the app.",
                 IAP_GRAPHING : @"Graphing is now available.",
                 IAP_1RM : @"One rep maxes are now available.",
