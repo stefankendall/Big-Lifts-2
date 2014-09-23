@@ -24,7 +24,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 
-    SKProduct *product = [[SKProductStore instance] productById:IAP_EVERYTHING];
+    NSString *productId = [Purchaser hasPurchasedAnything] ? IAP_EVERYTHING_DISCOUNT : IAP_EVERYTHING;
+    SKProduct *product = [[SKProductStore instance] productById:productId];
     if (product) {
         [self.unlockEverythingLabel setText:[NSString stringWithFormat:@"Unlock Everything! (%@)", [[PriceFormatter new] priceOf:product]]];
     }
