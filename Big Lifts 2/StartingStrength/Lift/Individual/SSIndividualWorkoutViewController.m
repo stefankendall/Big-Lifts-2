@@ -1,4 +1,3 @@
-#import <IAPManager/IAPManager.h>
 #import <FlurrySDK/Flurry.h>
 #import "SSIndividualWorkoutViewController.h"
 #import "IIViewDeckController.h"
@@ -162,9 +161,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 1) {
-        self.tappedSet = [self setForIndexPath:indexPath];
-        self.tappedIndexPath = indexPath;
-        [self performSegueWithIdentifier:@"ssEditSet" sender:self];
+        //Prevent crashing. No idea.
+        if ([indexPath row] >= [self tableView:tableView numberOfRowsInSection:indexPath.section]) {
+            [self.tableView reloadData];
+        }
+        else {
+            self.tappedSet = [self setForIndexPath:indexPath];
+            self.tappedIndexPath = indexPath;
+            [self performSegueWithIdentifier:@"ssEditSet" sender:self];
+        }
     }
 }
 
