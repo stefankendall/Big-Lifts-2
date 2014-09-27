@@ -66,11 +66,9 @@ int const DEAD = 0;
     NSMutableArray *list = [@[] mutableCopy];
     for (NSString *value in array) {
         BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class] withUuid:value];
-        id associatedObject = [store find:@"uuid" value:value];
-        if (associatedObject) {
-            [list addObject:associatedObject];
-        }
+        [list addObject:[store find:@"uuid" value:value]];
     }
+
     return list;
 }
 

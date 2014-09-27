@@ -3,6 +3,10 @@
 #import "JSSLift.h"
 #import "JSettingsStore.h"
 #import "JSettings.h"
+#import "JSet.h"
+#import "JSetStore.h"
+#import "JWorkoutStore.h"
+#import "JWorkout.h"
 
 @implementation JSSLiftStoreTests
 
@@ -13,11 +17,11 @@
 - (void)testDefaultLiftsAreOrdered {
     JSSLiftStore *store = [JSSLiftStore instance];
     NSArray *lifts = [store findAll];
-    STAssertTrue([[lifts[0] performSelector:@selector(name)] isEqualToString:@"Bench"], @"");
-    STAssertTrue([[lifts[1] performSelector:@selector(name)] isEqualToString:@"Deadlift"], @"");
-    STAssertTrue([[lifts[2] performSelector:@selector(name)] isEqualToString:@"Power Clean"], @"");
-    STAssertTrue([[lifts[3] performSelector:@selector(name)] isEqualToString:@"Press"], @"");
-    STAssertTrue([[lifts[4] performSelector:@selector(name)] isEqualToString:@"Squat"], @"");
+    STAssertTrue([[lifts[0] performSelector:@ selector(name)] isEqualToString:@"Bench"], @"");
+    STAssertTrue([[lifts[1] performSelector:@ selector(name)] isEqualToString:@"Deadlift"], @"");
+    STAssertTrue([[lifts[2] performSelector:@ selector(name)] isEqualToString:@"Power Clean"], @"");
+    STAssertTrue([[lifts[3] performSelector:@ selector(name)] isEqualToString:@"Press"], @"");
+    STAssertTrue([[lifts[4] performSelector:@ selector(name)] isEqualToString:@"Squat"], @"");
 }
 
 - (void)testLiftsCanBeFoundByName {
@@ -71,6 +75,20 @@
     JSSLiftStore *store = [JSSLiftStore instance];
     [store removeExtraLifts:@[@"Power Clean"]];
     STAssertEquals([store count], 1, @"");
+}
+
+- (void)testRemovesDeadSetsWhenSsLiftsChange {
+    JSSLift *bench = [[JSSLiftStore instance] find:@"name" value:@"Squat"];
+    JSet *set = [[JSetStore instance] create];
+    set.lift = bench;
+
+    [[JWorkoutStore instance] empty];
+    JWorkout *workout = [[JWorkoutStore instance] create];
+
+    [workout addSet:set];
+
+    [[JSSLiftStore instance] removeExtraLifts:@[@"Bench"]];
+    STAssertEquals((int) [workout.sets count], 0, @"");
 }
 
 @end

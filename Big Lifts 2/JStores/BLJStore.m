@@ -43,7 +43,7 @@
 
 - (void)remove:(id)object {
     JModel *model = object;
-    model.dead = [NSNumber numberWithInt:DEAD];
+    model.dead = @(DEAD);
     [self.data removeObject:object];
     [self.uuidCache removeObjectForKey:[object uuid]];
     [self removeCascadeAssociations:object];
