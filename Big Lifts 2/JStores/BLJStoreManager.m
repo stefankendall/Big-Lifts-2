@@ -112,6 +112,10 @@
         manager = [BLJStoreManager new];
         manager.allStores = @[
                 [JVersionStore instance],
+
+                [JSetLogStore instance],
+                [JWorkoutLogStore instance],
+
                 [JCurrentProgramStore instance],
                 [JTimerStore instance],
 
@@ -135,9 +139,6 @@
                 [JSetStore instance],
                 [JFTOSetStore instance],
                 [JWorkoutStore instance],
-
-                [JSetLogStore instance],
-                [JWorkoutLogStore instance],
 
                 [JFTOVariantStore instance],
                 [JSSVariantStore instance],
