@@ -12,6 +12,8 @@
 
 - (void)clear;
 
+- (void)clearCompletedSets;
+
 - (FTOWorkoutChange *)changeForWorkout:(JFTOWorkout *)workout;
 
 - (SetChange *)changeForWorkout:(JFTOWorkout *)workout set:(int)set;

@@ -44,6 +44,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [[BLTimer instance] setObserver:nil];
+    [[FTOWorkoutChangeCache instance] clearCompletedSets];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

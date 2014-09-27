@@ -29,7 +29,11 @@
 
 - (void)clear {
     self.ftoWorkoutChanges = [@[] mutableCopy];
-    self.completedSets = [@[] mutableCopy];
+    [self.completedSets removeAllObjects];
+}
+
+- (void)clearCompletedSets {
+    [self.completedSets removeAllObjects];
 }
 
 - (FTOWorkoutChange *)changeForWorkout:(JFTOWorkout *)workout {
