@@ -11,6 +11,8 @@
 #import "JSet.h"
 #import "JFTOSettingsStore.h"
 #import "JFTOSettings.h"
+#import "JFTOVariantStore.h"
+#import "JFTOVariant.h"
 
 @implementation JFTOSimplestStrengthTemplateAssistanceTests
 
@@ -51,9 +53,17 @@
     STAssertEquals((int) [week5Workout.workout.sets count], 9, @"");
 }
 
+- (void)testSwitchesFirstAndSecondWeekForPowerlifting {
+    [[JFTOVariantStore instance] changeTo:FTO_VARIANT_POWERLIFTING];
+    [[JFTOSimplestStrengthTemplateAssistance new] setup];
+    JFTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Squat"];
+    JSet *firstSet = week1Workout.workout.assistanceSets[0];
+    STAssertEquals([firstSet.reps intValue], 8, @"");
+}
+
 - (JFTOWorkout *)findWorkout:(int)week withLift:(NSString *)liftName {
     return [[[JFTOWorkoutStore instance] findAll] detect:^BOOL(JFTOWorkout *workout) {
-        return [workout.week intValue] == week && [[workout.workout.sets[0] lift].name isEqualToString:liftName];
+        return [workout.week intValue] == week && [[[workout.workout.sets[0] lift] name] isEqualToString:liftName];
     }];
 }
 

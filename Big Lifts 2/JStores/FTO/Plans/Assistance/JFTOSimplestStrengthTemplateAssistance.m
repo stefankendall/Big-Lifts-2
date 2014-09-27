@@ -11,6 +11,8 @@
 #import "JSetStore.h"
 #import "JFTOSettings.h"
 #import "JFTOSettingsStore.h"
+#import "JFTOVariantStore.h"
+#import "JFTOVariant.h"
 
 @implementation JFTOSimplestStrengthTemplateAssistance
 
@@ -61,6 +63,12 @@
                     @{@"percentage" : N(60), @"reps" : @5}
             ]
     } mutableCopy];
+
+    if ([[[[JFTOVariantStore instance] first] name] isEqual:FTO_VARIANT_POWERLIFTING]) {
+        NSArray *week1 = weeksToData[@1];
+        weeksToData[@1] = weeksToData[@2];
+        weeksToData[@2] = week1;
+    }
 
     if ([[[JFTOSettingsStore instance] first] sixWeekEnabled]) {
         NSArray *deload = weeksToData[@4];
