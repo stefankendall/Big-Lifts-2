@@ -39,6 +39,10 @@
     [self.liftsPicker setDataSource:self];
     [self.liftsPicker setDelegate:self];
     int row = [[[JFTOLiftStore instance] findAll] indexOfObject:self.set.lift];
+    if (row == NSNotFound) {
+        row = 0;
+    }
+
     [self.liftsPicker selectRow:row inComponent:0 animated:NO];
     self.lift.inputView = self.liftsPicker;
 }

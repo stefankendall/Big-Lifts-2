@@ -8,7 +8,7 @@
     NSArray *sorted = [[Migrator new] sortedKeys:migrations];
 
     for (NSUInteger i = 0; i < [sorted count] - 1; i++) {
-        STAssertTrue(sorted[i + 1] > sorted[i], @"");
+        STAssertTrue([sorted[i + 1] intValue] > [sorted[i] intValue], [NSString stringWithFormat:@"%@", sorted]);
     }
 }
 
