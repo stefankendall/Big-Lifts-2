@@ -6,11 +6,15 @@
 
 - (id)create;
 
+- (void)buildUuidCache;
+
 - (void)empty;
 
 - (void)remove:(id)object;
 
 - (void)reset;
+
+- (NSMutableArray *)deserialize:(NSArray *)serialized;
 
 - (JSONModel *)deserializeObject:(NSString *)string;
 
