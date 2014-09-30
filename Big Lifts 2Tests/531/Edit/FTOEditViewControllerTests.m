@@ -7,6 +7,8 @@
 #import "FTOEditLiftCell.h"
 #import "RowTextField.h"
 #import "TrainingMaxRowTextField.h"
+#import "JFTOLift.h"
+#import "JFTOSettingsStore.h"
 
 @interface FTOEditViewControllerTests ()
 
@@ -32,6 +34,36 @@
     FTOEditLiftCell *newCell =
             (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     STAssertEqualObjects([newCell.trainingMax text], @"180", @"");
+}
+
+- (void)testHandlesNilWeightDoesntCrash {
+    JFTOLift *lift = [[JFTOLiftStore instance] create];
+    lift.weight = nil;
+
+    FTOEditLiftCell *cell =
+            (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
+}
+
+- (void)testHandlesNanWeightDoesntCrash {
+    JFTOLift *lift = [[JFTOLiftStore instance] create];
+    lift.weight = [NSDecimalNumber notANumber];
+    
+    FTOEditLiftCell *cell =
+    (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
+}
+
+- (void)testHandlesNilTrainingMaxDoesntCrash {
+    [[[JFTOSettingsStore instance] first] setTrainingMax:nil];
+
+    FTOEditLiftCell *cell =
+            (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+}
+
+- (void)testHandlesNanTrainingMaxDoesntCrash {
+    [[[JFTOSettingsStore instance] first] setTrainingMax:[NSDecimalNumber notANumber]];
+    
+    FTOEditLiftCell *cell =
+    (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
 
 - (void)testEditTrainingMaxUpdatesMax {

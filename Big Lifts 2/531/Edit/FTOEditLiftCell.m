@@ -24,7 +24,9 @@
 
 - (void)updateTrainingMax:(NSDecimalNumber *)weight {
     JFTOSettings *settings = [[JFTOSettingsStore instance] first];
-    NSDecimalNumber *trainingWeight = [[weight decimalNumberByMultiplyingBy:settings.trainingMax] decimalNumberByDividingBy:N(100) withBehavior:DecimalNumberHandlers.noRaise];
+    NSDecimalNumber *trainingWeight = [
+            [weight decimalNumberByMultiplyingBy:settings.trainingMax withBehavior:DecimalNumberHandlers.noRaise]
+            decimalNumberByDividingBy:N(100) withBehavior:DecimalNumberHandlers.noRaise];
     NSNumberFormatter *nf = [NSNumberFormatter new];
     [nf setMaximumFractionDigits:1];
     [self.trainingMax setText:[nf stringFromNumber:trainingWeight]];
