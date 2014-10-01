@@ -4,7 +4,6 @@
 #import "BLJStoreManager.h"
 #import "JFTOWorkout.h"
 #import "JSetStore.h"
-#import "JFTOWorkout.h"
 
 @implementation CustomAssistanceHelper
 

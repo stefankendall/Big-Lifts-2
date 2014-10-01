@@ -15,11 +15,10 @@
 @property(weak, nonatomic) IBOutlet UISwitch *useTrainingMaxSwitch;
 
 @property(nonatomic, strong) JSet *set;
+@property(nonatomic, strong) JWorkout *workout;
 
 @property(nonatomic, strong) UIPickerView *liftsPicker;
 @property(nonatomic) BOOL usingBigLift;
-
-@property(nonatomic, strong) JWorkout *workout;
 
 - (void)updateSet;
 

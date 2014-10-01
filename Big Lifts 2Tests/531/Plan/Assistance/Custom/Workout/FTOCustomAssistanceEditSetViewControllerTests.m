@@ -9,6 +9,8 @@
 #import "JFTOLiftStore.h"
 #import "JFTOSetStore.h"
 #import "JFTOSet.h"
+#import "JWorkoutStore.h"
+#import "JWorkout.h"
 
 @implementation FTOCustomAssistanceEditSetViewControllerTests
 
@@ -33,11 +35,14 @@
 - (void)testTogglingTrainingMaxChangesSetTypes {
     FTOCustomAssistanceEditSetViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoCustomAssistanceEditSetViewController"];
 
+    controller.workout = [[JWorkoutStore instance] create];
     controller.set = [[JFTOSetStore instance] create];
     controller.set.lift = [[JFTOLiftStore instance] first];
     controller.set.reps = @5;
     controller.set.percentage = N(50);
     controller.set.amrap = YES;
+    [controller.workout addSet:controller.set];
+
     int ftoCount = [[JFTOSetStore instance] count];
     [controller.useTrainingMaxSwitch setOn:NO];
     [controller useTrainingMaxChanged:controller.useTrainingMaxSwitch];

@@ -129,16 +129,20 @@
         newSet = [[JSetStore instance] create];
     }
 
-    NSUInteger setIndex = [self.workout.sets indexOfObject:self.set];
-    if (setIndex == NSNotFound) {
-        if (self.set != nil) {
-            BLJStore *store = [[BLJStoreManager instance] storeForModel:[JSet class] withUuid:self.set.uuid];
-            [store remove:self.set];
+    int index = -1;
+    for (int i = 0; i < [self.workout.sets count]; i++) {
+        JSet *currentSet = self.workout.sets[(NSUInteger) i];
+        if ([currentSet.uuid isEqualToString:self.set.uuid]) {
+            index = i;
+            break;
         }
-
-        [self.navigationController popViewControllerAnimated:NO];
-        self.workout.sets[setIndex] = newSet;
     }
+    if (index == -1) {
+        [self.navigationController popViewControllerAnimated:NO];
+        return;
+    }
+
+    self.workout.sets[(NSUInteger) index] = newSet;
 
     BLJStore *store = [[BLJStoreManager instance] storeForModel:[JSet class] withUuid:self.set.uuid];
     [store remove:self.set];

@@ -30,6 +30,9 @@
 }
 
 - (void)addSet:(JSet *)set {
+    if (set == nil) {
+        return;
+    }
     [self.sets addObject:set];
 }
 
