@@ -5,17 +5,19 @@
 @interface SetCell : CTCustomTableViewCell {
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
-@property (weak, nonatomic) IBOutlet UILabel *repsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *liftLabel;
-@property (weak, nonatomic) IBOutlet UILabel *optionalLabel;
-@property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
-@property (nonatomic) NSNumber *enteredReps;
-@property (nonatomic) NSDecimalNumber *enteredWeight;
+@property(weak, nonatomic) IBOutlet UILabel *weightLabel;
+@property(weak, nonatomic) IBOutlet UILabel *repsLabel;
+@property(weak, nonatomic) IBOutlet UILabel *liftLabel;
+@property(weak, nonatomic) IBOutlet UILabel *optionalLabel;
+@property(weak, nonatomic) IBOutlet UILabel *percentageLabel;
+@property(nonatomic) NSNumber *enteredReps;
+@property(nonatomic) NSDecimalNumber *enteredWeight;
 
+- (void)updateWeight:(NSDecimalNumber *)weight;
 
-- (void)setSet:(JSet *) set;
+- (void)setSet:(JSet *)set;
 
 - (void)setSet:(JSet *)set withEnteredReps:(NSNumber *)enteredReps withEnteredWeight:(NSDecimalNumber *)weight;
 
+- (void)setSet:(JSet *)set withWeight:(NSDecimalNumber *)weight;
 @end

@@ -81,11 +81,13 @@
         }
 
         JSet *set = self.svWorkout.workout.sets[(NSUInteger) indexPath.row];
-        [cell setSet:set];
-        if (self.svWorkout.weightAdd) {
-            NSDecimalNumber *weight = [[WeightRounder new] round:[[set effectiveWeight] decimalNumberByAdding:self.svWorkout.weightAdd]];
-            [cell.weightLabel setText:[weight stringValue]];
+
+        NSDecimalNumber *weight = [set roundedEffectiveWeight];
+        if(self.svWorkout.weightAdd) {
+            weight = [[WeightRounder new] round:[[set effectiveWeight] decimalNumberByAdding:self.svWorkout.weightAdd]];
         }
+
+        [cell setSet:set withWeight: weight];
         return cell;
     }
 }

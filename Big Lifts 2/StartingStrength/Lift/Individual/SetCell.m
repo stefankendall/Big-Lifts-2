@@ -72,4 +72,13 @@
     }
 }
 
+- (void)setSet:(JSet *)set withWeight:(NSDecimalNumber *)weight {
+    [self setSet:set];
+    [self updateWeight: weight];
+}
+
+- (void)updateWeight:(NSDecimalNumber *)weight {
+    [self.weightLabel setText:[weight stringValue]];
+}
+
 @end

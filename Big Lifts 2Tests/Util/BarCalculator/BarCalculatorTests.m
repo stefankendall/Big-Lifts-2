@@ -30,15 +30,15 @@
 
 - (void)testMakesCorrectWeightWhenSmallerPlatesGetCloser {
     [[JPlateStore instance] empty];
-    [[JPlateStore instance] createPlateWithWeight: N(25) count: 6];
-    [[JPlateStore instance] createPlateWithWeight: N(20) count: 6];
-    [[JPlateStore instance] createPlateWithWeight: N(15) count: 6];
-    [[JPlateStore instance] createPlateWithWeight: N(10) count: 6];
-    [[JPlateStore instance] createPlateWithWeight: N(5) count: 6];
-    [[JPlateStore instance] createPlateWithWeight: N(2.5) count: 6];
-    [[JPlateStore instance] createPlateWithWeight: N(1.25) count: 6];
-    [[JPlateStore instance] createPlateWithWeight: N(1) count: 6];
-    [[JPlateStore instance] createPlateWithWeight: N(0.5) count: 6];
+    [[JPlateStore instance] createPlateWithWeight:N(25) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(20) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(15) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(10) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(5) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(2.5) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(1.25) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(1) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(0.5) count:6];
 
     NSArray *expected = @[@25, @25, @2.5, @1, @0.5];
     NSArray *actual = [[[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll] barWeight:N(20)] platesToMakeWeight:N(128)];
@@ -101,6 +101,19 @@
 - (void)testHandlesNilBarWeight {
     self.calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll] barWeight:nil];
     STAssertNotNil([self.calculator platesToMakeWeight:N(60)], @"");
+}
+
+- (void)testHandles310 {
+    [[JPlateStore instance] empty];
+    [[JPlateStore instance] createPlateWithWeight:N(45) count:20];
+    [[JPlateStore instance] createPlateWithWeight:N(25) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(10) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(5) count:6];
+    [[JPlateStore instance] createPlateWithWeight:N(2.5) count:6];
+
+    self.calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll] barWeight:N(45)];
+    NSArray *expected310 = @[@45, @45, @25, @10, @5, @2.5];
+    STAssertEqualObjects([self.calculator platesToMakeWeight:N(310)], expected310, @"");
 }
 
 @end

@@ -17,11 +17,14 @@
         return;
     }
 
+    NSDecimalNumber *weightToMake = [set roundedEffectiveWeight];
+    [self setPlatesTextForWeight:weightToMake];
+}
+
+- (void)setPlatesTextForWeight:(NSDecimalNumber *)weightToMake {
     JBar *bar = [[JBarStore instance] first];
     BarCalculator *calculator = [[BarCalculator alloc] initWithPlates:[[JPlateStore instance] findAll]
                                                             barWeight:bar.weight];
-
-    NSDecimalNumber *weightToMake = [set roundedEffectiveWeight];
     weightToMake = [DecimalNumberHelper nanOrNil:self.enteredWeight] ? weightToMake : self.enteredWeight;
     NSArray *plates = [calculator platesToMakeWeight:weightToMake];
     NSString *platesText = @"";
@@ -30,6 +33,11 @@
     }
 
     [self.platesLabel setText:platesText];
+}
+
+- (void)updateWeight:(NSDecimalNumber *)weight {
+    [super updateWeight:weight];
+    [self setPlatesTextForWeight:weight];
 }
 
 @end
