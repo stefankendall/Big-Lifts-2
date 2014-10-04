@@ -18,6 +18,13 @@
     STAssertEquals(workoutCount, [[JWorkoutStore instance] count], @"");
 }
 
+- (void)testSetupVariantClearsStateStore {
+    JSSState *state = [[JSSStateStore instance] first];
+    state.lastWorkout = [[JSSWorkoutStore instance] first];
+    [[JSSWorkoutStore instance] setupVariant:@"Novice"];
+    STAssertNil(state.lastWorkout, @"");
+}
+
 - (void)testSetsUpDefaultLifts {
     STAssertEquals([[JSSWorkoutStore instance] count], 2, @"");
     JSSWorkout *workoutA = [[JSSWorkoutStore instance] atIndex:0];
@@ -84,7 +91,7 @@
         return [set.lift.name isEqualToString:@"Squat"];
     }];
 
-    STAssertEquals((int)[squatWorkout.sets count], 8, @"");
+    STAssertEquals((int) [squatWorkout.sets count], 8, @"");
 }
 
 - (void)testActiveWorkoutForPracticalProgramming {

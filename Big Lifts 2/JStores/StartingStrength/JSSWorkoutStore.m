@@ -30,6 +30,7 @@
 }
 
 - (void)setupVariant:(NSString *)variant {
+    [[[JSSStateStore instance] first] setLastWorkout:nil];
     JSSVariant *variantObj = [[JSSVariantStore instance] first];
     variantObj.name = variant;
 
