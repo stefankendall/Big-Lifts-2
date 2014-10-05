@@ -101,7 +101,7 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    JFTOCustomAssistanceLift *lift = [[self liftStore] atIndex:row];
+    JLift *lift = [[self liftStore] atIndex:row];
     return lift.name;
 }
 

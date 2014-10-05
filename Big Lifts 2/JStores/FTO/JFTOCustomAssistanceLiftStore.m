@@ -20,6 +20,7 @@
 
 - (void)liftsChanged {
     [[JFTOCustomAssistanceWorkoutStore instance] removeSetsForMissingAssistanceLifts];
+    [super liftsChanged];
 }
 
 @end
