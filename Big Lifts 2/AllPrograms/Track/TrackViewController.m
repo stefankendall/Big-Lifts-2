@@ -4,12 +4,27 @@
 #import "WorkoutLogTableDataSource.h"
 #import "JWorkoutLog.h"
 #import "TrackToolbarCell.h"
+#import "BLJStoreManager.h"
 
 @implementation TrackViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
+
+//- (BOOL)canBecomeFirstResponder {
+//    return YES;
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated {
+//    [self becomeFirstResponder];
+//}
+//
+//- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+//    if (event.subtype == UIEventSubtypeMotionShake) {
+//        [[BLJStoreManager instance] syncStores];
+//    }
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {

@@ -7,4 +7,6 @@
 - (JSet *)createWarmupWithLift:(JLift *)lift percentage:(NSDecimalNumber *)percentage reps:(int)reps;
 
 - (JSet *)createFromSet:(JSet *)set;
+
+- (void)adjustToLifts;
 @end

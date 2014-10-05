@@ -9,6 +9,7 @@
 #import "JSSStateStore.h"
 #import "JSSState.h"
 #import "JWorkoutStore.h"
+#import "JSetStore.h"
 
 @implementation JSSWorkoutStoreTests
 
@@ -16,6 +17,31 @@
     int workoutCount = [[JWorkoutStore instance] count];
     [[JSSWorkoutStore instance] setupVariant:@"Standard"];
     STAssertEquals(workoutCount, [[JWorkoutStore instance] count], @"");
+}
+
+- (void)testDoesNotLeakSets {
+    int setCount = [[JSetStore instance] count];
+    [[JSSWorkoutStore instance] setupVariant:@"Standard"];
+    [[JSSWorkoutStore instance] setupVariant:@"Novice"];
+    [[JSSWorkoutStore instance] setupVariant:@"Standard"];
+    STAssertEquals(setCount, [[JSetStore instance] count], @"");
+}
+
+- (void)testDoesNotCreateAnonymousLifts {
+    [[JSSWorkoutStore instance] setupVariant:@"Novice"];
+    for (JSSLift *lift in [[JSSLiftStore instance] findAll]) {
+        STAssertFalse(lift.uuid == nil, @"");
+    }
+}
+
+- (void)testDoesNotLeaveDeadLiftsInSetsWhenSwitchingToNovice {
+    [[JSSWorkoutStore instance] setupVariant:@"Novice"];
+    for (JSSLift *lift in [[JSSLiftStore instance] findAll]) {
+        STAssertFalse([lift.name isEqualToString:@"Power Clean"], @"");
+    }
+    for (JSet *set in [[JSetStore instance] findAll]) {
+        STAssertFalse([set.lift isDead], @"");
+    }
 }
 
 - (void)testSetupVariantClearsStateStore {

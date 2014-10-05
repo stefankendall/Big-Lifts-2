@@ -40,4 +40,15 @@
     return newSet;
 }
 
+- (void)adjustToLifts {
+    NSMutableArray *deadSets = [@[] mutableCopy];
+    for (JSet *set in self.data) {
+        if ([set.lift isDead]) {
+            [deadSets addObject:set];
+        }
+    }
+    for (JSet *deadSet in deadSets) {
+        [self remove:deadSet];
+    }
+}
 @end

@@ -15,13 +15,14 @@
 }
 
 - (void)adjustToLifts {
-    for (JWorkout *workout in [[JWorkoutStore instance] findAll]) {
+    for (JWorkout *workout in self.data) {
         NSMutableArray *deadSets = [@[] mutableCopy];
         for (JSet *set in workout.sets) {
             if ([set.lift isDead]) {
                 [deadSets addObject:set];
             }
         }
+
         [workout removeSets:deadSets];
     }
 }
