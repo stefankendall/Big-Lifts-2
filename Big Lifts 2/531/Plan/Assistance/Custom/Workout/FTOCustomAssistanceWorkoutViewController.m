@@ -17,6 +17,12 @@
 static const int SETS_SECTION = 0;
 static const int ADD_SECTION = 1;
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self registerCellNib:FTOCustomAssistanceWorkoutSetCell.class];
+    [self registerCellNib:AddCell.class];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [Flurry logEvent:@"5/3/1_CustomAssistance"];
     [self.tableView reloadData];
@@ -38,17 +44,12 @@ static const int ADD_SECTION = 1;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == ADD_SECTION) {
         AddCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
-        if (!cell) {
-            cell = [AddCell create];
-        }
         [cell.addText setText:@"Add Set..."];
         return cell;
     }
     else {
         FTOCustomAssistanceWorkoutSetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomAssistanceWorkoutSetCell.class)];
-        if (!cell) {
-            cell = [FTOCustomAssistanceWorkoutSetCell create];
-        }
+
         JSet *set = self.workout.sets[(NSUInteger) indexPath.row];
         if (set.lift) {
             [cell.liftName setText:set.lift.name];
@@ -91,7 +92,7 @@ static const int ADD_SECTION = 1;
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    if ([identifier isEqualToString:@"ftoCustomAsstEditSet"] && self.tappedSet != nil && [self.tappedSet isDead]){
+    if ([identifier isEqualToString:@"ftoCustomAsstEditSet"] && self.tappedSet != nil && [self.tappedSet isDead]) {
         return NO;
     }
     return [super shouldPerformSegueWithIdentifier:identifier sender:sender];

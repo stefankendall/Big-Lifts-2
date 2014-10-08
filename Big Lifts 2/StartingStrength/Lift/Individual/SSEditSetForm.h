@@ -1,9 +1,11 @@
+#import "BLTableViewController.h"
+
 @class JSet;
 @class PaddingTextField;
 @protocol SetChangeDelegate;
 @class SetChange;
 
-@interface SSEditSetForm : UITableViewController <UITextFieldDelegate>
+@interface SSEditSetForm : BLTableViewController <UITextFieldDelegate>
 @property(weak, nonatomic) IBOutlet PaddingTextField *weightField;
 @property(weak, nonatomic) IBOutlet PaddingTextField *repsField;
 

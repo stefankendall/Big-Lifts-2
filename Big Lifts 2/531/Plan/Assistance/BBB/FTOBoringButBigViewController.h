@@ -1,4 +1,6 @@
-@interface FTOBoringButBigViewController : UITableViewController {}
+#import "BLTableViewController.h"
+
+@interface FTOBoringButBigViewController : BLTableViewController
 @property (weak, nonatomic) IBOutlet UITextField *percentageField;
 @property (weak, nonatomic) IBOutlet UISwitch *threeMonthToggle;
 

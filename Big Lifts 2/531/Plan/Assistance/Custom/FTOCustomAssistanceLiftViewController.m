@@ -12,6 +12,13 @@
 const int LIFTS_SECTION = 0;
 const int ADD_SECTION = 1;
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self registerCellNib:FTOCustomAssistanceLiftCell.class];
+    [self registerCellNib:AddCell.class];
+}
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
@@ -32,16 +39,11 @@ const int ADD_SECTION = 1;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == ADD_SECTION) {
         AddCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
-        if (!cell) {
-            cell = [AddCell create];
-        }
         return cell;
     }
     else {
         FTOCustomAssistanceLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOCustomAssistanceLiftCell.class)];
-        if (!cell) {
-            cell = [FTOCustomAssistanceLiftCell create];
-        }
+
         JFTOCustomAssistanceLift *lift = [[JFTOCustomAssistanceLiftStore instance] atIndex:indexPath.row];
         [cell.name setText:lift.name];
         [cell.weight setText:[NSString stringWithFormat:@"%@ %@", lift.weight ? lift.weight : @"0", [[[JSettingsStore instance] first] units]]];

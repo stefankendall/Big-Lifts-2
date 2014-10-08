@@ -1,9 +1,8 @@
+#import "BLTableViewController.h"
+
 @protocol AssistanceCopyDelegate;
 
-@interface FTOAssistanceCopyTemplateViewController : UITableViewController {
-}
-@property(weak, nonatomic) IBOutlet UITableViewCell *noAssistanceCell;
-@property(weak, nonatomic) IBOutlet UITableViewCell *bbbAssistanceCell;
+@interface FTOAssistanceCopyTemplateViewController : BLTableViewController
 
 @property(nonatomic, strong) NSDictionary *variantToText;
 @property(nonatomic, strong) NSArray *orderedVariants;

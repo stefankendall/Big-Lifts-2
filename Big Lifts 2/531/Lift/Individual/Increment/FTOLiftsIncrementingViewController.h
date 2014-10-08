@@ -1,3 +1,5 @@
 #import "ViewDeck/IIViewDeckController.h"
-@interface FTOLiftsIncrementingViewController : UITableViewController
+#import "BLTableViewController.h"
+
+@interface FTOLiftsIncrementingViewController : BLTableViewController
 @end

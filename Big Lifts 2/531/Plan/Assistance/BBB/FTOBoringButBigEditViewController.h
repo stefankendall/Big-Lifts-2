@@ -1,2 +1,4 @@
-@interface FTOBoringButBigEditViewController : UITableViewController <UITextFieldDelegate> {}
+#import "BLTableViewController.h"
+
+@interface FTOBoringButBigEditViewController : BLTableViewController <UITextFieldDelegate> {}
 @end

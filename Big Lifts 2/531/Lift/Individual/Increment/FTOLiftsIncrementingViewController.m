@@ -4,6 +4,12 @@
 
 @implementation FTOLiftsIncrementingViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self registerCellNib:FTOLiftsIncrementingCell.class];
+}
+
+
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationItem.hidesBackButton = YES;
 }
@@ -14,9 +20,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FTOLiftsIncrementingCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOLiftsIncrementingCell.class)];
-    if (!cell) {
-        cell = [FTOLiftsIncrementingCell create];
-    }
     [cell setLift:[[JFTOLiftStore instance] atIndex:indexPath.row]];
 
     return cell;

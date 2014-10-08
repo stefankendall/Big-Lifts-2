@@ -9,6 +9,12 @@
 
 @implementation FTOBoringButBigEditViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self registerCellNib:FTOBoringButBigEditCell.class];
+}
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
@@ -19,9 +25,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FTOBoringButBigEditCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOBoringButBigEditCell.class)];
-    if (!cell) {
-        cell = [FTOBoringButBigEditCell create];
-    }
 
     JFTOBoringButBigLift *bbbLift = [[JFTOBoringButBigLiftStore instance] atIndex:indexPath.row];
     [[cell forLift] setText:bbbLift.mainLift.name];

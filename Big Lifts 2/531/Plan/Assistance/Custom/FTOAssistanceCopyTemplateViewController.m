@@ -1,6 +1,5 @@
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import "FTOAssistanceCopyTemplateViewController.h"
-#import "JFTOAssistanceStore.h"
 #import "JFTOAssistance.h"
 #import "IAPAdapter.h"
 #import "Purchaser.h"

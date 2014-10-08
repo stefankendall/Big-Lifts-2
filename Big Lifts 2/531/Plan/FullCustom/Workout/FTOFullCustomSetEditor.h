@@ -1,8 +1,9 @@
+#import "BLTableViewController.h"
+
 @class JSet;
 @class PaddingTextField;
 
-@interface FTOFullCustomSetEditor : UITableViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
-}
+@interface FTOFullCustomSetEditor : BLTableViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet PaddingTextField *lift;
 @property(weak, nonatomic) IBOutlet PaddingTextField *reps;
