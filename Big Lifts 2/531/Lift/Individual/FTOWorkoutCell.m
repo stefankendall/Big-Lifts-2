@@ -7,8 +7,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self addSetCell];
-
-    self.backViewbackgroundColor = [UIColor greenColor];
 }
 
 - (void)prepareForReuse {

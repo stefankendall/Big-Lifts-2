@@ -1,9 +1,8 @@
 #import "SetCell.h"
-#import "RMSwipeTableViewCell.h"
 
 @class JSet;
 
-@interface FTOWorkoutCell : RMSwipeTableViewCell
+@interface FTOWorkoutCell : UITableViewCell
 
 @property(nonatomic, strong) SetCell *setCell;
 

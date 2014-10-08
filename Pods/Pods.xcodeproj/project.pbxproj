@@ -134,7 +134,6 @@
 		66A03A0674B443BE91E703DF /* FBSession+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = EBEBEB898B294EC5B8571397 /* FBSession+Internal.h */; };
 		66FFAF2394AA41B4A8E0EA2A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5470C808554E4E0584239041 /* Security.framework */; };
 		678CC6AD6776470DBCE37D85 /* FBProfilePictureView.h in Headers */ = {isa = PBXBuildFile; fileRef = 19AF264B21DD42C6A1F3CDFF /* FBProfilePictureView.h */; };
-		681580C554DA4F14BB74EADA /* RMSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E36B54DFBB748AC8D638519 /* RMSwipeTableViewCell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		686C9C17F41E4070BC9F702C /* FBWebDialogs.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E606BD7FA34DC3930A1911 /* FBWebDialogs.h */; };
 		69D85E7E57F34F2C8D857719 /* FBFriendPickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 74E7D98FF07640E98E5E3651 /* FBFriendPickerViewController.h */; };
 		69FE433273CD4D5994B04209 /* FBSessionLoginStrategyParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F46A0B719D4AED93FB5B27 /* FBSessionLoginStrategyParams.m */; };
@@ -175,7 +174,6 @@
 		7F9B56004F1743F992E32794 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7168FBBD70DE40308995FD65 /* JSONModelArray.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		7FBD4BF63B90439088901FE6 /* FBKeychainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4827E44BC8884DC085721B71 /* FBKeychainStore.h */; };
 		816805A5C0F84D97973BE8D5 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D37E6F49DC44BB1A14805E0 /* IISideController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
-		83DC1BF4C6C546178E434E3E /* Pods-RMSwipeTableViewCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A060A42D7654D2E82556B4D /* Pods-RMSwipeTableViewCell-dummy.m */; };
 		8495105FF41D468DB666E103 /* TPKeyboardAvoidingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 434F04DEBF404A73BAE2B2A7 /* TPKeyboardAvoidingScrollView.h */; };
 		8498608B5F394B538ADC7363 /* IAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D0441DDC56444DA2C6EBEA /* IAPManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
 		84D35134C0AE4F0CB0068333 /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = CB9AC0F054844E20B4EE0B99 /* JSONValueTransformer.h */; };
@@ -248,7 +246,6 @@
 		AD04F5719D2C43C7967118CB /* FBSessionSystemLoginStategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCDAF0B7BCB428F9008978A /* FBSessionSystemLoginStategy.h */; };
 		AD41B1301B9A49C49375484D /* FBCacheIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC6507C51264EDDA2B5082E /* FBCacheIndex.m */; };
 		AD5C264D89FF4348B1FAFCF4 /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = B189802246AC487DB2621FF2 /* JSONKeyMapper.h */; };
-		AD7C3771F0A74DF190EBC5A1 /* RMSwipeTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7537AA33B65C4C27A07F4130 /* RMSwipeTableViewCell.h */; };
 		AE1B1CE1C9F647F6AD45CEC9 /* FBFriendPickerViewDefaultPNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 9875F900438B49D983183642 /* FBFriendPickerViewDefaultPNG.m */; };
 		AE52E129A9FB4919974E1138 /* FBAppLinkResolver.h in Headers */ = {isa = PBXBuildFile; fileRef = ED253D634D444A3583D3A9B6 /* FBAppLinkResolver.h */; };
 		AE978AFC5F1D41C994A14E9B /* FBSessionManualTokenCachingStrategy.h in Headers */ = {isa = PBXBuildFile; fileRef = 423A61F8D89540DF86BD8E4F /* FBSessionManualTokenCachingStrategy.h */; };
@@ -495,7 +492,6 @@
 		0D66AD8682A04E5E8F2F862A /* FBSessionFacebookAppWebLoginStategy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSessionFacebookAppWebLoginStategy.m; path = src/FBSessionFacebookAppWebLoginStategy.m; sourceTree = "<group>"; };
 		0D8F1340A41E42FCB4EBA2CE /* FBGraphObjectTableDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBGraphObjectTableDataSource.m; path = src/Network/FBGraphObjectTableDataSource.m; sourceTree = "<group>"; };
 		0E35C2DC724F404CA66C2653 /* FBRequestBody.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBRequestBody.h; path = src/Network/FBRequestBody.h; sourceTree = "<group>"; };
-		0E36B54DFBB748AC8D638519 /* RMSwipeTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RMSwipeTableViewCell.m; sourceTree = "<group>"; };
 		114CCD7B4CB649D495D6DB93 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
 		1356F7EA5D1C4CE88F10A9BF /* FBAppLinkData+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBAppLinkData+Internal.h"; path = "src/Core/FBAppLinkData+Internal.h"; sourceTree = "<group>"; };
 		13B163DF3E0142CB80EF7343 /* FBErrorUtility+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBErrorUtility+Internal.h"; path = "src/Core/FBErrorUtility+Internal.h"; sourceTree = "<group>"; };
@@ -510,7 +506,6 @@
 		1C3E117E619742F4A2ACB8B1 /* FBLikeButtonIconPNG.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBLikeButtonIconPNG.h; path = src/FBLikeButtonIconPNG.h; sourceTree = "<group>"; };
 		1CB14CE5EDA44DD390155591 /* _FBMAppBridgeScheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _FBMAppBridgeScheme.h; path = src/DeviceAPI/_FBMAppBridgeScheme.h; sourceTree = "<group>"; };
 		1D37E6F49DC44BB1A14805E0 /* IISideController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IISideController.m; path = ViewDeck/IISideController.m; sourceTree = "<group>"; };
-		1E5A79A90D2540DB9AB2C79C /* Pods-RMSwipeTableViewCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RMSwipeTableViewCell.xcconfig"; sourceTree = "<group>"; };
 		1E747F77CF364BD7BFA3AC3E /* Pods-CTCustomTableViewCell-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CTCustomTableViewCell-Private.xcconfig"; sourceTree = "<group>"; };
 		1F2C48A9685F48FFB3FEAAF2 /* FBViewImpressionTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBViewImpressionTracker.m; path = src/UI/FBViewImpressionTracker.m; sourceTree = "<group>"; };
 		203631E80CDC466CA6F89880 /* FBBase64.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBBase64.m; path = src/Base64/FBBase64.m; sourceTree = "<group>"; };
@@ -602,7 +597,6 @@
 		584A60CA720F4AB7B1D765F4 /* FBLikeButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBLikeButton.h; path = src/UI/FBLikeButton.h; sourceTree = "<group>"; };
 		59240FC40A6D4216A15C0E07 /* Pods-FlurrySDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlurrySDK-dummy.m"; sourceTree = "<group>"; };
 		5B34840E3BA54BE4ABE7EA86 /* FBAppLinkData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBAppLinkData.m; path = src/Core/FBAppLinkData.m; sourceTree = "<group>"; };
-		5C0CCD72246D4EE5BB01C05D /* Pods-RMSwipeTableViewCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RMSwipeTableViewCell-prefix.pch"; sourceTree = "<group>"; };
 		5C9C2885BB6D4BF48A6A797C /* FBAccessTokenData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBAccessTokenData.m; path = src/Login/FBAccessTokenData.m; sourceTree = "<group>"; };
 		5CD76C0778A14BFAB9E682A0 /* BFAppLinkReturnToRefererController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFAppLinkReturnToRefererController.m; path = Bolts/iOS/BFAppLinkReturnToRefererController.m; sourceTree = "<group>"; };
 		5D42BDD48B154A70A12B7D24 /* FBDialogClosePNG.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBDialogClosePNG.m; path = src/FBDialogClosePNG.m; sourceTree = "<group>"; };
@@ -643,7 +637,6 @@
 		7418E525F85B4E268E0E17F4 /* FBAppEvents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBAppEvents.m; path = src/Insights/FBAppEvents.m; sourceTree = "<group>"; };
 		743F361E2B5E4561A5105BC8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		74E7D98FF07640E98E5E3651 /* FBFriendPickerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBFriendPickerViewController.h; path = src/FBFriendPickerViewController.h; sourceTree = "<group>"; };
-		7537AA33B65C4C27A07F4130 /* RMSwipeTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RMSwipeTableViewCell.h; sourceTree = "<group>"; };
 		76F4F2D6AB174048A6BD5856 /* FBGraphObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBGraphObject.m; path = src/Network/FBGraphObject.m; sourceTree = "<group>"; };
 		7712BC8D9A4C49A794F2D3CE /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBFrictionlessRequestSettings.m; path = src/Legacy/FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
 		77A28D46D015445B8C90414A /* FBLikeButtonPopWAV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBLikeButtonPopWAV.h; path = src/FBLikeButtonPopWAV.h; sourceTree = "<group>"; };
@@ -706,7 +699,6 @@
 		9875F900438B49D983183642 /* FBFriendPickerViewDefaultPNG.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBFriendPickerViewDefaultPNG.m; path = src/FBFriendPickerViewDefaultPNG.m; sourceTree = "<group>"; };
 		98E55BF49C08489FB9B798A1 /* BFAppLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFAppLink.h; path = Bolts/iOS/BFAppLink.h; sourceTree = "<group>"; };
 		99D02FFFDF504A28988C43F7 /* FBSessionFacebookAppWebLoginStategy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSessionFacebookAppWebLoginStategy.h; path = src/FBSessionFacebookAppWebLoginStategy.h; sourceTree = "<group>"; };
-		9A060A42D7654D2E82556B4D /* Pods-RMSwipeTableViewCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RMSwipeTableViewCell-dummy.m"; sourceTree = "<group>"; };
 		9A1D2CF36ECD4C358A33D104 /* FBLikeActionController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBLikeActionController.h; path = src/UI/FBLikeActionController.h; sourceTree = "<group>"; };
 		9AF2D8B211B043788A1A52EB /* Bolts.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Bolts.m; path = Bolts/Common/Bolts.m; sourceTree = "<group>"; };
 		9B1EB6E029FB4B84B5EE9D0E /* FBUIHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBUIHelpers.h; path = src/UI/FBUIHelpers.h; sourceTree = "<group>"; };
@@ -799,7 +791,6 @@
 		CD5CFCE2B9FC4E6DB448550D /* FBLoginTooltipView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBLoginTooltipView.m; path = src/UI/FBLoginTooltipView.m; sourceTree = "<group>"; };
 		CDCFF7F259B34583AB735333 /* JSONHTTPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONHTTPClient.m; path = JSONModel/JSONModelNetworking/JSONHTTPClient.m; sourceTree = "<group>"; };
 		CECDEABE3E7F44A38C443C98 /* FBGraphObjectPickerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBGraphObjectPickerViewController.h; path = src/FBGraphObjectPickerViewController.h; sourceTree = "<group>"; };
-		D123C95AFAD842FAA194BDE5 /* Pods-RMSwipeTableViewCell-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RMSwipeTableViewCell-Private.xcconfig"; sourceTree = "<group>"; };
 		D16BBF303D0E4832A9177DDC /* FBTooltipView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBTooltipView.m; path = src/UI/FBTooltipView.m; sourceTree = "<group>"; };
 		D1DB627A1C8740F48236504F /* FBDialogsData+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBDialogsData+Internal.h"; path = "src/DeviceAPI/FBDialogsData+Internal.h"; sourceTree = "<group>"; };
 		D1DC610DEE3C4B11A60BB9BD /* FBSettings+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FBSettings+Internal.h"; path = "src/Core/FBSettings+Internal.h"; sourceTree = "<group>"; };
@@ -1007,17 +998,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D8DD8923D0D44639097916C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1E5A79A90D2540DB9AB2C79C /* Pods-RMSwipeTableViewCell.xcconfig */,
-				D123C95AFAD842FAA194BDE5 /* Pods-RMSwipeTableViewCell-Private.xcconfig */,
-				9A060A42D7654D2E82556B4D /* Pods-RMSwipeTableViewCell-dummy.m */,
-				5C0CCD72246D4EE5BB01C05D /* Pods-RMSwipeTableViewCell-prefix.pch */,
-			);
-			name = "Support Files";
-			sourceTree = SOURCE_ROOT;
-		};
 		18055136D9C842FB96267036 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1028,17 +1008,6 @@
 			);
 			name = "Support Files";
 			sourceTree = SOURCE_ROOT;
-		};
-		2C1384FA8D3040579129AD5E /* RMSwipeTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				7537AA33B65C4C27A07F4130 /* RMSwipeTableViewCell.h */,
-				0E36B54DFBB748AC8D638519 /* RMSwipeTableViewCell.m */,
-				0D8DD8923D0D44639097916C /* Support Files */,
-			);
-			name = RMSwipeTableViewCell;
-			path = RMSwipeTableViewCell;
-			sourceTree = "<group>";
 		};
 		326381C4C1894CBB83C99BCF /* Bolts */ = {
 			isa = PBXGroup;
@@ -1539,7 +1508,6 @@
 				CC1A3523830D48EF93E0D197 /* IAPManager */,
 				60CCF85E879C488FB04EAC6D /* JSONModel */,
 				5AE94560258A41E98E17DB57 /* MRCEnumerable */,
-				2C1384FA8D3040579129AD5E /* RMSwipeTableViewCell */,
 				3788DF017D394D299E1B9F65 /* TPKeyboardAvoiding */,
 				3F0E5E78987A4A4BBEE77BF7 /* ViewDeck */,
 				EDBFA628FDD74969822BBA46 /* WebViewJavascriptBridge */,
@@ -1734,7 +1702,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD7C3771F0A74DF190EBC5A1 /* RMSwipeTableViewCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2409,8 +2376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83DC1BF4C6C546178E434E3E /* Pods-RMSwipeTableViewCell-dummy.m in Sources */,
-				681580C554DA4F14BB74EADA /* RMSwipeTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3066,7 +3031,6 @@
 		};
 		BF12C25AE06D41C098539CD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D123C95AFAD842FAA194BDE5 /* Pods-RMSwipeTableViewCell-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -3154,7 +3118,6 @@
 		};
 		E9765F0A1C36442881EFA079 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D123C95AFAD842FAA194BDE5 /* Pods-RMSwipeTableViewCell-Private.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;

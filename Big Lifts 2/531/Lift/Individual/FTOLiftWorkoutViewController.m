@@ -291,11 +291,9 @@
     }
 }
 
-- (void)swipeTableViewCellDidResetState:(RMSwipeTableViewCell *)swipeTableViewCell fromPoint:(CGPoint)point animation:(RMSwipeTableViewCellAnimationType)animation velocity:(CGPoint)velocity {
-    FTOWorkoutCell *cell = (FTOWorkoutCell *) swipeTableViewCell;
-    [[FTOWorkoutChangeCache instance] toggleComplete:cell.indexPath];
-    [self.tableView reloadData];
-}
+//    FTOWorkoutCell *cell = (FTOWorkoutCell *) swipeTableViewCell;
+//    [[FTOWorkoutChangeCache instance] toggleComplete:cell.indexPath];
+//    [self.tableView reloadRowsAtIndexPaths:cell.indexPath withRowAnimation:UITableViewRowAnimationNone];
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
