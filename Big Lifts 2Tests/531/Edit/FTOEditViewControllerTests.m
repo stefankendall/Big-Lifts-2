@@ -23,7 +23,7 @@
 }
 
 - (void)testHasCorrectRows {
-    STAssertEquals((int) [self.controller tableView:nil numberOfRowsInSection:0], 4, @"");
+    STAssertEquals((int) [self.controller tableView:self.controller.tableView numberOfRowsInSection:0], 4, @"");
 }
 
 - (void)testUpdatesTrainingMaxWhenWeightChanges {
@@ -80,7 +80,7 @@
 - (void)testHasAllLifts {
     NSMutableArray *lifts = [@[] mutableCopy];
     for (int i = 0; i < [[JFTOLiftStore instance] count]; i++) {
-        FTOEditLiftCell *cell = (FTOEditLiftCell *) [self.controller tableView:nil cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        FTOEditLiftCell *cell = (FTOEditLiftCell *) [self.controller tableView:self.controller.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         [lifts addObject:cell.liftName.text];
     }
     [@[@"Squat", @"Deadlift", @"Press", @"Bench"] each:^(NSString *lift) {
