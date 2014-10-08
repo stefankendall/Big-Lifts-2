@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,40 +16,45 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJA-Ii-xce">
-                        <rect key="frame" x="20" y="-1" width="110" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="8" y="-1" width="100" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="110" id="H9d-9i-z4C"/>
+                            <constraint firstAttribute="width" constant="100" id="H9d-9i-z4C"/>
+                            <constraint firstAttribute="height" constant="44" id="KVQ-X4-wxR"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <state key="normal" title="To Beat: 13">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2N-Lg-ZW6">
+                        <rect key="frame" x="242" y="6" width="60" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="5MA-5v-1KD"/>
+                            <constraint firstAttribute="width" constant="60" id="ntA-BI-QTD"/>
+                        </constraints>
+                        <state key="normal" title="Share!">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdk-Yo-lGV">
-                        <rect key="frame" x="141" y="6" width="39" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="135" y="-1" width="50" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="VJv-69-pFa"/>
+                            <constraint firstAttribute="width" constant="50" id="dMB-k5-RnV"/>
+                        </constraints>
                         <state key="normal" title="Timer">
                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2N-Lg-ZW6">
-                        <rect key="frame" x="256" y="6" width="44" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Share!">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="centerY" secondItem="RJA-Ii-xce" secondAttribute="centerY" constant="-0.5" id="2Hh-TM-bAz"/>
-                    <constraint firstItem="RJA-Ii-xce" firstAttribute="top" secondItem="qxC-6t-kpx" secondAttribute="top" constant="-1" id="AfR-A5-SqS"/>
-                    <constraint firstItem="pdk-Yo-lGV" firstAttribute="baseline" secondItem="RJA-Ii-xce" secondAttribute="baseline" id="VzG-w7-h1u"/>
-                    <constraint firstItem="RJA-Ii-xce" firstAttribute="leading" secondItem="qxC-6t-kpx" secondAttribute="leading" constant="20" symbolic="YES" id="fBJ-0E-60F"/>
-                    <constraint firstItem="t2N-Lg-ZW6" firstAttribute="baseline" secondItem="pdk-Yo-lGV" secondAttribute="baseline" id="fS6-dh-daT"/>
-                    <constraint firstItem="pdk-Yo-lGV" firstAttribute="centerX" secondItem="qxC-6t-kpx" secondAttribute="centerX" id="jF3-gx-PsW"/>
-                    <constraint firstAttribute="trailing" secondItem="t2N-Lg-ZW6" secondAttribute="trailing" constant="20" id="xFf-lW-Vao"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="t2N-Lg-ZW6" secondAttribute="trailing" constant="10" id="LJz-UR-oVb"/>
+                    <constraint firstItem="RJA-Ii-xce" firstAttribute="leading" secondItem="qxC-6t-kpx" secondAttribute="leadingMargin" id="Tt4-nC-wrW"/>
+                    <constraint firstAttribute="centerY" secondItem="RJA-Ii-xce" secondAttribute="centerY" id="mGu-pc-yza"/>
+                    <constraint firstAttribute="centerY" secondItem="pdk-Yo-lGV" secondAttribute="centerY" id="tOK-Oe-Fxh"/>
+                    <constraint firstAttribute="centerY" secondItem="t2N-Lg-ZW6" secondAttribute="centerY" id="w03-hv-0rv"/>
+                    <constraint firstAttribute="centerX" secondItem="pdk-Yo-lGV" secondAttribute="centerX" id="wHS-kb-30O"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -55,6 +62,12 @@
                 <outlet property="shareButton" destination="t2N-Lg-ZW6" id="5Ad-hm-Zn6"/>
                 <outlet property="timerButton" destination="pdk-Yo-lGV" id="c88-lN-5cR"/>
             </connections>
+            <point key="canvasLocation" x="327" y="227.75"/>
         </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

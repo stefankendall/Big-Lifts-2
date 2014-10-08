@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,32 +15,44 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-kf-Ly0">
-                        <rect key="frame" x="141" y="7" width="39" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="130" y="0.0" width="60" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="6yb-CJ-orx"/>
+                            <constraint firstAttribute="height" constant="44" id="HIc-kM-46Y"/>
+                        </constraints>
                         <state key="normal" title="Timer">
                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Il9-HV-Isg">
-                        <rect key="frame" x="256" y="7" width="44" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <rect key="frame" x="250" y="0.0" width="60" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="m7L-WD-leQ"/>
+                            <constraint firstAttribute="height" constant="44" id="swb-ee-F1Z"/>
+                        </constraints>
                         <state key="normal" title="Share!">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Il9-HV-Isg" secondAttribute="trailing" constant="20" id="43V-1Z-7mT"/>
+                    <constraint firstAttribute="trailing" secondItem="Il9-HV-Isg" secondAttribute="trailing" constant="10" id="43V-1Z-7mT"/>
+                    <constraint firstAttribute="centerY" secondItem="Il9-HV-Isg" secondAttribute="centerY" id="BSC-3a-Wi1"/>
                     <constraint firstItem="R2o-kf-Ly0" firstAttribute="centerX" secondItem="GcP-TZ-cPJ" secondAttribute="centerX" id="IrQ-RR-krt"/>
-                    <constraint firstItem="Il9-HV-Isg" firstAttribute="baseline" secondItem="R2o-kf-Ly0" secondAttribute="baseline" id="eZk-nT-F7B"/>
-                    <constraint firstItem="R2o-kf-Ly0" firstAttribute="top" secondItem="GcP-TZ-cPJ" secondAttribute="top" constant="7" id="szo-QX-8bf"/>
+                    <constraint firstAttribute="centerY" secondItem="R2o-kf-Ly0" secondAttribute="centerY" id="rRu-Wd-1nY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="shareButton" destination="Il9-HV-Isg" id="m1J-W9-YIP"/>
                 <outlet property="timerButton" destination="R2o-kf-Ly0" id="Dms-vP-RFm"/>
             </connections>
+            <point key="canvasLocation" x="139" y="228"/>
         </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
