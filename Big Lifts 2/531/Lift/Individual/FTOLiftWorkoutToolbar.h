@@ -1,4 +1,3 @@
-#import "CTCustomTableViewCell.h"
 #import "RestShareToolbar.h"
 
 @interface FTOLiftWorkoutToolbar : RestShareToolbar

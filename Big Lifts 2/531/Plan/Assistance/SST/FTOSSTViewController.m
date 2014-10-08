@@ -7,6 +7,12 @@
 
 @implementation FTOSSTViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self registerCellNib:FTOSSTEditLiftCell.class];
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[JFTOSSTLiftStore instance] count];
 }
@@ -15,9 +21,6 @@
     JFTOSSTLift *lift = (JFTOSSTLift *) [self liftAtIndex:[indexPath row]];
     if ([indexPath section] == 0) {
         FTOSSTEditLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOSSTEditLiftCell.class)];
-        if (cell == nil) {
-            cell = [FTOSSTEditLiftCell create];
-        }
 
         [cell setLift:lift];
         [[cell max] setIndexPath:indexPath];

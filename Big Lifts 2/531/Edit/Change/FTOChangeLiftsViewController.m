@@ -10,6 +10,13 @@
 
 @implementation FTOChangeLiftsViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self registerCellNib:FTOChangeLiftCell.class];
+    [self registerCellNib:AddCell.class];
+}
+
+
 - (void)viewWillAppear:(BOOL)animated {
     [Flurry logEvent:@"5/3/1_ChangeLifts"];
     [self.tableView reloadData];
@@ -34,9 +41,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {
         FTOChangeLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOChangeLiftCell.class)];
-        if (!cell) {
-            cell = [FTOChangeLiftCell create];
-        }
 
         JLift *lift = [self liftAtIndex:[indexPath row]];
         [cell.textField setText:lift.name];
@@ -46,9 +50,6 @@
     }
     else {
         AddCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(AddCell.class)];
-        if (!cell) {
-            cell = [AddCell create];
-        }
         return cell;
     }
 }

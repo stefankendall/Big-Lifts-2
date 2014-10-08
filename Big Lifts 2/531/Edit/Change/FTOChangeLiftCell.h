@@ -1,8 +1,6 @@
-#import "CTCustomTableViewCell.h"
-
 @class RowTextField;
 
-@interface FTOChangeLiftCell : CTCustomTableViewCell {}
+@interface FTOChangeLiftCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet RowTextField *textField;
 
 @end

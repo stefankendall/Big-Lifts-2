@@ -13,6 +13,12 @@
 
 @implementation FTOEditViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self registerCellNib:FTOEditIncrementCell.class];
+    [self registerCellNib:FTOEditLiftCell.class];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [Flurry logEvent:@"5/3/1_Edit"];
     [self.tableView reloadData];
@@ -26,9 +32,6 @@
     JFTOLift *lift = (JFTOLift *) [self liftAtIndex:[indexPath row]];
     if ([indexPath section] == 0) {
         FTOEditLiftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOEditLiftCell.class)];
-        if (cell == nil) {
-            cell = [FTOEditLiftCell create];
-        }
 
         [cell setLift:lift];
         [[cell max] setIndexPath:indexPath];
@@ -94,9 +97,7 @@
 - (UITableViewCell *)incrementCell:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
     JLift *lift = [self liftAtIndex:[indexPath row]];
     FTOEditIncrementCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(FTOEditIncrementCell.class)];
-    if (cell == nil) {
-        cell = [FTOEditIncrementCell create];
-    }
+
     [[cell liftLabel] setText:lift.name];
     [[cell increment] setText:[lift.increment stringValue]];
     [[cell increment] setDelegate:self];

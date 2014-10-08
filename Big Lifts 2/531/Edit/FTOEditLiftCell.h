@@ -1,11 +1,9 @@
-#import "CTCustomTableViewCell/CTCustomTableViewCell.h"
-
 @class RowTextField;
 @class TrainingMaxRowTextField;
 @class JLift;
 
-@interface FTOEditLiftCell : CTCustomTableViewCell {
-}
+@interface FTOEditLiftCell : UITableViewCell
+
 @property(weak, nonatomic) IBOutlet UILabel *liftName;
 
 @property(weak, nonatomic) IBOutlet RowTextField *max;
