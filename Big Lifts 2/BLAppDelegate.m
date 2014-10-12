@@ -56,12 +56,7 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    @try {
-        [[BLJStoreManager instance] syncStores];
-    }
-    @catch (NSException *e) {
-        NSLog(@"Couldn't sync?");
-    }
+    [[BLJStoreManager instance] syncStores];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
