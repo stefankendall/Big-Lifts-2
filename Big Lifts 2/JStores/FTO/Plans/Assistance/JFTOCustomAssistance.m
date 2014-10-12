@@ -29,7 +29,9 @@
 
 - (void)cycleChange {
     for (JFTOCustomAssistanceLift *lift in [[JFTOCustomAssistanceLiftStore instance] findAll]) {
-        lift.weight = [lift.weight decimalNumberByAdding:lift.increment withBehavior:DecimalNumberHandlers.noRaise];
+        if (lift.weight != nil && lift.increment != nil) {
+            lift.weight = [lift.weight decimalNumberByAdding:lift.increment withBehavior:DecimalNumberHandlers.noRaise];
+        }
     }
 }
 
