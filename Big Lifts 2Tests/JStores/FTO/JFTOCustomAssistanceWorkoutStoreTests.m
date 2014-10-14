@@ -15,6 +15,19 @@
     STAssertEquals([[JFTOCustomAssistanceWorkoutStore instance] count], 4, @"");
 }
 
+- (void)testRemovesSetsWithDeadFtoLifts {
+    JFTOLift *lift = [[JFTOLiftStore instance] first];
+    JFTOCustomAssistanceWorkout *jftoCustomAssistanceWorkout = [[JFTOCustomAssistanceWorkoutStore instance] atIndex:2];
+
+    JSet *set = [[JSetStore instance] create];
+    set.lift = (id) lift;
+    [jftoCustomAssistanceWorkout.workout addSet:set];
+
+    STAssertEquals((int) [[jftoCustomAssistanceWorkout.workout sets] count], 1, @"");
+    [[JFTOLiftStore instance] remove:lift];
+    STAssertEquals((int) [[jftoCustomAssistanceWorkout.workout sets] count], 0, @"");
+}
+
 - (void)testAdjustsToMainLifts {
     [[JFTOLiftStore instance] removeAtIndex:0];
     STAssertEquals([[JFTOCustomAssistanceWorkoutStore instance] count], 3, @"");
