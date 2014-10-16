@@ -60,7 +60,7 @@
     NSMutableDictionary *tagViewMapping = [[self specificTagMapping] mutableCopy];
     tagViewMapping[@2] = @"barLoadingNav";
     tagViewMapping[@4] = @"settingsViewController";
-    tagViewMapping[@10] = @"oneRepNav";
+    tagViewMapping[@11] = @"oneRepNav";
 
     if ([cell tag] == 6) {
         [[[JCurrentProgramStore instance] first] setName:nil];

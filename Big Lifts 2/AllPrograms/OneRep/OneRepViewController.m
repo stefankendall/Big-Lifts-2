@@ -43,7 +43,6 @@
 
 - (void)handleIapChange {
     if (([[IAPAdapter instance] hasPurchased:IAP_1RM])) {
-        [self.view removeGestureRecognizer:[self.view.gestureRecognizers lastObject]];
         [[self.tableView viewWithTag:kPurchaseOverlayTag] removeFromSuperview];
     }
 }
