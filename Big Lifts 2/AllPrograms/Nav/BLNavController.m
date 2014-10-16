@@ -33,11 +33,15 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 
-    NSString *productId = [Purchaser hasPurchasedAnything] ? IAP_EVERYTHING_DISCOUNT : IAP_EVERYTHING;
+    NSString *productId = [self everythingProductId];
     SKProduct *product = [[SKProductStore instance] productById:productId];
     if (product) {
         [self.unlockEverythingLabel setText:[NSString stringWithFormat:@"Unlock Everything! (%@)", [[PriceFormatter new] priceOf:product]]];
     }
+}
+
+- (NSString *const)everythingProductId {
+    return [Purchaser hasPurchasedAnything] ? IAP_EVERYTHING_DISCOUNT : IAP_EVERYTHING;
 }
 
 - (void)presentFeedbackEmail {
@@ -67,7 +71,7 @@
         NSString *rateUrl = @"itms-apps://itunes.apple.com/app/id661503150";
         [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:rateUrl]];
     } else if ([cell tag] == 10) {
-        [[Purchaser new] purchase:IAP_EVERYTHING];
+        [[Purchaser new] purchase:[self everythingProductId]];
     }
     else {
         NSString *storyBoardId = [tagViewMapping objectForKey:[NSNumber numberWithInteger:[cell tag]]];
