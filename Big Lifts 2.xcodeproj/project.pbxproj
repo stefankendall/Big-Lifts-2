@@ -108,6 +108,7 @@
 		5459024CC3B28C2810299B84 /* 19-circle-check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590426011C12606BE512C4 /* 19-circle-check@2x.png */; };
 		5459024D20CC224E66B7273A /* highcharts.src.js in Sources */ = {isa = PBXBuildFile; fileRef = 5459094FF2F856B53983F92B /* highcharts.src.js */; };
 		5459024E86DEC10F0B6AE2EB /* 16-line-chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5459044A9A11131A0C5AD182 /* 16-line-chart@2x.png */; };
+		54590250318E11ABEE344A17 /* CrashedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459085D5AC1B68B7965020C /* CrashedViewController.m */; };
 		54590259248C36A12470650D /* AddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590D07C52DA57BED515A81 /* AddCell.xib */; };
 		5459026C1A69DB647273B21F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909637D2B39D377462163 /* SettingsViewController.m */; };
 		5459026D340E1D5726FABACF /* 09-chat-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590F9EB5B3526720E60922 /* 09-chat-2@2x.png */; };
@@ -280,7 +281,6 @@
 		545907742E9F8BEAF7998F08 /* JFTOCustomAssistanceWorkoutStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909F86F3FEE2FD6348E82 /* JFTOCustomAssistanceWorkoutStore.m */; };
 		54590777504BCFFEC5AA03D9 /* FTOChangeLiftsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459046DF299D3F773B367FB /* FTOChangeLiftsViewControllerTests.m */; };
 		54590789F38F656B797F7198 /* JFTOCustomWorkoutStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459042CD385F6E5F549221F /* JFTOCustomWorkoutStoreTests.m */; };
-		5459078BFC47A926CC1910F5 /* AppTimedOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CA84515BDC8B6BA7FCF /* AppTimedOutViewController.m */; };
 		545907942CCF5B25403F3DA1 /* FTOCustomSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590DBA152DE96A6B475701 /* FTOCustomSetCell.xib */; };
 		5459079BEF1B4D70AE7E5D37 /* JFTOAssistanceStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904A432A5E8C6002F0EA3 /* JFTOAssistanceStore.m */; };
 		545907AC9F364D0D32FCAC27 /* CustomAssistanceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459005E07C85B4064387AC2 /* CustomAssistanceHelper.m */; };
@@ -952,6 +952,7 @@
 		545905269286D8EFF1282A9E /* JFTOTriumvirateStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFTOTriumvirateStoreTests.h; sourceTree = "<group>"; };
 		54590536C71E260BB5ED9B56 /* FTOLiftsIncrementingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOLiftsIncrementingCell.xib; sourceTree = "<group>"; };
 		5459053A09D68CF553084654 /* FTORepsToBeatCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTORepsToBeatCalculator.m; sourceTree = "<group>"; };
+		5459053F5D9E316135F16568 /* CrashedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashedViewController.h; sourceTree = "<group>"; };
 		54590546CC817B91F6A1160B /* CustomAssistanceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAssistanceHelper.h; sourceTree = "<group>"; };
 		5459054BF79A83D4D57F9A9E /* FTOLiftWorkoutToolbar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FTOLiftWorkoutToolbar.xib; sourceTree = "<group>"; };
 		5459054CF15D65D558773562 /* Migrate15to16Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Migrate15to16Tests.m; sourceTree = "<group>"; };
@@ -1146,6 +1147,7 @@
 		5459085334607410D0726F08 /* BarLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarLoadingViewController.h; sourceTree = "<group>"; };
 		5459085B0423D486DF81D93D /* Migrate13to14Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate13to14Tests.h; sourceTree = "<group>"; };
 		5459085C502D56127AEEF2BA /* FTOWorkoutLogAmrapDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOWorkoutLogAmrapDataSourceTests.h; sourceTree = "<group>"; };
+		5459085D5AC1B68B7965020C /* CrashedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrashedViewController.m; sourceTree = "<group>"; };
 		5459085ED7E24744E665DE1E /* canvas-tools.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "canvas-tools.js"; sourceTree = "<group>"; };
 		5459086473D46113652A8E53 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		54590864C0ACEB73ABE4BD22 /* JFTOFivesProgression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOFivesProgression.m; sourceTree = "<group>"; };
@@ -1237,7 +1239,6 @@
 		545909DDF05CB3A959B0A669 /* AddPlateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlateViewController.m; sourceTree = "<group>"; };
 		545909E163E3629C30088B4B /* JSVLiftStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSVLiftStoreTests.h; sourceTree = "<group>"; };
 		545909E1C73620248668FDB8 /* SVTrackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVTrackController.m; sourceTree = "<group>"; };
-		545909E259BF9874F11A3EEA /* AppTimedOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTimedOutViewController.h; sourceTree = "<group>"; };
 		545909E2AD3ADBCACEDEABF4 /* FTOSSTViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOSSTViewControllerTests.h; sourceTree = "<group>"; };
 		545909E419463E503E18EEA4 /* JFTOTriumvirate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOTriumvirate.m; sourceTree = "<group>"; };
 		545909E9246097EE882B86C8 /* JFTOTriumvirateStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOTriumvirateStore.m; sourceTree = "<group>"; };
@@ -1420,7 +1421,6 @@
 		54590CA332CE6FA216724598 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		54590CA55453E216F532010E /* Migrate9to10Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Migrate9to10Tests.h; sourceTree = "<group>"; };
 		54590CA6F4BCD8026D948694 /* JWorkoutLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWorkoutLog.m; sourceTree = "<group>"; };
-		54590CA84515BDC8B6BA7FCF /* AppTimedOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTimedOutViewController.m; sourceTree = "<group>"; };
 		54590CA8EB4D7FCA9D755201 /* prototype-adapter.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "prototype-adapter.js"; sourceTree = "<group>"; };
 		54590CAA2D8F49C67D02F4C2 /* FTOCustomAssistanceLiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOCustomAssistanceLiftViewController.m; sourceTree = "<group>"; };
 		54590CAE0E49D78160A554C8 /* JSSStateStoreTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSSStateStoreTests.h; sourceTree = "<group>"; };
@@ -3733,11 +3733,11 @@
 				54590090FE5311E7ACFA2B14 /* JModels */,
 				545901C7662EFE536D05E5ED /* DataLoaded.m */,
 				54590FBD329675D5A967649C /* DataLoaded.h */,
-				54590CA84515BDC8B6BA7FCF /* AppTimedOutViewController.m */,
-				545909E259BF9874F11A3EEA /* AppTimedOutViewController.h */,
 				545905D098D0D70F355E18DD /* Smolov */,
 				54590AC6D87F404389534CD4 /* CrashCounter.m */,
 				5459058E27CFA09052C236AA /* CrashCounter.h */,
+				5459085D5AC1B68B7965020C /* CrashedViewController.m */,
+				5459053F5D9E316135F16568 /* CrashedViewController.h */,
 			);
 			path = "Big Lifts 2";
 			sourceTree = "<group>";
@@ -4545,7 +4545,6 @@
 				54590DDD679DBEE0C1B5C0C0 /* FTOCustomAssistanceEditLiftViewController.m in Sources */,
 				545906C95B1B49CAA177E620 /* JFTOCustomAssistanceWorkout.m in Sources */,
 				545907742E9F8BEAF7998F08 /* JFTOCustomAssistanceWorkoutStore.m in Sources */,
-				5459078BFC47A926CC1910F5 /* AppTimedOutViewController.m in Sources */,
 				54590490FA365415771687A3 /* Migrate2to3.m in Sources */,
 				5459003251ED1AFE90033535 /* DecimalNumberHelper.m in Sources */,
 				5459059C06A8635041E3B6BA /* JFTOCustomAssistance.m in Sources */,
@@ -4671,6 +4670,7 @@
 				54590093EDDA43A827253A39 /* Migrate18to19.m in Sources */,
 				54590F7DBC9E62C477430053 /* BLJBackedUpStore.m in Sources */,
 				545906DBB3F907B33966D5CD /* CrashCounter.m in Sources */,
+				54590250318E11ABEE344A17 /* CrashedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

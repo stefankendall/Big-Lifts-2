@@ -1,3 +1,0 @@
-@interface AppTimedOutViewController : UITableViewController {}
-
-@end

@@ -1,0 +1,2 @@
+@interface CrashedViewController : UITableViewController
+@end

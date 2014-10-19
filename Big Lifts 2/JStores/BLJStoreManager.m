@@ -45,10 +45,6 @@
 
 - (void)loadStores {
     for (BLJStore *store in self.allStores) {
-        if ([[DataLoaded instance] timedOut]) {
-            return;
-        }
-
         if (store != [JVersionStore instance]) {
             CLS_LOG(@"Loading %@", NSStringFromClass([store modelClass]));
             [store load];
@@ -102,6 +98,9 @@
     for (BLJStore *store in stores) {
         [store setupDefaults];
     }
+
+    [[JSetLogStore instance] load];
+    [[JWorkoutLogStore instance] load];
 }
 
 + (BLJStoreManager *)instance {
