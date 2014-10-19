@@ -64,9 +64,22 @@ int const DEAD = 0;
 + (NSMutableArray *)arrayOfModelsFromDictionaries:(NSArray *)array error:(NSError **)err {
     if (isNull(array)) return nil;
     NSMutableArray *list = [@[] mutableCopy];
+
+    int nilCount = 0;
     for (NSString *value in array) {
         BLJStore *store = [[BLJStoreManager instance] storeForModel:[self class] withUuid:value];
-        [list addObject:[store find:@"uuid" value:value]];
+        id object = [store find:@"uuid" value:value];
+        if (object != nil) {
+            [list addObject:object];
+        }
+        else {
+            nilCount++;
+        }
+    }
+
+    CLS_LOG(@"Nil count: %d", nilCount);
+    if (nilCount > 0) {
+        [NSException raise:@"Nil associations" format:@""];
     }
 
     return list;
