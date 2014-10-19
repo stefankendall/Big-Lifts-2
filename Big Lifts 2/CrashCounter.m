@@ -13,6 +13,7 @@ static NSString *crashKey = @"crashCount";
         int currentCount = [userDefaults integerForKey:crashKey];
         [userDefaults setInteger:(currentCount + 1) forKey:crashKey];
     }
+    [userDefaults synchronize];
 }
 
 + (int)crashCount {
@@ -25,6 +26,7 @@ static NSString *crashKey = @"crashCount";
 
 + (void)resetCrashCounter {
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:crashKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
