@@ -6,10 +6,12 @@
 #import "BLTimer.h"
 #import "BLKeyValueStore.h"
 #import "Flurry.h"
+#import "CrashCounter.h"
 
 @implementation BLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [CrashCounter incrementCrashCounter];
     [Flurry setCrashReportingEnabled:NO];
     [Flurry startSession:@"FW43KTWNCSNYJRDR39WY"];
 #if (!TARGET_IPHONE_SIMULATOR)
@@ -23,10 +25,15 @@
                                                  name:NSUbiquitousKeyValueStoreDidChangeExternallyNotification
                                                object:nil];
     [[BLKeyValueStore store] synchronize];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        [[Migrator new] migrateStores];
-        [[BLJStoreManager instance] loadStores];
-    });
+
+    if ([CrashCounter crashCount] <= 1) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            [[Migrator new] migrateStores];
+            [[BLJStoreManager instance] loadStores];
+            [CrashCounter resetCrashCounter];
+        });
+    }
+
     return YES;
 }
 

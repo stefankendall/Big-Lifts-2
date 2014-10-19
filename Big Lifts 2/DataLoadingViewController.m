@@ -2,12 +2,18 @@
 #import "JCurrentProgramStore.h"
 #import "JCurrentProgram.h"
 #import "DataLoaded.h"
+#import "CrashCounter.h"
 
 @implementation DataLoadingViewController
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self pollForReady];
-    [self waitForTimeout];
+    if ([CrashCounter crashCount] <= 1) {
+        [self pollForReady];
+        [self waitForTimeout];
+    }
+    else {
+        [self performSegueWithIdentifier:@"appCrashedPreviously" sender:self];
+    }
 }
 
 - (void)waitForTimeout {
