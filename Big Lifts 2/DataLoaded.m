@@ -1,4 +1,5 @@
 #import "DataLoaded.h"
+#import "CrashCounter.h"
 
 @implementation DataLoaded
 
@@ -10,6 +11,11 @@
         dataLoaded.loaded = NO;
     });
     return dataLoaded;
+}
+
+- (void)setLoaded:(BOOL)loaded {
+    [CrashCounter resetCrashCounter];
+    _loaded = loaded;
 }
 
 @end

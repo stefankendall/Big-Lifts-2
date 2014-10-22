@@ -17,6 +17,10 @@
     [[BLKeyValueStore store] setObject:serialized forKey:[self backupKeyPath]];
 }
 
+- (void)emptyBackup {
+    [[BLKeyValueStore store] removeObjectForKey:[self backupKeyPath]];
+}
+
 - (NSString *)backupKeyPath {
     return [NSString stringWithFormat:@"%@backup", [self keyNameForStore]];
 }
