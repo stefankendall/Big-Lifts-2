@@ -8,6 +8,11 @@
 #import "JFTOWorkoutStore.h"
 #import "JFTOSettingsStore.h"
 #import "JFTOSettings.h"
+#import "JFTOCustomAssistanceLiftStore.h"
+#import "JFTOCustomAssistanceLift.h"
+#import "JSetStore.h"
+#import "JSet.h"
+#import "JWorkout.h"
 
 @implementation JFTOFullCustomAssistanceWorkoutStoreTests
 
@@ -36,6 +41,35 @@
     [[JFTOWorkoutStore instance] switchTemplate];
 
     STAssertEquals((int) [[[JFTOFullCustomAssistanceWorkoutStore instance] findAll] count], 16, @"");
+}
+
+- (void)testDoesNotRemoveFtoLiftSetsWhenCustomLiftsAreRemoved {
+    JFTOCustomAssistanceLift *customLift = [[JFTOCustomAssistanceLiftStore instance] create];
+    customLift.name = @"Custom Lift";
+
+    JFTOFullCustomAssistanceWorkout *customWorkout = [[JFTOFullCustomAssistanceWorkoutStore instance] first];
+
+    JSet *set1 = [[JSetStore instance] create];
+    set1.lift = customLift;
+
+    JSet *set2 = [[JSetStore instance] create];
+    set2.lift = [[JFTOLiftStore instance] first];
+
+    JSet *set3 = [[JSetStore instance] create];
+    set3.lift = customLift;
+
+    JSet *set4 = [[JSetStore instance] create];
+    set4.lift = [[JFTOLiftStore instance] last];
+
+
+    [customWorkout.workout addSet:set1];
+    [customWorkout.workout addSet:set2];
+    [customWorkout.workout addSet:set3];
+    [customWorkout.workout addSet:set4];
+
+    [[JFTOCustomAssistanceLiftStore instance] removeAtIndex:0];
+
+    STAssertEquals((int) [[customWorkout.workout sets] count], 2, @"");
 }
 
 @end

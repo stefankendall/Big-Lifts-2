@@ -101,7 +101,7 @@ static const int ADD_SECTION = 1;
 - (IBAction)deleteTapped:(id)sender {
     if ([self.tableView isEditing]) {
         [self.tableView setEditing:NO animated:YES];
-        [self.deleteButton setTitle:@"Delete"];
+        [self.deleteButton setTitle:@"Edit Sets"];
     }
     else {
         [self.tableView setEditing:YES animated:YES];

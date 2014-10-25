@@ -11,4 +11,5 @@
     STAssertEqualObjects(lift1.order, @0, @"");
     STAssertEqualObjects(lift2.order, @1, @"");
 }
+
 @end
