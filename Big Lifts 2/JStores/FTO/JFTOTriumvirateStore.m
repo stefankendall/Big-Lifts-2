@@ -22,12 +22,19 @@
     triumvirate.workout = [[JWorkoutStore instance] create];
 }
 
+- (void)onLoad {
+    if ([[[[self first] workout] sets] count] == 0) {
+        [self removeAll];
+        [self setupDefaults];
+    }
+}
+
 - (NSArray *)findAll {
     return [self.data sortedArrayUsingComparator:^NSComparisonResult(JFTOTriumvirate *t1, JFTOTriumvirate *t2) {
-        if (t1.mainLift.order == nil ) {
+        if (t1.mainLift.order == nil) {
             return NSOrderedAscending;
         }
-        else if (t2.mainLift.order == nil ) {
+        else if (t2.mainLift.order == nil) {
             return NSOrderedDescending;
         }
 

@@ -78,9 +78,6 @@ int const DEAD = 0;
     }
 
     CLS_LOG(@"Nil count: %d", nilCount);
-    if (nilCount > 0) {
-        [NSException raise:@"Nil associations" format:@""];
-    }
 
     return list;
 }
