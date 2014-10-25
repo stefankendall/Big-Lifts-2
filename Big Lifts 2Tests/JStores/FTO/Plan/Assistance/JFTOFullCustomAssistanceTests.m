@@ -9,6 +9,12 @@
 #import "JFTOFullCustomAssistance.h"
 #import "JFTOWorkoutStore.h"
 #import "JFTOWorkout.h"
+#import "JFTOCustomAssistanceLift.h"
+#import "JFTOCustomAssistanceLiftStore.h"
+#import "JFTOAssistanceStore.h"
+#import "JFTOAssistance.h"
+#import "JFTOSetStore.h"
+#import "BLJStoreManager.h"
 
 @implementation JFTOFullCustomAssistanceTests
 
@@ -41,6 +47,34 @@
 
     STAssertEqualObjects(bench1LastSet.reps, @1, @"");
     STAssertEqualObjects(bench2LastSet.reps, @2, @"");
+}
+
+- (void)testRemovingFirstCustomLiftDoesNotWipeDataOnLoad {
+    JFTOCustomAssistanceLift *lift1 = [[JFTOCustomAssistanceLiftStore instance] create];
+    lift1.name = @"Lift 1";
+
+    JFTOCustomAssistanceLift *lift2 = [[JFTOCustomAssistanceLiftStore instance] create];
+    lift2.name = @"Lift 2";
+
+    JFTOFullCustomAssistanceWorkout *workout1 = [[JFTOFullCustomAssistanceWorkoutStore instance] first];
+    JSet *set1 = [[JSetStore instance] create];
+    set1.lift = lift1;
+    [workout1.workout addSet:set1];
+
+    JSet *set2 = [[JFTOSetStore instance] create];
+    set2.lift = lift2;
+    [workout1.workout addSet:set2];
+
+    [[JFTOAssistanceStore instance] changeTo:FTO_ASSISTANCE_FULL_CUSTOM];
+
+    [[JFTOCustomAssistanceLiftStore instance] removeAtIndex:0];
+
+    [[BLJStoreManager instance] syncStores];
+    [[BLJStoreManager instance] loadStores];
+
+    STAssertEquals([[JFTOCustomAssistanceLiftStore instance] count], 1, @"");
+    workout1 = [[JFTOFullCustomAssistanceWorkoutStore instance] first];
+    STAssertEquals((int) [workout1.workout.sets count], (int) 1, @"");
 }
 
 @end

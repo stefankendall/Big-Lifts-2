@@ -14,11 +14,11 @@
     workout.sets = [@[] mutableCopy];
 }
 
-- (void)adjustToLifts {
+- (void)adjustForDeadSetsAndLifts {
     for (JWorkout *workout in self.data) {
         NSMutableArray *deadSets = [@[] mutableCopy];
         for (JSet *set in workout.sets) {
-            if ([set.lift isDead]) {
+            if ([set isDead] || [set.lift isDead]) {
                 [deadSets addObject:set];
             }
         }
