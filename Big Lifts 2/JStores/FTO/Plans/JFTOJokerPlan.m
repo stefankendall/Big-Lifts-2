@@ -7,18 +7,18 @@
     NSDictionary *jokerSets = @{
             @1 : @[
                     [JSetData dataWithReps:5 percentage:N(93.5) lift:lift],
-                    [JSetData dataWithReps:5 percentage:N(98.18) lift:lift],
-                    [JSetData dataWithReps:5 percentage:N(103.08) lift:lift]
+                    [JSetData dataWithReps:5 percentage:N(98.2) lift:lift],
+                    [JSetData dataWithReps:5 percentage:N(103.1) lift:lift]
             ],
             @2 : @[
                     [JSetData dataWithReps:3 percentage:N(99) lift:lift],
-                    [JSetData dataWithReps:3 percentage:N(103.95) lift:lift],
-                    [JSetData dataWithReps:3 percentage:N(109.15) lift:lift]
+                    [JSetData dataWithReps:3 percentage:N(104) lift:lift],
+                    [JSetData dataWithReps:3 percentage:N(109.2) lift:lift]
             ],
             @3 : @[
                     [JSetData dataWithReps:1 percentage:N(104.5) lift:lift],
-                    [JSetData dataWithReps:1 percentage:N(109.73) lift:lift],
-                    [JSetData dataWithReps:1 percentage:N(115.21) lift:lift]
+                    [JSetData dataWithReps:1 percentage:N(109.7) lift:lift],
+                    [JSetData dataWithReps:1 percentage:N(115.2) lift:lift]
             ]
     };
 
