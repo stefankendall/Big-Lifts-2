@@ -29,7 +29,7 @@
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
     JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO];
     [workoutLog addSet:setLog1];
-    NSArray *serialized = [[JWorkoutLogStore instance] serialize];
+    NSArray *serialized = [[JWorkoutLogStore instance] serializeAndCache];
     NSString *workoutLogJson = serialized[0];
     NSDictionary *deserialized = [NSJSONSerialization JSONObjectWithData: [workoutLogJson dataUsingEncoding:NSUTF8StringEncoding]
                                                                  options: NSJSONReadingMutableContainers
@@ -42,7 +42,7 @@
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
     JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO];
     [workoutLog addSet:setLog1];
-    NSArray *serialized = [[JWorkoutLogStore instance] serialize];
+    NSArray *serialized = [[JWorkoutLogStore instance] serializeAndCache];
     NSString *workoutLogJson = serialized[0];
 
     JWorkoutLog *deserializedWorkoutLog = (JWorkoutLog *) [[JWorkoutLogStore instance] deserializeObject:workoutLogJson];
@@ -51,12 +51,16 @@
 }
 
 - (void)testSerializesAndDeserializesSets {
+    [[JWorkoutLogStore instance] clearSyncCache];
+    [[JSetLogStore instance] clearSyncCache];
+    
     JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
     JSetLog *setLog1 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(100) reps:5 warmup:YES assistance:NO amrap:NO];
     JSetLog *setLog2 = [[JSetLogStore instance] createWithName:@"Bench" weight:N(120) reps:3 warmup:NO assistance:NO amrap:YES];
     [workoutLog addSet:setLog1];
     [workoutLog addSet:setLog2];
 
+    [[JSetLogStore instance] sync];
     [[JWorkoutLogStore instance] sync];
     [[JWorkoutLogStore instance] load];
 

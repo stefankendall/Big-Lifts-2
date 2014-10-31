@@ -1,11 +1,10 @@
 #import "JDataHelper.h"
 #import "BLJStore.h"
-#import "BLKeyValueStore.h"
 
 @implementation JDataHelper
 
-+ (NSArray *)read:(BLJStore *)store {
-    NSArray *jsonArray = [[BLKeyValueStore store] objectForKey:[store keyNameForStore]];
++ (NSArray *)read:(BLJStore *)store fromStore:(id)mainStore {
+    NSArray *jsonArray = [mainStore objectForKey:[store keyNameForStore]];
     NSMutableArray *objects = [@[] mutableCopy];
     if ([jsonArray count] > 0) {
         for (NSString *json in jsonArray) {
@@ -17,14 +16,14 @@
     return objects;
 }
 
-+ (void)write:(BLJStore *)store values:(NSArray *)values {
++ (void)write:(BLJStore *)store values:(NSArray *)values forStore:(id)mainStore{
     NSMutableArray *jsonArray = [@[] mutableCopy];
     for (id obj in values) {
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:obj options:nil error:nil];
         NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         [jsonArray addObject:jsonString];
     }
-    [[BLKeyValueStore store] setObject:jsonArray forKey:[store keyNameForStore]];
+    [mainStore setObject:jsonArray forKey:[store keyNameForStore]];
 }
 
 

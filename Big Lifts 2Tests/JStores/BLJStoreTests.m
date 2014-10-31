@@ -74,11 +74,12 @@
     lift1.weight = N(100);
     lift1.order = @0;
 
-    NSArray *serialized = [[JFTOLiftStore instance] serialize];
+    NSArray *serialized = [[JFTOLiftStore instance] serializeAndCache];
     STAssertNotNil(serialized, @"");
 }
 
 - (void)testSync {
+    [[JFTOLiftStore instance] clearSyncCache];
     JFTOLift *lift1 = [[JFTOLiftStore instance] create];
     lift1.name = @"A";
     lift1.increment = N(5.5);

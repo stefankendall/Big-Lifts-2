@@ -23,7 +23,7 @@
     set.assistance = NO;
     set.percentage = N(90);
 
-    NSArray *serialized = [[JSetStore instance] serialize];
+    NSArray *serialized = [[JSetStore instance] serializeAndCache];
     JSet *deserializedSet = (id) [[JSetStore instance] deserializeObject:serialized[0]];
     STAssertEqualObjects(deserializedSet.reps, @5, @"");
     STAssertEqualObjects(deserializedSet.percentage, N(90), @"");

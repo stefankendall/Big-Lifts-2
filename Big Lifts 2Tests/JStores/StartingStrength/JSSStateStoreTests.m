@@ -16,7 +16,7 @@
 - (void)testSerializesSSWorkoutIntoUuid {
     JSSState *state = [[JSSStateStore instance] first];
     state.lastWorkout = [[JSSWorkoutStore instance] first];
-    NSArray *serialized = [[JSSStateStore instance] serialize];
+    NSArray *serialized = [[JSSStateStore instance] serializeAndCache];
     NSString *serializedObject = serialized[0];
     NSString *targetString = [NSString stringWithFormat:@"lastWorkout\":\"%@\"",state.lastWorkout.uuid];
     STAssertTrue([serializedObject rangeOfString:targetString].location != NSNotFound, @"");

@@ -1,6 +1,5 @@
 #import "BLTimer.h"
 #import "TimerObserver.h"
-#import "BLKeyValueStore.h"
 #import <AudioToolbox/AudioToolbox.h>
 
 const NSString *TIMER_SECONDS_REMAINING_KEY = @"timerSecondsRemaining";
@@ -42,10 +41,10 @@ const NSString *TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
 
 - (void)suspend {
     if (self.secondsRemaining > 0) {
-        [[BLKeyValueStore store]                            setObject:
+        [[NSUserDefaults standardUserDefaults]              setObject:
                 [NSNumber numberWithInt:self.secondsRemaining] forKey:TIMER_SECONDS_REMAINING_KEY];
 
-        [[BLKeyValueStore store] setObject:[NSDate new] forKey:TIMER_SUSPEND_DATE_KEY];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSDate new] forKey:TIMER_SUSPEND_DATE_KEY];
     }
     [self stopTimer];
 }
@@ -66,17 +65,17 @@ const NSString *TIMER_SUSPEND_DATE_KEY = @"timerSuspendDate";
 }
 
 - (void)resume {
-    NSNumber *secondsRemaining = [[BLKeyValueStore store] objectForKey:TIMER_SECONDS_REMAINING_KEY];
+    NSNumber *secondsRemaining = [[NSUserDefaults standardUserDefaults] objectForKey:TIMER_SECONDS_REMAINING_KEY];
     if (secondsRemaining != nil) {
-        NSDate *suspendDate = [[BLKeyValueStore store] objectForKey:TIMER_SUSPEND_DATE_KEY];
+        NSDate *suspendDate = [[NSUserDefaults standardUserDefaults] objectForKey:TIMER_SUSPEND_DATE_KEY];
         NSDate *now = [NSDate new];
         int secondsElapsed = (int) (now.timeIntervalSince1970 - suspendDate.timeIntervalSince1970);
         [self start:[secondsRemaining intValue] - secondsElapsed];
 
-        [[BLKeyValueStore store] removeObjectForKey:TIMER_SUSPEND_DATE_KEY];
-        [[BLKeyValueStore store] setObject:nil forKey:TIMER_SUSPEND_DATE_KEY];
-        [[BLKeyValueStore store] removeObjectForKey:TIMER_SECONDS_REMAINING_KEY];
-        [[BLKeyValueStore store] setObject:nil forKey:TIMER_SECONDS_REMAINING_KEY];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:TIMER_SUSPEND_DATE_KEY];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:TIMER_SUSPEND_DATE_KEY];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:TIMER_SECONDS_REMAINING_KEY];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:TIMER_SECONDS_REMAINING_KEY];
     }
 }
 

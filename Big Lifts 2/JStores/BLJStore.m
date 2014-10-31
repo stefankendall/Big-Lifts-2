@@ -4,7 +4,6 @@
 #import "BLJStore.h"
 #import "JSONModelClassProperty.h"
 #import "BLJStoreManager.h"
-#import "BLKeyValueStore.h"
 
 @implementation BLJStore
 
@@ -13,7 +12,7 @@
 }
 
 - (id)create {
-    JModel *object = [[self modelClass] new];
+    JModel *object = (JModel *) [[self modelClass] new];
     [self addUuid:object];
     [self.data addObject:object];
     [self setDefaultsForObject:object];
@@ -32,6 +31,7 @@
 - (void)empty {
     self.data = [@[] mutableCopy];
     self.uuidCache = [@{} mutableCopy];
+    self.cachedSerializedData = nil;
 }
 
 - (void)removeAll {
@@ -84,7 +84,7 @@
 }
 
 - (void)removeAtIndex:(int)index {
-    [self remove:[self.findAll objectAtIndex:(NSUInteger) index]];
+    [self remove:(self.findAll)[(NSUInteger) index]];
 };
 
 - (void)reset {
@@ -102,7 +102,7 @@
 
 - (id)find:(NSString *)name value:(id)value {
     if ([name isEqualToString:@"uuid"]) {
-        JModel *cachedModel = [self.uuidCache objectForKey:value];
+        JModel *cachedModel = (self.uuidCache)[value];
         if (cachedModel) {
             return cachedModel;
         }
@@ -195,24 +195,31 @@
     });
 
     NSString *key = NSStringFromClass([self class]);
-    if (![stores objectForKey:key]) {
+    if (!stores[key]) {
         BLJStore *store = [self new];
-        [stores setObject:store forKey:key];
+        stores[key] = store;
     }
 
-    return [stores objectForKey:key];
+    return stores[key];
 }
 
 - (void)onLoad {
 }
 
-- (void)sync {
-    NSArray *serialized = [self serialize];
-    NSString *storeKey = [self keyNameForStore];
-    [[BLKeyValueStore store] setObject:serialized forKey:storeKey];
+- (void)clearSyncCache {
+    self.cachedSerializedData = nil;
 }
 
-- (NSArray *)serialize {
+- (void)sync {
+    if (!self.cachedSerializedData) {
+        [self serializeAndCache];
+    }
+
+    [[NSUbiquitousKeyValueStore defaultStore] setObject:self.cachedSerializedData forKey:[self keyNameForStore]];
+    [[NSUserDefaults standardUserDefaults] setObject:self.cachedSerializedData forKey:[self keyNameForStore]];
+}
+
+- (NSArray *)serializeAndCache {
     NSMutableArray *serialized = [@[] mutableCopy];
     for (JSONModel *model in self.data) {
         NSString *serialModel = [model toJSONString];
@@ -224,6 +231,7 @@
             [NSException raise:@"Could not serialize model." format:@""];
         }
     }
+    self.cachedSerializedData = serialized;
     return serialized;
 }
 
@@ -232,7 +240,7 @@
 }
 
 - (void)load {
-    NSUbiquitousKeyValueStore *keyValueStore = [BLKeyValueStore store];
+    NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
     NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
     if (serializedData) {
         self.data = [self deserialize:serializedData];

@@ -5,8 +5,6 @@
 #import "TextViewInputAccessoryBuilder.h"
 #import "IAPAdapter.h"
 #import "BLJStoreManager.h"
-#import "BLKeyValueStore.h"
-#import "Migrator.h"
 #import "PaddingTextField.h"
 #import "JBarStore.h"
 #import "FTOCustomAssistanceEditLiftViewController.h"
@@ -34,7 +32,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [Flurry logEvent:@"Settings"];
     [self reloadData];
-    [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -107,7 +104,6 @@
     self.roundToField.inputView = self.roundToPicker;
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.roundToField];
 }
-
 
 - (void)setupRoundingType {
     self.roundingTypeOptions = @[ROUNDING_TYPE_DOWN, ROUNDING_TYPE_NORMAL, ROUNDING_TYPE_UP];
@@ -185,19 +181,6 @@
                                                        delegate:self cancelButtonTitle:@"OK"
                                               otherButtonTitles:@"Cancel", nil];
     [alertView show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        BOOL iCloudEnabled = [self.iCloudEnabled isOn];
-        [[BLJStoreManager instance] syncStores];
-        [BLKeyValueStore forceICloud:iCloudEnabled];
-        [[Migrator new] migrateStores];
-        [[BLJStoreManager instance] loadStores];
-    }
-    else {
-        [self.iCloudEnabled setOn:[BLKeyValueStore iCloudEnabled]];
-    }
 }
 
 const int BAR_LOADING_TOGGLE_ROW = 2;

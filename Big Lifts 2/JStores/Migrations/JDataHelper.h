@@ -2,8 +2,8 @@
 
 @interface JDataHelper : NSObject
 
-+ (NSArray *)read:(BLJStore *)store;
++ (NSArray *)read:(BLJStore *)store fromStore:(id)mainStore;
 
-+ (void)write:(BLJStore *)store values:(NSArray *)values;
++ (void)write:(BLJStore *)store values:(NSArray *)values forStore:(id)mainStore;
 
 @end

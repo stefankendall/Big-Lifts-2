@@ -36,7 +36,6 @@
 #import "JFTOCustomAssistanceWorkoutStore.h"
 #import "JSVWorkoutStore.h"
 #import "JSVLiftStore.h"
-#import "BLKeyValueStore.h"
 #import "JFTOFullCustomAssistanceWorkoutStore.h"
 #import "JFTOFullCustomWorkoutStore.h"
 #import "JFTOFullCustomWeekStore.h"
@@ -54,16 +53,30 @@
 }
 
 - (void)syncStores {
-    if ([[DataLoaded instance] loaded]) {
-        [self testSerializeForErrors];
-        [self writeStores];
-        [[BLKeyValueStore store] synchronize];
+    if (self.savingStores) {
+        return;
+    }
+
+    self.savingStores = YES;
+    @synchronized (self) {
+        if ([[DataLoaded instance] loaded]) {
+            [self clearSyncCache];
+            [self testSerializeForErrors];
+            [self writeStores];
+        }
+        self.savingStores = NO;
+    }
+}
+
+- (void)clearSyncCache {
+    for (BLJStore *store in self.allStores) {
+        [store clearSyncCache];
     }
 }
 
 - (void)testSerializeForErrors {
     for (BLJStore *store in self.allStores) {
-        [store serialize]; //any exceptions will get logged in crashlytics and prevent stores from being saved inconsistently
+        [store serializeAndCache]; //any exceptions will get logged in crashlytics and prevent stores from being saved inconsistently
     }
 }
 

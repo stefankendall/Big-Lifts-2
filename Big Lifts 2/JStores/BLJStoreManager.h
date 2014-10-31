@@ -16,6 +16,8 @@
 
 @property(nonatomic, strong) NSArray *allStores;
 
+@property(nonatomic) BOOL savingStores;
+
 - (BLJStore *)storeForModel:(Class)pClass withUuid:(NSString *)uuid;
 
 - (id)findModelForClass:(Class)pClass withUuid:(id)uuid;

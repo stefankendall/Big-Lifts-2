@@ -48,9 +48,11 @@
 
 + (instancetype)instance;
 
-- (NSArray *)serialize;
+- (NSArray *)serializeAndCache;
 
 - (void)onLoad;
+
+- (void)clearSyncCache;
 
 - (void)sync;
 
@@ -61,4 +63,5 @@
 @property(nonatomic, strong) NSMutableArray *data;
 @property(nonatomic, strong) NSMutableDictionary *uuidCache;
 
+@property(nonatomic, strong) NSMutableArray *cachedSerializedData;
 @end

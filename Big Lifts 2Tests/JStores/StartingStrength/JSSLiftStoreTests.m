@@ -68,7 +68,7 @@
 - (void)testSerializesNan {
     JSSLift *lift = [[JSSLiftStore instance] find:@"name" value:@"Power Clean"];
     lift.weight = [NSDecimalNumber notANumber];
-    [[JSSLiftStore instance] serialize];
+    [[JSSLiftStore instance] serializeAndCache];
 }
 
 - (void)testRemoveExtraLifts {

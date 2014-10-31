@@ -1,5 +1,5 @@
 @interface JFTOSettingsHelper : NSObject
-+ (NSMutableDictionary *)readSettings;
++ (NSMutableDictionary *)readSettings: (id) store;
 
-+ (void)writeSettings:(NSDictionary *)settings;
++ (void)writeSettings:(NSDictionary *)settings forStore: (id)store;
 @end
