@@ -49,23 +49,35 @@ NSString *UPDATED_KEY = @"updateDate";
     for (BLJStore *store in self.allStores) {
         if (store != [JVersionStore instance]) {
             CLS_LOG(@"Loading %@", NSStringFromClass([store modelClass]));
-            [store load: mostRecentlyUpdatedStore];
+            [store load:mostRecentlyUpdatedStore];
         }
     }
     [[DataLoaded instance] setLoaded:YES];
 }
 
 - (id)mostRecentlyUpdatedStore {
-    NSDate *date1 = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:UPDATED_KEY];
-    NSDate *date2 = [[NSUserDefaults standardUserDefaults] objectForKey:UPDATED_KEY];
-    if (date1 == nil && date2 == nil) {
-        NSLog(@"TODO: HANDLE EXISTING APP STORE SELECITON");
+    NSDate *cloudDate = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:UPDATED_KEY];
+    NSDate *localDate = [[NSUserDefaults standardUserDefaults] objectForKey:UPDATED_KEY];
+    if (cloudDate == nil && localDate == nil) {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"useIcloud"] == nil) {
+            return [NSUbiquitousKeyValueStore defaultStore];
+        }
+        BOOL useIcloud = [[NSUserDefaults standardUserDefaults] boolForKey:@"useIcloud"];
+        return useIcloud ? [NSUbiquitousKeyValueStore defaultStore] : [NSUserDefaults standardUserDefaults];
     }
-    else if (date1 == nil) {
+    else if (cloudDate == nil) {
         return [NSUserDefaults standardUserDefaults];
     }
-    else {
+    else if (localDate == nil) {
         return [NSUbiquitousKeyValueStore defaultStore];
+    }
+    else {
+        if ([cloudDate compare:localDate] == NSOrderedDescending) {
+            return [NSUbiquitousKeyValueStore defaultStore];
+        }
+        else {
+            return [NSUserDefaults standardUserDefaults];
+        }
     }
 }
 
@@ -115,25 +127,6 @@ NSString *UPDATED_KEY = @"updateDate";
     for (BLJStore *store in self.allStores) {
         [store setupDefaults];
     }
-}
-
-- (void)resetAllStoresExceptLog {
-    NSMutableArray *stores = [@[] mutableCopy];
-    [stores addObjectsFromArray:self.allStores];
-    [stores removeObject:[JWorkoutLogStore instance]];
-    [stores removeObject:[JSetLogStore instance]];
-
-    for (BLJStore *store in stores) {
-        [store empty];
-        [store sync];
-    }
-
-    for (BLJStore *store in stores) {
-        [store setupDefaults];
-    }
-
-    [[JSetLogStore instance] load:nil];
-    [[JWorkoutLogStore instance] load:nil];
 }
 
 + (BLJStoreManager *)instance {

@@ -89,7 +89,7 @@
 
     [[JFTOLiftStore instance] sync];
     [[JFTOLiftStore instance] empty];
-    [[JFTOLiftStore instance] load:nil];
+    [[JFTOLiftStore instance] load:[NSUserDefaults standardUserDefaults]];
 
     JFTOLift *syncedLift = [[JFTOLiftStore instance] first];
     STAssertEqualObjects(syncedLift.name, @"A", @"");

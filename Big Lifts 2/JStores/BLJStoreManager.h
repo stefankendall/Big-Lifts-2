@@ -12,8 +12,6 @@
 
 - (void)resetAllStores;
 
-- (void)resetAllStoresExceptLog;
-
 @property(nonatomic, strong) NSArray *allStores;
 
 @property(nonatomic) BOOL savingStores;

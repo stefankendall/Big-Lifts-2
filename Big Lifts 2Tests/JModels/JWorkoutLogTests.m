@@ -62,7 +62,7 @@
 
     [[JSetLogStore instance] sync];
     [[JWorkoutLogStore instance] sync];
-    [[JWorkoutLogStore instance] load:nil];
+    [[JWorkoutLogStore instance] load:[NSUserDefaults standardUserDefaults]];
 
     JWorkoutLog *syncedLog = [[JWorkoutLogStore instance] first];
     STAssertEquals((int) [syncedLog.sets count], 2, @"");
