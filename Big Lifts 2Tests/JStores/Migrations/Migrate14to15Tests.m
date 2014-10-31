@@ -56,7 +56,7 @@
     STAssertFalse(values[1][@"lift"] == nil, @"");
 
     //assert does not crash
-    [[JFTOSetStore instance] load];
+    [[JFTOSetStore instance] load:nil];
 }
 
 @end

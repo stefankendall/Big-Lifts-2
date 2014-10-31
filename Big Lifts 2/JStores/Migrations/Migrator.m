@@ -6,7 +6,7 @@
 @implementation Migrator
 
 - (void)migrateStores {
-    [[JVersionStore instance] load];
+    [[JVersionStore instance] load:nil];
     JVersion *version = [[JVersionStore instance] first];
 
     NSDictionary *migrations = @{

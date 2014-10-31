@@ -10,7 +10,7 @@
         lift.usesBar = NO;
     }
     [[Migrate15to16 new] run];
-    [[JFTOSSTLiftStore instance] load];
+    [[JFTOSSTLiftStore instance] load:nil];
     STAssertEquals([[JFTOSSTLiftStore instance] count], 4, @"");
     for (JFTOSSTLift *lift in [[JFTOSSTLiftStore instance] findAll]) {
         STAssertTrue(lift.usesBar, @"");

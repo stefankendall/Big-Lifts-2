@@ -56,7 +56,7 @@
 
 - (void)sync;
 
-- (void)load;
+- (void)load:(id)store;
 
 - (NSString *)keyNameForStore;
 

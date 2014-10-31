@@ -239,9 +239,8 @@
     return NSStringFromClass([self class]);
 }
 
-- (void)load {
-    NSUbiquitousKeyValueStore *keyValueStore = [NSUbiquitousKeyValueStore defaultStore];
-    NSArray *serializedData = [keyValueStore arrayForKey:[self keyNameForStore]];
+- (void)load:(id)store {
+    NSArray *serializedData = [store arrayForKey:[self keyNameForStore]];
     if (serializedData) {
         self.data = [self deserialize:serializedData];
     }

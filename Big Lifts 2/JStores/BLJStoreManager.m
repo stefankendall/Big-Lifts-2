@@ -42,14 +42,31 @@
 
 @implementation BLJStoreManager
 
+NSString *UPDATED_KEY = @"updateDate";
+
 - (void)loadStores {
+    id mostRecentlyUpdatedStore = [self mostRecentlyUpdatedStore];
     for (BLJStore *store in self.allStores) {
         if (store != [JVersionStore instance]) {
             CLS_LOG(@"Loading %@", NSStringFromClass([store modelClass]));
-            [store load];
+            [store load: mostRecentlyUpdatedStore];
         }
     }
     [[DataLoaded instance] setLoaded:YES];
+}
+
+- (id)mostRecentlyUpdatedStore {
+    NSDate *date1 = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:UPDATED_KEY];
+    NSDate *date2 = [[NSUserDefaults standardUserDefaults] objectForKey:UPDATED_KEY];
+    if (date1 == nil && date2 == nil) {
+        NSLog(@"TODO: HANDLE EXISTING APP STORE SELECITON");
+    }
+    else if (date1 == nil) {
+        return [NSUserDefaults standardUserDefaults];
+    }
+    else {
+        return [NSUbiquitousKeyValueStore defaultStore];
+    }
 }
 
 - (void)syncStores {
@@ -84,6 +101,9 @@
     for (BLJStore *store in self.allStores) {
         [store sync];
     }
+
+    [[NSUbiquitousKeyValueStore defaultStore] setObject:[NSDate new] forKey:UPDATED_KEY];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSDate new] forKey:UPDATED_KEY];
 }
 
 - (void)resetAllStores {
@@ -112,8 +132,8 @@
         [store setupDefaults];
     }
 
-    [[JSetLogStore instance] load];
-    [[JWorkoutLogStore instance] load];
+    [[JSetLogStore instance] load:nil];
+    [[JWorkoutLogStore instance] load:nil];
 }
 
 + (BLJStoreManager *)instance {

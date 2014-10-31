@@ -12,7 +12,7 @@
     settings.barLoadingEnabled = NO;
     [[JSettingsStore instance] sync];
     [[Migrate16to17 new] run];
-    [[JSettingsStore instance] load];
+    [[JSettingsStore instance] load:nil];
     STAssertTrue([[[JSettingsStore instance] first] barLoadingEnabled], @"");
 }
 
