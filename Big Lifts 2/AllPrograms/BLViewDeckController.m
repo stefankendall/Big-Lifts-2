@@ -8,28 +8,31 @@
 
     NSDictionary *programControllers = @{
             @"5/3/1" : @{
-                    @"nav" : @"ftoNavigation",
+                    @"nav" : @"FTONavController",
                     @"main" : @"ftoLiftNav"
             },
             @"Starting Strength" : @{
-                    @"nav" : @"ssNavViewController",
+                    @"nav" : @"SSNavController",
                     @"main" : @"ssLiftViewController"
             },
             @"Smolov Jr" : @{
-                    @"nav" : @"sjNavViewController",
+                    @"nav" : @"SJNavController",
                     @"main" : @"sjLiftNav"
             },
             @"Smolov" : @{
-                    @"nav" : @"svNavViewController",
+                    @"nav" : @"SVNavController",
                     @"main" : @"svLiftSelectorNav"
             }
     };
 
     NSString *program = [[[JCurrentProgramStore instance] first] name];
-    self = [super initWithCenterViewController:[storyboard instantiateViewControllerWithIdentifier:
-            programControllers[program][@"main"]]
-                            leftViewController:[storyboard instantiateViewControllerWithIdentifier:
-                                    programControllers[program][@"nav"]]];
+    UIViewController *nav = [[UIStoryboard storyboardWithName:programControllers[program][@"nav"] bundle:nil]
+            instantiateInitialViewController];
+
+    UIViewController *main = [storyboard instantiateViewControllerWithIdentifier:
+            programControllers[program][@"main"]];
+
+    self = [super initWithCenterViewController:main leftViewController:nav];
     if (self) {
         self.panningCancelsTouchesInView = NO;
         self.enabled = NO;

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9bq-pH-Lr1">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Export Import View Controller-->
+        <scene sceneID="AAE-9R-8HP">
+            <objects>
+                <tableViewController id="9bq-pH-Lr1" customClass="ExportImportViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PED-fw-ePV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="gcK-I3-Tfv">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Hob-O8-6Qk">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hob-O8-6Qk" id="aMc-hs-Znw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLY-sX-I1j">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="Sdx-Kg-tcY"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Import">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="importTapped:" destination="9bq-pH-Lr1" eventType="touchUpInside" id="A1h-Cj-JGv"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etc-nh-7Dp">
+                                                    <rect key="frame" x="256" y="0.0" width="64" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="dDh-Ta-fRd"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Export">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="exportTapped:" destination="9bq-pH-Lr1" eventType="touchUpInside" id="aMW-ii-AjQ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="etc-nh-7Dp" secondAttribute="centerY" id="0Nb-4z-9pL"/>
+                                                <constraint firstItem="etc-nh-7Dp" firstAttribute="top" secondItem="aMc-hs-Znw" secondAttribute="topMargin" constant="-8" id="2cz-Jh-ioL"/>
+                                                <constraint firstItem="gLY-sX-I1j" firstAttribute="leading" secondItem="aMc-hs-Znw" secondAttribute="leadingMargin" constant="-8" id="3ex-vR-QNY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="etc-nh-7Dp" secondAttribute="trailing" constant="-8" id="SdI-2h-mu5"/>
+                                                <constraint firstAttribute="centerY" secondItem="gLY-sX-I1j" secondAttribute="centerY" id="StT-wp-Sy9"/>
+                                                <constraint firstItem="gLY-sX-I1j" firstAttribute="top" secondItem="aMc-hs-Znw" secondAttribute="topMargin" constant="-8" id="onm-BS-Tjf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="etc-nh-7Dp" secondAttribute="bottom" constant="-8" id="ryw-0H-cQZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gLY-sX-I1j" secondAttribute="bottom" constant="-8" id="wk3-H5-UxD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="5na-lA-8Vj">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5na-lA-8Vj" id="fXB-VC-93R">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Export all log entries to a file, or import log entries from a file." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seP-50-4tP">
+                                                    <rect key="frame" x="8" y="0.0" width="304" height="63"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="seP-50-4tP" firstAttribute="top" secondItem="fXB-VC-93R" secondAttribute="topMargin" constant="-8" id="B48-QL-IX3"/>
+                                                <constraint firstItem="seP-50-4tP" firstAttribute="trailing" secondItem="fXB-VC-93R" secondAttribute="trailingMargin" id="RLH-gk-l0k"/>
+                                                <constraint firstItem="seP-50-4tP" firstAttribute="leading" secondItem="fXB-VC-93R" secondAttribute="leadingMargin" id="nVT-DK-HtP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="9bq-pH-Lr1" id="4iH-RH-8Gu"/>
+                            <outlet property="delegate" destination="9bq-pH-Lr1" id="8Vi-yM-8pS"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xPd-3f-68A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="232" y="281"/>
+        </scene>
+    </scenes>
+</document>

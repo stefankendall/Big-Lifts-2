@@ -7,6 +7,7 @@
 #import "IAPAdapter.h"
 #import "SKProductStore.h"
 #import "PriceFormatter.h"
+#import "ExportImportViewController.h"
 
 @implementation BLNavController
 
@@ -36,7 +37,7 @@
     NSString *productId = [self everythingProductId];
     SKProduct *product = [[SKProductStore instance] productById:productId];
     if (product) {
-        [self.unlockEverythingLabel setText:[NSString stringWithFormat:@"Unlock Everything! (%@)", [[PriceFormatter new] priceOf:product]]];
+        [self.unlockEverythingLabel setText:[NSString stringWithFormat:@"Unlock! (%@)", [[PriceFormatter new] priceOf:product]]];
     }
 }
 
@@ -65,16 +66,19 @@
     if ([cell tag] == 6) {
         [[[JCurrentProgramStore instance] first] setName:nil];
         [[self.viewDeckController navigationController] popViewControllerAnimated:YES];
-    } else if ([cell tag] == 8) {
+    }
+    else if ([cell tag] == 8) {
         [self presentFeedbackEmail];
-    } else if ([cell tag] == 9) {
-        NSString *rateUrl = @"itms-apps://itunes.apple.com/app/id661503150";
-        [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:rateUrl]];
-    } else if ([cell tag] == 10) {
+    }
+    else if ([cell tag] == 21) {
+        ExportImportViewController *controller = [[UIStoryboard storyboardWithName:@"ExportImportViewController" bundle:nil] instantiateInitialViewController];
+        [self.viewDeckController setCenterController:controller];
+    }
+    else if ([cell tag] == 10) {
         [[Purchaser new] purchase:[self everythingProductId]];
     }
     else {
-        NSString *storyBoardId = [tagViewMapping objectForKey:[NSNumber numberWithInteger:[cell tag]]];
+        NSString *storyBoardId = tagViewMapping[@([cell tag])];
         [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:storyBoardId]];
     }
 }

@@ -1,6 +1,6 @@
-#import "SSNavTableViewController.h"
+#import "SSNavController.h"
 
-@implementation SSNavTableViewController
+@implementation SSNavController
 
 - (NSDictionary *)specificTagMapping {
     return @{
