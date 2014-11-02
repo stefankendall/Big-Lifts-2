@@ -13,6 +13,7 @@
 #import "JFTOSettings.h"
 #import "JFTOVariantStore.h"
 #import "JFTOVariant.h"
+#import "JFTOSet.h"
 
 @implementation JFTOSimplestStrengthTemplateAssistanceTests
 
@@ -59,6 +60,13 @@
     JFTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Squat"];
     JSet *firstSet = week1Workout.workout.assistanceSets[0];
     STAssertEquals([firstSet.reps intValue], 8, @"");
+}
+
+- (void)testCreatesFtoSets {
+    [[JFTOSimplestStrengthTemplateAssistance new] setup];
+    JFTOWorkout *week1Workout = [self findWorkout:1 withLift:@"Squat"];
+    JSet *firstSet = week1Workout.workout.assistanceSets[0];
+    STAssertTrue([firstSet isKindOfClass:JFTOSet.class], @"");
 }
 
 - (JFTOWorkout *)findWorkout:(int)week withLift:(NSString *)liftName {

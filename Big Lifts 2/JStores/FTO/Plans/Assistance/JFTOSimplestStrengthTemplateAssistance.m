@@ -8,11 +8,12 @@
 #import "JFTOSSTLift.h"
 #import "JFTOSSTLiftStore.h"
 #import "JSet.h"
-#import "JSetStore.h"
 #import "JFTOSettings.h"
 #import "JFTOSettingsStore.h"
 #import "JFTOVariantStore.h"
 #import "JFTOVariant.h"
+#import "JFTOSetStore.h"
+#import "JFTOSet.h"
 
 @implementation JFTOSimplestStrengthTemplateAssistance
 
@@ -31,7 +32,7 @@
     JFTOWorkout *ftoWorkout = [self findWorkoutWithLift:lift week:week];
     JFTOSSTLift *sstLift = [[JFTOSSTLiftStore instance] find:@"associatedLift" value:lift];
     [weekData each:^(NSDictionary *data) {
-        JSet *set = [[JSetStore instance] create];
+        JFTOSet *set = [[JFTOSetStore instance] create];
         set.reps = data[@"reps"];
         set.percentage = data[@"percentage"];
         set.lift = sstLift;
