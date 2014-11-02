@@ -1,6 +1,5 @@
 #import "FTOEditLogViewControllerTests.h"
 #import "FTOEditLogViewController.h"
-#import "SenTestCase+ControllerTestAdditions.h"
 #import "JWorkoutLog.h"
 #import "JWorkoutLogStore.h"
 
