@@ -28,7 +28,6 @@
     [Flurry logEvent:@"5/3/1_Track"];
 }
 
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {
         return [super tableView:tableView heightForRowAtIndexPath:indexPath];
@@ -133,7 +132,7 @@
 
 - (void)viewButtonTapped:(id)sender {
     self.showState = (self.showState + 1) % 3;
-    [[[JFTOSettingsStore instance] first] setLogState:[NSNumber numberWithInt:self.showState]];
+    [[[JFTOSettingsStore instance] first] setLogState:@(self.showState)];
     [self.tableView reloadData];
 }
 
@@ -146,17 +145,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] > 0) {
-        self.tappedLog = [self getLog][((NSUInteger) [indexPath row])];
-        [self performSegueWithIdentifier:@"ftoLogEdit" sender:self];
+        FTOEditLogViewController *controller = [[UIStoryboard storyboardWithName:@"FTOEditLogViewController" bundle:nil] instantiateInitialViewController];
+        controller.workoutLog = [self getLog][((NSUInteger) [indexPath row])];
+        [self.navigationController pushViewController:controller animated:YES];
     }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"ftoLogEdit"]) {
-        FTOEditLogViewController *controller = [segue destinationViewController];
-        controller.workoutLog = self.tappedLog;
-    }
-    [super prepareForSegue:segue sender:sender];
 }
 
 @end

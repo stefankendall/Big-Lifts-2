@@ -7,7 +7,7 @@
 @implementation FTOEditLogViewControllerTests
 
 - (void)testHandlesDatesOfDifferentFormatsAndDoesntCrash {
-    FTOEditLogViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoEditLog"];
+    FTOEditLogViewController *controller = [[UIStoryboard storyboardWithName:@"FTOEditLogViewController" bundle:nil] instantiateInitialViewController];
     JWorkoutLog *log = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
     controller.workoutLog = log;
     [controller viewDidLoad];
@@ -19,7 +19,7 @@
 }
 
 - (void)testSetsDeloadOnAppear {
-    FTOEditLogViewController *controller = [self getControllerByStoryboardIdentifier:@"ftoEditLog"];
+    FTOEditLogViewController *controller = [[UIStoryboard storyboardWithName:@"FTOEditLogViewController" bundle:nil] instantiateInitialViewController];
     JWorkoutLog *log = [[JWorkoutLogStore instance] createWithName:@"5/3/1" date:[NSDate new]];
     log.deload = YES;
     controller.workoutLog = log;

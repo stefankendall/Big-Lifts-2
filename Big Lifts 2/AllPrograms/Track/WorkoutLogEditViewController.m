@@ -7,7 +7,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Edit Workout Log";
+    self.title = @"Edit Log";
     self.navigationItem.rightBarButtonItem =
             [[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStylePlain target:self action:@selector(deleteButtonTapped:)];
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor redColor]];

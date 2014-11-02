@@ -1,9 +1,10 @@
 #import "UITableViewController+NoEmptyRows.h"
+#import "WorkoutLogEditViewController.h"
 
 @class JWorkoutLog;
 
-@interface FTOEditLogViewController : UITableViewController {}
-@property (weak, nonatomic) IBOutlet UITextField *dateField;
-@property (weak, nonatomic) IBOutlet UISwitch *deloadSwitch;
-@property(nonatomic, strong) JWorkoutLog *workoutLog;
+@interface FTOEditLogViewController : WorkoutLogEditViewController {
+}
+
+@property(weak, nonatomic) IBOutlet UISwitch *deloadSwitch;
 @end

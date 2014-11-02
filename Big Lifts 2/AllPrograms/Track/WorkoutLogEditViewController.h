@@ -5,4 +5,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
 
 
+- (void)updateWorkoutLog:(id)sender;
 @end
