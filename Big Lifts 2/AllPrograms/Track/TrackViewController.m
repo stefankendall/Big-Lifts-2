@@ -4,27 +4,13 @@
 #import "WorkoutLogTableDataSource.h"
 #import "JWorkoutLog.h"
 #import "TrackToolbarCell.h"
-#import "BLJStoreManager.h"
+#import "WorkoutLogEditViewController.h"
 
 @implementation TrackViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView reloadData];
 }
-
-//- (BOOL)canBecomeFirstResponder {
-//    return YES;
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated {
-//    [self becomeFirstResponder];
-//}
-//
-//- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-//    if (event.subtype == UIEventSubtypeMotionShake) {
-//        [[BLJStoreManager instance] syncStores];
-//    }
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([indexPath section] == 0) {
@@ -109,21 +95,19 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    WorkoutLogEditViewController *controller = [[UIStoryboard storyboardWithName:@"WorkoutLogEditViewController" bundle:nil] instantiateInitialViewController];
+    controller.workoutLog = [self getLog][(NSUInteger) indexPath.row];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (void)deleteButtonTapped:(id)deleteButtonTapped {
-    if ([self.tableView isEditing]) {
-        [self.tableView setEditing:NO];
-    }
-    else {
-        [self.tableView setEditing:YES];
-    }
+    [self.tableView setEditing:![self.tableView isEditing]];
     [self.tableView reloadData];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([indexPath section] == 0) {
-        return NO;
-    }
-    return YES;
+    return [indexPath section] != 0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
