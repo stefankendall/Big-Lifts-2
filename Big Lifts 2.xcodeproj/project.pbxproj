@@ -161,6 +161,7 @@
 		5459045603F5EA7AB6C93BD6 /* NSDictionaryMutator.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590494F141B78460DB4086 /* NSDictionaryMutator.m */; };
 		545904579B72D263BFEEBA19 /* JFTOCustomAssistanceLiftStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909ED6408523020A30928 /* JFTOCustomAssistanceLiftStore.m */; };
 		5459045E748A54D8B551EBB7 /* LiftFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545906F530DF8514F5885C60 /* LiftFormCell.xib */; };
+		5459046829A080BCFD1689C2 /* LogJsonExporterImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459010EEEF94E4A571825F7 /* LogJsonExporterImporter.m */; };
 		5459046C27D56EF0BCC59AB0 /* JSSWarmupGeneratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A67A69F72969BBE509E /* JSSWarmupGeneratorTests.m */; };
 		5459047B3FE05410438336E0 /* DecimalNumberHandlers.m in Sources */ = {isa = PBXBuildFile; fileRef = 545903F6F5181EFE8588CCB9 /* DecimalNumberHandlers.m */; };
 		5459047C50EB2A7F50A4C83B /* WeightUnits.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590215ED48E93142E3F494 /* WeightUnits.m */; };
@@ -640,6 +641,7 @@
 		54590108B3C80DFC3505E13C /* AssistanceCopyDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssistanceCopyDelegate.h; sourceTree = "<group>"; };
 		545901093D0C084179D98100 /* FTOBoringButBigViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOBoringButBigViewControllerTests.h; sourceTree = "<group>"; };
 		5459010ACBF6D218C26ACE15 /* LogFaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogFaker.m; sourceTree = "<group>"; };
+		5459010EEEF94E4A571825F7 /* LogJsonExporterImporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogJsonExporterImporter.m; sourceTree = "<group>"; };
 		545901173AE8150899A9BF10 /* FTOCustomWeekSelectorViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTOCustomWeekSelectorViewControllerTests.h; sourceTree = "<group>"; };
 		54590122431C2786FCE6B002 /* TimerViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewControllerTests.m; sourceTree = "<group>"; };
 		545901288DAAC7C161DA9DC9 /* Big Lifts 2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big Lifts 2Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -821,6 +823,7 @@
 		54590412D3B6171940B0E960 /* BLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLAppDelegate.h; sourceTree = "<group>"; };
 		545904168FB3BA47ECC7F750 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5459042041044B48CF57AD62 /* SJEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJEditViewController.h; sourceTree = "<group>"; };
+		54590420F65017FBE4594C36 /* LogJsonExporterImporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogJsonExporterImporter.h; sourceTree = "<group>"; };
 		54590426011C12606BE512C4 /* 19-circle-check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-circle-check@2x.png"; sourceTree = "<group>"; };
 		5459042CD385F6E5F549221F /* JFTOCustomWorkoutStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFTOCustomWorkoutStoreTests.m; sourceTree = "<group>"; };
 		5459042D14A403E22A57E787 /* FTOWorkoutCellTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTOWorkoutCellTests.m; sourceTree = "<group>"; };
@@ -3620,6 +3623,8 @@
 				545905C66CA44C3CAACA5063 /* ExportImportViewController.m */,
 				54590CB7169A4C381D7F6B77 /* ExportImportViewController.h */,
 				54590C4619AE272C71D042A0 /* ExportImportViewController.storyboard */,
+				5459010EEEF94E4A571825F7 /* LogJsonExporterImporter.m */,
+				54590420F65017FBE4594C36 /* LogJsonExporterImporter.h */,
 			);
 			path = ExportImport;
 			sourceTree = "<group>";
@@ -4465,6 +4470,7 @@
 				54590250318E11ABEE344A17 /* CrashedViewController.m in Sources */,
 				54590490DFF6E3319601AD1E /* WorkoutLogEditViewController.m in Sources */,
 				545906E916CFA59C2B63532C /* ExportImportViewController.m in Sources */,
+				5459046829A080BCFD1689C2 /* LogJsonExporterImporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4514,7 +4520,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4288f509-9529-4269-a535-099ca8b8bdc9";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -4568,7 +4574,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4288f509-9529-4269-a535-099ca8b8bdc9";

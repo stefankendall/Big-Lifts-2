@@ -1,4 +1,4 @@
 #import "UIViewController+ViewDeckAdditions.h"
-@interface ExportImportViewController : UITableViewController {}
+@interface ExportImportViewController : UITableViewController <UIDocumentPickerDelegate> {}
 
 @end
