@@ -32,14 +32,24 @@
 - (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentAtURL:(NSURL *)url {
     NSData *data = [[NSFileManager defaultManager] contentsAtPath:[url path]];
     NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [LogJsonExporterImporter importJson:json];
+    BOOL success = [LogJsonExporterImporter importJson:json];
 
-    UIAlertView *alert = [[UIAlertView alloc]
-            initWithTitle:@"Import finished!"
-                  message:@"Workout log finished importing."
-                 delegate:nil
-        cancelButtonTitle:@"OK"
-        otherButtonTitles:nil];
+    UIAlertView *alert = nil;
+    if (success) {
+        alert = [[UIAlertView alloc]
+                initWithTitle:@"Import Finished"
+                      message:@"The workout log imported successfully."
+                     delegate:nil
+            cancelButtonTitle:@"OK"
+            otherButtonTitles:nil];
+    }
+    else {
+        alert = [[UIAlertView alloc] initWithTitle:@"Import Failed" message:
+                        @"The file could not be read. Did you pick the right file?"
+                                          delegate:nil
+                                 cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil];
+    }
     [alert show];
 }
 

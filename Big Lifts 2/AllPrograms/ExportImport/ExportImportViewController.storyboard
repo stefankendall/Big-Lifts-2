@@ -76,7 +76,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="5na-lA-8Vj">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="134" id="5na-lA-8Vj">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5na-lA-8Vj" id="fXB-VC-93R">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -88,18 +88,26 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log will save as BigLifts.json" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvY-tj-c4U">
-                                                    <rect key="frame" x="8" y="67" width="304" height="20.5"/>
+                                                    <rect key="frame" x="8" y="105" width="304" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import will overwrite existing log." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQl-bk-YpI">
+                                                    <rect key="frame" x="8" y="57" width="252" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.44271818930000001" blue="0.46442715670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="lQl-bk-YpI" firstAttribute="top" secondItem="seP-50-4tP" secondAttribute="bottom" constant="8" id="2DU-gj-Hwh"/>
                                                 <constraint firstItem="JvY-tj-c4U" firstAttribute="bottom" secondItem="fXB-VC-93R" secondAttribute="bottomMargin" id="3Us-ub-e2N"/>
                                                 <constraint firstItem="JvY-tj-c4U" firstAttribute="leading" secondItem="fXB-VC-93R" secondAttribute="leadingMargin" id="5mX-CI-qcA"/>
                                                 <constraint firstItem="seP-50-4tP" firstAttribute="top" secondItem="fXB-VC-93R" secondAttribute="topMargin" id="Cff-vo-ZM6"/>
                                                 <constraint firstItem="seP-50-4tP" firstAttribute="trailing" secondItem="fXB-VC-93R" secondAttribute="trailingMargin" id="HZO-Dk-GYG"/>
                                                 <constraint firstItem="seP-50-4tP" firstAttribute="leading" secondItem="fXB-VC-93R" secondAttribute="leadingMargin" id="a8r-a8-0YC"/>
+                                                <constraint firstItem="lQl-bk-YpI" firstAttribute="leading" secondItem="fXB-VC-93R" secondAttribute="leadingMargin" id="vbV-RV-ceN"/>
                                                 <constraint firstItem="JvY-tj-c4U" firstAttribute="trailing" secondItem="fXB-VC-93R" secondAttribute="trailingMargin" id="zsF-XH-2Yd"/>
                                             </constraints>
                                         </tableViewCellContentView>

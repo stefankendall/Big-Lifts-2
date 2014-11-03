@@ -20,9 +20,14 @@
     ];
 }
 
-+ (void)importJson:(NSString *)json {
++ (BOOL)importJson:(NSString *)json {
     NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
+    if (!dictionary[@"setLogs"]) {
+        return NO;
+    }
+
     NSArray *setLogs = dictionary[@"setLogs"];
     NSMutableArray *setLogsAsStrings = [@[] mutableCopy];
     for (NSDictionary *dict in setLogs) {
@@ -42,6 +47,7 @@
 
     [[JWorkoutLogStore instance] empty];
     [[JWorkoutLogStore instance] setupData:workoutLogsAsStrings];
+    return YES;
 }
 
 @end

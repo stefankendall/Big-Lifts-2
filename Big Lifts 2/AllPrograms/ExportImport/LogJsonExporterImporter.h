@@ -2,5 +2,5 @@
 
 + (NSString *)export;
 
-+ (void)importJson:(NSString *)json;
++ (BOOL)importJson:(NSString *)json;
 @end
