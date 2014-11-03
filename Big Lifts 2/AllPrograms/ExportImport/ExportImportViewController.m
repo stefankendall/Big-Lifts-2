@@ -30,27 +30,29 @@
 }
 
 - (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentAtURL:(NSURL *)url {
-    NSData *data = [[NSFileManager defaultManager] contentsAtPath:[url path]];
-    NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    BOOL success = [LogJsonExporterImporter importJson:json];
+    if (controller.documentPickerMode == UIDocumentPickerModeImport) {
+        NSData *data = [[NSFileManager defaultManager] contentsAtPath:[url path]];
+        NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        BOOL success = [LogJsonExporterImporter importJson:json];
 
-    UIAlertView *alert = nil;
-    if (success) {
-        alert = [[UIAlertView alloc]
-                initWithTitle:@"Import Finished"
-                      message:@"The workout log imported successfully."
-                     delegate:nil
-            cancelButtonTitle:@"OK"
-            otherButtonTitles:nil];
+        UIAlertView *alert = nil;
+        if (success) {
+            alert = [[UIAlertView alloc]
+                    initWithTitle:@"Import Finished"
+                          message:@"The workout log imported successfully."
+                         delegate:nil
+                cancelButtonTitle:@"OK"
+                otherButtonTitles:nil];
+        }
+        else {
+            alert = [[UIAlertView alloc] initWithTitle:@"Import Failed" message:
+                            @"The file could not be read. Did you pick the right file?"
+                                              delegate:nil
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil];
+        }
+        [alert show];
     }
-    else {
-        alert = [[UIAlertView alloc] initWithTitle:@"Import Failed" message:
-                        @"The file could not be read. Did you pick the right file?"
-                                          delegate:nil
-                                 cancelButtonTitle:@"OK"
-                                 otherButtonTitles:nil];
-    }
-    [alert show];
 }
 
 @end
