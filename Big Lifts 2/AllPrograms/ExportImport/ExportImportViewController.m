@@ -33,6 +33,14 @@
     NSData *data = [[NSFileManager defaultManager] contentsAtPath:[url path]];
     NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     [LogJsonExporterImporter importJson:json];
+
+    UIAlertView *alert = [[UIAlertView alloc]
+            initWithTitle:@"Import finished!"
+                  message:@"Workout log finished importing."
+                 delegate:nil
+        cancelButtonTitle:@"OK"
+        otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

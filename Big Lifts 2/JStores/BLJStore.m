@@ -241,8 +241,13 @@
 
 - (void)load:(id)store {
     NSArray *serializedData = [store arrayForKey:[self keyNameForStore]];
-    if (serializedData) {
-        self.data = [self deserialize:serializedData];
+    [self setupData:serializedData];
+    [self onLoad];
+}
+
+- (void)setupData:(NSArray *)array {
+    if (array) {
+        self.data = [self deserialize:array];
     }
     else {
         self.data = [@[] mutableCopy];
@@ -252,7 +257,6 @@
         [self setupDefaults];
     }
     [self buildUuidCache];
-    [self onLoad];
 }
 
 - (void)buildUuidCache {

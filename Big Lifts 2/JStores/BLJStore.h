@@ -18,6 +18,8 @@
 
 - (JSONModel *)deserializeObject:(NSString *)string;
 
+- (void)setupData:(NSArray *)array;
+
 - (void)setupDefaults;
 
 - (void)setDefaultsForObject:(id)object;
