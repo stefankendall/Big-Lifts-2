@@ -37,16 +37,8 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    UIBackgroundTaskIdentifier __block bgTask = nil;
-    UIApplication *app = [UIApplication sharedApplication];
-    bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
-        [app endBackgroundTask:bgTask];
-        bgTask = UIBackgroundTaskInvalid;
-    }];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[BLJStoreManager instance] syncStores];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    });
+    [[BLJStoreManager instance] syncStores];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -57,6 +49,8 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    [[BLJStoreManager instance] syncStores];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
