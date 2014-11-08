@@ -28,7 +28,7 @@
 
 - (void)setDefaultsForObject:(id)object {
     JFTOFullCustomWeek *customWeek = object;
-    customWeek.workouts = [@[] mutableCopy];
+    customWeek.workouts = (NSMutableArray <JFTOFullCustomWorkout> *) [@[] mutableCopy];
 }
 
 - (void)createWeeks {
@@ -37,8 +37,8 @@
     for (int week = 1; week <= [[setsByWeek allKeys] count]; week++) {
         JFTOFullCustomWeek *customWeek = [self create];
         customWeek.name = [plan weekNames][(NSUInteger) (week - 1)];
-        customWeek.week = [NSNumber numberWithInt:week];
-        customWeek.incrementAfterWeek = [[plan deloadWeeks] containsObject:[NSNumber numberWithInt:week]];
+        customWeek.week = @(week);
+        customWeek.incrementAfterWeek = [[plan deloadWeeks] containsObject:@(week)];
         [self createWorkoutsForWeek:customWeek];
     }
 }
@@ -74,7 +74,7 @@
             NSObject <JFTOPlan> *plan = [[JFTOWorkoutSetsGenerator new] planForVariant:FTO_VARIANT_STANDARD];
             NSDictionary *setsByWeek = [plan generate:nil];
             for (int week = 1; week <= [[setsByWeek allKeys] count]; week++) {
-                JFTOFullCustomWeek *customWeek = [self find:@"week" value:[NSNumber numberWithInt:week]];
+                JFTOFullCustomWeek *customWeek = [self find:@"week" value:@(week)];
                 [self createWorkoutsForLift:ftoLift week:customWeek];
             }
         }

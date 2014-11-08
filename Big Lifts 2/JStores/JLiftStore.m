@@ -3,6 +3,7 @@
 #import "JLift.h"
 #import "JWorkoutStore.h"
 #import "JSetStore.h"
+#import "JFTOSetStore.h"
 
 @implementation JLiftStore
 
@@ -48,8 +49,9 @@
 }
 
 - (void)liftsChanged {
-    [[JWorkoutStore instance] adjustToLifts];
     [[JSetStore instance] adjustToLifts];
+    [[JFTOSetStore instance] adjustToLifts];
+    [[JWorkoutStore instance] adjustToLifts];
 }
 
 - (id)create {
