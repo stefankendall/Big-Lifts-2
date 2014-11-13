@@ -8,6 +8,9 @@
 - (NSDictionary *)generate:(JLift *)lift {
     return @{
             @1 : @[
+                    [JSetData dataWithReps:5 percentage:N(40) lift:lift amrap:NO warmup:YES],
+                    [JSetData dataWithReps:5 percentage:N(50) lift:lift amrap:NO warmup:YES],
+                    [JSetData dataWithReps:3 percentage:N(60) lift:lift amrap:NO warmup:YES],
                     [JSetData dataWithReps:5 percentage:N(75) lift:lift],
                     [JSetData dataWithReps:5 percentage:N(75) lift:lift],
                     [JSetData dataWithReps:5 percentage:N(75) lift:lift],
@@ -15,6 +18,9 @@
                     [JSetData dataWithReps:5 percentage:N(75) lift:lift]
             ],
             @2 : @[
+                    [JSetData dataWithReps:5 percentage:N(40) lift:lift amrap:NO warmup:YES],
+                    [JSetData dataWithReps:5 percentage:N(50) lift:lift amrap:NO warmup:YES],
+                    [JSetData dataWithReps:3 percentage:N(60) lift:lift amrap:NO warmup:YES],
                     [JSetData dataWithReps:3 percentage:N(85) lift:lift],
                     [JSetData dataWithReps:3 percentage:N(85) lift:lift],
                     [JSetData dataWithReps:3 percentage:N(85) lift:lift],
@@ -22,6 +28,9 @@
                     [JSetData dataWithReps:3 percentage:N(85) lift:lift]
             ],
             @3 : @[
+                    [JSetData dataWithReps:5 percentage:N(40) lift:lift amrap:NO warmup:YES],
+                    [JSetData dataWithReps:5 percentage:N(50) lift:lift amrap:NO warmup:YES],
+                    [JSetData dataWithReps:3 percentage:N(60) lift:lift amrap:NO warmup:YES],
                     [JSetData dataWithReps:1 percentage:N(95) lift:lift],
                     [JSetData dataWithReps:1 percentage:N(95) lift:lift],
                     [JSetData dataWithReps:1 percentage:N(95) lift:lift],
