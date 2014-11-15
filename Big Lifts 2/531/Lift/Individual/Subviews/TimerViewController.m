@@ -19,8 +19,8 @@
     int minutes = [timer.seconds intValue] / 60;
     int seconds = [timer.seconds intValue] % 60;
 
-    [self.restMinutes setText:[[NSNumber numberWithInt:minutes] stringValue]];
-    [self.restSeconds setText:[[NSNumber numberWithInt:seconds] stringValue]];
+    [self.restMinutes setText:[@(minutes) stringValue]];
+    [self.restSeconds setText:[@(seconds) stringValue]];
 
     if ([[BLTimer instance] isRunning]) {
         [self.startStopButton setTitle:@"Stop"];
@@ -30,10 +30,17 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeSound categories:nil]];
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     int minutes = [[self.restMinutes text] intValue];
     int seconds = [[self.restSeconds text] intValue];
-    [[[JTimerStore instance] first] setSeconds:[NSNumber numberWithInt:(minutes * 60 + seconds)]];
+    [[[JTimerStore instance] first] setSeconds:@(minutes * 60 + seconds)];
 }
 
 - (IBAction)timerTapped:(id)sender {
