@@ -5,14 +5,14 @@
 #import "BLJStoreManager.h"
 
 int const NOT_DEAD = 1;
-int const DEAD = 0;
+int const DEAD = 2;
 
 @implementation JModel
 
 - (id)init {
     self = [super init];
     if (self) {
-        self.dead = [NSNumber numberWithInt:NOT_DEAD];
+        self.dead = @(NOT_DEAD);
     }
 
     return self;

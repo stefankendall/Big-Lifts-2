@@ -69,7 +69,7 @@
     for (JFTOCustomAssistanceWorkout *customAssistanceWorkout in [self findAll]) {
         NSMutableArray *deadSets = [@[] mutableCopy];
         for (JSet *set in customAssistanceWorkout.workout.sets) {
-            if ([set.lift.dead intValue] == DEAD) {
+            if ([set.lift isDead]) {
                 [deadSets addObject:set];
             }
         }
