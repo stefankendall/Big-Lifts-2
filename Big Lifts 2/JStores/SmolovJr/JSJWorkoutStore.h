@@ -2,4 +2,6 @@
 
 @interface JSJWorkoutStore : BLJStore
 - (void)adjustForKg;
+
+- (void)resetDoneOnAllWorkouts;
 @end

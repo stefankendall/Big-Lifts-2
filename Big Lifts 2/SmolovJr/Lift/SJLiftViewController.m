@@ -5,7 +5,7 @@
 #import "JSJWorkout.h"
 #import "JSJWorkoutStore.h"
 
-@interface SJLiftViewController()
+@interface SJLiftViewController ()
 
 @property(nonatomic, strong) JSJWorkout *tappedWorkout;
 @end
@@ -22,7 +22,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *workoutsInWeek = [[JSJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:(section + 1)]];
+    NSArray *workoutsInWeek = [[JSJWorkoutStore instance] findAllWhere:@"week" value:@(section + 1)];
     return [workoutsInWeek count];
 }
 
@@ -32,7 +32,7 @@
         cell = [SJWorkoutSummaryCell create];
     }
 
-    NSArray *workoutsInWeek = [[JSJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
+    NSArray *workoutsInWeek = [[JSJWorkoutStore instance] findAllWhere:@"week" value:@([indexPath section] + 1)];
     [cell setWorkout:workoutsInWeek[(NSUInteger) [indexPath row]]];
     return cell;
 }
@@ -42,7 +42,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *workoutsInWeek = [[JSJWorkoutStore instance] findAllWhere:@"week" value:[NSNumber numberWithInt:([indexPath section] + 1)]];
+    NSArray *workoutsInWeek = [[JSJWorkoutStore instance] findAllWhere:@"week" value:@([indexPath section] + 1)];
     self.tappedWorkout = workoutsInWeek[(NSUInteger) [indexPath row]];
     [self performSegueWithIdentifier:@"sjLiftSegue" sender:self];
 }
@@ -55,6 +55,19 @@
 
 - (void)goToTimer {
     [self performSegueWithIdentifier:@"sjGoToTimer" sender:self];
+}
+
+- (IBAction)newCycleTapped:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"New Cycle" message:@"Reset checkmarks? Weights will not be affected."
+                                                       delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    [alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [[JSJWorkoutStore instance] resetDoneOnAllWorkouts];
+        [self.tableView reloadData];
+    }
 }
 
 @end

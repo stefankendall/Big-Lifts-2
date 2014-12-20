@@ -60,9 +60,7 @@
         return !sjWorkout.done;
     }] != nil;
     if (!workoutsRemaining) {
-        [[[JSJWorkoutStore instance] findAll] each:^(JSJWorkout *sjWorkout) {
-            sjWorkout.done = NO;
-        }];
+        [[JSJWorkoutStore instance] resetDoneOnAllWorkouts];
     }
 }
 

@@ -2,5 +2,6 @@
 #import "TimerObserver.h"
 #import "IndividualLiftViewController.h"
 
-@interface SJLiftViewController : BLTableViewController
+@interface SJLiftViewController : BLTableViewController {}
+
 @end

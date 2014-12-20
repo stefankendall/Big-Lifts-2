@@ -1,3 +1,4 @@
+#import <MRCEnumerable/NSArray+Enumerable.h>
 #import "JSJWorkoutStore.h"
 #import "JSJWorkout.h"
 #import "JSetStore.h"
@@ -35,10 +36,10 @@
 - (void)createWorkoutInWeek:(int)week order:(int)order sets:(int)sets reps:(int)reps percentage:(NSDecimalNumber *)percentage minWeightAdd:(int)minWeightAdd maxWeightAdd:(int)maxWeightAdd {
     JSJWorkout *sjWorkout = [[JSJWorkoutStore instance] create];
     sjWorkout.done = NO;
-    sjWorkout.week = [NSNumber numberWithInt:week];
-    sjWorkout.order = [NSNumber numberWithInt:order];
-    sjWorkout.minWeightAdd = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:minWeightAdd] decimalValue]];
-    sjWorkout.maxWeightAdd = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithInt:maxWeightAdd] decimalValue]];
+    sjWorkout.week = @(week);
+    sjWorkout.order = @(order);
+    sjWorkout.minWeightAdd = [NSDecimalNumber decimalNumberWithDecimal:[@(minWeightAdd) decimalValue]];
+    sjWorkout.maxWeightAdd = [NSDecimalNumber decimalNumberWithDecimal:[@(maxWeightAdd) decimalValue]];
     JWorkout *workout = [[JWorkoutStore instance] create];
 
     JSJLift *lift = [[JSJLiftStore instance] first];
@@ -46,7 +47,7 @@
         JSet *set = [[JSetStore instance] create];
         set.lift = lift;
         set.percentage = percentage;
-        set.reps = [NSNumber numberWithInt:reps];
+        set.reps = @(reps);
         [workout addSet:set];
     }
 
@@ -81,5 +82,10 @@
     }
 }
 
+- (void)resetDoneOnAllWorkouts {
+    [[self findAll] each:^(JSJWorkout *sjWorkout) {
+        sjWorkout.done = NO;
+    }];
+}
 
 @end
