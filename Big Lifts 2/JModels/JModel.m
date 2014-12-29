@@ -100,5 +100,4 @@ int const DEAD = 2;
     return [[self dead] intValue] == DEAD;
 }
 
-
 @end

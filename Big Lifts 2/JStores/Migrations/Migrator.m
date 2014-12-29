@@ -2,6 +2,7 @@
 #import "JVersionStore.h"
 #import "JVersion.h"
 #import "Migration.h"
+#import "FixSettingsOnOldInstalls.h"
 
 @implementation Migrator
 
@@ -10,6 +11,7 @@
     JVersion *version = [[JVersionStore instance] first];
 
     NSDictionary *migrations = @{
+            @20: [FixSettingsOnOldInstalls new]
     };
 
     for (NSNumber *versionNumber in [self sortedKeys:migrations]) {
