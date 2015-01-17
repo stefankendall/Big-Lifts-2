@@ -33,15 +33,4 @@
     }
 }
 
-- (UITableViewCell *)deloadCell:(UITableView *)tableView {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOTrackDeloadCell"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOTrackDeloadCell"];
-    }
-    [[cell textLabel] setText:@"Deload"];
-    [[cell textLabel] setTextAlignment:NSTextAlignmentRight];
-    [[cell textLabel] setTextColor:[UIColor grayColor]];
-    return cell;
-}
-
 @end

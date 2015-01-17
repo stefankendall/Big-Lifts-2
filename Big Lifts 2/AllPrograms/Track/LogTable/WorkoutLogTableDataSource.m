@@ -31,7 +31,7 @@ const int ESTIMATED_MAX_SECTION = 1;
         return [[self.workoutLog sets] count];
     }
     else {
-        return ESTIMATED_MAX_SECTION;
+        return 1;
     }
 }
 
@@ -45,7 +45,12 @@ const int ESTIMATED_MAX_SECTION = 1;
         return cell;
     }
     else {
-        return [self maxEstimateCell:tableView];
+        if (self.workoutLog.deload) {
+            return [self deloadCell:tableView];
+        }
+        else {
+            return [self maxEstimateCell:tableView];
+        }
     }
 }
 
@@ -61,6 +66,17 @@ const int ESTIMATED_MAX_SECTION = 1;
     NSDecimalNumber *estimate = [[OneRepEstimator new] estimate:logToShow.weight withReps:[logToShow.reps intValue]];
     NSString *units = [[[JSettingsStore instance] first] units];
     [cell.maxEstimate setText:[NSString stringWithFormat:@"%@ %@", [estimate stringValue], units]];
+    return cell;
+}
+
+- (UITableViewCell *)deloadCell:(UITableView *)tableView {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FTOTrackDeloadCell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FTOTrackDeloadCell"];
+    }
+    [[cell textLabel] setText:@"Deload"];
+    [[cell textLabel] setTextAlignment:NSTextAlignmentRight];
+    [[cell textLabel] setTextColor:[UIColor grayColor]];
     return cell;
 }
 

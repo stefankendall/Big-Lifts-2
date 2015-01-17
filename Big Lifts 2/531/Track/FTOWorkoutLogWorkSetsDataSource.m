@@ -23,7 +23,12 @@
         return cell;
     }
     else {
-        return [self maxEstimateCell: tableView];
+        if (self.workoutLog.deload) {
+            return [self deloadCell:tableView];
+        }
+        else {
+            return [self maxEstimateCell:tableView];
+        }
     }
 }
 

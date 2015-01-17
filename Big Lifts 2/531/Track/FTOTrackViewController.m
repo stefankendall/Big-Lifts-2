@@ -34,8 +34,9 @@
     }
     else {
         WorkoutLogCell *cell = (WorkoutLogCell *) [self tableView:tableView cellForRowAtIndexPath:indexPath];
-        CGFloat estMaxHeight = [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:ESTIMATED_MAX_SECTION]];
-        return [super tableView:tableView heightForRowAtIndexPath:indexPath] + estMaxHeight;
+        CGFloat cellHeight = [cell.workoutLogTableDataSource tableView:nil heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:ESTIMATED_MAX_SECTION]];
+        int rowCount = [cell.workoutLogTableDataSource tableView:nil numberOfRowsInSection:0];
+        return rowCount * cellHeight + cellHeight;
     }
 }
 

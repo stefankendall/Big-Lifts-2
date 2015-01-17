@@ -10,4 +10,7 @@ extern const int ESTIMATED_MAX_SECTION;
 - (id)initWithWorkoutLog:(JWorkoutLog *)log;
 
 - (UITableViewCell *)maxEstimateCell: (UITableView *)tableView;
+
+- (UITableViewCell *)deloadCell:(UITableView *)tableView;
+
 @end
