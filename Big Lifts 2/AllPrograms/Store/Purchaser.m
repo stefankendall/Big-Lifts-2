@@ -35,8 +35,8 @@ NSString *const IAP_FTO_FULL_CUSTOM_ASSISTANCE = @"ftoFullCustomAssistance";
     self = [super init];
     if (self) {
         self.buyMessages = @{
-                IAP_EVERYTHING : @"All purchases are now unlocked.",
-                IAP_EVERYTHING_DISCOUNT : @"All purchases are now unlocked.",
+                IAP_EVERYTHING : @"Everything unlocked. Ads removed!",
+                IAP_EVERYTHING_DISCOUNT : @"Everything unlocked. Ads removed!",
                 IAP_BAR_LOADING : @"Bar loading is now available throughout the app.",
                 IAP_GRAPHING : @"Graphing is now available.",
                 IAP_1RM : @"One rep maxes are now available.",
