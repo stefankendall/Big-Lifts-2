@@ -96,9 +96,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    WorkoutLogEditViewController *controller = [[UIStoryboard storyboardWithName:@"WorkoutLogEditViewController" bundle:nil] instantiateInitialViewController];
-    controller.workoutLog = [self getLog][(NSUInteger) indexPath.row];
-    [self.navigationController pushViewController:controller animated:YES];
+    if (indexPath.section != 0) {
+        WorkoutLogEditViewController *controller = [[UIStoryboard storyboardWithName:@"WorkoutLogEditViewController" bundle:nil] instantiateInitialViewController];
+        controller.workoutLog = [self getLog][(NSUInteger) indexPath.row];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 - (void)deleteButtonTapped:(id)deleteButtonTapped {
