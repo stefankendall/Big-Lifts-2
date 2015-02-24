@@ -1,6 +1,7 @@
 #import <ViewDeck/IIViewDeckController.h>
 #import <MRCEnumerable/NSArray+Enumerable.h>
 #import <FlurrySDK/Flurry.h>
+#import <iAd/iAd.h>
 #import "FTOLiftWorkoutViewController.h"
 #import "FTOWorkoutCell.h"
 #import "JSet.h"
@@ -20,6 +21,8 @@
 #import "BLTimer.h"
 #import "FTOWorkoutChangeCache.h"
 #import "SetChange.h"
+#import "IAPAdapter.h"
+#import "Purchaser.h"
 
 @implementation FTOLiftWorkoutViewController
 
@@ -40,6 +43,12 @@
     }
 
     [[BLTimer instance] setObserver:self];
+
+    if (![[IAPAdapter instance] hasPurchased:IAP_EVERYTHING]) {
+        self.interstitial = [[ADInterstitialAd alloc] init];
+        self.interstitial.delegate = self;
+        self.interstitialPresentationPolicy = ADInterstitialPresentationPolicyManual;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -229,9 +238,19 @@
         [self performSegueWithIdentifier:@"ftoShowLiftIncrements" sender:self];
     }
     else {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-        [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
+        if ([[IAPAdapter instance] hasPurchased:IAP_EVERYTHING]) {
+            [self makeTrackCenterController];
+        }
+        else {
+            [self requestInterstitialAdPresentation];
+            [self makeTrackCenterController];
+        }
     }
+}
+
+- (void)makeTrackCenterController {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:@"ftoTrackNavController"]];
 }
 
 - (void)setWorkout:(JFTOWorkout *)ftoWorkout1 {
@@ -375,6 +394,17 @@
 
 - (NSArray *)getSharedWorkout {
     return @[self.ftoWorkout.workout];
+}
+
+- (void)interstitialAdDidUnload:(ADInterstitialAd *)interstitialAd {
+}
+
+- (void)interstitialAd:(ADInterstitialAd *)interstitialAd didFailWithError:(NSError *)error {
+    NSLog(@"%@", error);
+}
+
+- (void)interstitialAdDidLoad:(ADInterstitialAd *)interstitialAd {
+    NSLog(@"Ad is loaded");
 }
 
 @end
