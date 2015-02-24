@@ -6,6 +6,7 @@
 #import "BLTimer.h"
 #import "Flurry.h"
 #import "CrashCounter.h"
+#import "FixSettingsOnOldInstalls.h"
 
 @implementation BLAppDelegate
 
@@ -24,7 +25,7 @@
 
     if ([CrashCounter crashCount] <= 1) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-            [[Migrator new] migrateStores];
+            [[FixSettingsOnOldInstalls new] run];
             [[BLJStoreManager instance] loadStores];
         });
     }

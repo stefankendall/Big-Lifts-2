@@ -22,6 +22,10 @@
 
 + (BOOL)importJson:(NSString *)json {
     NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
+    if (!data) {
+        return NO;
+    }
+
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
     if (!dictionary[@"setLogs"]) {

@@ -14,13 +14,13 @@
         return;
     }
 
-    if (!settings[@"isMale"]) {
+    if (settings[@"isMale"] == nil) {
         settings[@"isMale"] = @1;
     }
-    if (!settings[@"barLoadingEnabled"]) {
+    if (settings[@"barLoadingEnabled"] == nil) {
         settings[@"barLoadingEnabled"] = @1;
     }
-    if (!settings[@"bodyweight"]) {
+    if (settings[@"bodyweight"] == nil) {
         settings[@"bodyweight"] = @"";
     }
     [JSettingsHelper writeSettings:settings forStore:store];
