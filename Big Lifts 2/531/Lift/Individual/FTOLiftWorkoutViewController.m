@@ -21,7 +21,6 @@
 #import "BLTimer.h"
 #import "FTOWorkoutChangeCache.h"
 #import "SetChange.h"
-#import "IAPAdapter.h"
 #import "Purchaser.h"
 
 @implementation FTOLiftWorkoutViewController
@@ -44,7 +43,7 @@
 
     [[BLTimer instance] setObserver:self];
 
-    if (![[IAPAdapter instance] hasPurchased:IAP_EVERYTHING]) {
+    if (![Purchaser hasPurchasedAnything]) {
         self.interstitial = [[ADInterstitialAd alloc] init];
         self.interstitial.delegate = self;
         self.interstitialPresentationPolicy = ADInterstitialPresentationPolicyManual;
@@ -238,7 +237,7 @@
         [self performSegueWithIdentifier:@"ftoShowLiftIncrements" sender:self];
     }
     else {
-        if ([[IAPAdapter instance] hasPurchased:IAP_EVERYTHING]) {
+        if ([Purchaser hasPurchasedAnything]) {
             [self makeTrackCenterController];
         }
         else {
