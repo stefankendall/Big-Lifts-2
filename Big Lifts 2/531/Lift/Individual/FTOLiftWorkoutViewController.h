@@ -17,6 +17,8 @@
 
 @property(nonatomic, strong) ADInterstitialAd *interstitial;
 
+@property(nonatomic) BOOL upSellMade;
+
 - (IBAction)doneButtonTapped:(id)sender;
 
 - (void)setWorkout:(JFTOWorkout *)ftoWorkout1;

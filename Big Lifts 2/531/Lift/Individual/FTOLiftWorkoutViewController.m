@@ -50,6 +50,14 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if ([self upSellMade]) {
+        [self requestInterstitialAdPresentation];
+        [self makeTrackCenterController];
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [[BLTimer instance] setObserver:nil];
 }
@@ -201,7 +209,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section != [self toolbarSection]) {
-        self.tappedSetRow = [NSNumber numberWithInteger:[self effectiveRowFor:indexPath]];
+        self.tappedSetRow = @([self effectiveRowFor:indexPath]);
         [self performSegueWithIdentifier:@"ftoSetRepsForm" sender:self];
     }
 }
@@ -241,8 +249,10 @@
             [self makeTrackCenterController];
         }
         else {
-            [self requestInterstitialAdPresentation];
-            [self makeTrackCenterController];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"UpSellViewController" bundle:nil];
+            UINavigationController *nav = [storyboard instantiateInitialViewController];
+            self.upSellMade = YES;
+            [self presentViewController:nav animated:YES completion:nil];
         }
     }
 }
