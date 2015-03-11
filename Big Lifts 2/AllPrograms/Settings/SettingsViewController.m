@@ -46,7 +46,7 @@
 - (void)reloadData {
     JSettings *settings = [[JSettingsStore instance] first];
     NSDictionary *unitsSegments = @{@"lbs" : @0, @"kg" : @1};
-    [unitsSegmentedControl setSelectedSegmentIndex:[[unitsSegments objectForKey:settings.units] integerValue]];
+    [unitsSegmentedControl setSelectedSegmentIndex:[unitsSegments[settings.units] integerValue]];
 
     NSUInteger roundToRow = [self.roundingOptions indexOfObject:settings.roundTo];
     if (roundToRow == NSNotFound) {
@@ -131,21 +131,7 @@
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     if ([cell viewWithTag:1]) {
         [self resetAllData];
-    } else if ([cell viewWithTag:2]) {
-        [self restorePurchases];
     }
-}
-
-- (void)restorePurchases {
-    [[IAPAdapter instance] restorePurchasesWithCompletion:^{
-        UIAlertView *alertView = [[UIAlertView alloc]
-                initWithTitle:@""
-                      message:@"Purchases Restored!"
-                     delegate:nil
-            cancelButtonTitle:@"OK"
-            otherButtonTitles:nil];
-        [alertView show];
-    }];
 }
 
 - (void)resetAllData {
@@ -173,14 +159,6 @@
     }
 
     [self reloadData];
-}
-
-- (IBAction)iCloudValueChanged:(id)sender {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                        message:@"Data will not transfer between local and iCloud"
-                                                       delegate:self cancelButtonTitle:@"OK"
-                                              otherButtonTitles:@"Cancel", nil];
-    [alertView show];
 }
 
 const int BAR_LOADING_TOGGLE_ROW = 2;

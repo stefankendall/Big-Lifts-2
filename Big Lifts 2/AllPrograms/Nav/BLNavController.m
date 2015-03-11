@@ -25,6 +25,8 @@
                                              selector:@selector(somethingPurchased)
                                                  name:IAP_PURCHASED_NOTIFICATION
                                                object:nil];
+
+    [self makeWhite:self.refreshImage];
 }
 
 - (void)somethingPurchased {
@@ -74,6 +76,9 @@
         ExportImportViewController *controller = [[UIStoryboard storyboardWithName:@"ExportImportViewController" bundle:nil] instantiateInitialViewController];
         [self.viewDeckController setCenterController:controller];
     }
+    else if ([cell tag] == 31) {
+        [self restorePurchases];
+    }
     else if ([cell tag] == 10) {
         [[Purchaser new] purchase:[self everythingProductId]];
     }
@@ -81,6 +86,26 @@
         NSString *storyBoardId = tagViewMapping[@([cell tag])];
         [self.viewDeckController setCenterController:[storyboard instantiateViewControllerWithIdentifier:storyBoardId]];
     }
+}
+
+- (void)makeWhite:(UIImageView *)imageView {
+    if (imageView == nil) {
+        return;
+    }
+    imageView.tintColor = [UIColor whiteColor];
+    imageView.image = [imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+}
+
+- (void)restorePurchases {
+    [[IAPAdapter instance] restorePurchasesWithCompletion:^{
+        UIAlertView *alertView = [[UIAlertView alloc]
+                initWithTitle:@""
+                      message:@"Purchases Restored!"
+                     delegate:nil
+            cancelButtonTitle:@"OK"
+            otherButtonTitles:nil];
+        [alertView show];
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

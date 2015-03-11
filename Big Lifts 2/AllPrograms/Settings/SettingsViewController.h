@@ -10,8 +10,9 @@
 - (IBAction)unitsChanged:(id)sender;
 
 - (IBAction)keepScreenOnChanged:(id)sender;
-@property (weak, nonatomic) IBOutlet PaddingTextField *barWeightField;
-@property (weak, nonatomic) IBOutlet UISwitch *barLoadingEnabledSwitch;
+
+@property(weak, nonatomic) IBOutlet PaddingTextField *barWeightField;
+@property(weak, nonatomic) IBOutlet UISwitch *barLoadingEnabledSwitch;
 @property(weak, nonatomic) IBOutlet PaddingTextField *roundToField;
 @property(weak, nonatomic) IBOutlet PaddingTextField *roundingTypeField;
 @property(weak, nonatomic) IBOutlet UISwitch *keepScreenOnSwitch;
@@ -19,10 +20,6 @@
 @property(strong, nonatomic) UIPickerView *roundToPicker;
 @property(strong, nonatomic) UIPickerView *roundingTypePicker;
 
-@property(weak, nonatomic) IBOutlet UISwitch *iCloudEnabled;
-@property (weak, nonatomic) IBOutlet UITableViewCell *everythingCell;
-
 @property(nonatomic, strong) NSArray *roundingText;
-@property (weak, nonatomic) IBOutlet UIView *barLoadingToggleCell;
-@property(nonatomic, strong) NSDictionary *iapCells;
+@property(weak, nonatomic) IBOutlet UIView *barLoadingToggleCell;
 @end

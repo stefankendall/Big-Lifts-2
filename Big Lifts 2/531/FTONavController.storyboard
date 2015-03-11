@@ -190,6 +190,28 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell tag="31" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="VoZ-mP-rBQ" imageView="MAL-Nm-48T" style="IBUITableViewCellStyleDefault" id="tEE-yL-ltj" customClass="NavTableViewCell">
+                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tEE-yL-ltj" id="naY-ul-NOn">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Restore Purchase" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VoZ-mP-rBQ">
+                                                    <rect key="frame" x="62" y="0.0" width="243" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="10" contentMode="scaleToFill" image="901-repeat" id="MAL-Nm-48T">
+                                                    <rect key="frame" x="15" y="11" width="32" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                     <tableViewCell tag="21" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="QPi-MN-Rwl" imageView="8Hd-yx-Ewt" style="IBUITableViewCellStyleDefault" id="ZmX-vb-fB5" customClass="NavTableViewCell">
                                         <rect key="frame" x="0.0" y="352" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -275,6 +297,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="480"/>
                     <connections>
+                        <outlet property="refreshImage" destination="MAL-Nm-48T" id="kcx-6r-5kf"/>
                         <outlet property="unlockEverythingCell" destination="kny-Fx-fGi" id="Vf4-SI-KAA"/>
                         <outlet property="unlockEverythingLabel" destination="Z5g-L1-9C6" id="Roa-9k-l4S"/>
                     </connections>
@@ -295,6 +318,7 @@
         <image name="213-reply.png" width="32" height="17"/>
         <image name="269-happyface.png" width="32" height="22"/>
         <image name="89-dumbells.png" width="32" height="10"/>
+        <image name="901-repeat" width="32" height="22"/>
         <image name="95-equalizer.png" width="32" height="24"/>
     </resources>
 </document>
