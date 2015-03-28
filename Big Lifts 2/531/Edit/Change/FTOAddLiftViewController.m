@@ -3,8 +3,8 @@
 #import "FTOAddLiftViewController.h"
 #import "TextViewInputAccessoryBuilder.h"
 #import "JFTOLiftStore.h"
-#import "JFTOWorkoutStore.h"
 #import "JFTOLift.h"
+#import "DecimalNumberHelper.h"
 
 @implementation FTOAddLiftViewController
 
@@ -29,16 +29,11 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if ([self allFieldsAreFilled]) {
-        [self.doneButton setEnabled:YES];
-    }
-    else {
-        [self.doneButton setEnabled:NO];
-    }
+    [self.doneButton setEnabled:[self allFieldsAreFilled]];
 }
 
 - (BOOL)allFieldsAreFilled {
-    NSArray *fields = @[self.nameField, self.weightField, self.increaseField];
+    NSArray *fields = @[self.nameField, self.weightField];
     return [fields detect:^BOOL(UITextField *field) {
         return [[field text] isEqualToString:@""];
     }] == nil;
@@ -48,7 +43,10 @@
     JFTOLift *lift = [[JFTOLiftStore instance] create];
     lift.name = [self.nameField text];
     lift.weight = [NSDecimalNumber decimalNumberWithString:[self.weightField text] locale:NSLocale.currentLocale];
-    lift.increment = [NSDecimalNumber decimalNumberWithString:[self.increaseField text] locale:NSLocale.currentLocale];
+    lift.increment = [DecimalNumberHelper nanOrNil:
+                    [NSDecimalNumber decimalNumberWithString:[self.increaseField text]
+                                                      locale:NSLocale.currentLocale]
+                                                to:N(0)];
     lift.usesBar = YES;
 
     [self.navigationController popViewControllerAnimated:YES];

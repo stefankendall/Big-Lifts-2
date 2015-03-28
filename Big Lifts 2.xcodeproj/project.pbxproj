@@ -314,7 +314,6 @@
 		545908EC8D82040ABC3403EF /* JSJWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B7D4ACEB4CE8A6A2987 /* JSJWorkout.m */; };
 		545908F71C3095CEB90C69CF /* JFTOCustomWorkoutStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FC9F82DD0294BD67A88 /* JFTOCustomWorkoutStore.m */; };
 		545908F798D1B9044B4A8739 /* StepperWithCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590C02B3E3C3166683BBCA /* StepperWithCell.m */; };
-		545909019EF7B77C69A87E83 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5459093FD6B00B7019B51230 /* iAd.framework */; };
 		54590919358F0B607AC694F3 /* JLiftStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B50C23DF7962F2F70DE /* JLiftStore.m */; };
 		5459091CB0068729BE25B779 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54590D530BEAE717BB80843E /* CoreData.framework */; };
 		54590923D27AD427988ED874 /* JSSLiftTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459019DBC5DD69D3BB7A13D /* JSSLiftTests.m */; };
@@ -1575,7 +1574,6 @@
 				54590EF34211D1E1CD79C58F /* iAd.framework in Frameworks */,
 				545900E136E33162A76D5260 /* Social.framework in Frameworks */,
 				5459034542C001F13CEE869F /* SystemConfiguration.framework in Frameworks */,
-				545909019EF7B77C69A87E83 /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3846,7 +3844,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0600;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
 					5459001656E34C211328AFC0 = {
@@ -4537,8 +4535,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Big Lifts 2/Big Lifts 2.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Usable Design LLC (255V99ZU6N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Usable Design LLC (255V99ZU6N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/stefankendall/work/Big-Lifts-2",
@@ -4548,7 +4546,7 @@
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "79b2fd54-34d8-4887-adad-ce7a2ea49d61";
+				PROVISIONING_PROFILE = "ec317974-6b79-460d-9620-169f5bbb33fa";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/../\"/**";
 				WRAPPER_EXTENSION = app;
@@ -4577,8 +4575,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
+				PROVISIONING_PROFILE = "ec317974-6b79-460d-9620-169f5bbb33fa";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ec317974-6b79-460d-9620-169f5bbb33fa";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -4591,8 +4589,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Big Lifts 2/Big Lifts 2.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Usable Design LLC (255V99ZU6N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Usable Design LLC (255V99ZU6N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/stefankendall/work/Big-Lifts-2",
@@ -4603,7 +4601,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "79b2fd54-34d8-4887-adad-ce7a2ea49d61";
+				PROVISIONING_PROFILE = "ec317974-6b79-460d-9620-169f5bbb33fa";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/../\"/**";
 				WRAPPER_EXTENSION = app;
@@ -4674,8 +4672,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C8F1BE9-46E7-4A98-9C09-D23BF50B9235";
+				PROVISIONING_PROFILE = "ec317974-6b79-460d-9620-169f5bbb33fa";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ec317974-6b79-460d-9620-169f5bbb33fa";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
