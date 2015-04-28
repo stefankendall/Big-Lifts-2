@@ -13,7 +13,7 @@
 
     [controller.nameField setText:@"Name"];
     [controller.weightField setText:@"130.5"];
-    STAssertFalse([controller allFieldsAreFilled], @"");
+    STAssertTrue([controller allFieldsAreFilled], @"");
 
     [controller.increaseField setText:@"2"];
     STAssertTrue([controller allFieldsAreFilled], @"");

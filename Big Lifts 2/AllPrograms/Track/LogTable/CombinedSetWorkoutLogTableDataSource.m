@@ -16,7 +16,7 @@
 }
 
 - (NSArray *)getCombinedSets {
-    return [[SetLogCombiner new] combineSetLogs:self.workoutLog.sets];
+    return [[SetLogCombiner new] combineSetLogs:self.workoutLog.workSets];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

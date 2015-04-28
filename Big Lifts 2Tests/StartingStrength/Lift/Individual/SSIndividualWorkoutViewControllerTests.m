@@ -53,7 +53,7 @@
     JWorkoutLogStore *logStore = [JWorkoutLogStore instance];
     JWorkoutLog *workoutLog = [logStore first];
     STAssertEquals([logStore count], 1, @"");
-    NSArray *workSets = [workoutLog sets];
+    NSArray *workSets = [workoutLog workSets];
 
     STAssertEquals([workSets count], (NSUInteger) 7, @"");
     STAssertNotNil(workoutLog.date, @"");

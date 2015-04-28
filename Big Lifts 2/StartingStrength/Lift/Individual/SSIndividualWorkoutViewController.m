@@ -98,11 +98,11 @@
         NSDictionary *loggedSets = self.loggedWorkouts[(NSUInteger) workoutIndex];
         JWorkout *workout = self.ssWorkout.workouts[(NSUInteger) workoutIndex];
 
-        for (int setIndex = 0; setIndex < [[workout workSets] count]; setIndex++) {
-            JSet *set = workout.workSets[(NSUInteger) setIndex];
+        for (int setIndex = 0; setIndex < [[workout sets] count]; setIndex++) {
+            JSet *set = workout.sets[(NSUInteger) setIndex];
             JSetLog *setLog = [[JSetLogStore instance] createFromSet:set];
             setLog.name = [(JSSLift *) set.lift effectiveName];
-            SetChange *change = loggedSets[[NSNumber numberWithInt:setIndex]];
+            SetChange *change = loggedSets[@(setIndex)];
             if (change) {
                 setLog.weight = change.weight;
                 setLog.reps = change.reps;
@@ -137,18 +137,13 @@
         Class setClass = [SetClassGenerator generate];
         SetCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(setClass)];
         JSet *set = [self setForIndexPath:indexPath];
-        SetChange *data = self.loggedSets[[NSNumber numberWithInt:indexPath.row]];
+        SetChange *data = self.loggedSets[@(indexPath.row)];
         NSNumber *enteredReps = data ? data.reps : nil;
         NSDecimalNumber *enteredWeight = data ? data.weight : nil;
         [cell setSet:set withEnteredReps:enteredReps withEnteredWeight:enteredWeight];
         [cell.liftLabel setText:[(JSSLift *) set.lift effectiveName]];
 
-        if ([set.percentage isEqual:N(100)]) {
-            [cell.percentageLabel setHidden:YES];
-        }
-        else {
-            [cell.percentageLabel setHidden:NO];
-        }
+        [cell.percentageLabel setHidden:[set.percentage isEqual:N(100)]];
         return cell;
     }
 }
@@ -178,7 +173,7 @@
         SSEditSetForm *form = [segue destinationViewController];
         [form setDelegate:self];
         [form setSet:self.tappedSet];
-        SetChange *change = self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]];
+        SetChange *change = self.loggedSets[@(self.tappedIndexPath.row)];
         if (change) {
             [form setPreviousChange:change];
         }
@@ -190,21 +185,21 @@
 }
 
 - (void)repsChanged:(NSNumber *)reps {
-    SetChange *data = self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]];
+    SetChange *data = self.loggedSets[@(self.tappedIndexPath.row)];
     if (!data) {
         data = [SetChange new];
         data.weight = [[self setForIndexPath:self.tappedIndexPath] roundedEffectiveWeight];
-        self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]] = data;
+        self.loggedSets[@(self.tappedIndexPath.row)] = data;
     }
     data.reps = reps;
 }
 
 - (void)weightChanged:(NSDecimalNumber *)weight {
-    SetChange *data = self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]];
+    SetChange *data = self.loggedSets[@(self.tappedIndexPath.row)];
     if (!data) {
         data = [SetChange new];
         data.reps = [[self setForIndexPath:self.tappedIndexPath] reps];
-        self.loggedSets[[NSNumber numberWithInt:self.tappedIndexPath.row]] = data;
+        self.loggedSets[@(self.tappedIndexPath.row)] = data;
     }
     data.weight = weight;
 }
