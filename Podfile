@@ -5,7 +5,7 @@ pod 'CTCustomTableViewCell', '2'
 pod 'IAPManager', :git => 'https://github.com/mruegenberg/IAPManager', :commit => '52150e8'
 pod 'WebViewJavascriptBridge', '4.0.1'
 pod 'TPKeyboardAvoiding', '1.2.4'
-pod 'Facebook-iOS-SDK', '3.18.0'
+pod 'Facebook-iOS-SDK', '4.0.1'
 pod 'JSONModel', '0.10.0' #Local changes to jsonmodel. Never update.
 pod 'FlurrySDK', '4.3.2'
 pod 'RMSwipeTableViewCell', '0.6'

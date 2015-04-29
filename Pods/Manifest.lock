@@ -1,10 +1,29 @@
 PODS:
-  - Bolts (1.1.2)
+  - Bolts (1.1.5):
+    - Bolts/AppLinks (= 1.1.5)
+    - Bolts/Tasks (= 1.1.5)
+  - Bolts/AppLinks (1.1.5):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.1.5)
   - CTCustomTableViewCell (2)
-  - Facebook-iOS-SDK (3.18.0):
-    - Bolts
+  - Facebook-iOS-SDK (4.0.1):
+    - Bolts (~> 1.0)
+    - Facebook-iOS-SDK/CoreKit (= 4.0.1)
+    - Facebook-iOS-SDK/LoginKit (= 4.0.1)
+    - Facebook-iOS-SDK/ShareKit (= 4.0.1)
+  - Facebook-iOS-SDK/CoreKit (4.0.1):
+    - Bolts (~> 1.0)
+    - Facebook-iOS-SDK/CoreKit/no-arc (= 4.0.1)
+  - Facebook-iOS-SDK/CoreKit/no-arc (4.0.1):
+    - Bolts (~> 1.0)
+  - Facebook-iOS-SDK/LoginKit (4.0.1):
+    - Bolts (~> 1.0)
+    - Facebook-iOS-SDK/CoreKit
+  - Facebook-iOS-SDK/ShareKit (4.0.1):
+    - Bolts (~> 1.0)
+    - Facebook-iOS-SDK/CoreKit
   - FlurrySDK (4.3.2):
-    - FlurrySDK/FlurrySDK
+    - FlurrySDK/FlurrySDK (= 4.3.2)
   - FlurrySDK/FlurrySDK (4.3.2)
   - IAPManager (0.2.3)
   - JSONModel (0.10.0)
@@ -16,7 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - CTCustomTableViewCell (= 2)
-  - Facebook-iOS-SDK (= 3.18.0)
+  - Facebook-iOS-SDK (= 4.0.1)
   - FlurrySDK (= 4.3.2)
   - IAPManager (from `https://github.com/mruegenberg/IAPManager`, commit `52150e8`)
   - JSONModel (= 0.10.0)
@@ -32,16 +51,16 @@ EXTERNAL SOURCES:
     :git: https://github.com/mruegenberg/IAPManager
 
 SPEC CHECKSUMS:
-  Bolts: 2635e8698a630774689441047f3465d78c48d485
-  CTCustomTableViewCell: 0ec546b3a4540ec744dc9b1cd7a5115fac3e1912
-  Facebook-iOS-SDK: fa12c51cc57bfb6f92e47793c9d4d2c65bc92741
-  FlurrySDK: e66cbd5487c7da2c85c6d605fde59f36db4b87e1
-  IAPManager: 457e0007440e6ce81e7a6b16031c860bffac8d82
-  JSONModel: 0990e3b9153278e4b3d9466117e77ce02f58a198
-  MRCEnumerable: 1e7636e1e58b0c23d9e9b9d0672384313f8d9f8d
-  RMSwipeTableViewCell: 150021ada2d86b21db04556f08351462bd58919b
-  TPKeyboardAvoiding: 925e1e1912597d1a4956697eec3bd9656552153c
-  ViewDeck: 2f38c054dfe8e69af4877c006785996faa277902
-  WebViewJavascriptBridge: 2b464833619ac73a7b7c0561a669e75ef346db9e
+  Bolts: aac24961496d504aa56fc267cde95162a71bac39
+  CTCustomTableViewCell: bf2695f02b75cf68402a701ac8736247df09c886
+  Facebook-iOS-SDK: 6d05532c97e9c542f8d87f94b7f6ee217493d00b
+  FlurrySDK: 9f09e57ee8f01296bd547950433384da192ea680
+  IAPManager: c119e0ee1d5fb33d5fa1a1a96138c1a2337a82cc
+  JSONModel: bf734d6ef129c8ea13b6d349113f7929c8fd0a91
+  MRCEnumerable: 09a261d62fc92624ebc937dabb8d20e58ef53161
+  RMSwipeTableViewCell: ef3a5fc804cf0d5fb70fe1195c088cc40b3fde3c
+  TPKeyboardAvoiding: 0a40dfbb0af7c8bdae1dd457496dccfd217d85f6
+  ViewDeck: ce795f929d00d1e0fd63f61d79cc92a9ea050ec9
+  WebViewJavascriptBridge: 61763151d6ca476c71dd4274f777262416f6b54f
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.36.3
