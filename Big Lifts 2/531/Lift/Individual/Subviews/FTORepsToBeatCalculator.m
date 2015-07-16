@@ -19,7 +19,7 @@
     if ([[ftoSettings repsToBeatConfig] intValue] == kRepsToBeatLogOnly) {
         max = logMax;
     }
-    else {
+    else if ([[ftoSettings repsToBeatConfig] intValue] != kRepsToBeatMaxesOnly) {
         max = [logMax compare:max] == NSOrderedDescending ? logMax : max;
     }
 

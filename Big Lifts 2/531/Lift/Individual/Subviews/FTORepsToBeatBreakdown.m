@@ -13,8 +13,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.configOptions = @{
-            [NSNumber numberWithInt:kRepsToBeatEverything] : @"Use Everything",
-            [NSNumber numberWithInt:kRepsToBeatLogOnly] : @"Log Only"
+            @(kRepsToBeatEverything) : @"Use Everything",
+            @(kRepsToBeatMaxesOnly) : @"Entered Maxes Only",
+            @(kRepsToBeatLogOnly) : @"Log Only"
     };
 
     [[TextViewInputAccessoryBuilder new] doneButtonAccessory:self.configTextField];
@@ -56,11 +57,11 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return self.configOptions[[NSNumber numberWithInt:row]];
+    return self.configOptions[@(row)];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSNumber *repsToBeatConfig = [NSNumber numberWithInt:[self.configPicker selectedRowInComponent:0]];
+    NSNumber *repsToBeatConfig = @([self.configPicker selectedRowInComponent:0]);
     [[[JFTOSettingsStore instance] first] setRepsToBeatConfig:repsToBeatConfig];
     [self.configTextField setText:self.configOptions[repsToBeatConfig]];
 

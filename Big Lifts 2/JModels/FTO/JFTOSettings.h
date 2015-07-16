@@ -13,7 +13,8 @@ typedef enum {
 
 typedef enum {
     kRepsToBeatEverything = 0,
-    kRepsToBeatLogOnly = 1
+    kRepsToBeatLogOnly = 1,
+    kRepsToBeatMaxesOnly = 2
 } RepsToBeatConfig;
 
 @interface JFTOSettings : JModel

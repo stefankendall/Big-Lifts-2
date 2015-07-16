@@ -18,8 +18,8 @@
     settings.trainingMax = N(90);
     settings.warmupEnabled = YES;
     settings.sixWeekEnabled = NO;
-    settings.logState = [NSNumber numberWithInt:kShowWorkSets];
-    settings.repsToBeatConfig = [NSNumber numberWithInt:kRepsToBeatEverything];
+    settings.logState = @(kShowWorkSets);
+    settings.repsToBeatConfig = @(kRepsToBeatEverything);
 }
 
 @end

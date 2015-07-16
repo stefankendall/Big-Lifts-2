@@ -37,7 +37,7 @@
 }
 
 - (void)testDoesNotUseEnteredMaxesWhenConfigIsLogOnly {
-    [[[JFTOSettingsStore instance] first] setRepsToBeatConfig:[NSNumber numberWithInt:kRepsToBeatLogOnly]];
+    [[[JFTOSettingsStore instance] first] setRepsToBeatConfig:@(kRepsToBeatLogOnly)];
 
     JFTOLift *squat = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
@@ -55,8 +55,27 @@
     STAssertEquals(repsToBeat, 2, @"");
 }
 
+- (void)testDoesNotUseLogWhenMaxesOnly {
+    [[[JFTOSettingsStore instance] first] setRepsToBeatConfig:@(kRepsToBeatMaxesOnly)];
+
+    JFTOLift *squat = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
+    squat.weight = N(200);
+
+    JWorkoutLog *workoutLog = [[JWorkoutLogStore instance] create];
+    workoutLog.name = @"5/3/1";
+    JSetLog *setLog = [[JSetLogStore instance] create];
+    setLog.name = @"Squat";
+    setLog.reps = @1;
+    setLog.weight = N(290);
+    setLog.amrap = YES;
+    [workoutLog addSet:setLog];
+
+    int repsToBeat = [[FTORepsToBeatCalculator new] repsToBeat:squat atWeight:N(180)];
+    STAssertEquals(repsToBeat, 4, @"");
+}
+
 - (void)testReturns0WhenConfigIsLogOnlyAndNoLog {
-    [[[JFTOSettingsStore instance] first] setRepsToBeatConfig:[NSNumber numberWithInt:kRepsToBeatLogOnly]];
+    [[[JFTOSettingsStore instance] first] setRepsToBeatConfig:@(kRepsToBeatLogOnly)];
 
     JFTOLift *squat = [[JFTOLiftStore instance] find:@"name" value:@"Squat"];
     squat.weight = N(200);
