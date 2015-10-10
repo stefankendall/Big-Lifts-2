@@ -21,10 +21,13 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSNumber *reps = [NSNumber numberWithInt:[self currentReps]];
+    NSNumber *reps = @([self currentReps]);
     [self updateMax];
     [self.delegate repsChanged:reps];
     [self.delegate weightChanged:self.currentWeight];
+    if (textField == self.repsField) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)setupFields {
