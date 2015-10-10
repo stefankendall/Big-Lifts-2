@@ -3853,8 +3853,8 @@
 		54590B7F5BA3B3A9DF563A19 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0600;
-				LastUpgradeCheck = 0610;
+				LastTestingUpgradeCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "___FULLUSERNAME___";
 				TargetAttributes = {
 					5459001656E34C211328AFC0 = {
@@ -4555,6 +4555,7 @@
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefankendall.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ec317974-6b79-460d-9620-169f5bbb33fa";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -4610,6 +4611,7 @@
 				INFOPLIST_FILE = "Big Lifts 2/Big Lifts 2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefankendall.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ec317974-6b79-460d-9620-169f5bbb33fa";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -4629,6 +4631,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2Tests/Big Lifts 2Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefankendall.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -4647,6 +4650,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Big Lifts 2/Big Lifts 2-Prefix.pch";
 				INFOPLIST_FILE = "Big Lifts 2Tests/Big Lifts 2Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.stefankendall.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -4669,6 +4673,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Stefan Kendall (P8UD8Q34FF)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stefan Kendall (P8UD8Q34FF)";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
